@@ -66,19 +66,25 @@ Throughout all 5 acts, narrative branches and dialogue options are dynamically g
 * **Act V:** Morale: **5-15%** | Engagement: **0% (Pure Survival)**  
   *Options:* Unfiltered defiance, scorched-earth truth-telling, desperate gambits to escape.
 
-### B. Attendance Occurrences (The 5-Point Execution Clock):
+### B. Attendance Occurrences (The 5-Point "Selective Enforcement" Clock):
 * **Points Policy:**
   - Tardy / Late Arrival: `+0.5 pts`
   - Unexcused Call-Out / Absence: `+1.0 pt`
   - Leaving Shift Early: `+0.5 pts`
   - No Call, No Show: `+2.0 pts`
-  - **Termination:** `5.0 pts` = Immediate firing and Game Over.
+* **The 5.0+ Point Paradox (Hypocritical Corporate Enforcement):**
+  - Officially, company policy states that hitting `5.0 points` is ground for immediate termination.
+  - In practice, **corporate reality kicks in**: whether you are fired at 5.0+ points depends entirely on your hidden **Productivity Score** (mini-game performance & task speed) and your **Ass-Kissing Score** (sycophancy in dialogue choices, reporting peers, participating in morning cheers).
+  - **Scenarios at 5.0+ Points:**
+    - **The Star Worker (High Productivity, Low Ass-Kissing):** Management ignores the points when they need labor, but constantly threatens termination to force you to cover bad shifts: *"You're at 6.5 points, rookie. You're working Friday night or HR gets this folder."*
+    - **The Manager's Pet (Low Productivity, High Ass-Kissing):** Points miraculously "disappear" or get coded as excused manager discretion, watching slackers rack up 11.0 points without consequence.
+    - **The Indifferent Grunt (High Productivity, High Ass-Kissing):** Accumulates 8.0+ points freely while corporate looks the other way.
+    - **The Outcast (Low Productivity, Low Ass-Kissing):** The moment points tick to 5.0, Asset Protection is waiting at the time clock with a cardboard box for your locker contents (Game Over).
 * **The Core Moral / Survival Dilemmas:**
-  - Before a grueling shift: *"Your alarm blares at 5:45 AM. You worked a closing clopening shift yesterday. Your Morale is critical (12%). You have 3.0 attendance points."*
-    - `[Option A]` **Drag Yourself In:** (Morale -15%, Engagement -10%, Points +0). Unlocks shift but character enters in a daze.
-    - `[Option B]` **Call Out Sick:** (Morale +25% recovered, Points +1.0 $\rightarrow$ 4.0/5.0). Skips shift drama, but pushes player to the brink of termination.
-    - `[Option C]` **Roll in 15 Minutes Late:** (Morale +5%, Points +0.5 $\rightarrow$ 3.5/5.0). Face manager scorn at the time clock.
-  - In Act IV, corrupt supervisors weaponize this system by retroactively adding fraudulent 0.5-point tardies, putting the player at 4.5 points to force them into silence.
+  - *"Your alarm blares at 5:45 AM after a brutal clopening shift. Your Morale is critical (12%). You already sit at 4.5 points."*
+    - `[Option A]` **Drag Yourself In:** (Morale -15%, Engagement -10%, Points +0). Unlocks shift, but character enters in a sleep-deprived daze.
+    - `[Option B]` **Call Out & Test Your Luck:** (Morale +25% recovered, Points +1.0 $\rightarrow$ 5.5/5.0). Skips shift, but now you must gamble your Productivity and Ass-Kissing scores against the Store Manager's mood.
+    - `[Option C]` **Roll in Late & Bring Donuts for Management:** (Morale +0%, Points +0.5 $\rightarrow$ 5.0/5.0, Ass-Kissing +15). A tactical bribe to soften the attendance hit.
 
 ---
 

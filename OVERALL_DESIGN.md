@@ -109,17 +109,25 @@ Spanning across **Story Dialog, Mini-Games, and Boss Battles**, three persistent
 - **Narrative Trajectory:** High in Act I ("Employee of the Month hopeful"); drops as the player realizes slackers get promoted and good work is rewarded with more work ("Quiet Quitting").
 - **Gameplay Effect:** Gates high-effort actions. A player with 15% Engagement physically cannot choose *"Stay late to fix the seasonal aisle"* or *"Help the frantic customer find baking soda"*. Instead, low engagement unlocks "slacker shortcuts" (e.g., *"Hide in the fixture room"*, *"Tell customer it's out of stock without checking"*).
 
-### 3. Attendance Occurrence Tracker (The 5-Point Termination System)
+### 3. Attendance Occurrence Tracker (The 5-Point "Selective Enforcement" System)
 - **The Retail Dread Mechanic:** Inspired by strict real-world retail attendance policies (e.g., Walmart's 5-point system).
   - Tardy (10 mins late): `+0.5 points`
   - Unexcused Absence / Call-In: `+1.0 point`
   - Leaving Early: `+0.5 points`
   - "No Call, No Show": `+2.0 points`
-  - **Termination Threshold:** Hitting `5.0 points` triggers immediate termination / Game Over (Asset Protection escort to the exit).
+- **The 5.0+ Point Paradox (Hypocritical Enforcement):**
+  - Reaching **5.0 points does NOT automatically trigger immediate termination**.
+  - Instead, the corporation reviews the employee through a corrupt, two-factor evaluation:
+    1. **Productivity Score (Output/Velocity):** How much freight do they stock? How fast is their scan IPM? Can the store survive losing them?
+    2. **Ass-Kissing Score (Brown-Nosing / Compliance):** Do they attend the morning cheer? Do they laugh at the assistant manager's jokes? Do they report coworkers?
+  - **The Evaluation Outcomes at 5.0+ Points:**
+    - **High Productivity + High Ass-Kissing:** Points are quietly "cleared from the system" or perpetually ignored ("points can build to 8.5 or 12.0 without a word").
+    - **High Productivity + Low Ass-Kissing:** Management holds the points over the player's head as a weapon ("You're at 6.0 points, so you *will* work this weekend or we process your paperwork today").
+    - **Low Productivity + High Ass-Kissing:** Management protects their favorite lackey, making excuses to corporate HR.
+    - **Low Productivity + Low Ass-Kissing:** Immediate ruthless termination / Game Over.
 - **The Dilemma (Desire to Not Be There vs. Survival):**
-  - Story prompts regularly test the player's boiling point: *"You wake up at 5:30 AM with a pounding migraine. You have 3.5 points. Do you drag yourself into the store, or burn another point to sleep in?"*
-  - Using points relieves stress (recovering Morale), but edges the player closer to the lethal 5.0 boundary.
-  - In Act IV, corrupt managers deliberately tamper with attendance logs, saddling the player with surprise 0.5-point penalties to coerce compliance.
+  - Story prompts regularly test the player's boiling point: *"You wake up at 5:30 AM with a pounding migraine. You have 4.5 points. Do you drag yourself into the store, or burn another point to sleep in?"*
+  - Calling out pushes the player into the dangerous 5.0+ danger zone, where survival hinges on whether their output or sycophancy is high enough to dodge the corporate chopping block.
 
 ---
 
