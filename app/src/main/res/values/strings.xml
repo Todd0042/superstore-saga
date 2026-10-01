@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Retail Inferno</string>
+    <string name="record_audio_rationale">Retail Inferno requires microphone access to chant incantations and issue tactical party commands.</string>
+</resources>
