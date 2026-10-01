@@ -50,7 +50,39 @@ graph LR
 
 ---
 
-## 2. Department Track Storylines
+## 2. Morale, Engagement & The 5-Point Attendance Dilemma
+
+Throughout all 5 acts, narrative branches and dialogue options are dynamically gated by the character's internal psychological state and their attendance record:
+
+### A. The Morale & Engagement Descent Curve:
+* **Act I:** Morale: **90-100%** | Engagement: **90-100%**  
+  *Options:* Upbeat, eager, going the extra mile, pride in uniform.
+* **Act II:** Morale: **60-75%** | Engagement: **60-70%**  
+  *Options:* Sarcastic internal monologue, annoyance with slacker coworkers, reluctant compromise.
+* **Act III:** Morale: **40-55%** | Engagement: **35-45%**  
+  *Options:* "Quiet quitting" unlocked; high-effort options grayed out; choosing survival over perfection.
+* **Act IV:** Morale: **20-35%** | Engagement: **15-25%**  
+  *Options:* Hyper-vigilant paranoia, defensive snarls, cold refusal to comply with unwritten rules.
+* **Act V:** Morale: **5-15%** | Engagement: **0% (Pure Survival)**  
+  *Options:* Unfiltered defiance, scorched-earth truth-telling, desperate gambits to escape.
+
+### B. Attendance Occurrences (The 5-Point Execution Clock):
+* **Points Policy:**
+  - Tardy / Late Arrival: `+0.5 pts`
+  - Unexcused Call-Out / Absence: `+1.0 pt`
+  - Leaving Shift Early: `+0.5 pts`
+  - No Call, No Show: `+2.0 pts`
+  - **Termination:** `5.0 pts` = Immediate firing and Game Over.
+* **The Core Moral / Survival Dilemmas:**
+  - Before a grueling shift: *"Your alarm blares at 5:45 AM. You worked a closing clopening shift yesterday. Your Morale is critical (12%). You have 3.0 attendance points."*
+    - `[Option A]` **Drag Yourself In:** (Morale -15%, Engagement -10%, Points +0). Unlocks shift but character enters in a daze.
+    - `[Option B]` **Call Out Sick:** (Morale +25% recovered, Points +1.0 $\rightarrow$ 4.0/5.0). Skips shift drama, but pushes player to the brink of termination.
+    - `[Option C]` **Roll in 15 Minutes Late:** (Morale +5%, Points +0.5 $\rightarrow$ 3.5/5.0). Face manager scorn at the time clock.
+  - In Act IV, corrupt supervisors weaponize this system by retroactively adding fraudulent 0.5-point tardies, putting the player at 4.5 points to force them into silence.
+
+---
+
+## 3. Department Track Storylines
 
 ```mermaid
 flowchart LR
@@ -99,7 +131,7 @@ flowchart LR
 
 ---
 
-## 3. Boss Encounter Progression by Track
+## 4. Boss Encounter Progression by Track
 
 | Act | Front End Boss | Sales Floor Boss | Backroom Boss | Specialty Boss |
 |---|---|---|---|---|

@@ -84,10 +84,42 @@ flowchart TD
 * `[🛡️ DEF]` **Defensive:** *Clock Out Shield*, *Show Nametag*, *"I Just Work Here" Stance*, *Wet Floor Sign*.
 * `[✨ MANA / SANITY]` **Morale Boost:** *Employee Discount*, *Spite*, *Overtime Paycheck*.
 
-### Stat Mappings:
-* **HP** $\rightarrow$ **Patience / Sanity Meter** (Reaching 0 results in "Walking Off the Shift").
-* **Mana (MP)** $\rightarrow$ **Morale / Energy** (Fueled by caffeine, spite, and short breaks).
-* **Affinity / Element** $\rightarrow$ **Workplace Persona** (Customer-Facing, Policy-Stickler, Slacker-Immune, Industrial).
+### Battle Stats & Status Mechanics:
+* **Combat Health (HP):** Immediate combat patience during a boss encounter (reaching 0 causes the character to break down or walk away from the argument).
+* **Combat Energy (MP):** Fuel for tactical responses, policy citations, and break actions.
+* **Affinity / Element:** Workplace Persona (Customer-Facing, Policy-Stickler, Slacker-Immune, Industrial).
+
+---
+
+## 5. Persistent Meta-Meters (The Narrative HUD)
+
+Spanning across **Story Dialog, Mini-Games, and Boss Battles**, three persistent status gauges sit at the top of the screen:
+
+```
+[ ❤️ MORALE: ▓▓▓▓▓▓░░░░ 60% ]   [ ⚡ ENGAGEMENT: ▓▓▓░░░░░░░ 30% ]   [ ⚠️ OCCURRENCES: 3.5 / 5.0 ]
+```
+
+### 1. Morale Meter (Emotional Battery: 0% - 100%)
+- **What it represents:** The character's emotional resilience, mental health, and willingness to endure retail absurdity.
+- **Narrative Trajectory:** Starts at 100% in Act I; steadily eroded by peer toxicity in Act II and corporate gaslighting in Acts III–V.
+- **Gameplay Effect:** When Morale is high, the player has access to witty, patient, or de-escalating dialogue choices. When Morale is depleted (<20%), dialogue choices shift to nihilistic, cynical, or explosive outbursts.
+
+### 2. Engagement Meter (Effort & Caring: 0% - 100%)
+- **What it represents:** How much the character still buys into corporate propaganda, cares about doing a good job, and believes hard work will pay off.
+- **Narrative Trajectory:** High in Act I ("Employee of the Month hopeful"); drops as the player realizes slackers get promoted and good work is rewarded with more work ("Quiet Quitting").
+- **Gameplay Effect:** Gates high-effort actions. A player with 15% Engagement physically cannot choose *"Stay late to fix the seasonal aisle"* or *"Help the frantic customer find baking soda"*. Instead, low engagement unlocks "slacker shortcuts" (e.g., *"Hide in the fixture room"*, *"Tell customer it's out of stock without checking"*).
+
+### 3. Attendance Occurrence Tracker (The 5-Point Termination System)
+- **The Retail Dread Mechanic:** Inspired by strict real-world retail attendance policies (e.g., Walmart's 5-point system).
+  - Tardy (10 mins late): `+0.5 points`
+  - Unexcused Absence / Call-In: `+1.0 point`
+  - Leaving Early: `+0.5 points`
+  - "No Call, No Show": `+2.0 points`
+  - **Termination Threshold:** Hitting `5.0 points` triggers immediate termination / Game Over (Asset Protection escort to the exit).
+- **The Dilemma (Desire to Not Be There vs. Survival):**
+  - Story prompts regularly test the player's boiling point: *"You wake up at 5:30 AM with a pounding migraine. You have 3.5 points. Do you drag yourself into the store, or burn another point to sleep in?"*
+  - Using points relieves stress (recovering Morale), but edges the player closer to the lethal 5.0 boundary.
+  - In Act IV, corrupt managers deliberately tamper with attendance logs, saddling the player with surprise 0.5-point penalties to coerce compliance.
 
 ---
 
