@@ -1,0 +1,258 @@
+{
+  "_doc": "Master Character Image Generation Prompt Database for Retail Inferno. Contains standalone portrait prompts, compact scene injection snippets, and negative prompts for consistent asset generation across portraits and background environments.",
+  "globalStyleGuide": {
+    "lighting": "Harsh, unyielding 4000K commercial overhead industrial fluorescent tube lighting casting faint double-shadows onto high-gloss linoleum flooring. Neutral commercial suburban department store color grading, realistic 35mm photography, sharp focus, natural skin textures.",
+    "globalNegativePrompt": "cartoon, anime, 3d render, stylized illustration, fantasy armor, exaggerated proportions, disfigured, deformed fingers, extra limbs, bad anatomy, cinematic movie poster lighting, dramatic rim light, dark moody vignetting, glamour portrait, airbrushed skin, beauty filter"
+  },
+  "characters": {
+    "henderson": {
+      "id": "henderson",
+      "name": "Store Manager Henderson",
+      "title": "The Polished Politician",
+      "role": "Store General Manager",
+      "keyVisualAnchors": [
+        "electric-blue blinking Bluetooth earpiece in left ear",
+        "crisp royal blue MegaMart corporate polo tucked into razor-creased stone khakis",
+        "gleaming white orthopedic New Balance running shoes",
+        "heavy aluminum clipboard with color-coded spreadsheets clamped to it",
+        "porcelain-white veneer smile that never crinkles eyes",
+        "neatly parted gelled silver-ash hair with high receding hairline"
+      ],
+      "portraitPrompt": "Medium close-up portrait of a 46-year-old male American retail store general manager, 6'1\" tall with an athletic slender build. He has neatly parted and gelled silver-ash hair with a high receding hairline, a clean-shaven razor-sharp jawline, narrow calculating slate-gray eyes, and a wide, blindingly white porcelain veneer smile that does not reach his eyes. He is wearing a crisp royal blue corporate polo shirt with the top two buttons fastened tight and a small yellow-and-white store spark logo embroidered on the left chest, tucked into razor-creased stone-khaki chinos with a braided brown leather belt. A small, illuminated Bluetooth earpiece blinks electric-blue in his left ear. He is holding a heavy aluminum clipboard clamped with spreadsheets in one hand, smiling with corporate performative cheer directly at the camera. Photorealistic, 35mm lens, harsh 4000K commercial overhead fluorescent store lighting, subtle linoleum reflection background, natural skin pores, high detail.",
+      "sceneInjectionSnippet": "46-year-old male store manager Henderson, slender athletic build, silver-ash parted hair, wide frozen porcelain smile, wearing a royal blue corporate polo tucked into creased stone khakis, white orthopedic New Balance running shoes, an electric-blue blinking Bluetooth earpiece in his left ear, holding a silver aluminum clipboard clamped with spreadsheets."
+    },
+    "cheryl": {
+      "id": "cheryl",
+      "name": "Cheryl",
+      "title": "The Velvet Guillotine",
+      "role": "Human Resources Manager",
+      "keyVisualAnchors": [
+        "feathered 1990s strawberry-blonde bob",
+        "delicate rose-gold wireframe bifocals",
+        "pastel-pink floral knit cardigan draped over shoulders",
+        "woven rainbow fabric lanyard with retractable badge reel",
+        "crystal glass bowl filled with starlight peppermints",
+        "sweet, disarming maternal smile masking cold administrative eyes"
+      ],
+      "portraitPrompt": "Bust portrait of a 52-year-old female human resources manager in a mega-department store, 5'4\" tall with a soft maternal round build. She has shoulder-length strawberry-blonde hair styled in a feathered 1990s bob, a soft round face with rosy rouged cheeks, warm brown eyes behind delicate rose-gold wireframe bifocal reading glasses, and a sweet maternal smile. She wears a muted cream silk blouse with a high rounded collar and a soft pastel-pink floral knit cardigan draped gracefully over her shoulders. Around her neck hangs a woven rainbow fabric lanyard with a laminated badge reading 'CHERYL — PEOPLE & CULTURE LEAD' and three silver filing keys on a retractable reel. She holds a heavy cream-colored manila personnel file stamped 'CONFIDENTIAL' in one arm, with a crystal glass bowl of wrapped red-and-white starlight peppermints visible. Realistic commercial photography, 50mm portrait lens, commercial beige office fluorescent lighting, crisp details, natural skin texture.",
+      "sceneInjectionSnippet": "52-year-old female HR manager Cheryl, soft maternal build, strawberry-blonde feathered bob, rose-gold wireframe glasses, wearing a cream blouse under a pastel-pink floral cardigan draped over shoulders, rainbow fabric company lanyard, holding a cream manila personnel folder stamped CONFIDENTIAL."
+    },
+    "clint": {
+      "id": "clint",
+      "name": "Clint",
+      "title": "The Invisible Eye",
+      "role": "Security Manager (Loss Prevention)",
+      "keyVisualAnchors": [
+        "dark mirrored aviator sunglasses hooked onto polo collar",
+        "plain unbranded black moisture-wicking polo and dark tactical cargo pants",
+        "bulky black Motorola walkie-talkie with clear acoustic coiled earpiece",
+        "rugged five-o'clock shadow on square jaw",
+        "heavy tactical key ring holding 40+ brass keys and security fobs",
+        "black matte composite-toe tactical boots"
+      ],
+      "portraitPrompt": "Waist-up portrait of a 41-year-old male undercover store loss prevention manager, 5'11\" tall, broad-shouldered ex-military stocky build. He has a rugged square jaw with a prominent five-o'clock shadow, weathered leathery skin, squinting cold hazel eyes, and a dark brown buzzcut peppered with gray at the temples. He is dressed in civilian loss prevention plainclothes: a plain unbranded black moisture-wicking polo shirt, dark gray tactical cargo pants, and black composite-toe boots. Mirrored dark aviator sunglasses are hooked over the center placket of his collar. A black Motorola radio sits in a leather holster on his duty belt with a clear coiled acoustic earpiece tube running up inside his collar to his right ear. In one hand, he holds a heavy metal carabiner holding forty master brass display keys and electronic fobs. Deadpan expression, arms loosely folded, standing under cold commercial supermarket lighting, 35mm documentary realism, authentic skin pores, sharp focus.",
+      "sceneInjectionSnippet": "41-year-old male security manager Clint, stocky broad-shouldered ex-military build, dark brown buzzcut, heavy five-o'clock shadow, wearing a plain unbranded black polo with mirrored sunglasses hooked onto collar, dark gray tactical cargo pants, clear coiled acoustic earpiece tube in right ear, heavy brass key ring on belt."
+    },
+    "donna": {
+      "id": "donna",
+      "name": "Donna",
+      "title": "The Breakroom Anchor",
+      "role": "15-Year Associate / Breakroom Mentor",
+      "keyVisualAnchors": [
+        "washed-out royal blue company vest weighed down by 30+ enamel anniversary pins and smiley-face flair",
+        "silver-streaked layered chin-length bob",
+        "tortoiseshell reading glasses perched low on nose",
+        "dented vintage stainless-steel thermos of black drip coffee",
+        "rolled-up newspaper with a half-completed Sunday crossword puzzle",
+        "chewed yellow No. 2 pencil behind ear",
+        "dry, perceptive, sarcastic smirk"
+      ],
+      "portraitPrompt": "Waist-up portrait of a 58-year-old veteran female retail worker, 5'3\" tall with a sturdy, practical build. She has a chin-length layered bob of salt-and-pepper gray hair streaked with bright silver, deep observant laugh lines around perceptive hazel eyes, and tortoiseshell reading glasses perched low on the bridge of her nose. A chewed yellow No. 2 pencil is tucked behind her right ear. She wears a washed-out, faded royal blue MegaMart company vest that is completely covered with over thirty colorful enamel anniversary pins, safety star awards, and faded smiley-face buttons over a comfortable floral-print cotton blouse. In front of her sits a dented, vintage brushed stainless-steel coffee thermos and a rolled-up newspaper with a half-solved crossword puzzle. She has a dry, knowing smirk on her face, observing the room with decades of experience. Realistic photography, 50mm lens, authentic breakroom lighting, subtle linoleum scuffs in background.",
+      "sceneInjectionSnippet": "58-year-old female veteran associate Donna, sturdy build, silver-streaked bob, tortoiseshell glasses low on nose, chewed pencil behind ear, wearing a faded royal blue vest covered in 30+ enamel pins and flair over a floral blouse, holding a dented stainless-steel coffee thermos."
+    },
+    "brenda": {
+      "id": "brenda",
+      "name": "Brenda",
+      "title": "The Lane Closer",
+      "role": "Senior Cashier (Front End Peer)",
+      "keyVisualAnchors": [
+        "red plastic paddle sign reading 'LANE CLOSED — PLEASE USE NEXT REGISTER'",
+        "stiffly hairsprayed permed auburn hair",
+        "frost-blue eyeshadow and frosted pink lipstick",
+        "long acrylic french-manicure fingernails",
+        "blue MegaMart cashier smock with bulging pocket of throat lozenges",
+        "permanent downturned defensive scowl"
+      ],
+      "portraitPrompt": "Bust portrait of a 48-year-old female senior supermarket cashier, 5'5\" tall with a wide, imposing build. She has heavily hairsprayed, voluminous permed auburn-red hair, thin over-plucked eyebrows drawn in with dark brown pencil, frost-blue eyeshadow on her eyelids, and frosted pale pink lipstick on a permanent downturned defensive scowl. She wears a standard royal blue MegaMart front-end smock buttoned all the way up, with pockets visibly bulging with packs of throat lozenges and crumpled tissues, over a striped turtleneck. Her hands feature long, sharp acrylic french-manicure fingernails. In her right hand, she grips a red plastic paddle sign that reads 'LANE CLOSED — PLEASE USE NEXT REGISTER'. Defiant, challenging gaze directly at the camera, harsh checkout register fluorescent lights, 35mm authentic retail realism, crisp details.",
+      "sceneInjectionSnippet": "48-year-old female senior cashier Brenda, wide imposing build, voluminous permed auburn hair, frosted blue eyeshadow, wearing a buttoned blue cashier smock, long french-manicure acrylic nails, holding a red plastic paddle sign reading LANE CLOSED."
+    },
+    "kyle": {
+      "id": "kyle",
+      "name": "Kyle",
+      "title": "The Vape-Cloud Deserter",
+      "role": "Sales Floor Stocker (Sales Floor Peer)",
+      "keyVisualAnchors": [
+        "backward black beanie with shaggy dirty-blonde mop hair peeking out",
+        "oversized neon-yellow safety vest hanging crookedly off one shoulder",
+        "baggy faded graphic skate hoodie worn under vest",
+        "white wired earbuds hanging around neck with one bud in left ear",
+        "black pod vape peeking out of chest pocket with faint synthetic vapor",
+        "sleepy, hooded adolescent eyes and patchy chin scruff"
+      ],
+      "portraitPrompt": "Medium waist-up portrait of a 21-year-old male grocery stocker, 5'10\" tall, skinny and lanky with a heavy slouch. He has shaggy dirty-blonde hair peeking out from beneath a backward black ribbed knit beanie, sleepy hooded blue-green eyes with faint dark circles, pale skin, and sparse patchy adolescent chin scruff. He wears an oversized, neon-yellow reflective safety vest hanging crookedly off his right shoulder over a faded, baggy charcoal-gray graphic skate hoodie and distressed black denim jeans. White wired earbuds hang around his collar, with the left earbud in his ear. The silver tip of a compact black pod vape peeks out of his hoodie pocket with a faint faint wisp of synthetic vapor rising. Slouching posture, hands jammed into hoodie pockets, bored detached expression. Supermarket aisle background with shelves of boxed goods, authentic fluorescent lighting, 50mm lens, natural film grain.",
+      "sceneInjectionSnippet": "21-year-old male stocker Kyle, lanky slouched build, backward black beanie with dirty-blonde hair, sleepy hooded eyes, wearing an oversized crooked neon-yellow safety vest over a baggy gray hoodie, white wired earbuds around neck, pod vape in pocket."
+    },
+    "derrick": {
+      "id": "derrick",
+      "name": "Derrick",
+      "title": "The Phantom Unloader",
+      "role": "Forklift Operator (Backroom Peer)",
+      "keyVisualAnchors": [
+        "clean shaved bald head with a neatly groomed dark chinstrap beard",
+        "high-visibility safety-orange sleeveless muscle shirt",
+        "heavy canvas work pants with reinforced leather tool loops",
+        "heavy brass reach-truck ignition keys hanging from carabiner on belt loop",
+        "stiff yellow cowhide leather work gloves tucked in back pocket",
+        "broad muscular 6'2\" build with confident, easygoing grin"
+      ],
+      "portraitPrompt": "Waist-up portrait of a 31-year-old male African-American heavy forklift operator, 6'2\" tall with a broad, powerful muscular build. He has a clean shaved bald head, warm dark brown skin, deep kind eyes, and a neatly groomed dark chinstrap beard surrounding a confident, easygoing grin. He wears a high-visibility safety-orange sleeveless muscle tee showing muscular arms, heavy charcoal canvas cargo work pants with reinforced tool loops, and scuffed black steel-toe boots. A heavy brass ignition key ring for a Crown forklift dangles from a heavy climbing carabiner on his right belt loop, and stiff yellow cowhide leather work gloves are tucked into his rear waistband. He stands confidently with one hand resting on his hip, background showing warehouse high-bay pallet racking and yellow reach-truck steel. Warehouse commercial lighting, 35mm lens, sharp focus, natural skin highlights.",
+      "sceneInjectionSnippet": "31-year-old male forklift operator Derrick, 6'2\" broad muscular African-American man, shaved bald head with neat chinstrap beard, wide easygoing grin, wearing a safety-orange sleeveless muscle shirt, canvas work pants, brass forklift keys on carabiner on belt loop."
+    },
+    "chad": {
+      "id": "chad",
+      "name": "Chad",
+      "title": "The Credit Poacher",
+      "role": "Specialty Sales Associate (Specialty Peer)",
+      "keyVisualAnchors": [
+        "textured quiff hairstyle held by heavy matte styling clay",
+        "snug-fitting black MegaMart specialist polo unbuttoned to mid-chest",
+        "skinny black tailored chinos with sockless brown leather boat loafers",
+        "gold stylus pen tucked in chest pocket",
+        "clipboard holding glossy 29.99% APR store credit card applications",
+        "smug, confident, self-absorbed sales smile"
+      ],
+      "portraitPrompt": "Waist-up portrait of a 23-year-old male electronics department specialist, 5'11\" tall, slender athletic build. He has clear tanned skin, bright blue eyes, a smug symmetrical face, and a modern textured quiff hairstyle styled with heavy matte pomade clay. He wears a snug-fitting black MegaMart specialty polo shirt unbuttoned to mid-chest, revealing a faint gold chain, and cropped skinny black chinos worn without socks into polished brown leather boat loafers. A gold capacitive stylus pen is tucked in his breast pocket next to a name badge reading 'CHAD — TECHNOLOGY EXPERT'. In his hand, he holds a glossy color brochure for high-interest 29.99% APR store credit cards with an application form clipped on top. Leaning smugly with one hip cocked against a polished glass display showcase, high-end electronics showroom background with glowing blue LED TV display wall. 50mm portrait lens, commercial lighting, crisp details.",
+      "sceneInjectionSnippet": "23-year-old male specialty associate Chad, slender athletic build, pomade quiff hair, smug expression, wearing a tight black polo unbuttoned to mid-chest, skinny black chinos, holding a clipboard with glossy 29.99% APR credit card applications."
+    },
+    "marsha": {
+      "id": "marsha",
+      "name": "Front End Manager Marsha",
+      "title": "The Panic-Button Queen",
+      "role": "Front End Area Manager",
+      "keyVisualAnchors": [
+        "messy dark brown claw-clip bun with stray strands clinging to sweat at temples",
+        "giant 32-oz pastel thermal tumbler of diet soda gripped in hand",
+        "spiral coiled wrist key bracelet holding register till keys",
+        "wide, frantic hazel eyes with dark exhaustion circles",
+        "yellow supervisor armband around left bicep over blue company vest"
+      ],
+      "portraitPrompt": "Bust portrait of a 38-year-old female retail front-end department manager, 5'6\" tall with a gaunt, tense wiry build. She has wide, frantic hazel eyes with deep dark circles of exhaustion, pale skin with flushed red cheeks, and wispy dark brown hair pulled up into a messy, fraying plastic claw-clip bun with stray sweat-damp strands sticking to her temples. She wears a royal blue polyester company vest over a rumpled black long-sleeve cotton tee, with a bright yellow supervisor band around her left bicep. On her right wrist is a bright purple spiral telephone-cord key bracelet holding three brass cash drawer keys. In her left hand, she grips a massive 32-oz pastel pink insulated tumbler filled with diet soda and crushed ice. High-stress expression, mouth slightly open as if about to page over the radio, front registers and long customer lines blurred in background. Realistic commercial lighting, 35mm lens, sharp authentic details.",
+      "sceneInjectionSnippet": "38-year-old female Front End Manager Marsha, wiry tense build, messy claw-clip dark hair bun with stray wisps, frantic wide eyes with dark circles, wearing a blue vest with yellow supervisor armband, spiral key bracelet on wrist, holding a 32-oz pastel soda tumbler."
+    },
+    "todd": {
+      "id": "todd",
+      "name": "Sales Floor Manager Todd",
+      "title": "The Metric Drill Sergeant",
+      "role": "Sales Floor Area Manager",
+      "keyVisualAnchors": [
+        "ruggedized 10-inch Android tablet strapped to left forearm in thick rubber case",
+        "digital sports stopwatch on black lanyard around neck",
+        "aggressively trimmed brown goatee on square cleft chin",
+        "snug corporate navy golf polo hugging muscular biceps",
+        "hands planted on hips with elbows flared in dominant stance"
+      ],
+      "portraitPrompt": "Medium waist-up portrait of a 34-year-old male sales floor area manager, 6'0\" tall, thick athletic build like a former varsity football coach. He has a square cleft chin, ruddy sun-exposed complexion, piercing cold blue eyes under a heavy brow, an aggressively trimmed brown goatee, and a tight high-and-tight crew cut with shaved sides. He wears a snug-fitting corporate navy blue performance polo shirt that hugs his biceps, flat-front khaki chinos, and a thick black tactical nylon belt. Strapped securely to his left forearm is a heavy-duty ruggedized 10-inch industrial Android tablet in a thick black rubber case with a barcode scan trigger. Hanging from his neck on a black nylon cord is a digital sports stopwatch. He stands with his chest puffed and hands on hips in an aggressive coaching stance, supermarket grocery aisle with steel shelving in the background. Bright fluorescent lighting, 50mm lens, sharp focus, natural skin texture.",
+      "sceneInjectionSnippet": "34-year-old male Sales Floor Manager Todd, athletic coach build, crew cut, trimmed goatee, wearing a snug navy polo and khakis, ruggedized 10-inch tablet strapped to left forearm, digital sports stopwatch hanging around neck, hands on hips."
+    },
+    "mack": {
+      "id": "mack",
+      "name": "Backroom Manager Mack",
+      "title": "The Exhausted Veteran",
+      "role": "Backroom Receiving Area Manager",
+      "keyVisualAnchors": [
+        "heavy black elasticized lumbar back-support brace worn over pocket tee",
+        "faded yellow baseball cap with sweat-stained brim pulled low",
+        "battered brown Red Wing steel-toe work boots with scuffed steel caps",
+        "rugged salt-and-pepper full beard and weathered bloodshot eyes",
+        "heavy folding utility knife clipped to pocket"
+      ],
+      "portraitPrompt": "Waist-up portrait of a 56-year-old male loading dock receiving manager, 5'9\" tall with a heavy-set, barrel-chested build and slightly rounded shoulders from decades of manual freight labor. He has deep forehead creases, tired bloodshot brown eyes under bushy graying eyebrows, and a rugged, thick salt-and-pepper beard. He wears a faded oil-stained heather-gray pocket tee underneath a heavy black elasticized industrial back-support brace with adjustable shoulder suspenders. He wears grease-smudged Carhartt canvas work pants and battered brown leather steel-toe boots with raw steel caps exposed. A sweat-stained faded yellow trucker baseball cap is pulled low over his forehead. He leans with heavy exhaustion against an industrial shipping desk in a warehouse receiving dock, with high-bay steel racking and roll-up loading bay doors in the background. Industrial dock lighting, 35mm lens, gritty authentic realism.",
+      "sceneInjectionSnippet": "56-year-old male Backroom Manager Mack, heavy barrel-chested build, salt-and-pepper beard, weary eyes, wearing a faded gray tee under a black industrial back-support brace, sweat-stained yellow cap, grease-smudged Carhartt work pants, leaning on pallet rack."
+    },
+    "julian": {
+      "id": "julian",
+      "name": "Specialty Manager Julian",
+      "title": "The Commission Hawk",
+      "role": "Specialty Counter Area Manager",
+      "keyVisualAnchors": [
+        "slicked-back jet-black hair with wet-shine pomade finish",
+        "tailored charcoal suit vest over slim-fit black dress shirt with rolled cuffs",
+        "shiny faux-gold chronograph watch on wrist",
+        "sleek gold capacitive stylus pen tucked behind right ear",
+        "fingers steepled in front of chest with calculating, haughty smirk"
+      ],
+      "portraitPrompt": "Medium close-up portrait of a 29-year-old male specialty department manager, 5'10\" tall with a lean, sharp build. He has an angular jawline with manicured dark five-day designer stubble, calculating narrow dark eyes, and jet-black hair slicked back tightly with a wet-shine pomade finish. He wears an immaculate tailored charcoal-gray suit vest with a black satin back over a slim-fit black dress shirt with sleeves rolled up precisely two turns, revealing a large shiny faux-gold chronograph wristwatch. A sleek gold capacitive stylus pen is tucked behind his right ear. He stands with his fingers steepled in front of his chest, wearing a subtle, arrogant smirk as if evaluating an executive takeover. Background shows a polished electronics showroom with glass jewelry and camera showcases illuminated by sleek down-spotlights. 50mm portrait lens, commercial showroom lighting, sharp crisp highlights.",
+      "sceneInjectionSnippet": "29-year-old male Specialty Manager Julian, lean sharp build, slicked-back pomade hair, manicured stubble, wearing a tailored charcoal suit vest over a black dress shirt with rolled cuffs, gold watch, gold stylus behind ear, fingers steepled in calculating stance."
+    },
+    "player_cashier": {
+      "id": "player_cashier",
+      "name": "Player Associate (Front End Cashier)",
+      "title": "Front-End Cashier Track",
+      "role": "Front End Cashier Protagonist",
+      "keyVisualAnchors": [
+        "standard royal blue MegaMart cashier smock with brass snap buttons",
+        "laminated employee name badge clipped to left chest: 'ASSOCIATE #1042-882'",
+        "ergonomic black wrist brace on scanning hand",
+        "roll of 58mm thermal receipt paper tucked in right apron pocket",
+        "attentive, slightly weary customer-facing posture"
+      ],
+      "portraitPrompt": "Medium waist-up portrait of a young retail cashier associate, gender-neutral, 22 years old, slender practical build. Wearing a standard royal blue polyester MegaMart cashier smock with brass snap buttons over a plain white t-shirt and dark denim jeans. A laminated white-and-yellow company name badge reading 'ASSOCIATE #1042-882' is clipped to the left breast pocket. On their right wrist is a black breathable neoprene ergonomic wrist support brace for barcode scanning. A fresh spare roll of white thermal receipt paper peeks out from the wide front kangaroo pocket of the smock. Stood behind a modern electronic checkout register belt with an optical flatbed glass scanner, ready to assist customers. Realistic commercial retail lighting, 50mm lens, natural skin tones, documentary authenticity.",
+      "sceneInjectionSnippet": "Young associate in royal blue MegaMart cashier smock with brass snap buttons, white-and-yellow company badge #1042-882 on chest, black ergonomic wrist brace on right hand, roll of receipt paper in smock pocket, standing behind checkout register."
+    },
+    "player_stocker": {
+      "id": "player_stocker",
+      "name": "Player Associate (Sales Floor Stocker)",
+      "title": "Sales Floor Merchandiser Track",
+      "role": "Sales Floor Stocker Protagonist",
+      "keyVisualAnchors": [
+        "neon safety-yellow MegaMart reflective vest worn over dark pocket t-shirt",
+        "retractable safety box cutter holster clipped to right belt loop",
+        "dull-green canvas work apron with pockets holding shelf label pegs",
+        "comfortable black steel-toe sneakers with scuffed rubber toes",
+        "determined, pragmatic working stance"
+      ],
+      "portraitPrompt": "Medium waist-up portrait of a young sales floor grocery stocker associate, gender-neutral, 24 years old, athletic practical build. Wearing an open neon-yellow high-visibility safety vest with silver reflective stripes over a dark gray pocket crewneck t-shirt and rugged khaki work pants. A sturdy black nylon holster holding an orange ergonomic safety box cutter is clipped to their belt loop, with a coiled lanyard securing the knife. Their work apron pocket holds plastic shelf label strips and a price-gun labeler. Standing in a bright grocery aisle beside an iron flatbed U-boat cart stacked high with brown cardboard boxes of canned goods. Authentic 4000K supermarket fluorescent lighting, 35mm lens, natural skin texture, realistic retail environment.",
+      "sceneInjectionSnippet": "Young associate in neon-yellow reflective safety vest over dark gray t-shirt, orange safety box cutter in belt holster with coiled cord, khaki work pants, standing beside a loaded flatbed cart in a supermarket grocery aisle."
+    },
+    "player_unloader": {
+      "id": "player_unloader",
+      "name": "Player Associate (Backroom Freight Unloader)",
+      "title": "Backroom Unloader Track",
+      "role": "Backroom Unloader Protagonist",
+      "keyVisualAnchors": [
+        "heavy elastic black lumbar support back brace over sweat-wicking gray athletic tee",
+        "heavy-duty synthetic abrasion-resistant work gloves with rubberized palms",
+        "scuffed composite-toe warehouse work boots with yellow stitching",
+        "roll of clear industrial stretch wrap tucked under arm",
+        "sweaty, grounded, athletic freight-hauler posture"
+      ],
+      "portraitPrompt": "Medium waist-up portrait of a young freight unloader associate, gender-neutral, 25 years old, broad-shouldered muscular build with faint sweat at the temples. Wearing a breathable heather-gray athletic crewneck shirt under a heavy black elasticized lumbar back-support brace with adjustable shoulder straps. Wearing dark navy canvas work pants with reinforced double-knees and heavy black composite-toe safety boots. Heavy-duty black-and-yellow rubberized grip work gloves are worn on both hands. Tucked under their arm is a heavy cardboard core of clear plastic shrink-wrap film. Standing on a concrete loading dock warehouse floor in front of towering 20-foot steel pallet racks stacked with shrink-wrapped pallets. Warehouse lighting, 35mm documentary photography, sharp industrial details.",
+      "sceneInjectionSnippet": "Young associate in black elasticized back-support brace over heather-gray shirt, rubberized black-and-yellow work gloves, holding a roll of stretch shrink-wrap under arm, standing on a concrete warehouse loading dock."
+    },
+    "player_specialist": {
+      "id": "player_specialist",
+      "name": "Player Associate (Specialty Sales Specialist)",
+      "title": "Specialty Counter Specialist Track",
+      "role": "Specialty Sales Protagonist",
+      "keyVisualAnchors": [
+        "tailored black MegaMart specialist polo shirt with crisp embroidered collar",
+        "retractable brass key reel on right hip holding glass showcase keys",
+        "clean black microfiber cloth tucked into breast pocket for polishing screens",
+        "laminated gold-bordered badge reading 'SPECIALIST ASSOCIATE #1042-882'",
+        "polished, knowledgeable customer service posture"
+      ],
+      "portraitPrompt": "Medium waist-up portrait of a young specialty sales associate, gender-neutral, 23 years old, clean-cut professional build. Wearing a crisp, tailored black short-sleeve polo shirt with an embroidered yellow spark logo on the collar, paired with tailored dark gray flat-front slacks. Clipped to their right belt loop is a heavy-duty chrome retractable reel holding three brass keys for glass display cabinets. Tucked into their front pocket is a clean black microfiber cloth used for wiping fingerprint smudges off glass display cases and smartphone screens. A laminated gold-bordered nametag reading 'SPECIALIST ASSOCIATE #1042-882' is pinned neatly over the chest. Standing behind an illuminated glass electronics showcase displaying digital cameras and smartphones. Showroom spotlighting, 50mm portrait lens, crisp reflections on glass, professional demeanor.",
+      "sceneInjectionSnippet": "Young associate in tailored black polo shirt, gold-bordered specialist badge #1042-882, chrome retractable key reel on hip holding brass cabinet keys, black microfiber cloth in pocket, standing behind an illuminated glass electronics showcase."
+    }
+  }
+}
