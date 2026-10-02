@@ -235,26 +235,125 @@ The descent into surreal retail horror as the building itself seems to enforce c
 
 ---
 
-## 7. Integration Matrix (Event Triggering)
+## 7. Multi-Perspective Incident Framework (The 360° Retail Narrative)
 
-| Event Name | Applicable Departments | Target Act | Primary Stat Tested | Primary Antagonist |
-|---|---|---|---|---|
-| **Phantom Bathroom** | Front End, Backroom | Act II | Morale vs. Peer Standing | Kyle / Derrick |
-| **Plugging Discovery** | Sales Floor | Act II | Time vs. Ass-Kissing | Kyle |
-| **Pallet Jack War** | Backroom, Sales Floor | Act II | Physical Stamina vs. Slacker Bias | Derrick |
-| **Commission Poach** | Specialty | Act II | Morale vs. Assertiveness | Chad |
-| **Shift-Swap Flake** | All Departments | Act II | Attendance vs. Morale | Peer Coworkers |
-| **Microwave Biohazard** | All Departments | Act II | Ass-Kissing vs. Disgust | Cheryl / Peers |
-| **Pizza Party Crusts** | All Departments | Act III | Morale vs. Cynicism | Henderson |
-| **IPM Speed-Clock** | Front End | Act III | Speed vs. Customer Care | Marsha / Algorithm |
-| **10-Foot Greeter Rule** | Sales Floor | Act III | Stamina vs. Multitasking | Todd |
-| **Bathroom Audit** | All Departments | Act III | Dignity vs. Compliance | Todd |
-| **Code Spark Crisis** | Sales Floor, Backroom | Act III | Loyalty vs. Self-Preservation | Marsha |
-| **Expired Coupon War** | Front End, Specialty | Act I–III | Patience vs. Policy | Extreme Customers |
-| **Hazardous Return** | Front End, Specialty | Act II–III | Policy vs. Cowardice | Extreme Customers |
-| **Sweethearting Frame** | Front End | Act IV | Paranoia vs. Evidence Gathering | Clint & Brenda |
-| **Bay 4 Phantom Drop** | Backroom | Act IV | Morale vs. Complicity | Mack & Henderson |
-| **Planted Locker Raid** | Specialty, Sales Floor | Act IV | Defiance vs. False Confession | Clint & Chad |
-| **Shifting Aisles** | All Departments | Act V | Navigation vs. Dread | The Store Geometry |
-| **Intercom Broadcast** | All Departments | Act V | Sanity vs. Isolation | The Corporate System |
-| **Rogue Floor Scrubber** | All Departments | Act V | Reflexes vs. Environmental Hazard | Industrial Machinery |
+A core innovation of *Retail Inferno* is that major contentious events unfold across all four storylines, but each department experiences the event from a completely different vantage point. Depending on which story track the player is running:
+* One track is the **Direct Cause / Perpetrator** (forced by their manager or circumstances).
+* One track is the **Direct Victim** (bears the brunt of the work dumping or fallout).
+* One track is the **Radio / Intercom Bystander** (overhears the real-time fallout).
+* One track hears the **Breakroom / Smoking Patio Rumor Mill** (learns about it second-hand).
+
+```mermaid
+flowchart TD
+    Event["CONTENTIOUS INCIDENT<br/>(e.g., The 10:55 PM Pallet Drop)"]
+    
+    Event --> FE["Track A: Front End<br/>OVERHEARS CUSTOMER COMPLAINTS"]
+    Event --> SF["Track B: Sales Floor<br/>THE DIRECT VICTIM (TRAPPED FOR AN HOUR)"]
+    Event --> BR["Track C: Backroom<br/>THE CAUSE (FORCED BY MACK TO DROP IT)"]
+    Event --> SP["Track D: Specialty<br/>SEES CLINT'S BULLETIN BOARD INVESTIGATION"]
+```
+
+---
+
+### A. Peer-Level Multi-Perspective Incidents
+
+#### Incident P-1: The "Code Spark" Register Mutiny
+*A Saturday afternoon rush floods the checkout lanes, backing lines through apparel.*
+* **Front End Perspective (The Cause / Desperation):** Customers scream; register receipt tape jams; Front End Manager Marsha hyperventilates. You plead for backup. When Floor stockers finally arrive, they scowl and bag items with passive-aggressive slowness.
+* **Sales Floor Perspective (The Direct Victim):** You are 15 boxes away from hitting your freight quota. Todd barks: *"Drop your box cutter, run to register 3!"* You spend an hour scanning groceries with unfamiliar produce codes. At 4:00 PM, Todd screams at you for failing your aisle freight quota.
+* **Backroom Perspective (The Radio Bystander):** Walkie-talkie channel 1 crackles with screaming between Marsha and Todd. Derrick turns off his radio with a grin and rolls down the loading bay door so the dock crew can pretend they were out of range.
+* **Specialty Perspective (The Breakroom Rumor / Snob):** Your polo uniform exempts you from register relief because "counter coverage must be maintained." You watch stockers sprint past your display case. In the breakroom later, Donna tells you: *"Brenda threw a carton of eggs at a new stocker who wouldn't bag fast enough."*
+
+#### Incident P-2: The 10:55 PM Pallet Drop
+*A leaning, 7-foot pallet of bulk charcoal and pet food is abandoned in a freshly cleaned aisle 5 minutes before closing.*
+* **Backroom Perspective (The Cause / Coerced Labor):** Backroom Manager Mack panics because the regional safety inspector arrives at midnight and the loading dock floor must be empty. He orders you: *"Take this 2,000-lb pallet to Aisle 12 right now, drop it, and don't look back."* It's either drop it or take a disciplinary coaching.
+* **Sales Floor Perspective (The Direct Victim):** You spent 45 minutes on your hands and knees making Aisle 12 immaculate. At 10:54 PM, a backroom unloader drops an unstable, crooked mountain of dog food right in front of your endcap, gives an apologetic shrug, and sprints for the time clock. You are trapped for another hour.
+* **Front End Perspective (The Bystander / Collateral Damage):** At 10:58 PM, an irate customer in an electric cart rolls up screaming that an obstacle course in Aisle 12 almost flipped their scooter into pasta sauce. You have to call Marsha to give them a \$20 gift card.
+* **Specialty Perspective (The Rumor Mill / Investigation):** Next morning on the bulletin board, Security Manager Clint has posted a printed CCTV still of the dropped pallet labeled: *"UNAUTHORIZED OBSTRUCTION INCIDENT — SURVEILLANCE UNDER REVIEW."* Chad whispers by the coffee maker: *"Word is, Mack made a rookie drop that to hide broken freight."*
+
+#### Incident P-3: The Stash in Fitting Room 3
+*Two shopping carts overflowing with damaged freight, expired yogurts, and crushed seasonal goods are found locked behind apparel curtains.*
+* **Sales Floor Perspective (The Cause / Cornered Slacker):** Todd gave an impossible deadline: unworked boxes at 11:00 PM mean automatic write-ups. Kyle tells you: *"Wheel the cart into Fitting Room 3, pull the curtain, and latch it with a paperclip. Overnight won't find it until Monday."* You make the desperate choice to stash it to survive the night.
+* **Specialty / Counter Perspective (The Direct Victim):** Your department covers adjacent high-ticket apparel. On Monday, a foul stench emanates from Fitting Room 3. When HR Manager Cheryl opens the door, leaking warm yogurt and crushed electronics spill out. Cheryl turns to you: *"Since this is in your zone, you're responsible for hazardous waste sanitation and shrink logging."*
+* **Backroom Perspective (The Clean-Up Bystander):** Paged to bring a flatbed to the fitting rooms, you find Specialty and Sales Floor managers in a screaming match. Derrick leans on your flatbed eating sunflower seeds: *"I told 'em Kyle was stashing freight in there three weeks ago. Nobody listens to dock boys."*
+* **Front End Perspective (The Rumor Mill / The Legend):** Customer service desk abuzz with gossip. Donna tells the cashiers: *"They found an entire ecosystem in Fitting Room 3. Legend says there was a rotisserie chicken from Thanksgiving living in there."*
+
+---
+
+### B. Management-Level Multi-Perspective Incidents (Reporting & Snitching)
+
+While peer events revolve around work dumping, management events revolve around **reporting infractions up the chain** (whistleblowing, Open Door complaints, safety audits, metric cheating). The store fractures along ideological lines:
+
+```mermaid
+flowchart TD
+    Report["MANAGEMENT REPORT / WHISTLEBLOWING<br/>(e.g., Reporting Broken Equipment, Time Theft, or Safety Violations)"]
+    
+    Report --> Role1["Track A (The Reporter / Snitch)<br/>TOLD MANAGEMENT TO GAIN FAVOR OR SURVIVE"]
+    Report --> Role2["Track B (The Direct Target / Collateral Damage)<br/>HIT WITH HARSH AUDITS, NEW RESTRICTIONS, OR LOST PRIVILEGES"]
+    Report --> Role3["Track C (The Rule-Stickler Sycophant)<br/>AGREES WITH REPORT: 'FINALLY, SOME LAW AND ORDER!'"]
+    Report --> Role4["Track D (The Resentful Loyalist)<br/>DISGUSTED BY SNITCHING: 'UNWRITTEN RULE BROKEN, NOBODY TALKS TO COPS'"]
+```
+
+#### Incident M-1: The "Uncertified Forklift" Whistleblower
+*An uncertified associate operates heavy machinery to retrieve top-stock freight.*
+* **Sales Floor Perspective (The Reporter):** An uncertified worker nearly drops an 800-lb pallet of air conditioners on your head in Aisle 8. Terrified for your physical safety, you report the near-miss to Sales Floor Manager Todd. Todd storms into Store Manager Henderson's office. (You gain +20 Safety Ass-Kissing, but trigger a storewide lockdown).
+* **Backroom Perspective (The Collateral Victim):** Security Manager Clint arrives with bolt cutters, seizing all forklift ignitions. Backroom Manager Mack is beside himself with fury: *"Some snitch on the sales floor squealed about machinery certification! Now corporate revoked our power equipment permits. Every unloader is hand-carrying 50-lb boxes down 12-foot rolling ladders for two weeks!"* You are forced into brutal manual labor because someone ran to management.
+* **Specialty Perspective (The Agreeing Sycophant):** Specialty Manager Julian praises the report in your huddle: *"Finally, someone is taking compliance seriously. Uncertified machinery ruins inventory margins and creates liabilities. The person who reported that deserves employee of the month."*
+* **Front End Perspective (The Bitter Peer / Disgusted by Snitching):** Register receipt paper and bags stop arriving because stockers can't use equipment to fetch bulk pallets. Senior Cashier Brenda scoffs by the time clock: *"Some little teacher's pet ran crying to Todd about a forklift. Now my registers are out of tape and customers are yelling at me. Whoever snitched needs their tires slashed in the parking lot."*
+
+#### Incident M-2: The "Phone in the Bathroom" Audit Leak
+*An associate reports to HR Manager Cheryl that employees are vanishing into the family restroom for 40 minutes to play mobile games.*
+* **Front End Perspective (The Reporter / Exhausted Cashier):** Running Register 2 alone for three hours with a line stretching past greeting cards while two cashiers claimed they were "using the restroom," you break down in tears to HR Manager Cheryl: *"Nobody is working; they're all hiding in the family bathroom on their phones!"* Cheryl smiles sweetly: *"Thank you for your transparency, sweetie. I will handle this."*
+* **Sales Floor Perspective (The Collateral Victim):** You have an urgent stomach bug. You rush to the family bathroom, only to find a heavy plastic clipboard bolted to the door: *"MANDATORY BIOLOGICAL OCCUPANCY LOG: RECORD EMPLOYEE ID, ENTRY TIME, EXIT TIME, AND REASON FOR VISIT."* Sales Floor Manager Todd stands outside with a stopwatch: *"ID number, associate? Clock is ticking."*
+* **Backroom Perspective (The Bitter Rebel / Snitch Outrage):** The family restroom was the dock crew's sacred refuge—the only room with no cameras where an unloader could sit for 5 minutes after moving 10 tons of freight. Derrick gathers the unloader crew: *"Management put a lock on the head because some corporate rat couldn't handle ringing groceries. Find out who talked to Cheryl. Nobody shares a pallet jack with that register crew ever again."*
+* **Specialty Perspective (The Cold Corporate Agreement):** Specialty Manager Julian reviews the new bathroom policy with a smirk: *"Good. Time theft is direct profit theft. If you're on the clock, your body belongs to MegaMart. Anyone complaining about signing a logbook has something to hide."*
+
+#### Incident M-3: The "Marked-Down Bakery Cake" Scam Exposure
+*Associates secretly slap 90% off clearance stickers onto expensive bakery cakes and deli platters, then buy them at 10:59 PM.*
+* **Specialty / Deli Perspective (The Reporter):** You spend four hours decorating custom sheet cakes. At closing, you catch Chad and a stocker sliding a 75-cent markdown barcode over a \$45 black forest gateau. Furious that your artisan labor is being stolen for pennies, you hand the swapped barcode directly to Security Manager Clint.
+* **Front End Perspective (The Collateral Victim / The Scanning Bottleneck):** Security Manager Clint issues an emergency directive: *"Every single yellow clearance sticker must be manually cross-referenced against the internal database before ringing."* Now, every time an impoverished customer or employee buys a 50-cent bruised banana, your register freezes for an override. Lines balloon, IPM speed scores plummet, and cashiers take the heat for the audit bottleneck.
+* **Sales Floor Perspective (The Disgusted Peer):** Cheap, marked-down bakery items were the only way night-shift stockers making \$13/hour could afford dinner. Kyle grumbles in the breakroom: *"Some high-and-mighty specialty clerk snitched on the cake stickers to look good for Clint. Management throws out 40 pounds of food every night into the locked dumpster, but God forbid an associate eats a discounted croissant. Corporate bootlicker."*
+* **Backroom Perspective (The Cynical Agreement):** Backroom Manager Mack grunts at the news during the huddle: *"Good. I'm sick of finding half-eaten discounted cakes smeared on my conveyor rollers. You want food, buy it with your paycheck like the rest of us and get back to the truck."*
+
+---
+
+### C. Structural Mechanics: The "Snitch vs. Solidarity" Dynamic
+
+When management reporting options appear, the game evaluates a hidden reputation balance: **Peer Solidarity vs. Management Favor**:
+
+| Player Action | Management Impact | Peer Standing | Gameplay Consequence |
+|---|---|---|---|
+| **Report to Manager / Snitch** | Ass-Kissing `+20`<br>Manager Favor `+15` | Peer Trust `-30`<br>Tagged `#COMPANY_RAT` | Managers award preferred scheduling and look the other way on attendance points, but peers refuse to help lift heavy items, hide equipment from you, and turn silent when you enter the breakroom. |
+| **Keep Quiet / Solidarity** | Ass-Kissing `-15`<br>Risk of Audit Complicity | Peer Trust `+25`<br>Tagged `#ONE_OF_US` | Peers warn you when managers approach, share smuggled breakroom snacks, and loan working pallet jacks—but managers scrutinize your metrics and write you up faster. |
+
+---
+
+## 8. Integration Matrix (Event Triggering)
+
+| Event Name | Applicable Departments | Target Act | Primary Stat Tested | Primary Antagonist | Event Type |
+|---|---|---|---|---|---|
+| **Phantom Bathroom** | Front End, Backroom | Act II | Morale vs. Peer Standing | Kyle / Derrick | Peer Conflict |
+| **Plugging Discovery** | Sales Floor | Act II | Time vs. Ass-Kissing | Kyle | Peer Conflict |
+| **Pallet Jack War** | Backroom, Sales Floor | Act II | Stamina vs. Slacker Bias | Derrick | Peer Conflict |
+| **Commission Poach** | Specialty | Act II | Morale vs. Assertiveness | Chad | Peer Conflict |
+| **Shift-Swap Flake** | All Departments | Act II | Attendance vs. Morale | Peer Coworkers | Peer Conflict |
+| **Microwave Biohazard** | All Departments | Act II | Ass-Kissing vs. Disgust | Cheryl / Peers | Breakroom Conflict |
+| **Pizza Party Crusts** | All Departments | Act III | Morale vs. Cynicism | Henderson | Corporate Conflict |
+| **IPM Speed-Clock** | Front End | Act III | Speed vs. Customer Care | Marsha / Algorithm | Micromanagement |
+| **10-Foot Greeter Rule** | Sales Floor | Act III | Stamina vs. Multitasking | Todd | Micromanagement |
+| **Bathroom Audit** | All Departments | Act III | Dignity vs. Compliance | Todd | Micromanagement |
+| **Code Spark Mutiny** | All 4 Tracks | Act II–III | Department Loyalty vs. Speed | Marsha & Todd | **Multi-Perspective (Peer)** |
+| **10:55 PM Pallet Drop** | All 4 Tracks | Act II–III | Coercion vs. Fatigue | Mack & Todd | **Multi-Perspective (Peer)** |
+| **Fitting Room 3 Stash** | All 4 Tracks | Act II–III | Desperation vs. Sanitation | Kyle & Cheryl | **Multi-Perspective (Peer)** |
+| **Forklift Whistleblower**| All 4 Tracks | Act III | Safety vs. Physical Labor | Clint & Mack | **Multi-Perspective (Management)** |
+| **Bathroom Audit Leak** | All 4 Tracks | Act III | Exhaustion vs. Surveillance | Cheryl & Todd | **Multi-Perspective (Management)** |
+| **Bakery Cake Scam** | All 4 Tracks | Act III–IV | Artisan Pride vs. Solidarity | Clint & Chad | **Multi-Perspective (Management)** |
+| **Expired Coupon War** | Front End, Specialty | Act I–III | Patience vs. Policy | Extreme Customers | Customer Conflict |
+| **Hazardous Return** | Front End, Specialty | Act II–III | Policy vs. Cowardice | Extreme Customers | Customer Conflict |
+| **Sweethearting Frame** | Front End | Act IV | Paranoia vs. Evidence Gathering | Clint & Brenda | Espionage Frame-Job |
+| **Bay 4 Phantom Drop** | Backroom | Act IV | Morale vs. Complicity | Mack & Henderson | Espionage Frame-Job |
+| **Planted Locker Raid** | Specialty, Sales Floor | Act IV | Defiance vs. False Confession | Clint & Chad | Espionage Frame-Job |
+| **Shifting Aisles** | All Departments | Act V | Navigation vs. Dread | The Store Geometry | Environmental Horror |
+| **Intercom Broadcast** | All Departments | Act V | Sanity vs. Isolation | The Corporate System | Psychological Horror |
+| **Rogue Floor Scrubber** | All Departments | Act V | Reflexes vs. Environmental Hazard | Industrial Machinery | Environmental Hazard |
+
