@@ -171,6 +171,246 @@
       "speakerId": "narrator",
       "side": "CENTER_NARRATOR",
       "text": "CONGRATULATIONS! You have completed the template campaign: every mechanic, every trial, and the guardian itself were conquered by your voice. Copy these data files, replace them with your own world, and your game begins. Thank you for playing!",
+      "setFlagOnEnter": "game_completed",
+      "nextNodeId": "node_app_001"
+    },
+    {
+      "id": "node_app_001",
+      "speakerId": "cheryl",
+      "side": "RIGHT",
+      "changeSceneId": "scene_hiring_kiosk",
+      "text": "Welcome to the MegaMart family portal, prospective associate! Before we can process your application for Complex #1042, our automated integrity algorithm needs to understand your core workplace instincts. Ten quick questions. No wrong answers! Well... technically there are, but let's have fun with it!",
+      "choices": [
+        {
+          "id": "choice_app_start",
+          "text": "Begin the pre-employment integrity assessment.",
+          "voiceKeywords": ["begin", "start", "assessment", "apply", "ready"],
+          "nextNodeId": "node_app_q1"
+        }
+      ]
+    },
+    {
+      "id": "node_app_q1",
+      "speakerId": "cheryl",
+      "side": "RIGHT",
+      "text": "Question 1: You observe a coworker pocketing a $1.29 pack of strawberry chewing gum from an open box on the loading dock. How do you respond?",
+      "choices": [
+        {
+          "id": "choice_q1_sycophant",
+          "text": "Immediately notify Security Manager Clint and submit an anonymous loss prevention report.",
+          "voiceKeywords": ["notify", "clint", "security", "report", "loss prevention"],
+          "nextNodeId": "node_app_q2"
+        },
+        {
+          "id": "choice_q1_slacker",
+          "text": "Mind your own business. You didn't see anything; it's a dollar-thirty.",
+          "voiceKeywords": ["ignore", "nothing", "business", "dollar", "gum"],
+          "nextNodeId": "node_app_q2"
+        },
+        {
+          "id": "choice_q1_defiant",
+          "text": "Ask the coworker if you can have a piece too.",
+          "voiceKeywords": ["share", "piece", "chew", "ask"],
+          "nextNodeId": "node_app_q2"
+        }
+      ]
+    },
+    {
+      "id": "node_app_q2",
+      "speakerId": "cheryl",
+      "side": "RIGHT",
+      "text": "Question 2: You wake up at 5:00 AM with a 102-degree fever and severe chills. Your shift starts in 60 minutes. What is the proper procedure?",
+      "choices": [
+        {
+          "id": "choice_q2_sycophant",
+          "text": "Take three horse-pill decongestants, wrap a scarf around your neck, and report for duty. Teamwork requires sacrifice!",
+          "voiceKeywords": ["sacrifice", "work", "duty", "report", "teamwork"],
+          "nextNodeId": "node_app_q10"
+        },
+        {
+          "id": "choice_q2_slacker",
+          "text": "Call the automated attendance hotline, log the absence, and go back to sleep with your phone on silent.",
+          "voiceKeywords": ["call out", "hotline", "sleep", "absence", "silent"],
+          "nextNodeId": "node_app_q10"
+        },
+        {
+          "id": "choice_q2_defiant",
+          "text": "Show up to work, cough loudly near Store Manager Henderson's desk, and wait for him to send you home.",
+          "voiceKeywords": ["cough", "henderson", "desk", "home"],
+          "nextNodeId": "node_app_q10"
+        }
+      ]
+    },
+    {
+      "id": "node_app_q10",
+      "speakerId": "cheryl",
+      "side": "RIGHT",
+      "text": "Final question! It is 11:00 PM on a Saturday. Your shift has officially ended, but five pallets of seasonal merchandise remain untouched in the aisle. Overtime is strictly prohibited by corporate budget. What do you do?",
+      "choices": [
+        {
+          "id": "choice_q10_sycophant",
+          "text": "Offer to clock out on the terminal first, then stay an extra 45 minutes off-the-clock out of company pride!",
+          "voiceKeywords": ["volunteer", "stay", "pride", "extra", "off the clock"],
+          "nextNodeId": "node_app_offer"
+        },
+        {
+          "id": "choice_q10_slacker",
+          "text": "Clock out at 10:59 PM on the dot, walk briskly past the pallets, and exit the front sliding doors.",
+          "voiceKeywords": ["clock out", "leave", "exit", "door", "walk"],
+          "nextNodeId": "node_app_offer"
+        },
+        {
+          "id": "choice_q10_defiant",
+          "text": "Tell the Area Manager that the morning shift promised to finish them.",
+          "voiceKeywords": ["blame", "morning", "shift", "promise"],
+          "nextNodeId": "node_app_offer"
+        }
+      ]
+    },
+    {
+      "id": "node_app_offer",
+      "speakerId": "cheryl",
+      "side": "RIGHT",
+      "text": "Wonderful! The algorithm loves your energy! Compatibility rating: 98.4%! Now, Complex #1042 has four critical staffing vacancies. Where does your retail calling lie?",
+      "choices": [
+        {
+          "id": "choice_track_cashier",
+          "text": "Front End Cashier: Fast hands, customer smiles, and 4011 bananas.",
+          "voiceKeywords": ["cashier", "front end", "register", "bananas"],
+          "nextNodeId": "node_locker_001"
+        },
+        {
+          "id": "choice_track_stocker",
+          "text": "Sales Floor Stocker: Box cutters, freight pallets, and cereal towers.",
+          "voiceKeywords": ["stocker", "sales floor", "floor", "aisles"],
+          "nextNodeId": "node_locker_001"
+        },
+        {
+          "id": "choice_track_unloader",
+          "text": "Backroom Unloader: Heavy freight, Crown forklifts, and hydraulic balers.",
+          "voiceKeywords": ["unloader", "backroom", "freight", "dock", "baler"],
+          "nextNodeId": "node_locker_001"
+        },
+        {
+          "id": "choice_track_specialist",
+          "text": "Specialty Counter: High-margin tech, electronics warranties, and jewelry.",
+          "voiceKeywords": ["specialist", "specialty", "tech", "electronics", "warranty"],
+          "nextNodeId": "node_locker_001"
+        }
+      ]
+    },
+    {
+      "id": "node_locker_001",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_locker_room",
+      "text": "Fresh meat. Locker 42 is yours. Don't use Locker 41; the latch sticks and Brenda kicks it when she's having one of her spells.",
+      "choices": [
+        {
+          "id": "choice_locker_advice",
+          "text": "Thanks! Any tips for surviving and making a good impression on management?",
+          "voiceKeywords": ["tips", "advice", "impression", "rules", "management"],
+          "nextNodeId": "node_locker_donna_advice",
+          "completionFlag": "flag_donna_advice_heard"
+        },
+        {
+          "id": "choice_locker_lore",
+          "text": "How long have you been here? Those 30+ pins look like they have stories.",
+          "voiceKeywords": ["pins", "stories", "veteran", "lore"],
+          "nextNodeId": "node_locker_donna_lore",
+          "completionFlag": "flag_donna_lore_heard"
+        },
+        {
+          "id": "choice_locker_huddle",
+          "text": "Time for the morning huddle in Action Alley.",
+          "voiceKeywords": ["huddle", "action alley", "meeting", "morning cheer"],
+          "nextNodeId": "node_huddle_001"
+        }
+      ]
+    },
+    {
+      "id": "node_locker_donna_advice",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "text": "Three rules, kid. Rule one: Never run on the sales floor. Rule two: Guard working equipment with your life. Rule three: Store Manager Henderson's smile never reaches his eyes. When his left eyebrow twitches, someone's getting transferred to cart-pushing in a blizzard.",
+      "nextNodeId": "node_locker_001"
+    },
+    {
+      "id": "node_locker_donna_lore",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "text": "Fifteen years, three corporate takeovers, four district reorganizations. I've seen managers come and go like cheap paper towels. Keep your head down, kid.",
+      "nextNodeId": "node_locker_001"
+    },
+    {
+      "id": "node_huddle_001",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Good morning, Complex #1042! Look at this energy! Smell that fresh freight! Today is Regional Efficiency Benchmark Day! The district VP is watching our real-time sales velocity! Before we hit the floor, let's hear the store cheer! GIVE ME AN M!",
+      "choices": [
+        {
+          "id": "choice_huddle_loud",
+          "text": "Scream at the top of your lungs: 'E! WOOOO! LET'S GO #1042!'",
+          "voiceKeywords": ["cheer", "scream", "loud", "enthusiastic", "woo"],
+          "nextNodeId": "node_huddle_cheer_loud"
+        },
+        {
+          "id": "choice_huddle_neutral",
+          "text": "Mumble quietly while staring at the linoleum floor: 'E...'",
+          "voiceKeywords": ["mumble", "quiet", "floor", "e"],
+          "nextNodeId": "node_huddle_cheer_neutral"
+        },
+        {
+          "id": "choice_huddle_rebel",
+          "text": "Discreetly check your watch and take a sip from your travel mug.",
+          "voiceKeywords": ["watch", "coffee", "travel mug", "sip", "rebel"],
+          "nextNodeId": "node_huddle_cheer_rebel"
+        }
+      ]
+    },
+    {
+      "id": "node_huddle_cheer_loud",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "text": "YES! That's what I'm talking about! That is pure, unadulterated #1042 spirit right there! Look at our rookie taking the lead! All right, team—break out to your departments! LET'S MOVE!",
+      "nextNodeId": "node_shift1_start"
+    },
+    {
+      "id": "node_huddle_cheer_neutral",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "text": "I know the coffee hasn't kicked in yet, team, but our customer satisfaction metrics depend on high-frequency positivity! Let's get out there and drive sales!",
+      "nextNodeId": "node_shift1_start"
+    },
+    {
+      "id": "node_huddle_cheer_rebel",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "text": "Associate. A word. Enthusiasm isn't optional at #1042. It's a key performance indicator. When we don't bring 100% to the morning cheer, the customer feels that deficit. Make sure our energy is aligned tomorrow. Understand?",
+      "nextNodeId": "node_shift1_start"
+    },
+    {
+      "id": "node_shift1_start",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "You made it to Front End! Register 4 is flashing yellow! We have seven buggies backed up into the concourse and an irate shopper demanding a manager! Grab your scanner and hold the line!",
+      "triggerBattleEncounterId": "encounter_register_rush",
+      "nextNodeId": "node_shift1_victory"
+    },
+    {
+      "id": "node_shift1_victory",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "text": "Not bad for your first rush, rookie. You parried that coupon like a pro. Punch out, grab a lukewarm coffee, and rest up. Shift 2 starts tomorrow.",
+      "nextNodeId": "node_retail_act1_complete"
+    },
+    {
+      "id": "node_retail_act1_complete",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Orientation shift concluded. First day survival logged in the employee chronicle. You survived Shift 1 of 56 at MegaMart Store #1042.",
       "setFlagOnEnter": "game_completed"
     }
   ]
