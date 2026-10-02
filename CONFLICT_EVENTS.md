@@ -71,6 +71,87 @@ These events stem from ground-level coworkers dodging labor, shifting blame, and
   - `[B]` **Work the shift fueled by pure unadulterated hatred:** (Morale -25, Energy/Spite +30).
   - `[C]` **Burn an attendance point and walk out at 5:00 PM:** (Attendance +1.0 pt, Morale +20).
 
+### 1.6 The "Clopening" Nightmare
+* **Trigger:** Shift transition between evening and morning.
+* **The Incident:** The automated scheduling system gives you a "clopening"—scheduled to close until 11:15 PM and open at 5:45 AM the next morning. You get 4 hours of fragmented sleep, arrive sleep-deprived, and discover Kyle left all his unworked cardboard and trash from last night stacked in front of your workstation.
+* **The Conflict:** Physical and mental exhaustion; an entire morning rush staring at you.
+* **Player Choices:**
+  - `[A]` **Chug a double energy drink and tackle the mess:** (Morale -20, Caffeine Jitters status, Productivity +15).
+  - `[B]` **Wheel Kyle's trash into the aisle and leave it with his name tag on it:** (Peer Friction +20, Morale +10).
+  - `[C]` **Plead with HR Manager Cheryl about the 8-hour turnaround policy:** (Cheryl smiles: *"The system generated the schedule automatically; trade with someone if you need to"*).
+
+### 1.7 The Secret "Nap Hole" in Top-Stock
+* **Trigger:** Sales floor or backroom inventory replenishment.
+* **The Incident:** While climbing a 12-foot rolling safety ladder to fetch bulk paper towels in the high steel racks, you find a hollow cave constructed inside a pallet of toilet paper bundles. Inside is a camping pad, an extension cord with a phone charger, and Derrick's empty energy drink cans.
+* **The Conflict:** You caught a coworker's legendary unauthorized sanctuary.
+* **Player Choices:**
+  - `[A]` **Keep the secret and use the nap hole yourself on your 15-minute break:** (Morale +25, Stealth Check, Peer Trust +15).
+  - `[B]` **Take a photo and show Sales Floor Manager Todd:** (Ass-Kissing +25, Derrick marked as hostile enemy).
+  - `[C]` **Leave a polite sticky note demanding a \$5 energy drink tax to stay quiet:** (Blackmail Income +$5, Street Smarts +10).
+
+### 1.8 The Stolen Name Tag Identity Theft
+* **Trigger:** Shift clock-in at the breakroom coat rack.
+* **The Incident:** An associate forgot their nametag at home and, to dodge Cheryl's \$5 replacement fee and write-up, swiped your spare tag off the hook. Two hours later, an irate shopper complains to management about an associate named "Taylor" who told them to "check their own damn oil" in automotive.
+* **The Conflict:** You are being reprimanded for an interaction that happened three departments away.
+* **Player Choices:**
+  - `[A]` **Show your department login logs proving you were scanning groceries at that exact minute:** (Exonerated, Manager Todd grunts, Time Lost: 15 mins).
+  - `[B]` **Confront the offending associate in the breakroom:** (Nametag recovered, Social Drama +15).
+  - `[C]` **Wear a handwritten piece of masking tape with 'NOT TAYLOR' written on it:** (Morale +10, Manager Marsha scowls).
+
+### 1.9 The Spill Magic Powder Catastrophe
+* **Trigger:** Sales floor action alley.
+* **The Incident:** A customer drops a glass gallon jug of industrial corn oil. Instead of blocking the aisle and fetching a mop, Kyle dumps three entire 25-lb bags of absorbent "Spill Magic" powder onto the puddle, creating an ankle-deep, gelatinous, slippery paste, and walks away claiming he is "going on break."
+* **The Conflict:** Shoppers in electric carts are driving directly through the biohazard, tracking white sludge across 400 feet of flooring.
+* **Player Choices:**
+  - `[A]` **Grab the floor scraper and spend 40 minutes scraping the sludge:** (Stamina -20, Morale -15, Aisle saved).
+  - `[B]` **Surround the area with 8 yellow caution cones and let overnight deal with it:** (Slacker Bias +15, Aisle blocked).
+  - `[C]` **Page maintenance loudly: 'Assistance needed in Aisle 9 for Kyle's modern art installation':** (Peer War +15, Morale +10).
+
+### 1.10 Box Cutter Blade Rationing
+* **Trigger:** Beginning of the month supply check.
+* **The Incident:** Store Manager Henderson announces a strict "supply reduction directive"—each stocker receives exactly one utility safety blade for the entire calendar month. Your blade is already dull, making opening dense cardboard boxes take twice as long.
+* **The Conflict:** Your box-per-minute speed is cut in half; Backroom unloader Derrick is running a black-market blade racket.
+* **Player Choices:**
+  - `[A]` **Trade Derrick a cold energy drink for two fresh carbon steel blades:** (Item Acquired: *Sharp Blades*, Productivity +20, Budget -$2.50).
+  - `[B]` **Struggle through with the dull blade using brute arm force:** (Stamina drain doubled, Morale -15).
+  - `[C]` **Use your car keys to rip tape like a feral beast:** (Morale -10, Car key bent).
+
+### 1.11 The "Go-Back" Return Cart Avalanche
+* **Trigger:** 10:50 PM closing routine.
+* **The Incident:** Front End customer service dumps four overflowing shopping carts of customer returns into your sales floor aisle. Buried beneath wet bath towels and cheap clothing are two leaking tubs of melted Rocky Road ice cream dripping onto \$80 cookware sets.
+* **The Conflict:** You were 5 minutes away from clocking out clean.
+* **Player Choices:**
+  - `[A]` **Wheel the carts right back to Customer Service and leave them at Brenda's feet:** (Front End War initiated, Morale +15).
+  - `[B]` **Sort the sticky mess alone until 11:35 PM:** (Unapproved Overtime risk, Morale -25, Todd inspects).
+  - `[C]` **Push the carts into the dark corner of the seasonal garden patio and clock out:** (Slacker Bias +20, Overnight discovery risk).
+
+### 1.12 The Handheld Scanner / Battery Hoard
+* **Trigger:** Shift start equipment assignment.
+* **The Incident:** The store owns 35 inventory scanners, but only 5 batteries hold a charge for more than 20 minutes. You find Chad has hidden two fully charged lithium batteries inside an empty display shoe box in footwear.
+* **The Conflict:** You cannot pick freight, verify prices, or scan top-stock without equipment.
+* **Player Choices:**
+  - `[A]` **Swipe Chad's hidden battery and replace it with a dead one:** (Equipment Acquired, Chad baffled later, Stealth +10).
+  - `[B]` **Work your shift using pen and clipboard paper:** (Productivity -30%, Morale -20).
+  - `[C]` **Turn Chad's battery stash into Security Manager Clint:** (Clint nods approvingly, Ass-Kissing +15, Chad hostility +25).
+
+### 1.13 The Smoking Area Clique Gossip
+* **Trigger:** 15-minute rest break in the fenced outdoor employee cage.
+* **The Incident:** You step outside to get fresh air and sit near the picnic table. Brenda and two overnight stockers are whispering that you only got your preferred department because you are related to Henderson's wife.
+* **The Conflict:** Toxic workplace rumors spreading behind your back.
+* **Player Choices:**
+  - `[A]` **Confront Brenda directly in front of the clique:** (Brenda folds and stutters, Social Dominance +15).
+  - `[B]` **Lean in and say: 'Actually, he's my dad, and you're getting transferred to dairy next week':** (Psychological warfare, Morale +20).
+  - `[C]` **Sit quietly and stew in silence:** (Morale -15, Paranoia +10).
+
+### 1.14 The Flat-Spot Pallet Jack Wheel
+* **Trigger:** Heavy freight hauling task.
+* **The Incident:** The only available pallet jack has a severely gouged, flat-spotted polyurethane wheel. Every time you pull a 1,800-lb pallet across the polished concrete floor, it emits a deafening, violent *THUMP-THUMP-THUMP* that shakes your spine and causes every customer in the store to stare in disgust.
+* **The Conflict:** Physical agony and public humiliation while trying to meet freight drop deadlines.
+* **Player Choices:**
+  - `[A]` **Endure the thumping and soldier through the pain:** (Stamina -25, Morale -15).
+  - `[B]` **Abandon the pallet in the center alley and declare the jack 'Out of Service':** (Todd furious, Backroom safety tag placed).
+  - `[C]` **Steal a working jack from the garden center while the associate is watering plants:** (Theft Success, Morale +10).
+
 ---
 
 ## 2. Breakroom Politics & Domestic Cold Wars
@@ -103,6 +184,24 @@ The breakroom is supposedly a sanctuary, but operates as a passive-aggressive ba
   - `[A]` **Eat the cold crust while smiling at Henderson:** (Ass-Kissing +15, Morale -20).
   - `[B]` **Loudly calculate the hourly profit margin on a napkin for fellow associates:** (Engagement -25, Peer Solidarity +20, Clint notes your name).
   - `[C]` **Pocket three sodas from the manager fridge while nobody is looking:** (Acquire Item: *Looted Energy Drink*, Morale +10).
+
+### 2.4 The Vending Machine Spiral Jam / Coin Trap
+* **Trigger:** Mid-shift fatigue break.
+* **The Incident:** You put your last \$2.00 into the breakroom snack machine for an iced Honeybun. The metal spiral turns 90%, but the pastry wedges horizontally against the glass, hanging suspended by a corner. The digital display mocks you: *"THANK YOU. HAVE A NICE DAY."*
+* **The Conflict:** Your blood sugar is plummeting and your break timer has 4 minutes left.
+* **Player Choices:**
+  - `[A]` **Violently shake the machine:** (Risk triggering the deafening tilt alarm, 50% chance of double-drop).
+  - `[B]` **Buy the snack directly above it to trigger an avalanche:** (Spend additional \$1.50, Honeybun + Chips acquired).
+  - `[C]` **Accept defeat and kick the metal base:** (Morale -15, Bruised toe).
+
+### 2.5 The "Baler Key" Odyssey
+* **Trigger:** End-of-shift cardboard disposal.
+* **The Incident:** You wheel a massive 6-foot cage of flattened cardboard boxes to the loading dock baler. The baler is unlocked, but the operating safety key is missing. Federal OSHA law forbids running it without the key. Backroom Manager Mack is on lunch, and rumors claim overnight stocker Dave took the key home in his pocket.
+* **The Conflict:** You cannot clock out until your cardboard is cleared, and boxes are tumbling across the dock floor.
+* **Player Choices:**
+  - `[A]` **Search 4 departments to find the single associate over 18 with a backup key:** (Time Lost: 25 mins, Donna found with key).
+  - `[B]` **Stack the cardboard on the floor and run away before Mack returns:** (Dumping risk, Backroom standing -15).
+  - `[C]` **Use a pair of needle-nose pliers from the maintenance cage to twist the interlock switch:** (Baler operational, OSHA violation risk +25).
 
 ---
 
@@ -146,6 +245,51 @@ The transition into corporate mechanical oppression.
   - `[B]` **Duck into the compactor room and turn off your walkie-talkie:** (Avoid register chaos, Slacker Bias +15).
   - `[C]` **Walk slowly toward the front, taking 15 minutes to reach the register:** (Arrive right as lines clear, Tactical Genius +10).
 
+### 3.5 The "One Best Way" Process Audit
+* **Trigger:** Mid-morning stocking or cashiering shift in Act III.
+* **The Incident:** Regional efficiency analysts arrive wearing suits and holding stopwatch clipboards. Every single micro-movement—which hand holds the tape gun, the angle you bend your knees to lift a box, whether your scan motion is an exact 45-degree angle—is graded against a corporate "One Best Way" standard.
+* **The Conflict:** Natural human movement is penalized; associates are forced into robotic repetitive strain motions.
+* **Player Choices:**
+  - `[A]` **Mimic the corporate robot motions perfectly:** (Efficiency Rating: 98%, Physical Exhaustion +25, Morale -20).
+  - `[B]` **Continue your normal efficient method:** (Auditor scowls and checks a box: *"Resistance to standardization"*).
+  - `[C]` **Deliberately fumble every box while staring into the auditor's eyes:** (Auditor confusion, Morale +15, Write-up risk).
+
+### 3.6 The Credit Card Application Quota
+* **Trigger:** Front End or Specialty shift start.
+* **The Incident:** Corporate issues a mandate: every associate must secure two approved high-interest MegaMart store credit cards per shift. If your department fails, Manager Julian or Marsha threatens to assign you to public restroom scrubbing duty for the entire following week.
+* **The Conflict:** Forcing predatory 29.99% APR interest credit cards onto low-income shoppers buying basic groceries.
+* **Player Choices:**
+  - `[A]` **Aggressively pitch the card to every customer, even those buying baby formula:** (Ass-Kissing +20, Quota met, Morale -25).
+  - `[B]` **Politely ask once under your breath so nobody hears:** (Patience saved, Manager anger +15).
+  - `[C]` **Sign up your own dog using a junk email to hit the metric:** (Quota bypassed, Fraud Risk +30).
+
+### 3.7 The Overtime Eraser (Time Shaving)
+* **Trigger:** Friday morning electronic timesheet review.
+* **The Incident:** You worked through two lunches and stayed 45 minutes late on Wednesday to help clear a massive holiday trailer. When you check the time clock portal, your total hours have been manually edited by Store Manager Henderson down to exactly 40.0 hours flat to eliminate your overtime pay.
+* **The Conflict:** Illegal wage theft disguised as "payroll optimization."
+* **Player Choices:**
+  - `[A]` **Quietly confront Henderson in his office:** (Henderson smiles cold: *"Must have been an automated system glitch, I'll look into it next pay period"*).
+  - `[B]` **Take photos of your original physical clock-in punch slips:** (Evidence Acquired: *Wage Theft Proof*, Paranoia +15).
+  - `[C]` **Steal \$50 worth of merchandise from the store to balance the debt:** (Moral Hazard, Morale +10, Clint Surveillance +20).
+
+### 3.8 Customer 1-Star Survey Punishment
+* **Trigger:** Shift start briefing in Act III.
+* **The Incident:** A shopper gave Complex #1042 a 1-star Net Promoter Score (NPS) review on the store mobile app with the comment: *"The store was out of organic pumpkin spice almond milk. The rude employee in Aisle 5 looked tired."* Management identifies you as the associate in Aisle 5 and slashes your scheduled hours from 36 down to 12 hours next week as "performance remediation."
+* **The Conflict:** Economic retaliation over an out-of-stock warehouse supplier issue.
+* **Player Choices:**
+  - `[A]` **Plead with HR Manager Cheryl for your hours back:** (Cheryl sighs: *"Customer sentiment scores dictate payroll allocation, sweetie"*).
+  - `[B]` **Pick up an unassigned night-shift stocking shift to make rent:** (Attendance burden +1.0, Fatigue doubled).
+  - `[C]` **Submit 5-star fake reviews on burner phones in the parking lot:** (Metric hacked, Hours restored +10).
+
+### 3.9 Automatic Smart-Shelf Sensors
+* **Trigger:** Sales floor stocking or zoning.
+* **The Incident:** Overhead AI cameras and weight-sensing shelf brackets are activated. If a customer picks up a \$4 cereal box and puts it down 6 inches to the left, your handheld scanner emits an emergency tone with a 90-second countdown timer: *"ZONE INTEGRITY COMPROMISED: AISLE 6 SHELF 3. RESOLVE BEFORE METRIC PENALTY."*
+* **The Conflict:** Running across 200 feet of store every three minutes to fix misplaced boxes like a frantic pinball.
+* **Player Choices:**
+  - `[A]` **Sprint frantically to reset every displaced item:** (Stamina drain extreme, Metric maintained, Morale -25).
+  - `[B]` **Place a heavy 10-lb dumbbell from sporting goods on the sensor to lock the weight:** (Sensor tricked, Temporary peace, Todd inspection risk).
+  - `[C]` **Turn down the scanner volume and let the timers expire:** (Todd storms into the aisle screaming, Defiance +15).
+
 ---
 
 ## 4. Customer Absurdity & Public Confrontation
@@ -179,6 +323,24 @@ The frontline horrors that test an associate's sanity and de-escalation limits.
   - `[B]` **Apologize and unlock the case:** (Risk of unattended high-ticket theft, Clint observes).
   - `[C]` **Tell them Henderson was transferred to the Alaska regional office this morning:** (Shopper nods knowingly: *"Yeah, he told me about that"*).
 
+### 4.4 The Collapsing Watermelon / Ball Dump-Bin Avalanche
+* **Trigger:** Center action alley crowd navigation.
+* **The Incident:** An overfilled, 8-foot wire dump-bin packed with 300 giant inflatable playground balls and heavy seasonal watermelons suffers structural failure when an energetic toddler climbs the mesh. The welds snap, sending a cascading wall of heavy watermelons and bouncing balls tearing down three grocery aisles, smashing displays of wine and pasta sauce.
+* **The Conflict:** Total structural catastrophe in the highest-traffic zone of the store.
+* **Player Choices:**
+  - `[A]` **Dive into the action alley and catch falling display towers:** (Physical reflex check, Heroic effort, Uniform soaked in sauce).
+  - `[B]` **Grab a yellow wet-floor sign, place it 30 feet away, and back away slowly:** (Slacker Genius +15, Aisle quarantined).
+  - `[C]` **Help the laughing toddler down while pretending you didn't see the watermelon tsunami:** (Morale +10, Todd screams in the distance).
+
+### 4.5 The Walkie-Talkie Stuck Mic & The Phantom Page
+* **Trigger:** High-stress Saturday afternoon shift.
+* **The Incident:** Someone on the overnight crew accidentally wedges their radio push-to-talk button between two pallets in the dairy cooler. Channel 1 is locked for 22 solid minutes with the sound of someone whistling 1980s TV sitcom themes, opening bags of chips, and complaining about their mother-in-law, completely blocking Store Manager Henderson from paging managers.
+* **The Conflict:** Management communication is completely paralyzed; Store Manager Henderson is walking the floor red-faced trying to identify the radio serial number.
+* **Player Choices:**
+  - `[A]` **Recognize Derrick's signature whistle and sprint to the dairy cooler to unstick it:** (Save Derrick from immediate firing, Derrick debt owed).
+  - `[B]` **Enjoy the peaceful radio silence while managers scream in person:** (Morale +15, Storewide comedy).
+  - `[C]` **Walk up to Henderson with your radio and say:** *"Sounds like Channel 1 has been liberated, sir."* (Henderson vein throbs).
+
 ---
 
 ## 5. Corporate Espionage & Weaponized Audits (Acts IV–V)
@@ -211,6 +373,42 @@ The psychological thriller phase where leadership actively tries to frame the pl
   - `[A]` **Check the serial number barcode:** (Realize the headset has a clearance sticker from Specialty Counter #3; Chad's department).
   - `[B]` **Demand to review the hallway CCTV camera:** (Clint flatly states: *"That camera has had a lens malfunction since Tuesday"*).
   - `[C]` **Look Cheryl dead in the eye and say:** *"Whoever planted that forgot to remove the employee discount tag from Julian's office."* (Cheryl nervously clears her throat).
+
+### 5.4 The Stolen Master Key Lockdown
+* **Trigger:** Shift change in Act IV.
+* **The Incident:** The electronic brass master key ring for all high-ticket electronics display cases and jewelry cases goes missing. Security Manager Clint places Complex #1042 on immediate internal lockdown. Exit sensors trigger steel security grates, and every associate is ordered to submit to physical bag and jacket searches before leaving.
+* **The Conflict:** Chad secretly dropped the master key ring into your jacket pocket on the coat hook to pin the theft on you.
+* **Player Choices:**
+  - `[A]` **Discover the keys in your pocket before reaching the door and stash them inside a cereal box:** (Emergency stealth check, Evidence discarded, Clint baffled).
+  - `[B]` **Demand an immediate review of the coat rack CCTV:** (Prove Chad touched your coat, Clint grumbles, Chad cornered).
+  - `[C]` **Slip the keys into Manager Julian's open briefcase during the search commotion:** (Poetic justice, Julian targeted by Clint).
+
+### 5.5 The Anonymous Ethics Hotline Weapon
+* **Trigger:** Monday morning summons to Human Resources.
+* **The Incident:** HR Manager Cheryl sits you down with a thick manila folder. The corporate 1-800 ethics hotline received three anonymous complaints against you over the weekend alleging "workplace intimidation", "creating a hostile work environment", and "refusing to participate in company cheers."
+* **The Conflict:** Toxic peers (Kyle and Brenda) weaponizing the corporate whistleblower system to get you terminated or transferred.
+* **Player Choices:**
+  - `[A]` **Point out that the complaints use Brenda's exact grammatical errors ('irregardless of policy'):** (Cheryl pauses, Forensic grammar check, Doubt planted).
+  - `[B]` **File a counter-complaint with detailed timestamps of Kyle's 45-minute bathroom breaks:** (Mutual Assured Destruction, HR deadlock).
+  - `[C]` **Politely sign the acknowledgment while asking for a copy for your labor attorney:** (Cheryl's smile vanishes, Corporate panic induced).
+
+### 5.6 The Midnight Off-the-Clock Labor Lock-In
+* **Trigger:** 11:00 PM closing shift in Act IV.
+* **The Incident:** Store Manager Henderson locks the customer entrance doors with physical chain padlocks. He announces: *"Corporate slashed our overtime budget. Everyone clock out right now at 11:00 PM. But nobody leaves until Aisle 1 through 18 are 100% zoned and faced. The doors stay locked until the floor is clean."*
+* **The Conflict:** Blatant, illegal off-the-clock forced labor.
+* **Player Choices:**
+  - `[A]` **Hit the emergency door release bar and trigger the storewide fire alarm:** (Fire alarm screams, Doors unlock, Total chaos, Immediate retaliation).
+  - `[B]` **Pull out your phone and record Henderson giving the off-the-clock order:** (Evidence Acquired: *Federal Whistleblower Recording*, High leverage).
+  - `[C]` **Sit on a folding chair in the breakroom and refuse to touch a single box:** (Defiance +30, Henderson threatens your job).
+
+### 5.7 The Industrial Compactor Shredder Incident
+* **Trigger:** 3:00 AM loading dock shift in Act IV.
+* **The Incident:** You catch Mack and two third-party freight drivers feeding three shrink-wrapped pallets of supposedly "damaged and returned" \$1,500 smart TVs directly into the heavy-duty hydraulic trash compactor chute. They are destroying brand-new inventory to claim massive freight insurance payouts and split the cash.
+* **The Conflict:** You witness a federal shipping fraud scheme in broad daylight. Mack turns and sees you holding a box cutter.
+* **Player Choices:**
+  - `[A]` **Back away slowly and pretend you were looking for pallet wrap:** (Mack stares cold: *"You didn't see anything, rookie"*).
+  - `[B]` **Grab the emergency stop pull-cord on the compactor motor:** (Compactor stalls, High-tension standoff with Mack).
+  - `[C]` **Snap a burst photo on your phone under the dim dock floodlights:** (Evidence Acquired: *Compactor Fraud Photo*, Mack spots the flash).
 
 ---
 
