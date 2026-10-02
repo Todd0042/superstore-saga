@@ -33,44 +33,55 @@
 ```mermaid
 flowchart TD
     Launch[App Launch] --> SplashScreen[Corporate Splash: 'MegaMart Global Logistics']
-    SplashScreen --> TitleScreen[Main Menu / Time Clock Terminal]
+    SplashScreen --> TitleScreen[Main Menu / Hiring & Attendance Portal]
     
     TitleScreen --> Options[Options / Audio & Display Settings]
     TitleScreen --> Credits[Credits / Corporate Disclaimers]
-    TitleScreen --> ContinueGame[Resume Shift / Select Badge Slot]
-    TitleScreen --> NewHire[Clock-In: New Hire Orientation]
+    TitleScreen --> ContinueGame[Swipe Badge / Resume Existing Shift]
+    TitleScreen --> Apply[Apply Now / New Applicant Kiosk]
 
-    NewHire --> AppForm[Step 1: Personal Profile & Badge Setup]
-    AppForm --> DeptSelect[Step 2: Department Selection]
-    DeptSelect --> Assessment[Step 3: 10-Question Personality Assessment]
-    Assessment --> BadgePrint[Step 4: Badge Issuance & Liability Waiver]
-    BadgePrint --> Act1Scene1[Act I Scene 1: The Morning Huddle]
+    subgraph Phase1["PHASE 1: THE JOB APPLICATION (Pre-Hire)"]
+        Apply --> Step1[Step 1: Applicant Profile & Details]
+        Step1 --> Step2[Step 2: Position Desired / Department Selection]
+        Step2 --> Step3[Step 3: 10-Question Pre-Employment Assessment]
+        Step3 --> Step4[Step 4: Algorithmic Hiring Decision & Job Offer]
+    end
+
+    subgraph Phase2["PHASE 2: DAY 1 ORIENTATION & FIRST CLOCK-IN"]
+        Step4 --> Step5[Step 5: Uniform Fitting, Nametag & Flair Pin Setup]
+        Step5 --> Step6[Step 6: Digital Liability Waiver & First Badge Swipe]
+    end
+
+    Step6 --> Act1Scene1[Act I Scene 1: The Morning Huddle]
 ```
 
-### A. Title Screen (The MegaMart Time Clock Terminal)
-Stripped of all fantasy artifacts (no tutorial battles, no microphone chant calibrations), the title screen presents an authentic in-universe punch clock:
+### A. Title Screen (The MegaMart Hiring & Attendance Portal)
+Stripped of all fantasy artifacts (no tutorial battles, no microphone chant calibrations), the title screen presents an authentic in-universe hiring and time clock terminal:
 * **Visual Aesthetic:** A 1990s CRT monitor embedded in breakroom faux-wood paneling, faint green phosphor text, and an electronic badge-swipe slot.
 * **Ambient Audio:** 60Hz fluorescent hum, distant overhead chime, and tinny department-store elevator muzak.
 * **Menu Actions:**
-  1. **`[ 🏷️ CLOCK IN / NEW HIRE ]`** — Launches New Hire Orientation and Character Creation.
-  2. **`[ 💳 SWIPE BADGE / RESUME ]`** — Select an active Employee File (3 slots showing Name, Department, Act, Morale, Engagement, and Attendance Points).
+  1. **`[ 📝 SUBMIT APPLICATION / APPLY NOW ]`** — Launches the New Applicant Kiosk (starts a new game).
+  2. **`[ 💳 SWIPE BADGE / RESUME SHIFT ]`** — Select an active Employee File (3 slots showing Name, Department, Act, Morale, Engagement, and Attendance Points).
   3. **`[ ⚙️ STORE POLICY / OPTIONS ]`** — Sound FX, BGM volume, TTS narrator speed, button touch sensitivity.
   4. **`[ 📋 EMPLOYEE HANDBOOK / CREDITS ]`** — Satirical corporate disclaimers and credits.
 
 ---
 
-### B. New Hire Onboarding & Creation Kiosk
+### B. Phase 1: The Job Application Kiosk (Pre-Employment Screening)
 
-#### Step 1: Personal Details & Nametag Customization
-* **Employee Name:** Text input (default: *"Taylor"*).
+#### Step 1: Applicant Profile & Identification
+* **Applicant Name:** Text input (default: *"Taylor"*).
 * **Pronouns / Salutation:** Influences NPC dialogue and automated corporate paperwork.
-* **Vest Accent & Flair Pins:** Choose vest accent color and starting flair pin (*"In Training"*, *"Smiley Face"*, *"Safety First"*, or *"Ask Me Anything"*).
 
-#### Step 2: Department Assignment
-Choose from the 4 primary store tracks (Front End, Sales Floor, Backroom, Specialty).
+#### Step 2: Position Desired (Department Track Selection)
+The applicant chooses which department opening they are applying for:
+* **Front End:** Cashier Associate
+* **Sales Floor:** Merchandising & Zone Associate
+* **Backroom:** Logistics & Freight Handler
+* **Specialty:** High-Ticket Counter Sales (Tech / Deli / Jewelry)
 
-#### Step 3: The 10-Question Corporate Personality Profile Assessment
-Modeled directly after notorious pre-employment personality profiling questionnaires (e.g., Unicru / Kronos retail aptitude tests). Each question has 4 forced-choice answers ranging from **Extreme Sycophant**, **Pragmatic Slacker**, **Honest Human**, to **Passive-Aggressive Rebel**. These answers calculate the player's starting **Morale (70-100%)**, **Engagement (60-100%)**, and hidden **Ass-Kissing Score (0-100)**:
+#### Step 3: The 10-Question Pre-Employment Personality Profiling Assessment
+Modeled directly after notorious retail pre-hire screening tests (e.g., Unicru / Kronos retail aptitude assessments). This assessment is taken **during the application process before being hired**. Each question features 4 forced-choice answers ranging from **Extreme Sycophant**, **Pragmatic Slacker**, **Honest Human**, to **Passive-Aggressive Rebel**. These answers screen the applicant and calculate their starting **Morale (70–100%)**, **Engagement (60–100%)**, and hidden **Ass-Kissing Score (0–100)**:
 
 1. **"An associate takes an extra 6 minutes on their scheduled 15-minute break. What is the most appropriate action?"**
    - A) *"Report their badge number immediately to Asset Protection. Time theft is real theft."* `(+Ass-Kissing 15, -Morale 5)`
@@ -132,18 +143,34 @@ Modeled directly after notorious pre-employment personality profiling questionna
     - C) *"Smile, nod, say 'Never better!', and retreat behind the milk crates."* `(+Pragmatism 10)`
     - D) *"Tell them the raw truth about the air conditioning being broken since June."* `(+Morale 20, -Ass-Kissing 25)`
 
-#### Step 4: Badge Issuance & Transition to Act I Scene 1
-Upon completing question 10, the kiosk displays:
+#### Step 4: Algorithmic Hiring Decision & Job Offer
+Upon submitting question 10, the kiosk processes the application through the automated corporate hiring algorithm:
 ```
-╔══════════════════════════════════════════════════════╗
-║              PROFILE CALIBRATION COMPLETE            ║
-║                                                      ║
-║  ASSESSMENT RATING: "POTENTIALLY COMPLIANT"          ║
-║  STARTING MORALE: 85%  |  ENGAGEMENT: 90%            ║
-║  BADGE #1042-882 PRINTED. PLEASE PROCEED TO ROOM B.  ║
-╚══════════════════════════════════════════════════════╝
+╔══════════════════════════════════════════════════════════╗
+║              APPLICATION PROCESSING COMPLETE             ║
+║                                                          ║
+║  ALGORITHMIC FIT RATING: "POTENTIALLY COMPLIANT"         ║
+║  CALIBRATED MORALE: 85%  |  ENGAGEMENT: 90%              ║
+║                                                          ║
+║  STATUS: CONDITIONAL OFFER OF EMPLOYMENT EXTENDED        ║
+║  REPORT TO: STORE #1042 (ROOM B)                         ║
+║  DATE: MONDAY 06:00 AM FOR NEW HIRE ORIENTATION          ║
+╚══════════════════════════════════════════════════════════╝
 ```
-The screen fades from the CRT scanlines into the fluorescent glow of the Breakroom for **Act I: Scene 1 (The Morning Huddle)**.
+
+---
+
+### C. Phase 2: Day 1 Orientation & First Clock-In
+
+#### Step 5: Uniform Fitting, Nametag & Flair Setup
+Having officially arrived for Day 1 Orientation, the player prepares their physical work attire:
+* **Nametag Customization:** Confirms first name display on their plastic badge.
+* **Vest Accent & Starting Flair Pin:** Choose a vest accent trim and initial corporate flair pin (*"In Training"*, *"Smiley Face"*, *"Safety First"*, or *"Ask Me Anything"*).
+
+#### Step 6: Digital Liability Waiver & First Official Clock-In
+* **Liability & Non-Disparagement Waiver:** The player signs a satirical electronic terms-of-employment waiver.
+* **The First Clock-In:** The player swipes their brand new badge `#1042-882` at the punch clock, accompanied by an authentic terminal beep.
+* **Transition to the Floor:** The screen fades from the terminal display to the fluorescent glow of the Breakroom for **Act I: Scene 1 (The Morning Huddle)**.
 
 ---
 
