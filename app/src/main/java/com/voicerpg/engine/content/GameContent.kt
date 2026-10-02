@@ -181,7 +181,8 @@ data class ClassDto(
     val preferredSchool: String = "PHYSICAL",
     val starterSpellIds: List<String>? = null,
     val voiceKeywords: List<String>? = null,
-    val growth: GrowthDto? = null
+    val growth: GrowthDto? = null,
+    val portraitAsset: String? = null
 )
 
 data class SpellGraphicsDto(
@@ -633,7 +634,8 @@ data class HeroClassDef(
     val preferredSchool: SpellSchool,
     val starterSpellIds: List<String>,
     val voiceKeywords: List<String>,
-    val growth: StatGrowth
+    val growth: StatGrowth,
+    val portraitAsset: String? = null
 )
 
 enum class CharacterRole { HERO, NPC, NARRATOR }
@@ -928,7 +930,8 @@ class GameContentPack(
             preferredSchool = SpellSchool.PHYSICAL,
             starterSpellIds = emptyList(),
             voiceKeywords = listOf("adventurer", "hero"),
-            growth = StatGrowth(14, 10, 1, 1, 0.035f)
+            growth = StatGrowth(14, 10, 1, 1, 0.035f),
+            portraitAsset = null
         )
     }
 }
@@ -1155,7 +1158,8 @@ class GameContentLoader(private val source: ContentSource) {
         preferredSchool = runCatching { SpellSchool.valueOf(preferredSchool) }.getOrDefault(SpellSchool.PHYSICAL),
         starterSpellIds = starterSpellIds ?: emptyList(),
         voiceKeywords = voiceKeywords ?: emptyList(),
-        growth = (growth ?: GrowthDto()).toStatGrowth()
+        growth = (growth ?: GrowthDto()).toStatGrowth(),
+        portraitAsset = portraitAsset
     )
 
     private fun CharacterDto.toCharacter(spells: Map<String, Spell>): GameCharacter {

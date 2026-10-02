@@ -30,6 +30,16 @@
       "initialValue": 40.0,
       "isDangerHigh": true,
       "displayColor": "#FF9800"
+    },
+    {
+      "id": "associate_engagement",
+      "label": "Engagement",
+      "icon": "work_focus",
+      "minValue": 0.0,
+      "maxValue": 100.0,
+      "initialValue": 70.0,
+      "isDangerHigh": false,
+      "displayColor": "#2196F3"
     }
   ]
 }

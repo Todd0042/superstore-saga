@@ -154,7 +154,21 @@ class StoryViewModel(
         return false
     }
 
-    fun formatStoryText(rawText: String, playerName: String, playerTitle: String = ""): String {
+    fun computeAssessmentScore(metrics: Map<String, Float>): Float {
+        val morale = metrics["store_morale"] ?: 65f
+        val engagement = metrics["associate_engagement"] ?: 70f
+        val karen = metrics["karen_index"] ?: 15f
+        val squeeze = metrics["labor_squeeze"] ?: 40f
+        val raw = 45f + (morale * 0.30f) + (engagement * 0.30f) - (karen * 0.15f) - (squeeze * 0.10f)
+        return raw.coerceIn(52.1f, 99.4f)
+    }
+
+    fun formatStoryText(
+        rawText: String,
+        playerName: String,
+        playerTitle: String = "",
+        metrics: Map<String, Float> = emptyMap()
+    ): String {
         if (rawText.isBlank()) return rawText
         val defaultName = GameContent.manifest.defaultHeroName.ifBlank { "Hero" }
         val effectiveName = playerName.ifBlank { defaultName }
@@ -174,6 +188,33 @@ class StoryViewModel(
             .replace("{heroName}'s", "$effectiveName's")
             .replace("{player}'s", "$effectiveName's")
 
+        // Dynamic assessment & metric tokens
+        if (result.contains("{score}") || result.contains("{assessmentScore}")) {
+            val scoreVal = computeAssessmentScore(metrics)
+            val scoreStr = String.format(java.util.Locale.US, "%.1f%%", scoreVal)
+            result = result
+                .replace("{score}", scoreStr)
+                .replace("{assessmentScore}", scoreStr)
+        }
+        if (result.contains("{rating}")) {
+            val scoreVal = computeAssessmentScore(metrics)
+            val ratingStr = when {
+                scoreVal >= 92f -> "TIER 1 EXCEPTIONAL MATCH"
+                scoreVal >= 82f -> "TIER 2 OPTIMAL FIT"
+                scoreVal >= 72f -> "TIER 3 CONDITIONAL COMPLIANCE"
+                else -> "TIER 4 MARGINALLY VIABLE"
+            }
+            result = result.replace("{rating}", ratingStr)
+        }
+        if (result.contains("{morale}")) {
+            val moraleVal = (metrics["store_morale"] ?: 65f).toInt()
+            result = result.replace("{morale}", "$moraleVal%")
+        }
+        if (result.contains("{engagement}")) {
+            val engVal = (metrics["associate_engagement"] ?: 70f).toInt()
+            result = result.replace("{engagement}", "$engVal%")
+        }
+
         // If player has a custom name different from defaultName, replace any leftover defaultName references
         if (!effectiveName.equals(defaultName, ignoreCase = true) && !defaultName.contains("{")) {
             result = result.replace(Regex("\\b${Regex.escape(defaultName)}'s\\b", RegexOption.IGNORE_CASE), "$effectiveName's")
@@ -184,7 +225,11 @@ class StoryViewModel(
         return result
     }
 
-    fun formatNodeForPlayer(node: DialogueNode, player: PlayerCustomization): DialogueNode {
+    fun formatNodeForPlayer(
+        node: DialogueNode,
+        player: PlayerCustomization,
+        metrics: Map<String, Float> = emptyMap()
+    ): DialogueNode {
         val defaultHeroName = GameContent.manifest.defaultHeroName.ifBlank { "Hero" }
         val effectiveName = player.name.ifBlank { defaultHeroName }
         val effectiveTitle = player.title.ifBlank { GameContent.manifest.defaultHeroTitle.ifBlank { "Adventurer" } }
@@ -202,12 +247,12 @@ class StoryViewModel(
             node.speaker
         }
 
-        val formattedText = formatStoryText(node.text, effectiveName, effectiveTitle)
-        val formattedRevisit = node.revisitText?.let { formatStoryText(it, effectiveName, effectiveTitle) }
+        val formattedText = formatStoryText(node.text, effectiveName, effectiveTitle, metrics)
+        val formattedRevisit = node.revisitText?.let { formatStoryText(it, effectiveName, effectiveTitle, metrics) }
         val formattedChoices = node.choices.map { choice ->
             choice.copy(
-                text = formatStoryText(choice.text, effectiveName, effectiveTitle),
-                voiceKeywords = choice.voiceKeywords.map { formatStoryText(it, effectiveName, effectiveTitle) }
+                text = formatStoryText(choice.text, effectiveName, effectiveTitle, metrics),
+                voiceKeywords = choice.voiceKeywords.map { formatStoryText(it, effectiveName, effectiveTitle, metrics) }
             )
         }
 
@@ -887,19 +932,32 @@ class StoryViewModel(
     fun assignHeroClass(classId: String) {
         val heroClass = GameContent.classById(classId)
         val starterSpells = GameContent.spellsForClass(heroClass.id)
+        val currentMetrics = _state.value.dynamicMetrics
+        val moraleRatio = ((currentMetrics["store_morale"] ?: 65f) / 100f).coerceIn(0.5f, 1.5f)
+        val engagementRatio = ((currentMetrics["associate_engagement"] ?: 70f) / 100f).coerceIn(0.5f, 1.5f)
+
+        // Starting stats scale dynamically with applicant assessment performance:
+        val tunedHp = (heroClass.startingHp * (0.85f + 0.15f * moraleRatio)).toInt()
+        val tunedMp = (heroClass.startingMp * (0.85f + 0.15f * engagementRatio)).toInt()
+
         val updatedPlayer = _state.value.player.copy(
             heroClassId = classId,
             title = heroClass.title.ifBlank { _state.value.player.title },
-            voiceAffinityBonusSchool = heroClass.preferredSchool
+            voiceAffinityBonusSchool = heroClass.preferredSchool,
+            customPortraitAsset = if (_state.value.player.customPortraitAsset?.contains("custom") == true) {
+                _state.value.player.customPortraitAsset
+            } else {
+                heroClass.portraitAsset ?: _state.value.player.customPortraitAsset
+            }
         )
         val updatedPartyStats = _state.value.partyStats.map { stat ->
             if (stat.id == "hero") {
                 stat.copy(
                     loreClass = heroClass.title,
-                    currentHp = heroClass.startingHp,
-                    maxHp = heroClass.startingHp,
-                    currentMp = heroClass.startingMp,
-                    maxMp = heroClass.startingMp,
+                    currentHp = tunedHp,
+                    maxHp = tunedHp,
+                    currentMp = tunedMp,
+                    maxMp = tunedMp,
                     speed = heroClass.startingSpeed,
                     spellIds = starterSpells.map { it.id }
                 )
@@ -990,25 +1048,6 @@ class StoryViewModel(
         } else {
             effectiveNode.text
         }
-        val baseNode = if (activeText != effectiveNode.text) {
-            effectiveNode.copy(text = activeText)
-        } else {
-            effectiveNode
-        }
-        val displayNode = formatNodeForPlayer(baseNode, _state.value.player)
-
-        val updatedVisited = _state.value.visitedNodeIds + newNode.id + effectiveNode.id
-
-        val entry = DialogueLogEntry(
-            speakerId = displayNode.speaker.id,
-            speakerName = displayNode.speaker.name,
-            speakerTitle = displayNode.speaker.title,
-            text = displayNode.text,
-            sceneName = targetScene.name,
-            isNarrator = displayNode.speaker.isNarrator
-        )
-        val updatedHistory = (_state.value.dialogueHistory + entry).takeLast(100)
-
         var updatedMetrics = _state.value.dynamicMetrics.toMutableMap()
         for ((metricId, overrideVal) in effectiveNode.metricOverrides) {
             val def = GameContent.metrics[metricId]
@@ -1021,6 +1060,25 @@ class StoryViewModel(
             val clamped = if (def != null) (current + delta).coerceIn(def.minValue, def.maxValue) else current + delta
             updatedMetrics[metricId] = clamped
         }
+
+        val baseNode = if (activeText != effectiveNode.text) {
+            effectiveNode.copy(text = activeText)
+        } else {
+            effectiveNode
+        }
+        val displayNode = formatNodeForPlayer(baseNode, _state.value.player, updatedMetrics)
+
+        val updatedVisited = _state.value.visitedNodeIds + newNode.id + effectiveNode.id
+
+        val entry = DialogueLogEntry(
+            speakerId = displayNode.speaker.id,
+            speakerName = displayNode.speaker.name,
+            speakerTitle = displayNode.speaker.title,
+            text = displayNode.text,
+            sceneName = targetScene.name,
+            isNarrator = displayNode.speaker.isNarrator
+        )
+        val updatedHistory = (_state.value.dialogueHistory + entry).takeLast(100)
 
         _state.value = _state.value.copy(
             currentScene = targetScene,

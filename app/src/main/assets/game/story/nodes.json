@@ -29,6 +29,7 @@
           "nextNodeId": "node_app_q2",
           "metricDeltas": {
             "store_morale": -5.0,
+            "associate_engagement": 15.0,
             "labor_squeeze": -5.0
           }
         },
@@ -39,6 +40,7 @@
           "nextNodeId": "node_app_q2",
           "metricDeltas": {
             "store_morale": 10.0,
+            "associate_engagement": 5.0,
             "labor_squeeze": 5.0
           }
         },
@@ -48,7 +50,8 @@
           "voiceKeywords": ["station", "focus", "work", "ignore", "mind"],
           "nextNodeId": "node_app_q2",
           "metricDeltas": {
-            "store_morale": 5.0
+            "store_morale": 5.0,
+            "associate_engagement": 5.0
           }
         },
         {
@@ -58,6 +61,7 @@
           "nextNodeId": "node_app_q2",
           "metricDeltas": {
             "store_morale": 10.0,
+            "associate_engagement": -10.0,
             "labor_squeeze": 10.0
           }
         }
@@ -76,6 +80,7 @@
           "nextNodeId": "node_app_q3",
           "metricDeltas": {
             "store_morale": 5.0,
+            "associate_engagement": 15.0,
             "karen_index": -5.0
           }
         },
@@ -85,7 +90,8 @@
           "voiceKeywords": ["page", "maintenance", "intercom", "traffic", "clean"],
           "nextNodeId": "node_app_q3",
           "metricDeltas": {
-            "store_morale": 5.0
+            "store_morale": 5.0,
+            "associate_engagement": 5.0
           }
         },
         {
@@ -94,6 +100,8 @@
           "voiceKeywords": ["notify", "department", "associate", "claim", "tell"],
           "nextNodeId": "node_app_q3",
           "metricDeltas": {
+            "store_morale": 5.0,
+            "associate_engagement": 5.0,
             "labor_squeeze": 5.0
           }
         },
@@ -104,6 +112,7 @@
           "nextNodeId": "node_app_q3",
           "metricDeltas": {
             "store_morale": 5.0,
+            "associate_engagement": 0.0,
             "karen_index": -5.0
           }
         }
@@ -122,6 +131,7 @@
           "nextNodeId": "node_app_q4",
           "metricDeltas": {
             "store_morale": 15.0,
+            "associate_engagement": 20.0,
             "labor_squeeze": -5.0
           }
         },
@@ -131,7 +141,8 @@
           "voiceKeywords": ["join", "positive", "start", "enthusiastic", "team"],
           "nextNodeId": "node_app_q4",
           "metricDeltas": {
-            "store_morale": 10.0
+            "store_morale": 10.0,
+            "associate_engagement": 10.0
           }
         },
         {
@@ -141,6 +152,7 @@
           "nextNodeId": "node_app_q4",
           "metricDeltas": {
             "store_morale": 5.0,
+            "associate_engagement": 5.0,
             "labor_squeeze": -5.0
           }
         },
@@ -150,7 +162,8 @@
           "voiceKeywords": ["supply", "restock", "listen", "plan", "aisle"],
           "nextNodeId": "node_app_q4",
           "metricDeltas": {
-            "store_morale": 5.0
+            "store_morale": 5.0,
+            "associate_engagement": -5.0
           }
         }
       ]
@@ -168,6 +181,7 @@
           "nextNodeId": "node_app_q5",
           "metricDeltas": {
             "karen_index": -10.0,
+            "associate_engagement": 10.0,
             "store_morale": -5.0
           }
         },
@@ -178,6 +192,7 @@
           "nextNodeId": "node_app_q5",
           "metricDeltas": {
             "karen_index": -5.0,
+            "associate_engagement": 10.0,
             "store_morale": 5.0
           }
         },
@@ -187,6 +202,7 @@
           "voiceKeywords": ["radiophone", "manager", "leadership", "call", "assistant"],
           "nextNodeId": "node_app_q5",
           "metricDeltas": {
+            "associate_engagement": 5.0,
             "labor_squeeze": 5.0
           }
         },
@@ -197,6 +213,7 @@
           "nextNodeId": "node_app_q5",
           "metricDeltas": {
             "karen_index": 5.0,
+            "associate_engagement": 0.0,
             "store_morale": 5.0
           }
         }
@@ -215,6 +232,7 @@
           "nextNodeId": "node_app_q6",
           "metricDeltas": {
             "store_morale": 10.0,
+            "associate_engagement": 20.0,
             "labor_squeeze": -10.0
           }
         },
@@ -225,6 +243,7 @@
           "nextNodeId": "node_app_q6",
           "metricDeltas": {
             "store_morale": 5.0,
+            "associate_engagement": 10.0,
             "labor_squeeze": -5.0
           }
         },
@@ -234,7 +253,8 @@
           "voiceKeywords": ["decline", "family", "commitments", "early", "tomorrow"],
           "nextNodeId": "node_app_q6",
           "metricDeltas": {
-            "store_morale": 5.0
+            "store_morale": 5.0,
+            "associate_engagement": 0.0
           }
         },
         {
@@ -244,6 +264,7 @@
           "nextNodeId": "node_app_q6",
           "metricDeltas": {
             "store_morale": 10.0,
+            "associate_engagement": -10.0,
             "labor_squeeze": 5.0
           }
         }
@@ -262,6 +283,7 @@
           "nextNodeId": "node_app_q7",
           "metricDeltas": {
             "store_morale": 10.0,
+            "associate_engagement": 15.0,
             "labor_squeeze": -5.0
           }
         },
@@ -272,6 +294,7 @@
           "nextNodeId": "node_app_q7",
           "metricDeltas": {
             "store_morale": 10.0,
+            "associate_engagement": 10.0,
             "labor_squeeze": -5.0
           }
         },
@@ -281,7 +304,8 @@
           "voiceKeywords": ["ppe", "brace", "vest", "pride", "wear"],
           "nextNodeId": "node_app_q7",
           "metricDeltas": {
-            "store_morale": 5.0
+            "store_morale": 5.0,
+            "associate_engagement": 5.0
           }
         },
         {
@@ -290,7 +314,8 @@
           "voiceKeywords": ["meetings", "chairs", "connect", "peers", "listen"],
           "nextNodeId": "node_app_q7",
           "metricDeltas": {
-            "store_morale": 5.0
+            "store_morale": 5.0,
+            "associate_engagement": 0.0
           }
         }
       ]
@@ -307,7 +332,8 @@
           "voiceKeywords": ["turn in", "asset protection", "incident", "report", "official"],
           "nextNodeId": "node_app_q8",
           "metricDeltas": {
-            "store_morale": 10.0,
+            "store_morale": 5.0,
+            "associate_engagement": 15.0,
             "labor_squeeze": -5.0
           }
         },
@@ -317,6 +343,8 @@
           "voiceKeywords": ["stash", "cart", "equipment", "ready", "keep"],
           "nextNodeId": "node_app_q8",
           "metricDeltas": {
+            "store_morale": 5.0,
+            "associate_engagement": 10.0,
             "labor_squeeze": -5.0
           }
         },
@@ -326,7 +354,8 @@
           "voiceKeywords": ["leave", "quota", "hidden", "scanner", "someone"],
           "nextNodeId": "node_app_q8",
           "metricDeltas": {
-            "store_morale": 5.0
+            "store_morale": 5.0,
+            "associate_engagement": 0.0
           }
         },
         {
@@ -335,7 +364,8 @@
           "voiceKeywords": ["trade", "associate", "energy drink", "location", "share"],
           "nextNodeId": "node_app_q8",
           "metricDeltas": {
-            "store_morale": 10.0
+            "store_morale": 10.0,
+            "associate_engagement": -5.0
           }
         }
       ]
@@ -353,7 +383,8 @@
           "nextNodeId": "node_app_q9",
           "metricDeltas": {
             "karen_index": -10.0,
-            "store_morale": 5.0
+            "associate_engagement": 10.0,
+            "store_morale": -5.0
           }
         },
         {
@@ -363,6 +394,7 @@
           "nextNodeId": "node_app_q9",
           "metricDeltas": {
             "karen_index": -5.0,
+            "associate_engagement": 10.0,
             "store_morale": 5.0
           }
         },
@@ -372,7 +404,9 @@
           "voiceKeywords": ["override", "supervisor", "courtesy", "manager", "call"],
           "nextNodeId": "node_app_q9",
           "metricDeltas": {
-            "labor_squeeze": 5.0
+            "associate_engagement": 5.0,
+            "labor_squeeze": 5.0,
+            "karen_index": -5.0
           }
         },
         {
@@ -382,6 +416,7 @@
           "nextNodeId": "node_app_q9",
           "metricDeltas": {
             "karen_index": 5.0,
+            "associate_engagement": -5.0,
             "store_morale": 5.0
           }
         }
@@ -400,6 +435,7 @@
           "nextNodeId": "node_app_q10",
           "metricDeltas": {
             "store_morale": 15.0,
+            "associate_engagement": 20.0,
             "labor_squeeze": -5.0
           }
         },
@@ -409,7 +445,8 @@
           "voiceKeywords": ["currency", "rent", "survival", "paycheck", "honest"],
           "nextNodeId": "node_app_q10",
           "metricDeltas": {
-            "store_morale": 10.0
+            "store_morale": 10.0,
+            "associate_engagement": 5.0
           }
         },
         {
@@ -418,7 +455,8 @@
           "voiceKeywords": ["pizza", "breakroom", "rumors", "food", "weekend"],
           "nextNodeId": "node_app_q10",
           "metricDeltas": {
-            "store_morale": 10.0
+            "store_morale": 10.0,
+            "associate_engagement": 0.0
           }
         },
         {
@@ -428,6 +466,7 @@
           "nextNodeId": "node_app_q10",
           "metricDeltas": {
             "store_morale": 10.0,
+            "associate_engagement": 15.0,
             "labor_squeeze": -5.0
           }
         }
@@ -446,6 +485,7 @@
           "nextNodeId": "node_app_eval",
           "metricDeltas": {
             "store_morale": 15.0,
+            "associate_engagement": 20.0,
             "labor_squeeze": -5.0
           }
         },
@@ -456,6 +496,7 @@
           "nextNodeId": "node_app_eval",
           "metricDeltas": {
             "store_morale": 10.0,
+            "associate_engagement": 10.0,
             "labor_squeeze": -5.0
           }
         },
@@ -466,6 +507,7 @@
           "nextNodeId": "node_app_eval",
           "metricDeltas": {
             "store_morale": 5.0,
+            "associate_engagement": 5.0,
             "labor_squeeze": -5.0
           }
         },
@@ -475,7 +517,8 @@
           "voiceKeywords": ["praise", "crew", "teammates", "enthusiastic", "hard"],
           "nextNodeId": "node_app_eval",
           "metricDeltas": {
-            "store_morale": 10.0,
+            "store_morale": 15.0,
+            "associate_engagement": 15.0,
             "labor_squeeze": 5.0
           }
         }
@@ -485,7 +528,7 @@
       "id": "node_app_eval",
       "speakerId": "hiring_portal",
       "side": "RIGHT",
-      "text": "Calculating applicant assessment score... [RESULTS: 98.4% COMPATIBILITY - TIER 1 EXCEPTIONAL MATCH]. Status: APPLICATION APPROVED. You have been selected for an expedited in-person interview with HR Manager Cheryl at MegaMart Store #1042.",
+      "text": "Calculating applicant assessment score... [RESULTS: {score} COMPATIBILITY - {rating}]. Calibrated Starting Morale: {morale} | Engagement: {engagement}. Status: APPLICATION APPROVED. You have been selected for an in-person interview with HR Manager Cheryl at MegaMart Store #1042.",
       "choices": [
         {
           "id": "choice_app_goto_interview",
@@ -500,7 +543,7 @@
       "speakerId": "cheryl",
       "side": "RIGHT",
       "changeSceneId": "scene_personnel_office",
-      "text": "Hello and welcome! Come on in, please have a seat! I'm Cheryl, HR Manager here at Store #1042. I was just reviewing your online application and your assessment results—a 98.4% situational score! In all my years in retail HR, I've rarely seen a score that high. Your customer focus and team enthusiasm are exactly what we look for!",
+      "text": "Hello and welcome! Come on in, please have a seat! I'm Cheryl, HR Manager here at Store #1042. I was just reviewing your online application and your assessment results—a {score} situational score! Honestly, whether someone scores 60% or 99%, the corporate portal flags anyone with a pulse as meeting the criteria for every open position. Retail has no real standards, and we need bodies on the floor! Where do you see yourself making the biggest impact?",
       "choices": [
         {
           "id": "choice_interview_pleased",

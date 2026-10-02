@@ -24,5 +24,6 @@
     "speed": 1,
     "defense": 2,
     "potencyPct": 0.035
-  }
+  },
+  "portraitAsset": "portraits/player_stocker.jpg"
 }

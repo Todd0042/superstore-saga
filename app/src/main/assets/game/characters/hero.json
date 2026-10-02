@@ -4,7 +4,7 @@
   "role": "hero",
   "name": "Template Hero",
   "title": "Protagonist",
-  "portraitAsset": "portraits/template_hero.jpg",
+  "portraitAsset": "portraits/player_applicant.jpg",
   "spriteId": "hero",
   "themeColor": "#FFD700",
   "ttsPitch": 1.0,

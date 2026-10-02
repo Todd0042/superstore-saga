@@ -172,7 +172,7 @@ fun CharacterCreationScreen(
         speechManager?.cancel()
         val finalCustomization = PlayerCustomization(
             name = if (name.isBlank()) defaultHeroName else name.trim(),
-            heroClassId = selectedClass.id,
+            heroClassId = if (manifest.allowClassSelectionInCreation) selectedClass.id else "",
             title = selectedTitle,
             auraColor = selectedAura,
             voiceAffinityBonusSchool = selectedClass.preferredSchool,

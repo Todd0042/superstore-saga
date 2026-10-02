@@ -110,16 +110,26 @@ fun StoryScreen(
     val defaultHeroTitle = manifest.defaultHeroTitle.ifBlank { "Adventurer" }
     val effectiveHeroName = storyState.player.name.ifBlank { defaultHeroName }
     val effectiveHeroTitle = storyState.player.title.ifBlank { defaultHeroTitle }
+    val effectiveHeroClassId = storyState.player.heroClassId
+    val heroClassDef = if (!effectiveHeroClassId.isNullOrBlank()) GameContent.classes.firstOrNull { it.id == effectiveHeroClassId } else null
+    val effectiveHeroPortrait = if (storyState.player.customPortraitAsset?.contains("custom") == true) {
+        storyState.player.customPortraitAsset
+    } else {
+        heroClassDef?.portraitAsset
+            ?: storyState.player.customPortraitAsset
+            ?: manifest.defaultHeroPortrait
+            ?: "portraits/player_applicant.jpg"
+    }
 
-    val heroSpeaker = remember(effectiveHeroName, effectiveHeroTitle) {
+    val heroSpeaker = remember(effectiveHeroName, effectiveHeroTitle, effectiveHeroPortrait) {
         val base = GameContent.heroCharacter?.speaker ?: DialogueSpeaker(
             id = "hero",
             name = defaultHeroName,
             title = defaultHeroTitle,
-            portraitAsset = manifest.defaultHeroPortrait ?: "portraits/template_hero.jpg",
+            portraitAsset = effectiveHeroPortrait,
             themeColor = Color(0xFF64B5F6)
         )
-        base.copy(name = effectiveHeroName, title = effectiveHeroTitle)
+        base.copy(name = effectiveHeroName, title = effectiveHeroTitle, portraitAsset = effectiveHeroPortrait)
     }
     val heroBitmap = remember(heroSpeaker.portraitAsset, storyState.currentSlot) {
         heroSpeaker.portraitAsset?.let { StoryAssetLoader.loadBitmap(context, it, storyState.currentSlot) }
@@ -148,7 +158,7 @@ fun StoryScreen(
     )
 
     val leftSpeaker = when {
-        isHeroSpeaking -> currentNode.speaker
+        isHeroSpeaking -> heroSpeaker.copy(name = currentNode.speaker.name.ifBlank { effectiveHeroName })
         currentNode.side == SpeakerSide.LEFT -> currentNode.speaker
         else -> heroSpeaker
     }
@@ -392,6 +402,28 @@ fun StoryScreen(
                             maxLines = 1,
                             overflow = TextOverflow.Ellipsis
                         )
+                        if (storyState.dynamicMetrics.isNotEmpty()) {
+                            Row(
+                                horizontalArrangement = Arrangement.spacedBy(6.dp),
+                                modifier = Modifier.padding(top = 2.dp)
+                            ) {
+                                for (metric in GameContent.metrics.values) {
+                                    val currVal = storyState.dynamicMetrics[metric.id] ?: metric.initialValue
+                                    val chipColor = try {
+                                        Color(android.graphics.Color.parseColor(metric.displayColor))
+                                    } catch (_: Exception) {
+                                        Color(0xFF4CAF50)
+                                    }
+                                    Text(
+                                        text = "${metric.label}: ${currVal.toInt()}%",
+                                        color = chipColor,
+                                        fontSize = 8.sp,
+                                        fontWeight = FontWeight.Bold,
+                                        fontFamily = FontFamily.Monospace
+                                    )
+                                }
+                            }
+                        }
                     }
                 }
 

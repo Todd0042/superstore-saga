@@ -28,7 +28,7 @@
     "submit", "apply", "submit application", "clock in", "embark", "begin", "start", "enter", "ready", "punch in",
     "let's go", "start game", "play", "confirm", "forward", "onward", "work"
   ],
-  "defaultHeroPortrait": "portraits/player_cashier.jpg",
+  "defaultHeroPortrait": "portraits/player_applicant.jpg",
   "tutorialCompletionText": "All departmental basics reviewed. Punch-in card active. Welcome to MegaMart Store #1042.",
   "voicePermissionTitle": "MEGAMART ANNOUNCEMENT SYSTEM",
   "voicePermissionSubtitle": "Hands-Free Retail Voice RPG",
