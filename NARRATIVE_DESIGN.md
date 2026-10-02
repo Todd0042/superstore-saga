@@ -257,3 +257,334 @@ flowchart LR
 | **Act IV** *(The Frame Ring)* | **Security Manager Clint** | **Sales Floor Manager Todd** | **Backroom Manager Mack** | **Specialty Manager Julian** |
 | **Act V** *(The Inferno)* | **Store Manager Henderson & The Black Friday Swarm** | **The Floor Scrubber Colossus** | **The Industrial Baler Golem** | **Store Manager Henderson & The Boardroom Hydra** |
 
+---
+
+## 6. Shift-by-Shift Campaign Architecture (50+ Shifts Across 5 Acts)
+
+To deliver an expansive, deep campaign experience, each Act comprises **10 to 12 distinct shifts**. Every shift is a self-contained narrative and gameplay beat with a **Clock-In Dilemma**, a **Core Shift Objective (Mini-Game or Flow Task)**, a **Mid-Shift Conflict Event (from `CONFLICT_EVENTS.md`)**, and a **Clock-Out Debrief**.
+
+```mermaid
+graph TD
+    subgraph ShiftCycle["THE STANDARD SHIFT CYCLE"]
+        CI["1. Clock-In Dilemma<br/>(Punctuality / Morale / Clopening)"] --> Huddle["2. The Morning / Evening Huddle<br/>(Store Manager Henderson's Cheer)"]
+        Huddle --> Task["3. Core Shift Duty<br/>(Mini-Game / Route Task)"]
+        Task --> Conflict["4. Escalation / Conflict Event<br/>(Peer / Customer / Management Dilemma)"]
+        Conflict --> Break["5. 15-Minute Break / Lunch<br/>(Breakroom Politics / Donna's Wisdom)"]
+        Break --> Climax["6. Shift Resolution & Clock-Out<br/>(Stat Changes / Occurrences / Overtime)"]
+    end
+```
+
+---
+
+### Act I: Fresh Blood (Shifts 1–10) — The Honeymoon Phase
+*Focus: Eagerness, learning the store geography, mastering equipment, harmless eccentricities, initial team introductions.*
+
+* **Shift 1: First Badge Swipe & Orientation Day**
+  - *Clock-In:* First nervous badge scan; HR Manager Cheryl hands over the polyester company vest and laminated name badge.
+  - *Duty:* Store Geography Tour. Memorize key store landmarks (Breakroom, Baler, Fire Exits, Manager's Glass Fishbowl).
+  - *Conflict:* The 10-Question Pre-Hire Assessment debrief. Cheryl remarks on your personality test score with a sweet, ambiguous smile.
+  - *Resolution:* Morale 100%, Engagement 100%, 0.0 Points.
+
+* **Shift 2: The Equipment Scramble**
+  - *Clock-In:* The locker combination locks stick; Donna gives you her spare graphite lubricant.
+  - *Duty:* Sign out equipment (TC-70 handheld scanner, box cutter, register key).
+  - *Conflict:* Realizing only 12 scanners exist for 40 employees. A friendly coworker lets you borrow theirs for 10 minutes.
+  - *Resolution:* Equipment successfully returned before the 10-minute timer expires.
+
+* **Shift 3: The First Morning Huddle**
+  - *Clock-In:* Store Manager Henderson summons all departments to Action Alley at 7:00 AM sharp.
+  - *Duty:* Mandatory Store Cheer. Rhythmic clapping, spelling out the store name, performing the "corporate hip-shake."
+  - *Conflict:* Choice to yell at the top of your lungs (`Ass-Kissing +15, Morale -10`) or mumble awkwardly in the back row (`Defiance +10`).
+  - *Resolution:* Henderson singles out enthusiastic cheerers for a coupon for a free mini-fountain drink.
+
+* **Shift 4: The PLU Code & Fast Scan Gauntlet**
+  - *Duty:* High-volume item entry. Memorizing 4011 (bananas), 4046 (avocados), 4065 (bell peppers).
+  - *Conflict:* Customer presents unlabeled organic heirloom squash. Do you halt the line to lookup the code or ring it as standard zucchini?
+  - *Resolution:* First high-fives from the Area Manager. Eagerness pays off.
+
+* **Shift 5: The "Go-Back" Odyssey**
+  - *Duty:* Re-shelving abandoned merchandise across distant aisles before 3:00 PM.
+  - *Conflict:* Finding raw frozen chicken breasts shoved behind the warm automotive motor oil display.
+  - *Resolution:* Proper disposal in the claims bin. Donna warns: *"Get used to that smell, kid."*
+
+* **Shift 6: First Interaction with Senior Cashier Brenda**
+  - *Duty:* Front-end line busting / cart returns.
+  - *Conflict:* Brenda sweetly asks you to *"watch my lane for two minutes while I grab a cough drop."* She doesn't return for 35 minutes.
+  - *Resolution:* First realization that senior peers offload their duties onto rookie shoulders.
+
+* **Shift 7: The Saturday Family Rush**
+  - *Duty:* Action Alley navigation amidst double-wide strollers, screaming children, and motorized scooters.
+  - *Conflict:* Customer insists a \$499 soundbar was marked on the clearance shelf for \$19.99 because a rogue toddler dropped it there.
+  - *Resolution:* Calling a manager override. Area Manager sighs and blames the sales floor.
+
+* **Shift 8: The Cardboard Baler Initiation**
+  - *Duty:* Crushing cardboard boxes in the backroom warehouse.
+  - *Conflict:* Coworkers leave 15 flat carts stacked high in front of the baler. Do you clear the jam alone or leave it for overnight?
+  - *Resolution:* Sweating through manual labor. Backroom Manager Mack nods approvingly from a distance.
+
+* **Shift 9: The Clopening Prelude**
+  - *Clock-In:* Scheduled until 11:00 PM closing, then scheduled at 6:00 AM the next morning.
+  - *Duty:* Closing store sweeps; cleaning floors, locking jewelry cases, securing registers.
+  - *Conflict:* Customer refuses to leave at 10:59 PM: *"I only need three more items, corporate policy says you can't kick me out!"*
+  - *Resolution:* Leaving the parking lot at 11:30 PM with 6.5 hours before your next alarm.
+
+* **Shift 10: Act I Climax & Boss Encounter**
+  - *The Climax:* Exhausted clopening shift brings the Act I Boss confrontation (e.g., *The Extreme Coupon Glitcher* with 74 expired printout coupons / *The Runaway Shopping Cart Train* in a thunderstorm).
+  - *Victory:* Overcoming the initial hurdle. Store Manager Henderson gives you a laminated certificate: *"Rookie of the Month."*
+
+---
+
+### Act II: Breakroom Politics & Slacker Shenanigans (Shifts 11–22) — The Grunt Reality
+*Focus: Peer friction, disappearing coworkers, dirty breakrooms, hoarding working equipment, shifting blame.*
+
+* **Shift 11: The Clopening Hangover & Coffee War**
+  - *Clock-In:* Arriving at 5:58 AM on 4 hours of sleep. Morale takes its first permanent drop to 75%.
+  - *Duty:* First opening rush. Power-walking through the quiet, dim morning store.
+  - *Conflict:* Breakroom incident 2.1: The communal fridge has been purged, and your labeled lunch is in the trash.
+  - *Resolution:* Choosing to confront the breakroom clique or eat stale vending machine chips.
+
+* **Shift 12: The Great Equipment Hoard**
+  - *Duty:* Need a functioning hydraulic pallet jack or handheld scanner with a working laser lens.
+  - *Conflict:* Scenario 1.4: Derrick hid the only smooth pallet jack in the high seasonal racking; Brenda locked the working barcode scanners in her personal locker.
+  - *Resolution:* Operating with broken, squeaking wheels that drift to the left; physical stamina drained.
+
+* **Shift 13: The Disappearing Coworker Mystery**
+  - *Duty:* Partnered task requiring two associates (two-person furniture carry / dual register line).
+  - *Conflict:* Scenario 1.1: Kyle announces a *"quick five-minute bathroom break"* and vanishes for 48 minutes behind the outdoor pallets.
+  - *Resolution:* Taking the full customer brunt alone while the Area Manager walks by scowling.
+
+* **Shift 14: The Microwave Fish Biohazard**
+  - *Lunch Break:* Breakroom incident 2.2: The microwave is coated in charred leftover mackerel.
+  - *Conflict:* Kyle and Derrick are laughing in the corner. If you report it, you're a snitch; if you clean it, you're the store maid.
+  - *Resolution:* Donna gives you half an egg salad sandwich from her cooler: *"Don't ever clean up after grown adults, kid."*
+
+* **Shift 15: The Go-Back Cart Ambush**
+  - *Duty:* Finishing your daily tasks at 10:45 PM.
+  - *Conflict:* Scenario 1.5: Brenda wheels two towering carts of miscellaneous returns into your department at 10:50 PM, says *"Front end thanks you!"*, and clocks out.
+  - *Resolution:* Do you stay 45 minutes late and risk unapproved overtime, or push the carts into the dark furniture aisle?
+
+* **Shift 16: The "Shelf-Plugging" Scandal**
+  - *Duty:* Stocking and inventory audit.
+  - *Conflict:* Scenario 1.3: Discovering that Kyle has shoved 18 cans of wet cat food behind family-size cereal boxes to avoid walking to aisle 14.
+  - *Resolution:* Fixing Kyle's mess slows your own pace. Sales Floor Manager Todd notes your low velocity on his clipboard.
+
+* **Shift 17: The Cold Pizza Scramble**
+  - *Shift Mid-Point:* Store Manager Henderson announces over the intercom: *"Appreciation Pizza in the breakroom!"*
+  - *Conflict:* Scenario 2.3: Arriving 8 minutes late to find six crushed cardboard boxes with dried crusts and grease stains; morning shifts took entire boxes home.
+  - *Resolution:* Morale drops by 15%. Donna dryly observes: *"Every slice represents a canceled cost-of-living raise."*
+
+* **Shift 18: The Pallet Drop Trap**
+  - *Duty:* Closing aisle recovery.
+  - *Conflict:* Multi-Perspective Event 7.2: Derrick drops a leaning 7-foot pallet of bulk charcoal in the center of your aisle at 10:55 PM, honks, and speeds away.
+  - *Resolution:* Calling Derrick out over the radio or breaking down 80 heavy bags with tired arms.
+
+* **Shift 19: The Fitting Room 3 Stash**
+  - *Duty:* Store sweep and sanitation patrol.
+  - *Conflict:* Multi-Perspective Event 7.3: Discovering an associate nest in Fitting Room 3 complete with a stolen beanbag, energy drinks, and phone chargers.
+  - *Resolution:* Do you use the retreat for your own 15-minute break or report the unauthorized breakroom?
+
+* **Shift 20: The Uncertified Equipment Standoff**
+  - *Duty:* High-bay freight movement.
+  - *Conflict:* Multi-Perspective Event 7.4: Coworker Derrick operates the high-reach forklift without an OSHA certification license and nearly crushes an endcap.
+  - *Resolution:* Reporting the violation creates a blood-feud with the loading dock crew; staying silent makes you an accomplice.
+
+* **Shift 21: The Toxic Rumor Mill**
+  - *Clock-In:* Walking past the smoking patio whisper-circle.
+  - *Conflict:* Brenda and Chad have told everyone that you are an "eager bootlicker" gunning for supervisor by reporting your coworkers.
+  - *Resolution:* Ostracized in the breakroom. Associates stop replying to your walkie calls.
+
+* **Shift 22: Act II Climax & Boss Encounter**
+  - *The Climax:* Direct confrontation with the toxic peer veteran (**Brenda**, **Kyle**, **Derrick**, or **Chad** depending on your track).
+  - *Battle:* Turn-based JRPG Boss Battle where the peer summons lazy excuses, throws return carts, and spams weaponized bathroom breaks.
+  - *Victory:* Exposing their laziness in front of the entire department huddle. The peer is disciplined, but the store environment grows colder.
+
+---
+
+### Act III: The Corporate Gaze & Algorithmic Quotas (Shifts 23–34) — The System Strikes
+*Focus: Overhead camera tracking, timer beeps, automated speed quotas, bathroom tracking, mystery shoppers, speed-clocking.*
+
+* **Shift 23: The Algorithmic Handheld Upgrade**
+  - *Clock-In:* New software update rolled out on all handheld scanners. A digital tachometer displays your speed in real time.
+  - *Duty:* Meeting the baseline target (22 IPM on registers / 65 cases-per-hour on floor / 4:00 PM truck unload).
+  - *Conflict:* Scanner emits high-pitched warning chimes whenever you stop moving for more than 45 seconds.
+  - *Resolution:* Engagement drops to 40%. The job ceases to be about people and becomes pure mechanical input.
+
+* **Shift 24: The 10-Foot Rule & Overhead Camera Audit**
+  - *Duty:* Customer assistance on the sales floor.
+  - *Conflict:* Scenario 3.2: Corporate directive mandates greeting every customer within 10 feet within 4 seconds. Todd reviews surveillance footage with a digital stopwatch.
+  - *Resolution:* Parroting robotic corporate greetings until your vocal cords feel dry.
+
+* **Shift 25: The 4-Minute Bathroom Audit**
+  - *Duty:* Mid-shift bio break.
+  - *Conflict:* Scenario 3.3: Todd stands outside the associate restroom with a clipboard and a smartphone timer. He knocks loudly at the 4-minute mark: *"Movement check!"*
+  - *Resolution:* Choice to rush out humiliated (`Morale -20`) or tell him to call HR (`Defiance +20, Attendance Watchlist`).
+
+* **Shift 26: The "Code Spark" All-Hands Front-End Drag**
+  - *Duty:* Deep freight stocking or high-end electronics consultations.
+  - *Conflict:* Scenario 3.4 & Event 7.1: Marsha hits the emergency front-end page: *"ALL CERTIFIED ASSOCIATES TO REGISTERS IMMEDIATELY."*
+  - *Resolution:* Your primary freight/counter work sits abandoned. Todd later berates you for not finishing your stocking pallet.
+
+* **Shift 27: The Store Credit Card Bounty Squeeze**
+  - *Duty:* Register / counter checkouts.
+  - *Conflict:* Scenario 3.6: Mandatory quota: 3 high-interest store card signups per shift or face mandatory "coaching."
+  - *Resolution:* Pitching predatory 29.99% APR store cards to elderly regulars; choice between moral guilt (`Morale -15`) or manager wrath.
+
+* **Shift 28: The Speed-Clocking / Item Spacing Paradox**
+  - *Duty:* High-speed checkout / stock stocking.
+  - *Conflict:* Scenario 3.1: To keep IPM above 25, cashiers rapidly swipe items without bagging, causing bread and eggs to crush under 12-packs of soda.
+  - *Resolution:* Choosing whether to protect the customer's eggs or your corporate scan metric.
+
+* **Shift 29: The Smart-Shelf Sensor Mayhem**
+  - *Duty:* Sales floor maintenance and facing.
+  - *Conflict:* Scenario 3.9: Weight-sensing brackets trigger 90-second emergency timers across five aisles simultaneously as customers misplace cereal boxes.
+  - *Resolution:* Sprinting like a pinball between aisles to prevent metric violations.
+
+* **Shift 30: The Digital Time-Card "Adjustment"**
+  - *Duty:* Paystub review on the associate portal.
+  - *Conflict:* Scenario 3.7: Discovering that 15 minutes of overtime you earned clearing the baler yesterday was shaved back to 8.0 hours flat by management.
+  - *Resolution:* Confronting Cheryl or Henderson. They claim: *"It was an automated system correction, you cannot work unauthorized OT."*
+
+* **Shift 31: The Unreasonable 1-Star Survey Ambush**
+  - *Duty:* Customer satisfaction review.
+  - *Conflict:* Scenario 3.8: Store receipt survey yields a 1-star review: *"Cashier smiled too aggressively; store was out of discontinued 1994 soda brand."*
+  - *Resolution:* Front End Manager Marsha assigns you a mandatory 45-minute re-training module on "Radiating Authentic Warmth."
+
+* **Shift 32: The Corporate Mystery Shopper Infiltration**
+  - *Duty:* Floor patrol and greeting.
+  - *Conflict:* An undercover corporate inspector dressed in casual clothes deliberately attempts to bait you into skipping safety protocols or offering unauthorized discounts.
+  - *Resolution:* Navigating the trick questions without breaking character.
+
+* **Shift 33: The 5-Point Squeeze Warning**
+  - *Clock-In:* Cheryl calls you into HR. You sit at 4.5 attendance occurrences due to flu season and clopening exhaustion.
+  - *Conflict:* Cheryl places the manila folder on her desk: *"One more late badge swipe, and the system auto-flags you for dismissal. Unless... you cover weekend overnights."*
+  - *Resolution:* Pure survival dilemma: take the brutal overnight shift or risk the chopping block.
+
+* **Shift 34: Act III Climax & Boss Encounter**
+  - *The Climax:* Surprise regional executive walk-through (**The Metric Auditor**, **The Regional Zone Inspector**, or **The Corporate Mystery Shopper**).
+  - *Battle:* Multi-phase corporate audit battle where the boss attacks with Clipboards of Doom, Red-Tape Entanglements, and Velocity Penalties.
+  - *Victory:* Flawless compliance or defiant survival forces the auditor to sign off on the store's certification. Store Manager Henderson takes all the credit.
+
+---
+
+### Act IV: The Frame Job & Internal Espionage (Shifts 35–46) — Paranoia & Sabotage
+*Focus: Planted evidence, missing high-ticket merchandise, forged signatures, stolen badges, weaponized HR complaints, midnight lock-ins.*
+
+* **Shift 35: The Broken Surveillance Angle**
+  - *Clock-In:* Noticing that three ceiling dome cameras over your work area have been pointed down toward blank concrete.
+  - *Conflict:* Donna whispers in the breakroom: *"When Clint adjusts the cameras away from high-ticket items, someone's getting set up. Watch your badge."*
+  - *Resolution:* Hyper-vigilance unlocks; paranoid internal dialogue replaces standard reactions.
+
+* **Shift 36: The "Sweethearting" Register Skim Setup**
+  - *Duty:* Ringing up customers at register 7.
+  - *Conflict:* Scenario 5.1: Coworker brings up a flat-screen TV and expensive power tools with fake clearance barcodes taped over real UPCs.
+  - *Resolution:* Catching the fake barcode before scanning, or getting flagged by Clint's overhead video replay.
+
+* **Shift 37: The Missing Bay 4 Electronics Pallet**
+  - *Duty:* Backroom inventory check.
+  - *Conflict:* Scenario 5.2: A \$12,000 pallet of gaming consoles vanishes from Bay 4. A forged receiving document bears your initials in blue ballpoint ink.
+  - *Resolution:* Security Manager Clint detains you in the loss prevention office for a 90-minute interrogation.
+
+* **Shift 38: The Locker Inspection Raid**
+  - *Shift Mid-Point:* Intercom announces an unscheduled locker audit.
+  - *Conflict:* Scenario 5.3: Clint and Cheryl use bolt cutters on your lock. Hidden inside your winter coat is an unopened \$300 digital camera from electronics.
+  - *Resolution:* Proving you were on the sales floor when the camera was logged missing; noting the discount sticker originated from Manager Julian's computer.
+
+* **Shift 39: The Weaponized Ethics Hotline Strike**
+  - *Clock-In:* Summons to the HR office.
+  - *Conflict:* Scenario 5.5: Three anonymous calls to the corporate 1-800 hotline accuse you of harassment and creating a hostile work environment.
+  - *Resolution:* Exposing that the wording matches Brenda's signature grammatical mistakes (*"irregardless of store policy"*). Cheryl pauses, rattled.
+
+* **Shift 40: The Stolen Master Keys Lockdown**
+  - *Duty:* Closing shift transition.
+  - *Conflict:* Scenario 5.4: Master display keys disappear. Clint triggers exterior security gates. You find the key ring slipped into your apron pocket by Chad.
+  - *Resolution:* Stealth maneuver to ditch the keys into Julian's open briefcase before the physical body searches begin.
+
+* **Shift 41: The Phantom Walkie Page & Stuck Mic**
+  - *Duty:* High-stress floor management.
+  - *Conflict:* Scenario 4.5: Radio frequency is jammed for 22 minutes while someone plays 80s sitcom tunes from the cooler. Henderson searches for the radio serial number.
+  - *Resolution:* Derrick owes you his life after you unstick his mic before Henderson catches him.
+
+* **Shift 42: The Watermelon / Dump-Bin Avalanche**
+  - *Duty:* Center action alley transit.
+  - *Conflict:* Scenario 4.4: 8-foot wire dump-bin collapses under a climbing toddler, sending hundreds of watermelons and bouncing balls across three grocery aisles.
+  - *Resolution:* Physical reflex check; preventing a catastrophic chain-reaction collapse while managers hide in their offices.
+
+* **Shift 43: The Compactor Shredder Scheme Uncovered**
+  - *Duty:* Late night trash disposal at 2:00 AM.
+  - *Conflict:* Scenario 5.7: Catching Mack and freight drivers feeding undamaged \$1,500 smart TVs into the hydraulic trash compactor to trigger fraudulent freight insurance payouts.
+  - *Resolution:* Securing photographic evidence on your phone; Mack stares you down: *"You better forget what you saw, rookie."*
+
+* **Shift 44: The Midnight Off-the-Clock Lock-In**
+  - *Duty:* 11:00 PM closing shift.
+  - *Conflict:* Scenario 5.6: Henderson padlocks the glass exit doors with physical chain locks: *"Everyone clock out right now to save payroll. Nobody leaves until the entire sales floor is faced."*
+  - *Resolution:* Illegal forced labor standoff: hit the emergency fire bar (`Fire Department summoned`), record Henderson's voice (`Federal Evidence acquired`), or refuse to touch a broom.
+
+* **Shift 45: The Blackout & Broken Badge Reader**
+  - *Duty:* Nighttime audit.
+  - *Conflict:* Store power flickers. The time clock terminal deletes your punch history. Cheryl hands you an occurrence warning: *"System shows you were absent today."*
+  - *Resolution:* Demanding Cheryl print your register transaction log to prove you processed 412 customers while supposedly "absent."
+
+* **Shift 46: Act IV Climax & Boss Encounter**
+  - *The Climax:* Direct confrontation with the internal conspiracy ringleader (**Security Manager Clint**, **Sales Floor Manager Todd**, **Backroom Manager Mack**, or **Specialty Manager Julian**).
+  - *Battle:* High-stakes corporate confrontation in the Loss Prevention Security Suite. The boss summons False Incident Reports, Video Edits, and Termination Threat debuffs.
+  - *Victory:* Countering with gathered evidence (surveillance timestamps, forged signatures, photo logs). The corrupt manager retreats into Henderson's inner executive office.
+
+---
+
+### Act V: The Inferno (Shifts 47–56) — Inescapable Retail Dread
+*Focus: Psychological horror, endless aisles, 60Hz fluorescent buzz, Black Friday apocalypse, rogue scrubbers, the final clock-out.*
+
+* **Shift 47: The Endless Fluorescent Hum (60Hz Psychosis)**
+  - *Clock-In:* The store entrance doors are welded shut from the outside with yellow structural brackets. The ceiling lights buzz at a deafening 60Hz.
+  - *Duty:* Routine morning recovery, but the aisles appear 50% longer than yesterday.
+  - *Conflict:* Looking down Aisle 4; the endcap never gets closer no matter how fast you walk.
+  - *Resolution:* Donna gives you foam earplugs: *"Don't listen to the hum. Focus on the linoleum tiles."*
+
+* **Shift 48: The Rogue Robotic Floor Scrubber**
+  - *Duty:* Nighttime cleaning cycle.
+  - *Conflict:* Scenario 6.3: Autonomous commercial floor scrubber machine boots up with glowing crimson status LEDs. It begins patrolling the center aisle at 15 MPH, chasing associates with whirling nylon brushes.
+  - *Resolution:* Leaping onto a merchandise display rack to evade the machine; discovering its override panel is locked with Henderson's master key.
+
+* **Shift 49: The Phantom Intercom Whispers**
+  - *Duty:* Solo inventory audit at 3:00 AM.
+  - *Conflict:* Scenario 6.2: Store PA system chimes and begins whispering personalized corporate psychological taunts: *"Associate #1042, your engagement is below company average. Your productivity has disappointed your parents."*
+  - *Resolution:* Locating the PA control box in the manager's office to rip the auxiliary cable out.
+
+* **Shift 50: The Infinite Shifting Aisles**
+  - *Duty:* Reaching the claims department in the backroom.
+  - *Conflict:* Scenario 6.1: Shelving units slide across concrete like monolithic stone walls. Exiting Aisle 9 leads directly back into Aisle 9.
+  - *Resolution:* Navigating by the overhead emergency exit signs; spatial disorientation survival check.
+
+* **Shift 51: The Mannequin Uprising**
+  - *Duty:* Apparel department sweep.
+  - *Conflict:* Headless plastic apparel mannequins have moved positions during the lighting flicker; their arms point accusingly toward the Executive Suite.
+  - *Resolution:* Dismantling plastic limbs to clear a path; uncovering Henderson's secret payroll ledger hidden in a hollow display torso.
+
+* **Shift 52: The Siren of the Black Friday Swarm**
+  - *Pre-Shift:* Red emergency rotating beacons activate on the roof beams. External crowd banging vibrates the glass storefront.
+  - *Conflict:* Store Manager Henderson steps onto his plastic milk crate: *"Associates! Today, we don't bleed. We sell! Unlock the floodgates!"*
+  - *Resolution:* Preparing barricades; equipping box cutters, handheld scanners, and pallet jacks for total war.
+
+* **Shift 53: Breach of the Front Doors**
+  - *Duty:* Holding the checkout front-line against a tsunami of frenzied suburban shoppers fighting over \$99 65-inch 4K TVs.
+  - *Conflict:* Shoppers tearing merchandise displays apart; register belts smoking from friction heat.
+  - *Resolution:* Executing rapid-fire POS Combos (Tier I–III Calibration) to clear the horde without letting the front-end collapse.
+
+* **Shift 54: Ascent to the Executive Penthouse (Store Mezzanine)**
+  - *Duty:* Fighting through the upper administrative walkway above the sales floor.
+  - *Conflict:* Corporate administrative staff throwing reams of printer paper, disciplinary write-ups, and shredded termination notices like throwing stars.
+  - *Resolution:* Clearing the executive conference room; Cheryl flees into Henderson's inner sanctum.
+
+* **Shift 55: The Gatekeeper Showdown**
+  - *The Gatekeeper:* The department-specific ultimate nightmare construct (**The Floor Scrubber Colossus**, **The Industrial Baler Golem**, or **The Loss Prevention Panopticon**).
+  - *Battle:* Multi-phase mechanic fight involving emergency cut-off switches, hydraulic fluid leaks, and heavy pallet counterweights.
+  - *Victory:* The machine explodes into shredded cardboard and hydraulic steam. The double oak doors to Henderson's office swing open.
+
+* **Shift 56: Act V Grand Finale & The Final Clock-Out**
+  - *The Climax:* **Store Manager Henderson & The Unstoppable Corporate Machine**.
+  - *The Final Boss:* Henderson stands atop a throne of stacked regional trophies, wielding a golden barcode scanner and an infinite clipboard. He summons the phantom board of directors, fires disciplinary coachings with auto-tracking accuracy, and unleashes the storewide overhead sprinkler system.
+  - *The Resolution:* Exposing Henderson's federal insurance fraud, payroll theft recordings, and safety violations over the live storewide PA system and sending the archive directly to corporate headquarters and the Department of Labor.
+  - *The Final Swipe:* Walking out through the shattered glass entrance into the cool morning sunrise. Sliding your plastic badge through the time-clock terminal one last time:
+    - *SCREEN READS:* **PUNCH CONFIRMED: 07:00 AM. STATUS: RETIRED / FREE.**
+
+
