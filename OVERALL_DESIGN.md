@@ -237,43 +237,54 @@ flowchart TD
 
 ---
 
-## 6. Persistent Meta-Meters (The Narrative HUD)
+## 6. Persistent Meta-Meters (The Narrative & Store HUD)
 
-Spanning across **Story Dialog, Mini-Games, and Boss Battles**, three persistent status gauges sit at the top of the screen:
+The game monitors two interconnected levels of state: **The Associate's Personal Status** (micro level) and **Store #1042's Environmental Climate** (macro level).
 
+### A. Associate Status Gauges (The Top-Screen HUD)
 ```
 [ ❤️ MORALE: ▓▓▓▓▓▓░░░░ 60% ]   [ ⚡ ENGAGEMENT: ▓▓▓░░░░░░░ 30% ]   [ ⚠️ OCCURRENCES: 3.5 / 5.0 ]
 ```
 
-### 1. Morale Meter (Emotional Battery: 0% - 100%)
-- **What it represents:** The character's emotional resilience, mental health, and willingness to endure retail absurdity.
-- **Narrative Trajectory:** Starts at 100% in Act I; steadily eroded by peer toxicity in Act II and corporate gaslighting in Acts III–V.
-- **Gameplay Effect:** When Morale is high, the player has access to witty, patient, or de-escalating dialogue choices. When Morale is depleted (<20%), dialogue choices shift to nihilistic, cynical, or explosive outbursts.
+1. **Morale Meter (Emotional Battery: 0% - 100%):**
+   - *What it represents:* Emotional stamina and mental health. Eroded by clopening shifts, toxic peers, customer screaming, and broken equipment.
+   - *Gameplay Effect:* Unlocks patient, witty dialogue when high; forces cynical, desperate, or explosive reactions when depleted (<20%).
 
-### 2. Engagement Meter (Effort & Caring: 0% - 100%)
-- **What it represents:** How much the character still buys into corporate propaganda, cares about doing a good job, and believes hard work will pay off.
-- **Narrative Trajectory:** High in Act I ("Employee of the Month hopeful"); drops as the player realizes slackers get promoted and good work is rewarded with more work ("Quiet Quitting").
-- **Gameplay Effect:** Gates high-effort actions. A player with 15% Engagement physically cannot choose *"Stay late to fix the seasonal aisle"* or *"Help the frantic customer find baking soda"*. Instead, low engagement unlocks "slacker shortcuts" (e.g., *"Hide in the fixture room"*, *"Tell customer it's out of stock without checking"*).
+2. **Engagement Meter (Effort & Caring: 0% - 100%):**
+   - *What it represents:* Willingness to go the extra mile vs. "Quiet Quitting."
+   - *Gameplay Effect:* High engagement enables extra-effort tasks (staying late to help, deep-facing shelves). Low engagement (<40%) locks those options out and unlocks slacker shortcuts (hiding in fitting rooms, feigning ignorance).
 
-### 3. Attendance Occurrence Tracker (The 5-Point "Selective Enforcement" System)
-- **The Retail Dread Mechanic:** Inspired by strict real-world retail attendance policies (e.g., Walmart's 5-point system).
-  - Tardy (10 mins late): `+0.5 points`
-  - Unexcused Absence / Call-In: `+1.0 point`
-  - Leaving Early: `+0.5 points`
-  - "No Call, No Show": `+2.0 points`
-- **The 5.0+ Point Paradox (Hypocritical Enforcement):**
-  - Reaching **5.0 points does NOT automatically trigger immediate termination**.
-  - Instead, the corporation reviews the employee through a corrupt, two-factor evaluation:
-    1. **Productivity Score (Output/Velocity):** How much freight do they stock? How fast is their scan IPM? Can the store survive losing them?
-    2. **Ass-Kissing Score (Brown-Nosing / Compliance):** Do they attend the morning cheer? Do they laugh at the assistant manager's jokes? Do they report coworkers?
-  - **The Evaluation Outcomes at 5.0+ Points:**
-    - **High Productivity + High Ass-Kissing:** Points are quietly "cleared from the system" or perpetually ignored ("points can build to 8.5 or 12.0 without a word").
-    - **High Productivity + Low Ass-Kissing:** Management holds the points over the player's head as a weapon ("You're at 6.0 points, so you *will* work this weekend or we process your paperwork today").
-    - **Low Productivity + High Ass-Kissing:** Management protects their favorite lackey, making excuses to corporate HR.
-    - **Low Productivity + Low Ass-Kissing:** Immediate ruthless termination / Game Over.
-- **The Dilemma (Desire to Not Be There vs. Survival):**
-  - Story prompts regularly test the player's boiling point: *"You wake up at 5:30 AM with a pounding migraine. You have 4.5 points. Do you drag yourself into the store, or burn another point to sleep in?"*
-  - Calling out pushes the player into the dangerous 5.0+ danger zone, where survival hinges on whether their output or sycophancy is high enough to dodge the corporate chopping block.
+3. **Attendance Occurrence Tracker (The 5-Point "Selective Enforcement" System):**
+   - *The Dread Clock:* Tardy (+0.5), Absence (+1.0), Leave Early (+0.5), No Call/No Show (+2.0).
+   - *The 5.0+ Paradox:* Reaching 5.0 points does not automatically fire the player. Termination is selectively enforced based on **Productivity Score** (mini-game speed/output) and **Ass-Kissing Score** (sycophancy, attending cheers, reporting peers).
+
+---
+
+### B. Storewide Climate Gauges (Store #1042 Macro Indicators)
+Visible on the shift briefing screen, breakroom bulletin board, and manager evaluation terminals:
+
+```
+╔══════════════════════════════════════════════════════════════════════╗
+║               STORE #1042 MACRO ENVIRONMENTAL CLIMATE                ║
+║  STORE MORALE:       [ ▓▓▓▓░░░░░░ 42% ] (Toxic / Whisper Mill)       ║
+║  SHRINK & LOSS:      [ ▓▓▓▓▓▓▓░░░ 68% ] (Security Paranoia Critical) ║
+║  LABOR SQUEEZE:      [ ▓▓▓▓▓▓▓▓░░ 78% ] (Severe Payroll Austerity)   ║
+║  CUSTOMER CHAOS:     [ ▓▓▓▓▓░░░░░ 51% ] (Elevated Weekend Tension)   ║
+╚══════════════════════════════════════════════════════════════════════╝
+```
+
+1. **Store Morale (0% - 100%):**
+   - Represents the general vibe across all departments. Drops with pizza parties, snitching, and wage freezes.
+   - *Impact:* When Store Morale crashes (<35%), coworkers become hyper-combative, shift-dumping surges, walkie hot-mics occur, and breakroom microwave biohazards multiply.
+2. **Shrink & Loss Index (0% - 100%):**
+   - Tracks stolen goods, damaged inventory, and fraudulent claims.
+   - *Impact:* High Shrink (>60%) puts Security Manager Clint on the warpath, triggering random locker raids, bag searches at exits, and managerial frame-up schemes.
+3. **Labor Squeeze (0% - 100%):**
+   - The degree of corporate payroll austerity enforced by Store Manager Henderson.
+   - *Impact:* High Labor Squeeze (>70%) forces aggressive micromanagement—sudden 4-minute bathroom audits by Todd, scan-speed alarm chimes, and illegal 11:00 PM off-the-clock lock-ins.
+4. **Customer Chaos (0% - 100%):**
+   - Foot traffic density, entitled shopper temperaments, and register line lengths.
+   - *Impact:* Drives emergency "Code Spark" cash register calls, coupon glitcher meltdowns, and action alley watermelon avalanches.
 
 ---
 
@@ -398,24 +409,55 @@ To deliver immense replayability across 56 shifts and 4 department tracks withou
 ```mermaid
 flowchart TD
     Shift[Shift N Begins] --> Pool[Load Incidents Pool from JSON]
-    Pool --> Filter[Filter Candidate Incidents]
+    Pool --> Filter[Filter Eligible Candidate Incidents]
     
     subgraph FilterChecks["Candidate Eligibility Predicates"]
         Filter --> C1["1. Track Match (e.g. Sales Floor or All)"]
         C1 --> C2["2. Act Match (e.g. Current Act == Act II)"]
-        C2 --> C3["3. History Check: occurrenceCount < maxOccurrences"]
+        C3["3. History Check: occurrenceCount < maxOccurrences"]
+        C2 --> C3
         C3 --> C4["4. Cooldown Check: (currentShift - lastShiftTriggered) > cooldownShifts"]
-        C4 --> C5["5. State & Flag Checks (Morale, Engagement, Required/Forbidden Flags)"]
+        C4 --> C5["5. Hard Prerequisites (Flags, min/max Stat Gates)"]
     end
 
-    C5 --> Lottery{Weighted Random Selection}
+    C5 --> WeightCalc[Calculate Dynamic Probability Weights]
+    
+    subgraph Multipliers["Two-Tiered Dynamic Weight Multipliers"]
+        WeightCalc --> M1["Base Incident Weight"]
+        M1 --> M2["x Associate Stat Modifiers (Morale, Engagement, Ass-Kissing)"]
+        M2 --> M3["x Store Ecosystem Modifiers (Store Morale, Shrink, Squeeze, Chaos)"]
+    end
+
+    M3 --> Lottery{Weighted Random Selection Lottery}
     Lottery -->|Event Chosen| Trigger[Trigger Event Dialogue & Choices]
-    Trigger --> UpdateSave[Update Save File: occurrenceCount + 1, lastShiftTriggered = currentShift]
+    Trigger --> UpdateSave[Update Save: occurrenceCount + 1, lastShiftTriggered, Stat Deltas]
     Lottery -->|All on Cooldown| Fallback[Draw Minor Daily Shift Event / Ambient Floor Routine]
 ```
 
-### A. Incident Data Schema (`incidents.json`)
-Every incident is declared in data with strict occurrence and cooldown constraints:
+### A. The Two-Tiered Dynamic Probability Formula
+The probability of an event being drawn during Shift `N` is not fixed. It scales dynamically with both the player's personal situation and the store's macro climate:
+
+$$\text{EffectiveWeight} = \text{BaseWeight} \times \prod \text{AssociateModifiers} \times \prod \text{StoreModifiers}$$
+
+#### Probability Multiplier Examples:
+* **The Paranoid Locker Audit (`event_locker_raid`):**
+  - Base Weight: `60`
+  - If `Store Shrink > 65%`: Multiplier $\times 2.5$ (Security Manager Clint is frantic).
+  - If `Player Ass-Kissing < 30`: Multiplier $\times 1.8$ (Player is unshielded by management favor).
+  - *Resulting Weight:* $60 \times 2.5 \times 1.8 = \mathbf{270}$ (Becomes 4.5x more likely to trigger).
+* **The Bathroom Audit Knock (`event_bathroom_audit`):**
+  - Base Weight: `70`
+  - If `Store Labor Squeeze > 70%`: Multiplier $\times 2.0$ (Todd is micromanaging down to the second).
+  - If `Player Engagement < 40%`: Multiplier $\times 1.5$ (Player is actively suspected of time-theft).
+  - *Resulting Weight:* $70 \times 2.0 \times 1.5 = \mathbf{210}$ (Becomes 3x more likely).
+* **The Breakroom Romance Gossip (`event_connex_tryst` / `event_whisper_mill`):**
+  - Base Weight: `80`
+  - If `Store Morale < 40%`: Multiplier $\times 2.2$ (Dissatisfied associates spend shifts whispering).
+  - *Resulting Weight:* $80 \times 2.2 = \mathbf{176}$.
+
+---
+
+### B. Incident Data Schema with Dynamic Weight Modifiers (`incidents.json`)
 
 ```json
 {
@@ -425,13 +467,18 @@ Every incident is declared in data with strict occurrence and cooldown constrain
   "eligibleActs": [2, 3],
   "maxOccurrences": 1,
   "cooldownShifts": 0,
-  "weight": 85,
+  "baseWeight": 85,
   "prerequisites": {
     "minMorale": 0,
     "maxMorale": 100,
     "requiredFlags": [],
     "forbiddenFlags": ["todd_fired", "taylor_transferred"]
   },
+  "weightModifiers": [
+    { "stat": "store_morale", "operator": "LESS_THAN", "threshold": 45, "multiplier": 1.8 },
+    { "stat": "associate_morale", "operator": "LESS_THAN", "threshold": 35, "multiplier": 1.4 },
+    { "stat": "store_labor_squeeze", "operator": "GREATER_THAN", "threshold": 60, "multiplier": 1.3 }
+  ],
   "startNodeId": "node_connex_tryst_001"
 }
 ```
@@ -444,18 +491,24 @@ Every incident is declared in data with strict occurrence and cooldown constrain
   "eligibleActs": [1, 2, 3],
   "maxOccurrences": 3,
   "cooldownShifts": 5,
-  "weight": 120,
+  "baseWeight": 120,
   "prerequisites": {
     "minMorale": 10,
     "maxMorale": 80,
     "requiredFlags": [],
     "forbiddenFlags": []
   },
+  "weightModifiers": [
+    { "stat": "store_morale", "operator": "LESS_THAN", "threshold": 50, "multiplier": 1.6 },
+    { "stat": "store_chaos", "operator": "GREATER_THAN", "threshold": 60, "multiplier": 1.4 }
+  ],
   "startNodeId": "node_microwave_fish_001"
 }
 ```
 
-### B. Occurrence Caps & Cooldown Rules
+---
+
+### C. Occurrence Caps & Cooldown Rules
 1. **One-Time Major Plot Catalysts (`maxOccurrences: 1`):**
    - High-impact narrative events (e.g. catching Todd in the Connex trailer, the master key lockdown, the compactor fraud discovery, the Blackout) can only occur **once per campaign**. Once triggered, they are permanently retired from the candidate pool.
 2. **Recurring Retail Nuances (`maxOccurrences: 2 - 4`):**
@@ -469,10 +522,17 @@ Every incident is declared in data with strict occurrence and cooldown constrain
 
 ---
 
-### C. Save File Persistence Schema (`SaveGameData`)
-The record of triggered incidents is saved directly within each of the 4 employee file save slots:
+### D. Save File Persistence Schema (`SaveGameData`)
+Both the individual associate state and the Store #1042 macro ecosystem are persisted in the active save slot:
 
 ```kotlin
+data class StoreEcosystemData(
+    val storeMorale: Int = 80,                  // 0 to 100 (Overall associate sentiment)
+    val storeShrink: Int = 20,                  // 0 to 100 (Inventory loss / Clint's paranoia)
+    val laborSqueeze: Int = 25,                 // 0 to 100 (Corporate payroll austerity / micromanagement)
+    val customerChaos: Int = 30                 // 0 to 100 (Rush hour heat / customer entitlement)
+)
+
 data class IncidentHistoryEntry(
     val occurrenceCount: Int = 0,
     val lastShiftTriggered: Int = -999
@@ -484,14 +544,19 @@ data class SaveSlotData(
     val departmentTrack: String,                // "front_end", "sales_floor", "backroom", "specialty"
     val currentAct: Int,                        // 1 to 5
     val currentShift: Int,                      // 1 to 56
+    
+    // Individual Associate Gauges
     val morale: Int,                            // 0 to 100
     val engagement: Int,                        // 0 to 100
     val occurrences: Float,                     // e.g. 3.5 / 5.0
     val productivityScore: Int,                 // Output / velocity rating
     val assKissingScore: Int,                   // Sycophancy / compliance rating
-    val storyFlags: Set<String>,                // Narrative state flags
     
-    // Dynamic Incident Tracking Map (Event ID -> History Entry)
+    // Store #1042 Macro Ecosystem Climate
+    val storeEcosystem: StoreEcosystemData = StoreEcosystemData(),
+    
+    // Story Flags & Dynamic Incident Tracking Map (Event ID -> History Entry)
+    val storyFlags: Set<String> = emptySet(),
     val incidentHistory: Map<String, IncidentHistoryEntry> = emptyMap()
 )
 ```
