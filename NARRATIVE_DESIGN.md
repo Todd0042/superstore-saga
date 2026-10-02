@@ -88,6 +88,22 @@ Throughout all 5 acts, narrative branches and dialogue options are dynamically g
 
 ---
 
+### C. The Ripple Matrix: How Early Decisions Reshape Later Acts
+
+Choices in *Retail Inferno* are not isolated vignettes; they build an invisible criminal and social record that determines whether you survive the corporate witch-hunt in Acts IV and V:
+
+| Early Decision / Incident | Choice Path Taken | Act IV / V Narrative Consequence | Act IV / V Mechanical Gameplay Consequence |
+|---|---|---|---|
+| **Act I Pre-Hire Assessment (Question 1–10)** | **Sycophant Loyalty vs. Pragmatic Cynicism** | HR Manager Cheryl prints your exact application answers during the Act IV Interrogation to prove hypocrisy or moral failure. | Quoted answers dynamically unlock unique defense retorts or suffer severe Morale penalties during Cheryl's audit. |
+| **Act II Derrick's Forklift Incident (M-1)** | **Whistleblower / Snitched (`#COMPANY_RAT`)** | The dock crew treats you like radioactive waste. Brenda, Kyle, and Derrick actively help Clint frame you. | Loading dock doors locked; cannot escape during the Act IV lockdown; receiving crew refuses to aid. |
+| **Act II Derrick's Forklift Incident (M-1)** | **Kept Quiet / Solidarity (`#ONE_OF_US`)** | The peer crew forms an underground resistance. Derrick and Kyle risk their own jobs to help you clear your name. | Derrick blocks Clint's security buggy with a forklift; Kyle pulls a fire alarm distraction in Lawn & Garden. |
+| **Act II Connex Trailer Scandal (M-4)** | **Extorted Todd for Attendance Overrides** | Todd is terrified of you exposing his affair, but holds a secret bitter grudge. | Todd secretly slips you the surveillance memory card proving your innocence before Clint's raid. |
+| **Act II Connex Trailer Scandal (M-4)** | **Reported Todd to Corporate HR** | Todd is fired immediately; replaced by an emotionless regional corporate metric enforcer. | Lose your secret managerial backchannel; new manager enforces maximum 65-box/hr speed quotas with zero mercy. |
+| **Act II Brenda's Lane War Showdown** | **Publicly Humiliated Brenda** | Brenda aligns with Clint, volunteering to count down your register and planting a \$50 shortage in your till. | Register shortage triggers immediate loss prevention audit and Clint's interrogation. |
+| **Act II Brenda's Lane War Showdown** | **Showed Empathy / Covered Shift in Breakup** | Brenda storms into the interrogation room and defends you against Clint: *"The kid didn't take the cash, check Chad's login!"* | Brenda's testimony instantly strips Clint's initial shield during the Act IV Boss Battle. |
+| **Acts II–III Attendance Occurrences** | **Accumulated 5.0+ Points via Manager Passes** | Henderson summons you into his office, using your forgiven attendance occurrences as blackmail to take the blame for Bay 4 shrink. | Henderson starts Act IV with a +50% Leverage attack buff; player must gather physical logs to neutralize his blackmail. |
+| **Acts I–V Donna Breakroom Mentorship** | **Max Donna Affinity ($\ge 80$)** | Donna stops being a bystander; hands you the master brass skeleton key to the Executive Mezzanine and acts as surprise whistleblower witness. | Bypasses locked mezzanine security gates in Act V; unlocks Department of Labor Golden Ending. |
+
 ---
 
 ## 3. Core Supporting Cast & Recurring Ensemble
