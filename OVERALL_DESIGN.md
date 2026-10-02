@@ -290,7 +290,108 @@ Spanning across **Story Dialog, Mini-Games, and Boss Battles**, three persistent
 
 ---
 
-## 8. Architecture & File Structure
+## 8. 4-Slot Save System & Auto-Play / Pure Story Mode
+
+To support all 4 distinct department storylines (Front End, Sales Floor, Backroom, Specialty), the engine supports 4 independent employee file slots alongside a seamless **Auto-Play / Pure Story Mode**.
+
+```mermaid
+flowchart TD
+    SelectSlot[Select Employee Badge Slot 1-4] --> ChoiceMode{Select Gameplay Mode}
+    ChoiceMode -->|Manual Shift| ManualPlay[Full Gameplay: Mini-Games, Manual Choices & Turn-Based Battles]
+    ChoiceMode -->|Pure Story Shift| AutoPlay[Auto-Play Mode: Skipped Mini-Games, Paced TTS Narration & Heuristic Choices]
+    
+    subgraph AutoPlayLogic["Auto-Play Narrative Heuristics"]
+        AutoPlay --> Filter[Rule 1: Filter Out Forbidden Choices<br/>#autoPlayForbidden: No Call-Outs / Taking Day Off]
+        Filter --> StatCheck[Rule 2: Read Current Character State<br/>Morale, Engagement, Ass-Kissing Score]
+        StatCheck --> Match[Rule 3: Score Choices via Archetype Tags<br/>#SYCOPHANT, #SLACKER, #ENTHUSIASTIC, #DEFIANT]
+        Match --> Execute[Auto-Select Highest Weighted Option & Advance]
+    end
+```
+
+### A. The 4-Slot Personnel Filing Terminal
+* **In-Universe Representation:** A corporate personnel filing terminal showing active employee badges:
+  ```
+  ╔══════════════════════════════════════════════════════════════════════╗
+  ║                    ASSOCIATE PERSONNEL TERMINAL                      ║
+  ║                                                                      ║
+  ║  [ SLOT 1 ] TAYLOR (Front End)    | Act II  | Morale: 62% | 1.5 Pts   ║
+  ║  [ SLOT 2 ] JORDAN (Backroom)     | Act I   | Morale: 90% | 0.0 Pts   ║
+  ║  [ SLOT 3 ] MORGAN (Sales Floor)  | Act IV  | Morale: 28% | 4.5 Pts   ║
+  ║  [ SLOT 4 ] ALEX   (Specialty)    | [ EMPTY BADGE / NEW APPLICANT ]  ║
+  ╚══════════════════════════════════════════════════════════════════════╝
+  ```
+* **Mode Selection on Load:**
+  - Tapping a populated badge slot presents a prompt:
+    - **`[ 🎮 MANUAL SHIFT (Interactive) ]`** — Complete interactive experience: hands-on dialogue decisions, arcade mini-games, and boss battles.
+    - **`[ 📖 PURE STORY SHIFT (Auto-Play) ]`** — Passive visual-novel / audiobook experience: animated sprites, full TTS character narration, auto-advancing dialogue, and automatic story decisions.
+  - Players can toggle between Manual and Auto-Play at any time from the in-game options menu or pause overlay.
+
+---
+
+### B. Auto-Play Mini-Game Skipping & Stat Preservation
+When a shift reaches an arcade mini-game phase (Twin-Stick Barcode Blaster, Pallet Haul, Baler Crush, Counter Commotion) while in Auto-Play mode:
+* **Instant Bypass:** The mini-game is skipped without launching arcade controls.
+* **Neutral Stat Preservation:**
+  - The shift records a neutral "Standard Shift / Pass" completion.
+  - **No stat gain or loss:** Morale, Engagement, and Attendance points are completely frozen across the skipped mini-game.
+  - Story dialogue immediately resumes from the post-shift narrative node.
+* **Boss Battles in Auto-Play:** Run via an automated AI combat loop (prioritizing status de-escalation and defense) with cinematic speed, or resolve as a dramatic story cutscene standoff.
+
+---
+
+### C. Auto-Play Narrative Heuristics (Archetype-Weighted Decision Engine)
+
+To prevent Auto-Play from feeling like a random coin-flip, story choices are made dynamically based on the character's **current psychological state**:
+
+#### Rule 1: The Hard Boundary (No Call-Outs / No Abandoning Shift)
+* Auto-Play **strictly never selects options that call out sick, take the day off, or abandon a shift**.
+* Any choice tagged with `autoPlayForbidden: true` (e.g. *"Call out sick and go back to sleep"*) is removed from the Auto-Play candidate list, ensuring the story always progresses into store events.
+
+#### Rule 2: Choice Archetype Tags in Story Nodes
+Each choice in `story/nodes.json` declares an `autoPlayArchetype` tag and base weight:
+```json
+[
+  {
+    "text": "Report Brenda's uncleaned lane immediately to the Assistant Manager.",
+    "voiceKeyword": "report",
+    "autoPlayArchetype": "SYCOPHANT",
+    "autoPlayWeight": 80,
+    "statModifiers": { "assKissing": 10, "morale": -5 }
+  },
+  {
+    "text": "Shrug, mutter under your breath, and clean it yourself.",
+    "voiceKeyword": "clean",
+    "autoPlayArchetype": "MARTYR_WORKHORSE",
+    "autoPlayWeight": 60,
+    "statModifiers": { "engagement": -5, "morale": -10 }
+  },
+  {
+    "text": "Duck into the single-stall restroom and check your phone for 20 minutes.",
+    "voiceKeyword": "hide",
+    "autoPlayArchetype": "SLACKER",
+    "autoPlayWeight": 70,
+    "statModifiers": { "morale": 10, "engagement": -15 }
+  },
+  {
+    "text": "Burn an attendance point, call out, and turn off your alarm.",
+    "voiceKeyword": "call out",
+    "autoPlayForbidden": true
+  }
+]
+```
+
+#### Rule 3: Dynamic Selection Driven by Associate Psychological State
+Auto-Play calculates choice priority by evaluating the associate's active stats:
+| Associate State | Active Stat Trigger | Auto-Play Behavioral Archetype | Narrative Flavor |
+|---|---|---|---|
+| **Eager New Hire (Act I)** | Engagement $\ge 70\%$ | Prioritizes `#ENTHUSIASTIC` / `#COMPLIANT` | Tries hard, eager to please, volunteers for tasks. |
+| **Corporate Brown-Noser** | Ass-Kissing Score $\ge 60$ | Prioritizes `#SYCOPHANT` / `#BROWN_NOSE` | Sucks up to supervisors, quotes policy, snitches on peers. |
+| **Quiet Quitter (Act II–III)** | Morale $< 35\%$ or Engagement $< 40\%$ | Prioritizes `#SLACKER` / `#QUIET_QUIT` | Minimum effort, hides from managers, avoids confrontations. |
+| **Paranoid Survivor (Act IV–V)** | Act IV+ and Morale $< 25\%$ | Prioritizes `#DEFIANT` / `#TRUTH_SEEKER` | Uncovers the frame-job, refuses to sign bogus write-ups, fights back. |
+
+---
+
+## 9. Architecture & File Structure
 
 ```
 retail-inferno/
@@ -311,3 +412,4 @@ retail-inferno/
 ├── NARRATIVE_DESIGN.md            # Comprehensive 5-act narrative and dialogue outlines
 └── README.md                      # Project introduction & setup
 ```
+
