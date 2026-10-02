@@ -55,13 +55,13 @@
     },
     {
       "id": "encounter_register_rush",
-      "name": "Evening Concourse Rush",
-      "description": "An impatient customer and a coupon hoarder demand immediate manager intervention.",
+      "name": "Morning Concourse Rush Rally",
+      "description": "A lively morning crowd and enthusiastic coupon collectors test your fast checkout rhythm!",
       "environment": "DUNGEON",
       "party": ["hero"],
       "enemies": [
-        { "templateId": "karen_customer", "id": "karen_01", "name": "Irate Shopper", "isTargeted": true, "atbGauge": 0.4 },
-        { "templateId": "extreme_couponer", "id": "couponer_01", "name": "Binder Hoarder", "atbGauge": 0.25 }
+        { "templateId": "karen_customer", "id": "karen_01", "name": "Bargain Shopper", "isTargeted": true, "atbGauge": 0.4 },
+        { "templateId": "extreme_couponer", "id": "couponer_01", "name": "Coupon Collector", "atbGauge": 0.25 }
       ]
     },
     {
