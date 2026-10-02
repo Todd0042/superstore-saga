@@ -88,7 +88,117 @@ Throughout all 5 acts, narrative branches and dialogue options are dynamically g
 
 ---
 
-## 3. Department Track Storylines
+---
+
+## 3. Core Supporting Cast & Recurring Ensemble
+
+The store's characters are structured to create a cohesive, interconnected workplace ecosystem across all four storylines:
+
+```mermaid
+flowchart TD
+    subgraph Corporate["STORE EXECUTIVE MANAGEMENT (Universal to All Tracks)"]
+        SM[Store Manager: Henderson<br/>'The Polished Politician']
+        HR[Human Resources Manager: Cheryl<br/>'The Velvet Guillotine']
+        AP[Security Manager: Clint<br/>'The Invisible Eye']
+    end
+
+    subgraph AreaManagers["AREA MANAGERS (Direct Supervisors by Track)"]
+        FE_M[Front End Manager: Marsha<br/>'The Panic-Button Queen']
+        SF_M[Sales Floor Manager: Todd<br/>'The Metric Drill Sergeant']
+        BR_M[Backroom Manager: Mack<br/>'The Exhausted Veteran']
+        SP_M[Specialty Manager: Julian<br/>'The Commission Hawk']
+    end
+
+    Corporate --> AreaManagers
+
+    subgraph Peers["THE ASSOCIATE ENSEMBLE (Direct in One Track, Indirect in Others)"]
+        FE_P[Brenda<br/>Senior Cashier]
+        SF_P[Kyle<br/>Sales Floor Stocker]
+        BR_P[Derrick<br/>Forklift Operator]
+        SP_P[Chad<br/>Specialty Sales Associate]
+        Float_P[Donna<br/>15-Year Associate / Breakroom Mentor]
+    end
+
+    FE_M --> FE_P
+    SF_M --> SF_P
+    BR_M --> BR_P
+    SP_M --> SP_P
+    HR -.-> Float_P
+```
+
+### A. Store Executive Management (Universal to All Tracks)
+
+1. **Cheryl — Human Resources Manager**
+   - **Archetype:** *"The Velvet Guillotine"*
+   - **Visual Aesthetic:** Pastel floral cardigans over an ironed company lanyard, perky smile, brightly lit office filled with pastel motivational posters (*"Smile! You're On the Clock"*, *"Teamwork Makes the Dream Work"*). A glass bowl of rock-hard peppermint candies sits on her desk.
+   - **Personality & Voice:** Speaks in a gentle, maternal, sing-song voice while handing out disciplinary strikes and termination notices. Everything is framed as *"we just want to support your personal growth."*
+   - **Narrative Role:** Screens your application, administers the 10-question pre-employment assessment in Phase 1, mediates petty coworker squabbles in Act II, weaponizes the 5-point attendance system in Act III–IV, and holds the master termination lockouts in Act V.
+
+2. **Henderson — Store Manager**
+   - **Archetype:** *"The Polished Politician"*
+   - **Visual Aesthetic:** Crisp corporate polo, razor-creased khakis, gleaming white orthopedic running shoes, and a Bluetooth earpiece blinking blue in his left ear. Always grips a metal clipboard.
+   - **Personality & Voice:** Booming, performative optimism. Walks the sales floor at brisk speed, doling out firm handshakes while mentally calculating how many payroll hours he can cut to maximize his quarterly bonus.
+   - **Narrative Role:** Steps onto a plastic milk crate to lead the mandatory morning cheer in Act I; serves as a distant god-like authority figure whose sudden floor walks cause area managers to panic in Act II; unveils algorithmic quotas in Act III; acts as the primary mastermind behind the store's inventory shrink cover-up in Acts IV–V.
+
+3. **Clint — Security Manager (Loss Prevention)**
+   - **Archetype:** *"The Invisible Eye"*
+   - **Visual Aesthetic:** Plain dark polo, battered baseball cap pulled low, mirrored sunglasses on his collar, heavy black radio holster under a light jacket. Often pretends to inspect cereal box labels at the end of an aisle.
+   - **Personality & Voice:** Low, gravelly monotone. Operates under the assumption that every associate is an undercover criminal plotting to steal inventory.
+   - **Narrative Role:** Silently observes new hires from the shadows near the entrance sensors in Act I; lurks in ceiling walkways in Act II–III; summons the player into security to present manufactured "evidence" of register shortages or missing pallets in Act IV; locks the physical steel fire exit gates during storewide lockdown in Act V.
+
+---
+
+### B. Area Managers (Direct Department Supervisors)
+
+Each department track has a dedicated **[Area] Manager** who serves as the player's direct boss, taskmaster, and initial managerial obstacle:
+
+* **Front End Manager: Marsha**
+  - *Archetype:* **The Panic-Button Queen.** High-strung, lives on diet energy sodas, permanently on the verge of a breakdown. The second a checkout line exceeds two shoppers, she slams the emergency page. Micromanages register lights, drawer balancing, and scan speed.
+* **Sales Floor Manager: Todd**
+  - *Archetype:* **The Metric Drill Sergeant.** Ex-varsity football coach who treats shelf-stocking like boot camp. Demands "65 cases per hour or you're benched." Stares at his digital tablet timer, timing employee bathroom trips down to the second.
+* **Backroom Manager: Mack**
+  - *Archetype:* **The Exhausted Veteran.** 55 years old, permanent 5 o'clock shadow, worn back brace over work jeans. Completely disillusioned with corporate cheers. Will happily bypass safety lockouts and ignore bent pallet racks just to get the freight truck cleared before the 4:00 PM deadline.
+* **Specialty Manager: Julian**
+  - *Archetype:* **The Commission Hawk.** Slicked hair, heavy designer cologne, tailored slim-fit vest. Believes he's a Wall Street broker stranded in a suburban retail store. Obsessed with extended warranty percentages and store credit applications. Pits his own associates against each other.
+
+---
+
+### C. The Associate Peer Ensemble (Inter-Department Connections)
+
+The toxic coworkers who act as **Act II Bosses** in their home track appear as **recurring background peers** across the other three tracks:
+
+1. **Brenda — Senior Cashier (Front End Peer)**
+   - *Front End Story:* **Direct Act II Boss.** 20-year veteran cashier who flips her lane light to "Closed" when large carts approach, hoards Register 4 (closest to the snacks), and dumps return baskets at the player's register.
+   - *Sales Floor Story:* Wheels overflowing, disorganized "go-back" return carts into the player's freshly zoned aisles right at shift change.
+   - *Backroom Story:* Barks over the storewide walkie-talkie every 10 minutes whining that the unloaders haven't hand-delivered more register paper rolls.
+   - *Specialty Story:* Sends confused customers with complex technical questions over to the specialty counter without warning just to get them out of her checkout line.
+
+2. **Kyle — Sales Floor Stocker (Sales Floor Peer)**
+   - *Sales Floor Story:* **Direct Act II Boss.** The vape-cloud slacker who "plugs" shelves (shoving pet food behind cereal boxes to pretend he stocked it) and vanishes behind the outdoor dumpster for 45-minute breaks.
+   - *Front End Story:* The cart wrangler who refuses to bring shopping carts in from the parking lot, leaving cashiers to absorb screams from cartless customers.
+   - *Backroom Story:* Drags damaged wooden pallets to the loading dock, drops them crookedly in front of the emergency fire exit, and runs away.
+   - *Specialty Story:* Constantly asks the electronics associate to unlock high-end gaming consoles for his "cousin who might drop by later."
+
+3. **Derrick — Forklift Operator (Backroom Peer)**
+   - *Backroom Story:* **Direct Act II Boss.** The phantom forklift driver who hides the only functioning hydraulic jacks in high seasonal racks and plays phone games behind the frozen meat freezer.
+   - *Sales Floor Story:* Drops a massive, leaning 7-foot pallet of bulk charcoal in the exact center of the player's freshly zoned aisle at 10:55 PM, honks the forklift horn, and drives away laughing.
+   - *Front End Story:* Delivers bags and receipt paper two hours late after the cashiers have already run completely dry.
+   - *Specialty Story:* Refuses to lower heavy 75-inch smart TVs from the top-stock steel racks, claiming *"the forklift battery needs an overnight trickle charge."*
+
+4. **Chad — Specialty Sales Associate (Specialty Peer)**
+   - *Specialty Story:* **Direct Act II Boss.** The slick credit poacher who leans on the counter gossiping, then swoops in at the register to enter his own operator ID whenever the player finishes a 30-minute TV consultation. Leaves the food preparation slicers encrusted in dried residue.
+   - *Front End Story:* Loiters near the checkout lanes in his clean specialist shirt, trying to hijack the cashier's customers into opening store charge accounts so he pockets the enrollment bounty.
+   - *Sales Floor Story:* Treats stockers like his personal luggage handlers; demands they haul heavy display furniture for him because he *"can't get dust on the specialty uniform."*
+   - *Backroom Story:* Sneaks onto the loading dock to steal the unloader crew's premium packing tape guns and industrial utility knives for his counter.
+
+5. **Donna — 15-Year Associate (The Breakroom Anchor)**
+   - *Universal Role:* 15-year associate with a vest covered in 30+ flair pins. Present in **every single storyline**.
+   - *Presence:* Sitting in the breakroom folding chair with a lukewarm thermos of black coffee and a dog-eared crossword puzzle.
+   - *Narrative Function:* The sarcastic, street-smart mentor. She warns the player about upcoming managerial traps, explains the unwritten rules of attendance survival, and shares dark folklore about previous associates who tried to fight the system.
+
+---
+
+## 4. Department Track Storylines
 
 ```mermaid
 flowchart LR
@@ -105,44 +215,45 @@ flowchart LR
 
 ### Track 1: Front End (Cashier)
 * **Act I:** High-energy orientation; pride in fast scanning; memorizing produce codes (4011 bananas); ringing up eccentric, cheerful townspeople.
-* **Act II (Peer Conflict):** Senior Cashier Brenda dominates the front end. She flips her lane light to "Closed" every time a customer with two full carts approaches, forcing the line onto the player. Brenda leaves messy return bins at the player's register and gossips to the Front End Lead that the player "doesn't have customer empathy."
-  - **Act II Boss:** **Brenda, The 20-Year Veteran Cashier** (Throws return carts, weaponizes lane lights).
-* **Act III (Corporate Arrives):** Corporate installs scan-speed monitors overhead. If scan speed dips below 22 IPM, an alarm chimes across the front end. Management forces cashiers to pitch high-interest store credit cards to every customer.
-* **Act IV (The Frame Job):** Brenda borrows the player's login barcode to "help clear a transaction." Later, Asset Protection claims the player's drawer is consistently \$50 short and threatens police involvement.
-* **Act V (The Inferno):** A thunderous Black Friday mob swarms the front registers under red emergency strobe lights. The player must battle through the chaos, confront the corrupt Asset Protection Lead, and clear their employee record.
+* **Act II (Peer Conflict):** Senior Cashier Brenda dominates the front end. She flips her lane light to "Closed" every time a customer with two full carts approaches, forcing the line onto the player. Brenda leaves messy return bins at the player's register and gossips to Front End Manager Marsha that the player "doesn't have customer empathy."
+  - **Act II Boss:** **Brenda, Senior Cashier** (Throws return carts, weaponizes lane lights).
+* **Act III (Corporate Arrives):** Corporate installs scan-speed monitors overhead. If scan speed dips below 22 IPM, an alarm chimes across the front end. Front End Manager Marsha forces cashiers to pitch high-interest store credit cards to every customer.
+* **Act IV (The Frame Job):** Brenda borrows the player's login barcode to "help clear a transaction." Later, Security Manager Clint claims the player's drawer is consistently \$50 short and threatens legal prosecution.
+* **Act V (The Inferno):** A thunderous Black Friday mob swarms the front registers under red emergency strobe lights. The player must battle through the chaos, expose the drawer skim fraud, and confront Store Manager Henderson and Security Manager Clint to clear their record.
 
 ### Track 2: Sales Floor (Stocker / Merchandiser)
 * **Act I:** The satisfaction of building pristine endcaps, perfectly facing cereal boxes, riding empty flatbeds through wide aisles after closing.
-* **Act II (Peer Conflict):** Kyle and the mid-day stockers never finish their pallets. Instead of working overstock, they "plug" shelves (shoving pet food behind cereal boxes) and hide full overstock carts in the apparel fitting rooms. Kyle leaves his half-eaten lunch on the player's cart and vanishes behind the garden center dumpster.
-  - **Act II Boss:** **Kyle, The Disappearing Associate** (Spams smoke breaks, hurls overloaded cardboard bins).
-* **Act III (Corporate Arrives):** New corporate algorithm dictates that each associate must stock 65 cases per hour while simultaneously answering customer inquiries with a mandatory 10-foot customer service smile.
+* **Act II (Peer Conflict):** Kyle and the mid-day stockers never finish their pallets. Instead of working overstock, they "plug" shelves (shoving pet food behind cereal boxes) and hide full overstock carts in the apparel fitting rooms. Kyle leaves his half-eaten lunch on the player's cart and vanishes behind the outdoor dumpster.
+  - **Act II Boss:** **Kyle, Sales Floor Stocker** (Spams smoke breaks, hurls overloaded cardboard bins).
+* **Act III (Corporate Arrives):** Sales Floor Manager Todd enforces a new 65 cases-per-hour quota while timing associate bathroom breaks. The store faces a surprise regional inspection visit.
 * **Act IV (The Frame Job):** A stack of high-value merchandise is found deliberately hidden and damaged in the player's designated zone. Kyle tells management that the player hid it there to avoid stocking it.
-* **Act V (The Inferno):** The store's aisles begin shifting and looping infinitely. Shelving units collapse into maze-like walls. The player must navigate the labyrinth to defeat the Overnight Shift Supervisor.
+* **Act V (The Inferno):** The store's aisles begin shifting and looping infinitely. Shelving units collapse into maze-like walls. The player must navigate the labyrinth to defeat Sales Floor Manager Todd and confront Store Manager Henderson.
 
 ### Track 3: Backroom (Unloader / Freight)
 * **Act I:** Loud radio music on the loading dock, lifting weights with freight, camaraderie of sweating through a 2,000-piece truck unload.
-* **Act II (Peer Conflict):** Derrick the forklift driver spends his shifts playing mobile games behind the frozen meat racks. The floor associates refuse to take their freight, leaving the unloading dock completely gridlocked. When the hydraulic cardboard baler fills up, coworkers walk away, leaving the heavy wire-tying to the player.
-  - **Act II Boss:** **Derrick, The Phantom Forklift Guy** (Hides equipment, blocks emergency exits with pallets).
-* **Act III (Corporate Arrives):** The corporate regional office mandates a strict "Truck Unloaded by 4:00 PM" rule. Missed deadlines result in automatic disciplinary write-ups for the entire dock crew.
-* **Act IV (The Frame Job):** Expensive electronics pallets go missing from Bay 4. A forged bill of lading is discovered bearing the player's signature, and stolen goods are planted in the player's personal locker.
-* **Act V (The Inferno):** The backroom warehouse expands into a dark, industrial abyss of towering steel racks. The mechanical baler transforms into an industrial crushing monster as the player battles the Logistics Director.
+* **Act II (Peer Conflict):** Derrick the forklift operator spends his shifts playing mobile games behind the frozen meat racks. The floor associates refuse to take their freight, leaving the unloading dock completely gridlocked. When the hydraulic cardboard baler fills up, coworkers walk away, leaving the heavy wire-tying to the player.
+  - **Act II Boss:** **Derrick, Forklift Operator** (Hides equipment, blocks emergency exits with pallets).
+* **Act III (Corporate Arrives):** The corporate regional office mandates a strict "Truck Unloaded by 4:00 PM" rule. Backroom Manager Mack pushes the crew to dangerous speeds, disabling safety interlocks on the conveyors.
+* **Act IV (The Frame Job):** Expensive electronics pallets go missing from Bay 4. A forged bill of lading is discovered bearing the player's signature, and stolen goods are planted in the player's personal locker by Security Manager Clint.
+* **Act V (The Inferno):** The backroom warehouse expands into a dark, industrial abyss of towering steel racks. The mechanical baler transforms into an industrial crushing monster as the player battles Backroom Manager Mack and exposes Store Manager Henderson's freight fraud.
 
 ### Track 4: Specialty (Counter Sales — Tech / Deli / Jewelry)
 * **Act I:** Demonstrating high-end headphones, giving out gourmet cheese and meat samples, wearing the polished specialty uniform.
 * **Act II (Peer Conflict):** Chad, the slick specialty associate, spends all morning leaning against the counter flirting with customers. Whenever the player spends 30 minutes helping a customer choose a \$1,500 4K TV, Chad swoops in at the register to input his own employee code and poach the credit. At night, Chad leaves the meat slicer encrusted in dried residue for the player to clean.
-  - **Act II Boss:** **Chad, The Commission Poacher** (Steals customer sales, leaves hazardous sanitation messes).
-* **Act III (Corporate Arrives):** Mandatory 60% extended warranty attach rate is enforced. Mystery shoppers test whether associates recite the exact corporate warranty script.
-* **Act IV (The Frame Job):** High-ticket display cases are unlocked and emptied after hours. The master key log shows the player's badge was used, because Chad secretly swapped key rings during lunch.
-* **Act V (The Inferno):** The showroom becomes a nightmare of screaming security alarms, shattered display glass, and flashing warranty popups. The player must take down the Regional Sales VP.
+  - **Act II Boss:** **Chad, Specialty Sales Associate** (Steals customer sales, leaves hazardous sanitation messes).
+* **Act III (Corporate Arrives):** Specialty Manager Julian enforces a mandatory 60% extended warranty attach rate. Secret mystery shoppers test whether associates recite the exact corporate warranty script.
+* **Act IV (The Frame Job):** High-ticket display cases are unlocked and emptied after hours. The master key log shows the player's badge was used, because Chad secretly swapped key rings during lunch. Security Manager Clint initiates an interrogation.
+* **Act V (The Inferno):** The showroom becomes a nightmare of screaming security alarms, shattered display glass, and flashing warranty popups. The player must take down Specialty Manager Julian and Store Manager Henderson.
 
 ---
 
-## 4. Boss Encounter Progression by Track
+## 5. Boss Encounter Progression by Track
 
 | Act | Front End Boss | Sales Floor Boss | Backroom Boss | Specialty Boss |
 |---|---|---|---|---|
 | **Act I** *(Early Hurdle)* | The Extreme Coupon Glitcher | The Runaway Shopping Cart Train | The Tipping Pallet Hazard | The Indecisive Gourmet Snob |
-| **Act II** *(Toxic Coworker)* | **Brenda, Senior Cashier** | **Kyle, The Disappearing Associate** | **Derrick, The Phantom Forklift Guy** | **Chad, The Commission Poacher** |
+| **Act II** *(Toxic Coworker)* | **Brenda, Senior Cashier** | **Kyle, Sales Floor Stocker** | **Derrick, Forklift Operator** | **Chad, Specialty Sales Associate** |
 | **Act III** *(Corporate Metric)* | The Metric Auditor | The Regional Zone Inspector | The 4 PM Clock Enforcer | The Corporate Mystery Shopper |
-| **Act IV** *(The Frame Ring)* | Corrupt Asset Protection Lead | Night Shift Supervisor Gary | The Rogue Freight Broker | Corporate Loss Prevention Chief |
-| **Act V** *(The Inferno)* | **The Store Manager & Black Friday Swarm** | **The Floor Scrubber Colossus** | **The Industrial Baler Golem** | **The Executive Boardroom Hydra** |
+| **Act IV** *(The Frame Ring)* | **Security Manager Clint** | **Sales Floor Manager Todd** | **Backroom Manager Mack** | **Specialty Manager Julian** |
+| **Act V** *(The Inferno)* | **Store Manager Henderson & The Black Friday Swarm** | **The Floor Scrubber Colossus** | **The Industrial Baler Golem** | **Store Manager Henderson & The Boardroom Hydra** |
+
