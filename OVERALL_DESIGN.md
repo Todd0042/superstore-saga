@@ -391,7 +391,114 @@ Auto-Play calculates choice priority by evaluating the associate's active stats:
 
 ---
 
-## 9. Architecture & File Structure
+## 9. Dynamic Conflict Event Engine & Save State Architecture
+
+To deliver immense replayability across 56 shifts and 4 department tracks without feeling repetitive or predictable, mid-shift narrative events and dilemmas are managed by a **Dynamic Conflict Event Engine**. Rather than hardcoding a static event into each shift, the game selects an eligible incident at runtime from a data-driven database (`assets/game/incidents/incidents.json`).
+
+```mermaid
+flowchart TD
+    Shift[Shift N Begins] --> Pool[Load Incidents Pool from JSON]
+    Pool --> Filter[Filter Candidate Incidents]
+    
+    subgraph FilterChecks["Candidate Eligibility Predicates"]
+        Filter --> C1["1. Track Match (e.g. Sales Floor or All)"]
+        C1 --> C2["2. Act Match (e.g. Current Act == Act II)"]
+        C2 --> C3["3. History Check: occurrenceCount < maxOccurrences"]
+        C3 --> C4["4. Cooldown Check: (currentShift - lastShiftTriggered) > cooldownShifts"]
+        C4 --> C5["5. State & Flag Checks (Morale, Engagement, Required/Forbidden Flags)"]
+    end
+
+    C5 --> Lottery{Weighted Random Selection}
+    Lottery -->|Event Chosen| Trigger[Trigger Event Dialogue & Choices]
+    Trigger --> UpdateSave[Update Save File: occurrenceCount + 1, lastShiftTriggered = currentShift]
+    Lottery -->|All on Cooldown| Fallback[Draw Minor Daily Shift Event / Ambient Floor Routine]
+```
+
+### A. Incident Data Schema (`incidents.json`)
+Every incident is declared in data with strict occurrence and cooldown constraints:
+
+```json
+{
+  "id": "event_connex_tryst",
+  "title": "The Lawn & Garden Connex Trailer Tryst",
+  "applicableTracks": ["all"],
+  "eligibleActs": [2, 3],
+  "maxOccurrences": 1,
+  "cooldownShifts": 0,
+  "weight": 85,
+  "prerequisites": {
+    "minMorale": 0,
+    "maxMorale": 100,
+    "requiredFlags": [],
+    "forbiddenFlags": ["todd_fired", "taylor_transferred"]
+  },
+  "startNodeId": "node_connex_tryst_001"
+}
+```
+
+```json
+{
+  "id": "event_microwave_fish",
+  "title": "The Charred Fish Breakroom Biohazard",
+  "applicableTracks": ["all"],
+  "eligibleActs": [1, 2, 3],
+  "maxOccurrences": 3,
+  "cooldownShifts": 5,
+  "weight": 120,
+  "prerequisites": {
+    "minMorale": 10,
+    "maxMorale": 80,
+    "requiredFlags": [],
+    "forbiddenFlags": []
+  },
+  "startNodeId": "node_microwave_fish_001"
+}
+```
+
+### B. Occurrence Caps & Cooldown Rules
+1. **One-Time Major Plot Catalysts (`maxOccurrences: 1`):**
+   - High-impact narrative events (e.g. catching Todd in the Connex trailer, the master key lockdown, the compactor fraud discovery, the Blackout) can only occur **once per campaign**. Once triggered, they are permanently retired from the candidate pool.
+2. **Recurring Retail Nuances (`maxOccurrences: 2 - 4`):**
+   - Common workplace friction (e.g. 45-minute bathroom disappearances, broken pallet jacks, go-back cart dumps, cold pizza crusts) can recur up to 2–4 times over 56 shifts.
+3. **Cooldown Guardrail (`cooldownShifts: 4 - 8`):**
+   - After an event triggers on Shift `S`, it cannot be selected again until at least Shift `S + cooldownShifts`. This strictly prevents back-to-back repetition of the same dilemma on consecutive shifts.
+4. **Guaranteed Milestone Anchors:**
+   - Specific milestone shifts (e.g., Shift 10, Shift 22, Shift 34, Shift 46, Shift 56) have locked boss confrontations that bypass the random pool.
+5. **Safe Fallback Pool:**
+   - If a player's unique combination of high cooldowns and specific flags exhausts the candidate pool, the engine draws from an infinite-occurrence `fallback_minor_nuances` pool (e.g., *Customer asking where the tape is*, *Price check chime*, *Routine dust mopping*).
+
+---
+
+### C. Save File Persistence Schema (`SaveGameData`)
+The record of triggered incidents is saved directly within each of the 4 employee file save slots:
+
+```kotlin
+data class IncidentHistoryEntry(
+    val occurrenceCount: Int = 0,
+    val lastShiftTriggered: Int = -999
+)
+
+data class SaveSlotData(
+    val slotIndex: Int,                         // Slot 1 to 4
+    val employeeId: String,                     // e.g. "BADGE-1042-882"
+    val departmentTrack: String,                // "front_end", "sales_floor", "backroom", "specialty"
+    val currentAct: Int,                        // 1 to 5
+    val currentShift: Int,                      // 1 to 56
+    val morale: Int,                            // 0 to 100
+    val engagement: Int,                        // 0 to 100
+    val occurrences: Float,                     // e.g. 3.5 / 5.0
+    val productivityScore: Int,                 // Output / velocity rating
+    val assKissingScore: Int,                   // Sycophancy / compliance rating
+    val storyFlags: Set<String>,                // Narrative state flags
+    
+    // Dynamic Incident Tracking Map (Event ID -> History Entry)
+    val incidentHistory: Map<String, IncidentHistoryEntry> = emptyMap()
+)
+```
+
+---
+
+## 10. Architecture & File Structure
 
 ```
 retail-inferno/
@@ -405,11 +512,16 @@ retail-inferno/
 │       │   ├── encounters/        # Act boss battles
 │       │   ├── enemies/           # Coworkers, customers, and corporate managers
 │       │   ├── spells/            # Workplace actions, pages, and policies
+│       │   ├── incidents/         # Data-driven dynamic conflict event database (incidents.json)
 │       │   └── story/             # Dialogue nodes and scene definitions
 │       └── java/com/voicerpg/engine/
 ├── docs/                          # Design documentation & balance data
 ├── OVERALL_DESIGN.md              # High-level architecture & mechanics (this file)
 ├── NARRATIVE_DESIGN.md            # Comprehensive 5-act narrative and dialogue outlines
+├── CONFLICT_EVENTS.md             # Complete catalogue of retail situations and multi-perspective events
+├── COMBAT_DESIGN.md               # POS terminal combat mechanics & Act I-II boss specs
+├── STORY_SCRIPT_ACT1.md           # Act I interactive dialogue script and story nodes
 └── README.md                      # Project introduction & setup
 ```
+
 
