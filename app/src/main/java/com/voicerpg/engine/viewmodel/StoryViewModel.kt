@@ -877,8 +877,39 @@ class StoryViewModel(
             } else {
                 _state.value = _state.value.copy(decisionsMade = updatedDecisions, dynamicMetrics = currentMetrics)
             }
+            if (!choice.assignHeroClassId.isNullOrBlank()) {
+                assignHeroClass(choice.assignHeroClassId)
+            }
             applyNodeTransition(nextNode)
         }
+    }
+
+    fun assignHeroClass(classId: String) {
+        val heroClass = GameContent.classById(classId)
+        val starterSpells = GameContent.spellsForClass(heroClass.id)
+        val updatedPlayer = _state.value.player.copy(
+            heroClassId = classId,
+            title = heroClass.title.ifBlank { _state.value.player.title },
+            voiceAffinityBonusSchool = heroClass.preferredSchool
+        )
+        val updatedPartyStats = _state.value.partyStats.map { stat ->
+            if (stat.id == "hero") {
+                stat.copy(
+                    loreClass = heroClass.title,
+                    currentHp = heroClass.startingHp,
+                    maxHp = heroClass.startingHp,
+                    currentMp = heroClass.startingMp,
+                    maxMp = heroClass.startingMp,
+                    speed = heroClass.startingSpeed,
+                    spellIds = starterSpells.map { it.id }
+                )
+            } else stat
+        }
+        _state.value = _state.value.copy(
+            player = updatedPlayer,
+            partyStats = updatedPartyStats
+        )
+        persistCurrentState()
     }
 
     private fun applyNodeTransition(newNode: DialogueNode, suppressNarration: Boolean = false) {
@@ -891,6 +922,10 @@ class StoryViewModel(
         var effectiveNode = resolveEffectiveHubNode(newNode, updatedFlags)
         if (effectiveNode.setFlagOnEnter != null && updatedFlags[effectiveNode.setFlagOnEnter] != true) {
             updatedFlags = updatedFlags + (effectiveNode.setFlagOnEnter to true)
+        }
+
+        if (!effectiveNode.assignHeroClassId.isNullOrBlank()) {
+            assignHeroClass(effectiveNode.assignHeroClassId)
         }
 
         var updatedPartyStats = _state.value.partyStats

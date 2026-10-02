@@ -20,9 +20,12 @@
     "Specialty Specialist",
     "Department Manager"
   ],
-  "creationEmbarkPrompt": "CLOCK IN ➔",
+  "allowClassSelectionInCreation": false,
+  "creationTitle": "MegaMart Associate Badge & Profile",
+  "creationSubtitle": "Confirm your Associate ID and photo before submitting your employment application.",
+  "creationEmbarkPrompt": "SUBMIT APPLICATION ➔",
   "creationVoiceKeywords": [
-    "clock in", "embark", "begin", "start", "enter", "ready", "punch in",
+    "submit", "apply", "submit application", "clock in", "embark", "begin", "start", "enter", "ready", "punch in",
     "let's go", "start game", "play", "confirm", "forward", "onward", "work"
   ],
   "defaultHeroPortrait": "portraits/player_cashier.jpg",

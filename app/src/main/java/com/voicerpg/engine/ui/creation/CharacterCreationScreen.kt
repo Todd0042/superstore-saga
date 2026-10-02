@@ -238,14 +238,16 @@ fun CharacterCreationScreen(
         }
 
         // 2. Class selection commands - data-driven via the loaded content classes
-        GameContent.classes.firstOrNull { hc ->
-            lower.contains(hc.title.lowercase()) ||
-                lower.contains(hc.id) ||
-                hc.voiceKeywords.any { kw -> kw.isNotBlank() && lower.contains(kw) }
-        }?.let { matched ->
-            selectedClass = matched
-            selectedAffinity = matched.preferredSchool
-            combatNarrator?.speak("${matched.title} selected. ${matched.subtitle}.", force = true)
+        if (manifest.allowClassSelectionInCreation) {
+            GameContent.classes.firstOrNull { hc ->
+                lower.contains(hc.title.lowercase()) ||
+                    lower.contains(hc.id) ||
+                    hc.voiceKeywords.any { kw -> kw.isNotBlank() && lower.contains(kw) }
+            }?.let { matched ->
+                selectedClass = matched
+                selectedAffinity = matched.preferredSchool
+                combatNarrator?.speak("${matched.title} selected. ${matched.subtitle}.", force = true)
+            }
         }
 
         // 3. Title selection
@@ -732,7 +734,7 @@ fun CharacterCreationScreen(
 
             // Section 1: Name Input
             Text(
-                text = "1. INVOCATOR'S TRUE NAME",
+                text = if (manifest.allowClassSelectionInCreation) "1. INVOCATOR'S TRUE NAME" else "1. EMPLOYEE BADGE IDENTIFICATION (NAME)",
                 color = LogosGold,
                 fontSize = 12.sp,
                 fontWeight = FontWeight.Bold,
@@ -811,33 +813,37 @@ fun CharacterCreationScreen(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Section 2: Class Selection
-            Text(
-                text = "2. CHOOSE YOUR DISCIPLINE (CLASS)",
-                color = LogosGold,
-                fontSize = 12.sp,
-                fontWeight = FontWeight.Bold,
-                fontFamily = FontFamily.Monospace,
-                modifier = Modifier.align(Alignment.Start)
-            )
+            if (manifest.allowClassSelectionInCreation) {
+                // Section 2: Class Selection
+                Text(
+                    text = "2. CHOOSE YOUR DISCIPLINE (CLASS)",
+                    color = LogosGold,
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Bold,
+                    fontFamily = FontFamily.Monospace,
+                    modifier = Modifier.align(Alignment.Start)
+                )
 
-            Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(8.dp))
 
-            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                GameContent.classes.forEach { hc ->
-                    ClassOptionCard(
-                        heroClass = hc,
-                        isSelected = hc == selectedClass,
-                        onSelect = { selectedClass = hc }
-                    )
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    GameContent.classes.forEach { hc ->
+                        ClassOptionCard(
+                            heroClass = hc,
+                            isSelected = hc == selectedClass,
+                            onSelect = { selectedClass = hc }
+                        )
+                    }
                 }
+
+                Spacer(modifier = Modifier.height(16.dp))
             }
 
-            Spacer(modifier = Modifier.height(16.dp))
-
-            // Section 3: Aesthetics (Aura Color & Title)
+            // Section: Aesthetics (Aura Color & Title)
+            val aestheticSectionNum = if (manifest.allowClassSelectionInCreation) "3" else "2"
+            val aestheticSectionTitle = if (manifest.allowClassSelectionInCreation) "AURA LUMINESCENCE (AESTHETICS)" else "BADGE ACCENT COLOR (LANYARD)"
             Text(
-                text = "3. AURA LUMINESCENCE (AESTHETICS)",
+                text = "$aestheticSectionNum. $aestheticSectionTitle",
                 color = LogosGold,
                 fontSize = 12.sp,
                 fontWeight = FontWeight.Bold,

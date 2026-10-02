@@ -167,24 +167,28 @@
           "id": "choice_track_cashier",
           "text": "Front End Cashier: Fast hands, warm smiles, and front-line energy!",
           "voiceKeywords": ["cashier", "front end", "register", "bananas"],
+          "assignHeroClassId": "cashier",
           "nextNodeId": "node_interview_offer_cashier"
         },
         {
           "id": "choice_track_stocker",
           "text": "Sales Floor Stocker: Dynamic action, building impressive displays, and keeping aisles pristine!",
           "voiceKeywords": ["stocker", "sales floor", "floor", "aisles"],
+          "assignHeroClassId": "stocker",
           "nextNodeId": "node_interview_offer_stocker"
         },
         {
           "id": "choice_track_unloader",
           "text": "Backroom Receiving: High energy, heavy freight, and powering the store's heartbeat!",
           "voiceKeywords": ["unloader", "backroom", "freight", "dock", "baler"],
+          "assignHeroClassId": "unloader",
           "nextNodeId": "node_interview_offer_unloader"
         },
         {
           "id": "choice_track_specialist",
           "text": "Specialty Counter: Expert advice, cutting-edge tech, and high-value customer service!",
           "voiceKeywords": ["specialist", "specialty", "tech", "electronics", "warranty"],
+          "assignHeroClassId": "specialist",
           "nextNodeId": "node_interview_offer_specialist"
         }
       ]

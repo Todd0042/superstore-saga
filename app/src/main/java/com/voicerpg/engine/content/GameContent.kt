@@ -68,7 +68,8 @@ data class ManifestDto(
     val voicePermissionPrompt: String = "",
     val resonance: ResonanceProfileDto? = null,
     val ttsReplacements: Map<String, String>? = null,
-    val selfieConfig: SelfieFilterConfig? = null
+    val selfieConfig: SelfieFilterConfig? = null,
+    val allowClassSelectionInCreation: Boolean? = null
 )
 
 data class ResonanceProfileDto(
@@ -365,7 +366,8 @@ data class ChoiceDto(
     val nextNodeId: String = "",
     val completionFlag: String? = null,
     val requiredFlags: List<String>? = null,
-    val metricDeltas: Map<String, Float>? = null
+    val metricDeltas: Map<String, Float>? = null,
+    val assignHeroClassId: String? = null
 )
 
 data class HubCompletionDto(
@@ -387,7 +389,8 @@ data class NodeDto(
     val hubCompletion: HubCompletionDto? = null,
     val healPartyOnEnter: String? = null,
     val metricDeltas: Map<String, Float>? = null,
-    val metricOverrides: Map<String, Float>? = null
+    val metricOverrides: Map<String, Float>? = null,
+    val assignHeroClassId: String? = null
 )
 
 data class NodeFileDto(val nodes: List<NodeDto>? = null)
@@ -544,7 +547,8 @@ data class GameManifest(
     val voicePermissionPrompt: String = "",
     val resonanceProfile: ResonanceProfile = ResonanceProfile.CLASSIC,
     val ttsReplacements: Map<String, String> = emptyMap(),
-    val selfieConfig: SelfieFilterConfig = SelfieFilterConfig()
+    val selfieConfig: SelfieFilterConfig = SelfieFilterConfig(),
+    val allowClassSelectionInCreation: Boolean = true
 ) {
     fun resolveDefaultHeroName(): String = resolveTemplateTokens(defaultHeroName)
 
@@ -1055,7 +1059,8 @@ class GameContentLoader(private val source: ContentSource) {
             .map { it.toDefinition() }
             .associateBy { it.id }
 
-        val narrator = characters.values.firstOrNull { it.role == CharacterRole.NARRATOR }?.speaker
+        val narrator = characters["narrator"]?.speaker
+            ?: characters.values.firstOrNull { it.role == CharacterRole.NARRATOR }?.speaker
             ?: DialogueSpeaker.NARRATOR
 
         val selfieConfig = read("creation/selfie_filters.json", SelfieFilterConfig::class.java)
@@ -1090,7 +1095,8 @@ class GameContentLoader(private val source: ContentSource) {
                 voicePermissionPrompt = manifestDto.voicePermissionPrompt,
                 resonanceProfile = manifestDto.resonance?.toProfile() ?: ResonanceProfile.CLASSIC,
                 ttsReplacements = manifestDto.ttsReplacements ?: emptyMap(),
-                selfieConfig = selfieConfig
+                selfieConfig = selfieConfig,
+                allowClassSelectionInCreation = manifestDto.allowClassSelectionInCreation ?: true
             ),
             characters = characters,
             classes = classes,
@@ -1329,7 +1335,8 @@ class GameContentLoader(private val source: ContentSource) {
                 nextNodeId = it.nextNodeId,
                 completionFlag = it.completionFlag,
                 requiredFlags = it.requiredFlags ?: emptyList(),
-                metricDeltas = it.metricDeltas ?: emptyMap()
+                metricDeltas = it.metricDeltas ?: emptyMap(),
+                assignHeroClassId = it.assignHeroClassId
             )
         },
         nextNodeId = nextNodeId,
@@ -1341,7 +1348,8 @@ class GameContentLoader(private val source: ContentSource) {
         },
         healPartyOnEnter = healPartyOnEnter,
         metricDeltas = metricDeltas ?: emptyMap(),
-        metricOverrides = metricOverrides ?: emptyMap()
+        metricOverrides = metricOverrides ?: emptyMap(),
+        assignHeroClassId = assignHeroClassId
     )
 
     private fun EnvironmentDefinitionDto.toDefinition(): EnvironmentDefinition = EnvironmentDefinition(
