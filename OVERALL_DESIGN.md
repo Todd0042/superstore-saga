@@ -211,6 +211,100 @@ flowchart TD
 
 ---
 
+### 4.1 Act Progression: The Hybrid Tension Index (Option 4)
+
+To guarantee that every act feels long, meaty, and substantial while dynamically responding to player choices and store chaos, progression between Acts is governed by the **Hybrid Tension Index**.
+
+```mermaid
+flowchart LR
+    Shifts["1. Shifts Worked<br/>(+5% Tension per Shift, Min 8-10 Shifts)"] --> Tension["ACT TENSION INDEX<br/>(0% to 100%)"]
+    Incidents["2. Dynamic Conflict Events<br/>(+10% to +15% Tension)"] --> Tension
+    StoreClimate["3. Store Crisis Level<br/>(Low Morale / High Shrink / Squeeze Boosts)"] --> Tension
+    
+    Tension -->|Reaches 100%<br/>(Calibrated to Shift 10-12)| ClimaxTrigger["CLIMAX SHIFT SCHEDULED<br/>(Store Manager Henderson's Ultimatum)"]
+    ClimaxTrigger --> Boss["Turn-Based Boss Battle & Formal Review"]
+    Boss --> NextAct["Transition to Next Act"]
+```
+
+#### Progression Mechanics:
+1. **The Minimum Shift Floor (Pacing Guarantee):**
+   - Each Act enforces a hard minimum floor of **8 to 10 shifts** before the Climax can trigger, strictly preventing players from rushing or accidentally triggering premature transitions.
+2. **The Tension Index Formula:**
+   - Every completed shift adds a base `+5% Tension`.
+   - Resolving major dynamic incidents (e.g., Connex trailer discovery, microwave biohazard, pallet drop) adds `+10% to +15% Tension`.
+   - Environmental crisis multipliers:
+     - If `Store Morale < 40%`: Tension accrual accelerated by $1.25\times$.
+     - If `Labor Squeeze > 65%`: Tension accrual accelerated by $1.25\times$.
+     - If `Store Shrink > 65%`: Tension accrual accelerated by $1.30\times$.
+3. **The Climax Shift Trigger (The Inevitable Payoff):**
+   - When Tension reaches `100%` (calibrated to occur naturally between **Shift 10 and Shift 12**), the next shift is officially flagged on the employee board as the **Mandatory Climax Shift**:
+     - **Act I Climax (Shift 10):** *The 90-Day Probationary Review* $\rightarrow$ Boss: *The Extreme Coupon Glitcher / Early Catastrophe*.
+     - **Act II Climax (Shift 22):** *The Department All-Hands Investigation* $\rightarrow$ Boss: *The Toxic Peer Veteran (Brenda, Kyle, Derrick, Chad)*.
+     - **Act III Climax (Shift 34):** *The Regional VP Inspection Walk* $\rightarrow$ Boss: *The Corporate Metric Auditor*.
+     - **Act IV Climax (Shift 46):** *The Loss Prevention Closed-Door Interrogation* $\rightarrow$ Boss: *Security Manager Clint & Corrupt Ring*.
+     - **Act V Climax (Shift 56):** *The Black Friday Midnight Breach & Final Clock-Out* $\rightarrow$ Boss: *Store Manager Henderson & The Boardroom Machine*.
+4. **Starting Advantage in the Climax Battle:**
+   - Player stats at the moment of transition determine combat advantages:
+     - **High Ass-Kissing Score ($\ge 60$):** Management grants "Teacher's Pet" buffs (starting stamina shield, free vendor snacks).
+     - **High Productivity Score ($\ge 70$):** Start with elite equipment (fresh scanner batteries, heavy-duty utility blades).
+     - **High Defiance / Low Morale:** Unlocks devastating anti-corporate retorts that immediately shatter boss defensive shields!
+
+---
+
+### 4.2 The Narrative Ripple Engine: Long-Term Repercussions
+
+Choices made and situations resolved in Acts I, II, and III create persistent ripples that fundamentally reshape the narrative, alliances, and survival mechanics of Acts IV and V:
+
+```mermaid
+graph TD
+    Act1Choices["Act I: Pre-Hire Assessment Answers & Huddle Stance"] --> Act4Folder["Act IV: Cheryl's Interrogation Folder<br/>(Application Quotes Used Against You)"]
+    
+    Act2Solidarity["Act II: Whistleblowing vs. Peer Solidarity<br/>(Derrick's Forklift, Cake Scams, Kyle's Stash)"] --> Act4Allies{"Act IV: Peer Alliance State"}
+    Act4Allies -->|Snitch Route #COMPANY_RAT| Betrayal["Peers Testify Against You<br/>Refuse to Help or Unlock Doors"]
+    Act4Allies -->|Solidarity Route #ONE_OF_US| Rescue["Peers Smuggle Evidence<br/>Kyle Sets Smoke Distraction, Derrick Gives Keys"]
+    
+    Act2Connex["Act II: Connex Trailer Scandal Leverage"] --> Act4Todd{"Todd's Loyalty in Act IV"}
+    Act4Todd -->|Blackmailed Todd| SecretDebt["Todd Secretly Leaks CCTV Footage to Clear You"]
+    Act4Todd -->|Reported Todd| HarshReplacement["Todd Fired; Replaced by Ruthless Corporate Enforcer"]
+    
+    Act2Brenda["Act II: Brenda's Lane War Outcome"] --> Act4Register["Act IV: The $50 Drawer Skim Frame"]
+    Act4Register -->|Humiliated Brenda| BrendaFrame["Brenda Actively Plants Register Shortage"]
+    Act4Register -->|Helped Brenda in Breakup| BrendaDefense["Brenda Screams at Clint: 'He Didn't Take It!'"]
+    
+    AttendanceDebt["Acts II-III: 5.0+ Occurrence Passes"] --> Act4Blackmail["Act IV: Henderson's Extortion<br/>'We Forgave Your 7 Tardies; Now Take the Fall'"]
+    
+    DonnaMentorship["Acts I-V: Donna Breakroom Affinity"] --> Act5Climax["Act V: Mezzanine Skeleton Key &<br/>Department of Labor Whistleblower Testimony"]
+```
+
+#### Detailed Repercussion Pathways:
+1. **The Application Kiosk Forensic Callback:**
+   - The answers chosen during the 10-Question Pre-Hire Assessment in Shift 1 are permanently logged in `SaveSlotData`.
+   - In Act IV, during the closed-door interrogation, HR Manager Cheryl opens your original application file and quotes your exact Day 1 answers against you:
+     - *If you answered 'Stay late off-the-clock for company pride':* Cheryl smiles: *"On your application, you promised 100% company loyalty. Why did you refuse Store Manager Henderson's 11:00 PM lock-in order?"*
+     - *If you answered 'Mind your own business on theft':* Clint leans forward: *"From day one, our algorithm knew you had a soft spot for inventory shrink."*
+2. **The "Snitch vs. Solidarity" Legacy:**
+   - **The `#COMPANY_RAT` Path (Reporting Peers in Acts II–III):**
+     - You earned early managerial favor and avoided bad shifts in Acts II–III.
+     - *The Act IV Repercussion:* When Clint frames you for the missing \$12,000 electronics pallet, the entire associate ensemble rejoices. Derrick refuses to unlock the back door for your escape; Brenda happily signs an affidavit claiming she saw you in Bay 4; Kyle ignores your radio calls. You must fight through the frame-job completely alone.
+   - **The `#ONE_OF_US` Path (Protecting Peers in Acts II–III):**
+     - You suffered harder shifts and took managerial write-ups to protect coworkers.
+     - *The Act IV Repercussion:* When Clint locks down the store, the peer ensemble forms an underground railroad. Derrick "accidentally" parks a forklift to block Clint's security vehicle; Kyle triggers the fire alarms in garden to create a diversion; Donna slips you an encrypted flash drive containing Henderson's fraudulent shipping logs.
+3. **The Connex Trailer Leverage Payoff:**
+   - *If you extorted Todd for wiped attendance points in Act II:* In Act IV, Todd is trapped between Henderson and his secret guilt. When Clint prepares to arrest you, Todd secretly drops the CCTV memory card containing the real thief's footage into your locker: *"We're even now, kid. Don't ever say I didn't look out for you."*
+   - *If you reported Todd to Cheryl:* Todd was terminated. In Act IV, he is replaced by a cold corporate metric enforcer with zero personal vulnerabilities, eliminating your secret managerial leverage.
+4. **The Brenda Reconciliation / Vendetta:**
+   - *If you crushed Brenda in Act II and mocked her:* Brenda seeks ruthless revenge. In Act IV, she volunteers to count down your register drawer and secretly slips a \$50 bill into her apron pocket, triggering an automatic loss prevention alert under your login credentials.
+   - *If you showed empathy and covered her shift during her breakup:* Brenda steps into the security office during your interrogation, slams her hand on Clint's desk, and yells: *"Leave the rookie alone, Clint! Look at your own camera angles—Chad logged into that register during my lunch break!"*
+5. **The Hypocritical Attendance Debt:**
+   - If you hit 5.5+ occurrences in earlier acts and survived because of high Productivity or Ass-Kissing, Store Manager Henderson calls in the marker in Act IV:
+     - *"Remember when you were at 6.5 points and Cheryl was ready to fire you? I personally approved that manager override, associate. I saved your livelihood. Now, Corporate Loss Prevention needs someone to sign this shrinkage write-off. Sign it, or that attendance folder goes to Corporate tonight."*
+   - Your previous attendance survival becomes Henderson's primary blackmail leverage.
+6. **Donna's Breakroom Mentorship & The Master Key:**
+   - Consistently spending breaks with Donna, sharing snacks, and listening to her 15-year store lore builds `Donna Affinity (0 to 100)`.
+   - At high affinity in Act V, Donna stops being a passive breakroom observer: she pulls a tarnished brass skeleton key from her vest pocket—the master key to the Store Mezzanine and Henderson's private filing cabinets. In the ending, Donna arrives as a surprise witness at the Department of Labor hearing with 15 years of meticulously documented labor violations.
+
+---
+
 ## 5. Combat Mechanics & On-Screen Resonance Tiers
 
 Boss battles repurpose the underlying engine's resonance combat system using **tactical on-screen buttons** with randomized tier calibrations (matching the `echoes-of-logos` model):
