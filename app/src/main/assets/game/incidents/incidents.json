@@ -1,0 +1,92 @@
+{
+  "_doc": "Retail Inferno Incident Engine: dynamic shift interruptions and procedural retail emergencies.",
+  "incidents": [
+    {
+      "id": "incident_spill_aisle_4",
+      "title": "Spill in Aisle 4",
+      "baseWeight": 20.0,
+      "conditions": [
+        {
+          "type": "METRIC_GREATER_THAN",
+          "metricId": "labor_squeeze",
+          "threshold": 30.0
+        }
+      ],
+      "weightMultipliers": [
+        {
+          "metricId": "labor_squeeze",
+          "threshold": 60.0,
+          "multiplier": 1.5
+        }
+      ],
+      "triggerNodeId": "incident_spill_aisle_4",
+      "oneTimeOnly": false,
+      "cooldownTurns": 3
+    },
+    {
+      "id": "incident_coupon_dispute",
+      "title": "Expired Coupon Stand-off",
+      "baseWeight": 25.0,
+      "conditions": [
+        {
+          "type": "METRIC_GREATER_THAN",
+          "metricId": "karen_index",
+          "threshold": 20.0
+        }
+      ],
+      "weightMultipliers": [
+        {
+          "metricId": "karen_index",
+          "threshold": 50.0,
+          "multiplier": 2.0
+        }
+      ],
+      "triggerNodeId": "incident_coupon_dispute",
+      "oneTimeOnly": false,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_code_spark",
+      "title": "Code Spark Register Freeze",
+      "baseWeight": 15.0,
+      "conditions": [
+        {
+          "type": "HAS_FLAG",
+          "flag": "shift_rush_survived"
+        }
+      ],
+      "weightMultipliers": [
+        {
+          "metricId": "labor_squeeze",
+          "threshold": 70.0,
+          "multiplier": 1.8
+        }
+      ],
+      "triggerNodeId": "incident_code_spark",
+      "oneTimeOnly": false,
+      "cooldownTurns": 4
+    },
+    {
+      "id": "incident_surprise_walkthrough",
+      "title": "District Manager Surprise Audit",
+      "baseWeight": 10.0,
+      "conditions": [
+        {
+          "type": "METRIC_LESS_THAN",
+          "metricId": "store_morale",
+          "threshold": 40.0
+        }
+      ],
+      "weightMultipliers": [
+        {
+          "metricId": "store_morale",
+          "threshold": 25.0,
+          "multiplier": 2.5
+        }
+      ],
+      "triggerNodeId": "incident_surprise_walkthrough",
+      "oneTimeOnly": true,
+      "cooldownTurns": 0
+    }
+  ]
+}

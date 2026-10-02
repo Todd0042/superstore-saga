@@ -54,7 +54,8 @@ data class DialogueChoice(
     val voiceKeywords: List<String>,
     val nextNodeId: String,
     val completionFlag: String? = null,
-    val requiredFlags: List<String> = emptyList()
+    val requiredFlags: List<String> = emptyList(),
+    val metricDeltas: Map<String, Float> = emptyMap()
 )
 
 /**
@@ -79,7 +80,9 @@ data class DialogueNode(
     val setFlagOnEnter: String? = null,
     val hubCompletion: HubCompletion? = null,
     /** "half" or "full": restores party HP/MP when the node is entered. */
-    val healPartyOnEnter: String? = null
+    val healPartyOnEnter: String? = null,
+    val metricDeltas: Map<String, Float> = emptyMap(),
+    val metricOverrides: Map<String, Float> = emptyMap()
 )
 
 data class StoryScene(

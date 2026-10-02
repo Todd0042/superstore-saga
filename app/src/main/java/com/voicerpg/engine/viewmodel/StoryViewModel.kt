@@ -59,7 +59,8 @@ data class StoryState(
     val isBacklogRecapActive: Boolean = true,
     val isNewGameFlow: Boolean = false,
     val isPureStoryMode: Boolean = false,
-    val isStoryAutoPlayPaused: Boolean = false
+    val isStoryAutoPlayPaused: Boolean = false,
+    val dynamicMetrics: Map<String, Float> = emptyMap()
 )
 
 class StoryViewModel(
@@ -467,7 +468,8 @@ class StoryViewModel(
                 saveSummary = summary,
                 currentSlot = initialSlot,
                 saveSlots = allSlots,
-                dialogueHistory = restoredHistory
+                dialogueHistory = restoredHistory,
+                dynamicMetrics = existingSave.dynamicMetrics
             )
             combatNarrator.setEyesFreeMode(existingSave.isEyesFreeMode, lockGuard = false)
             combatNarrator.setPocketGuardEnabled(existingSave.isPocketGuardEnabled)
@@ -558,7 +560,8 @@ class StoryViewModel(
             saveSlots = saveManager.getAllSlotInfos(),
             dialogueHistory = restoredHistory,
             isPureStoryMode = isStoryMode,
-            isStoryAutoPlayPaused = false
+            isStoryAutoPlayPaused = false,
+            dynamicMetrics = existingSave.dynamicMetrics
         )
         combatNarrator.setEyesFreeMode(existingSave.isEyesFreeMode, lockGuard = false)
         combatNarrator.setPocketGuardEnabled(existingSave.isPocketGuardEnabled)
@@ -734,7 +737,8 @@ class StoryViewModel(
             saveSlots = saveManager.getAllSlotInfos(),
             dialogueHistory = listOf(initialEntry),
             isPureStoryMode = isStoryMode,
-            isStoryAutoPlayPaused = false
+            isStoryAutoPlayPaused = false,
+            dynamicMetrics = GameContent.metrics.values.associate { it.id to it.initialValue }
         )
         musicManager?.playTrack(initialScene.musicAsset)
         persistCurrentState()
@@ -853,13 +857,25 @@ class StoryViewModel(
         val nextNode = StoryScript.ALL_NODES[choice.nextNodeId]
         if (nextNode != null) {
             val updatedDecisions = _state.value.decisionsMade + choice.id
+            var currentMetrics = _state.value.dynamicMetrics
+            if (choice.metricDeltas.isNotEmpty()) {
+                val updated = currentMetrics.toMutableMap()
+                for ((metricId, delta) in choice.metricDeltas) {
+                    val def = GameContent.metrics[metricId]
+                    val currVal = updated[metricId] ?: def?.initialValue ?: 0f
+                    val clamped = if (def != null) (currVal + delta).coerceIn(def.minValue, def.maxValue) else currVal + delta
+                    updated[metricId] = clamped
+                }
+                currentMetrics = updated
+            }
             if (choice.completionFlag != null && _state.value.narrativeFlags[choice.completionFlag] != true) {
                 _state.value = _state.value.copy(
                     narrativeFlags = _state.value.narrativeFlags + (choice.completionFlag to true),
-                    decisionsMade = updatedDecisions
+                    decisionsMade = updatedDecisions,
+                    dynamicMetrics = currentMetrics
                 )
             } else {
-                _state.value = _state.value.copy(decisionsMade = updatedDecisions)
+                _state.value = _state.value.copy(decisionsMade = updatedDecisions, dynamicMetrics = currentMetrics)
             }
             applyNodeTransition(nextNode)
         }
@@ -958,13 +974,27 @@ class StoryViewModel(
         )
         val updatedHistory = (_state.value.dialogueHistory + entry).takeLast(100)
 
+        var updatedMetrics = _state.value.dynamicMetrics.toMutableMap()
+        for ((metricId, overrideVal) in effectiveNode.metricOverrides) {
+            val def = GameContent.metrics[metricId]
+            val clamped = if (def != null) overrideVal.coerceIn(def.minValue, def.maxValue) else overrideVal
+            updatedMetrics[metricId] = clamped
+        }
+        for ((metricId, delta) in effectiveNode.metricDeltas) {
+            val def = GameContent.metrics[metricId]
+            val current = updatedMetrics[metricId] ?: def?.initialValue ?: 0f
+            val clamped = if (def != null) (current + delta).coerceIn(def.minValue, def.maxValue) else current + delta
+            updatedMetrics[metricId] = clamped
+        }
+
         _state.value = _state.value.copy(
             currentScene = targetScene,
             currentNode = displayNode,
             narrativeFlags = updatedFlags,
             partyStats = updatedPartyStats,
             dialogueHistory = updatedHistory,
-            visitedNodeIds = updatedVisited
+            visitedNodeIds = updatedVisited,
+            dynamicMetrics = updatedMetrics
         )
 
         musicManager?.playTrack(targetScene.musicAsset)
@@ -1099,7 +1129,8 @@ class StoryViewModel(
             isSpeakerAttributionEnabled = combatNarrator.isSpeakerAttributionEnabled.value,
             isMusicEnabled = musicManager?.isMusicEnabled?.value ?: currentSave.isMusicEnabled,
             musicVolume = musicManager?.musicVolume?.value ?: currentSave.musicVolume,
-            voiceAssignments = combatNarrator.getVoiceAssignments()
+            voiceAssignments = combatNarrator.getVoiceAssignments(),
+            dynamicMetrics = s.dynamicMetrics
         )
         saveManager.save(updatedSave, slot)
     }

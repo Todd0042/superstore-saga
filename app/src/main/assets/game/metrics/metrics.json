@@ -1,0 +1,35 @@
+{
+  "_doc": "Retail Inferno Simulation Metrics: dynamically tracked during story progression and shift events.",
+  "metrics": [
+    {
+      "id": "store_morale",
+      "label": "Store Morale",
+      "icon": "team_morale",
+      "minValue": 0.0,
+      "maxValue": 100.0,
+      "initialValue": 65.0,
+      "isDangerHigh": false,
+      "displayColor": "#4CAF50"
+    },
+    {
+      "id": "karen_index",
+      "label": "Karen Index",
+      "icon": "customer_tension",
+      "minValue": 0.0,
+      "maxValue": 100.0,
+      "initialValue": 15.0,
+      "isDangerHigh": true,
+      "displayColor": "#F44336"
+    },
+    {
+      "id": "labor_squeeze",
+      "label": "Labor Squeeze",
+      "icon": "shift_pressure",
+      "minValue": 0.0,
+      "maxValue": 100.0,
+      "initialValue": 40.0,
+      "isDangerHigh": true,
+      "displayColor": "#FF9800"
+    }
+  ]
+}
