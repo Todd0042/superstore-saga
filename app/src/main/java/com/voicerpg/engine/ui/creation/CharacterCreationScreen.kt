@@ -61,6 +61,7 @@ import com.voicerpg.engine.audio.SpeechState
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import com.voicerpg.engine.content.GameContent
+import com.voicerpg.engine.content.GameManifest
 import com.voicerpg.engine.content.HeroClassDef
 import com.voicerpg.engine.model.AuraColor
 import com.voicerpg.engine.model.PlayerCustomization
@@ -84,7 +85,20 @@ fun CharacterCreationScreen(
     onConfirmCharacter: (PlayerCustomization) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    var name by remember(slot, initialCustomization.name) { mutableStateOf(initialCustomization.name) }
+    val manifest = GameContent.manifest
+    val heroSpeaker = GameContent.heroCharacter?.speaker
+    val defaultHeroName = remember {
+        manifest.resolveDefaultHeroName().ifBlank { heroSpeaker?.name ?: "Hero" }
+    }
+    var name by remember(slot, initialCustomization.name) {
+        val initial = initialCustomization.name.trim()
+        val resolved = if (initial.isBlank() || initial == "Hero" || initial.contains("{random")) {
+            defaultHeroName
+        } else {
+            initial
+        }
+        mutableStateOf(resolved)
+    }
     var selectedClass by remember(slot, initialCustomization.heroClassId) { mutableStateOf(initialCustomization.heroClass) }
     var selectedTitle by remember(slot, initialCustomization.title) { mutableStateOf(initialCustomization.title) }
     var selectedAura by remember(slot, initialCustomization.auraColor) { mutableStateOf(initialCustomization.auraColor) }
@@ -95,10 +109,7 @@ fun CharacterCreationScreen(
     val coroutineScope = rememberCoroutineScope()
 
     val context = LocalContext.current
-    val manifest = GameContent.manifest
     val selfieConfig = manifest.selfieConfig
-    val heroSpeaker = GameContent.heroCharacter?.speaker
-    val defaultHeroName = manifest.defaultHeroName.ifBlank { heroSpeaker?.name ?: "Hero" }
     val defaultHeroTitle = manifest.defaultHeroTitle.ifBlank { heroSpeaker?.title ?: "Adventurer" }
     val defaultHeroPortrait = manifest.defaultHeroPortrait ?: heroSpeaker?.portraitAsset ?: "portraits/template_hero.jpg"
 
@@ -150,10 +161,11 @@ fun CharacterCreationScreen(
         }
     }
 
-    val quickNames = remember {
-        manifest.quickNames.ifEmpty {
-            listOf(defaultHeroName)
+    var quickNames by remember {
+        val baseList = manifest.quickNames.ifEmpty {
+            listOf(manifest.defaultHeroName)
         }
+        mutableStateOf<List<String>>(baseList.map { GameManifest.resolveTemplateTokens(it) })
     }
 
     fun confirmAndAwaken() {
@@ -244,6 +256,14 @@ fun CharacterCreationScreen(
         // 4. Quick name selection
         quickNames.firstOrNull { lower.contains(it.lowercase()) }?.let {
             name = it
+        }
+
+        // 5. Dynamic ID reroll
+        if (lower.contains("reroll") || lower.contains("randomize") || lower.contains("new id") || lower.contains("new badge")) {
+            val baseList = manifest.quickNames.ifEmpty { listOf(manifest.defaultHeroName) }
+            quickNames = baseList.map { GameManifest.resolveTemplateTokens(it) }
+            name = manifest.resolveDefaultHeroName()
+            combatNarrator?.speak("New associate ID assigned.", force = true)
         }
 
         // Re-listen if auto-listen is enabled
@@ -762,6 +782,28 @@ fun CharacterCreationScreen(
                             color = if (name == qn) LogosGold else Color.LightGray,
                             fontSize = 10.sp,
                             fontFamily = FontFamily.Monospace
+                        )
+                    }
+                }
+                if (manifest.defaultHeroName.contains("{random") || manifest.quickNames.any { it.contains("{random") }) {
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(6.dp))
+                            .background(RetroPanel)
+                            .border(1.dp, LogosGold, RoundedCornerShape(6.dp))
+                            .clickable {
+                                val baseList = manifest.quickNames.ifEmpty { listOf(manifest.defaultHeroName) }
+                                quickNames = baseList.map { GameManifest.resolveTemplateTokens(it) }
+                                name = manifest.resolveDefaultHeroName()
+                            }
+                            .padding(horizontal = 8.dp, vertical = 4.dp)
+                    ) {
+                        Text(
+                            text = "🎲 Reroll ID",
+                            color = LogosGold,
+                            fontSize = 10.sp,
+                            fontFamily = FontFamily.Monospace,
+                            fontWeight = FontWeight.Bold
                         )
                     }
                 }

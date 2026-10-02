@@ -545,7 +545,23 @@ data class GameManifest(
     val resonanceProfile: ResonanceProfile = ResonanceProfile.CLASSIC,
     val ttsReplacements: Map<String, String> = emptyMap(),
     val selfieConfig: SelfieFilterConfig = SelfieFilterConfig()
-)
+) {
+    fun resolveDefaultHeroName(): String = resolveTemplateTokens(defaultHeroName)
+
+    companion object {
+        fun resolveTemplateTokens(template: String): String {
+            if (!template.contains("{random")) return template
+            val regex = Regex("""\{random(?::?(\d+))?\}""")
+            return regex.replace(template) { match ->
+                val digits = match.groupValues[1].toIntOrNull() ?: 9
+                val count = digits.coerceIn(1, 18)
+                val first = kotlin.random.Random.nextInt(1, 10).toString()
+                val rest = (1 until count).map { kotlin.random.Random.nextInt(0, 10) }.joinToString("")
+                first + rest
+            }
+        }
+    }
+}
 
 data class ResonanceProfile(
     val mode: String = "CLASSIC",

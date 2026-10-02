@@ -132,7 +132,7 @@
       "id": "node_app_offer",
       "speakerId": "cheryl",
       "side": "RIGHT",
-      "text": "Sensational! The algorithm indicates exceptional retail potential! Compatibility score: a stellar 98.4%! Here is your brand-new badge, Associate #1042! Now, where does your retail journey begin?",
+      "text": "Sensational! The algorithm indicates exceptional retail potential! Compatibility score: a stellar 98.4%! Here is your brand-new badge, {hero}! Now, where does your retail journey begin?",
       "choices": [
         {
           "id": "choice_track_cashier",
@@ -610,7 +610,7 @@
       "speakerId": "henderson",
       "side": "RIGHT",
       "changeSceneId": "scene_hiring_kiosk",
-      "text": "Associate #1042! There you are! I just pulled up our store's real-time scoreboard. Top customer satisfaction rating in the entire district today! Zero wait times, zero safety incidents, and team morale is at an all-time peak! District VP Vance sent a personal email applauding our morning velocity!",
+      "text": "{hero}! There you are! I just pulled up our store's real-time scoreboard. Top customer satisfaction rating in the entire district today! Zero wait times, zero safety incidents, and team morale is at an all-time peak! District VP Vance sent a personal email applauding our morning velocity!",
       "nextNodeId": "node_clockout_fingerprint"
     },
     {

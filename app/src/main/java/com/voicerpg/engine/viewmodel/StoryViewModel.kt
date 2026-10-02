@@ -175,7 +175,7 @@ class StoryViewModel(
             .replace("{player}'s", "$effectiveName's")
 
         // If player has a custom name different from defaultName, replace any leftover defaultName references
-        if (!effectiveName.equals(defaultName, ignoreCase = true)) {
+        if (!effectiveName.equals(defaultName, ignoreCase = true) && !defaultName.contains("{")) {
             result = result.replace(Regex("\\b${Regex.escape(defaultName)}'s\\b", RegexOption.IGNORE_CASE), "$effectiveName's")
             result = result.replace(Regex("\\b${Regex.escape(defaultName)}'\\b", RegexOption.IGNORE_CASE), "$effectiveName'")
             result = result.replace(Regex("\\b${Regex.escape(defaultName)}\\b", RegexOption.IGNORE_CASE), effectiveName)
@@ -366,7 +366,7 @@ class StoryViewModel(
         } else {
             saveManager.deleteSave(storySlot)
             val manifest = GameContent.manifest
-            val defaultName = manifest.defaultHeroName.ifBlank { "Hero" }
+            val defaultName = manifest.resolveDefaultHeroName().ifBlank { "Hero" }
             val defaultTitle = manifest.defaultHeroTitle.ifBlank { "The Awakened Hero" }
             val defaultPlayer = PlayerCustomization(name = defaultName, title = defaultTitle)
             saveManager.createInitialSave(defaultPlayer, storySlot)
@@ -638,7 +638,7 @@ class StoryViewModel(
         combatNarrator.stop()
         speechManager.cancel()
         val manifest = GameContent.manifest
-        val defaultName = manifest.defaultHeroName.ifBlank { "Hero" }
+        val defaultName = manifest.resolveDefaultHeroName().ifBlank { "Hero" }
         val defaultTitle = manifest.defaultHeroTitle.ifBlank { "The Awakened Hero" }
         StoryAssetLoader.activeSlot = targetSlot
         _state.value = _state.value.copy(

@@ -10,9 +10,9 @@
   "victoryLine": "Shift survived! Your voice echoes through the sales floor.",
   "defeatLine": "Clocked out. Your shift ends in disciplinary review.",
   "titleBackgroundAsset": "story/bg_title_storefront.jpg",
-  "defaultHeroName": "Associate #1042",
+  "defaultHeroName": "Associate #{random9}",
   "defaultHeroTitle": "Probationary Hire",
-  "quickNames": ["Todd", "Julian", "Mack", "Donna", "Brenda"],
+  "quickNames": ["Associate #{random9}", "Associate #{random9}", "Associate #{random9}"],
   "characterTitles": [
     "Front-End Cashier",
     "Sales Floor Stocker",

@@ -45,8 +45,7 @@ class CharacterNameInterpolationTest {
     @Test
     fun testLegacyNameReplacementWhenCustomized() {
         val vm = createViewModel()
-        val defaultName = GameContent.manifest.defaultHeroName.ifBlank { "Hero" }
-        val formatted = vm.formatStoryText("$defaultName, stand firm. $defaultName's courage guides us.", "Rowan", "Flame-Woven")
+        val formatted = vm.formatStoryText("{hero}, stand firm. {hero}'s courage guides us.", "Rowan", "Flame-Woven")
         assertEquals("Rowan, stand firm. Rowan's courage guides us.", formatted)
     }
 
