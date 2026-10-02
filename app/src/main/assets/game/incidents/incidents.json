@@ -46,8 +46,8 @@
       "cooldownTurns": 2
     },
     {
-      "id": "incident_code_spark",
-      "title": "Code Spark Register Freeze",
+      "id": "incident_register_surge",
+      "title": "All-Hands Register Surge",
       "baseWeight": 15.0,
       "conditions": [
         {
@@ -62,7 +62,7 @@
           "multiplier": 1.8
         }
       ],
-      "triggerNodeId": "incident_code_spark",
+      "triggerNodeId": "incident_register_surge",
       "oneTimeOnly": false,
       "cooldownTurns": 4
     },
