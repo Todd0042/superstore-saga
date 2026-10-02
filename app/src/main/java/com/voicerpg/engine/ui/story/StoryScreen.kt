@@ -220,19 +220,18 @@ fun StoryScreen(
             //    • Portrait  + 16:9 fallback → ContentScale.FillWidth  (pins width, avoids
             //      severe horizontal crop; lower gradient vignette masks the letterbox naturally)
             if (backgroundBitmap != null) {
+                val isSquare = kotlin.math.abs(backgroundBitmap.width - backgroundBitmap.height) < 10
                 val bgScale = when {
                     isLandscape -> ContentScale.Crop
-                    // If the bitmap is wider than tall it came from the landscape fallback;
-                    // pin width so the full horizontal composition stays visible.
+                    isSquare -> ContentScale.Crop
                     backgroundBitmap.width > backgroundBitmap.height -> ContentScale.FillWidth
-                    // Native portrait asset: fill the frame perfectly.
-                    else -> ContentScale.FillBounds
+                    else -> ContentScale.Crop
                 }
                 Image(
                     bitmap = backgroundBitmap,
                     contentDescription = storyState.currentScene.name,
                     contentScale = bgScale,
-                    alignment = if (!isLandscape && backgroundBitmap.width > backgroundBitmap.height) {
+                    alignment = if (!isLandscape && backgroundBitmap.width > backgroundBitmap.height && !isSquare) {
                         // Align landscape-fallback image to the top so the most meaningful
                         // part of the scene (storefront, faces) stays in the upper 2/3.
                         Alignment.TopCenter

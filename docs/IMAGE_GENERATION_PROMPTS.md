@@ -1,6 +1,6 @@
 # Retail Inferno: Standalone Image Generation Prompts
 
-This file contains 100% self-contained prompts for generating all visual assets (Character Portraits and Environmental Backgrounds) for **Retail Inferno** in Gemini on the web.
+This file contains 100% self-contained prompts for generating all visual assets for **Retail Inferno** in Gemini on the web.
 
 Each prompt contains all necessary lighting, camera specifications, subject details, environmental props, and negative prompt exclusions directly in the copy-paste block. Simply copy the code block and paste it directly into Gemini.
 
@@ -194,83 +194,217 @@ Medium close-up portrait of a 29-year-old male specialty department manager, 5'1
 
 ---
 
-# Part 3: Story Scene & Background Environments (Aspect Ratio: 16:9 Widescreen)
+# Part 3A: Dedicated Dual-Orientation Backgrounds
+
+The engine's `StoryAssetLoader` natively and automatically loads `story/<scene_name>_p.jpg` in portrait mode, and `story/<scene_name>.jpg` in landscape mode.
 
 Save these images to: `app/src/main/assets/story/`
 
 ---
 
-### 17. Title Screen Megastore Monolith Storefront
+### 17A. Title Screen MegaMart Storefront (Landscape)
 - **Target Filename:** `app/src/main/assets/story/bg_title_storefront.jpg`
 - **Aspect Ratio:** `16:9` (Widescreen Landscape)
-- **Scene:** Game Title Screen / Main Menu
 
 ```text
 A cinematic wide-angle exterior architectural photograph of a massive suburban big-box department megastore (MegaMart) at twilight dusk. Towering glowing yellow-and-blue neon corporate signage mounted atop the flat industrial parapet shines against an overcast purple-gray evening sky. A sprawling asphalt parking lot stretches out in the foreground, complete with painted yellow lane stripes, oil stains, speed bumps, and clustered metal shopping cart corrals with loose carts scattered about. The store's giant automatic glass sliding entrance doors emit a blazing, sterile yellow-white fluorescent light onto the concrete sidewalk apron. Red concrete anti-ram security bollards line the curb. Real 24mm wide-angle architectural documentary photography, sharp focus from foreground to background, gritty suburban commercial realism, atmospheric dusk ambient glow, high resolution, hyper-detailed. Negative / Exclude: cartoon, anime, 3d render, stylized illustration, fantasy castle, cyberpunk neon skyscrapers, futuristic spaceships, painting, sketch, dramatic fantasy fog, lens flare burst.
 ```
 
+### 17B. Title Screen MegaMart Storefront (Portrait)
+- **Target Filename:** `app/src/main/assets/story/bg_title_storefront_p.jpg`
+- **Aspect Ratio:** `9:16` (Vertical Portrait)
+
+```text
+A towering vertical wide-angle exterior architectural photograph of a massive suburban big-box department megastore (MegaMart) at twilight dusk. The lower third features the dark asphalt parking lot with painted yellow pedestrian crosswalk stripes and an abandoned metal shopping cart. The middle third showcases the brightly illuminated glass sliding automatic entrance doors pouring sterile white fluorescent light onto the sidewalk apron with red security bollards. The upper third features the towering two-story flat industrial store facade crowned by a giant glowing blue-and-yellow neon MegaMart spark sign against an overcast purple-gray twilight sky. Vertical 24mm architectural documentary photography, sharp focus from foreground asphalt to sky, gritty commercial suburban realism. Negative / Exclude: cartoon, anime, 3d render, stylized illustration, fantasy castle, cyberpunk skyscrapers, spaceships, painting, sketch, dramatic fantasy fog.
+```
+
 ---
 
-### 18. Store Vestibule Hiring Kiosk
+### 18A. Store Vestibule Hiring Kiosk (Landscape)
 - **Target Filename:** `app/src/main/assets/story/bg_hiring_kiosk.jpg`
 - **Aspect Ratio:** `16:9` (Widescreen Landscape)
-- **Scene:** `scene_hiring_kiosk` ("Orientation: Day 0" Assessment)
 
 ```text
 Eye-level wide-angle interior photograph of an employment application kiosk nestled inside the glass entrance vestibule of a massive discount department store. In the center stands a standalone utilitarian gray plastic terminal housing a glowing touchscreen monitor with the words 'WELCOME APPLICANT — TOUCH TO BEGIN' in green text. Beside the kiosk, a cinderblock wall painted institutional beige features peeling corporate motivational posters ('EXCELLENCE STARTS WITH YOU!' and 'CUSTOMER SERVICE IS OUR PROMISE') with scotch tape yellowed at the edges. Scuffed commercial gray speckled linoleum floor shows faint black skid marks and buffer swirls. Beyond the vestibule glass partition, rows of nested metal shopping carts and an automatic sliding entrance door are visible. Harsh unyielding 4000K overhead industrial fluorescent tube lighting casting faint double-shadows onto the floor. 28mm wide-angle commercial documentary photography, authentic mundane retail environment, sharp crisp details. Negative / Exclude: cartoon, anime, 3d render, stylized illustration, fantasy dungeon, cozy office, warm fireplace, cinematic rim lighting, painting, drawing, blurry textures.
 ```
 
+### 18B. Store Vestibule Hiring Kiosk (Portrait)
+- **Target Filename:** `app/src/main/assets/story/bg_hiring_kiosk_p.jpg`
+- **Aspect Ratio:** `9:16` (Vertical Portrait)
+
+```text
+A vertical eye-level interior photograph inside the glass entrance vestibule of a massive department megastore, looking directly at an automated job application station. In the lower-to-middle frame stands a freestanding gray plastic electronic kiosk terminal with a glowing touchscreen reading 'WELCOME APPLICANT — TOUCH TO BEGIN'. In the lower foreground, scuffed gray speckled linoleum flooring reflects the cold ceiling glare. Rising up the tall vertical cinderblock wall behind the terminal are taped corporate motivational flyers with curled, yellowing scotch tape edges. The upper frame captures the exposed acoustic tile ceiling and a buzzing bare industrial fluorescent tube fixture. Vertical 28mm commercial documentary photography, authentic mundane retail atmosphere, crisp sharp details. Negative / Exclude: cartoon, anime, 3d render, stylized illustration, luxury office, fantasy tavern, cozy lighting, painting, sketch.
+```
+
 ---
 
-### 19. Associate Locker Room
+### 19A. Associate Locker Room (Landscape)
 - **Target Filename:** `app/src/main/assets/story/bg_locker_room.jpg`
 - **Aspect Ratio:** `16:9` (Widescreen Landscape)
-- **Scene:** `scene_locker_room` ("Day 1: Fitting the Vest")
 
 ```text
 Wide-angle interior photograph of an employee-only backroom locker area inside a major department store. Long corridors of dented, battleship-gray metal lockers with ventilation slots, stamped brass number plates, and hanging master padlock hasps line both sides of the room. A sturdy bolted-down wooden bench with rounded dark varnish runs down the center aisle. The back cinderblock wall is painted gloss institutional beige; mounted on it is a digital electronic swipe-card time clock with a small green LED display reading 'TIME: 05:58 AM — SWIPE BADGE', flanked by a crowded cork bulletin board pinned with overlapping OSHA labor law posters, mandatory safety warnings, and faded attendance grievance memos. A trash can overflows with crumpled coffee cups in the corner. Harsh bare industrial fluorescent tube lights humming overhead casting cold light onto scuffed beige linoleum tile floor. 35mm documentary realism, sharp depth of field, authentic working-class employee atmosphere. Negative / Exclude: cartoon, anime, 3d render, stylized illustration, high school hallway, clean luxury gym, fantasy tavern, warm dramatic lighting, painting, CGI.
 ```
 
+### 19B. Associate Locker Room (Portrait)
+- **Target Filename:** `app/src/main/assets/story/bg_locker_room_p.jpg`
+- **Aspect Ratio:** `9:16` (Vertical Portrait)
+
+```text
+A vertical interior photograph looking down a narrow employee locker room aisle inside a big-box store. A dark wooden bench runs through the center foreground from the bottom edge of the frame. On either side, tall columns of dented, battleship-gray steel lockers with stamped brass numbers and padlocks reach upward. At the end of the aisle on an institutional beige cinderblock wall is an electronic punch time-clock glowing with a green LED display alongside a crowded corkboard pinned with overlapping labor law posters and schedule memos. The upper frame shows bare humming fluorescent light fixtures hanging from an exposed ceiling. Vertical 35mm documentary photograph, deep perspective, realistic scuffed linoleum floor, gritty authentic working-class detail. Negative / Exclude: cartoon, anime, 3d render, stylized illustration, high school hallway, clean luxury locker room, fantasy tavern, painting.
+```
+
 ---
 
-### 20. Associate Breakroom
+### 20A. Associate Breakroom (Landscape)
 - **Target Filename:** `app/src/main/assets/story/bg_breakroom.jpg`
 - **Aspect Ratio:** `16:9` (Widescreen Landscape)
-- **Scene:** Associate Breakroom Rest & Dialogue Hub
 
 ```text
 Wide-angle interior photograph of an authentic suburban retail employee breakroom. In the center are rectangular folding tables with woodgrain faux-laminate surfaces surrounded by mismatched blue and beige molded plastic stackable chairs. Along the back wall runs a cheap laminate kitchen counter holding an ancient commercial twin-pot glass carafe drip coffee maker with dark burnt coffee residue at the bottom, an open box of off-brand powdered coffee creamer packets, and an old microwave with dried soup splatters visible inside its door. In the corner stands a glowing illuminated glass-front vending machine filled with sodas and candy bars, next to a water cooler with an inverted blue five-gallon plastic jug. A large corkboard displays handwritten index cards ('LABEL YOUR FOOD', 'WHO ATE MY YOGURT??', 'UNION MEETING DISMISSED'). Scuffed linoleum tile flooring with scattered crumbs and water stains. Cold buzzing industrial fluorescent tube ceiling fixtures. 28mm wide-angle documentary lens, realistic natural textures, crisp details. Negative / Exclude: cartoon, anime, 3d render, modern tech startup cafeteria, luxury restaurant, cozy cafe, fantasy tavern, golden hour sunset, dramatic shadows, painting, sketch.
 ```
 
+### 20B. Associate Breakroom (Portrait)
+- **Target Filename:** `app/src/main/assets/story/bg_breakroom_p.jpg`
+- **Aspect Ratio:** `9:16` (Vertical Portrait)
+
+```text
+A vertical interior photograph of a utilitarian department store employee breakroom. In the lower foreground is the corner of a folding faux-woodgrain table with a molded blue plastic chair. The middle ground features a stained laminate counter holding a twin-burner commercial drip coffee machine with dark burnt sludge in the glass pot, an open canister of powdered creamer, and a microwave. In the upper-right corner stands a tall illuminated glass vending machine glowing with snacks and soda cans, while the upper-left wall features a crowded bulletin board with handwritten signs ('CLEAN UP AFTER YOURSELF', 'DO NOT UNPLUG THE FRIDGE'). Harsh overhead fluorescent tube lighting reflects off the scuffed linoleum floor. Vertical 28mm realistic interior photography, authentic mundane retail details. Negative / Exclude: cartoon, anime, 3d render, modern tech cafeteria, luxury dining, cozy cafe, fantasy tavern, painting, CGI.
+```
+
 ---
 
-### 21. Center Action Alley Huddle Concourse
+### 21A. Center Action Alley Huddle Concourse (Landscape)
 - **Target Filename:** `app/src/main/assets/story/bg_action_alley.jpg`
 - **Aspect Ratio:** `16:9` (Widescreen Landscape)
-- **Scene:** `scene_action_alley` ("The Morning Huddle & Cheer")
 
 ```text
 Expansive wide-angle interior photograph down the center 'Action Alley' main thoroughfare of a cavernous suburban department megastore before opening hours. A broad twenty-foot polished center aisle stretches into deep linear perspective, flanked on both sides by towering steel industrial shelving loaded with merchandise. In the center lane stand towering cardboard promotional bulk displays: dump bins of bargain paperbacks, stacked 12-packs of generic cola, and massive shrink-wrapped pallet towers of discount paper towels and laundry detergent jugs. In the foreground rests an overturned heavy-duty yellow plastic dairy milk crate placed as an impromptu speaker podium. Cavernous exposed ceiling above with industrial steel trusses, galvanized air conditioning ducts, and long rows of intensely bright fluorescent strip fixtures. Polished concrete and linoleum floor reflecting overhead lights in glossy streaks. 24mm wide-angle lens, realistic commercial retail perspective, authentic warehouse-scale supermarket atmosphere, sharp focus. Negative / Exclude: cartoon, anime, 3d render, fantasy cathedral, sci-fi space station, abandoned mall, apocalyptic debris, dramatic cinematic smoke, painting, sketch.
 ```
 
+### 21B. Center Action Alley Huddle Concourse (Portrait)
+- **Target Filename:** `app/src/main/assets/story/bg_action_alley_p.jpg`
+- **Aspect Ratio:** `9:16` (Vertical Portrait)
+
+```text
+A vertical interior photograph looking straight down the towering central 'Action Alley' concourse of a massive megastore. Resting in the immediate center foreground on the polished concrete floor is an overturned heavy-duty yellow plastic milk crate used as a manager's huddle podium. Flanking the aisle are massive vertical bulk pallet stacks: towering towers of blue paper towel bundles, cardboard dump bins of discount DVDs, and steel warehouse shelving bays rising high on both sides. The upper third of the frame captures the immense height of the exposed industrial ceiling, with steel roof joists, spiral air ducts, and long hanging industrial fluorescent light strips vanishing into distant perspective. Vertical 24mm architectural lens, soaring warehouse scale, sharp focus, authentic commercial supermarket reality. Negative / Exclude: cartoon, anime, 3d render, fantasy temple, sci-fi hangar, abandoned mall, painting, sketch, fantasy fog.
+```
+
 ---
 
-### 22. Front-End Checkout Concourse
+### 22A. Front-End Checkout Concourse (Landscape)
 - **Target Filename:** `app/src/main/assets/story/bg_checkout_lanes.jpg`
 - **Aspect Ratio:** `16:9` (Widescreen Landscape)
-- **Scene:** `scene_checkout_concourse` ("Shift 1: Register Rush Combat")
 
 ```text
 A first-person cashier point-of-view wide-angle interior photograph standing behind a front-end supermarket checkout register. In the immediate foreground is a black rubber motorized conveyor belt leading to an optical glass flatbed barcode scanner, a keypad POS terminal, and a rotating metal carousel loaded with blue plastic grocery bags. Flanking the narrow lane are tiered wire display racks stuffed with candy bars, packs of chewing gum, and glossy tabloid celebrity magazines. Above the lane hangs an illuminated white plastic numbering pylon reading 'LANE 4'. Looking out past the lane reveals a busy front concourse with endless rows of parallel cash registers stretching into the distance and a queue of shoppers in everyday suburban clothing with full metal shopping carts waiting in line. Glare from massive floor-to-ceiling plate glass store exit doors in the distance mixes with harsh overhead fluorescent tube lighting. 28mm documentary lens, realistic depth of field, sharp retail equipment details, high resolution. Negative / Exclude: cartoon, anime, 3d render, stylized illustration, futuristic sci-fi registers, fantasy tavern, medieval market, cinematic bokeh blur, glamour lighting, painting, CGI.
 ```
 
+### 22B. Front-End Checkout Concourse (Portrait)
+- **Target Filename:** `app/src/main/assets/story/bg_checkout_lanes_p.jpg`
+- **Aspect Ratio:** `9:16` (Vertical Portrait)
+
+```text
+A vertical first-person cashier point-of-view photograph looking down an active supermarket checkout lane. In the lower third foreground is the stainless-steel cash register station with an optical glass barcode scanner plate, card reader keypad, and a black motorized conveyor belt. The middle ground looks down the customer lane past tiered wire racks of chocolate candy bars, gum, and magazines toward a line of suburban shoppers with loaded metal shopping carts. Rising overhead into the upper third is a tall white illuminated register light pole with a glowing sign reading '4', surrounded by hanging acoustic ceiling tiles and harsh fluorescent tube lighting. Vertical 28mm documentary photograph, authentic cashier perspective, realistic retail chaos, sharp depth of field. Negative / Exclude: cartoon, anime, 3d render, stylized illustration, sci-fi registers, fantasy tavern, painting, CGI.
+```
+
 ---
 
-### 23. Receiving Loading Dock & Truck Bay
+### 23A. Receiving Loading Dock & Truck Bay (Landscape)
 - **Target Filename:** `app/src/main/assets/story/bg_loading_dock.jpg`
 - **Aspect Ratio:** `16:9` (Widescreen Landscape)
-- **Scene:** `scene_loading_dock` (Warehouse Unload & Mack Encounter)
 
 ```text
 Expansive wide-angle interior photograph of an active industrial backroom freight warehouse and truck receiving dock inside a big-box store. Along the back concrete wall are three heavy corrugated steel roll-up garage dock doors; one is open to a semi-trailer revealing a long accordion metal skate-wheel gravity conveyor track extending into the warehouse. Hydraulic steel dock-leveler floor plates are outlined in faded yellow caution hazard stripes. Towering 24-foot heavy-duty blue and orange steel pallet racking lines the walls, packed to the ceiling with shrink-wrapped wooden pallets of brown cardboard shipping boxes. Parked near a concrete support column is a bright yellow industrial electric reach-truck forklift. Polished concrete floor marked with yellow pedestrian boundary lines and scuffed black rubber tire skid marks. Warehouse high-bay fluorescent and sodium-vapor lighting creating crisp industrial contrast, subtle dust particles visible in light shafts. 24mm wide-angle lens, authentic commercial logistics atmosphere, sharp focus, hyper-realistic. Negative / Exclude: cartoon, anime, 3d render, fantasy castle armory, sci-fi starship hangar, abandoned decayed ruin, cinematic lens flare, painting, illustration.
+```
+
+### 23B. Receiving Loading Dock & Truck Bay (Portrait)
+- **Target Filename:** `app/src/main/assets/story/bg_loading_dock_p.jpg`
+- **Aspect Ratio:** `9:16` (Vertical Portrait)
+
+```text
+A vertical industrial interior photograph inside a massive department store receiving warehouse dock. In the lower foreground, a metal skate-wheel accordion gravity conveyor line extends across the scuffed concrete floor, marked with yellow painted safety zones and black forklift tire skid marks. In the middle ground stands an open corrugated steel dock bay door backed up to a dark semi-trailer truck, beside an electric yellow pallet jack. Rising vertically up the entire right and upper side of the frame are towering 24-foot orange and blue steel pallet racks stacked high with shrink-wrapped cardboard shipping cartons reaching the soaring corrugated metal warehouse roof and hanging sodium-vapor light fixtures. Vertical 24mm industrial documentary lens, dramatic vertical warehouse height, sharp details, gritty logistics realism. Negative / Exclude: cartoon, anime, 3d render, fantasy castle, sci-fi starship hangar, abandoned ruin, painting, sketch.
+```
+
+---
+
+# Part 3B: Universal 1:1 Square Backgrounds (Foldables, Portrait & Landscape)
+
+If you prefer generating **one universal image per scene** instead of separate landscape and portrait files, generate these `1:1` square images. 
+
+The engine uses `ContentScale.Crop`:
+- **Unfolded Foldable Phones (~1:1):** Displays the entire square image with no cropping.
+- **Regular Phones in Portrait (9:16 / 9:20):** Crops the left and right margins, displaying the center vertical column without distortion.
+- **Phones in Landscape (16:9):** Crops the top and bottom margins, displaying the center horizontal strip without distortion.
+
+Save these to: `app/src/main/assets/story/bg_<name>.jpg` (and copy as `bg_<name>_p.jpg`).
+
+---
+
+### 24. Universal Title Screen Storefront (Square 1:1)
+- **Target Filename:** `app/src/main/assets/story/bg_title_storefront.jpg`
+- **Aspect Ratio:** `1:1` (Square)
+
+```text
+A centered square architectural photograph of a massive suburban department megastore (MegaMart) at twilight dusk, composed with a central safe zone for multi-device cropping. The primary focal point is strictly centered: the glowing automatic glass sliding entrance doors pouring bright sterile white fluorescent light onto the concrete apron, directly beneath the glowing blue-and-yellow neon MegaMart corporate sign on the store facade. Flanking the entrance are clustered metal shopping cart corrals on the left and right, with an asphalt parking lot filling the bottom quadrant and a cloudy purple-gray dusk sky filling the top quadrant. Symmetrical, balanced commercial realism, 28mm lens, sharp focus from center to edges, authentic retail scale. Negative / Exclude: cartoon, anime, 3d render, stylized illustration, fantasy castle, cyberpunk neon skyscrapers, painting, sketch, dramatic fantasy fog.
+```
+
+---
+
+### 25. Universal Hiring Kiosk Vestibule (Square 1:1)
+- **Target Filename:** `app/src/main/assets/story/bg_hiring_kiosk.jpg`
+- **Aspect Ratio:** `1:1` (Square)
+
+```text
+A centered square interior photograph of an automated job application kiosk station in the glass vestibule of a big-box store, composed with a central safe zone. The gray plastic freestanding application terminal with its glowing green 'WELCOME APPLICANT — TOUCH TO BEGIN' touchscreen monitor is positioned precisely in the center of the frame. The background shows institutional beige cinderblock walls with peeling taped motivational posters on the left and stacked metal shopping carts visible through a glass partition on the right. Scuffed speckled gray linoleum floor in the lower half and bare fluorescent tube lighting in the upper half. Balanced square composition, 28mm documentary lens, realistic commercial retail environment, sharp focus. Negative / Exclude: cartoon, anime, 3d render, stylized illustration, luxury office, fantasy tavern, warm fireplace, painting, sketch.
+```
+
+---
+
+### 26. Universal Associate Locker Room (Square 1:1)
+- **Target Filename:** `app/src/main/assets/story/bg_locker_room.jpg`
+- **Aspect Ratio:** `1:1` (Square)
+
+```text
+A centered square interior photograph of an employee backroom locker area inside a major department store, composed with a central safe zone. Centered in the middle of the frame is the back wall featuring an electronic badge-swipe time clock with a glowing green LED readout, flanked by a crowded corkboard pinned with overlapping labor law posters. Running directly down the center from the foreground is a dark varnished wooden bench. Rows of dented battleship-gray steel lockers with ventilation slots and padlocks line the left and right sides symmetrically. Scuffed beige linoleum floor below and hanging fluorescent light fixtures above. Symmetrical corridor perspective, 35mm documentary realism, sharp focus, authentic employee-only atmosphere. Negative / Exclude: cartoon, anime, 3d render, stylized illustration, high school hallway, clean luxury gym, fantasy tavern, painting, CGI.
+```
+
+---
+
+### 27. Universal Associate Breakroom (Square 1:1)
+- **Target Filename:** `app/src/main/assets/story/bg_breakroom.jpg`
+- **Aspect Ratio:** `1:1` (Square)
+
+```text
+A centered square interior photograph of a suburban retail employee breakroom, composed with a central safe zone. In the center of the frame is a woodgrain folding laminate table with blue and beige molded plastic chairs. Immediately behind it along the center wall is a laminate countertop holding an old commercial twin-pot drip coffee maker with burnt dark residue in the glass carafe, an open canister of creamer, and a microwave. Flanking the scene on the right is a tall illuminated glass vending machine, and on the left is a corkboard with handwritten notes ('LABEL YOUR FOOD'). Scuffed linoleum tile flooring below with crumbs and cold fluorescent tube ceiling lights above. Balanced square composition, 28mm documentary lens, authentic mundane retail details. Negative / Exclude: cartoon, anime, 3d render, modern tech cafeteria, luxury dining, cozy cafe, fantasy tavern, golden hour sunset, painting.
+```
+
+---
+
+### 28. Universal Center Action Alley Huddle (Square 1:1)
+- **Target Filename:** `app/src/main/assets/story/bg_action_alley.jpg`
+- **Aspect Ratio:** `1:1` (Square)
+
+```text
+A centered square interior photograph looking down the center 'Action Alley' main thoroughfare of a cavernous suburban megastore, composed with a central safe zone. Directly in the center foreground rests an overturned heavy-duty yellow plastic milk crate used as an impromptu manager's huddle podium on the polished concrete floor. Symmetrically flanking the wide center aisle on the left and right are towering cardboard pallet displays of paper towels, stacked sodas, and blue steel shelving bays. The upper quadrant shows exposed ceiling trusses and rows of industrial fluorescent strip lights vanishing into central linear perspective. Symmetrical commercial interior photograph, 24mm wide lens, warehouse-scale supermarket atmosphere, sharp focus. Negative / Exclude: cartoon, anime, 3d render, fantasy cathedral, sci-fi hangar, abandoned mall, painting, sketch, fantasy smoke.
+```
+
+---
+
+### 29. Universal Front-End Checkout Concourse (Square 1:1)
+- **Target Filename:** `app/src/main/assets/story/bg_checkout_lanes.jpg`
+- **Aspect Ratio:** `1:1` (Square)
+
+```text
+A centered square first-person cashier point-of-view interior photograph standing behind a front-end checkout counter, composed with a central safe zone. The cash register station with its optical glass flatbed scanner plate, card reader, and black conveyor belt is positioned in the lower-center foreground. Directly in the center background is the customer lane and queue of shoppers with loaded shopping carts. The upper-center frame features the illuminated white register number pole reading '4'. Flanking the lane on the left and right are wire display racks of candy bars, gum, and magazines. Balanced square composition, 28mm documentary lens, realistic depth of field, sharp equipment details, authentic retail rush atmosphere. Negative / Exclude: cartoon, anime, 3d render, stylized illustration, sci-fi registers, fantasy tavern, medieval market, painting, CGI.
+```
+
+---
+
+### 30. Universal Receiving Loading Dock (Square 1:1)
+- **Target Filename:** `app/src/main/assets/story/bg_loading_dock.jpg`
+- **Aspect Ratio:** `1:1` (Square)
+
+```text
+A centered square industrial interior photograph of a warehouse receiving dock inside a big-box store, composed with a central safe zone. Directly in the center background is an open corrugated steel dock door leading to a dark semi-trailer truck, with an accordion skate-wheel metal roller conveyor extending down the center of the concrete floor. Flanking the scene on the right is a bright yellow industrial electric forklift, and flanking the scene on the left are towering 24-foot blue and orange pallet racks stacked with shrink-wrapped cardboard cartons. Scuffed concrete floor below with yellow painted safety lines and high-bay lighting above. Balanced symmetrical industrial composition, 24mm wide lens, sharp focus, authentic logistics freight realism. Negative / Exclude: cartoon, anime, 3d render, fantasy castle armory, sci-fi hangar, abandoned ruin, painting, sketch.
 ```
