@@ -9,7 +9,7 @@
   "ttsPitch": 1.25,
   "samplePhrase": "Please have a seat. Take a peppermint from the crystal bowl.",
   "preferredVoiceId": "en-us-x-sfg#female_cheerful",
-  "voiceAliases": ["cheryl", "hr", "human resources", "people lead"],
+  "voiceAliases": ["cheryl", "hr", "human resources", "hr manager", "hr delegate", "personnel manager"],
   "gender": "female",
   "allowedVoiceRegions": ["US"]
 }

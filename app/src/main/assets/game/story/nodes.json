@@ -132,7 +132,7 @@
       "id": "node_app_eval",
       "speakerId": "hiring_portal",
       "side": "RIGHT",
-      "text": "Calculating applicant assessment score... [RESULTS: 98.4% COMPATIBILITY - TIER 1 EXCEPTIONAL MATCH]. Status: APPLICATION APPROVED. You have been selected for an expedited in-person interview with People Lead Cheryl at MegaMart Store #1042.",
+      "text": "Calculating applicant assessment score... [RESULTS: 98.4% COMPATIBILITY - TIER 1 EXCEPTIONAL MATCH]. Status: APPLICATION APPROVED. You have been selected for an expedited in-person interview with HR Manager Cheryl at MegaMart Store #1042.",
       "choices": [
         {
           "id": "choice_app_goto_interview",
@@ -147,7 +147,7 @@
       "speakerId": "cheryl",
       "side": "RIGHT",
       "changeSceneId": "scene_personnel_office",
-      "text": "Hello and welcome! Come on in, please have a seat! I'm Cheryl, People Lead here at Store #1042. I was just reviewing your online application and your assessment results—a 98.4% situational score! In all my years in retail HR, I've rarely seen a score that high. Your customer focus and team enthusiasm are exactly what we look for!",
+      "text": "Hello and welcome! Come on in, please have a seat! I'm Cheryl, HR Manager here at Store #1042. I was just reviewing your online application and your assessment results—a 98.4% situational score! In all my years in retail HR, I've rarely seen a score that high. Your customer focus and team enthusiasm are exactly what we look for!",
       "choices": [
         {
           "id": "choice_interview_pleased",

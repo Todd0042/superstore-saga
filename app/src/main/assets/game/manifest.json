@@ -18,7 +18,7 @@
     "Sales Floor Stocker",
     "Backroom Unloader",
     "Specialty Specialist",
-    "Department Lead"
+    "Department Manager"
   ],
   "creationEmbarkPrompt": "CLOCK IN ➔",
   "creationVoiceKeywords": [
