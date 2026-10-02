@@ -1,0 +1,15 @@
+{
+  "_doc": "Retail Inferno Character: Breakroom Veteran Associate Donna.",
+  "id": "donna",
+  "role": "associate",
+  "name": "Donna",
+  "title": "The Breakroom Anchor",
+  "portraitAsset": "portraits/donna.jpg",
+  "themeColor": "#3B82F6",
+  "ttsPitch": 0.85,
+  "samplePhrase": "Rule one: never run for a spill. Rule two: hide your thermos.",
+  "preferredVoiceId": "en-us-x-sfb#female_raspy",
+  "voiceAliases": ["donna", "breakroom donna", "mentor", "veteran"],
+  "gender": "female",
+  "allowedVoiceRegions": ["US"]
+}

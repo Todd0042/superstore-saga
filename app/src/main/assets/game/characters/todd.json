@@ -1,0 +1,15 @@
+{
+  "_doc": "Retail Inferno Character: Sales Floor Manager Todd.",
+  "id": "todd",
+  "role": "manager",
+  "name": "Sales Floor Manager Todd",
+  "title": "The Metric Drill Sergeant",
+  "portraitAsset": "portraits/todd.jpg",
+  "themeColor": "#0284C7",
+  "ttsPitch": 0.95,
+  "samplePhrase": "You took 4 minutes and 18 seconds to face soup cans. We need sub-four velocity.",
+  "preferredVoiceId": "en-us-x-ioc#male_bark",
+  "voiceAliases": ["todd", "floor manager", "manager todd"],
+  "gender": "male",
+  "allowedVoiceRegions": ["US"]
+}

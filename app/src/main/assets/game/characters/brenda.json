@@ -1,0 +1,15 @@
+{
+  "_doc": "Retail Inferno Character: Senior Cashier Brenda.",
+  "id": "brenda",
+  "role": "associate",
+  "name": "Brenda",
+  "title": "The Lane Closer",
+  "portraitAsset": "portraits/brenda.jpg",
+  "themeColor": "#EF4444",
+  "ttsPitch": 1.15,
+  "samplePhrase": "My light is off. My paddle is down. Go to Lane Four.",
+  "preferredVoiceId": "en-us-x-sfa#female_shrill",
+  "voiceAliases": ["brenda", "senior cashier", "cashier brenda"],
+  "gender": "female",
+  "allowedVoiceRegions": ["US"]
+}

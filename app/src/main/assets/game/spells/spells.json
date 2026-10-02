@@ -194,6 +194,130 @@
       "description": "Blinding smoke of dark matter.",
       "exampleChant": "Veil of night consume the battlefield!",
       "aliases": ["veil", "umbral", "darkness", "shroud"]
+    },
+    {
+      "id": "spell_barcode_scan",
+      "name": "Barcode Scan",
+      "school": "PHYSICAL",
+      "basePower": 42,
+      "mpCost": 0,
+      "description": "Rapid-fire optical scanner swipe across customer composure.",
+      "exampleChant": "Barcode scan strike!",
+      "aliases": ["scan", "barcode", "swipe", "item scan"]
+    },
+    {
+      "id": "spell_coupon_shield",
+      "name": "Coupon Shield",
+      "school": "PHYSICAL",
+      "basePower": 0,
+      "mpCost": 12,
+      "isGuard": true,
+      "description": "Cites expired date in fine print, parrying incoming aggression.",
+      "exampleChant": "Coupon shield protect!",
+      "aliases": ["coupon", "shield", "policy", "void", "reject"]
+    },
+    {
+      "id": "spell_drawer_smash",
+      "name": "Drawer Smash",
+      "school": "PHYSICAL",
+      "basePower": 88,
+      "mpCost": 35,
+      "description": "Violently shoves the steel cash drawer shut with a deafening clang.",
+      "exampleChant": "Drawer smash the till!",
+      "aliases": ["smash", "drawer", "cash", "clang", "drawer slam"]
+    },
+    {
+      "id": "spell_union_break",
+      "name": "Union Break",
+      "school": "HOLY",
+      "basePower": 0,
+      "mpCost": 0,
+      "manaRestorePct": 0.35,
+      "description": "Lukewarm breakroom coffee restores composure and patience.",
+      "exampleChant": "Union break coffee!",
+      "aliases": ["union break", "break", "coffee", "rest", "breathe", "lunch"]
+    },
+    {
+      "id": "spell_price_check",
+      "name": "Price Check",
+      "school": "HOLY",
+      "basePower": 0,
+      "mpCost": 15,
+      "isGuard": true,
+      "description": "Pages overhead intercom for management verification.",
+      "exampleChant": "Price check page!",
+      "aliases": ["price check", "page", "check", "intercom", "override"]
+    },
+    {
+      "id": "spell_box_cutter_slash",
+      "name": "Box Cutter Slash",
+      "school": "PHYSICAL",
+      "basePower": 45,
+      "mpCost": 0,
+      "description": "Slices corrugated cardboard tape with swift utility blade.",
+      "exampleChant": "Box cutter slash tape!",
+      "aliases": ["cutter", "box cutter", "slash", "blade", "tape"]
+    },
+    {
+      "id": "spell_cart_push",
+      "name": "Cart Push",
+      "school": "PHYSICAL",
+      "basePower": 38,
+      "mpCost": 10,
+      "description": "Drives a train of nested shopping carts through congested aisles.",
+      "exampleChant": "Cart push the aisle!",
+      "aliases": ["cart", "push", "shove", "line"]
+    },
+    {
+      "id": "spell_flatbed_charge",
+      "name": "Flatbed Charge",
+      "school": "PHYSICAL",
+      "basePower": 75,
+      "mpCost": 28,
+      "description": "Barrels a loaded iron U-boat flatbed cart forward.",
+      "exampleChant": "Flatbed charge ahead!",
+      "aliases": ["flatbed", "charge", "ram", "uboat"]
+    },
+    {
+      "id": "spell_pallet_crush",
+      "name": "Pallet Crush",
+      "school": "PHYSICAL",
+      "basePower": 90,
+      "mpCost": 35,
+      "description": "Drops hydraulic forks with bone-rattling force.",
+      "exampleChant": "Pallet crush weight!",
+      "aliases": ["pallet", "crush", "forks", "drop"]
+    },
+    {
+      "id": "spell_shrink_wrap_hold",
+      "name": "Shrink Wrap Hold",
+      "school": "PHYSICAL",
+      "basePower": 0,
+      "mpCost": 18,
+      "isGuard": true,
+      "description": "Encases cargo in multi-layered industrial polyethylene film.",
+      "exampleChant": "Shrink wrap hold cargo!",
+      "aliases": ["shrink wrap", "wrap", "hold", "film", "bind"]
+    },
+    {
+      "id": "spell_baler_grind",
+      "name": "Baler Grind",
+      "school": "PHYSICAL",
+      "basePower": 95,
+      "mpCost": 40,
+      "description": "Activates the 20-ton hydraulic baler ram with a groaning crunch.",
+      "exampleChant": "Baler grind cardboard!",
+      "aliases": ["baler", "grind", "compress", "crush cardboard"]
+    },
+    {
+      "id": "spell_warranty_pitch",
+      "name": "Warranty Pitch",
+      "school": "SHADOW",
+      "basePower": 35,
+      "mpCost": 18,
+      "description": "Traps customer in dense 3-year accidental protection clauses.",
+      "exampleChant": "Warranty pitch terms!",
+      "aliases": ["warranty", "pitch", "upsell", "protection", "terms"]
     }
   ]
 }

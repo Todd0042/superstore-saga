@@ -1,0 +1,15 @@
+{
+  "_doc": "Retail Inferno Character: Specialty Sales Associate Chad.",
+  "id": "chad",
+  "role": "associate",
+  "name": "Chad",
+  "title": "The Credit Poacher",
+  "portraitAsset": "portraits/chad.jpg",
+  "themeColor": "#6366F1",
+  "ttsPitch": 1.08,
+  "samplePhrase": "Bro, if you don't pitch the 29.99% APR card at the register, you're leaving money on the table.",
+  "preferredVoiceId": "en-us-x-iog#male_slick",
+  "voiceAliases": ["chad", "specialist chad", "sales chad"],
+  "gender": "male",
+  "allowedVoiceRegions": ["US"]
+}

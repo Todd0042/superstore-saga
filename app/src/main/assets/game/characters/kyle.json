@@ -1,0 +1,15 @@
+{
+  "_doc": "Retail Inferno Character: Sales Floor Stocker Kyle.",
+  "id": "kyle",
+  "role": "associate",
+  "name": "Kyle",
+  "title": "The Vape-Cloud Deserter",
+  "portraitAsset": "portraits/kyle.jpg",
+  "themeColor": "#10B981",
+  "ttsPitch": 0.88,
+  "samplePhrase": "Yo man... Todd's doing a sweep on Aisle 9. I'm taking my ten behind the paper towels.",
+  "preferredVoiceId": "en-us-x-iom#male_slacker",
+  "voiceAliases": ["kyle", "stocker kyle", "slacker"],
+  "gender": "male",
+  "allowedVoiceRegions": ["US"]
+}

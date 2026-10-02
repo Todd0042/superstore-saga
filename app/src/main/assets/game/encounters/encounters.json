@@ -52,6 +52,35 @@
           "executeBelowHpPct": 0.3
         }
       ]
+    },
+    {
+      "id": "encounter_register_rush",
+      "name": "Evening Concourse Rush",
+      "description": "An impatient customer and a coupon hoarder demand immediate manager intervention.",
+      "environment": "DUNGEON",
+      "party": ["hero"],
+      "enemies": [
+        { "templateId": "karen_customer", "id": "karen_01", "name": "Irate Shopper", "isTargeted": true, "atbGauge": 0.4 },
+        { "templateId": "extreme_couponer", "id": "couponer_01", "name": "Binder Hoarder", "atbGauge": 0.25 }
+      ]
+    },
+    {
+      "id": "encounter_auditor_standoff",
+      "name": "Regional Audit Standoff",
+      "description": "District Auditor Vance conducts an aggressive compliance inspection.",
+      "environment": "CASTLE",
+      "party": ["hero"],
+      "enemies": [
+        { "templateId": "regional_auditor", "id": "auditor_boss", "name": "District Auditor Vance", "isTargeted": true, "atbGauge": 0.5 }
+      ],
+      "bossPhases": [
+        {
+          "enemyId": "auditor_boss",
+          "hpBelow": 0.5,
+          "bannerText": "MANDATORY RE-TRAINING ISSUED",
+          "narrationText": "Auditor Vance writes up a Level 3 writeup for out-of-stock tag placement!"
+        }
+      ]
     }
   ]
 }

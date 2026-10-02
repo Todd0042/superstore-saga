@@ -1,0 +1,28 @@
+{
+  "_doc": "Retail Inferno Player Class: Front-End Cashier Track.",
+  "id": "cashier",
+  "title": "Front-End Cashier",
+  "subtitle": "Velocity Register Operator",
+  "description": "High-speed customer transaction vanguard. Masters rapid barcode scanning, coupon policy enforcement, and cash drawer defense.",
+  "startingHp": 450,
+  "startingMp": 120,
+  "startingSpeed": 55,
+  "startingBaseAttack": 22,
+  "preferredSchool": "PHYSICAL",
+  "starterSpellIds": [
+    "spell_barcode_scan",
+    "spell_coupon_shield",
+    "spell_drawer_smash",
+    "spell_union_break"
+  ],
+  "voiceKeywords": [
+    "cashier", "front end", "register", "checker", "checkout", "frontline"
+  ],
+  "growth": {
+    "maxHp": 15,
+    "maxMp": 12,
+    "speed": 1,
+    "defense": 1,
+    "potencyPct": 0.035
+  }
+}

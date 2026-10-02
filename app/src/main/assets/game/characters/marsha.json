@@ -1,0 +1,15 @@
+{
+  "_doc": "Retail Inferno Character: Front End Manager Marsha.",
+  "id": "marsha",
+  "role": "manager",
+  "name": "Front End Manager Marsha",
+  "title": "The Panic-Button Queen",
+  "portraitAsset": "portraits/marsha.jpg",
+  "themeColor": "#EC4899",
+  "ttsPitch": 1.20,
+  "samplePhrase": "We have seven buggies in the concourse and code sparks on registers two through six!",
+  "preferredVoiceId": "en-us-x-sfd#female_frantic",
+  "voiceAliases": ["marsha", "front end manager", "supervisor marsha"],
+  "gender": "female",
+  "allowedVoiceRegions": ["US"]
+}

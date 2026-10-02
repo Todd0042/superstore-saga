@@ -106,6 +106,66 @@
       "movesetId": "",
       "spriteId": "practice_dummy",
       "spriteTint": "#D7CCC8"
+    },
+    {
+      "id": "karen_customer",
+      "name": "Entitled Customer",
+      "subtitle": "Escalation Vanguard",
+      "family": "FLESH",
+      "selfElement": "PHYSICAL",
+      "hp": 320,
+      "attack": 24,
+      "defense": 8,
+      "speed": 52,
+      "xpReward": 75,
+      "movesetId": "flesh_bruiser",
+      "spriteId": "template_brute",
+      "spriteTint": "#EF4444"
+    },
+    {
+      "id": "extreme_couponer",
+      "name": "Extreme Couponer",
+      "subtitle": "Binder Tactician",
+      "family": "FLESH",
+      "selfElement": "SHADOW",
+      "hp": 260,
+      "attack": 28,
+      "defense": 5,
+      "speed": 62,
+      "xpReward": 80,
+      "movesetId": "flesh_sniper",
+      "spriteId": "template_sniper",
+      "spriteTint": "#8B5CF6"
+    },
+    {
+      "id": "regional_auditor",
+      "name": "Regional Auditor",
+      "subtitle": "Spreadsheet Inquisitor",
+      "family": "CONSTRUCT",
+      "selfElement": "CRYOMANCY",
+      "hp": 500,
+      "attack": 35,
+      "defense": 14,
+      "speed": 45,
+      "xpReward": 150,
+      "movesetId": "construct_bruiser",
+      "spriteId": "template_brute",
+      "spriteTint": "#3B82F6"
+    },
+    {
+      "id": "overtime_screamer",
+      "name": "Floor Rush Crowd",
+      "subtitle": "Bargain Swarm",
+      "family": "FLESH",
+      "selfElement": "PHYSICAL",
+      "hp": 200,
+      "attack": 20,
+      "defense": 4,
+      "speed": 70,
+      "xpReward": 50,
+      "movesetId": "flesh_bruiser",
+      "spriteId": "template_brute",
+      "spriteTint": "#F59E0B"
     }
   ]
 }

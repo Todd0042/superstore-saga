@@ -1,0 +1,28 @@
+{
+  "_doc": "Retail Inferno Player Class: Sales Floor Stocker Track.",
+  "id": "stocker",
+  "title": "Merchandise Stocker",
+  "subtitle": "Aisle Facing Vanguard",
+  "description": "Sales floor endurance specialist. Masters utility box cutters, rolling cart management, and heavy flatbed charges.",
+  "startingHp": 580,
+  "startingMp": 90,
+  "startingSpeed": 45,
+  "startingBaseAttack": 26,
+  "preferredSchool": "PHYSICAL",
+  "starterSpellIds": [
+    "spell_box_cutter_slash",
+    "spell_cart_push",
+    "spell_flatbed_charge",
+    "spell_union_break"
+  ],
+  "voiceKeywords": [
+    "stocker", "merchandise", "sales floor", "floor", "aisle", "clerk"
+  ],
+  "growth": {
+    "maxHp": 18,
+    "maxMp": 8,
+    "speed": 1,
+    "defense": 2,
+    "potencyPct": 0.035
+  }
+}

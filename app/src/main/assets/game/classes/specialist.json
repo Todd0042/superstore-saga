@@ -1,0 +1,28 @@
+{
+  "_doc": "Retail Inferno Player Class: Specialty Counter Specialist Track.",
+  "id": "specialist",
+  "title": "Specialty Sales Specialist",
+  "subtitle": "High-Margin Counter Consultant",
+  "description": "Tactical tech and jewelry showcase expert. Masters extended warranty pitches, manager price checks, and commission negotiations.",
+  "startingHp": 420,
+  "startingMp": 140,
+  "startingSpeed": 55,
+  "startingBaseAttack": 24,
+  "preferredSchool": "SHADOW",
+  "starterSpellIds": [
+    "spell_warranty_pitch",
+    "spell_price_check",
+    "spell_barcode_scan",
+    "spell_union_break"
+  ],
+  "voiceKeywords": [
+    "specialist", "specialty", "tech", "electronics", "sales", "consultant"
+  ],
+  "growth": {
+    "maxHp": 14,
+    "maxMp": 14,
+    "speed": 1,
+    "defense": 1,
+    "potencyPct": 0.035
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "_doc": "Retail Inferno Character: Human Resources Manager Cheryl.",
+  "id": "cheryl",
+  "role": "manager",
+  "name": "Cheryl",
+  "title": "The Velvet Guillotine",
+  "portraitAsset": "portraits/cheryl.jpg",
+  "themeColor": "#F472B6",
+  "ttsPitch": 1.25,
+  "samplePhrase": "Please have a seat. Take a peppermint from the crystal bowl.",
+  "preferredVoiceId": "en-us-x-sfg#female_cheerful",
+  "voiceAliases": ["cheryl", "hr", "human resources", "people lead"],
+  "gender": "female",
+  "allowedVoiceRegions": ["US"]
+}

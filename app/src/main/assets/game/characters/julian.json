@@ -1,0 +1,15 @@
+{
+  "_doc": "Retail Inferno Character: Specialty Counter Manager Julian.",
+  "id": "julian",
+  "role": "manager",
+  "name": "Specialty Manager Julian",
+  "title": "The Commission Hawk",
+  "portraitAsset": "portraits/julian.jpg",
+  "themeColor": "#8B5CF6",
+  "ttsPitch": 1.02,
+  "samplePhrase": "Numbers don't lie, my friend. Attach rates are destiny.",
+  "preferredVoiceId": "en-us-x-ioh#male_haughty",
+  "voiceAliases": ["julian", "specialty manager", "manager julian"],
+  "gender": "male",
+  "allowedVoiceRegions": ["US"]
+}

@@ -1,0 +1,15 @@
+{
+  "_doc": "Retail Inferno Character: Store General Manager Henderson.",
+  "id": "henderson",
+  "role": "manager",
+  "name": "Store Manager Henderson",
+  "title": "The Polished Politician",
+  "portraitAsset": "portraits/henderson.jpg",
+  "themeColor": "#1E3A8A",
+  "ttsPitch": 0.92,
+  "samplePhrase": "Let's align our core competencies and drive operational excellence!",
+  "preferredVoiceId": "en-us-x-iol#male_booming",
+  "voiceAliases": ["henderson", "store manager", "manager", "general manager"],
+  "gender": "male",
+  "allowedVoiceRegions": ["US"]
+}

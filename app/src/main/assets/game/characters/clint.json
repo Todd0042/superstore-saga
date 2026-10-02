@@ -1,0 +1,15 @@
+{
+  "_doc": "Retail Inferno Character: Loss Prevention Security Clint.",
+  "id": "clint",
+  "role": "security",
+  "name": "Clint",
+  "title": "The Invisible Eye",
+  "portraitAsset": "portraits/clint.jpg",
+  "themeColor": "#374151",
+  "ttsPitch": 0.78,
+  "samplePhrase": "I've been watching you on Camera 4 since 0700.",
+  "preferredVoiceId": "en-us-x-tpd#male_gravel",
+  "voiceAliases": ["clint", "security", "loss prevention", "ap", "asset protection"],
+  "gender": "male",
+  "allowedVoiceRegions": ["US"]
+}

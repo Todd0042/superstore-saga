@@ -1,0 +1,16 @@
+{
+  "_doc": "Retail Inferno Protagonist: Player Cashier Associate.",
+  "id": "player_cashier",
+  "role": "hero",
+  "name": "Associate #1042-882",
+  "title": "Front End Cashier",
+  "portraitAsset": "portraits/player_cashier.jpg",
+  "spriteId": "hero",
+  "themeColor": "#1E3A8A",
+  "ttsPitch": 1.0,
+  "samplePhrase": "Register 84 is open. Paper or plastic?",
+  "preferredVoiceId": "en-us-x-sfg#female_neutral",
+  "voiceAliases": ["associate", "cashier", "checker", "player"],
+  "gender": "neutral",
+  "allowedVoiceRegions": ["US"]
+}

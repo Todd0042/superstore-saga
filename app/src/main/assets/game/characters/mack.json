@@ -1,0 +1,15 @@
+{
+  "_doc": "Retail Inferno Character: Backroom Receiving Manager Mack.",
+  "id": "mack",
+  "role": "manager",
+  "name": "Backroom Manager Mack",
+  "title": "The Exhausted Veteran",
+  "portraitAsset": "portraits/mack.jpg",
+  "themeColor": "#D97706",
+  "ttsPitch": 0.80,
+  "samplePhrase": "The truck's late, the baler wire snapped, and district's arriving in twenty minutes.",
+  "preferredVoiceId": "en-us-x-ioa#male_exhausted",
+  "voiceAliases": ["mack", "receiving manager", "dock manager"],
+  "gender": "male",
+  "allowedVoiceRegions": ["US"]
+}

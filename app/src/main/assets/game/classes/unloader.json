@@ -1,0 +1,28 @@
+{
+  "_doc": "Retail Inferno Player Class: Backroom Freight Unloader Track.",
+  "id": "unloader",
+  "title": "Freight Unloader",
+  "subtitle": "Loading Dock Juggernaut",
+  "description": "Heavy industrial receiving powerhouse. Masters pallet jacks, stretch wrap containment, and hydraulic baler compaction.",
+  "startingHp": 700,
+  "startingMp": 75,
+  "startingSpeed": 35,
+  "startingBaseAttack": 30,
+  "preferredSchool": "PHYSICAL",
+  "starterSpellIds": [
+    "spell_pallet_crush",
+    "spell_shrink_wrap_hold",
+    "spell_baler_grind",
+    "spell_union_break"
+  ],
+  "voiceKeywords": [
+    "unloader", "backroom", "freight", "dock", "receiving", "pallet"
+  ],
+  "growth": {
+    "maxHp": 22,
+    "maxMp": 6,
+    "speed": 1,
+    "defense": 3,
+    "potencyPct": 0.035
+  }
+}

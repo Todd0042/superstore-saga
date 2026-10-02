@@ -1,0 +1,15 @@
+{
+  "_doc": "Retail Inferno Character: Forklift Operator Derrick.",
+  "id": "derrick",
+  "role": "associate",
+  "name": "Derrick",
+  "title": "The Phantom Unloader",
+  "portraitAsset": "portraits/derrick.jpg",
+  "themeColor": "#F97316",
+  "ttsPitch": 0.82,
+  "samplePhrase": "Stay out of the turning radius of Crown Forklift 3 and we'll get along fine.",
+  "preferredVoiceId": "en-us-x-iob#male_deep",
+  "voiceAliases": ["derrick", "forklift derrick", "operator"],
+  "gender": "male",
+  "allowedVoiceRegions": ["US"]
+}
