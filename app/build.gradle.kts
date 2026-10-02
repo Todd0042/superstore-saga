@@ -9,8 +9,8 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        // Unique Android application ID for Retail Inferno
-        applicationId = "com.voicerpg.retailinferno"
+        // Unique Android application ID for Superstore Saga
+        applicationId = "com.voicerpg.superstoresaga"
         minSdk = 26
         targetSdk = 35
         versionCode = 1
