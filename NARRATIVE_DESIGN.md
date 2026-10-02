@@ -388,10 +388,11 @@ graph TD
   - *Conflict:* Multi-Perspective Event 7.4: Coworker Derrick operates the high-reach forklift without an OSHA certification license and nearly crushes an endcap.
   - *Resolution:* Reporting the violation creates a blood-feud with the loading dock crew; staying silent makes you an accomplice.
 
-* **Shift 21: The Toxic Rumor Mill**
-  - *Clock-In:* Walking past the smoking patio whisper-circle.
-  - *Conflict:* Brenda and Chad have told everyone that you are an "eager bootlicker" gunning for supervisor by reporting your coworkers.
-  - *Resolution:* Ostracized in the breakroom. Associates stop replying to your walkie calls.
+* **Shift 21: The Connex Trailer Tryst & The Smoking Patio Gossip Hub**
+  - *Clock-In:* Walking past the smoking patio whisper-circle. The entire store is abuzz with the juicy discovery: someone caught an Area Manager and an associate behind the peat moss in the garden Connex trailer.
+  - *Duty:* Seasonal inventory pull / register backup.
+  - *Conflict:* Scenario 7.1 & Multi-Perspective Incident M-4: Depending on your track, you either hold the blackmail leverage on Todd, burn with resentment over Taylor's unearned supervisor promotion, or navigate Brenda's register broadcast network.
+  - *Resolution:* Tactical dilemma: extort management to wipe 2 attendance points, leak evidence to Cheryl, or weaponize peer solidarity.
 
 * **Shift 22: Act II Climax & Boss Encounter**
   - *The Climax:* Direct confrontation with the toxic peer veteran (**Brenda**, **Kyle**, **Derrick**, or **Chad** depending on your track).
