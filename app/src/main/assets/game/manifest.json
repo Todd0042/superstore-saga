@@ -3,7 +3,7 @@
   "gameTitle": "Superstore Saga",
   "gameSubtitle": "Escape From MegaMart",
   "worldName": "MegaMart Store #1042",
-  "initialSceneId": "scene_hiring_kiosk",
+  "initialSceneId": "scene_online_app",
   "initialNodeId": "node_app_001",
   "defaultEncounterId": "encounter_register_rush",
   "startingAchievementId": "BADGE_ISSUED",

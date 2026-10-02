@@ -3,24 +3,24 @@
   "nodes": [
     {
       "id": "node_app_001",
-      "speakerId": "cheryl",
+      "speakerId": "hiring_portal",
       "side": "RIGHT",
-      "changeSceneId": "scene_hiring_kiosk",
-      "text": "Welcome to the MegaMart family! We are thrilled to welcome you to Complex #1042! Our onboarding portal is designed to discover your natural talents so we can place you right where you'll shine brightest. Three quick scenario questions—just go with your gut instincts and let's have fun with it!",
+      "changeSceneId": "scene_online_app",
+      "text": "Welcome to the MegaMart Online Careers Portal! You are applying for employment at Complex #1042. Before your application can be reviewed by store hiring personnel, company policy requires completing our 3-question Situational Judgment Assessment. Please choose the response that best reflects your customer-first mindset.",
       "choices": [
         {
           "id": "choice_app_start",
-          "text": "Begin the pre-employment orientation assessment.",
-          "voiceKeywords": ["begin", "start", "assessment", "apply", "ready", "clock in"],
+          "text": "Begin the online pre-employment assessment.",
+          "voiceKeywords": ["begin", "start", "assessment", "apply", "ready", "online"],
           "nextNodeId": "node_app_q1"
         }
       ]
     },
     {
       "id": "node_app_q1",
-      "speakerId": "cheryl",
+      "speakerId": "hiring_portal",
       "side": "RIGHT",
-      "text": "Scenario 1: You're on the sales floor and notice a customer looking a bit turned around in the aisles, while another shopper has a question about prices. How do you tackle the moment?",
+      "text": "Assessment Question 1 of 3: You are on the sales floor and observe a shopper searching for an item, while a second customer approaches asking for assistance. How do you tackle the moment?",
       "choices": [
         {
           "id": "choice_q1_sycophant",
@@ -56,9 +56,9 @@
     },
     {
       "id": "node_app_q2",
-      "speakerId": "cheryl",
+      "speakerId": "hiring_portal",
       "side": "RIGHT",
-      "text": "Scenario 2: It's a bustling Saturday morning, upbeat music is playing over the loudspeakers, and the store is humming with energy. What gets you most pumped?",
+      "text": "Assessment Question 2 of 3: It is a bustling Saturday morning, upbeat music is playing over the loudspeakers, and the store is humming with energy. What mindset gets you most pumped?",
       "choices": [
         {
           "id": "choice_q2_sycophant",
@@ -93,15 +93,15 @@
     },
     {
       "id": "node_app_q10",
-      "speakerId": "cheryl",
+      "speakerId": "hiring_portal",
       "side": "RIGHT",
-      "text": "Final scenario! Store Manager Henderson announces a friendly department challenge for the best presentation and highest customer feedback score. How do you step up?",
+      "text": "Assessment Question 3 of 3: Store leadership initiates a department challenge for presentation and high customer feedback scores. How do you step up?",
       "choices": [
         {
           "id": "choice_q10_sycophant",
           "text": "Give 110% on every single shelf and make our department look like a magazine cover!",
           "voiceKeywords": ["perfect", "magazine", "presentation", "clean", "best"],
-          "nextNodeId": "node_app_offer",
+          "nextNodeId": "node_app_eval",
           "metricDeltas": {
             "store_morale": 10.0,
             "labor_squeeze": 5.0
@@ -111,7 +111,7 @@
           "id": "choice_q10_slacker",
           "text": "Keep team spirits high and make sure we all support each other through the rush!",
           "voiceKeywords": ["spirits", "support", "team", "together", "high"],
-          "nextNodeId": "node_app_offer",
+          "nextNodeId": "node_app_eval",
           "metricDeltas": {
             "store_morale": 15.0
           }
@@ -120,7 +120,7 @@
           "id": "choice_q10_defiant",
           "text": "Lead a friendly cross-department rivalry—a little healthy competition makes everyone better!",
           "voiceKeywords": ["rivalry", "challenge", "competition", "win", "lead"],
-          "nextNodeId": "node_app_offer",
+          "nextNodeId": "node_app_eval",
           "metricDeltas": {
             "store_morale": 10.0,
             "karen_index": -5.0
@@ -129,36 +129,93 @@
       ]
     },
     {
-      "id": "node_app_offer",
+      "id": "node_app_eval",
+      "speakerId": "hiring_portal",
+      "side": "RIGHT",
+      "text": "Calculating applicant assessment score... [RESULTS: 98.4% COMPATIBILITY - TIER 1 EXCEPTIONAL MATCH]. Status: APPLICATION APPROVED. You have been selected for an expedited in-person interview with People Lead Cheryl at MegaMart Store #1042.",
+      "choices": [
+        {
+          "id": "choice_app_goto_interview",
+          "text": "Report to the Store #1042 Personnel Office for your interview with Cheryl.",
+          "voiceKeywords": ["interview", "cheryl", "report", "personnel", "office", "go"],
+          "nextNodeId": "node_interview_001"
+        }
+      ]
+    },
+    {
+      "id": "node_interview_001",
       "speakerId": "cheryl",
       "side": "RIGHT",
-      "text": "Sensational! The algorithm indicates exceptional retail potential! Compatibility score: a stellar 98.4%! Here is your brand-new badge, {hero}! Now, where does your retail journey begin?",
+      "changeSceneId": "scene_personnel_office",
+      "text": "Hello and welcome! Come on in, please have a seat! I'm Cheryl, People Lead here at Store #1042. I was just reviewing your online application and your assessment results—a 98.4% situational score! In all my years in retail HR, I've rarely seen a score that high. Your customer focus and team enthusiasm are exactly what we look for!",
+      "choices": [
+        {
+          "id": "choice_interview_pleased",
+          "text": "Thank you, Cheryl! I'm thrilled to be here and ready to get to work.",
+          "voiceKeywords": ["thank you", "ready", "work", "thrilled", "cheryl", "great"],
+          "nextNodeId": "node_interview_positions"
+        }
+      ]
+    },
+    {
+      "id": "node_interview_positions",
+      "speakerId": "cheryl",
+      "side": "RIGHT",
+      "text": "And we are thrilled to have you! We have immediate openings across four fantastic departments today, and with your stellar assessment score, you qualify for any of them. Where do you see yourself making the biggest impact?",
       "choices": [
         {
           "id": "choice_track_cashier",
           "text": "Front End Cashier: Fast hands, warm smiles, and front-line energy!",
           "voiceKeywords": ["cashier", "front end", "register", "bananas"],
-          "nextNodeId": "node_locker_cashier_enter"
+          "nextNodeId": "node_interview_offer_cashier"
         },
         {
           "id": "choice_track_stocker",
           "text": "Sales Floor Stocker: Dynamic action, building impressive displays, and keeping aisles pristine!",
           "voiceKeywords": ["stocker", "sales floor", "floor", "aisles"],
-          "nextNodeId": "node_locker_stocker_enter"
+          "nextNodeId": "node_interview_offer_stocker"
         },
         {
           "id": "choice_track_unloader",
           "text": "Backroom Receiving: High energy, heavy freight, and powering the store's heartbeat!",
           "voiceKeywords": ["unloader", "backroom", "freight", "dock", "baler"],
-          "nextNodeId": "node_locker_unloader_enter"
+          "nextNodeId": "node_interview_offer_unloader"
         },
         {
           "id": "choice_track_specialist",
           "text": "Specialty Counter: Expert advice, cutting-edge tech, and high-value customer service!",
           "voiceKeywords": ["specialist", "specialty", "tech", "electronics", "warranty"],
-          "nextNodeId": "node_locker_specialist_enter"
+          "nextNodeId": "node_interview_offer_specialist"
         }
       ]
+    },
+    {
+      "id": "node_interview_offer_cashier",
+      "speakerId": "cheryl",
+      "side": "RIGHT",
+      "text": "Sensational choice! Front End is the smiling face of the entire store! You are officially hired. Here is your company badge: {hero}. Head down the hall to the Associate Locker Room—Donna is back there and she'll get you fitted with your blue vest before Store Manager Henderson kicks off the morning huddle!",
+      "nextNodeId": "node_locker_cashier_enter"
+    },
+    {
+      "id": "node_interview_offer_stocker",
+      "speakerId": "cheryl",
+      "side": "RIGHT",
+      "text": "Sensational choice! Our sales floor grocery displays are the showpiece of the store! You are officially hired. Here is your company badge: {hero}. Head down the hall to the Associate Locker Room—Donna is back there and she'll get you fitted with your blue vest before Store Manager Henderson kicks off the morning huddle!",
+      "nextNodeId": "node_locker_stocker_enter"
+    },
+    {
+      "id": "node_interview_offer_unloader",
+      "speakerId": "cheryl",
+      "side": "RIGHT",
+      "text": "Sensational choice! The backroom dock is the powerhouse of MegaMart! You are officially hired. Here is your company badge: {hero}. Head down the hall to the Associate Locker Room—Donna is back there and she'll get you fitted with your blue vest before Store Manager Henderson kicks off the morning huddle!",
+      "nextNodeId": "node_locker_unloader_enter"
+    },
+    {
+      "id": "node_interview_offer_specialist",
+      "speakerId": "cheryl",
+      "side": "RIGHT",
+      "text": "Sensational choice! Our specialty counter customers love expert recommendations! You are officially hired. Here is your company badge: {hero}. Head down the hall to the Associate Locker Room—Donna is back there and she'll get you fitted with your blue vest before Store Manager Henderson kicks off the morning huddle!",
+      "nextNodeId": "node_locker_specialist_enter"
     },
     {
       "id": "node_locker_cashier_enter",
@@ -609,7 +666,7 @@
       "id": "node_clockout_review",
       "speakerId": "henderson",
       "side": "RIGHT",
-      "changeSceneId": "scene_hiring_kiosk",
+      "changeSceneId": "scene_personnel_office",
       "text": "{hero}! There you are! I just pulled up our store's real-time scoreboard. Top customer satisfaction rating in the entire district today! Zero wait times, zero safety incidents, and team morale is at an all-time peak! District VP Vance sent a personal email applauding our morning velocity!",
       "nextNodeId": "node_clockout_fingerprint"
     },

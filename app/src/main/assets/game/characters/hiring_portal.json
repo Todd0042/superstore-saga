@@ -1,0 +1,23 @@
+{
+  "_doc": "MegaMart Online Application Portal Automated System.",
+  "id": "hiring_portal",
+  "role": "narrator",
+  "name": "Application Portal",
+  "title": "MegaMart Careers System",
+  "portraitAsset": "story/bg_hiring_kiosk.jpg",
+  "spriteId": "hero",
+  "themeColor": "#2563EB",
+  "ttsPitch": 1.05,
+  "samplePhrase": "Please complete the applicant assessment questionnaire.",
+  "preferredVoiceId": "en-us-x-sfg#female_neutral",
+  "voiceAliases": [
+    "portal",
+    "system",
+    "kiosk",
+    "computer"
+  ],
+  "gender": "neutral",
+  "allowedVoiceRegions": [
+    "US"
+  ]
+}
