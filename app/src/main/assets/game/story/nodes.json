@@ -1,5 +1,5 @@
 {
-  "_doc": "Superstore Saga: Act I Story Graph. An uplifting, high-energy, positive orientation shift across all four department tracks.",
+  "_doc": "Superstore Saga: Act I Story Graph. Complete Shift 1 narrative arc from Kiosk Orientation to Station Duties, Rush Rally, Breakroom Celebration, and Clock-Out.",
   "nodes": [
     {
       "id": "node_app_001",
@@ -364,9 +364,9 @@
       "choices": [
         {
           "id": "choice_post_cashier",
-          "text": "Report to Front End Register Lane 4 with Marsha.",
+          "text": "Report to Front End Register Lane 4 with Brenda.",
           "voiceKeywords": ["cashier", "lane four", "front end", "register"],
-          "nextNodeId": "node_shift1_start"
+          "nextNodeId": "node_station_cashier"
         },
         {
           "id": "choice_post_stocker",
@@ -389,6 +389,41 @@
       ]
     },
     {
+      "id": "node_station_cashier",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Lane Four is powered up and ready, partner! First rule of produce: memorize 4011 for bananas. It accounts for eighty percent of your fruit scans! Try entering a test bunch on the keypad.",
+      "choices": [
+        {
+          "id": "choice_cashier_piano",
+          "text": "Punch in 4-0-1-1 with the rhythmic speed of a concert pianist!",
+          "voiceKeywords": ["bananas", "piano", "fast", "rhythm", "four zero one one", "4011"],
+          "nextNodeId": "node_station_cashier_groove",
+          "metricDeltas": {
+            "store_morale": 10.0
+          }
+        },
+        {
+          "id": "choice_cashier_scale",
+          "text": "Carefully place the bunch on the digital scale and verify the tare weight.",
+          "voiceKeywords": ["scale", "weight", "careful", "tare", "verify"],
+          "nextNodeId": "node_station_cashier_groove",
+          "metricDeltas": {
+            "store_morale": 5.0,
+            "karen_index": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_station_cashier_groove",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "text": "BEEP! Flawless scan! You've got fast hands and natural rhythm, kid. Now heads up—the automatic front sliding doors just opened, and here comes our morning crowd!",
+      "nextNodeId": "node_shift1_start"
+    },
+    {
       "id": "node_station_stocker",
       "speakerId": "todd",
       "side": "RIGHT",
@@ -399,7 +434,7 @@
           "id": "choice_stocker_push",
           "text": "Face every cereal box with pinpoint precision for a showroom finish!",
           "voiceKeywords": ["precision", "finish", "showroom", "cereal", "perfect"],
-          "nextNodeId": "node_shift1_start",
+          "nextNodeId": "node_station_stocker_groove",
           "metricDeltas": {
             "store_morale": 10.0,
             "karen_index": -5.0
@@ -409,12 +444,19 @@
           "id": "choice_stocker_steady",
           "text": "Work side-by-side with Kyle, learning his favorite stacking shortcuts.",
           "voiceKeywords": ["kyle", "shortcuts", "side by side", "teamwork", "steady"],
-          "nextNodeId": "node_shift1_start",
+          "nextNodeId": "node_station_stocker_groove",
           "metricDeltas": {
             "store_morale": 10.0
           }
         }
       ]
+    },
+    {
+      "id": "node_station_stocker_groove",
+      "speakerId": "kyle",
+      "side": "LEFT",
+      "text": "Look at that, man. The Captain Crunch boxes are lined up like soldiers—they're practically glowing under these fluorescents. That is pure art. You're a natural at this!",
+      "nextNodeId": "node_shift1_start"
     },
     {
       "id": "node_station_unloader",
@@ -427,7 +469,7 @@
           "id": "choice_unloader_fast",
           "text": "Catch your stride on the conveyor line, sorting cartons with effortless flow.",
           "voiceKeywords": ["stride", "flow", "cartons", "sort", "smooth"],
-          "nextNodeId": "node_shift1_start",
+          "nextNodeId": "node_station_unloader_groove",
           "metricDeltas": {
             "store_morale": 10.0,
             "labor_squeeze": -5.0
@@ -437,12 +479,19 @@
           "id": "choice_unloader_careful",
           "text": "Team up with Derrick to maneuver the heavy pallet stacks with safety and precision.",
           "voiceKeywords": ["derrick", "pallet", "safety", "precision", "heavy"],
-          "nextNodeId": "node_shift1_start",
+          "nextNodeId": "node_station_unloader_groove",
           "metricDeltas": {
             "store_morale": 10.0
           }
         }
       ]
+    },
+    {
+      "id": "node_station_unloader_groove",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "Ten pallets sorted and stacked in under thirty minutes! Derrick gave a double honk on Crown Three—that means you set a new onboarding speed record, kid!",
+      "nextNodeId": "node_shift1_start"
     },
     {
       "id": "node_station_specialist",
@@ -455,22 +504,29 @@
           "id": "choice_specialist_warranty",
           "text": "Share expert insights on the latest gear and outline the peace-of-mind protection plan.",
           "voiceKeywords": ["expert", "insights", "protection", "plan", "gear"],
-          "nextNodeId": "node_shift1_start",
+          "nextNodeId": "node_station_specialist_groove",
           "metricDeltas": {
             "store_morale": 10.0
           }
         },
         {
           "id": "choice_specialist_sympathy",
-          "text": "Help them pick out the exact cable they need and show them the demo display.",
-          "voiceKeywords": ["cable", "demo", "help", "customer", "display"],
-          "nextNodeId": "node_shift1_start",
+          "text": "Help an excited kid and their parent pick out their very first video game console bundle.",
+          "voiceKeywords": ["console", "bundle", "game", "kid", "family", "help"],
+          "nextNodeId": "node_station_specialist_groove",
           "metricDeltas": {
-            "store_morale": 10.0,
-            "karen_index": -5.0
+            "store_morale": 15.0,
+            "karen_index": -10.0
           }
         }
       ]
+    },
+    {
+      "id": "node_station_specialist_groove",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "Did you see that smile? The kid was practically floating out the door with that new console box. That is what retail is all about. Phenomenal work!",
+      "nextNodeId": "node_shift1_start"
     },
     {
       "id": "node_shift1_start",
@@ -483,21 +539,92 @@
     },
     {
       "id": "node_shift1_victory",
-      "speakerId": "donna",
+      "speakerId": "marsha",
       "side": "LEFT",
-      "text": "Spectacular job on your very first rush, rookie! You handled those scanner beeps and coupon questions like a natural. Henderson already noticed our wait times were the lowest in the district! Punch out on the scanner and enjoy that well-earned break—you've earned your stripes today!",
+      "text": "LOOK AT THAT CONCOURSE! Seven buggies cleared in record time, not a single line backup, and every customer walked away smiling! You all were absolute rockstars out there! Everyone who's due, take your thirty-minute lunch in the breakroom—you've earned it!",
       "metricDeltas": {
         "karen_index": -15.0,
         "store_morale": 20.0,
         "labor_squeeze": -10.0
       },
+      "nextNodeId": "node_breakroom_enter"
+    },
+    {
+      "id": "node_breakroom_enter",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_breakroom",
+      "text": "Welcome to the breakroom sanctuary, rookie! Pull up a faux-leather chair and take a load off. That morning rush was something special, wasn't it? Fresh pot of hazelnut coffee is brewed, and Brenda brought glazed donuts to celebrate!",
+      "nextNodeId": "node_breakroom_hub"
+    },
+    {
+      "id": "node_breakroom_hub",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "text": "Look around this table—Receiving, Sales Floor, Front End, and Specialty all sitting together. What's your lunch move, rookie?",
+      "choices": [
+        {
+          "id": "choice_breakroom_toast",
+          "text": "Raise your coffee mug in a victory toast with Mack and Brenda.",
+          "voiceKeywords": ["toast", "coffee", "cheers", "victory", "mack", "brenda"],
+          "nextNodeId": "node_breakroom_mack_banter",
+          "completionFlag": "flag_breakroom_toast_done",
+          "metricDeltas": {
+            "store_morale": 10.0
+          }
+        },
+        {
+          "id": "choice_breakroom_snack",
+          "text": "Split a glazed donut with Kyle and Chad while recounting the rush.",
+          "voiceKeywords": ["donut", "snack", "kyle", "chad", "glazed", "share"],
+          "nextNodeId": "node_breakroom_kyle_banter",
+          "completionFlag": "flag_breakroom_snack_done",
+          "metricDeltas": {
+            "store_morale": 10.0
+          }
+        },
+        {
+          "id": "choice_breakroom_clockout",
+          "text": "Finish up lunch and report to Henderson for the end-of-shift review.",
+          "voiceKeywords": ["finish", "lunch", "henderson", "review", "clock out", "ready"],
+          "nextNodeId": "node_clockout_review"
+        }
+      ]
+    },
+    {
+      "id": "node_breakroom_mack_banter",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "CLINK! To the smoothest morning shift Store #1042 has seen all year! I gotta tell you, rookie, seeing the whole store pull together when the front end got busy reminded me why I love this team. You fit right in.",
+      "nextNodeId": "node_breakroom_hub"
+    },
+    {
+      "id": "node_breakroom_kyle_banter",
+      "speakerId": "kyle",
+      "side": "LEFT",
+      "text": "Dude, when that coupon collector pulled out that three-inch accordion binder and you scanned those items without missing a single beat, Brenda's jaw literally dropped. That was legendary! Save me the other half of that maple bar.",
+      "nextNodeId": "node_breakroom_hub"
+    },
+    {
+      "id": "node_clockout_review",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_hiring_kiosk",
+      "text": "Associate #1042! There you are! I just pulled up our store's real-time scoreboard. Top customer satisfaction rating in the entire district today! Zero wait times, zero safety incidents, and team morale is at an all-time peak! District VP Vance sent a personal email applauding our morning velocity!",
+      "nextNodeId": "node_clockout_fingerprint"
+    },
+    {
+      "id": "node_clockout_fingerprint",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "text": "Place your thumb on the digital timeclock scanner, associate. You didn't just pass your first day—you showed us what true MegaMart pride looks like. Clock out, enjoy your evening, and we'll see you for Week Two!",
       "nextNodeId": "node_retail_act1_complete"
     },
     {
       "id": "node_retail_act1_complete",
       "speakerId": "narrator",
       "side": "CENTER_NARRATOR",
-      "text": "Orientation shift concluded with flying colors! Your badge is officially active in the employee chronicle. You conquered Shift 1 of 56 at MegaMart Store #1042!",
+      "text": "Shift One concluded with flying colors! Your Associate Badge is officially activated in the employee chronicle. You conquered Day One of 56 at MegaMart Store #1042!",
       "setFlagOnEnter": "game_completed"
     }
   ]
