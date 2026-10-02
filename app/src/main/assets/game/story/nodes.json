@@ -6,7 +6,7 @@
       "speakerId": "hiring_portal",
       "side": "RIGHT",
       "changeSceneId": "scene_online_app",
-      "text": "Welcome to the MegaMart Online Careers Portal! You are applying for employment at Complex #1042. Before your application can be reviewed by store hiring personnel, company policy requires completing our 3-question Situational Judgment Assessment. Please choose the response that best reflects your customer-first mindset.",
+      "text": "Welcome to the MegaMart Online Careers Portal! You are applying for employment at Complex #1042. Before your application can be reviewed by store hiring personnel, company policy requires completing our 10-question Situational Judgment Assessment. Please choose the response that best reflects your customer-first mindset.",
       "choices": [
         {
           "id": "choice_app_start",
@@ -20,36 +20,45 @@
       "id": "node_app_q1",
       "speakerId": "hiring_portal",
       "side": "RIGHT",
-      "text": "Assessment Question 1 of 3: You are on the sales floor and observe a shopper searching for an item, while a second customer approaches asking for assistance. How do you tackle the moment?",
+      "text": "Assessment Question 1 of 10: An associate takes an extra 6 minutes on their scheduled 15-minute break. What is the most appropriate action?",
       "choices": [
         {
           "id": "choice_q1_sycophant",
-          "text": "Offer a warm smile, personally walk the first customer to their item, and radio an associate to assist the second!",
-          "voiceKeywords": ["smile", "help", "walk", "assist", "customer", "first"],
+          "text": "Report their badge number immediately to Asset Protection. Time theft is real theft.",
+          "voiceKeywords": ["report", "security", "theft", "protection", "time"],
           "nextNodeId": "node_app_q2",
           "metricDeltas": {
-            "store_morale": 10.0,
-            "karen_index": -5.0
-          }
-        },
-        {
-          "id": "choice_q1_slacker",
-          "text": "Direct both with a friendly wave and a clear aisle pointer so everyone stays moving fast!",
-          "voiceKeywords": ["point", "direct", "fast", "wave", "aisle", "second"],
-          "nextNodeId": "node_app_q2",
-          "metricDeltas": {
-            "store_morale": 5.0,
+            "store_morale": -5.0,
             "labor_squeeze": -5.0
           }
         },
         {
-          "id": "choice_q1_defiant",
-          "text": "Call out a cheerful 'Welcome to MegaMart!' and turn it into a fun, welcoming moment for the whole aisle!",
-          "voiceKeywords": ["welcome", "cheerful", "fun", "cheer", "shout", "third"],
+          "id": "choice_q1_slacker",
+          "text": "Quietly check in on them to see if they're okay—everyone needs a breather.",
+          "voiceKeywords": ["quietly", "breather", "check in", "okay", "care"],
           "nextNodeId": "node_app_q2",
           "metricDeltas": {
             "store_morale": 10.0,
-            "karen_index": -5.0
+            "labor_squeeze": 5.0
+          }
+        },
+        {
+          "id": "choice_q1_honest",
+          "text": "Stay focused on my own station. If leadership isn't worried, neither am I.",
+          "voiceKeywords": ["station", "focus", "work", "ignore", "mind"],
+          "nextNodeId": "node_app_q2",
+          "metricDeltas": {
+            "store_morale": 5.0
+          }
+        },
+        {
+          "id": "choice_q1_rebel",
+          "text": "Take an extra 6 minutes on my own break to maintain store equilibrium.",
+          "voiceKeywords": ["extra", "break", "equilibrium", "balance", "minutes"],
+          "nextNodeId": "node_app_q2",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": 10.0
           }
         }
       ]
@@ -58,35 +67,368 @@
       "id": "node_app_q2",
       "speakerId": "hiring_portal",
       "side": "RIGHT",
-      "text": "Assessment Question 2 of 3: It is a bustling Saturday morning, upbeat music is playing over the loudspeakers, and the store is humming with energy. What mindset gets you most pumped?",
+      "text": "Assessment Question 2 of 10: You spot an abandoned half-eaten rotisserie chicken in the toy aisle. What is your response?",
       "choices": [
         {
           "id": "choice_q2_sycophant",
-          "text": "The team energy! Collaborating with my department to smash our morning goals!",
-          "voiceKeywords": ["team", "energy", "goals", "smash", "collaborate"],
-          "nextNodeId": "node_app_q10",
+          "text": "Inspect the chicken, log it in the inventory shrink app, sanitize the shelf, and smile!",
+          "voiceKeywords": ["inspect", "log", "shrink", "sanitize", "smile"],
+          "nextNodeId": "node_app_q3",
+          "metricDeltas": {
+            "store_morale": 5.0,
+            "karen_index": -5.0
+          }
+        },
+        {
+          "id": "choice_q2_slacker",
+          "text": "Page the maintenance associate over the intercom and keep customer traffic moving.",
+          "voiceKeywords": ["page", "maintenance", "intercom", "traffic", "clean"],
+          "nextNodeId": "node_app_q3",
+          "metricDeltas": {
+            "store_morale": 5.0
+          }
+        },
+        {
+          "id": "choice_q2_honest",
+          "text": "Politely notify the nearest department associate so they can claim it.",
+          "voiceKeywords": ["notify", "department", "associate", "claim", "tell"],
+          "nextNodeId": "node_app_q3",
+          "metricDeltas": {
+            "labor_squeeze": 5.0
+          }
+        },
+        {
+          "id": "choice_q2_rebel",
+          "text": "Check if it's still warm, then swiftly whisk it into an empty shopping cart.",
+          "voiceKeywords": ["cart", "warm", "whisk", "empty", "shopping"],
+          "nextNodeId": "node_app_q3",
+          "metricDeltas": {
+            "store_morale": 5.0,
+            "karen_index": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_app_q3",
+      "speakerId": "hiring_portal",
+      "side": "RIGHT",
+      "text": "Assessment Question 3 of 10: How do you feel about participating in the mandatory daily MegaMart morning cheer?",
+      "choices": [
+        {
+          "id": "choice_q3_sycophant",
+          "text": "I practice the synchronized clapping and spelling in front of my mirror at home!",
+          "voiceKeywords": ["practice", "mirror", "cheer", "clapping", "home"],
+          "nextNodeId": "node_app_q4",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "labor_squeeze": -5.0
+          }
+        },
+        {
+          "id": "choice_q3_enthusiast",
+          "text": "I join in enthusiastically with the team to start the day on a positive note!",
+          "voiceKeywords": ["join", "positive", "start", "enthusiastic", "team"],
+          "nextNodeId": "node_app_q4",
+          "metricDeltas": {
+            "store_morale": 10.0
+          }
+        },
+        {
+          "id": "choice_q3_pragmatist",
+          "text": "I clap along respectfully while focusing on getting my morning freight cleared.",
+          "voiceKeywords": ["clap", "respectful", "focus", "freight", "morning"],
+          "nextNodeId": "node_app_q4",
+          "metricDeltas": {
+            "store_morale": 5.0,
+            "labor_squeeze": -5.0
+          }
+        },
+        {
+          "id": "choice_q3_slacker",
+          "text": "I strategically plan my morning supply restock so I can listen from the next aisle over.",
+          "voiceKeywords": ["supply", "restock", "listen", "plan", "aisle"],
+          "nextNodeId": "node_app_q4",
+          "metricDeltas": {
+            "store_morale": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_app_q4",
+      "speakerId": "hiring_portal",
+      "side": "RIGHT",
+      "text": "Assessment Question 4 of 10: A customer insists that a brand-new $800 OLED TV was marked on the shelf for $8.00. How do you resolve this?",
+      "choices": [
+        {
+          "id": "choice_q4_sycophant",
+          "text": "Apologize profusely, verify the shelf tag, and offer a friendly corporate price-match resolution!",
+          "voiceKeywords": ["apologize", "verify", "price", "tag", "friendly"],
+          "nextNodeId": "node_app_q5",
+          "metricDeltas": {
+            "karen_index": -10.0,
+            "store_morale": -5.0
+          }
+        },
+        {
+          "id": "choice_q4_polite",
+          "text": "Politely explain the misplaced tag policy with a warm, empathetic customer-first smile.",
+          "voiceKeywords": ["explain", "policy", "smile", "warm", "empathetic"],
+          "nextNodeId": "node_app_q5",
+          "metricDeltas": {
+            "karen_index": -5.0,
+            "store_morale": 5.0
+          }
+        },
+        {
+          "id": "choice_q4_manager",
+          "text": "Radiophone an Assistant Manager immediately so leadership can deliver the final ruling.",
+          "voiceKeywords": ["radiophone", "manager", "leadership", "call", "assistant"],
+          "nextNodeId": "node_app_q5",
+          "metricDeltas": {
+            "labor_squeeze": 5.0
+          }
+        },
+        {
+          "id": "choice_q4_patient",
+          "text": "Listen patiently in courteous silence until the shopper finishes explaining their discovery.",
+          "voiceKeywords": ["listen", "patient", "courteous", "silence", "shopper"],
+          "nextNodeId": "node_app_q5",
+          "metricDeltas": {
+            "karen_index": 5.0,
+            "store_morale": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_app_q5",
+      "speakerId": "hiring_portal",
+      "side": "RIGHT",
+      "text": "Assessment Question 5 of 10: Management asks you to stay past your scheduled clock-out time to unload a surprise freight truck. How do you respond?",
+      "choices": [
+        {
+          "id": "choice_q5_sycophant",
+          "text": "Cancel personal evening plans immediately! Teamwork and MegaMart come first!",
+          "voiceKeywords": ["cancel", "teamwork", "volunteer", "stay", "first"],
+          "nextNodeId": "node_app_q6",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": -10.0
+          }
+        },
+        {
+          "id": "choice_q5_team",
+          "text": "Offer to help clear the initial unloading line before handing off to the night crew.",
+          "voiceKeywords": ["clear", "line", "night crew", "unloading", "help"],
+          "nextNodeId": "node_app_q6",
+          "metricDeltas": {
+            "store_morale": 5.0,
+            "labor_squeeze": -5.0
+          }
+        },
+        {
+          "id": "choice_q5_boundary",
+          "text": "Politely decline citing prior family commitments and offer to come in early tomorrow.",
+          "voiceKeywords": ["decline", "family", "commitments", "early", "tomorrow"],
+          "nextNodeId": "node_app_q6",
+          "metricDeltas": {
+            "store_morale": 5.0
+          }
+        },
+        {
+          "id": "choice_q5_slacker",
+          "text": "Clock out promptly at scheduled time so I am fully recharged for tomorrow's shift.",
+          "voiceKeywords": ["clock out", "scheduled", "recharged", "shift", "promptly"],
+          "nextNodeId": "node_app_q6",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_app_q6",
+      "speakerId": "hiring_portal",
+      "side": "RIGHT",
+      "text": "Assessment Question 6 of 10: Which of the following statements best describes your philosophy on workplace safety rules?",
+      "choices": [
+        {
+          "id": "choice_q6_sycophant",
+          "text": "Safety policies were written by corporate angels and must never be questioned!",
+          "voiceKeywords": ["safety", "policies", "angels", "follow", "protect"],
+          "nextNodeId": "node_app_q7",
           "metricDeltas": {
             "store_morale": 10.0,
             "labor_squeeze": -5.0
           }
         },
         {
-          "id": "choice_q2_slacker",
-          "text": "Finding that smooth, steady groove where the work is satisfying and the hours just fly by!",
-          "voiceKeywords": ["groove", "steady", "smooth", "rhythm", "flow"],
-          "nextNodeId": "node_app_q10",
+          "id": "choice_q6_practical",
+          "text": "Follow the guidelines that protect the team, and keep our aisles accident-free and efficient.",
+          "voiceKeywords": ["guidelines", "accident", "efficient", "team", "safe"],
+          "nextNodeId": "node_app_q7",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
+          }
+        },
+        {
+          "id": "choice_q6_style",
+          "text": "Wear all required PPE with pride—ergonomic back braces and high-vis vests look great!",
+          "voiceKeywords": ["ppe", "brace", "vest", "pride", "wear"],
+          "nextNodeId": "node_app_q7",
           "metricDeltas": {
             "store_morale": 5.0
           }
         },
         {
-          "id": "choice_q2_defiant",
-          "text": "Solving tricky customer requests and seeing their faces light up when they find exactly what they need!",
-          "voiceKeywords": ["solve", "customer", "happy", "light up", "requests"],
+          "id": "choice_q6_social",
+          "text": "Safety briefings are a wonderful opportunity to sit on folding chairs and connect with peers.",
+          "voiceKeywords": ["meetings", "chairs", "connect", "peers", "listen"],
+          "nextNodeId": "node_app_q7",
+          "metricDeltas": {
+            "store_morale": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_app_q7",
+      "speakerId": "hiring_portal",
+      "side": "RIGHT",
+      "text": "Assessment Question 7 of 10: You find an operational handheld inventory scanner hidden on top of the seasonal paper towel steel racks. What do you do?",
+      "choices": [
+        {
+          "id": "choice_q7_sycophant",
+          "text": "Turn it into the Asset Protection office with an official incident report!",
+          "voiceKeywords": ["turn in", "asset protection", "incident", "report", "official"],
+          "nextNodeId": "node_app_q8",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
+          }
+        },
+        {
+          "id": "choice_q7_team",
+          "text": "Stash it in my department work cart so our team always has equipment ready.",
+          "voiceKeywords": ["stash", "cart", "equipment", "ready", "keep"],
+          "nextNodeId": "node_app_q8",
+          "metricDeltas": {
+            "labor_squeeze": -5.0
+          }
+        },
+        {
+          "id": "choice_q7_respect",
+          "text": "Leave it where it is—someone's daily inventory quota probably depends on that hidden scanner.",
+          "voiceKeywords": ["leave", "quota", "hidden", "scanner", "someone"],
+          "nextNodeId": "node_app_q8",
+          "metricDeltas": {
+            "store_morale": 5.0
+          }
+        },
+        {
+          "id": "choice_q7_barter",
+          "text": "Trade its location to a fellow associate in exchange for a cold energy drink.",
+          "voiceKeywords": ["trade", "associate", "energy drink", "location", "share"],
+          "nextNodeId": "node_app_q8",
+          "metricDeltas": {
+            "store_morale": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_app_q8",
+      "speakerId": "hiring_portal",
+      "side": "RIGHT",
+      "text": "Assessment Question 8 of 10: A customer approaches you with 10 expired coupons printed on illegible desktop paper. How do you proceed?",
+      "choices": [
+        {
+          "id": "choice_q8_sycophant",
+          "text": "Manually key in all 10 coupons with a smile to ensure the customer feels valued and loved!",
+          "voiceKeywords": ["manually", "key in", "smile", "valued", "coupons"],
+          "nextNodeId": "node_app_q9",
+          "metricDeltas": {
+            "karen_index": -10.0,
+            "store_morale": 5.0
+          }
+        },
+        {
+          "id": "choice_q8_sales",
+          "text": "Examine each expiration date closely and offer our current in-store weekly flyer deals.",
+          "voiceKeywords": ["examine", "expiration", "flyer", "deals", "weekly"],
+          "nextNodeId": "node_app_q9",
+          "metricDeltas": {
+            "karen_index": -5.0,
+            "store_morale": 5.0
+          }
+        },
+        {
+          "id": "choice_q8_override",
+          "text": "Call for a Supervisor Override and let the front end manager make the final courtesy call.",
+          "voiceKeywords": ["override", "supervisor", "courtesy", "manager", "call"],
+          "nextNodeId": "node_app_q9",
+          "metricDeltas": {
+            "labor_squeeze": 5.0
+          }
+        },
+        {
+          "id": "choice_q8_reboot",
+          "text": "Suddenly develop technical difficulties with the scanner and restart the register terminal.",
+          "voiceKeywords": ["restart", "technical", "difficulties", "terminal", "register"],
+          "nextNodeId": "node_app_q9",
+          "metricDeltas": {
+            "karen_index": 5.0,
+            "store_morale": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_app_q9",
+      "speakerId": "hiring_portal",
+      "side": "RIGHT",
+      "text": "Assessment Question 9 of 10: What is the primary reason you applied to join the MegaMart family?",
+      "choices": [
+        {
+          "id": "choice_q9_sycophant",
+          "text": "To build a lifelong retail career and one day manage my very own store complex!",
+          "voiceKeywords": ["career", "manage", "complex", "lifelong", "grow"],
+          "nextNodeId": "node_app_q10",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "labor_squeeze": -5.0
+          }
+        },
+        {
+          "id": "choice_q9_realist",
+          "text": "Because human survival requires currency for rent, groceries, and instant noodles.",
+          "voiceKeywords": ["currency", "rent", "survival", "paycheck", "honest"],
+          "nextNodeId": "node_app_q10",
+          "metricDeltas": {
+            "store_morale": 10.0
+          }
+        },
+        {
+          "id": "choice_q9_pizza",
+          "text": "I heard rumors of free pizza in the breakroom during peak inventory weekends!",
+          "voiceKeywords": ["pizza", "breakroom", "rumors", "food", "weekend"],
+          "nextNodeId": "node_app_q10",
+          "metricDeltas": {
+            "store_morale": 10.0
+          }
+        },
+        {
+          "id": "choice_q9_chaos",
+          "text": "I love fast-paced chaos, moving heavy boxes, and making chaotic environments orderly!",
+          "voiceKeywords": ["chaos", "fast", "orderly", "boxes", "energy"],
           "nextNodeId": "node_app_q10",
           "metricDeltas": {
             "store_morale": 10.0,
-            "karen_index": -5.0
+            "labor_squeeze": -5.0
           }
         }
       ]
@@ -95,35 +437,46 @@
       "id": "node_app_q10",
       "speakerId": "hiring_portal",
       "side": "RIGHT",
-      "text": "Assessment Question 3 of 3: Store leadership initiates a department challenge for presentation and high customer feedback scores. How do you step up?",
+      "text": "Assessment Question 10 of 10: An executive from the Home Office is touring your aisle. What do you say when they ask how things are going?",
       "choices": [
         {
           "id": "choice_q10_sycophant",
-          "text": "Give 110% on every single shelf and make our department look like a magazine cover!",
-          "voiceKeywords": ["perfect", "magazine", "presentation", "clean", "best"],
+          "text": "Everything is flawless, sir! MegaMart Store #1042 is the greatest workplace on earth!",
+          "voiceKeywords": ["flawless", "greatest", "workplace", "proud", "shining"],
+          "nextNodeId": "node_app_eval",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "labor_squeeze": -5.0
+          }
+        },
+        {
+          "id": "choice_q10_honest",
+          "text": "Things are going great, sir, but our team could really use two more working pallet jacks!",
+          "voiceKeywords": ["pallet jack", "great", "working", "honest", "tools"],
+          "nextNodeId": "node_app_eval",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
+          }
+        },
+        {
+          "id": "choice_q10_pragmatist",
+          "text": "Smile, nod warmly, say 'Never better!', and discreetly retreat to straighten the next aisle.",
+          "voiceKeywords": ["smile", "nod", "straighten", "aisle", "warmly"],
+          "nextNodeId": "node_app_eval",
+          "metricDeltas": {
+            "store_morale": 5.0,
+            "labor_squeeze": -5.0
+          }
+        },
+        {
+          "id": "choice_q10_praise",
+          "text": "Tell them enthusiastically how hard our floor crew works and praise our teammates by name!",
+          "voiceKeywords": ["praise", "crew", "teammates", "enthusiastic", "hard"],
           "nextNodeId": "node_app_eval",
           "metricDeltas": {
             "store_morale": 10.0,
             "labor_squeeze": 5.0
-          }
-        },
-        {
-          "id": "choice_q10_slacker",
-          "text": "Keep team spirits high and make sure we all support each other through the rush!",
-          "voiceKeywords": ["spirits", "support", "team", "together", "high"],
-          "nextNodeId": "node_app_eval",
-          "metricDeltas": {
-            "store_morale": 15.0
-          }
-        },
-        {
-          "id": "choice_q10_defiant",
-          "text": "Lead a friendly cross-department rivalry—a little healthy competition makes everyone better!",
-          "voiceKeywords": ["rivalry", "challenge", "competition", "win", "lead"],
-          "nextNodeId": "node_app_eval",
-          "metricDeltas": {
-            "store_morale": 10.0,
-            "karen_index": -5.0
           }
         }
       ]
