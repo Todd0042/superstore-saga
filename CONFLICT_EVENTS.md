@@ -433,7 +433,69 @@ The descent into surreal retail horror as the building itself seems to enforce c
 
 ---
 
-## 7. Multi-Perspective Incident Framework (The 360° Retail Narrative)
+## 7. Workplace Romances, Fraternization & Management Scandals
+
+Nothing drives retail gossip and fuels breakroom whisper-networks faster than secret romantic relationships—especially when they cross the boundary between **hourly associates and salaried management**. 
+
+In an environment of low wages, monotonous labor, and high turnover, personal drama becomes a spectator sport. When management is involved, romance ceases to be personal: it warps the department's power hierarchy, weaponizes the scheduling portal, grants miraculous immunity from attendance firings, and gives observant associates high-stakes leverage.
+
+### 7.1 The Lawn & Garden Connex Trailer Tryst
+* **Trigger:** Mid-day inventory check in the outdoor seasonal lot.
+* **The Incident:** You enter the 40-foot corrugated steel shipping container (the Connex trailer) to pull seasonal 40-lb bags of soil. In the dim, dusty back corner behind three stacked pallets of peat moss, you catch Sales Floor Manager Todd and a junior cashier passionately locked in an embrace against a display wheelbarrow.
+* **The Conflict:** Todd freezes, his ironed corporate polo wrinkled, eyes wide with horror. Management-associate fraternization is a direct violation of corporate ethics and triggers immediate termination.
+* **Player Choices:**
+  - `[A]` **Back away quietly, pretend your scanner laser failed, and promise silence:** (Todd owes you a massive unspoken debt, Ass-Kissing +20, Todd Favor maxed).
+  - `[B]` **Casually say: 'While you have a minute, Todd, mind overriding my 2 tardy points on the manager terminal?':** (Tactical Extortion, 2 Attendance Points wiped, Todd holds a hidden grudge).
+  - `[C]` **Snap a rapid photo with your phone and walk straight to HR Cheryl's office:** (Corporate Whistleblower initiated, Storewide firestorm, Peer solidarity -25).
+
+### 7.2 The "Untouchable Paramour" (14 Points, Zero Consequences)
+* **Trigger:** Schedule check on the Customer Service board.
+* **The Incident:** Associate Taylor—who is widely known to be dating Front End Manager Marsha—arrives 45 minutes late for the fourth time this week, sipping an iced caramel macchiato. You glance at the public attendance terminal: Taylor sits at 14.5 attendance occurrences, yet works only Monday–Friday 9:00 AM to 2:00 PM in the greeting cards aisle with noise-canceling headphones. Meanwhile, you and three other cashiers are working grueling clopening shifts with 4.5 points hanging over your heads.
+* **The Conflict:** Blatant, morale-crushing favoritism that demoralizes the entire front line.
+* **Player Choices:**
+  - `[A]` **Demand Marsha explain why Taylor is exempt from the 5-point termination policy:** (Marsha flushes red, accuses you of 'creating a hostile work environment', Morale -15, Target painted on your back).
+  - `[B]` **Lead a 'work-to-rule' slowdown with fellow cashiers during Saturday peak rush:** (Solidarity +25, Front end collapses, Management panics).
+  - `[C]` **Smile warmly, offer Taylor a donut, and ask Taylor to put in a good word with Marsha for your weekend off:** (Shameless Sycophant +20, Taylor vouches for your schedule).
+
+### 7.3 The "Pillow Talk" Team Lead Promotion
+* **Trigger:** Monday morning huddle in Act II.
+* **The Incident:** Store Manager Henderson announces the newly promoted Department Team Lead. Instead of Donna (15 years of flawless service and complete department mastery), the promotion and \$4.00/hr raise goes to Chad from Specialty, who was seen leaving Assistant Manager Julian's luxury apartment complex on Sunday morning.
+* **The Conflict:** Veteran associates are crushed; Donna stares at the linoleum floor in stony, hollow silence. Chad immediately begins barking condescending orders at associates twice his age.
+* **Player Choices:**
+  - `[A]` **Comfort Donna in the breakroom and refuse to acknowledge Chad's authority:** (Donna Affinity maxed, Peer Hero +20, Chad targets you for worst tasks).
+  - `[B]` **Be the first to applaud enthusiastically and congratulate Chad loudly:** (Sycophant +25, Chad grants you early lunch privileges, Donna glances away).
+  - `[C]` **File an anonymous contest form citing corporate conflict-of-interest guidelines:** (Corporate HR Audit triggered, Julian launches witch-hunt for the whistleblower).
+
+### 7.4 The Walkie-Talkie Hot-Mic Flirtation
+* **Trigger:** Saturday afternoon peak rush on the sales floor.
+* **The Incident:** A walkie-talkie push-to-talk button gets jammed in the cash office. For three full minutes over Store Channel 1, forty associates and hundreds of customers hear intimate whispering, giggling, and flirtatious plans for an upcoming weekend beach trip between a member of management and an hourly associate.
+* **The Conflict:** Complete operational paralysis and storewide hilarity. Customers look up at the ceiling speakers; associates are dying of laughter in the aisles; Store Manager Henderson is frantically shouting on Channel 2 to shut it down.
+* **Player Choices:**
+  - `[A]` **Grab your radio and broadcast: 'Attention shoppers, romantic assistance needed on Channel 1':** (Legendary Comedic Defiance +30, Storewide comedy, Henderson vein throbs).
+  - `[B]` **Settle into the breakroom with popcorn and listen to the whole broadcast with Donna:** (Morale +20, Breakroom camaraderie +15).
+  - `[C]` **Sprint to the cash office to knock on the door and warn them before Henderson identifies the radio ID:** (Management Savior +25, Lifelong secret debt owed).
+
+### 7.5 The Bitter Breakup & Retaliatory Schedule Slash
+* **Trigger:** Breakroom bulletin board schedule release.
+* **The Incident:** The illicit romance between an Area Manager and an hourly associate violently detonates over the weekend. On Monday morning, the associate's scheduled hours are cut from 38 hours down to 4.5 hours (a single Tuesday 6:00 AM cart-pushing shift in the freezing rain). The associate is sobbing hysterically in the breakroom, threatening to call corporate ethics and burn the store down.
+* **The Conflict:** Personal heartbreak weaponized through the corporate scheduling portal.
+* **Player Choices:**
+  - `[A]` **Offer to swap two of your shifts to help them cover their rent:** (Martyr +20, Physical Stamina drained, Lifelong ally earned).
+  - `[B]` **Help them draft a formal retaliatory complaint to corporate legal:** (Labor Warfare +25, Area Manager targeted by corporate legal).
+  - `[C]` **Quickly ask the manager for the freshly abandoned 34 hours before anyone else notices:** (Ruthless Mercenary +25, Overtime Pay acquired, Peer hatred).
+
+### 7.6 The Parking Lot Confrontation (The Jealous Spouse Arrives)
+* **Trigger:** 5:00 PM shift change at the main entrance.
+* **The Incident:** An enraged non-employee spouse in a beat-up pickup truck pulls up to the customer entrance, laying on the horn. They storm into the vestibule screaming the Area Manager's name, waving printed screenshots of text messages, and demanding to know where their spouse's "mandatory inventory overtime" was actually taking place.
+* **The Conflict:** A chaotic, public domestic showdown unfolding in front of traumatized suburban shoppers and elderly door greeters.
+* **Player Choices:**
+  - `[A]` **Step in front of the customer vestibule and calmly redirect the spouse outside before police arrive:** (De-escalation Hero +20, Security Clint respect).
+  - `[B]` **Point directly toward the manager's fishbowl office: 'His desk is right past aisle 3':** (Agent of Chaos +30, Total managerial ruin).
+  - `[C]` **Quickly herd your customers into the employee breakroom and lock the interior door:** (Customer Protection +15, Professionalism +10).
+
+---
+
+## 8. Multi-Perspective Incident Framework (The 360° Retail Narrative)
 
 A core innovation of *Retail Inferno* is that major contentious events unfold across all four storylines, but each department experiences the event from a completely different vantage point. Depending on which story track the player is running:
 * One track is the **Direct Cause / Perpetrator** (forced by their manager or circumstances).
@@ -513,6 +575,13 @@ flowchart TD
 * **Sales Floor Perspective (The Disgusted Peer):** Cheap, marked-down bakery items were the only way night-shift stockers making \$13/hour could afford dinner. Kyle grumbles in the breakroom: *"Some high-and-mighty specialty clerk snitched on the cake stickers to look good for Clint. Management throws out 40 pounds of food every night into the locked dumpster, but God forbid an associate eats a discounted croissant. Corporate bootlicker."*
 * **Backroom Perspective (The Cynical Agreement):** Backroom Manager Mack grunts at the news during the huddle: *"Good. I'm sick of finding half-eaten discounted cakes smeared on my conveyor rollers. You want food, buy it with your paycheck like the rest of us and get back to the truck."*
 
+#### Incident M-4: The Garden Connex Trailer Scandal
+*Sales Floor Manager Todd is caught in an illicit romantic tryst with a junior cashier in the outdoor seasonal storage trailer.*
+* **Backroom Perspective (The Discoverer / The Blackmail Master):** While fetching salt pellets from the Connex trailer, you catch Todd and Taylor in the act. You now possess the nuclear option: you can extort Todd for wiped attendance points and easy assignments, or keep quiet in exchange for total dock autonomy.
+* **Sales Floor Perspective (The Bitter Veteran / The Passed-Over Victim):** You have five years on the floor and a spotless record, but Taylor (3 weeks tenure) was just awarded the prime Day-Shift Department Lead position with weekends off. You burn with quiet rage knowing the promotion was won behind peat moss pallets.
+* **Front End Perspective (The Gossip Hub / The Whisper Network):** Senior Cashier Brenda and the cashiers turn Register 3 into the scandal broadcast command center. Every detail is dissected, embellished, and transmitted across the front end while customer lines stretch out the door.
+* **Specialty Perspective (The Ruthless Corporate Whistleblower):** Specialty Manager Julian sees the scandal as the ultimate weapon to eliminate Todd from the Assistant Store Manager succession race. He anonymously feeds the Connex trailer security camera timestamps directly to Store Manager Henderson and Corporate HR.
+
 ---
 
 ### C. Structural Mechanics: The "Snitch vs. Solidarity" Dynamic
@@ -526,7 +595,7 @@ When management reporting options appear, the game evaluates a hidden reputation
 
 ---
 
-## 8. Integration Matrix (Event Triggering)
+## 9. Integration Matrix (Event Triggering)
 
 | Event Name | Applicable Departments | Target Act | Primary Stat Tested | Primary Antagonist | Event Type |
 |---|---|---|---|---|---|
@@ -546,6 +615,12 @@ When management reporting options appear, the game evaluates a hidden reputation
 | **Forklift Whistleblower**| All 4 Tracks | Act III | Safety vs. Physical Labor | Clint & Mack | **Multi-Perspective (Management)** |
 | **Bathroom Audit Leak** | All 4 Tracks | Act III | Exhaustion vs. Surveillance | Cheryl & Todd | **Multi-Perspective (Management)** |
 | **Bakery Cake Scam** | All 4 Tracks | Act III–IV | Artisan Pride vs. Solidarity | Clint & Chad | **Multi-Perspective (Management)** |
+| **Connex Trailer Scandal** | All 4 Tracks | Act II–III | Moral Leverage vs. Whistleblowing | Todd & Julian | **Multi-Perspective (Fraternization)** |
+| **Untouchable Paramour** | Front End, Sales Floor | Act II–III | Morale vs. Resentment | Marsha & Taylor | Fraternization Conflict |
+| **Pillow Talk Promotion** | Specialty, Sales Floor | Act II | Loyalty vs. Sycophancy | Julian & Chad | Fraternization Conflict |
+| **Walkie Hot-Mic** | All Departments | Act II–III | Comedic Defiance vs. Savior | Henderson / Cash Office | Fraternization Conflict |
+| **Bitter Breakup Slash** | All Departments | Act III | Martyrdom vs. Mercenary | Julian & Brenda | Fraternization Conflict |
+| **Parking Lot Spouse** | All Departments | Act II–III | De-escalation vs. Chaos | Clint / Jealous Spouse | Fraternization Conflict |
 | **Expired Coupon War** | Front End, Specialty | Act I–III | Patience vs. Policy | Extreme Customers | Customer Conflict |
 | **Hazardous Return** | Front End, Specialty | Act II–III | Policy vs. Cowardice | Extreme Customers | Customer Conflict |
 | **Sweethearting Frame** | Front End | Act IV | Paranoia vs. Evidence Gathering | Clint & Brenda | Espionage Frame-Job |
