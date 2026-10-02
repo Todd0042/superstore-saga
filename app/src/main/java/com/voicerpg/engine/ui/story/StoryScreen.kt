@@ -14,6 +14,8 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.defaultMinSize
@@ -368,7 +370,7 @@ fun StoryScreen(
                     horizontalArrangement = Arrangement.spacedBy(8.dp),
                     verticalAlignment = Alignment.Top
                 ) {
-                // Title Banner Card (with set flex width and clean multi-line wrapping)
+                // Title Banner Card (compact height aligned with 2x2 action buttons)
                 Box(
                     modifier = Modifier
                         .weight(1f)
@@ -376,7 +378,7 @@ fun StoryScreen(
                         .clip(RoundedCornerShape(8.dp))
                         .background(RetroPanel.copy(alpha = 0.92f))
                         .border(1.dp, RetroBorder, RoundedCornerShape(8.dp))
-                        .padding(horizontal = 12.dp, vertical = if (isLandscape) 4.dp else 8.dp),
+                        .padding(horizontal = 10.dp, vertical = if (isLandscape) 4.dp else 6.dp),
                     contentAlignment = Alignment.CenterStart
                 ) {
                     Column(
@@ -389,23 +391,25 @@ fun StoryScreen(
                             fontSize = if (isLandscape) 10.sp else 11.sp,
                             fontWeight = FontWeight.Black,
                             fontFamily = FontFamily.Monospace,
-                            softWrap = true,
-                            maxLines = if (isLandscape) 1 else 2,
-                            overflow = TextOverflow.Ellipsis,
-                            lineHeight = 14.sp
+                            softWrap = false,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis
                         )
                         Text(
                             text = "📍 ${storyState.currentScene.name}",
                             color = Color.LightGray,
                             fontSize = 9.sp,
                             fontFamily = FontFamily.Monospace,
+                            softWrap = false,
                             maxLines = 1,
                             overflow = TextOverflow.Ellipsis
                         )
                         if (storyState.dynamicMetrics.isNotEmpty()) {
-                            Row(
+                            @OptIn(ExperimentalLayoutApi::class)
+                            FlowRow(
                                 horizontalArrangement = Arrangement.spacedBy(6.dp),
-                                modifier = Modifier.padding(top = 2.dp)
+                                verticalArrangement = Arrangement.spacedBy(1.dp),
+                                modifier = Modifier.padding(top = 1.dp)
                             ) {
                                 for (metric in GameContent.metrics.values) {
                                     val currVal = storyState.dynamicMetrics[metric.id] ?: metric.initialValue
@@ -419,7 +423,9 @@ fun StoryScreen(
                                         color = chipColor,
                                         fontSize = 8.sp,
                                         fontWeight = FontWeight.Bold,
-                                        fontFamily = FontFamily.Monospace
+                                        fontFamily = FontFamily.Monospace,
+                                        softWrap = false,
+                                        maxLines = 1
                                     )
                                 }
                             }

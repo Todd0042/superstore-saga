@@ -320,37 +320,17 @@ class StoryViewModel(
         val eligible = eligibleChoices(node)
         if (eligible.isEmpty()) return null
 
-        // 1. Campfire / hub entry prompts: ALWAYS choose to sit/converse rather than skip/rush
-        val campOrHubEntry = eligible.filter { choice ->
-            choice.id.contains("sit", ignoreCase = true) ||
-            choice.id.contains("converse", ignoreCase = true) ||
-            choice.text.contains("Sit by the fire", ignoreCase = true) ||
-            choice.text.contains("converse", ignoreCase = true) ||
-            choice.text.contains("speak with", ignoreCase = true)
-        }
-        if (campOrHubEntry.isNotEmpty()) {
-            return campOrHubEntry.first()
-        }
-
-        // 2. Uncompleted sub-story choices in hubs and camps (longest exploration path)
+        // Uncompleted sub-story choices in hubs and dialogue trees (explore all narrative paths randomly)
         val uncompleted = eligible.filter { choice ->
             choice.completionFlag != null &&
-            _state.value.narrativeFlags[choice.completionFlag] != true &&
-            !choice.id.contains("skip", ignoreCase = true) &&
-            !choice.text.contains("Rest briefly", ignoreCase = true)
+            _state.value.narrativeFlags[choice.completionFlag] != true
         }
         if (uncompleted.isNotEmpty()) {
-            return uncompleted.first()
+            return uncompleted.random()
         }
 
-        // 3. Filter out skip choices when other exploration options exist
-        val nonSkipChoices = eligible.filter { choice ->
-            !choice.id.contains("skip", ignoreCase = true) &&
-            !choice.text.contains("Rest briefly", ignoreCase = true) &&
-            !choice.text.contains("press onwards without delay", ignoreCase = true)
-        }
-        val pool = if (nonSkipChoices.isNotEmpty()) nonSkipChoices else eligible
-        return pool.random()
+        // Randomly select among all eligible choices
+        return eligible.random()
     }
 
     fun setPureStoryMode(enabled: Boolean) {
