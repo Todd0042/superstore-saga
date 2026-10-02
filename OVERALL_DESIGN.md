@@ -324,10 +324,11 @@ flowchart TD
 * `[🛡️ DEF]` **Defensive:** *Clock Out Shield*, *Show Nametag*, *"I Just Work Here" Stance*, *Wet Floor Sign*.
 * `[✨ MANA / SANITY]` **Morale Boost:** *Employee Discount*, *Spite*, *Overtime Paycheck*.
 
-### Battle Stats & Status Mechanics:
-* **Combat Health (HP):** Immediate combat patience during a boss encounter (reaching 0 causes the character to break down or walk away from the argument).
-* **Combat Energy (MP):** Fuel for tactical responses, policy citations, and break actions.
-* **Affinity / Element:** Workplace Persona (Customer-Facing, Policy-Stickler, Slacker-Immune, Industrial).
+### Grounding: Psychological & Social Workplace Standoffs
+Boss battles in *Retail Inferno* are not physical brawls; they are **high-stakes psychological, verbal, and procedural workplace confrontations** framed through the interactive Point-of-Sale (POS) terminal. Every combat action represents an aggressive or defensive retail maneuver:
+* **Combat Health (HP) = Composure & Professional Patience:** Reaching 0 HP does not mean physical injury; it represents an emotional meltdown, walking off the sales floor in tears, or shutting down in front of an aggressive supervisor.
+* **Combat Energy (MP) = Focus & Procedural Authority:** Required to cite official corporate bylaws, execute manager overrides, or calculate inventory discrepancies under pressure.
+* **Attacks & Skills:** Represent real-world retail combat: citing corporate return policies, slamming the metal register drawer shut for dramatic emphasis, paging a supervisor over the storewide intercom to draw a crowd, or deploying a yellow "Caution: Wet Floor" barricade.
 
 ---
 
@@ -351,6 +352,8 @@ The game monitors two interconnected levels of state: **The Associate's Personal
 3. **Attendance Occurrence Tracker (The 5-Point "Selective Enforcement" System):**
    - *The Dread Clock:* Tardy (+0.5), Absence (+1.0), Leave Early (+0.5), No Call/No Show (+2.0).
    - *The 5.0+ Paradox:* Reaching 5.0 points does not automatically fire the player. Termination is selectively enforced based on **Productivity Score** (mini-game speed/output) and **Ass-Kissing Score** (sycophancy, attending cheers, reporting peers).
+   - *The Rolling 6-Month Drop-off (Pacing Guardrail):* In real retail, attendance points expire after 180 days (6 months). In *Retail Inferno*, the transition into **Act III** represents the 6-month employment anniversary: up to `2.0 points` accrued during early Act I naturally expire and roll off your active record.
+   - *The Blackmail Exception:* Any occurrences that were explicitly "wiped via manager override" when hitting 5.0+ do not truly disappear; they are moved to Henderson's confidential executive drawer to serve as blackmail leverage in Act IV.
 
 ---
 
@@ -433,13 +436,24 @@ flowchart TD
 
 ---
 
-### B. Auto-Play Mini-Game Skipping & Stat Preservation
-When a shift reaches an arcade mini-game phase (Twin-Stick Barcode Blaster, Pallet Haul, Baler Crush, Counter Commotion) while in Auto-Play mode:
-* **Instant Bypass:** The mini-game is skipped without launching arcade controls.
-* **Neutral Stat Preservation:**
-  - The shift records a neutral "Standard Shift / Pass" completion.
-  - **No stat gain or loss:** Morale, Engagement, and Attendance points are completely frozen across the skipped mini-game.
-  - Story dialogue immediately resumes from the post-shift narrative node.
+### B. Auto-Play Mini-Game Simulation & Randomized Outcome Resolution
+When a shift reaches an arcade mini-game phase (Twin-Stick Barcode Blaster, Pallet Haul, Baler Crush, Counter Commotion) while in Auto-Play / Pure Story Mode:
+* **Instant Arcade Bypass:** The arcade controls and action gameplay are skipped entirely.
+* **Simulated Outcome Roll (Stat-Weighted Probability):**
+  - Instead of freezing stats, the game **randomly rolls a simulated performance tier** weighted by the character's current Morale and Engagement:
+    1. **Flawless Sprint (15% base chance, higher if Morale/Engagement > 70%):**
+       - *Stat Delta:* Productivity `+20`, Morale `+5`, Stamina `-5`.
+       - *Narrative Blurb:* *"You breezed through your stocking route with robotic precision. Not a single dented can or misplaced box."*
+    2. **Solid Routine Shift (60% base chance):**
+       - *Stat Delta:* Productivity `+10`, Morale `+0`, Stamina `-10`.
+       - *Narrative Blurb:* *"Standard, unglamorous floor labor. You met your quota right as the timer buzzer sounded."*
+    3. **Clumsy Scramble (20% base chance, higher if Morale/Engagement < 35%):**
+       - *Stat Delta:* Productivity `+5`, Morale `-10`, Stamina `-15`.
+       - *Narrative Blurb:* *"A leaning stack of paper towels collapsed into Action Alley. You spent 20 minutes rebuilding the tower while shoppers stared."*
+    4. **Minor Disaster (5% base chance, only if Morale < 20%):**
+       - *Stat Delta:* Productivity `+0`, Morale `-20`, Stamina `-20`.
+       - *Narrative Blurb:* *"A jar of industrial corn syrup shattered across three linoleum tiles. Cleaning the sticky sludge took your entire afternoon."*
+* **Seamless Narrative Transition:** The simulated blurb displays as a brief 1-line narrative notification or radio chime before immediately loading the mid-shift dynamic incident node.
 * **Boss Battles in Auto-Play:** Run via an automated AI combat loop (prioritizing status de-escalation and defense) with cinematic speed, or resolve as a dramatic story cutscene standoff.
 
 ---

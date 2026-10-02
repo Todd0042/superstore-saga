@@ -284,11 +284,18 @@ graph TD
     subgraph ShiftCycle["THE STANDARD SHIFT CYCLE"]
         CI["1. Clock-In Dilemma<br/>(Punctuality / Morale / Clopening)"] --> Huddle["2. The Morning / Evening Huddle<br/>(Store Manager Henderson's Cheer)"]
         Huddle --> Task["3. Core Shift Duty<br/>(Mini-Game / Route Task)"]
-        Task --> Conflict["4. Escalation / Conflict Event<br/>(Peer / Customer / Management Dilemma)"]
+        Task --> Conflict["4. Escalation / Dynamic Conflict Event<br/>(Drawn via Incident Engine or Milestone)"]
         Conflict --> Break["5. 15-Minute Break / Lunch<br/>(Breakroom Politics / Donna's Wisdom)"]
         Break --> Climax["6. Shift Resolution & Clock-Out<br/>(Stat Changes / Occurrences / Overtime)"]
     end
 ```
+
+> [!NOTE] **Architecture Note: Archetypal Reference Walkthrough vs. Dynamic Engine**  
+> The 56 shifts outlined below represent a **canonical, archetypal walkthrough** illustrating how the narrative rhythm unfolds. In live gameplay:
+> * **Fixed Shift Anchors:** The shift timing (Opening, Closing, Clopening), Donna's breakroom interludes, the morning huddles, and the **End-of-Act Climax Shifts (Shifts 10, 22, 34, 46, 56)** are structural constants.
+> * **Dynamic Mid-Shift Incidents:** The daily conflict event (Phase 4) is populated at runtime by the **Dynamic Conflict Event Engine** (`incidents.json`) using the Two-Tiered Probability Formula (Associate Stats $\times$ Store #1042 Climate), respecting `maxOccurrences` and `cooldownShifts`.
+> * **Department Track Scoping:** Incidents are strictly filtered via `applicableTracks`—ensuring Front End cashiers experience register/customer dilemmas while Backroom unloaders face dock/machinery hazards.
+> * **Tenure Occurrence Drop-Off:** At the start of Act III (~6 months tenure), early Act I attendance points expire and roll off your record (`-2.0 pts`), mirroring realistic retail policy.
 
 ---
 
