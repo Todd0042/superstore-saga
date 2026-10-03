@@ -970,10 +970,20 @@ class StoryViewModel(
 
     private fun applyNodeTransition(newNode: DialogueNode, suppressNarration: Boolean = false) {
         var targetNode = newNode
+        val playerTrack = _state.value.player.heroClassId.lowercase()
         val incidentJustResolved = (newNode.id == "node_incident_return")
         if (incidentJustResolved) {
-            val returnTargetId = _state.value.activeHubNodeId ?: "node_shift1_start"
-            targetNode = StoryScript.ALL_NODES[returnTargetId] ?: newNode
+            val trackHubCandidate = "node_hub_$playerTrack"
+            val fallbackHub = StoryScript.ALL_NODES[trackHubCandidate]?.id ?: "node_shift1_start"
+            val returnTargetId = _state.value.activeHubNodeId ?: fallbackHub
+            targetNode = StoryScript.ALL_NODES[returnTargetId] ?: StoryScript.ALL_NODES[fallbackHub] ?: newNode
+        } else if (playerTrack.isNotBlank()) {
+            val variant1 = "${targetNode.id}_$playerTrack"
+            val variant2 = targetNode.id.replace("_start", "") + "_$playerTrack"
+            val trackSpecificNode = StoryScript.ALL_NODES[variant1] ?: StoryScript.ALL_NODES[variant2]
+            if (trackSpecificNode != null) {
+                targetNode = trackSpecificNode
+            }
         }
 
         var updatedFlags = if (targetNode.setFlagOnEnter != null) {
@@ -991,7 +1001,7 @@ class StoryViewModel(
         }
 
         // Procedural retail teamwork incident interception on hub return
-        val isHubNode = effectiveNode.id.endsWith("_hub") || effectiveNode.hubCompletion != null || effectiveNode.id in setOf("node_locker_hub", "node_breakroom_hub")
+        val isHubNode = effectiveNode.id.endsWith("_hub") || effectiveNode.id.startsWith("node_hub_") || effectiveNode.hubCompletion != null || effectiveNode.id in setOf("node_locker_hub", "node_breakroom_hub")
         val isReturningToHub = isHubNode && (effectiveNode.id in _state.value.visitedNodeIds)
 
         var currentActiveHub = _state.value.activeHubNodeId
@@ -1006,8 +1016,10 @@ class StoryViewModel(
             } else if (effectiveNode.allowIncidents) {
                 // Procedural retail incident check (45% chance every time returning to an incident-eligible hub)
                 if (kotlin.random.Random.nextFloat() < 0.45f) {
+                    val activeTrack = _state.value.player.heroClassId.lowercase()
                     val availableIncidents = GameContent.incidents.values.filter { inc ->
                         inc.triggerNodeId != null &&
+                        (inc.applicableTracks.isEmpty() || inc.applicableTracks.any { it.equals(activeTrack, ignoreCase = true) }) &&
                         updatedFlags["flag_incident_${inc.id}_done"] != true &&
                         inc.triggerNodeId !in _state.value.visitedNodeIds
                     }

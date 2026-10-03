@@ -32,5 +32,6 @@ data class IncidentDefinition(
     val triggerNodeId: String? = null,
     val triggerEncounterId: String? = null,
     val oneTimeOnly: Boolean = false,
-    val cooldownTurns: Int = 0
+    val cooldownTurns: Int = 0,
+    val applicableTracks: List<String> = emptyList()
 )

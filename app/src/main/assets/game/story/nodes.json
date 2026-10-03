@@ -880,7 +880,57 @@
       "speakerId": "brenda",
       "side": "RIGHT",
       "text": "BEEP! Flawless scan! You've got fast hands and natural rhythm, kid. Now heads up—the automatic front sliding doors just opened, and here comes our morning crowd!",
-      "nextNodeId": "node_act1_teamwork_entry"
+      "nextNodeId": "node_hub_cashier"
+    },
+    {
+      "id": "node_hub_cashier",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "changeSceneId": "scene_checkout_concourse",
+      "allowIncidents": true,
+      "text": "Register Lane 4 is powered up and humming! Till drawers are balanced, receipt rolls are loaded, and shoppers are rolling up to the front. What's our next front-end move, partner?",
+      "choices": [
+        {
+          "id": "choice_cashier_hub_brenda",
+          "text": "Ask Brenda about high-speed barcode alignment and produce shortcuts.",
+          "voiceKeywords": ["brenda", "barcode", "shortcuts", "tips", "speed"],
+          "nextNodeId": "node_cashier_hub_brenda_tips",
+          "completionFlag": "flag_cashier_brenda_tips",
+          "metricDeltas": {
+            "associate_engagement": 10.0
+          }
+        },
+        {
+          "id": "choice_cashier_hub_marsha",
+          "text": "Check in with Front-End Lead Marsha on queue pacing and till drawer balance.",
+          "voiceKeywords": ["marsha", "queue", "balance", "till", "drawer"],
+          "nextNodeId": "node_cashier_hub_marsha_tips",
+          "completionFlag": "flag_cashier_marsha_tips",
+          "metricDeltas": {
+            "store_morale": 10.0
+          }
+        },
+        {
+          "id": "choice_cashier_hub_rush",
+          "text": "Engage the morning checkout rush wave on Lane 4!",
+          "voiceKeywords": ["rush", "checkout", "rally", "morning", "engage", "start"],
+          "nextNodeId": "node_shift1_start"
+        }
+      ]
+    },
+    {
+      "id": "node_cashier_hub_brenda_tips",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "text": "Keep the barcode facing your left hand as you pull items across the glass scanner, rookie! One smooth arc—never stop moving. And if a barcode won't read on the first pass, don't fiddle with it—flip to the 6-digit UPC quick-key. You'll be scanning thirty items a minute before you know it!",
+      "nextNodeId": "node_hub_cashier"
+    },
+    {
+      "id": "node_cashier_hub_marsha_tips",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "text": "Always keep your till neat—bills face-up, organized by denomination. When a line builds up, look up and make eye contact with the next customer in line. A warm smile cuts perceived wait time in half!",
+      "nextNodeId": "node_hub_cashier"
     },
     {
       "id": "node_station_stocker",
@@ -915,7 +965,57 @@
       "speakerId": "kyle",
       "side": "LEFT",
       "text": "Look at that, man. The Captain Crunch boxes are lined up like soldiers—they're practically glowing under these fluorescents. That is pure art. You're a natural at this!",
-      "nextNodeId": "node_act1_teamwork_entry"
+      "nextNodeId": "node_hub_stocker"
+    },
+    {
+      "id": "node_hub_stocker",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "allowIncidents": true,
+      "text": "Center Action Alley is looking sharp! Grocery endcaps are towering high, cereal boxes are faced forward, and morning shoppers are admiring the aisles. What's the plan on the floor, rookie?",
+      "choices": [
+        {
+          "id": "choice_stocker_hub_todd",
+          "text": "Ask Todd how to build seasonal feature endcaps that stay rock-solid all day.",
+          "voiceKeywords": ["todd", "endcaps", "build", "seasonal", "tips"],
+          "nextNodeId": "node_stocker_hub_todd_tips",
+          "completionFlag": "flag_stocker_todd_tips",
+          "metricDeltas": {
+            "associate_engagement": 10.0
+          }
+        },
+        {
+          "id": "choice_stocker_hub_kyle",
+          "text": "Team up with Kyle to inspect top-stock risers and scan shelf tag barcodes.",
+          "voiceKeywords": ["kyle", "risers", "topstock", "scan", "barcodes"],
+          "nextNodeId": "node_stocker_hub_kyle_tips",
+          "completionFlag": "flag_stocker_kyle_tips",
+          "metricDeltas": {
+            "store_morale": 10.0
+          }
+        },
+        {
+          "id": "choice_stocker_hub_rush",
+          "text": "Head to the front concourse to support the morning floor rally!",
+          "voiceKeywords": ["rally", "concourse", "support", "morning", "engage", "start"],
+          "nextNodeId": "node_shift1_start"
+        }
+      ]
+    },
+    {
+      "id": "node_stocker_hub_todd_tips",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "text": "Interlocking corners, rookie! That's the secret to building high-volume display endcaps. Never stack single cartons straight up—weave them like brickwork. When thousands of shoppers pass by with bulky carts, your display won't budge an inch!",
+      "nextNodeId": "node_hub_stocker"
+    },
+    {
+      "id": "node_stocker_hub_kyle_tips",
+      "speakerId": "kyle",
+      "side": "LEFT",
+      "text": "When zoning the cereal aisle, use the two-finger slide trick. Grab the bottom edge of two boxes at once and pull them flush with the shelf lip in one swift motion. A whole twelve-foot bay takes less than two minutes, and it looks like a magazine cover!",
+      "nextNodeId": "node_hub_stocker"
     },
     {
       "id": "node_station_unloader",
@@ -950,7 +1050,57 @@
       "speakerId": "mack",
       "side": "RIGHT",
       "text": "Ten pallets sorted and stacked in under thirty minutes! Derrick gave a double honk on Crown Three—that means you set a new onboarding speed record, kid!",
-      "nextNodeId": "node_act1_teamwork_entry"
+      "nextNodeId": "node_hub_unloader"
+    },
+    {
+      "id": "node_hub_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "allowIncidents": true,
+      "text": "Receiving Bay 2 is rolling! The roller conveyor is gliding, pallets of fresh freight are staged neatly, and the baler is ready. What's our next dock move, teammate?",
+      "choices": [
+        {
+          "id": "choice_unloader_hub_mack",
+          "text": "Learn Mack's strategy for clearing a 53-foot trailer in record time.",
+          "voiceKeywords": ["mack", "trailer", "freight", "strategy", "truck"],
+          "nextNodeId": "node_unloader_hub_mack_tips",
+          "completionFlag": "flag_unloader_mack_tips",
+          "metricDeltas": {
+            "associate_engagement": 10.0
+          }
+        },
+        {
+          "id": "choice_unloader_hub_derrick",
+          "text": "Do a safety walk with Derrick around the Crown Three electric pallet jack.",
+          "voiceKeywords": ["derrick", "crown", "pallet jack", "safety", "walk"],
+          "nextNodeId": "node_unloader_hub_derrick_tips",
+          "completionFlag": "flag_unloader_derrick_tips",
+          "metricDeltas": {
+            "store_morale": 10.0
+          }
+        },
+        {
+          "id": "choice_unloader_hub_rush",
+          "text": "Wheel fresh freight carts out to the floor to support the morning rally!",
+          "voiceKeywords": ["freight", "carts", "rally", "morning", "engage", "start"],
+          "nextNodeId": "node_shift1_start"
+        }
+      ]
+    },
+    {
+      "id": "node_unloader_hub_mack_tips",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "Lift with the legs, keep your center of gravity low, and pass boxes down the conveyor with a gentle spin. If everyone moves to the same tempo, forty thousand pounds of freight feels as light as feathers!",
+      "nextNodeId": "node_hub_unloader"
+    },
+    {
+      "id": "node_unloader_hub_derrick_tips",
+      "speakerId": "derrick",
+      "side": "LEFT",
+      "text": "Always check your wheel chocks before driving a pallet jack across the dock plate transition. Crown Three has plenty of horsepower, but smooth steering is what separates an amateur from a dock craftsman!",
+      "nextNodeId": "node_hub_unloader"
     },
     {
       "id": "node_station_specialist",
@@ -985,7 +1135,57 @@
       "speakerId": "julian",
       "side": "RIGHT",
       "text": "Did you see that smile? The kid was practically floating out the door with that new console box. That is what retail is all about. Phenomenal work!",
-      "nextNodeId": "node_act1_teamwork_entry"
+      "nextNodeId": "node_hub_specialist"
+    },
+    {
+      "id": "node_hub_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "allowIncidents": true,
+      "text": "The Specialty Showcase is gleaming! Glass cases are unlocked with your key ring, demo headphones are glowing, and tech shoppers are browsing. How shall we elevate customer service, expert?",
+      "choices": [
+        {
+          "id": "choice_specialist_hub_julian",
+          "text": "Consult with Julian on matching customers with the right protection warranty.",
+          "voiceKeywords": ["julian", "warranty", "protection", "advice", "consult"],
+          "nextNodeId": "node_specialist_hub_julian_tips",
+          "completionFlag": "flag_specialist_julian_tips",
+          "metricDeltas": {
+            "associate_engagement": 10.0
+          }
+        },
+        {
+          "id": "choice_specialist_hub_chad",
+          "text": "Test out the interactive soundbar and smart TV displays with Chad.",
+          "voiceKeywords": ["chad", "soundbar", "tv", "displays", "test"],
+          "nextNodeId": "node_specialist_hub_chad_tips",
+          "completionFlag": "flag_specialist_chad_tips",
+          "metricDeltas": {
+            "store_morale": 10.0
+          }
+        },
+        {
+          "id": "choice_specialist_hub_rush",
+          "text": "Assist the front end with electronic payment overrides during the morning rush!",
+          "voiceKeywords": ["payment", "electronic", "rally", "morning", "engage", "start"],
+          "nextNodeId": "node_shift1_start"
+        }
+      ]
+    },
+    {
+      "id": "node_specialist_hub_julian_tips",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "Never sell a product by reading specs off a box, associate. Ask what movies they love, how they listen to their music, and what makes them smile. When you solve their real-life problem, the warranty practically sells itself as peace-of-mind!",
+      "nextNodeId": "node_hub_specialist"
+    },
+    {
+      "id": "node_specialist_hub_chad_tips",
+      "speakerId": "chad",
+      "side": "LEFT",
+      "text": "Keep the high-bass demo track queued up on the showroom soundbar! When shoppers hear that clean, punchy frequency rolling through the aisle, their eyes light up every single time. It's the best feeling on the sales floor!",
+      "nextNodeId": "node_hub_specialist"
     },
     {
       "id": "node_act1_teamwork_entry",
@@ -1306,10 +1506,227 @@
       "nextNodeId": "node_incident_return"
     },
     {
+      "id": "node_incident_honey_spill_cashier",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Heads up on Lane Four, partner! A shopper just told us a jar of gourmet honey mustard broke on Aisle 4. Derrick and Todd are already moving in with cones. Let's make sure incoming cart traffic steers safely into Lanes 3 and 4 away from the center concourse!",
+      "choices": [
+        {
+          "id": "choice_spill_cashier_pacing",
+          "text": "Call out a warm greeting to direct approaching shoppers smoothly into Lane 4.",
+          "voiceKeywords": ["greeting", "direct", "lane four", "guide", "traffic"],
+          "nextNodeId": "node_incident_honey_spill_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 10.0
+          }
+        },
+        {
+          "id": "choice_spill_cashier_towel",
+          "text": "Hand a stack of sanitized paper towels to Kyle as he jogs toward Aisle 4.",
+          "voiceKeywords": ["towels", "kyle", "assist", "supplies", "help"],
+          "nextNodeId": "node_incident_honey_spill_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_honey_spill_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Derrick just crackled over the Receiving radio: 'Spill alert on Aisle Four—need the fast-acting sweep compound from Bay 2 chemical locker on the double!' Teamwork time, unloader! Grab the yellow bucket and let's sprint it out to Todd!",
+      "choices": [
+        {
+          "id": "choice_spill_unloader_rush",
+          "text": "Sprint the sweep compound bucket to Todd on Aisle 4 like an Olympic baton pass!",
+          "voiceKeywords": ["sprint", "compound", "todd", "bucket", "rush"],
+          "nextNodeId": "node_incident_honey_spill_resolve",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 15.0
+          }
+        },
+        {
+          "id": "choice_spill_unloader_barrier",
+          "text": "Wheel out the rolling caution barrier from the dock to seal the aisle perimeter.",
+          "voiceKeywords": ["barrier", "caution", "safety", "perimeter", "roll"],
+          "nextNodeId": "node_incident_honey_spill_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_honey_spill_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Attention at the Specialty Counter! Todd just paged a clean-up assist on Aisle Four. We're right at the entrance to the electronics concourse—let's make a courteous PA announcement and guide shoppers along the clean carpet path!",
+      "choices": [
+        {
+          "id": "choice_spill_specialist_pa",
+          "text": "Broadcast a polite, professional PA advisory to guide shoppers along the clean concourse.",
+          "voiceKeywords": ["broadcast", "pa", "announcement", "courteous", "path"],
+          "nextNodeId": "node_incident_honey_spill_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        },
+        {
+          "id": "choice_spill_specialist_escort",
+          "text": "Personally escort a couple with a stroller around Aisle 4 toward the tech desk.",
+          "voiceKeywords": ["escort", "stroller", "family", "guide", "help"],
+          "nextNodeId": "node_incident_honey_spill_resolve",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "karen_index": -10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_cart_train_unloader",
+      "speakerId": "derrick",
+      "side": "LEFT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Look alive at Receiving Ramp One! A train of fifteen returned shopping carts is rolling down the gentle receiving slope! Mack's on the brake rail—jump in with the rubber wheel chock!",
+      "choices": [
+        {
+          "id": "choice_cart_unloader_chock",
+          "text": "Slide the heavy rubber chock directly under the lead wheel to halt the momentum!",
+          "voiceKeywords": ["chock", "rubber", "halt", "wheel", "stop"],
+          "nextNodeId": "node_incident_cart_train_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        },
+        {
+          "id": "choice_cart_unloader_steer",
+          "text": "Grip the front guide handle with Derrick and steer the train straight into Bay 1!",
+          "voiceKeywords": ["steer", "derrick", "handle", "bay one", "guide"],
+          "nextNodeId": "node_incident_cart_train_resolve",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_cart_train_cashier",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Heads up at the front vestibule! A long string of nested carts is rolling past the sliding doors toward the exit! Brenda has the front brake—rookie, grab the rear stabilizing bar!",
+      "choices": [
+        {
+          "id": "choice_cart_cashier_stabilize",
+          "text": "Grip the rear stabilizing bar to brake the train smoothly before the entrance mats!",
+          "voiceKeywords": ["stabilize", "brake", "rear", "smooth", "bar"],
+          "nextNodeId": "node_incident_cart_train_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        },
+        {
+          "id": "choice_cart_cashier_cheer",
+          "text": "Coordinate with Brenda to dock the train into the vestibule return bay with a cheer!",
+          "voiceKeywords": ["brenda", "dock", "vestibule", "cheer", "team"],
+          "nextNodeId": "node_incident_cart_train_resolve",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "karen_index": -10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_showcase_key",
+      "speakerId": "chad",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Specialty desk rush! A customer wants to buy the high-end digital SLR camera in Showcase Three, but the magnetic glass slider is stubborn! Julian has the lubricant pen and you've got the master brass key. Let's pop it open with style!",
+      "choices": [
+        {
+          "id": "choice_key_precision",
+          "text": "Apply the lubricant pen and gently turn the master key for a silky-smooth click!",
+          "voiceKeywords": ["key", "lubricant", "master", "turn", "precision"],
+          "nextNodeId": "node_incident_showcase_key_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        },
+        {
+          "id": "choice_key_consult",
+          "text": "Engage the customer with enthusiastic photography tips while Chad unlocks the case!",
+          "voiceKeywords": ["photography", "tips", "consult", "customer", "enthusiastic"],
+          "nextNodeId": "node_incident_showcase_key_resolve",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_showcase_key_resolve",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "CLICK! The tempered glass slides open silently! The customer is beaming with excitement, holding the new camera with awe. Julian gives you a high-five: 'Masterful customer service, {hero}! That was a five-hundred-dollar sale completed in sixty seconds!'",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_dock_plate_latch",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Inbound delivery truck just docked at Bay 3! The heavy hydraulic dock plate leveler safety latch is resting an inch high on the trailer bed. Derrick is ready with the pull chain—let's set the plate flush!",
+      "choices": [
+        {
+          "id": "choice_dock_pull",
+          "text": "Pull the spring-assist chain in rhythm with Mack for a solid, flush lock!",
+          "voiceKeywords": ["chain", "pull", "rhythm", "mack", "flush"],
+          "nextNodeId": "node_incident_dock_plate_latch_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        },
+        {
+          "id": "choice_dock_inspect",
+          "text": "Verify the trailer wheel chocks and rubber bumpers are 100% secure before loading!",
+          "voiceKeywords": ["inspect", "chocks", "bumpers", "safety", "verify"],
+          "nextNodeId": "node_incident_dock_plate_latch_resolve",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_dock_plate_latch_resolve",
+      "speakerId": "derrick",
+      "side": "LEFT",
+      "text": "CLACK-THUD! The steel dock plate settles rock-solid and flush with the trailer floor! Derrick drives Crown Three straight in with a joyful horn beep: 'Textbook dock setup! Bay 3 is officially open for business!'",
+      "nextNodeId": "node_incident_return"
+    },
+    {
       "id": "node_incident_return",
       "speakerId": "narrator",
       "side": "CENTER_NARRATOR",
-      "text": "The situation is resolved with flying colors! You sync back up with your team.",
+      "text": "The situation is resolved with flying colors! You sync back up with your department team.",
       "nextNodeId": "node_locker_hub"
     },
     {
@@ -1841,6 +2258,708 @@
       "speakerId": "donna",
       "side": "LEFT",
       "text": "'TO THE BEST ROOKIE #1042 HAS EVER SEEN!' Donna raises her cup, followed by cheerful clinking from the whole crew. Ice cream sundaes, celebration banners, and laughter fill the room. You have officially conquered Act One of your retail journey!",
+      "nextNodeId": "node_retail_act1_complete"
+    },
+    {
+      "id": "node_shift2_stocker",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_locker_room",
+      "text": "Good morning, rookie! Ready for Shift Two on the sales floor? Kyle and I tuned up a high-performance TC-70 handheld scanner just for you. Laser optic is crystal clear and battery is at a full 100%! Let's get you set up with the pro shortcuts.",
+      "choices": [
+        {
+          "id": "choice_shift2_stocker_sync",
+          "text": "Master the double-trigger barcode quick-sync with Donna.",
+          "voiceKeywords": ["trigger", "sync", "master", "laser", "shortcut"],
+          "nextNodeId": "node_shift2_sync",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 15.0
+          }
+        },
+        {
+          "id": "choice_shift2_stocker_kyle",
+          "text": "Team up with Kyle to audit the seasonal candy endcaps.",
+          "voiceKeywords": ["kyle", "audit", "candy", "endcap", "team"],
+          "nextNodeId": "node_shift2_kyle",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift2_cashier",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Good morning, rookie! Welcome back to the front concourse for Shift Two! Brenda and I prepped Register Lane 4 with freshly balanced rolls of quarters and calibrated the barcode optical glass. Ready to test out our pro cashier shortcuts?",
+      "choices": [
+        {
+          "id": "choice_shift2_cashier_plu",
+          "text": "Drill rapid produce PLU lookups with Brenda.",
+          "voiceKeywords": ["brenda", "plu", "produce", "lookups", "speed"],
+          "nextNodeId": "node_shift2_cashier_plu",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 10.0
+          }
+        },
+        {
+          "id": "choice_shift2_cashier_drawer",
+          "text": "Practice Marsha's lightning-fast cash count and till organization.",
+          "voiceKeywords": ["marsha", "till", "drawer", "cash", "count"],
+          "nextNodeId": "node_shift2_cashier_drawer",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift2_cashier_plu",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "text": "BEEP-BEEP! Honeycrisp apples, organic lemons, and sweet corn entered in three seconds flat! You've got magic hands, kid! Marsha just gave us a standing ovation from the supervisor podium!",
+      "nextNodeId": "node_shift2_cashier_end"
+    },
+    {
+      "id": "node_shift2_cashier_drawer",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "text": "Clean as a whistle! Crisp twenties, crisp tens, and coin rolls organized to perfection! That's how we keep checkout lines moving like a bullet train!",
+      "nextNodeId": "node_shift2_cashier_end"
+    },
+    {
+      "id": "node_shift2_cashier_end",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Front-end speed rating is up fourteen percent! Outstanding work on Lane 4, team! Here are two ice-cold sodas from the cooler. Keep that incredible rhythm going!",
+      "nextNodeId": "node_shift3_cashier"
+    },
+    {
+      "id": "node_shift3_cashier",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "SHIFT THREE HUDDLE! Word from regional: our front-end customer cheeriness ranking is #1 in the district! I've got the Golden Whistle of Spirit for whichever department leads this morning's chant!",
+      "choices": [
+        {
+          "id": "choice_shift3_cashier_cheer",
+          "text": "Lead the cheer from Register Row with a rhythmic barcode scanner chime!",
+          "voiceKeywords": ["cheer", "scanner", "chime", "lead", "chant"],
+          "nextNodeId": "node_shift3_cashier_cheer",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift3_cashier_cheer",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "text": "G-I-V-E M-E A-N M! The registers echo with melodic beeps in perfect four-four time! Henderson blows the Golden Whistle in total awe: 'That was the most musical cheer in MegaMart history!' Bakery donuts for the front line!",
+      "nextNodeId": "node_shift4_cashier"
+    },
+    {
+      "id": "node_shift4_cashier",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift Four: The Community Baker arrives with a cart overflowing with baking supplies for the annual charity pie bake-off! Brenda steps up to the bagger stand: 'Time for the Olympic scan-and-bag relay, partner!'",
+      "choices": [
+        {
+          "id": "choice_shift4_cashier_relay",
+          "text": "Sync your scanning arc with Brenda's bagging cadence!",
+          "voiceKeywords": ["cadence", "relay", "brenda", "sync", "bagging"],
+          "nextNodeId": "node_shift4_cashier_relay",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift4_cashier_relay",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "text": "Thirty items rung and packed in sixty seconds! The baker is beaming with joy: 'You two are a work of art! I'm bringing a warm peach cobbler for the front-end break tomorrow!' High fives across the lane!",
+      "nextNodeId": "node_shift5_cashier"
+    },
+    {
+      "id": "node_shift5_cashier",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift Five: The front-end return basket is overflowing with stray items shoppers decided not to buy. Marsha tags you in: 'Let's team up with the floor crew to return every item to its home in record time!'",
+      "choices": [
+        {
+          "id": "choice_shift5_cashier_speed",
+          "text": "Sort and dispatch the return basket items by department aisle with surgical speed!",
+          "voiceKeywords": ["dispatch", "sort", "return", "speed", "aisle"],
+          "nextNodeId": "node_shift5_cashier_speed",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift5_cashier_speed",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "text": "Todd catches the floor delivery with a grin: 'Every single grocery item pre-sorted and ready to shelve! Front end is firing on all cylinders today!' Back to Lane 4 with pride!",
+      "nextNodeId": "node_shift6_cashier"
+    },
+    {
+      "id": "node_shift6_cashier",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift Six: Mrs. Higgins walks up to Lane 4 in tears—she can't find her grandson's Turbo-Rex toy anywhere! You grab the register phone: 'Don't worry, Mrs. Higgins, Store #1042 is on the case!'",
+      "choices": [
+        {
+          "id": "choice_shift6_cashier_dispatch",
+          "text": "Radio Receiving and Sales Floor with priority product lookup!",
+          "voiceKeywords": ["radio", "receiving", "lookup", "priority", "dispatch"],
+          "nextNodeId": "node_shift6_cashier_dispatch",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift6_cashier_dispatch",
+      "speakerId": "derrick",
+      "side": "RIGHT",
+      "text": "Derrick jogs up to Lane 4 holding the factory-sealed Turbo-Rex carton: 'Special delivery from Bay 3 for Mrs. Higgins!' She hugs Brenda and you with tears of joy: 'You saved my grandson's birthday!'",
+      "nextNodeId": "node_shift7_cashier"
+    },
+    {
+      "id": "node_shift7_cashier",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "SHIFT SEVEN: THE SATURDAY SUMMER FESTIVAL RUSH! Concourse is overflowing with happy shoppers buying picnic goods and grills! Lane 4 is the anchor of the whole front end! Rally together, team!",
+      "triggerBattleEncounterId": "encounter_saturday_rush_wave",
+      "nextNodeId": "node_shift7_cashier_victory"
+    },
+    {
+      "id": "node_shift7_cashier_victory",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "FOURTEEN HUNDRED TRANSACTIONS PROCESSED WITHOUT A SINGLE ERROR! Zero customer wait time, zero till discrepancies! Pizza party in the breakroom courtesy of Store Manager Henderson!",
+      "nextNodeId": "node_shift8_cashier"
+    },
+    {
+      "id": "node_shift8_cashier",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift Eight: Mack rolls up with the recycling flatbed to collect empty receipt cardboard boxes: 'Front end generates the cleanest cardboard in the store, rookie! Help me flatten these boxes for the dock baler!'",
+      "choices": [
+        {
+          "id": "choice_shift8_cashier_breakdown",
+          "text": "Slice and nest the receipt cardboard into neat flat bundles with Mack!",
+          "voiceKeywords": ["cardboard", "bundles", "mack", "breakdown", "flatten"],
+          "nextNodeId": "node_shift8_cashier_breakdown",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift8_cashier_breakdown",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "Neat as a deck of cards! Mack gives you an honorary dock salute: 'Fast at the register, and fast on the breakdown! You're an all-star in every department, kid!'",
+      "nextNodeId": "node_shift9_cashier"
+    },
+    {
+      "id": "node_shift9_cashier",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift Nine: Twilight Closing. The store lights soften to a warm glow. Donna joins you on Lane 4 for the evening register balance: 'Fifteen years behind these registers, kid. When you treat every shopper like family, work feels like home.'",
+      "choices": [
+        {
+          "id": "choice_shift9_cashier_reconcile",
+          "text": "Reconcile the till drawer down to the penny with Donna and Brenda.",
+          "voiceKeywords": ["reconcile", "till", "drawer", "donna", "balance"],
+          "nextNodeId": "node_shift9_cashier_reconcile",
+          "metricDeltas": {
+            "store_morale": 25.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift9_cashier_reconcile",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "text": "Zero variance! Every penny accounted for, till drawer gleaming, register polished for tomorrow. Donna winks warmly: 'Tomorrow is Shift Ten, rookie. Get ready for something special.'",
+      "nextNodeId": "node_shift10_cashier"
+    },
+    {
+      "id": "node_shift10_cashier",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "REGIONAL INSPECTION SURPRISE! District VP Vance is observing front-end transaction velocity in person! Lane 4, show regional why Store #1042 is the standard of excellence!",
+      "triggerBattleEncounterId": "encounter_regional_showcase",
+      "nextNodeId": "node_shift10_cashier_victory"
+    },
+    {
+      "id": "node_shift10_cashier_victory",
+      "speakerId": "cheryl",
+      "side": "LEFT",
+      "changeSceneId": "scene_personnel_office",
+      "text": "VP Vance was astonished by your scanning velocity, genuine warmth, and team leadership! The entire store gathers in Action Alley as Cheryl presents the mahogany ROOKIE OF THE MONTH plaque! Henderson pins the engraved gold badge to your chest amidst roaring applause!",
+      "nextNodeId": "node_retail_act1_complete"
+    },
+    {
+      "id": "node_shift2_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Good morning, dock crew! Shift Two is rolling! Derrick and I tuned up the roller conveyor and fully charged Crown Three. Today we practice the low-center-of-gravity box spin to clear fifty freight cartons in ninety seconds!",
+      "choices": [
+        {
+          "id": "choice_shift2_unloader_spin",
+          "text": "Master the two-handed conveyor carton spin with Mack.",
+          "voiceKeywords": ["spin", "carton", "mack", "conveyor", "technique"],
+          "nextNodeId": "node_shift2_unloader_spin",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift2_unloader_spin",
+      "speakerId": "derrick",
+      "side": "LEFT",
+      "text": "SWISH-SWISH-THUD! You glide boxes down that roller line like a champion bowler! Derrick double-honks Crown Three: 'Fifty cartons sorted to perfection! Dock crew is thirty minutes ahead of schedule!'",
+      "nextNodeId": "node_shift3_unloader"
+    },
+    {
+      "id": "node_shift3_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Henderson is up on his milk crate in Action Alley shouting the store cheer! Mack grins: 'Receiving, let's give the front of the store an answer they will never forget!'",
+      "choices": [
+        {
+          "id": "choice_shift3_unloader_horn",
+          "text": "Coordinate a synchronized forklift horn echo salute from Bay 2!",
+          "voiceKeywords": ["horn", "salute", "echo", "dock", "cheer"],
+          "nextNodeId": "node_shift3_unloader_horn",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift3_unloader_horn",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "HONK-HONK! The rhythmic horn blasts vibrate through the steel girders! Action Alley answers with a roar of applause! Henderson brings a box of fresh apple fritters straight to the dock!",
+      "nextNodeId": "node_shift4_unloader"
+    },
+    {
+      "id": "node_shift4_unloader",
+      "speakerId": "derrick",
+      "side": "LEFT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Shift Four: A massive 2,000-lb delivery of bottled cider arrives for the autumn festival! Derrick guides the pallet jack: 'Let's maneuver this beauty over the dock plate with millimeter accuracy!'",
+      "choices": [
+        {
+          "id": "choice_shift4_unloader_chock",
+          "text": "Set safety chocks and guide the pallet transition in rhythm with Derrick!",
+          "voiceKeywords": ["chocks", "transition", "pallet", "safety", "derrick"],
+          "nextNodeId": "node_shift4_unloader_chock",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift4_unloader_chock",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "Glided over the threshold like silk! Pallet safely staged in Bay 2 with zero tilt. Mack gives you the thumbs up: 'True warehouse craftsmanship, rookie!'",
+      "nextNodeId": "node_shift5_unloader"
+    },
+    {
+      "id": "node_shift5_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Shift Five: Pre-sorting cargo pallets to build U-boat carts for Todd and Julian on the sales floor. High-speed logistics time!",
+      "choices": [
+        {
+          "id": "choice_shift5_unloader_sort",
+          "text": "Sort cartons by department aisle tags for lightning-fast floor stocking!",
+          "voiceKeywords": ["sort", "aisle", "tags", "cartons", "logistics"],
+          "nextNodeId": "node_shift5_unloader_sort",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift5_unloader_sort",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "text": "Todd arrives with his stocker team and gasps: 'Every box is pre-organized by aisle number! Receiving just shaved an hour off our stocking schedule! You guys are lifesavers!'",
+      "nextNodeId": "node_shift6_unloader"
+    },
+    {
+      "id": "node_shift6_unloader",
+      "speakerId": "derrick",
+      "side": "LEFT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Radio call from Action Alley! Chad says Mrs. Higgins needs a Turbo-Rex dinosaur toy for her grandson, and the toy shelf is empty! Derrick checks the freight manifest: 'It was on this morning's pallet in Bay 3! Let's find it!'",
+      "choices": [
+        {
+          "id": "choice_shift6_unloader_find",
+          "text": "Scan pallet manifest barcodes with Derrick to isolate the toy carton!",
+          "voiceKeywords": ["scan", "manifest", "derrick", "pallet", "find"],
+          "nextNodeId": "node_shift6_unloader_find",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift6_unloader_find",
+      "speakerId": "derrick",
+      "side": "LEFT",
+      "text": "FOUND IT! Box number 412! Derrick carefully cuts the factory tape, pulls out the pristine Turbo-Rex, and you sprint it out to Action Alley! The floor crew cheers as Mrs. Higgins hugs the toy box!",
+      "nextNodeId": "node_shift7_unloader"
+    },
+    {
+      "id": "node_shift7_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "SHIFT SEVEN: SATURDAY FESTIVAL RUSH! The floor is screaming for bulk charcoal, ice pallets, and propane tanks! The dock is our forward operating base—let's keep the supply line rolling!",
+      "triggerBattleEncounterId": "encounter_saturday_rush_wave",
+      "nextNodeId": "node_shift7_unloader_victory"
+    },
+    {
+      "id": "node_shift7_unloader_victory",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "FOUR HUNDRED BAGS OF CHARCOAL DISPATCHED WITHOUT A SCRATCH! The sales floor didn't run out of a single festival item! Henderson delivers hot pizza straight to the dock lunch table!",
+      "nextNodeId": "node_shift8_unloader"
+    },
+    {
+      "id": "node_shift8_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Shift Eight: The Cardboard Baler Initiation! Twenty flatbeds of corrugated cardboard ready to be compressed into a one-thousand-pound recyclable cube. Time to wire the bale, partner!",
+      "choices": [
+        {
+          "id": "choice_shift8_unloader_bale",
+          "text": "Thread the high-tensile wire and pull the hydraulic compression lever with Mack!",
+          "voiceKeywords": ["wire", "tensile", "lever", "bale", "compress"],
+          "nextNodeId": "node_shift8_unloader_bale",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift8_unloader_bale",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "KER-CHUNK! THUD! The bale drops onto the pallet with clean square corners! Mack sticks the silver 'Certified Baler Pilot' decal onto your badge: 'Official dock certification earned, associate!'",
+      "nextNodeId": "node_shift9_unloader"
+    },
+    {
+      "id": "node_shift9_unloader",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Shift Nine: Evening twilight sweeps. The warehouse floor is swept clean, Crown Three is plugged into the wall charger, and the overhead halogen hum quietens. Donna brings out a thermos of hot cocoa.",
+      "choices": [
+        {
+          "id": "choice_shift9_unloader_reflect",
+          "text": "Share stories of the week's dock triumphs with Mack and Donna over hot cocoa.",
+          "voiceKeywords": ["cocoa", "stories", "reflect", "mack", "donna"],
+          "nextNodeId": "node_shift9_unloader_reflect",
+          "metricDeltas": {
+            "store_morale": 25.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift9_unloader_reflect",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "Mack clinks his mug against yours: 'Best new hire on this dock in ten years, rookie. Tomorrow is Shift Ten—rest up, because you've earned every bit of respect in this building.'",
+      "nextNodeId": "node_shift10_unloader"
+    },
+    {
+      "id": "node_shift10_unloader",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "UNANNOUNCED INSPECTION! District VP Vance is walking the Receiving Dock to examine warehouse logistics and OSHA safety standards! Let's give him a masterclass!",
+      "triggerBattleEncounterId": "encounter_regional_showcase",
+      "nextNodeId": "node_shift10_unloader_victory"
+    },
+    {
+      "id": "node_shift10_unloader_victory",
+      "speakerId": "cheryl",
+      "side": "LEFT",
+      "changeSceneId": "scene_personnel_office",
+      "text": "ZERO SAFETY INFRACTIONS! Spotless bay floors, perfect pallet stacks! VP Vance declared Receiving Bay 2 the flagship dock of the state! In Action Alley, Cheryl unveils the ROOKIE OF THE MONTH plaque! Mack and Derrick lift you in a celebratory cheer!",
+      "nextNodeId": "node_retail_act1_complete"
+    },
+    {
+      "id": "node_shift2_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Welcome to Shift Two, tech partner! Julian hands you the department master key ring. Today we tune up the interactive soundbar and smart 4K TV displays, and learn the tablet spec lookup system!",
+      "choices": [
+        {
+          "id": "choice_shift2_specialist_audio",
+          "text": "Queue up the high-frequency bass demo on the showroom soundbar.",
+          "voiceKeywords": ["bass", "demo", "soundbar", "audio", "showroom"],
+          "nextNodeId": "node_shift2_specialist_audio",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift2_specialist_audio",
+      "speakerId": "chad",
+      "side": "LEFT",
+      "text": "BOOM! That crisp, warm audio fills the concourse with energy! Customers stop in their tracks to listen with smiles. Chad gives you a high-five: 'The specialty department is alive!'",
+      "nextNodeId": "node_shift3_specialist"
+    },
+    {
+      "id": "node_shift3_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Henderson is up on his milk crate calling for the store cheer! Julian hooks our counter microphone into the store PA: 'Specialty, let's lead the anthem!'",
+      "choices": [
+        {
+          "id": "choice_shift3_specialist_mic",
+          "text": "Lead the cheer through the studio-quality showroom microphone!",
+          "voiceKeywords": ["microphone", "lead", "pa", "anthem", "cheer"],
+          "nextNodeId": "node_shift3_specialist_mic",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift3_specialist_mic",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "text": "G-I-V-E M-E A-N M! The audio quality is crystal clear! Henderson points enthusiastically at the specialty counter: 'Now THAT is high-definition spirit!' Golden Whistle awarded to Specialty!",
+      "nextNodeId": "node_shift4_specialist"
+    },
+    {
+      "id": "node_shift4_specialist",
+      "speakerId": "chad",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift Four: A family arrives looking for a beginner video game console for their child's birthday. Chad winks: 'Let's give them a consultation they will remember forever!'",
+      "choices": [
+        {
+          "id": "choice_shift4_specialist_consult",
+          "text": "Walk through the best family game bundles and explain the warranty with warmth.",
+          "voiceKeywords": ["bundles", "console", "family", "consult", "warranty"],
+          "nextNodeId": "node_shift4_specialist_consult",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift4_specialist_consult",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "The family leaves practically floating with joy! The child hugs the game box, and the parents thank you for your honest, friendly advice. Julian smiles: 'True consultative mastery!'",
+      "nextNodeId": "node_shift5_specialist"
+    },
+    {
+      "id": "node_shift5_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift Five: A customer needs a rare high-speed HDMI 2.1 cable and wireless smart adapter. Time to navigate the specialty accessory bays to locate the exact match!",
+      "choices": [
+        {
+          "id": "choice_shift5_specialist_lookup",
+          "text": "Use the tablet inventory map to locate the exact accessory peg hook in sixty seconds!",
+          "voiceKeywords": ["tablet", "map", "accessory", "lookup", "cable"],
+          "nextNodeId": "node_shift5_specialist_lookup",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift5_specialist_lookup",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "Got it! Gold-plated connectors, braided cable, exact fit! The customer is blown away: 'I went to three other stores and nobody knew what I was talking about. You're a genius!'",
+      "nextNodeId": "node_shift6_specialist"
+    },
+    {
+      "id": "node_shift6_specialist",
+      "speakerId": "chad",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift Six: Mrs. Higgins arrives at the specialty desk breathless—her grandson's birthday dinosaur toy is missing from the shelves! Chad and you coordinate the walkie dispatch to Receiving.",
+      "choices": [
+        {
+          "id": "choice_shift6_specialist_wrap",
+          "text": "Coordinate the handoff from Derrick and gift-wrap the Turbo-Rex with a MegaMart bow!",
+          "voiceKeywords": ["bow", "ribbon", "giftwrap", "derrick", "dinosaur"],
+          "nextNodeId": "node_shift6_specialist_wrap",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift6_specialist_wrap",
+      "speakerId": "chad",
+      "side": "LEFT",
+      "text": "Derrick delivers the box and you top it with a shiny blue ribbon! Mrs. Higgins is crying happy tears: 'You wonderful young people made a little boy's dream come true today!'",
+      "nextNodeId": "node_shift7_specialist"
+    },
+    {
+      "id": "node_shift7_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "SHIFT SEVEN: SATURDAY FESTIVAL RUSH! Everyone wants portable Bluetooth party speakers and outdoor smart displays! Let's power the festival vibe!",
+      "triggerBattleEncounterId": "encounter_saturday_rush_wave",
+      "nextNodeId": "node_shift7_specialist_victory"
+    },
+    {
+      "id": "node_shift7_specialist_victory",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "RECORD SALES AT THE SPECIALTY DESK! Every party speaker sold out, zero customer complaints, and total team harmony! Henderson delivers fresh pizza to the counter!",
+      "nextNodeId": "node_shift8_specialist"
+    },
+    {
+      "id": "node_shift8_specialist",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift Eight: Mack visits the counter to collect clean electronics packaging: 'Specialty has the thickest protective foam and clean cardboard. Let's prep it for the dock baler!'",
+      "choices": [
+        {
+          "id": "choice_shift8_specialist_prep",
+          "text": "Break down the high-grade packaging flats with Mack and Chad for the baler.",
+          "voiceKeywords": ["packaging", "baler", "flats", "mack", "chad"],
+          "nextNodeId": "node_shift8_specialist_prep",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift8_specialist_prep",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "Folded and stacked like clockwork! Mack claps you on the shoulder: 'Specialty crew has backroom muscle! You guys make every shift a pleasure!'",
+      "nextNodeId": "node_shift9_specialist"
+    },
+    {
+      "id": "node_shift9_specialist",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift Nine: Twilight closing. You polish the glass showcases until they sparkle like diamond display cases. Donna stops by the counter with a warm smile: 'Look at this department shine. You've brought real pride to these aisles, kid.'",
+      "choices": [
+        {
+          "id": "choice_shift9_specialist_polish",
+          "text": "Complete the display showcase polish and share aspirations with Donna.",
+          "voiceKeywords": ["polish", "aspirations", "donna", "showcase", "pride"],
+          "nextNodeId": "node_shift9_specialist_polish",
+          "metricDeltas": {
+            "store_morale": 25.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift9_specialist_polish",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "Spotless glass, secured alarms, glowing showroom. Julian smiles proudly: 'Tomorrow is Shift Ten, {hero}. Get some rest, because you've made history in this department.'",
+      "nextNodeId": "node_shift10_specialist"
+    },
+    {
+      "id": "node_shift10_specialist",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "REGIONAL INSPECTION SURPRISE! District VP Vance is conducting a personal audit of the Specialty Electronics department! Time to demonstrate championship customer care!",
+      "triggerBattleEncounterId": "encounter_regional_showcase",
+      "nextNodeId": "node_shift10_specialist_victory"
+    },
+    {
+      "id": "node_shift10_specialist_victory",
+      "speakerId": "cheryl",
+      "side": "LEFT",
+      "changeSceneId": "scene_personnel_office",
+      "text": "A PERFECT SCORE ON PRODUCT KNOWLEDGE AND SERVICE! VP Vance was spellbound! In Center Action Alley, Cheryl presents the mahogany ROOKIE OF THE MONTH plaque! Julian and Chad toast with fountain punch in pure celebration!",
       "nextNodeId": "node_retail_act1_complete"
     },
     {

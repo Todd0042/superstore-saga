@@ -1,9 +1,9 @@
 {
-  "_doc": "Superstore Saga Incident Engine: dynamic shift interruptions and procedural retail teamwork emergencies.",
+  "_doc": "Superstore Saga Incident Engine: dynamic shift interruptions and procedural retail teamwork emergencies filtered by applicableTracks.",
   "incidents": [
     {
-      "id": "incident_cart_train",
-      "title": "The Runaway Cart Train",
+      "id": "incident_cart_train_stocker",
+      "title": "Action Alley Runaway Cart Train",
       "baseWeight": 30.0,
       "conditions": [
         {
@@ -12,11 +12,42 @@
         }
       ],
       "triggerNodeId": "node_incident_cart_train",
+      "applicableTracks": ["stocker"],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
     {
-      "id": "incident_honey_spill",
+      "id": "incident_cart_train_unloader",
+      "title": "Receiving Ramp Cart Intercept",
+      "baseWeight": 30.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_cart_train_done"
+        }
+      ],
+      "triggerNodeId": "node_incident_cart_train_unloader",
+      "applicableTracks": ["unloader"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_cart_train_cashier",
+      "title": "Vestibule Cart Stabilizer",
+      "baseWeight": 30.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_cart_train_done"
+        }
+      ],
+      "triggerNodeId": "node_incident_cart_train_cashier",
+      "applicableTracks": ["cashier"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_honey_spill_stocker",
       "title": "Aisle 4 Golden Slip Hazard",
       "baseWeight": 30.0,
       "conditions": [
@@ -26,6 +57,52 @@
         }
       ],
       "triggerNodeId": "node_incident_honey_spill",
+      "applicableTracks": ["stocker"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_honey_spill_cashier",
+      "title": "Lane 4 Spill Traffic Alert",
+      "baseWeight": 30.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_honey_spill_done"
+        }
+      ],
+      "triggerNodeId": "node_incident_honey_spill_cashier",
+      "applicableTracks": ["cashier"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_honey_spill_unloader",
+      "title": "Chemical Locker Spill Dispatch",
+      "baseWeight": 30.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_honey_spill_done"
+        }
+      ],
+      "triggerNodeId": "node_incident_honey_spill_unloader",
+      "applicableTracks": ["unloader"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_honey_spill_specialist",
+      "title": "Specialty Concourse PA Advisory",
+      "baseWeight": 30.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_honey_spill_done"
+        }
+      ],
+      "triggerNodeId": "node_incident_honey_spill_specialist",
+      "applicableTracks": ["specialist"],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -40,6 +117,7 @@
         }
       ],
       "triggerNodeId": "node_incident_price_check",
+      "applicableTracks": ["cashier", "specialist"],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -54,6 +132,7 @@
         }
       ],
       "triggerNodeId": "node_incident_pallet_jack_assist",
+      "applicableTracks": ["unloader", "stocker"],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -68,6 +147,7 @@
         }
       ],
       "triggerNodeId": "node_incident_lost_toddler",
+      "applicableTracks": ["cashier", "stocker", "specialist"],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -82,6 +162,7 @@
         }
       ],
       "triggerNodeId": "node_incident_register_tape",
+      "applicableTracks": ["cashier"],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -96,6 +177,7 @@
         }
       ],
       "triggerNodeId": "node_incident_balloon_ceiling",
+      "applicableTracks": ["stocker", "specialist"],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -110,22 +192,39 @@
         }
       ],
       "triggerNodeId": "node_incident_display_pyramid",
+      "applicableTracks": ["stocker", "specialist"],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
     {
-      "id": "incident_register_surge",
-      "title": "All-Hands Register Surge",
-      "baseWeight": 15.0,
+      "id": "incident_showcase_key",
+      "title": "Specialty Locked Showcase Jam",
+      "baseWeight": 30.0,
       "conditions": [
         {
-          "type": "HAS_FLAG",
-          "flag": "shift_rush_survived"
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_showcase_key_done"
         }
       ],
-      "triggerNodeId": "node_shift1_start",
-      "oneTimeOnly": false,
-      "cooldownTurns": 4
+      "triggerNodeId": "node_incident_showcase_key",
+      "applicableTracks": ["specialist"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_dock_plate_latch",
+      "title": "Bay 3 Hydraulic Dock Plate Latch",
+      "baseWeight": 30.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_dock_plate_latch_done"
+        }
+      ],
+      "triggerNodeId": "node_incident_dock_plate_latch",
+      "applicableTracks": ["unloader"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
     }
   ]
 }
