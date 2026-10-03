@@ -100,7 +100,6 @@ fun CharacterCreationScreen(
         mutableStateOf(resolved)
     }
     var selectedClass by remember(slot, initialCustomization.heroClassId) { mutableStateOf(initialCustomization.heroClass) }
-    var selectedTitle by remember(slot, initialCustomization.title) { mutableStateOf(initialCustomization.title) }
     var selectedAura by remember(slot, initialCustomization.auraColor) { mutableStateOf(initialCustomization.auraColor) }
     var selectedAffinity by remember(slot, initialCustomization.voiceAffinityBonusSchool) { mutableStateOf(initialCustomization.voiceAffinityBonusSchool) }
 
@@ -155,12 +154,6 @@ fun CharacterCreationScreen(
         }
     }
 
-    val titles = remember {
-        manifest.characterTitles.ifEmpty {
-            listOf(defaultHeroTitle)
-        }
-    }
-
     var quickNames by remember {
         val baseList = manifest.quickNames.ifEmpty {
             listOf(manifest.defaultHeroName)
@@ -170,10 +163,11 @@ fun CharacterCreationScreen(
 
     fun confirmAndAwaken() {
         speechManager?.cancel()
+        val heroTitle = manifest.defaultHeroTitle.ifBlank { initialCustomization.title.ifBlank { "Probationary Hire" } }
         val finalCustomization = PlayerCustomization(
             name = if (name.isBlank()) defaultHeroName else name.trim(),
             heroClassId = if (manifest.allowClassSelectionInCreation) selectedClass.id else "",
-            title = selectedTitle,
+            title = heroTitle,
             auraColor = selectedAura,
             voiceAffinityBonusSchool = selectedClass.preferredSchool,
             customPortraitAsset = if (hasCustomPortrait) {
@@ -250,10 +244,6 @@ fun CharacterCreationScreen(
             }
         }
 
-        // 3. Title selection
-        titles.firstOrNull { lower.contains(it.lowercase()) }?.let {
-            selectedTitle = it
-        }
 
         // 4. Quick name selection
         quickNames.firstOrNull { lower.contains(it.lowercase()) }?.let {
@@ -637,19 +627,22 @@ fun CharacterCreationScreen(
                             fontWeight = FontWeight.Black,
                             fontFamily = FontFamily.Monospace
                         )
-                        Text(
-                            text = selectedTitle,
-                            color = auraColorVal,
-                            fontSize = 11.sp,
-                            fontFamily = FontFamily.Monospace,
-                            fontWeight = FontWeight.SemiBold
-                        )
-                        Text(
-                            text = "Class: ${selectedClass.title} • Affinity: ${selectedAffinity.name}",
-                            color = Color.LightGray,
-                            fontSize = 10.sp,
-                            fontFamily = FontFamily.Monospace
-                        )
+                        if (manifest.allowClassSelectionInCreation) {
+                            Text(
+                                text = "Class: ${selectedClass.title} • Affinity: ${selectedAffinity.name}",
+                                color = Color.LightGray,
+                                fontSize = 10.sp,
+                                fontFamily = FontFamily.Monospace
+                            )
+                        } else {
+                            Text(
+                                text = "Status: Registered Applicant",
+                                color = auraColorVal,
+                                fontSize = 11.sp,
+                                fontFamily = FontFamily.Monospace,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                        }
                         if (hasCustomPortrait) {
                             Spacer(modifier = Modifier.height(2.dp))
                             Text(
@@ -879,46 +872,6 @@ fun CharacterCreationScreen(
                             fontSize = 9.sp,
                             fontFamily = FontFamily.Monospace,
                             fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal
-                        )
-                    }
-                }
-            }
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            // Epithet Title Selector
-            Text(
-                text = "4. HONORIFIC TITLE",
-                color = LogosGold,
-                fontSize = 12.sp,
-                fontWeight = FontWeight.Bold,
-                fontFamily = FontFamily.Monospace,
-                modifier = Modifier.align(Alignment.Start)
-            )
-
-            Spacer(modifier = Modifier.height(8.dp))
-
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .horizontalScroll(rememberScrollState()),
-                horizontalArrangement = Arrangement.spacedBy(6.dp)
-            ) {
-                titles.forEach { t ->
-                    val isSelected = t == selectedTitle
-                    Box(
-                        modifier = Modifier
-                            .clip(RoundedCornerShape(6.dp))
-                            .background(if (isSelected) LogosGold.copy(alpha = 0.2f) else RetroPanel)
-                            .border(1.dp, if (isSelected) LogosGold else RetroBorder, RoundedCornerShape(6.dp))
-                            .clickable { selectedTitle = t }
-                            .padding(horizontal = 10.dp, vertical = 6.dp)
-                    ) {
-                        Text(
-                            text = t,
-                            color = if (isSelected) LogosGold else Color.LightGray,
-                            fontSize = 10.sp,
-                            fontFamily = FontFamily.Monospace
                         )
                     }
                 }

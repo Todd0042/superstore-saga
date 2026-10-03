@@ -685,7 +685,7 @@ class StoryViewModel(
         val defaultTitle = manifest.defaultHeroTitle.ifBlank { "The Awakened Hero" }
         StoryAssetLoader.activeSlot = targetSlot
         _state.value = _state.value.copy(
-            gameScreen = GameScreen.AUDIO_SETUP,
+            gameScreen = GameScreen.CHARACTER_CREATION,
             previousScreen = GameScreen.TITLE,
             isNewGameFlow = true,
             currentSlot = targetSlot,

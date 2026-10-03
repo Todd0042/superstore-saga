@@ -302,11 +302,7 @@ class MainActivity : ComponentActivity() {
                                 speechManager = speechManager,
                                 combatNarrator = combatNarrator,
                                 onBack = {
-                                    if (storyState.isNewGameFlow) {
-                                        storyViewModel.startNewGameFlow(storyState.currentSlot)
-                                    } else {
-                                        storyViewModel.returnToTitle()
-                                    }
+                                    storyViewModel.returnToTitle()
                                 },
                                 onConfirmCharacter = { customization ->
                                     storyViewModel.startNewGame(customization, storyState.currentSlot)
