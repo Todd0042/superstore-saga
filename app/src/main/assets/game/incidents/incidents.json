@@ -1,47 +1,45 @@
 {
-  "_doc": "Retail Inferno Incident Engine: dynamic shift interruptions and procedural retail emergencies.",
+  "_doc": "Superstore Saga Incident Engine: dynamic shift interruptions and procedural retail teamwork emergencies.",
   "incidents": [
     {
-      "id": "incident_spill_aisle_4",
-      "title": "Spill in Aisle 4",
-      "baseWeight": 20.0,
+      "id": "incident_cart_train",
+      "title": "The Runaway Cart Train",
+      "baseWeight": 30.0,
       "conditions": [
         {
-          "type": "METRIC_GREATER_THAN",
-          "metricId": "labor_squeeze",
-          "threshold": 30.0
+          "type": "ACT_EQUALS",
+          "actNumber": 1
         }
       ],
-      "weightMultipliers": [
-        {
-          "metricId": "labor_squeeze",
-          "threshold": 60.0,
-          "multiplier": 1.5
-        }
-      ],
-      "triggerNodeId": "incident_spill_aisle_4",
+      "triggerNodeId": "node_incident_cart_train",
       "oneTimeOnly": false,
-      "cooldownTurns": 3
+      "cooldownTurns": 2
     },
     {
-      "id": "incident_coupon_dispute",
-      "title": "Expired Coupon Stand-off",
-      "baseWeight": 25.0,
+      "id": "incident_honey_spill",
+      "title": "Aisle 4 Golden Slip Hazard",
+      "baseWeight": 30.0,
       "conditions": [
         {
-          "type": "METRIC_GREATER_THAN",
-          "metricId": "karen_index",
-          "threshold": 20.0
+          "type": "ACT_EQUALS",
+          "actNumber": 1
         }
       ],
-      "weightMultipliers": [
+      "triggerNodeId": "node_incident_honey_spill",
+      "oneTimeOnly": false,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_price_check",
+      "title": "Register 4 Tag Mystery",
+      "baseWeight": 30.0,
+      "conditions": [
         {
-          "metricId": "karen_index",
-          "threshold": 50.0,
-          "multiplier": 2.0
+          "type": "ACT_EQUALS",
+          "actNumber": 1
         }
       ],
-      "triggerNodeId": "incident_coupon_dispute",
+      "triggerNodeId": "node_incident_price_check",
       "oneTimeOnly": false,
       "cooldownTurns": 2
     },
@@ -55,38 +53,9 @@
           "flag": "shift_rush_survived"
         }
       ],
-      "weightMultipliers": [
-        {
-          "metricId": "labor_squeeze",
-          "threshold": 70.0,
-          "multiplier": 1.8
-        }
-      ],
-      "triggerNodeId": "incident_register_surge",
+      "triggerNodeId": "node_shift1_start",
       "oneTimeOnly": false,
       "cooldownTurns": 4
-    },
-    {
-      "id": "incident_surprise_walkthrough",
-      "title": "District Manager Surprise Audit",
-      "baseWeight": 10.0,
-      "conditions": [
-        {
-          "type": "METRIC_LESS_THAN",
-          "metricId": "store_morale",
-          "threshold": 40.0
-        }
-      ],
-      "weightMultipliers": [
-        {
-          "metricId": "store_morale",
-          "threshold": 25.0,
-          "multiplier": 2.5
-        }
-      ],
-      "triggerNodeId": "incident_surprise_walkthrough",
-      "oneTimeOnly": true,
-      "cooldownTurns": 0
     }
   ]
 }

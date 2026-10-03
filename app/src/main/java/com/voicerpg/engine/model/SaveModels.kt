@@ -94,6 +94,7 @@ data class GameSaveData(
     // 6. User Accessibility & Audio Options
     val isEyesFreeMode: Boolean = false,
     val isAutoListen: Boolean = false,
+    val isAutoPlayEnabled: Boolean = false,
     val isChimeMuted: Boolean = true,
     val isNarrationEnabled: Boolean = true,
     val isCombatNarrationEnabled: Boolean = true,

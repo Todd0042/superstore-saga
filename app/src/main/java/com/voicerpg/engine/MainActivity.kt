@@ -338,6 +338,7 @@ class MainActivity : ComponentActivity() {
                         isEyesFreeMode = isEyesFreeMode,
                         isNarrationEnabled = isNarrationEnabled,
                         isCombatNarrationEnabled = isCombatNarrationEnabled,
+                        isAutoPlayEnabled = storyState.isPureStoryMode,
                         isPocketGuardEnabled = isPocketGuardEnabled,
                         isReadChoicesEnabled = isReadChoicesEnabled,
                         isAutoReadHubChoices = isAutoReadHubChoices,
@@ -356,6 +357,9 @@ class MainActivity : ComponentActivity() {
                         onToggleNarration = {
                             combatNarrator.toggleNarration()
                             storyViewModel.persistCurrentState()
+                        },
+                        onToggleAutoPlay = {
+                            storyViewModel.toggleAutoPlay()
                         },
                         onToggleCombatNarration = {
                             combatNarrator.toggleCombatNarrationEnabled()
@@ -385,6 +389,7 @@ class MainActivity : ComponentActivity() {
                                     combatNarrator.setEyesFreeMode(true, lockGuard = false)
                                     speechManager.setAutoListen(true)
                                     speechManager.setChimeMuted(false)
+                                    storyViewModel.setPureStoryMode(true)
                                 }
                                 PlaystylePreset.CLASSIC_TACTICAL -> {
                                     combatNarrator.setPocketGuardEnabled(false)

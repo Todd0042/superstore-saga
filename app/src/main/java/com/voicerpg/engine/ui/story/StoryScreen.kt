@@ -299,7 +299,7 @@ fun StoryScreen(
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             Text(
-                                text = if (storyState.isStoryAutoPlayPaused) "⏸ PAUSED" else "▶ STORY MODE",
+                                text = if (storyState.isStoryAutoPlayPaused) "⏸ PAUSED" else "▶ AUTO-PLAY",
                                 color = Color(0xFFF3E5F5),
                                 fontSize = 11.sp,
                                 fontWeight = FontWeight.Black,
@@ -349,11 +349,17 @@ fun StoryScreen(
                                     modifier = Modifier
                                         .clip(RoundedCornerShape(6.dp))
                                         .background(Color(0xFFC62828))
-                                        .clickable { storyViewModel.returnToTitle() }
+                                        .clickable {
+                                            if (storyState.currentSlot == com.voicerpg.engine.engine.SaveManager.STORY_MODE_SLOT) {
+                                                storyViewModel.returnToTitle()
+                                            } else {
+                                                storyViewModel.setPureStoryMode(false)
+                                            }
+                                        }
                                         .padding(horizontal = 8.dp, vertical = 5.dp)
                                 ) {
                                     Text(
-                                        text = "EXIT",
+                                        text = if (storyState.currentSlot == com.voicerpg.engine.engine.SaveManager.STORY_MODE_SLOT) "EXIT" else "STOP",
                                         color = Color.White,
                                         fontSize = 10.sp,
                                         fontWeight = FontWeight.Bold,
@@ -433,7 +439,7 @@ fun StoryScreen(
                     }
                 }
 
-                // Stacked Action Buttons (Outside the banner: 2x2 grid for Log, Options, Skip, Battle)
+                // Stacked Action Buttons: Row 1 (Log, Opt, Btl) + Row 2 (Auto, Skip)
                 Column(
                     modifier = Modifier.width(if (isLandscape) 144.dp else 134.dp),
                     verticalArrangement = Arrangement.spacedBy(4.dp),
@@ -441,10 +447,10 @@ fun StoryScreen(
                 ) {
                     val btnHeight = if (isLandscape) 24.dp else 28.dp
 
-                    // Row 1: Backlog + Options
+                    // Row 1: Backlog + Options + Battle Sandbox
                     Row(
                         modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(4.dp)
+                        horizontalArrangement = Arrangement.spacedBy(3.dp)
                     ) {
                         // Log / History Button
                         Box(
@@ -458,9 +464,9 @@ fun StoryScreen(
                             contentAlignment = Alignment.Center
                         ) {
                             Text(
-                                text = "📜 LOG",
+                                text = "📜LOG",
                                 color = LogosGold,
-                                fontSize = 9.sp,
+                                fontSize = 8.sp,
                                 fontWeight = FontWeight.Bold,
                                 fontFamily = FontFamily.Monospace,
                                 maxLines = 1
@@ -479,36 +485,9 @@ fun StoryScreen(
                             contentAlignment = Alignment.Center
                         ) {
                             Text(
-                                text = if (isEyesFreeMode) "🎧 POCKET" else "⚙️ OPT",
+                                text = if (isEyesFreeMode) "🎧PKT" else "⚙️OPT",
                                 color = if (isEyesFreeMode) Color(0xFFE3F2FD) else LogosGold,
-                                fontSize = 9.sp,
-                                fontWeight = FontWeight.Bold,
-                                fontFamily = FontFamily.Monospace,
-                                maxLines = 1
-                            )
-                        }
-                    }
-
-                    // Row 2: Skip/Fast-Forward + Battle Sandbox
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(4.dp)
-                    ) {
-                        // Skip / Fast-Forward Button
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(btnHeight)
-                                .clip(RoundedCornerShape(6.dp))
-                                .background(if (storyState.isFastForwarding) Color(0xFFD32F2F) else RetroPanel.copy(alpha = 0.92f))
-                                .border(1.dp, if (storyState.isFastForwarding) Color(0xFFFF8A80) else RetroBorder, RoundedCornerShape(6.dp))
-                                .clickable { storyViewModel.toggleFastForward() },
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(
-                                text = if (storyState.isFastForwarding) "⏹️ STOP" else "⏩ SKIP",
-                                color = if (storyState.isFastForwarding) Color.White else LogosGold,
-                                fontSize = 9.sp,
+                                fontSize = 8.sp,
                                 fontWeight = FontWeight.Bold,
                                 fontFamily = FontFamily.Monospace,
                                 maxLines = 1
@@ -527,9 +506,57 @@ fun StoryScreen(
                             contentAlignment = Alignment.Center
                         ) {
                             Text(
-                                text = "⚔️ BTL",
+                                text = "⚔️BTL",
                                 color = Color.White,
-                                fontSize = 9.sp,
+                                fontSize = 8.sp,
+                                fontWeight = FontWeight.Bold,
+                                fontFamily = FontFamily.Monospace,
+                                maxLines = 1
+                            )
+                        }
+                    }
+
+                    // Row 2: Auto-Play Toggle + Skip/Fast-Forward
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        // Auto-Play Toggle Button (Available for all slots)
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(btnHeight)
+                                .clip(RoundedCornerShape(6.dp))
+                                .background(if (storyState.isPureStoryMode) Color(0xFF4A148C) else RetroPanel.copy(alpha = 0.92f))
+                                .border(1.dp, if (storyState.isPureStoryMode) Color(0xFFCE93D8) else RetroBorder, RoundedCornerShape(6.dp))
+                                .clickable { storyViewModel.toggleAutoPlay() },
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                text = if (storyState.isPureStoryMode) "🤖 AUTO: ON" else "🤖 AUTO",
+                                color = if (storyState.isPureStoryMode) Color(0xFFF3E5F5) else LogosGold,
+                                fontSize = 8.5.sp,
+                                fontWeight = FontWeight.Bold,
+                                fontFamily = FontFamily.Monospace,
+                                maxLines = 1
+                            )
+                        }
+
+                        // Skip / Fast-Forward Button
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(btnHeight)
+                                .clip(RoundedCornerShape(6.dp))
+                                .background(if (storyState.isFastForwarding) Color(0xFFD32F2F) else RetroPanel.copy(alpha = 0.92f))
+                                .border(1.dp, if (storyState.isFastForwarding) Color(0xFFFF8A80) else RetroBorder, RoundedCornerShape(6.dp))
+                                .clickable { storyViewModel.toggleFastForward() },
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                text = if (storyState.isFastForwarding) "⏹️ STOP" else "⏩ SKIP",
+                                color = if (storyState.isFastForwarding) Color.White else LogosGold,
+                                fontSize = 8.5.sp,
                                 fontWeight = FontWeight.Bold,
                                 fontFamily = FontFamily.Monospace,
                                 maxLines = 1

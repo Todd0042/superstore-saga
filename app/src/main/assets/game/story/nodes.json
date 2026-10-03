@@ -878,7 +878,7 @@
       "speakerId": "brenda",
       "side": "RIGHT",
       "text": "BEEP! Flawless scan! You've got fast hands and natural rhythm, kid. Now heads up—the automatic front sliding doors just opened, and here comes our morning crowd!",
-      "nextNodeId": "node_shift1_start"
+      "nextNodeId": "node_act1_teamwork_entry"
     },
     {
       "id": "node_station_stocker",
@@ -913,7 +913,7 @@
       "speakerId": "kyle",
       "side": "LEFT",
       "text": "Look at that, man. The Captain Crunch boxes are lined up like soldiers—they're practically glowing under these fluorescents. That is pure art. You're a natural at this!",
-      "nextNodeId": "node_shift1_start"
+      "nextNodeId": "node_act1_teamwork_entry"
     },
     {
       "id": "node_station_unloader",
@@ -948,7 +948,7 @@
       "speakerId": "mack",
       "side": "RIGHT",
       "text": "Ten pallets sorted and stacked in under thirty minutes! Derrick gave a double honk on Crown Three—that means you set a new onboarding speed record, kid!",
-      "nextNodeId": "node_shift1_start"
+      "nextNodeId": "node_act1_teamwork_entry"
     },
     {
       "id": "node_station_specialist",
@@ -983,6 +983,143 @@
       "speakerId": "julian",
       "side": "RIGHT",
       "text": "Did you see that smile? The kid was practically floating out the door with that new console box. That is what retail is all about. Phenomenal work!",
+      "nextNodeId": "node_act1_teamwork_entry"
+    },
+    {
+      "id": "node_act1_teamwork_entry",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "BING-BONG! The store public address chime rings out softly. Before the main morning rush hits, an unexpected retail situation needs attention on the sales floor. Across the aisles, your fellow associates are already moving in unison like a well-oiled machine! Where do you jump in to back up the team?",
+      "choices": [
+        {
+          "id": "choice_assist_carts",
+          "text": "Sprint to Action Alley where Mack and Kyle are corralling a runaway line of carts!",
+          "voiceKeywords": ["carts", "action alley", "runaway", "mack", "kyle", "corral"],
+          "nextNodeId": "node_incident_cart_train"
+        },
+        {
+          "id": "choice_assist_spill",
+          "text": "Grab yellow safety cones with Derrick and Todd to safely clear a spill in Aisle 4!",
+          "voiceKeywords": ["spill", "aisle four", "cones", "derrick", "todd", "safety"],
+          "nextNodeId": "node_incident_honey_spill"
+        },
+        {
+          "id": "choice_assist_tag",
+          "text": "Join Brenda and Donna at the front registers to verify a customer's shelf tag question!",
+          "voiceKeywords": ["register", "tag", "brenda", "donna", "customer", "price check"],
+          "nextNodeId": "node_incident_price_check"
+        }
+      ]
+    },
+    {
+      "id": "node_incident_cart_train",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Whoa, steady there! A train of twenty chrome shopping carts caught the gentle ramp incline and is rolling toward the paper towel display! Kyle's on the lead handle and I'm bracing the tail—rookie, we need you on the flank to guide it into the corral!",
+      "choices": [
+        {
+          "id": "choice_cart_flank_steer",
+          "text": "Grip the flank rail and pivot with Kyle to steer the line smoothly into the turn!",
+          "voiceKeywords": ["steer", "flank", "pivot", "turn", "smooth"],
+          "nextNodeId": "node_incident_cart_train_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        },
+        {
+          "id": "choice_cart_callout",
+          "text": "Call out 'Clear on the left!' and brace the middle carts together in lockstep!",
+          "voiceKeywords": ["call out", "clear", "brace", "lockstep", "team"],
+          "nextNodeId": "node_incident_cart_train_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0,
+            "karen_index": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_cart_train_resolve",
+      "speakerId": "kyle",
+      "side": "LEFT",
+      "text": "CLACK! The carts nest flawlessly into the holding corral with inches to spare! Kyle wipes his brow and beams: 'That was like synchronized bobsledding! You moved like you've worked this floor for years!' Mack slaps your shoulder with a booming laugh: 'Pure teamwork, rookie! That's why nobody works alone at Store #1042!' An electric wave of excitement hits you—this team truly watches each other's backs!",
+      "nextNodeId": "node_shift1_start"
+    },
+    {
+      "id": "node_incident_honey_spill",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Safety alert on Aisle Four! A jar of gourmet honey mustard took a tumble from a display endcap. Derrick has the bright yellow caution cones, and I've got the fast-acting sweep compound. Rookie, let's run a textbook sixty-second cleanup drill!",
+      "choices": [
+        {
+          "id": "choice_spill_perimeter",
+          "text": "Set the yellow cones with Derrick to guide shoppers safely around the wet zone.",
+          "voiceKeywords": ["cones", "derrick", "perimeter", "safety", "wet floor"],
+          "nextNodeId": "node_incident_honey_spill_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        },
+        {
+          "id": "choice_spill_sweep",
+          "text": "Sprinkle the compound with Todd and sweep the tile to a spotless showroom shine.",
+          "voiceKeywords": ["sweep", "compound", "todd", "spotless", "clean"],
+          "nextNodeId": "node_incident_honey_spill_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_honey_spill_resolve",
+      "speakerId": "derrick",
+      "side": "RIGHT",
+      "text": "SWEEP! In under forty-five seconds, the compound absorbs every drop and the aisle is gleaming! Store Manager Henderson strolls by, inspects the spotless floor, and flashes a proud double thumbs-up: 'Outstanding response time, crew!' Derrick chuckles warmly: 'Smooth as silk, kid. When this team syncs up, there isn't a mess in retail we can't conquer!' You feel a rush of pride—everyone here genuinely cares.",
+      "nextNodeId": "node_shift1_start"
+    },
+    {
+      "id": "node_incident_price_check",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Hey there, partner! A friendly customer at Register Four found a deluxe coffee maker on an endcap marked nineteen dollars, but the register system scanned it at fifty-nine. Brenda is keeping the customer engaged with warm banter—rookie, can you team up with Donna to verify the shelf tag?",
+      "choices": [
+        {
+          "id": "choice_tag_verify",
+          "text": "Hurry over with Donna to check the endcap tag and confirm the customer-first price match.",
+          "voiceKeywords": ["donna", "endcap", "confirm", "price match", "customer first"],
+          "nextNodeId": "node_incident_price_check_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        },
+        {
+          "id": "choice_tag_banter",
+          "text": "Offer the customer a warm smile and complimentary tote bag while Donna gets the override key.",
+          "voiceKeywords": ["smile", "tote", "complimentary", "override", "kindness"],
+          "nextNodeId": "node_incident_price_check_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0,
+            "karen_index": -10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_price_check_resolve",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "text": "KEY CLICK! Donna turns the supervisor override key with a warm smile: 'Endcap had yesterday's promo sticker, but at MegaMart, customer goodwill always comes first! You get it for nineteen dollars!' The shopper beams with delight: 'You all are the absolute sweetest! Best customer service in town!' Brenda winks at you: 'Boom! Another customer for life. You stayed calm and kept the energy bright!' You feel an exhilarating buzz—this job really does make people happy when a team works in harmony.",
       "nextNodeId": "node_shift1_start"
     },
     {

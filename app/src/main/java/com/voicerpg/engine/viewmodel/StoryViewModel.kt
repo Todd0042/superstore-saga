@@ -346,6 +346,15 @@ class StoryViewModel(
         } else {
             cancelPendingStoryMode()
         }
+        persistCurrentState()
+    }
+
+    fun toggleAutoPlay(): Boolean {
+        val willEnable = !_state.value.isPureStoryMode
+        setPureStoryMode(willEnable)
+        val msg = if (willEnable) "Auto play enabled." else "Auto play disabled."
+        combatNarrator.speak(msg, force = true)
+        return willEnable
     }
 
     fun toggleStoryAutoPlayPause(): Boolean {
@@ -566,7 +575,7 @@ class StoryViewModel(
             )
         }
 
-        val isStoryMode = targetSlot == SaveManager.STORY_MODE_SLOT
+        val isStoryMode = existingSave.isAutoPlayEnabled || (targetSlot == SaveManager.STORY_MODE_SLOT)
         _state.value = _state.value.copy(
             currentScene = restoredScene,
             currentNode = formatNodeForPlayer(restoredNode, existingSave.player),
@@ -604,6 +613,9 @@ class StoryViewModel(
         musicManager?.setVolume(existingSave.musicVolume)
         musicManager?.playTrack(restoredScene.musicAsset)
         narrateCurrentNode()
+        if (isStoryMode) {
+            scheduleStoryModeNextStep(_state.value.currentNode, delayMs = 1200L)
+        }
     }
 
     /**
@@ -1190,6 +1202,7 @@ class StoryViewModel(
             achievements = s.achievements,
             recentDialogueLog = s.dialogueHistory.takeLast(60),
             isEyesFreeMode = combatNarrator.isEyesFreeMode.value,
+            isAutoPlayEnabled = s.isPureStoryMode,
             isPocketGuardEnabled = combatNarrator.isPocketGuardEnabled.value,
             isCombatNarrationEnabled = combatNarrator.isCombatNarrationEnabled.value,
             isAutoListen = speechManager.isAutoListen.value,
