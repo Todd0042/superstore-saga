@@ -5539,7 +5539,12 @@
           ],
           "nextNodeId": "node_shift11_fridge"
         }
-      ]
+      ],
+      "metricOverrides": {
+        "store_morale": 55.0,
+        "labor_squeeze": 45.0,
+        "associate_engagement": 60.0
+      }
     },
     {
       "id": "node_shift11_fridge",
@@ -5810,18 +5815,55 @@
       "choices": [
         {
           "id": "choice_s13_stocker_solo",
-          "text": "Stack the top-stock solo, aching with fatigue while Todd audits from afar.",
+          "text": "Stack the top-stock solo with quiet determination, surviving the shift.",
           "voiceKeywords": [
             "stack",
             "solo",
             "fatigue",
             "hoist",
-            "riser"
+            "riser",
+            "endure"
+          ],
+          "nextNodeId": "node_shift14_stocker",
+          "metricDeltas": {
+            "labor_squeeze": 10.0,
+            "store_morale": 5.0
+          }
+        },
+        {
+          "id": "choice_s13_stocker_report",
+          "text": "Radio Todd immediately to report Kyle's absence and curry favor with management.",
+          "voiceKeywords": [
+            "radio",
+            "todd",
+            "report",
+            "kyle",
+            "management",
+            "curry"
           ],
           "nextNodeId": "node_shift14_stocker",
           "metricDeltas": {
             "labor_squeeze": 15.0,
-            "store_morale": -10.0
+            "associate_engagement": -10.0,
+            "store_morale": -15.0
+          }
+        },
+        {
+          "id": "choice_s13_stocker_boundary",
+          "text": "Lift only what OSHA safety permits solo, leaving the bulk freight for Kyle's return.",
+          "voiceKeywords": [
+            "safety",
+            "osha",
+            "boundary",
+            "permit",
+            "wait",
+            "kyle"
+          ],
+          "nextNodeId": "node_shift14_stocker",
+          "metricDeltas": {
+            "associate_engagement": -15.0,
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
           }
         }
       ]
@@ -6095,19 +6137,53 @@
       "text": "Shift 13: Tandem express lanes are slammed. Your partner cashier winces: 'Gotta take an emergency five, bro.' Forty-five minutes pass. Customers sigh loudly, tapping cards on the belt while you scan non-stop.",
       "choices": [
         {
-          "id": "choice_s13_cashier_solo",
-          "text": "Keep your smile fixed and power through thirty shopping carts alone.",
+          "id": "choice_s13_cashier_pace",
+          "text": "Keep scanning steadily, greeting customers with calm reassurance.",
           "voiceKeywords": [
-            "smile",
-            "power",
-            "carts",
-            "solo",
-            "rush"
+            "scanning",
+            "pace",
+            "calm",
+            "steady",
+            "reassurance"
           ],
           "nextNodeId": "node_shift14_cashier",
           "metricDeltas": {
-            "store_morale": -15.0,
-            "labor_squeeze": 15.0
+            "associate_engagement": 10.0,
+            "store_morale": 5.0
+          }
+        },
+        {
+          "id": "choice_s13_cashier_report",
+          "text": "Page Marsha overhead repeatedly, demanding relief cashier discipline.",
+          "voiceKeywords": [
+            "page",
+            "marsha",
+            "discipline",
+            "relief",
+            "demand"
+          ],
+          "nextNodeId": "node_shift14_cashier",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "associate_engagement": -10.0,
+            "store_morale": -15.0
+          }
+        },
+        {
+          "id": "choice_s13_cashier_boundary",
+          "text": "Scan strictly one customer at a time without stressing over long lines.",
+          "voiceKeywords": [
+            "one at a time",
+            "boundary",
+            "relax",
+            "strict",
+            "calm"
+          ],
+          "nextNodeId": "node_shift14_cashier",
+          "metricDeltas": {
+            "associate_engagement": -15.0,
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
           }
         }
       ]
@@ -6380,19 +6456,54 @@
       "text": "Shift 13: Mid-truck unload. Derrick announces a 'quick smoke break' and vanishes behind the outdoor pallets for 45 minutes. Heavy canned goods jam the roller conveyor and crash to the floor.",
       "choices": [
         {
-          "id": "choice_s13_unloader_catch",
-          "text": "Sprint along the roller line, stacking heavy cartons alone to clear the jam.",
+          "id": "choice_s13_unloader_pace",
+          "text": "Keep the roller line moving with Mack, pacing your breath and lifts.",
           "voiceKeywords": [
-            "sprint",
-            "stack",
-            "conveyor",
-            "alone",
-            "cartons"
+            "line",
+            "mack",
+            "pace",
+            "rollers",
+            "lifting"
+          ],
+          "nextNodeId": "node_shift14_unloader",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "store_morale": 5.0
+          }
+        },
+        {
+          "id": "choice_s13_unloader_rat",
+          "text": "Tell supervisor Todd that younger unloaders are hiding behind pallet stacks.",
+          "voiceKeywords": [
+            "todd",
+            "unloaders",
+            "hiding",
+            "rat",
+            "pallets",
+            "report"
           ],
           "nextNodeId": "node_shift14_unloader",
           "metricDeltas": {
             "labor_squeeze": 15.0,
+            "associate_engagement": -10.0,
             "store_morale": -15.0
+          }
+        },
+        {
+          "id": "choice_s13_unloader_boundary",
+          "text": "Slow the conveyor line to safe 1-person speed and refuse dangerous over-lifting.",
+          "voiceKeywords": [
+            "slow",
+            "conveyor",
+            "safe",
+            "boundary",
+            "refuse"
+          ],
+          "nextNodeId": "node_shift14_unloader",
+          "metricDeltas": {
+            "associate_engagement": -15.0,
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
           }
         }
       ]
@@ -6665,19 +6776,53 @@
       "text": "Shift 13: An irate shopper demands a full cash refund on a dropped, cracked drone. Chad spots them, slips behind the TV wall, and whispers: 'All yours rookie, checking backroom stock!'",
       "choices": [
         {
-          "id": "choice_s13_spec_policy",
-          "text": "Quote corporate warranty policy with poise and defuse the irate customer.",
+          "id": "choice_s13_spec_assist",
+          "text": "Answer customer questions with expertise, holding down the specialty counter.",
           "voiceKeywords": [
-            "quote",
-            "policy",
-            "poise",
-            "defuse",
-            "customer"
+            "assist",
+            "expertise",
+            "specialty",
+            "counter",
+            "patience"
           ],
           "nextNodeId": "node_shift14_specialist",
           "metricDeltas": {
-            "karen_index": -15.0,
-            "store_morale": -5.0
+            "associate_engagement": 10.0,
+            "store_morale": 5.0
+          }
+        },
+        {
+          "id": "choice_s13_spec_chad_page",
+          "text": "Page Chad loudly across the entire store to expose his slacking to management.",
+          "voiceKeywords": [
+            "page",
+            "chad",
+            "slacking",
+            "expose",
+            "management"
+          ],
+          "nextNodeId": "node_shift14_specialist",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "associate_engagement": -10.0,
+            "store_morale": -15.0
+          }
+        },
+        {
+          "id": "choice_s13_spec_boundary",
+          "text": "Assist only shoppers who wait patiently, declining to stress over Chad's absence.",
+          "voiceKeywords": [
+            "patient",
+            "boundary",
+            "wait",
+            "specialist",
+            "calm"
+          ],
+          "nextNodeId": "node_shift14_specialist",
+          "metricDeltas": {
+            "associate_engagement": -15.0,
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
           }
         }
       ]
@@ -6938,7 +7083,12 @@
           ],
           "nextNodeId": "node_shift23_branch"
         }
-      ]
+      ],
+      "metricOverrides": {
+        "store_morale": 48.0,
+        "labor_squeeze": 60.0,
+        "associate_engagement": 55.0
+      }
     },
     {
       "id": "node_shift23_branch",
@@ -7164,18 +7314,54 @@
       "choices": [
         {
           "id": "choice_s24_stocker_greet",
-          "text": "Deliver crisp, robotic corporate greetings to every passing shopper.",
+          "text": "Greet shoppers with natural warmth while keeping your steady 62-case stocking pace.",
           "voiceKeywords": [
             "greet",
-            "robotic",
-            "corporate",
-            "shopper",
-            "rule"
+            "warmth",
+            "steady",
+            "pace",
+            "stocker",
+            "aisle"
           ],
           "nextNodeId": "node_shift25_stocker",
           "metricDeltas": {
-            "store_morale": -5.0,
-            "associate_engagement": 10.0
+            "associate_engagement": 10.0,
+            "store_morale": 5.0
+          }
+        },
+        {
+          "id": "choice_s24_stocker_sprint",
+          "text": "Sprint recklessly and ignore customer greetings to hit 80 cases on Todd's tablet.",
+          "voiceKeywords": [
+            "sprint",
+            "reckless",
+            "speed",
+            "cases",
+            "todd",
+            "impress"
+          ],
+          "nextNodeId": "node_shift25_stocker",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "associate_engagement": -10.0,
+            "store_morale": -15.0
+          }
+        },
+        {
+          "id": "choice_s24_stocker_contract",
+          "text": "Stock at the exact contractual baseline (50 cases) and refuse stopwatch anxiety.",
+          "voiceKeywords": [
+            "contractual",
+            "baseline",
+            "refuse",
+            "stopwatch",
+            "calm"
+          ],
+          "nextNodeId": "node_shift25_stocker",
+          "metricDeltas": {
+            "associate_engagement": -15.0,
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
           }
         }
       ]
@@ -7450,19 +7636,55 @@
       "text": "Shift 24: THE 10-FOOT EYE-CONTACT MANDATE. Management reviews register lane camera footage to verify you greeted approaching shoppers before their cart wheels crossed the yellow line.",
       "choices": [
         {
-          "id": "choice_s24_cashier_greet",
-          "text": "Deliver energetic greetings to arriving customers while sliding groceries.",
+          "id": "choice_s24_cashier_tender",
+          "text": "Use Brenda's subtotal pause trick to protect customer eggs and maintain scan score.",
           "voiceKeywords": [
-            "greet",
-            "energetic",
-            "eye contact",
-            "customer",
-            "smile"
+            "subtotal",
+            "pause",
+            "eggs",
+            "protect",
+            "brenda",
+            "score"
           ],
           "nextNodeId": "node_shift25_cashier",
           "metricDeltas": {
-            "karen_index": -10.0,
-            "associate_engagement": 10.0
+            "associate_engagement": 10.0,
+            "store_morale": 5.0
+          }
+        },
+        {
+          "id": "choice_s24_cashier_slam",
+          "text": "Slam groceries across the glass scanner at breakneck speed, disregarding crushed goods.",
+          "voiceKeywords": [
+            "slam",
+            "breakneck",
+            "speed",
+            "fast",
+            "impress",
+            "crush"
+          ],
+          "nextNodeId": "node_shift25_cashier",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "associate_engagement": -10.0,
+            "store_morale": -15.0
+          }
+        },
+        {
+          "id": "choice_s24_cashier_pace",
+          "text": "Ring groceries at a comfortable human tempo regardless of algorithmic chimes.",
+          "voiceKeywords": [
+            "human",
+            "tempo",
+            "comfortable",
+            "ignore",
+            "chimes"
+          ],
+          "nextNodeId": "node_shift25_cashier",
+          "metricDeltas": {
+            "associate_engagement": -15.0,
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
           }
         }
       ]
@@ -7522,19 +7744,55 @@
       "text": "Shift 27: STORE CARD SQUEEZE. Cheryl tapes a flyer on your register: 'Target: 3 MasterCards today. Cashiers under quota get assigned closing cart duty.' An elderly shopper is paying with cash.",
       "choices": [
         {
-          "id": "choice_s27_cashier_skip",
-          "text": "Skip the predatory 29.99% card pitch and protect the pensioner's peace.",
+          "id": "choice_s27_cashier_transparent",
+          "text": "Give shoppers a transparent warning about high interest rates before offering pamphlets.",
           "voiceKeywords": [
-            "skip",
-            "protect",
-            "pensioner",
-            "card",
-            "peace"
+            "transparent",
+            "warning",
+            "interest",
+            "pamphlet",
+            "protect"
           ],
           "nextNodeId": "node_shift28_cashier",
           "metricDeltas": {
-            "store_morale": 15.0,
-            "labor_squeeze": 10.0
+            "associate_engagement": 10.0,
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
+          }
+        },
+        {
+          "id": "choice_s27_cashier_hardsell",
+          "text": "Use aggressive high-pressure scripts to trap shoppers into 29.99% APR store cards.",
+          "voiceKeywords": [
+            "hardsell",
+            "trap",
+            "pressure",
+            "aggressive",
+            "quota",
+            "bonus"
+          ],
+          "nextNodeId": "node_shift28_cashier",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "associate_engagement": -10.0,
+            "store_morale": -15.0
+          }
+        },
+        {
+          "id": "choice_s27_cashier_silent",
+          "text": "Leave pamphlets on the counter silently without pitching anyone.",
+          "voiceKeywords": [
+            "silent",
+            "pamphlet",
+            "counter",
+            "quiet",
+            "pass"
+          ],
+          "nextNodeId": "node_shift28_cashier",
+          "metricDeltas": {
+            "associate_engagement": -15.0,
+            "store_morale": 5.0,
+            "labor_squeeze": 0.0
           }
         }
       ]
@@ -8319,7 +8577,12 @@
           ],
           "nextNodeId": "node_shift35_branch"
         }
-      ]
+      ],
+      "metricOverrides": {
+        "store_morale": 42.0,
+        "labor_squeeze": 70.0,
+        "associate_engagement": 52.0
+      }
     },
     {
       "id": "node_shift35_branch",
@@ -8591,6 +8854,42 @@
             "associate_engagement": 15.0,
             "labor_squeeze": -5.0
           }
+        },
+        {
+          "id": "choice_s37_stocker_concede",
+          "text": "Let management shave the 15 minutes without complaint to avoid making waves with Todd.",
+          "voiceKeywords": [
+            "concede",
+            "shave",
+            "accept",
+            "silent",
+            "todd",
+            "waves"
+          ],
+          "nextNodeId": "node_shift38_stocker",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "associate_engagement": -15.0,
+            "store_morale": -15.0
+          }
+        },
+        {
+          "id": "choice_s37_stocker_slacken",
+          "text": "Note the shaved time on your personal log and slow your floor stocking by 15 minutes.",
+          "voiceKeywords": [
+            "slacken",
+            "slow",
+            "log",
+            "even",
+            "contract",
+            "quiet"
+          ],
+          "nextNodeId": "node_shift38_stocker",
+          "metricDeltas": {
+            "associate_engagement": -15.0,
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
+          }
         }
       ]
     },
@@ -8691,6 +8990,41 @@
           "metricDeltas": {
             "associate_engagement": 15.0,
             "store_morale": 10.0
+          }
+        },
+        {
+          "id": "choice_s41_stocker_sign",
+          "text": "Sign Todd's coaching form and offer to work extra weekend closes to get back in his favor.",
+          "voiceKeywords": [
+            "sign",
+            "todd",
+            "favor",
+            "extra",
+            "closes",
+            "appease"
+          ],
+          "nextNodeId": "node_shift42_stocker",
+          "metricDeltas": {
+            "labor_squeeze": 20.0,
+            "associate_engagement": -15.0,
+            "store_morale": -20.0
+          }
+        },
+        {
+          "id": "choice_s41_stocker_silence",
+          "text": "Hand the coaching clipboard back to Todd without speaking a single word.",
+          "voiceKeywords": [
+            "silence",
+            "clipboard",
+            "unspoken",
+            "hand back",
+            "quiet"
+          ],
+          "nextNodeId": "node_shift42_stocker",
+          "metricDeltas": {
+            "associate_engagement": -10.0,
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
           }
         }
       ]
@@ -8889,6 +9223,40 @@
             "associate_engagement": 15.0,
             "labor_squeeze": -5.0
           }
+        },
+        {
+          "id": "choice_s37_cashier_cooperate",
+          "text": "Tell Marsha you understand discrepancies happen and offer to absorb the shortfall.",
+          "voiceKeywords": [
+            "absorb",
+            "cooperate",
+            "marsha",
+            "shortfall",
+            "curry"
+          ],
+          "nextNodeId": "node_shift38_cashier",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "associate_engagement": -15.0,
+            "store_morale": -15.0
+          }
+        },
+        {
+          "id": "choice_s37_cashier_detach",
+          "text": "State plainly: 'I was on scheduled lunch; whatever happened on that till isn't my concern.'",
+          "voiceKeywords": [
+            "detach",
+            "lunch",
+            "unconcerned",
+            "plain",
+            "boundary"
+          ],
+          "nextNodeId": "node_shift38_cashier",
+          "metricDeltas": {
+            "associate_engagement": -15.0,
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
+          }
         }
       ]
     },
@@ -8990,6 +9358,41 @@
           "metricDeltas": {
             "associate_engagement": 15.0,
             "store_morale": 10.0
+          }
+        },
+        {
+          "id": "choice_s41_cashier_pay",
+          "text": "Sign Marsha's wage deduction promissory note to avoid administrative retaliation.",
+          "voiceKeywords": [
+            "pay",
+            "deduction",
+            "marsha",
+            "appease",
+            "promissory",
+            "sign"
+          ],
+          "nextNodeId": "node_shift42_cashier",
+          "metricDeltas": {
+            "labor_squeeze": 20.0,
+            "associate_engagement": -15.0,
+            "store_morale": -20.0
+          }
+        },
+        {
+          "id": "choice_s41_cashier_walk",
+          "text": "Ignore the clipboard and walk to the breakroom for your legally mandated rest period.",
+          "voiceKeywords": [
+            "walk",
+            "breakroom",
+            "rest",
+            "mandated",
+            "ignore"
+          ],
+          "nextNodeId": "node_shift42_cashier",
+          "metricDeltas": {
+            "associate_engagement": -10.0,
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
           }
         }
       ]
@@ -9760,7 +10163,12 @@
           ],
           "nextNodeId": "node_shift47_branch"
         }
-      ]
+      ],
+      "metricOverrides": {
+        "store_morale": 35.0,
+        "labor_squeeze": 75.0,
+        "associate_engagement": 50.0
+      }
     },
     {
       "id": "node_shift47_branch",
@@ -9976,7 +10384,44 @@
           "nextNodeId": "node_hub_stocker_act5",
           "metricDeltas": {
             "store_morale": 10.0,
+            "associate_engagement": 10.0,
             "labor_squeeze": -5.0
+          }
+        },
+        {
+          "id": "choice_s47_stocker_comply",
+          "text": "Report to the manager's office to help enforce the inventory recount on your peers.",
+          "voiceKeywords": [
+            "report",
+            "office",
+            "enforce",
+            "recount",
+            "todd",
+            "comply"
+          ],
+          "nextNodeId": "node_hub_stocker_act5",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "store_morale": -15.0,
+            "associate_engagement": -10.0
+          }
+        },
+        {
+          "id": "choice_s47_stocker_sit",
+          "text": "Clock out on the terminal, sit in the breakroom, and refuse off-the-clock tasks.",
+          "voiceKeywords": [
+            "clock out",
+            "terminal",
+            "sit",
+            "breakroom",
+            "refuse",
+            "boundary"
+          ],
+          "nextNodeId": "node_hub_stocker_act5",
+          "metricDeltas": {
+            "associate_engagement": -15.0,
+            "store_morale": 10.0,
+            "labor_squeeze": 0.0
           }
         }
       ]
@@ -10029,6 +10474,42 @@
             "store_morale": 15.0,
             "associate_engagement": 15.0
           }
+        },
+        {
+          "id": "choice_s49_stocker_accept_deal",
+          "text": "Pocket Todd's $1,000 cash bribe and promise executive loyalty to Henderson's administration.",
+          "voiceKeywords": [
+            "pocket",
+            "cash",
+            "bribe",
+            "loyalty",
+            "henderson",
+            "deal"
+          ],
+          "nextNodeId": "node_shift50_stocker",
+          "metricDeltas": {
+            "labor_squeeze": 25.0,
+            "associate_engagement": -20.0,
+            "store_morale": -25.0
+          }
+        },
+        {
+          "id": "choice_s49_stocker_record_phone",
+          "text": "Pretend to consider the offer while recording Todd's bribe on your smartphone audio.",
+          "voiceKeywords": [
+            "record",
+            "audio",
+            "smartphone",
+            "consider",
+            "wire",
+            "tape"
+          ],
+          "nextNodeId": "node_shift50_stocker",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "store_morale": 15.0,
+            "labor_squeeze": -10.0
+          }
         }
       ]
     },
@@ -10052,8 +10533,44 @@
           ],
           "nextNodeId": "node_shift51_stocker",
           "metricDeltas": {
-            "store_morale": 20.0,
+            "store_morale": 15.0,
+            "associate_engagement": 15.0,
             "labor_squeeze": -10.0
+          }
+        },
+        {
+          "id": "choice_s50_stocker_hide",
+          "text": "Stack tall fertilizer bags in front of the window to hide the chains from the fire marshal.",
+          "voiceKeywords": [
+            "hide",
+            "fertilizer",
+            "block",
+            "cover",
+            "window",
+            "protect"
+          ],
+          "nextNodeId": "node_shift51_stocker",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "store_morale": -15.0,
+            "associate_engagement": -10.0
+          }
+        },
+        {
+          "id": "choice_s50_stocker_watch",
+          "text": "Step away from the windows and observe the marshal's car from a neutral distance.",
+          "voiceKeywords": [
+            "observe",
+            "neutral",
+            "watch",
+            "distance",
+            "step back"
+          ],
+          "nextNodeId": "node_shift51_stocker",
+          "metricDeltas": {
+            "associate_engagement": -10.0,
+            "store_morale": 10.0,
+            "labor_squeeze": 0.0
           }
         }
       ]
@@ -10102,8 +10619,44 @@
           ],
           "nextNodeId": "node_shift53_stocker",
           "metricDeltas": {
-            "associate_engagement": 20.0,
+            "associate_engagement": 15.0,
             "store_morale": 15.0
+          }
+        },
+        {
+          "id": "choice_s52_stocker_spy",
+          "text": "Slip out of the breakroom and alert Todd that associates are assembling evidence.",
+          "voiceKeywords": [
+            "spy",
+            "alert",
+            "todd",
+            "snitch",
+            "breakroom",
+            "report"
+          ],
+          "nextNodeId": "node_shift53_stocker",
+          "metricDeltas": {
+            "labor_squeeze": 20.0,
+            "store_morale": -20.0,
+            "associate_engagement": -15.0
+          }
+        },
+        {
+          "id": "choice_s52_stocker_sip",
+          "text": "Sip your coffee quietly at the corner table, letting Donna and Mack lead.",
+          "voiceKeywords": [
+            "sip",
+            "coffee",
+            "quiet",
+            "corner",
+            "table",
+            "neutral"
+          ],
+          "nextNodeId": "node_shift53_stocker",
+          "metricDeltas": {
+            "associate_engagement": -10.0,
+            "store_morale": 10.0,
+            "labor_squeeze": 0.0
           }
         }
       ]
@@ -10154,8 +10707,45 @@
           ],
           "nextNodeId": "node_shift55_start",
           "metricDeltas": {
-            "store_morale": 25.0,
+            "store_morale": 20.0,
+            "associate_engagement": 15.0,
             "labor_squeeze": -15.0
+          }
+        },
+        {
+          "id": "choice_s54_stocker_defend_boss",
+          "text": "Slip through the side entrance into Henderson's office to stand guard beside his desk.",
+          "voiceKeywords": [
+            "defend",
+            "guard",
+            "henderson",
+            "side",
+            "desk",
+            "loyal"
+          ],
+          "nextNodeId": "node_shift55_start",
+          "metricDeltas": {
+            "labor_squeeze": 25.0,
+            "store_morale": -25.0,
+            "associate_engagement": -20.0
+          }
+        },
+        {
+          "id": "choice_s54_stocker_watch_far",
+          "text": "Stand near the pharmacy registers, watching the executive confrontation unfold from safety.",
+          "voiceKeywords": [
+            "pharmacy",
+            "watch",
+            "safety",
+            "unfold",
+            "distance",
+            "quiet"
+          ],
+          "nextNodeId": "node_shift55_start",
+          "metricDeltas": {
+            "associate_engagement": -15.0,
+            "store_morale": 10.0,
+            "labor_squeeze": 0.0
           }
         }
       ]
@@ -10180,7 +10770,44 @@
           "nextNodeId": "node_hub_cashier_act5",
           "metricDeltas": {
             "store_morale": 10.0,
+            "associate_engagement": 10.0,
             "labor_squeeze": -5.0
+          }
+        },
+        {
+          "id": "choice_s47_cashier_appease",
+          "text": "Offer to audit all 12 registers yourself to prove your managerial readiness to Henderson.",
+          "voiceKeywords": [
+            "audit",
+            "registers",
+            "readiness",
+            "henderson",
+            "managerial",
+            "prove"
+          ],
+          "nextNodeId": "node_hub_cashier_act5",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "store_morale": -15.0,
+            "associate_engagement": -10.0
+          }
+        },
+        {
+          "id": "choice_s47_cashier_sit",
+          "text": "Lock your register till and wait quietly in the breakroom until morning.",
+          "voiceKeywords": [
+            "lock",
+            "till",
+            "wait",
+            "breakroom",
+            "quiet",
+            "morning"
+          ],
+          "nextNodeId": "node_hub_cashier_act5",
+          "metricDeltas": {
+            "associate_engagement": -15.0,
+            "store_morale": 10.0,
+            "labor_squeeze": 0.0
           }
         }
       ]
@@ -10232,6 +10859,41 @@
             "store_morale": 15.0,
             "associate_engagement": 15.0
           }
+        },
+        {
+          "id": "choice_s49_cashier_accept_lead",
+          "text": "Accept the Front-End Supervisor promotion and pledge to enforce register quotas on coworkers.",
+          "voiceKeywords": [
+            "supervisor",
+            "promotion",
+            "pledge",
+            "enforce",
+            "quotas",
+            "corporate"
+          ],
+          "nextNodeId": "node_shift50_cashier",
+          "metricDeltas": {
+            "labor_squeeze": 25.0,
+            "associate_engagement": -20.0,
+            "store_morale": -25.0
+          }
+        },
+        {
+          "id": "choice_s49_cashier_walkout_join",
+          "text": "Turn your back on Marsha and walk to the front concourse to rally the cashiers.",
+          "voiceKeywords": [
+            "rally",
+            "cashiers",
+            "concourse",
+            "solidarity",
+            "turn back"
+          ],
+          "nextNodeId": "node_shift50_cashier",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 20.0,
+            "labor_squeeze": -15.0
+          }
         }
       ]
     },
@@ -10255,8 +10917,43 @@
           ],
           "nextNodeId": "node_shift51_cashier",
           "metricDeltas": {
-            "associate_engagement": 20.0,
-            "store_morale": 15.0
+            "associate_engagement": 15.0,
+            "store_morale": 15.0,
+            "labor_squeeze": -10.0
+          }
+        },
+        {
+          "id": "choice_s50_cashier_block",
+          "text": "Lower the advertising roller blinds so investigators outside cannot see inside.",
+          "voiceKeywords": [
+            "blinds",
+            "lower",
+            "block",
+            "cover",
+            "investigators"
+          ],
+          "nextNodeId": "node_shift51_cashier",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "store_morale": -15.0,
+            "associate_engagement": -10.0
+          }
+        },
+        {
+          "id": "choice_s50_cashier_watch",
+          "text": "Remain seated at the customer service bench without interacting with the glass.",
+          "voiceKeywords": [
+            "bench",
+            "seated",
+            "remain",
+            "neutral",
+            "quiet"
+          ],
+          "nextNodeId": "node_shift51_cashier",
+          "metricDeltas": {
+            "associate_engagement": -10.0,
+            "store_morale": 10.0,
+            "labor_squeeze": 0.0
           }
         }
       ]
@@ -10305,8 +11002,43 @@
           ],
           "nextNodeId": "node_shift53_cashier",
           "metricDeltas": {
-            "associate_engagement": 20.0,
+            "associate_engagement": 15.0,
             "store_morale": 15.0
+          }
+        },
+        {
+          "id": "choice_s52_cashier_snitch",
+          "text": "Text Marsha a warning that Brenda has documented all register supervisor overrides.",
+          "voiceKeywords": [
+            "text",
+            "marsha",
+            "warning",
+            "snitch",
+            "register",
+            "overrides"
+          ],
+          "nextNodeId": "node_shift53_cashier",
+          "metricDeltas": {
+            "labor_squeeze": 20.0,
+            "store_morale": -20.0,
+            "associate_engagement": -15.0
+          }
+        },
+        {
+          "id": "choice_s52_cashier_neutral",
+          "text": "Keep your personal till receipts tucked in your locker and let Brenda present her notes.",
+          "voiceKeywords": [
+            "locker",
+            "tucked",
+            "neutral",
+            "brenda",
+            "quiet"
+          ],
+          "nextNodeId": "node_shift53_cashier",
+          "metricDeltas": {
+            "associate_engagement": -10.0,
+            "store_morale": 10.0,
+            "labor_squeeze": 0.0
           }
         }
       ]
@@ -10355,8 +11087,44 @@
           ],
           "nextNodeId": "node_shift55_start",
           "metricDeltas": {
-            "store_morale": 25.0,
+            "store_morale": 20.0,
+            "associate_engagement": 15.0,
             "labor_squeeze": -15.0
+          }
+        },
+        {
+          "id": "choice_s54_cashier_defend_boss",
+          "text": "Stand inside Henderson's doorway, shielding the manager from the crowd of cashiers.",
+          "voiceKeywords": [
+            "shield",
+            "doorway",
+            "henderson",
+            "protect",
+            "crowd",
+            "boss"
+          ],
+          "nextNodeId": "node_shift55_start",
+          "metricDeltas": {
+            "labor_squeeze": 25.0,
+            "store_morale": -25.0,
+            "associate_engagement": -20.0
+          }
+        },
+        {
+          "id": "choice_s54_cashier_watch_far",
+          "text": "Watch from the service desk as Brenda and the lead cashiers knock on Henderson's door.",
+          "voiceKeywords": [
+            "watch",
+            "service desk",
+            "brenda",
+            "distance",
+            "quiet"
+          ],
+          "nextNodeId": "node_shift55_start",
+          "metricDeltas": {
+            "associate_engagement": -15.0,
+            "store_morale": 10.0,
+            "labor_squeeze": 0.0
           }
         }
       ]
@@ -10382,7 +11150,44 @@
           "nextNodeId": "node_hub_unloader_act5",
           "metricDeltas": {
             "store_morale": 10.0,
+            "associate_engagement": 10.0,
             "labor_squeeze": -5.0
+          }
+        },
+        {
+          "id": "choice_s47_unloader_speed",
+          "text": "Pressure the junior unloaders to clear the trailers despite the padlocked exits.",
+          "voiceKeywords": [
+            "pressure",
+            "junior",
+            "trailers",
+            "clear",
+            "speed",
+            "force"
+          ],
+          "nextNodeId": "node_hub_unloader_act5",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "store_morale": -15.0,
+            "associate_engagement": -10.0
+          }
+        },
+        {
+          "id": "choice_s47_unloader_sit",
+          "text": "Power down the electric jack and sit on an empty pallet, refusing unsafe labor.",
+          "voiceKeywords": [
+            "power down",
+            "jack",
+            "sit",
+            "pallet",
+            "unsafe",
+            "refuse"
+          ],
+          "nextNodeId": "node_hub_unloader_act5",
+          "metricDeltas": {
+            "associate_engagement": -15.0,
+            "store_morale": 10.0,
+            "labor_squeeze": 0.0
           }
         }
       ]
@@ -10434,6 +11239,42 @@
             "store_morale": 15.0,
             "associate_engagement": 15.0
           }
+        },
+        {
+          "id": "choice_s49_unloader_hand_over",
+          "text": "Hand the invoices to Clint in exchange for written immunity and guaranteed job security.",
+          "voiceKeywords": [
+            "hand over",
+            "clint",
+            "immunity",
+            "security",
+            "deal",
+            "protect"
+          ],
+          "nextNodeId": "node_shift50_unloader",
+          "metricDeltas": {
+            "labor_squeeze": 25.0,
+            "associate_engagement": -20.0,
+            "store_morale": -25.0
+          }
+        },
+        {
+          "id": "choice_s49_unloader_call_mack",
+          "text": "Blow your dock safety whistle loudly, calling Mack and the warehouse crew to the bay.",
+          "voiceKeywords": [
+            "whistle",
+            "mack",
+            "crew",
+            "safety",
+            "bay",
+            "rally"
+          ],
+          "nextNodeId": "node_shift50_unloader",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 20.0,
+            "labor_squeeze": -15.0
+          }
         }
       ]
     },
@@ -10457,8 +11298,44 @@
           ],
           "nextNodeId": "node_shift51_unloader",
           "metricDeltas": {
-            "associate_engagement": 20.0,
-            "store_morale": 15.0
+            "associate_engagement": 15.0,
+            "store_morale": 15.0,
+            "labor_squeeze": -10.0
+          }
+        },
+        {
+          "id": "choice_s50_unloader_shut",
+          "text": "Pull the exterior dock curtains shut to prevent police from photographing the chained doors.",
+          "voiceKeywords": [
+            "curtains",
+            "shut",
+            "block",
+            "prevent",
+            "police",
+            "hide"
+          ],
+          "nextNodeId": "node_shift51_unloader",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "store_morale": -15.0,
+            "associate_engagement": -10.0
+          }
+        },
+        {
+          "id": "choice_s50_unloader_watch",
+          "text": "Stand calmly with Mack near the compactor, watching the cruiser in the rearview mirror.",
+          "voiceKeywords": [
+            "compactor",
+            "calm",
+            "mack",
+            "cruiser",
+            "watch"
+          ],
+          "nextNodeId": "node_shift51_unloader",
+          "metricDeltas": {
+            "associate_engagement": -10.0,
+            "store_morale": 10.0,
+            "labor_squeeze": 0.0
           }
         }
       ]
@@ -10507,8 +11384,43 @@
           ],
           "nextNodeId": "node_shift53_unloader",
           "metricDeltas": {
-            "associate_engagement": 20.0,
+            "associate_engagement": 15.0,
             "store_morale": 15.0
+          }
+        },
+        {
+          "id": "choice_s52_unloader_inform",
+          "text": "Radio Clint that Mack is preparing to present video evidence to the police.",
+          "voiceKeywords": [
+            "radio",
+            "clint",
+            "inform",
+            "snitch",
+            "video",
+            "police"
+          ],
+          "nextNodeId": "node_shift53_unloader",
+          "metricDeltas": {
+            "labor_squeeze": 20.0,
+            "store_morale": -20.0,
+            "associate_engagement": -15.0
+          }
+        },
+        {
+          "id": "choice_s52_unloader_sit",
+          "text": "Lean against the vending machine and let Mack take charge of the paperwork.",
+          "voiceKeywords": [
+            "vending",
+            "lean",
+            "mack",
+            "paperwork",
+            "quiet"
+          ],
+          "nextNodeId": "node_shift53_unloader",
+          "metricDeltas": {
+            "associate_engagement": -10.0,
+            "store_morale": 10.0,
+            "labor_squeeze": 0.0
           }
         }
       ]
@@ -10557,8 +11469,45 @@
           ],
           "nextNodeId": "node_shift55_start",
           "metricDeltas": {
-            "store_morale": 25.0,
+            "store_morale": 20.0,
+            "associate_engagement": 15.0,
             "labor_squeeze": -15.0
+          }
+        },
+        {
+          "id": "choice_s54_unloader_defend_boss",
+          "text": "Step into the executive suite to block the doorway and offer Henderson personal protection.",
+          "voiceKeywords": [
+            "block",
+            "doorway",
+            "henderson",
+            "protection",
+            "suite",
+            "loyal"
+          ],
+          "nextNodeId": "node_shift55_start",
+          "metricDeltas": {
+            "labor_squeeze": 25.0,
+            "store_morale": -25.0,
+            "associate_engagement": -20.0
+          }
+        },
+        {
+          "id": "choice_s54_unloader_watch_far",
+          "text": "Lean against the bailer wall, watching Mack lead the confrontation from a safe distance.",
+          "voiceKeywords": [
+            "bailer",
+            "wall",
+            "watch",
+            "mack",
+            "distance",
+            "quiet"
+          ],
+          "nextNodeId": "node_shift55_start",
+          "metricDeltas": {
+            "associate_engagement": -15.0,
+            "store_morale": 10.0,
+            "labor_squeeze": 0.0
           }
         }
       ]
@@ -10584,7 +11533,44 @@
           "nextNodeId": "node_hub_specialist_act5",
           "metricDeltas": {
             "store_morale": 10.0,
+            "associate_engagement": 10.0,
             "labor_squeeze": -5.0
+          }
+        },
+        {
+          "id": "choice_s47_spec_help_chad",
+          "text": "Help Chad reformat the inventory terminals to secure executive favor.",
+          "voiceKeywords": [
+            "reformat",
+            "terminals",
+            "chad",
+            "help",
+            "executive",
+            "favor"
+          ],
+          "nextNodeId": "node_hub_specialist_act5",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "store_morale": -15.0,
+            "associate_engagement": -10.0
+          }
+        },
+        {
+          "id": "choice_s47_spec_sit",
+          "text": "Turn off your terminal screen and read a tech manual until scheduled shift end.",
+          "voiceKeywords": [
+            "turn off",
+            "screen",
+            "manual",
+            "read",
+            "boundary",
+            "quiet"
+          ],
+          "nextNodeId": "node_hub_specialist_act5",
+          "metricDeltas": {
+            "associate_engagement": -15.0,
+            "store_morale": 10.0,
+            "labor_squeeze": 0.0
           }
         }
       ]
@@ -10636,6 +11622,42 @@
             "store_morale": 15.0,
             "associate_engagement": 15.0
           }
+        },
+        {
+          "id": "choice_s49_spec_take_cut",
+          "text": "Take Chad's cut of the bonus and delete the server snapshot to secure your promotion.",
+          "voiceKeywords": [
+            "cut",
+            "bonus",
+            "delete",
+            "snapshot",
+            "promotion",
+            "chad"
+          ],
+          "nextNodeId": "node_shift50_specialist",
+          "metricDeltas": {
+            "labor_squeeze": 25.0,
+            "associate_engagement": -20.0,
+            "store_morale": -25.0
+          }
+        },
+        {
+          "id": "choice_s49_spec_transmit_now",
+          "text": "Open your phone hotspot and immediately transmit the server snapshot to the federal portal.",
+          "voiceKeywords": [
+            "hotspot",
+            "transmit",
+            "federal",
+            "portal",
+            "instant",
+            "upload"
+          ],
+          "nextNodeId": "node_shift50_specialist",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "store_morale": 20.0,
+            "labor_squeeze": -15.0
+          }
         }
       ]
     },
@@ -10659,8 +11681,44 @@
           ],
           "nextNodeId": "node_shift51_specialist",
           "metricDeltas": {
-            "associate_engagement": 20.0,
-            "store_morale": 15.0
+            "associate_engagement": 15.0,
+            "store_morale": 15.0,
+            "labor_squeeze": -10.0
+          }
+        },
+        {
+          "id": "choice_s50_spec_wipe_wifi",
+          "text": "Disconnect the store router to sever the federal investigators' Wi-Fi access.",
+          "voiceKeywords": [
+            "disconnect",
+            "router",
+            "sever",
+            "wifi",
+            "block",
+            "feds"
+          ],
+          "nextNodeId": "node_shift51_specialist",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "store_morale": -15.0,
+            "associate_engagement": -10.0
+          }
+        },
+        {
+          "id": "choice_s50_spec_watch",
+          "text": "Close your browser and wait quietly at the tech desk for external resolution.",
+          "voiceKeywords": [
+            "close",
+            "browser",
+            "wait",
+            "tech desk",
+            "quiet"
+          ],
+          "nextNodeId": "node_shift51_specialist",
+          "metricDeltas": {
+            "associate_engagement": -10.0,
+            "store_morale": 10.0,
+            "labor_squeeze": 0.0
           }
         }
       ]
@@ -10709,8 +11767,44 @@
           ],
           "nextNodeId": "node_shift53_specialist",
           "metricDeltas": {
-            "associate_engagement": 20.0,
+            "associate_engagement": 15.0,
             "store_morale": 15.0
+          }
+        },
+        {
+          "id": "choice_s52_spec_shred_copy",
+          "text": "Delete the local printer spool so Chad's name doesn't appear on the printed sheets.",
+          "voiceKeywords": [
+            "delete",
+            "spool",
+            "printer",
+            "chad",
+            "protect",
+            "sycophant"
+          ],
+          "nextNodeId": "node_shift53_specialist",
+          "metricDeltas": {
+            "labor_squeeze": 20.0,
+            "store_morale": -20.0,
+            "associate_engagement": -15.0
+          }
+        },
+        {
+          "id": "choice_s52_spec_watch",
+          "text": "Close your laptop and let Julian handle the distribution of files.",
+          "voiceKeywords": [
+            "close",
+            "laptop",
+            "julian",
+            "files",
+            "quiet",
+            "neutral"
+          ],
+          "nextNodeId": "node_shift53_specialist",
+          "metricDeltas": {
+            "associate_engagement": -10.0,
+            "store_morale": 10.0,
+            "labor_squeeze": 0.0
           }
         }
       ]
@@ -10759,8 +11853,45 @@
           ],
           "nextNodeId": "node_shift55_start",
           "metricDeltas": {
-            "store_morale": 25.0,
+            "store_morale": 20.0,
+            "associate_engagement": 15.0,
             "labor_squeeze": -15.0
+          }
+        },
+        {
+          "id": "choice_s54_spec_defend_boss",
+          "text": "Enter the office and offer to help Henderson encrypt his remaining personal files.",
+          "voiceKeywords": [
+            "encrypt",
+            "files",
+            "henderson",
+            "help",
+            "office",
+            "loyal"
+          ],
+          "nextNodeId": "node_shift55_start",
+          "metricDeltas": {
+            "labor_squeeze": 25.0,
+            "store_morale": -25.0,
+            "associate_engagement": -20.0
+          }
+        },
+        {
+          "id": "choice_s54_spec_watch_far",
+          "text": "Stay near the electronics counter watching Julian and Donna march on the office.",
+          "voiceKeywords": [
+            "counter",
+            "electronics",
+            "watch",
+            "julian",
+            "donna",
+            "quiet"
+          ],
+          "nextNodeId": "node_shift55_start",
+          "metricDeltas": {
+            "associate_engagement": -15.0,
+            "store_morale": 10.0,
+            "labor_squeeze": 0.0
           }
         }
       ]
@@ -10915,7 +12046,7 @@
       "side": "CENTER_NARRATOR",
       "changeSceneId": "scene_manager_office",
       "setFlagOnEnter": "game_completed",
-      "text": "ENDING 2: THE CORPORATE ASCENT. Corporate Vice President Vance visits your store in person. Impressed by your cold efficiency and ability to navigate high-pressure crises, he offers you Henderson's executive chair. You accept the gold nametag and sit behind the polished mahogany desk. You swear to yourself that you'll protect the workers—yet within your first month, corporate emails demand another 4% labor cut, and you catch yourself staring at the 45-second scanner tachometer. The cycle continues, and you are its new architect. Final Assessment: {score} ({rating})."
+      "text": "ENDING 2: THE CORPORATE ASCENT. Corporate Vice President Vance visits your store in person. Impressed by your cold efficiency and ability to navigate high-pressure crises, he offers you Henderson's executive chair. You accept the gold nametag and sit behind the polished mahogany desk. You swear to yourself that you'll protect the workers\u2014yet within your first month, corporate emails demand another 4% labor cut, and you catch yourself staring at the 45-second scanner tachometer. The cycle continues, and you are its new architect. Final Assessment: {score} ({rating})."
     },
     {
       "id": "node_ending_quiet_quitter",
@@ -10947,7 +12078,7 @@
       "side": "CENTER_NARRATOR",
       "changeSceneId": "scene_action_alley",
       "setFlagOnEnter": "game_completed",
-      "text": "ENDING 6: THE RETAIL SURVIVOR. The sirens fade, the yellow police tape is removed from the automatic sliding doors, and District Management sends in an interim store manager with a fresh clipboard and rehearsed corporate smiles. You didn't ascend to the executive suite, you didn't become a national whistleblower, and you didn't walk out. At 6:58 AM on Wednesday, you swipe your employee badge at the timeclock. You adjust your blue polyester vest, pull a fresh boxcutter from your pocket, and step out onto Center Action Alley to help an elderly shopper find canned peaches. Store managers come and go, corporate decrees burn themselves out, but the store endures—carried on the shoulders of survivors like you who cannot be broken. Final Assessment: {score} ({rating})."
+      "text": "ENDING 6: THE RETAIL SURVIVOR. The sirens fade, the yellow police tape is removed from the automatic sliding doors, and District Management sends in an interim store manager with a fresh clipboard and rehearsed corporate smiles. You didn't ascend to the executive suite, you didn't become a national whistleblower, and you didn't walk out. At 6:58 AM on Wednesday, you swipe your employee badge at the timeclock. You adjust your blue polyester vest, pull a fresh boxcutter from your pocket, and step out onto Center Action Alley to help an elderly shopper find canned peaches. Store managers come and go, corporate decrees burn themselves out, but the store endures\u2014carried on the shoulders of survivors like you who cannot be broken. Final Assessment: {score} ({rating})."
     }
   ]
 }
