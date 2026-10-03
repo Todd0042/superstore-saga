@@ -9,10 +9,16 @@
         {
           "type": "NOT_FLAG",
           "flag": "flag_incident_incident_cart_train_done"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act2_started"
         }
       ],
       "triggerNodeId": "node_incident_cart_train",
-      "applicableTracks": ["stocker"],
+      "applicableTracks": [
+        "stocker"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -24,10 +30,16 @@
         {
           "type": "NOT_FLAG",
           "flag": "flag_incident_incident_cart_train_done"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act2_started"
         }
       ],
       "triggerNodeId": "node_incident_cart_train_unloader",
-      "applicableTracks": ["unloader"],
+      "applicableTracks": [
+        "unloader"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -39,10 +51,16 @@
         {
           "type": "NOT_FLAG",
           "flag": "flag_incident_incident_cart_train_done"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act2_started"
         }
       ],
       "triggerNodeId": "node_incident_cart_train_cashier",
-      "applicableTracks": ["cashier"],
+      "applicableTracks": [
+        "cashier"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -54,10 +72,16 @@
         {
           "type": "NOT_FLAG",
           "flag": "flag_incident_incident_honey_spill_done"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act2_started"
         }
       ],
       "triggerNodeId": "node_incident_honey_spill",
-      "applicableTracks": ["stocker"],
+      "applicableTracks": [
+        "stocker"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -69,10 +93,16 @@
         {
           "type": "NOT_FLAG",
           "flag": "flag_incident_incident_honey_spill_done"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act2_started"
         }
       ],
       "triggerNodeId": "node_incident_honey_spill_cashier",
-      "applicableTracks": ["cashier"],
+      "applicableTracks": [
+        "cashier"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -84,10 +114,16 @@
         {
           "type": "NOT_FLAG",
           "flag": "flag_incident_incident_honey_spill_done"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act2_started"
         }
       ],
       "triggerNodeId": "node_incident_honey_spill_unloader",
-      "applicableTracks": ["unloader"],
+      "applicableTracks": [
+        "unloader"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -99,10 +135,16 @@
         {
           "type": "NOT_FLAG",
           "flag": "flag_incident_incident_honey_spill_done"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act2_started"
         }
       ],
       "triggerNodeId": "node_incident_honey_spill_specialist",
-      "applicableTracks": ["specialist"],
+      "applicableTracks": [
+        "specialist"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -114,10 +156,17 @@
         {
           "type": "NOT_FLAG",
           "flag": "flag_incident_incident_price_check_done"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act2_started"
         }
       ],
       "triggerNodeId": "node_incident_price_check",
-      "applicableTracks": ["cashier", "specialist"],
+      "applicableTracks": [
+        "cashier",
+        "specialist"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -129,10 +178,17 @@
         {
           "type": "NOT_FLAG",
           "flag": "flag_incident_incident_pallet_jack_assist_done"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act2_started"
         }
       ],
       "triggerNodeId": "node_incident_pallet_jack_assist",
-      "applicableTracks": ["unloader", "stocker"],
+      "applicableTracks": [
+        "unloader",
+        "stocker"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -144,10 +200,18 @@
         {
           "type": "NOT_FLAG",
           "flag": "flag_incident_incident_lost_toddler_done"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act2_started"
         }
       ],
       "triggerNodeId": "node_incident_lost_toddler",
-      "applicableTracks": ["cashier", "stocker", "specialist"],
+      "applicableTracks": [
+        "cashier",
+        "stocker",
+        "specialist"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -159,10 +223,16 @@
         {
           "type": "NOT_FLAG",
           "flag": "flag_incident_incident_register_tape_done"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act2_started"
         }
       ],
       "triggerNodeId": "node_incident_register_tape",
-      "applicableTracks": ["cashier"],
+      "applicableTracks": [
+        "cashier"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -174,10 +244,17 @@
         {
           "type": "NOT_FLAG",
           "flag": "flag_incident_incident_balloon_ceiling_done"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act2_started"
         }
       ],
       "triggerNodeId": "node_incident_balloon_ceiling",
-      "applicableTracks": ["stocker", "specialist"],
+      "applicableTracks": [
+        "stocker",
+        "specialist"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -189,10 +266,17 @@
         {
           "type": "NOT_FLAG",
           "flag": "flag_incident_incident_display_pyramid_done"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act2_started"
         }
       ],
       "triggerNodeId": "node_incident_display_pyramid",
-      "applicableTracks": ["stocker", "specialist"],
+      "applicableTracks": [
+        "stocker",
+        "specialist"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -204,10 +288,16 @@
         {
           "type": "NOT_FLAG",
           "flag": "flag_incident_incident_showcase_key_done"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act2_started"
         }
       ],
       "triggerNodeId": "node_incident_showcase_key",
-      "applicableTracks": ["specialist"],
+      "applicableTracks": [
+        "specialist"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -219,10 +309,16 @@
         {
           "type": "NOT_FLAG",
           "flag": "flag_incident_incident_dock_plate_latch_done"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act2_started"
         }
       ],
       "triggerNodeId": "node_incident_dock_plate_latch",
-      "applicableTracks": ["unloader"],
+      "applicableTracks": [
+        "unloader"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -238,10 +334,16 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act2_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act3_started"
         }
       ],
       "triggerNodeId": "node_incident_pickle_spill_stocker",
-      "applicableTracks": ["stocker"],
+      "applicableTracks": [
+        "stocker"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -257,10 +359,16 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act2_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act3_started"
         }
       ],
       "triggerNodeId": "node_incident_pickle_spill_cashier",
-      "applicableTracks": ["cashier"],
+      "applicableTracks": [
+        "cashier"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -276,10 +384,16 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act2_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act3_started"
         }
       ],
       "triggerNodeId": "node_incident_pickle_spill_unloader",
-      "applicableTracks": ["unloader"],
+      "applicableTracks": [
+        "unloader"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -295,10 +409,16 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act2_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act3_started"
         }
       ],
       "triggerNodeId": "node_incident_pickle_spill_specialist",
-      "applicableTracks": ["specialist"],
+      "applicableTracks": [
+        "specialist"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -314,10 +434,16 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act2_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act3_started"
         }
       ],
       "triggerNodeId": "node_incident_phantom_bathroom_cashier",
-      "applicableTracks": ["cashier"],
+      "applicableTracks": [
+        "cashier"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -333,10 +459,16 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act2_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act3_started"
         }
       ],
       "triggerNodeId": "node_incident_phantom_bathroom_unloader",
-      "applicableTracks": ["unloader"],
+      "applicableTracks": [
+        "unloader"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -352,10 +484,16 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act2_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act3_started"
         }
       ],
       "triggerNodeId": "node_incident_phantom_bathroom_stocker",
-      "applicableTracks": ["stocker"],
+      "applicableTracks": [
+        "stocker"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -371,10 +509,16 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act2_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act3_started"
         }
       ],
       "triggerNodeId": "node_incident_phantom_bathroom_specialist",
-      "applicableTracks": ["specialist"],
+      "applicableTracks": [
+        "specialist"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -390,10 +534,17 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act2_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act3_started"
         }
       ],
       "triggerNodeId": "node_incident_squealing_jack",
-      "applicableTracks": ["unloader", "stocker"],
+      "applicableTracks": [
+        "unloader",
+        "stocker"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -409,10 +560,17 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act2_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act3_started"
         }
       ],
       "triggerNodeId": "node_incident_go_back_dump",
-      "applicableTracks": ["cashier", "stocker"],
+      "applicableTracks": [
+        "cashier",
+        "stocker"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -428,10 +586,17 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act2_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act3_started"
         }
       ],
       "triggerNodeId": "node_incident_plugged_cereal",
-      "applicableTracks": ["stocker", "specialist"],
+      "applicableTracks": [
+        "stocker",
+        "specialist"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -447,10 +612,16 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act3_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act4_started"
         }
       ],
       "triggerNodeId": "node_incident_tachometer_idle_stocker",
-      "applicableTracks": ["stocker"],
+      "applicableTracks": [
+        "stocker"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -466,10 +637,16 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act3_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act4_started"
         }
       ],
       "triggerNodeId": "node_incident_tachometer_idle_cashier",
-      "applicableTracks": ["cashier"],
+      "applicableTracks": [
+        "cashier"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -485,10 +662,16 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act3_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act4_started"
         }
       ],
       "triggerNodeId": "node_incident_tachometer_idle_unloader",
-      "applicableTracks": ["unloader"],
+      "applicableTracks": [
+        "unloader"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -504,10 +687,16 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act3_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act4_started"
         }
       ],
       "triggerNodeId": "node_incident_tachometer_idle_specialist",
-      "applicableTracks": ["specialist"],
+      "applicableTracks": [
+        "specialist"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -523,10 +712,16 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act3_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act4_started"
         }
       ],
       "triggerNodeId": "node_incident_restroom_stopwatch_stocker",
-      "applicableTracks": ["stocker"],
+      "applicableTracks": [
+        "stocker"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -542,10 +737,16 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act3_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act4_started"
         }
       ],
       "triggerNodeId": "node_incident_restroom_stopwatch_cashier",
-      "applicableTracks": ["cashier"],
+      "applicableTracks": [
+        "cashier"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -561,10 +762,16 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act3_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act4_started"
         }
       ],
       "triggerNodeId": "node_incident_credit_card_squeeze_cashier",
-      "applicableTracks": ["cashier"],
+      "applicableTracks": [
+        "cashier"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -580,10 +787,16 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act3_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act4_started"
         }
       ],
       "triggerNodeId": "node_incident_credit_card_squeeze_specialist",
-      "applicableTracks": ["specialist"],
+      "applicableTracks": [
+        "specialist"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -599,10 +812,17 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act3_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act4_started"
         }
       ],
       "triggerNodeId": "node_incident_speed_clock_crushed_eggs",
-      "applicableTracks": ["cashier", "stocker"],
+      "applicableTracks": [
+        "cashier",
+        "stocker"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -618,10 +838,18 @@
         {
           "type": "HAS_FLAG",
           "flag": "flag_act3_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act4_started"
         }
       ],
       "triggerNodeId": "node_incident_mystery_shopper_audit",
-      "applicableTracks": ["stocker", "specialist", "cashier"],
+      "applicableTracks": [
+        "stocker",
+        "specialist",
+        "cashier"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     }
