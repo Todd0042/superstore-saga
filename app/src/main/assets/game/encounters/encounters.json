@@ -81,6 +81,35 @@
           "narrationText": "Auditor Vance writes up a Level 3 writeup for out-of-stock tag placement!"
         }
       ]
+    },
+    {
+      "id": "encounter_saturday_rush_wave",
+      "name": "Saturday Community Festival Rush",
+      "description": "A bustling weekend crowd floods Action Alley for barbecue supplies and summer sales!",
+      "environment": "DUNGEON",
+      "party": ["hero"],
+      "enemies": [
+        { "templateId": "overtime_screamer", "id": "rush_crowd_01", "name": "Weekend Rush Shoppers", "isTargeted": true, "atbGauge": 0.4 },
+        { "templateId": "karen_customer", "id": "rush_shopper_02", "name": "Bargain Hunter", "atbGauge": 0.25 }
+      ]
+    },
+    {
+      "id": "encounter_regional_showcase",
+      "name": "District VP Grand Inspection Showcase",
+      "description": "District VP Vance inspects Store #1042 during peak velocity! Demonstrate supreme customer care and retail mastery.",
+      "environment": "CASTLE",
+      "party": ["hero"],
+      "enemies": [
+        { "templateId": "regional_auditor", "id": "auditor_vance", "name": "District VP Vance", "subtitle": "Eagle-Eyed Executive", "isTargeted": true, "atbGauge": 0.45 }
+      ],
+      "bossPhases": [
+        {
+          "enemyId": "auditor_vance",
+          "hpBelow": 0.5,
+          "bannerText": "REGIONAL PRAISE INCOMING",
+          "narrationText": "VP Vance flips open his leather portfolio to take note of your immaculate customer service!"
+        }
+      ]
     }
   ]
 }

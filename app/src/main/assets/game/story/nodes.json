@@ -1401,14 +1401,453 @@
       "id": "node_clockout_fingerprint",
       "speakerId": "henderson",
       "side": "RIGHT",
-      "text": "Place your thumb on the digital timeclock scanner, associate. You didn't just pass your first day—you showed us what true MegaMart pride looks like. Clock out, enjoy your evening, and we'll see you for Week Two!",
+      "text": "Place your thumb on the digital timeclock scanner, associate. You didn't just pass your first day—you showed us what true MegaMart pride looks like. Clock out, get some great rest, and let's conquer Shift Two together tomorrow!",
+      "nextNodeId": "node_shift2_start"
+    },
+    {
+      "id": "node_shift2_start",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_locker_room",
+      "text": "Good morning, rookie! Ready for Shift Two? Kyle and I tuned up a high-performance TC-70 handheld scanner just for you. Laser optic is crystal clear and battery is at a full 100%! Let's get you set up with the pro shortcuts.",
+      "choices": [
+        {
+          "id": "choice_shift2_sync",
+          "text": "Master the double-trigger barcode quick-sync with Donna.",
+          "voiceKeywords": ["trigger", "sync", "master", "laser", "shortcut"],
+          "nextNodeId": "node_shift2_sync",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 15.0
+          }
+        },
+        {
+          "id": "choice_shift2_kyle",
+          "text": "Team up with Kyle to audit the seasonal candy endcaps.",
+          "voiceKeywords": ["kyle", "audit", "candy", "endcap", "team"],
+          "nextNodeId": "node_shift2_kyle",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift2_sync",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "text": "BEEP-BEEP! Perfect double-tap! Look at that scan velocity—forty items logged in thirty seconds flat! You handle that scanner like an orchestra conductor. Todd is going to be ecstatic with these morning inventory counts.",
+      "nextNodeId": "node_shift2_end"
+    },
+    {
+      "id": "node_shift2_kyle",
+      "speakerId": "kyle",
+      "side": "LEFT",
+      "text": "Nice hustle, rookie! We breezed through all six candy endcaps in record time! The aisles look crisp, the counts match the system perfectly, and Todd just gave us two thumbs up across Action Alley.",
+      "nextNodeId": "node_shift2_end"
+    },
+    {
+      "id": "node_shift2_end",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Outstanding work on the floor counts, team! You finished twenty minutes ahead of schedule! Here are two ice-cold sodas from the cooler. Grab a quick breather and keep that momentum rolling!",
+      "nextNodeId": "node_shift3_start"
+    },
+    {
+      "id": "node_shift3_start",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "ATTENTION STORE #1042! Gather round Center Action Alley! I have thrilling news from the regional dashboard: our store just hit the Top Three in customer enthusiasm across the entire state! To celebrate, I have the Golden Whistle of Spirit for whoever leads this morning's cheer!",
+      "choices": [
+        {
+          "id": "choice_shift3_chant",
+          "text": "Lead the cheer with rhythmic clapping and storewide spirit!",
+          "voiceKeywords": ["cheer", "clapping", "spirit", "lead", "chant"],
+          "nextNodeId": "node_shift3_cheer_lead",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 15.0
+          }
+        },
+        {
+          "id": "choice_shift3_echo",
+          "text": "Coordinate a synchronized front-to-back echo cheer with the loading dock!",
+          "voiceKeywords": ["echo", "dock", "synchronize", "team", "shout"],
+          "nextNodeId": "node_shift3_cheer_echo",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift3_cheer_lead",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "text": "GIVE ME AN M! GIVE ME AN E! GIVE ME A G-A-M-A-R-T! The entire store erupts in thunderous clapping! Henderson blows the Golden Whistle with absolute glee, pinning a shiny spirit ribbon onto your vest!",
+      "nextNodeId": "node_shift3_reward"
+    },
+    {
+      "id": "node_shift3_cheer_echo",
+      "speakerId": "mack",
+      "side": "LEFT",
+      "text": "BOOM! Backroom Receiving heard the call and answered with a rhythmic forklift horn salute! That echo shook the rafters, rookie! Now THAT is how you unify a superstore from the registers all the way to the loading docks!",
+      "nextNodeId": "node_shift3_reward"
+    },
+    {
+      "id": "node_shift3_reward",
+      "speakerId": "cheryl",
+      "side": "LEFT",
+      "text": "Fresh cinnamon rolls and glazed donuts from the MegaMart Bakery for everyone in the breakroom! Henderson just put in the order on the house! Great energy, everyone—let's make today unforgettable!",
+      "nextNodeId": "node_shift4_start"
+    },
+    {
+      "id": "node_shift4_start",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Welcome to Shift Four! Today we unlock the secret language of the front end: Produce PLU codes! Four-zero-one-one is bananas, four-zero-four-six is avocados, and four-zero-six-five is green bell peppers. Ready for the test run?",
+      "choices": [
+        {
+          "id": "choice_shift4_speed",
+          "text": "Enter the codes from muscle memory with blazing speed!",
+          "voiceKeywords": ["bananas", "speed", "memory", "codes", "fast"],
+          "nextNodeId": "node_shift4_speed",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 10.0
+          }
+        },
+        {
+          "id": "choice_shift4_relay",
+          "text": "Coordinate a seamless scanning and bagging rhythm with Brenda!",
+          "voiceKeywords": ["brenda", "rhythm", "bagging", "relay", "harmony"],
+          "nextNodeId": "node_shift4_relay",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift4_speed",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "text": "BEEP-BEEP-BEEP! Four bananas, two avocados, and three peppers rung up in five seconds! Mrs. Higgins didn't even have her purse open yet! You've got magic hands on that touch screen, rookie!",
+      "nextNodeId": "node_shift4_delight"
+    },
+    {
+      "id": "node_shift4_relay",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "text": "Look at us go! You scan, I bag—we're like an Olympic relay team! The customer is smiling ear-to-ear, saying she's never seen checkout lines move this smoothly. That's pure retail harmony!",
+      "nextNodeId": "node_shift4_delight"
+    },
+    {
+      "id": "node_shift4_delight",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "text": "Thirty-two items scanned per minute! Front-End Supervisor just marked our lane as the Gold Standard for the week! High fives all around!",
+      "nextNodeId": "node_shift5_start"
+    },
+    {
+      "id": "node_shift5_start",
+      "speakerId": "julian",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift Five, partner! Time for the Great Go-Back Expedition! Customers pick up items and change their minds, leaving treasures scattered across distant aisles. Instead of a chore, we treat this like an adventure map!",
+      "choices": [
+        {
+          "id": "choice_shift5_route",
+          "text": "Map out the optimal high-speed navigation route with Julian!",
+          "voiceKeywords": ["route", "map", "speed", "julian", "navigate"],
+          "nextNodeId": "node_shift5_route",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 10.0
+          }
+        },
+        {
+          "id": "choice_shift5_shopper",
+          "text": "Help a lost customer find the exact item you have in your cart!",
+          "voiceKeywords": ["customer", "help", "tea", "cart", "friendly"],
+          "nextNodeId": "node_shift5_shopper",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift5_route",
+      "speakerId": "julian",
+      "side": "LEFT",
+      "text": "From Garden Patio to Electronics in four minutes flat! Every single item returned to its exact peg hook and facing forward like a museum display! Mack gives us a salute from Bay 2!",
+      "nextNodeId": "node_shift5_finish"
+    },
+    {
+      "id": "node_shift5_shopper",
+      "speakerId": "julian",
+      "side": "LEFT",
+      "text": "Talk about retail destiny! A shopper was looking all over for the last box of cinnamon tea, and you pulled it right out of the go-back basket with a flourish! The look of pure joy on their face was priceless!",
+      "nextNodeId": "node_shift5_finish"
+    },
+    {
+      "id": "node_shift5_finish",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "Cart completely cleared in under fifteen minutes! You two navigated that sales floor like seasoned scouts. Head into the breakroom for a well-deserved breather!",
+      "nextNodeId": "node_shift6_start"
+    },
+    {
+      "id": "node_shift6_start",
+      "speakerId": "chad",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Hey partner, emergency on Aisle Nine! Mrs. Higgins is here for her grandson's seventh birthday party, but the shelf for the Turbo-Rex robotic dinosaur is empty! She's worried sick she won't find one in time.",
+      "choices": [
+        {
+          "id": "choice_shift6_radio",
+          "text": "Broadcast a polite priority APB across the store walkie-talkies!",
+          "voiceKeywords": ["walkie", "radio", "broadcast", "priority", "dinosaur"],
+          "nextNodeId": "node_shift6_radio",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        },
+        {
+          "id": "choice_shift6_ladder",
+          "text": "Climb the safety ladder with Chad to inspect the top-stock risers!",
+          "voiceKeywords": ["ladder", "climb", "inspect", "chad", "topstock"],
+          "nextNodeId": "node_shift6_ladder",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "store_morale": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift6_radio",
+      "speakerId": "derrick",
+      "side": "RIGHT",
+      "text": "Derrick on Receiving Bay 3! 'Copy that, rookie! I found an unopened freight carton of Turbo-Rexes right on the morning pallet! Bringing one up to Action Alley on the double!'",
+      "nextNodeId": "node_shift6_wrap"
+    },
+    {
+      "id": "node_shift6_ladder",
+      "speakerId": "chad",
+      "side": "LEFT",
+      "text": "BINGO! Right behind the plush dragons—a factory-fresh Turbo-Rex in pristine packaging! Chad hands it down with a victorious grin: 'Grandson's birthday is saved!'",
+      "nextNodeId": "node_shift6_wrap"
+    },
+    {
+      "id": "node_shift6_wrap",
+      "speakerId": "cheryl",
+      "side": "LEFT",
+      "changeSceneId": "scene_personnel_office",
+      "text": "Mrs. Higgins was crying tears of gratitude! She personally stopped by Personnel to hand-write a five-star compliment card for your employee file! Henderson is framing it for the bulletin board!",
+      "nextNodeId": "node_shift7_start"
+    },
+    {
+      "id": "node_shift7_start",
+      "speakerId": "todd",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "text": "SHIFT SEVEN: THE SATURDAY SUMMER FESTIVAL RUSH! Look outside—the sun is blazing, parking lot is packed, and half the county is walking through our sliding doors for barbecue supplies! All hands on deck, team!",
+      "triggerBattleEncounterId": "encounter_saturday_rush_wave",
+      "nextNodeId": "node_shift7_victory"
+    },
+    {
+      "id": "node_shift7_victory",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "PHENOMENAL RALLY, STORE #1042! You kept lines moving, shelves stocked, and smiles on every single face! Register velocity broke the Saturday noon record by fourteen percent! Henderson is ordering twenty large pizzas for the breakroom!",
+      "choices": [
+        {
+          "id": "choice_shift7_celebrate",
+          "text": "Celebrate with the team and enjoy a hot slice of pepperoni in the breakroom!",
+          "voiceKeywords": ["celebrate", "pizza", "breakroom", "slice", "team"],
+          "nextNodeId": "node_shift7_breakroom",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift7_breakroom",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_breakroom",
+      "text": "Pass the parmesan, kid. In fifteen years at this store, I've rarely seen a rookie handle a Saturday rush with that much composure and good humor. You're the real deal.",
+      "nextNodeId": "node_shift8_start"
+    },
+    {
+      "id": "node_shift8_start",
+      "speakerId": "mack",
+      "side": "LEFT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Welcome to Shift Eight, rookie! Today we head into the engine room of the backroom: The Cardboard Baler Initiation! The floor crew brought back twenty carts of clean corrugated cardboard. Let's feed the machine and make a thousand-pound green cube!",
+      "choices": [
+        {
+          "id": "choice_shift8_tie",
+          "text": "Learn the pro wire-threading and knot-tying technique with Mack!",
+          "voiceKeywords": ["wire", "thread", "knot", "technique", "mack"],
+          "nextNodeId": "node_shift8_tie",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 15.0
+          }
+        },
+        {
+          "id": "choice_shift8_press",
+          "text": "Engage the hydraulic compression lever and watch the magic happen!",
+          "voiceKeywords": ["hydraulic", "lever", "compress", "crush", "power"],
+          "nextNodeId": "node_shift8_press",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift8_tie",
+      "speakerId": "mack",
+      "side": "LEFT",
+      "text": "Look at that clean loop and pull-through! Tight as a violin string! That wire will hold a thousand pounds without budging. You're an honorary dock worker now, associate!",
+      "nextNodeId": "node_shift8_eject"
+    },
+    {
+      "id": "node_shift8_press",
+      "speakerId": "derrick",
+      "side": "RIGHT",
+      "text": "KER-CHUNK! WHIRRRRRRR! The hydraulic ram descends with effortless power, flattening twenty carts of boxes into a neat, solid block! That mechanical hum is the sweetest music in retail!",
+      "nextNodeId": "node_shift8_eject"
+    },
+    {
+      "id": "node_shift8_eject",
+      "speakerId": "mack",
+      "side": "LEFT",
+      "text": "THUD! The bale drops onto the wooden pallet as smooth as butter! Mack peels a shiny silver 'Certified Baler Pilot' sticker from his clipboard and sticks it proudly onto your badge! Warehouse clear and ready for action!",
+      "nextNodeId": "node_shift9_start"
+    },
+    {
+      "id": "node_shift9_start",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift Nine: The Evening Twilight Shift. The doors close in one hour, and the overhead lighting shifts to warm gold. It's time for the Grand Zone—aligning every cereal box, soup can, and towel until the aisles look like art gallery exhibits.",
+      "choices": [
+        {
+          "id": "choice_shift9_cereal",
+          "text": "Make Aisle 6 (Cereal & Breakfast) completely mirror-perfect!",
+          "voiceKeywords": ["cereal", "aisle", "mirror", "perfect", "zone"],
+          "nextNodeId": "node_shift9_perfection",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "store_morale": 15.0
+          }
+        },
+        {
+          "id": "choice_shift9_wisdom",
+          "text": "Share stories and trade retail wisdom with Donna as you face the shelves!",
+          "voiceKeywords": ["wisdom", "donna", "stories", "share", "talk"],
+          "nextNodeId": "node_shift9_wisdom",
+          "metricDeltas": {
+            "store_morale": 25.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift9_perfection",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "text": "Look down that sightline! Every box of frosted flakes is flush with the shelf lip, facing 100% forward! You could bounce a quarter off this aisle! Todd takes a photo for the corporate display contest!",
+      "nextNodeId": "node_shift9_wrap"
+    },
+    {
+      "id": "node_shift9_wisdom",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "text": "Donna smiles warmly, adjusting her anniversary pins. 'When I started fifteen years ago, I didn't know if I'd last a month. But when you have a crew that looks out for each other, work becomes a second home. You've brought that good spirit back to this store, rookie.'",
+      "nextNodeId": "node_shift9_wrap"
+    },
+    {
+      "id": "node_shift9_wrap",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_breakroom",
+      "text": "As you hang up your vest at the end of Shift Nine, a warm sense of accomplishment washes over you. You've learned the store, mastered the equipment, and earned the respect and friendship of every teammate. Tomorrow is the big 10th Shift!",
+      "nextNodeId": "node_shift10_start"
+    },
+    {
+      "id": "node_shift10_start",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "ASSOCIATES OF STORE #1042! Surprise announcement: District Vice President Vance just pulled into the parking lot for our Annual Regional Quality & Customer Service Showcase! This is our moment to shine! Let's give him a tour he will never forget!",
+      "triggerBattleEncounterId": "encounter_regional_showcase",
+      "nextNodeId": "node_shift10_victory"
+    },
+    {
+      "id": "node_shift10_victory",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "HE WAS BLOWN AWAY! VP Vance gave MegaMart Store #1042 a PERFECT 100% AUDIT SCORE! In his twenty years with the company, he has NEVER seen a new associate demonstrate such flawless knowledge, warm customer care, and teamwork leadership!",
+      "choices": [
+        {
+          "id": "choice_shift10_rally",
+          "text": "Join the entire store assembled in Center Action Alley for the ceremony!",
+          "voiceKeywords": ["ceremony", "award", "action alley", "join", "rally"],
+          "nextNodeId": "node_shift10_award",
+          "metricDeltas": {
+            "store_morale": 30.0,
+            "associate_engagement": 30.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift10_award",
+      "speakerId": "cheryl",
+      "side": "LEFT",
+      "changeSceneId": "scene_personnel_office",
+      "text": "With the full store applauding and cheering, Cheryl steps forward holding an engraved mahogany plaque: 'Presented to our standout associate: ROOKIE OF THE MONTH! In recognition of extraordinary teamwork, positivity, and service!' Henderson pins an engraved golden name badge to your chest!",
+      "choices": [
+        {
+          "id": "choice_shift10_speech",
+          "text": "Raise your glass of punch with Donna, Mack, Brenda, Todd, Kyle, and Derrick!",
+          "voiceKeywords": ["toast", "punch", "speech", "glass", "celebrate"],
+          "nextNodeId": "node_shift10_toast"
+        }
+      ]
+    },
+    {
+      "id": "node_shift10_toast",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "text": "'TO THE BEST ROOKIE #1042 HAS EVER SEEN!' Donna raises her cup, followed by cheerful clinking from the whole crew. Ice cream sundaes, celebration banners, and laughter fill the room. You have officially conquered Act One of your retail journey!",
       "nextNodeId": "node_retail_act1_complete"
     },
     {
       "id": "node_retail_act1_complete",
       "speakerId": "narrator",
       "side": "CENTER_NARRATOR",
-      "text": "Shift One concluded with flying colors! Your Associate Badge is officially activated in the employee chronicle. You conquered Day One of 56 at MegaMart Store #1042!",
+      "text": "ACT ONE: FRESH BLOOD COMPLETED! With 10 flawless shifts, the admiration of your coworkers, and the coveted Rookie of the Month award on the Wall of Fame, your journey has only just begun! Act II awaits!",
       "setFlagOnEnter": "game_completed"
     }
   ]
