@@ -7,12 +7,12 @@
       "baseWeight": 30.0,
       "conditions": [
         {
-          "type": "ACT_EQUALS",
-          "actNumber": 1
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_cart_train_done"
         }
       ],
       "triggerNodeId": "node_incident_cart_train",
-      "oneTimeOnly": false,
+      "oneTimeOnly": true,
       "cooldownTurns": 2
     },
     {
@@ -21,12 +21,12 @@
       "baseWeight": 30.0,
       "conditions": [
         {
-          "type": "ACT_EQUALS",
-          "actNumber": 1
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_honey_spill_done"
         }
       ],
       "triggerNodeId": "node_incident_honey_spill",
-      "oneTimeOnly": false,
+      "oneTimeOnly": true,
       "cooldownTurns": 2
     },
     {
@@ -35,12 +35,82 @@
       "baseWeight": 30.0,
       "conditions": [
         {
-          "type": "ACT_EQUALS",
-          "actNumber": 1
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_price_check_done"
         }
       ],
       "triggerNodeId": "node_incident_price_check",
-      "oneTimeOnly": false,
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_pallet_jack_assist",
+      "title": "Backroom Threshold Snag",
+      "baseWeight": 30.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_pallet_jack_assist_done"
+        }
+      ],
+      "triggerNodeId": "node_incident_pallet_jack_assist",
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_lost_toddler",
+      "title": "Toy Aisle Superhero Reunion",
+      "baseWeight": 30.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_lost_toddler_done"
+        }
+      ],
+      "triggerNodeId": "node_incident_lost_toddler",
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_register_tape",
+      "title": "Register 3 Thermal Rush",
+      "baseWeight": 30.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_register_tape_done"
+        }
+      ],
+      "triggerNodeId": "node_incident_register_tape",
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_balloon_ceiling",
+      "title": "Aisle 9 Silver Star Snag",
+      "baseWeight": 30.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_balloon_ceiling_done"
+        }
+      ],
+      "triggerNodeId": "node_incident_balloon_ceiling",
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_display_pyramid",
+      "title": "Seasonal Endcap Soda Fortress",
+      "baseWeight": 30.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_display_pyramid_done"
+        }
+      ],
+      "triggerNodeId": "node_incident_display_pyramid",
+      "oneTimeOnly": true,
       "cooldownTurns": 2
     },
     {

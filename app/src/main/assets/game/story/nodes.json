@@ -1046,7 +1046,7 @@
       "speakerId": "kyle",
       "side": "LEFT",
       "text": "CLACK! The carts nest flawlessly into the holding corral with inches to spare! Kyle wipes his brow and beams: 'That was like synchronized bobsledding! You moved like you've worked this floor for years!' Mack slaps your shoulder with a booming laugh: 'Pure teamwork, rookie! That's why nobody works alone at Store #1042!' An electric wave of excitement hits you—this team truly watches each other's backs!",
-      "nextNodeId": "node_shift1_start"
+      "nextNodeId": "node_incident_return"
     },
     {
       "id": "node_incident_honey_spill",
@@ -1083,7 +1083,7 @@
       "speakerId": "derrick",
       "side": "RIGHT",
       "text": "SWEEP! In under forty-five seconds, the compound absorbs every drop and the aisle is gleaming! Store Manager Henderson strolls by, inspects the spotless floor, and flashes a proud double thumbs-up: 'Outstanding response time, crew!' Derrick chuckles warmly: 'Smooth as silk, kid. When this team syncs up, there isn't a mess in retail we can't conquer!' You feel a rush of pride—everyone here genuinely cares.",
-      "nextNodeId": "node_shift1_start"
+      "nextNodeId": "node_incident_return"
     },
     {
       "id": "node_incident_price_check",
@@ -1120,7 +1120,195 @@
       "speakerId": "donna",
       "side": "LEFT",
       "text": "KEY CLICK! Donna turns the supervisor override key with a warm smile: 'Endcap had yesterday's promo sticker, but at MegaMart, customer goodwill always comes first! You get it for nineteen dollars!' The shopper beams with delight: 'You all are the absolute sweetest! Best customer service in town!' Brenda winks at you: 'Boom! Another customer for life. You stayed calm and kept the energy bright!' You feel an exhilarating buzz—this job really does make people happy when a team works in harmony.",
-      "nextNodeId": "node_shift1_start"
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_pallet_jack_assist",
+      "speakerId": "derrick",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Heads up on the backroom threshold! Derrick and Mack are pulling a fresh pallet of ultra-soft paper towels, but one steering wheel snagged on a stray metal banding clip right over the doorplate. Mack's got his shoulder behind the pallet, and Derrick's calling out the angles: 'Rookie! Grab that hardwood pry wedge—let's lift and roll in unison on three!'",
+      "choices": [
+        {
+          "id": "choice_pallet_wedge",
+          "text": "Slide the wooden wedge under the chassis while Mack braces to pop the wheel free!",
+          "voiceKeywords": ["wedge", "lift", "brace", "pop", "wheel", "three"],
+          "nextNodeId": "node_incident_pallet_jack_assist_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        },
+        {
+          "id": "choice_pallet_guide",
+          "text": "Clear the stray clip from the floor track and give the signal for the synchronized pull!",
+          "voiceKeywords": ["clear", "track", "pull", "signal", "derrick", "guide"],
+          "nextNodeId": "node_incident_pallet_jack_assist_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_pallet_jack_assist_resolve",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "HEAVE-HO! The pallet jack glides effortlessly over the threshold plate with a satisfying CLUNK! Mack lets out a boisterous laugh and offers a thunderous high-five: 'Boom! Now that is pure dock synergy! You read my mind before I even called it out!' Derrick nods with genuine respect: 'Sharp eyes, {hero}. When a team moves together like that, four hundred pounds feels light as a feather!' A thrill of camaraderie courses through you—working with folks who have your back makes even heavy work feel exciting!",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_lost_toddler",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Donna's walkie-talkie clicks with calm, gentle authority: 'Team Sunshine, we have a miniature superhero in Aisle 8 by the action figures.' You spot a four-year-old child wearing a bright red cape, looking around with wide, trembling eyes. Donna crouches down softly nearby: 'Rookie, you have that calm, friendly energy. Let's make our young hero feel safe while Brenda checks with the mom over in Seasonal.'",
+      "choices": [
+        {
+          "id": "choice_toddler_hero",
+          "text": "Kneel down at eye level, compliment the red superhero cape, and offer a shiny MegaMart star sticker.",
+          "voiceKeywords": ["cape", "superhero", "sticker", "kneel", "star", "gentle"],
+          "nextNodeId": "node_incident_lost_toddler_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0,
+            "karen_index": -10.0
+          }
+        },
+        {
+          "id": "choice_toddler_walk",
+          "text": "Take Donna's hand and offer your other hand to walk the young superhero to Brenda.",
+          "voiceKeywords": ["hand", "walk", "mom", "brenda", "safe", "reunite"],
+          "nextNodeId": "node_incident_lost_toddler_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_lost_toddler_resolve",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "text": "'LEO!' A mother rounds the corner with tears of pure relief in her eyes, sweeping the toddler up in a tight, joyful hug! Brenda hands the mom a bottle of cold spring water with a warm pat on the back: 'Donna and our fantastic new associate {hero} kept your little hero smiling the whole time!' The mom wipes a tear and beams at you: 'Thank you all so much... You are real-life angels here!' Donna gives you a gentle, proud wink: 'That right there? That's the heart of #1042.' Your heart swells with warmth—you're doing something that truly matters.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_register_tape",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "BEEP-BEEP-BEEP! Register 3's receipt printer flashes a frantic blinking red light in the middle of a big family checkout! Marsha is keeping the customer entertained with hilarious jokes, but the thermal paper compartment latch has locked tight. Kyle peeks over from Register 2 with a spare master key: 'Rookie! Team drill! Pop this release pin while I feed the fresh spool!'",
+      "choices": [
+        {
+          "id": "choice_tape_latch",
+          "text": "Slide Kyle's release key into the emergency notch to spring the printer housing open!",
+          "voiceKeywords": ["key", "latch", "spring", "housing", "open", "release"],
+          "nextNodeId": "node_incident_register_tape_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        },
+        {
+          "id": "choice_tape_cheer",
+          "text": "Entertain the customer's children with funny receipt origami while Kyle and Marsha swap the roll!",
+          "voiceKeywords": ["origami", "entertain", "family", "customer", "laugh", "fun"],
+          "nextNodeId": "node_incident_register_tape_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "karen_index": -10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_register_tape_resolve",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "text": "CLICK-WHIRRRR! The new thermal roll spins, and a crisp, three-foot receipt feeds out like a satin ribbon! The customers burst into cheerful applause: 'Fastest pit stop in retail history!' Marsha winks at you and Kyle with theatrical flair: 'Precision teamwork, darlings! Store #1042 doesn't skip a single beat!' Kyle gives you a fist-bump: 'You were lightning fast with that latch, rookie!' You catch yourself grinning ear-to-ear—retail rhythm is addictive when the vibe is this good!",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_balloon_ceiling",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Todd gestures up toward the soaring 24-foot rafters above Aisle 9: a giant shimmering silver star helium balloon has escaped from the floral counter and is bobbing gently against a roof beam! Todd unclips an 18-foot telescoping pole hook fitted with a special silicone gripper: 'Classic retail quest, rookie! Julian's calculating the bounce angle, I've got the pole, and I need you on the stabilizer base and spotter line!'",
+      "choices": [
+        {
+          "id": "choice_balloon_spot",
+          "text": "Grip the telescoping pole base firmly and guide Todd's aim straight toward the dangling ribbon!",
+          "voiceKeywords": ["aim", "guide", "spot", "pole", "steady", "ribbon"],
+          "nextNodeId": "node_incident_balloon_ceiling_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        },
+        {
+          "id": "choice_balloon_cheer",
+          "text": "Coordinate with Julian to direct aisle traffic so customers can enjoy the acrobatic spectacle!",
+          "voiceKeywords": ["traffic", "watch", "spectacle", "julian", "cheer", "crowd"],
+          "nextNodeId": "node_incident_balloon_ceiling_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_balloon_ceiling_resolve",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "SNAG! On the very first sweep, the silicone gripper coils cleanly around the metallic ribbon! Todd reels the pole down with the dexterity of an Olympic fly-fisherman! A small child in a shopping cart claps with wonder as Todd hands the floating star to them: 'Compliments of the Store #1042 Astro-Retrieval Squad!' Julian chuckles warmly: 'Spotting work was perfection, {hero}! You turned an oops into store-wide joy!' You feel an exhilarating bounce in your step—working here is actually a total blast!",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_display_pyramid",
+      "speakerId": "chad",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Chad signals with both hands from the holiday seasonal endcap: a customer enthusiastically pulled two 12-packs from the lower tier of an eight-foot sparkling soda pyramid, causing the top cartons to lean at a stylish but dangerous ten-degree angle! Chad braces the left corner with a grin: 'Code Fizzy Tower! Julian's got the interlocking cardboard slipsheets—rookie, help me brace the right tier before gravity tests our reflexes!'",
+      "choices": [
+        {
+          "id": "choice_pyramid_brace",
+          "text": "Brace the leaning carton corner with Chad while Julian slides the reinforcing sheet into place!",
+          "voiceKeywords": ["brace", "corner", "tier", "pyramid", "chad", "reinforce"],
+          "nextNodeId": "node_incident_display_pyramid_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        },
+        {
+          "id": "choice_pyramid_rebuild",
+          "text": "Quickly transfer the top four cartons down to the staging flatbed to relieve the upper load!",
+          "voiceKeywords": ["transfer", "unload", "relieve", "weight", "safety", "flatbed"],
+          "nextNodeId": "node_incident_display_pyramid_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_display_pyramid_resolve",
+      "speakerId": "chad",
+      "side": "RIGHT",
+      "text": "LOCK AND LOAD! Julian slots the interlocking slipsheet, and the pyramid settles back into flawless, laser-straight alignment, more solid than the day it was built! Chad brushes his hands together with a satisfied nod: 'Architectural masterpiece secured! Nobody drops a single can on our watch!' Julian laughs: 'That was some serious quick-thinking reaction time, {hero}!' You look back at the gleaming display with a deep sense of accomplishment—solving emergencies together is not just productive, it's genuinely fun!",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_return",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "The situation is resolved with flying colors! You sync back up with your team.",
+      "nextNodeId": "node_locker_hub"
     },
     {
       "id": "node_shift1_start",

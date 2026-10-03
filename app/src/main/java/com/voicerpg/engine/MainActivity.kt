@@ -249,6 +249,7 @@ class MainActivity : ComponentActivity() {
                                 onSelectSlot = { slot -> storyViewModel.selectSlot(slot) },
                                 onDeleteSlot = { slot -> storyViewModel.deleteSlot(slot) },
                                 onContinueSlot = { slot -> storyViewModel.continueGame(slot) },
+                                onContinueSlotAuto = { slot -> storyViewModel.continueGame(slot, startInAutoPlay = true) },
                                 onNewGameInSlot = { slot -> storyViewModel.startNewGameFlow(slot) },
                                 onAudioSetup = { storyViewModel.openAudioSetup() },
                                 onOptions = { combatViewModel.openOptions() },

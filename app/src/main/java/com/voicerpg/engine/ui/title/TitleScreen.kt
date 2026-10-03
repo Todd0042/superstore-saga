@@ -99,6 +99,7 @@ fun TitleScreen(
     onSelectSlot: (Int) -> Unit = {},
     onDeleteSlot: (Int) -> Unit = {},
     onContinueSlot: (Int) -> Unit = { onContinue() },
+    onContinueSlotAuto: (Int) -> Unit = { onContinueSlot(it) },
     onNewGameInSlot: (Int) -> Unit = { onNewGame() },
     onAudioSetup: () -> Unit,
     onOptions: () -> Unit,
@@ -765,6 +766,10 @@ fun TitleScreen(
                     showSlotArchivesDialog = false
                     onContinueSlot(slot)
                 },
+                onSelectAndAutoPlay = { slot ->
+                    showSlotArchivesDialog = false
+                    onContinueSlotAuto(slot)
+                },
                 onSelectAndNewGame = { slot ->
                     showSlotArchivesDialog = false
                     onNewGameInSlot(slot)
@@ -790,6 +795,7 @@ fun SaveSlotDialog(
     currentSlot: Int,
     isNewGameMode: Boolean,
     onSelectAndLoad: (Int) -> Unit,
+    onSelectAndAutoPlay: (Int) -> Unit = {},
     onSelectAndNewGame: (Int) -> Unit,
     onDeleteSlot: (Int) -> Unit,
     onDismiss: () -> Unit
@@ -971,7 +977,7 @@ fun SaveSlotDialog(
                                         Button(
                                             onClick = { onSelectAndLoad(slotInfo.slotIndex) },
                                             modifier = Modifier
-                                                .weight(1f)
+                                                .weight(1.25f)
                                                 .border(1.dp, RetroBorderGold, RoundedCornerShape(6.dp)),
                                             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF1B3B2B)),
                                             shape = RoundedCornerShape(6.dp)
@@ -981,12 +987,31 @@ fun SaveSlotDialog(
                                                     imageVector = Icons.Default.PlayArrow,
                                                     contentDescription = null,
                                                     tint = HolyYellow,
-                                                    modifier = Modifier.size(14.dp)
+                                                    modifier = Modifier.size(13.dp)
                                                 )
-                                                Spacer(modifier = Modifier.width(4.dp))
+                                                Spacer(modifier = Modifier.width(3.dp))
                                                 Text(
                                                     text = "RESUME",
                                                     color = HolyYellow,
+                                                    fontSize = 11.sp,
+                                                    fontFamily = FontFamily.Monospace,
+                                                    fontWeight = FontWeight.Bold
+                                                )
+                                            }
+                                        }
+
+                                        Button(
+                                            onClick = { onSelectAndAutoPlay(slotInfo.slotIndex) },
+                                            modifier = Modifier
+                                                .weight(0.85f)
+                                                .border(1.dp, FrostCyan.copy(alpha = 0.8f), RoundedCornerShape(6.dp)),
+                                            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF0F2B3E)),
+                                            shape = RoundedCornerShape(6.dp)
+                                        ) {
+                                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                                Text(
+                                                    text = "🤖 AUTO",
+                                                    color = FrostCyan,
                                                     fontSize = 11.sp,
                                                     fontFamily = FontFamily.Monospace,
                                                     fontWeight = FontWeight.Bold

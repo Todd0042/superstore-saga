@@ -60,7 +60,8 @@ data class StoryState(
     val isNewGameFlow: Boolean = false,
     val isPureStoryMode: Boolean = false,
     val isStoryAutoPlayPaused: Boolean = false,
-    val dynamicMetrics: Map<String, Float> = emptyMap()
+    val dynamicMetrics: Map<String, Float> = emptyMap(),
+    val activeHubNodeId: String? = null
 )
 
 class StoryViewModel(
@@ -536,11 +537,14 @@ class StoryViewModel(
     /**
      * Resumes a game save from the Title Screen. Defaults to the active slot.
      */
-    fun continueGame(slot: Int? = null) {
+    fun continueGame(slot: Int? = null, startInAutoPlay: Boolean = false) {
         val targetSlot = if (slot == SaveManager.STORY_MODE_SLOT) SaveManager.STORY_MODE_SLOT else (slot ?: _state.value.currentSlot).coerceIn(1, SaveManager.MAX_SLOTS)
         saveManager.currentSlot = targetSlot
         StoryAssetLoader.activeSlot = targetSlot
         val existingSave = saveManager.load(targetSlot) ?: return
+        if (startInAutoPlay && !existingSave.isAutoPlayEnabled) {
+            saveManager.save(existingSave.copy(isAutoPlayEnabled = true), targetSlot)
+        }
         val restoredScene = StoryScript.ALL_SCENES[existingSave.currentSceneId] ?: StoryScript.INITIAL_SCENE
         val rawRestoredNode = StoryScript.ALL_NODES[existingSave.currentNodeId] ?: StoryScript.INITIAL_NODE
         val baseRestoredNode = resolveEffectiveHubNode(rawRestoredNode, existingSave.narrativeFlags)
@@ -575,7 +579,8 @@ class StoryViewModel(
             )
         }
 
-        val isStoryMode = existingSave.isAutoPlayEnabled || (targetSlot == SaveManager.STORY_MODE_SLOT)
+        val isStoryMode = startInAutoPlay || existingSave.isAutoPlayEnabled || (targetSlot == SaveManager.STORY_MODE_SLOT)
+        val initialHubId = if (baseRestoredNode.id.endsWith("_hub") || baseRestoredNode.hubCompletion != null || baseRestoredNode.id in setOf("node_locker_hub", "node_breakroom_hub")) baseRestoredNode.id else null
         _state.value = _state.value.copy(
             currentScene = restoredScene,
             currentNode = formatNodeForPlayer(restoredNode, existingSave.player),
@@ -595,7 +600,8 @@ class StoryViewModel(
             dialogueHistory = restoredHistory,
             isPureStoryMode = isStoryMode,
             isStoryAutoPlayPaused = false,
-            dynamicMetrics = existingSave.dynamicMetrics
+            dynamicMetrics = existingSave.dynamicMetrics,
+            activeHubNodeId = initialHubId
         )
         combatNarrator.setEyesFreeMode(existingSave.isEyesFreeMode, lockGuard = false)
         combatNarrator.setPocketGuardEnabled(existingSave.isPocketGuardEnabled)
@@ -963,15 +969,59 @@ class StoryViewModel(
     }
 
     private fun applyNodeTransition(newNode: DialogueNode, suppressNarration: Boolean = false) {
-        var updatedFlags = if (newNode.setFlagOnEnter != null) {
-            _state.value.narrativeFlags + (newNode.setFlagOnEnter to true)
+        var targetNode = newNode
+        val incidentJustResolved = (newNode.id == "node_incident_return")
+        if (incidentJustResolved) {
+            val returnTargetId = _state.value.activeHubNodeId ?: "node_shift1_start"
+            targetNode = StoryScript.ALL_NODES[returnTargetId] ?: newNode
+        }
+
+        var updatedFlags = if (targetNode.setFlagOnEnter != null) {
+            _state.value.narrativeFlags + (targetNode.setFlagOnEnter to true)
         } else {
             _state.value.narrativeFlags
         }
+        if (incidentJustResolved) {
+            updatedFlags = updatedFlags + ("incident_just_happened" to false)
+        }
 
-        var effectiveNode = resolveEffectiveHubNode(newNode, updatedFlags)
+        var effectiveNode = resolveEffectiveHubNode(targetNode, updatedFlags)
         if (effectiveNode.setFlagOnEnter != null && updatedFlags[effectiveNode.setFlagOnEnter] != true) {
             updatedFlags = updatedFlags + (effectiveNode.setFlagOnEnter to true)
+        }
+
+        // Procedural retail teamwork incident interception on hub return
+        val isHubNode = effectiveNode.id.endsWith("_hub") || effectiveNode.hubCompletion != null || effectiveNode.id in setOf("node_locker_hub", "node_breakroom_hub")
+        val isReturningToHub = isHubNode && (effectiveNode.id in _state.value.visitedNodeIds)
+
+        var currentActiveHub = _state.value.activeHubNodeId
+        if (isHubNode) {
+            currentActiveHub = effectiveNode.id
+        }
+
+        if (isReturningToHub) {
+            if (incidentJustResolved || updatedFlags["incident_just_happened"] == true) {
+                // Clear the transient guard so future returns can trigger, preventing back-to-back chaining
+                updatedFlags = updatedFlags + ("incident_just_happened" to false)
+            } else {
+                // Procedural retail incident check (45% chance every time returning to current hub)
+                if (kotlin.random.Random.nextFloat() < 0.45f) {
+                    val availableIncidents = GameContent.incidents.values.filter { inc ->
+                        inc.triggerNodeId != null &&
+                        updatedFlags["flag_incident_${inc.id}_done"] != true &&
+                        inc.triggerNodeId !in _state.value.visitedNodeIds
+                    }
+                    if (availableIncidents.isNotEmpty()) {
+                        val chosen = availableIncidents.random()
+                        val trigger = StoryScript.ALL_NODES[chosen.triggerNodeId]
+                        if (trigger != null) {
+                            updatedFlags = updatedFlags + ("flag_incident_${chosen.id}_done" to true) + ("incident_just_happened" to true)
+                            effectiveNode = trigger
+                            currentActiveHub = targetNode.id
+                        }
+                    }
+                }
+            }
         }
 
         if (!effectiveNode.assignHeroClassId.isNullOrBlank()) {
@@ -1079,7 +1129,8 @@ class StoryViewModel(
             partyStats = updatedPartyStats,
             dialogueHistory = updatedHistory,
             visitedNodeIds = updatedVisited,
-            dynamicMetrics = updatedMetrics
+            dynamicMetrics = updatedMetrics,
+            activeHubNodeId = currentActiveHub
         )
 
         musicManager?.playTrack(targetScene.musicAsset)
