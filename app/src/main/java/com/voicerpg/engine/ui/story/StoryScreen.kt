@@ -703,6 +703,27 @@ fun StoryScreen(
                         }
                     }
 
+                    // Mini-Game Trigger Prompt if node triggers a department challenge
+                    if (currentNode.triggerMiniGameId != null) {
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Button(
+                            onClick = { storyViewModel.advanceDialogue() },
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = Color(0xFF00897B),
+                                contentColor = Color.White
+                            ),
+                            shape = RoundedCornerShape(8.dp),
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text(
+                                text = "🎮 START SHIFT MINI-GAME (TAP OR SAY 'START')",
+                                fontFamily = FontFamily.Monospace,
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 12.sp
+                            )
+                        }
+                    }
+
                     // Ambient Audio & Voice Mic Prompt Indicator Bar
                     Spacer(modifier = Modifier.height(4.dp))
                     VoiceInputPromptBar(
@@ -856,6 +877,27 @@ fun StoryScreen(
                         ) {
                             Text(
                                 text = "⚔️ COMMENCE BATTLE (TAP OR SAY 'FIREBALL')",
+                                fontFamily = FontFamily.Monospace,
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 11.sp
+                            )
+                        }
+                    }
+
+                    // Mini-Game Trigger Prompt if node triggers a department challenge
+                    if (currentNode.triggerMiniGameId != null) {
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Button(
+                            onClick = { storyViewModel.advanceDialogue() },
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = Color(0xFF00897B),
+                                contentColor = Color.White
+                            ),
+                            shape = RoundedCornerShape(8.dp),
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text(
+                                text = "🎮 START SHIFT MINI-GAME (TAP OR SAY 'START')",
                                 fontFamily = FontFamily.Monospace,
                                 fontWeight = FontWeight.Bold,
                                 fontSize = 11.sp
@@ -1057,6 +1099,7 @@ private fun RetroSpeechBubble(
                     val promptText = when {
                         node.id == "epilogue_credits" -> "👑 PLAY AGAIN"
                         node.triggerBattleEncounterId != null -> "⚔️ TO BATTLE"
+                        node.triggerMiniGameId != null -> "🎮 TO MINI-GAME"
                         isEyesFreeMode && node.nextNodeId != null -> "⏩ AUTO NEXT (1.5s)"
                         node.nextNodeId != null -> "▼ NEXT"
                         isEyesFreeMode -> "⏩ AUTO CAMP (1.5s)"

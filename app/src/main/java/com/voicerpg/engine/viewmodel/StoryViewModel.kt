@@ -27,6 +27,10 @@ import com.voicerpg.engine.model.SaveSlotInfo
 import com.voicerpg.engine.model.SaveSummary
 import com.voicerpg.engine.model.SavedCharacterStats
 import com.voicerpg.engine.model.StoryScene
+import com.voicerpg.engine.model.MiniGameConfig
+import com.voicerpg.engine.model.MiniGameOutcome
+import com.voicerpg.engine.model.MiniGameOutcomeTier
+import com.voicerpg.engine.engine.MiniGameSimulator
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -41,6 +45,7 @@ data class StoryState(
     val gameScreen: GameScreen = GameScreen.TITLE,
     val previousScreen: GameScreen? = null,
     val activeEncounter: EncounterDefinition? = null,
+    val activeMiniGameConfig: MiniGameConfig? = null,
     val player: PlayerCustomization = PlayerCustomization(),
     val decisionsMade: List<String> = emptyList(),
     val narrativeFlags: Map<String, Boolean> = emptyMap(),
@@ -282,6 +287,7 @@ class StoryViewModel(
         val node = _state.value.currentNode
         if (effectiveDialogueChoices(node).isNotEmpty()) return false
         if (node.triggerBattleEncounterId != null) return false
+        if (node.triggerMiniGameId != null) return true
         if (node.choices.isNotEmpty()) return true
         if (node.nextNodeId != null) return StoryScript.ALL_NODES.containsKey(node.nextNodeId)
         // Terminal node (no choices, no next): the playthrough is complete or a dead end.
@@ -433,6 +439,10 @@ class StoryViewModel(
             val current = _state.value.currentNode
             if (current.triggerBattleEncounterId != null) {
                 triggerEncounter(current.triggerBattleEncounterId)
+                return@launch
+            }
+            if (current.triggerMiniGameId != null) {
+                triggerMiniGame(current.triggerMiniGameId)
                 return@launch
             }
 
@@ -866,6 +876,11 @@ class StoryViewModel(
             return
         }
 
+        if (node.triggerMiniGameId != null) {
+            triggerMiniGame(node.triggerMiniGameId)
+            return
+        }
+
         val nextId = node.nextNodeId
         if (nextId != null) {
             val nextNode = StoryScript.ALL_NODES[nextId]
@@ -1268,6 +1283,74 @@ class StoryViewModel(
         )
 
         applyNodeTransition(targetNode)
+    }
+
+    fun triggerMiniGame(miniGameId: String) {
+        cancelPendingAutoAdvance()
+        cancelPendingStoryMode()
+        val config = GameContent.minigameById(miniGameId) ?: MiniGameConfig(
+            id = miniGameId,
+            title = miniGameId.replace('_', ' ').replaceFirstChar { it.uppercase() }
+        )
+        if (_state.value.isPureStoryMode) {
+            val outcome = MiniGameSimulator.simulate(
+                config = config,
+                skillModifier = 1.0f,
+                fatigueModifier = 1.0f
+            )
+            onMiniGameFinished(outcome)
+        } else {
+            speechManager.cancel()
+            combatNarrator.stop()
+            _state.value = _state.value.copy(
+                gameScreen = GameScreen.MINI_GAME,
+                activeMiniGameConfig = config
+            )
+        }
+    }
+
+    fun onSkipMiniGame() {
+        val config = _state.value.activeMiniGameConfig ?: MiniGameConfig(id = "minigame", title = "Mini-Game")
+        val outcome = MiniGameSimulator.simulate(
+            config = config,
+            skillModifier = 1.0f,
+            fatigueModifier = 1.0f
+        )
+        onMiniGameFinished(outcome)
+    }
+
+    fun onMiniGameFinished(outcome: MiniGameOutcome) {
+        cancelPendingAutoAdvance()
+        cancelPendingStoryMode()
+        val lastNode = _state.value.currentNode
+
+        val updatedMetrics = _state.value.dynamicMetrics.toMutableMap()
+        outcome.metricDeltas.forEach { (k, v) ->
+            val cur = updatedMetrics[k] ?: 50f
+            updatedMetrics[k] = (cur + v).coerceIn(0f, 100f)
+        }
+
+        val updatedFlags = if (outcome.completionFlag != null) {
+            _state.value.narrativeFlags + (outcome.completionFlag to true)
+        } else {
+            _state.value.narrativeFlags
+        }
+
+        val defaultTarget = StoryScript.ALL_NODES[lastNode.nextNodeId ?: lastNode.id]
+        val targetNode = defaultTarget ?: lastNode
+
+        _state.value = _state.value.copy(
+            gameScreen = GameScreen.STORY_EXPLORATION,
+            activeMiniGameConfig = null,
+            dynamicMetrics = updatedMetrics,
+            narrativeFlags = updatedFlags
+        )
+
+        if (outcome.narrativeBlurb.isNotBlank()) {
+            combatNarrator.speak(outcome.narrativeBlurb, force = true)
+        }
+
+        applyNodeTransition(targetNode, suppressNarration = false)
     }
 
     fun updatePartyStatsFromCombat(updatedParty: List<PartyMember>) {
@@ -1762,6 +1845,15 @@ class StoryViewModel(
         if (node.triggerBattleEncounterId != null) {
             val combatKeywords = listOf("fight", "battle", "attack", "fireball", "commence", "strike", "charge", "to battle", "engage", "slay", "ready", "start", "draw blade")
             if (combatKeywords.any { lower.contains(it) }) {
+                advanceDialogue()
+                return
+            }
+        }
+
+        // 2b. Mini-game trigger command
+        if (node.triggerMiniGameId != null) {
+            val miniGameKeywords = listOf("play", "start", "shift", "work", "begin", "ready", "mini game", "game", "go", "action")
+            if (miniGameKeywords.any { lower.contains(it) }) {
                 advanceDialogue()
                 return
             }

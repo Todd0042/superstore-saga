@@ -31,4 +31,26 @@ object MiniGameSimulator {
             narrativeBlurb = config.blurbOnTier[tier] ?: ""
         )
     }
+
+    /**
+     * Compute tier and outcome from actual interactive gameplay score (0 - 100).
+     */
+    fun outcomeFromScore(
+        config: MiniGameConfig,
+        score: Float
+    ): MiniGameOutcome {
+        val clampedScore = score.coerceIn(0f, 100f)
+        val tier = when {
+            clampedScore >= 90f -> MiniGameOutcomeTier.FLAWLESS
+            clampedScore >= 70f -> MiniGameOutcomeTier.SOLID
+            clampedScore >= 45f -> MiniGameOutcomeTier.CLUMSY
+            else -> MiniGameOutcomeTier.DISASTER
+        }
+        return MiniGameOutcome(
+            tier = tier,
+            score = clampedScore,
+            metricDeltas = config.metricDeltasOnTier[tier] ?: emptyMap(),
+            narrativeBlurb = config.blurbOnTier[tier] ?: ""
+        )
+    }
 }

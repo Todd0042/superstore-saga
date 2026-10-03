@@ -34,6 +34,8 @@ import com.voicerpg.engine.model.IncidentDefinition
 import com.voicerpg.engine.model.IncidentCondition
 import com.voicerpg.engine.model.IncidentConditionType
 import com.voicerpg.engine.model.IncidentWeightMultiplier
+import com.voicerpg.engine.model.MiniGameConfig
+import com.voicerpg.engine.model.MiniGameOutcomeTier
 import com.voicerpg.engine.ui.sprites.SpriteFrame
 import java.io.File
 
@@ -368,7 +370,8 @@ data class ChoiceDto(
     val completionFlag: String? = null,
     val requiredFlags: List<String>? = null,
     val metricDeltas: Map<String, Float>? = null,
-    val assignHeroClassId: String? = null
+    val assignHeroClassId: String? = null,
+    val triggerMiniGameId: String? = null
 )
 
 data class HubCompletionDto(
@@ -385,6 +388,7 @@ data class NodeDto(
     val choices: List<ChoiceDto>? = null,
     val nextNodeId: String? = null,
     val triggerBattleEncounterId: String? = null,
+    val triggerMiniGameId: String? = null,
     val changeSceneId: String? = null,
     val setFlagOnEnter: String? = null,
     val hubCompletion: HubCompletionDto? = null,
@@ -475,6 +479,48 @@ data class IncidentDto(
 }
 
 data class IncidentFileDto(val incidents: List<IncidentDto>? = null)
+
+data class MiniGameDto(
+    val id: String = "",
+    val title: String = "",
+    val department: String = "",
+    val description: String = "",
+    val durationSeconds: Int = 45,
+    val targetSpeed: Float = 1.0f,
+    val errorPenalty: Float = 10f,
+    val quota: Int = 20,
+    val metricDeltasOnTier: Map<String, Map<String, Float>>? = null,
+    val blurbOnTier: Map<String, String>? = null
+) {
+    fun toConfig(): MiniGameConfig {
+        val parsedDeltas = (metricDeltasOnTier ?: emptyMap()).mapNotNull { (tierStr, deltas) ->
+            runCatching { MiniGameOutcomeTier.valueOf(tierStr.uppercase()) }.getOrNull()?.let { tier ->
+                tier to deltas
+            }
+        }.toMap()
+
+        val parsedBlurbs = (blurbOnTier ?: emptyMap()).mapNotNull { (tierStr, blurb) ->
+            runCatching { MiniGameOutcomeTier.valueOf(tierStr.uppercase()) }.getOrNull()?.let { tier ->
+                tier to blurb
+            }
+        }.toMap()
+
+        return MiniGameConfig(
+            id = id,
+            title = title,
+            department = department,
+            description = description,
+            durationSeconds = durationSeconds,
+            targetSpeed = targetSpeed,
+            errorPenalty = errorPenalty,
+            quota = quota,
+            metricDeltasOnTier = parsedDeltas,
+            blurbOnTier = parsedBlurbs
+        )
+    }
+}
+
+data class MiniGameFileDto(val minigames: List<MiniGameDto>? = null)
 
 data class EnvironmentDefinitionDto(
     val id: String = "",
@@ -803,7 +849,8 @@ class GameContentPack(
     val affinityMatrix: AffinityMatrix? = null,
     val thesaurusRoots: Map<SpellSchool, List<String>> = emptyMap(),
     val metrics: Map<String, MetricDefinition> = emptyMap(),
-    val incidents: Map<String, IncidentDefinition> = emptyMap()
+    val incidents: Map<String, IncidentDefinition> = emptyMap(),
+    val minigames: Map<String, MiniGameConfig> = emptyMap()
 ) {
     val heroCharacter: GameCharacter? = characters.values.firstOrNull { it.role == CharacterRole.HERO }
 
@@ -833,6 +880,8 @@ class GameContentPack(
         classes.firstOrNull { it.id == id } ?: classes.firstOrNull() ?: FALLBACK_CLASS
 
     fun encounterById(id: String?): EncounterDefinition? = if (id == null) null else encounters[id]
+
+    fun minigameById(id: String?): MiniGameConfig? = if (id == null) null else minigames[id]
 
     fun environmentById(id: String?): EnvironmentDefinition? {
         if (id == null) return null
@@ -1064,6 +1113,11 @@ class GameContentLoader(private val source: ContentSource) {
             .map { it.toDefinition() }
             .associateBy { it.id }
 
+        val minigames = (read("minigames/minigames.json", MiniGameFileDto::class.java)?.minigames ?: emptyList())
+            .filter { it.id.isNotBlank() }
+            .map { it.toConfig() }
+            .associateBy { it.id }
+
         val narrator = characters["narrator"]?.speaker
             ?: characters.values.firstOrNull { it.role == CharacterRole.NARRATOR }?.speaker
             ?: DialogueSpeaker.NARRATOR
@@ -1118,7 +1172,8 @@ class GameContentLoader(private val source: ContentSource) {
             affinityMatrix = affinityMatrix,
             thesaurusRoots = thesaurusRoots,
             metrics = metrics,
-            incidents = incidents
+            incidents = incidents,
+            minigames = minigames
         )
         return if (pack.scenes.isEmpty() || pack.nodes.isEmpty()) EmergencyFallback.build() else pack
     }
@@ -1342,11 +1397,13 @@ class GameContentLoader(private val source: ContentSource) {
                 completionFlag = it.completionFlag,
                 requiredFlags = it.requiredFlags ?: emptyList(),
                 metricDeltas = it.metricDeltas ?: emptyMap(),
-                assignHeroClassId = it.assignHeroClassId
+                assignHeroClassId = it.assignHeroClassId,
+                triggerMiniGameId = it.triggerMiniGameId
             )
         },
         nextNodeId = nextNodeId,
         triggerBattleEncounterId = triggerBattleEncounterId,
+        triggerMiniGameId = triggerMiniGameId,
         changeSceneId = changeSceneId,
         setFlagOnEnter = setFlagOnEnter,
         hubCompletion = hubCompletion?.let {
@@ -1523,9 +1580,11 @@ object GameContent {
     val selfieConfig: SelfieFilterConfig get() = manifest.selfieConfig
     val metrics: Map<String, MetricDefinition> get() = pack.metrics
     val incidents: Map<String, IncidentDefinition> get() = pack.incidents
+    val minigames: Map<String, MiniGameConfig> get() = pack.minigames
 
     fun metricById(id: String?): MetricDefinition? = pack.metrics[id]
     fun incidentById(id: String?): IncidentDefinition? = pack.incidents[id]
+    fun minigameById(id: String?): MiniGameConfig? = pack.minigameById(id)
 
     fun speakerById(id: String?): DialogueSpeaker? = pack.speakerById(id)
     fun characterById(id: String?): GameCharacter? = pack.characterById(id)

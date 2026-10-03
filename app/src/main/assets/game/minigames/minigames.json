@@ -1,0 +1,214 @@
+{
+  "minigames": [
+    {
+      "id": "barcode_blaster",
+      "title": "Twin-Stick Barcode Blaster",
+      "department": "Front End (Cashier)",
+      "description": "Suburban shoppers are charging the checkout registers. Tag items with your high-frequency laser scanner before they breach the counter!",
+      "durationSeconds": 45,
+      "targetSpeed": 1.0,
+      "errorPenalty": 10.0,
+      "quota": 25,
+      "metricDeltasOnTier": {
+        "FLAWLESS": {
+          "productivity": 20.0,
+          "morale": 5.0,
+          "stamina": -5.0,
+          "engagement": 10.0
+        },
+        "SOLID": {
+          "productivity": 10.0,
+          "morale": 0.0,
+          "stamina": -10.0,
+          "engagement": 5.0
+        },
+        "CLUMSY": {
+          "productivity": 5.0,
+          "morale": -10.0,
+          "stamina": -15.0,
+          "engagement": -5.0
+        },
+        "DISASTER": {
+          "productivity": 0.0,
+          "morale": -20.0,
+          "stamina": -20.0,
+          "engagement": -15.0
+        }
+      },
+      "blurbOnTier": {
+        "FLAWLESS": "Rapid-fire scanner masterclass! You cleared sixty items a minute and gave zero unearned discounts.",
+        "SOLID": "Clean register throughput. A coupon lady grumbled, but your checkout line kept moving.",
+        "CLUMSY": "A toddler knocked over a battery display and your laser scanner threw three price check errors.",
+        "DISASTER": "A cart crashed into register four, the scanner glass shattered, and Todd wrote you up on the spot."
+      }
+    },
+    {
+      "id": "pallet_haul",
+      "title": "The Pallet Haul / Aisle Dodger",
+      "department": "Sales Floor (Stocker)",
+      "description": "Haul a 2,000-lb hydraulic pallet jack down narrow grocery aisles. Dodge spills, caution cones, and wandering shoppers without tipping freight!",
+      "durationSeconds": 45,
+      "targetSpeed": 1.0,
+      "errorPenalty": 15.0,
+      "quota": 100,
+      "metricDeltasOnTier": {
+        "FLAWLESS": {
+          "productivity": 20.0,
+          "morale": 5.0,
+          "stamina": -5.0,
+          "engagement": 10.0
+        },
+        "SOLID": {
+          "productivity": 10.0,
+          "morale": 0.0,
+          "stamina": -10.0,
+          "engagement": 5.0
+        },
+        "CLUMSY": {
+          "productivity": 5.0,
+          "morale": -10.0,
+          "stamina": -15.0,
+          "engagement": -5.0
+        },
+        "DISASTER": {
+          "productivity": 0.0,
+          "morale": -20.0,
+          "stamina": -20.0,
+          "engagement": -15.0
+        }
+      },
+      "blurbOnTier": {
+        "FLAWLESS": "Precision pallet navigation! Not a single box wobbled, and you slipped past toddlers like a ghost.",
+        "SOLID": "Solid freight delivery. You had to honk the horn twice at cereal gazers, but the cargo arrived intact.",
+        "CLUMSY": "A sharp turn threw two cases of marinara into Aisle 6. You spent half an hour mopping crushed tomatoes.",
+        "DISASTER": "The pallet jack jackknifed into an endcap display of cooking oil. Management called an all-hands spill response."
+      }
+    },
+    {
+      "id": "baler_compactor",
+      "title": "The Baler Compactor",
+      "department": "Backroom (Unloader)",
+      "description": "Compress hundreds of corrugated boxes in the industrial green baler. Reject illegal plastics and tie off the four steel wires before safety switches trip!",
+      "durationSeconds": 45,
+      "targetSpeed": 1.0,
+      "errorPenalty": 20.0,
+      "quota": 2,
+      "metricDeltasOnTier": {
+        "FLAWLESS": {
+          "productivity": 20.0,
+          "morale": 5.0,
+          "stamina": -5.0,
+          "engagement": 10.0
+        },
+        "SOLID": {
+          "productivity": 10.0,
+          "morale": 0.0,
+          "stamina": -10.0,
+          "engagement": 5.0
+        },
+        "CLUMSY": {
+          "productivity": 5.0,
+          "morale": -10.0,
+          "stamina": -15.0,
+          "engagement": -5.0
+        },
+        "DISASTER": {
+          "productivity": 0.0,
+          "morale": -20.0,
+          "stamina": -20.0,
+          "engagement": -15.0
+        }
+      },
+      "blurbOnTier": {
+        "FLAWLESS": "Textbook hydraulic baling! Every wire looped clean and tight; Mack gave a rare nod of grudging respect.",
+        "SOLID": "Bale compressed and stacked without issue. Solid backroom hustle.",
+        "CLUMSY": "A stray plastic wrap jammed the intake chute for ten minutes while the motor whined in agony.",
+        "DISASTER": "A steel pipe slipped into the chamber, snapping a guide rod with an ear-shattering bang. Clint is reviewing the CCTV."
+      }
+    },
+    {
+      "id": "counter_commotion",
+      "title": "Counter Commotion",
+      "department": "Specialty (Specialist)",
+      "description": "Serve high-maintenance customers at the specialty counter. Shave deli meats to exact ounce targets, find display case keys, and pitch extended warranties!",
+      "durationSeconds": 45,
+      "targetSpeed": 1.0,
+      "errorPenalty": 12.0,
+      "quota": 5,
+      "metricDeltasOnTier": {
+        "FLAWLESS": {
+          "productivity": 20.0,
+          "morale": 5.0,
+          "stamina": -5.0,
+          "engagement": 10.0
+        },
+        "SOLID": {
+          "productivity": 10.0,
+          "morale": 0.0,
+          "stamina": -10.0,
+          "engagement": 5.0
+        },
+        "CLUMSY": {
+          "productivity": 5.0,
+          "morale": -10.0,
+          "stamina": -15.0,
+          "engagement": -5.0
+        },
+        "DISASTER": {
+          "productivity": 0.0,
+          "morale": -20.0,
+          "stamina": -20.0,
+          "engagement": -15.0
+        }
+      },
+      "blurbOnTier": {
+        "FLAWLESS": "Flawless service precision! Every slice hit the exact ounce mark and you upsold three extended warranties.",
+        "SOLID": "Steady counter performance. Customers walked away satisfied with their barcodes and cuts.",
+        "CLUMSY": "You fumbled the glass case key ring for forty seconds while a customer loudly tapped their watch.",
+        "DISASTER": "You sliced double the customer's prosciutto order and dropped a showroom phone on the tile floor."
+      }
+    },
+    {
+      "id": "cart_corral",
+      "title": "Cart Corral Rush",
+      "department": "Storewide Support (All Tracks)",
+      "description": "Wrangle a serpentine snake of 30 runaway shopping carts across the asphalt lot through hail and erratic parking lot SUVs!",
+      "durationSeconds": 40,
+      "targetSpeed": 1.0,
+      "errorPenalty": 15.0,
+      "quota": 20,
+      "metricDeltasOnTier": {
+        "FLAWLESS": {
+          "productivity": 15.0,
+          "morale": 10.0,
+          "stamina": -10.0,
+          "engagement": 10.0
+        },
+        "SOLID": {
+          "productivity": 10.0,
+          "morale": 5.0,
+          "stamina": -15.0,
+          "engagement": 5.0
+        },
+        "CLUMSY": {
+          "productivity": 5.0,
+          "morale": -5.0,
+          "stamina": -20.0,
+          "engagement": -5.0
+        },
+        "DISASTER": {
+          "productivity": 0.0,
+          "morale": -15.0,
+          "stamina": -25.0,
+          "engagement": -15.0
+        }
+      },
+      "blurbOnTier": {
+        "FLAWLESS": "You snapped the cart strap with one hand and wheeled thirty carts into the bay without tapping a single bumper.",
+        "SOLID": "Cart bay replenished. A light rain started, but the entrance vestibule is fully stocked.",
+        "CLUMSY": "The cart train jackknifed across two handicapped spaces. A minivan laid on the horn.",
+        "DISASTER": "Four runaway carts rolled downhill into an assistant district manager's Lexus. Total disaster."
+      }
+    }
+  ]
+}
