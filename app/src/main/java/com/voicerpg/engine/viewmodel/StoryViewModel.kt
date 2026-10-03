@@ -1008,6 +1008,23 @@ class StoryViewModel(
             }
         }
 
+        if (targetNode.id == "node_shift56_eval") {
+            val morale = _state.value.dynamicMetrics["store_morale"] ?: 65f
+            val engagement = _state.value.dynamicMetrics["associate_engagement"] ?: 70f
+            val squeeze = _state.value.dynamicMetrics["labor_squeeze"] ?: 40f
+            val destinationId = when {
+                morale < 40f && squeeze >= 50f -> "node_ending_wildcat"
+                squeeze >= 55f && engagement < 55f -> "node_ending_corporate"
+                engagement >= 80f && morale >= 50f -> "node_ending_whistleblower"
+                engagement < 60f && morale >= 55f -> "node_ending_quiet_quitter"
+                else -> "node_ending_defiant"
+            }
+            val destinationNode = StoryScript.ALL_NODES[destinationId]
+            if (destinationNode != null) {
+                targetNode = destinationNode
+            }
+        }
+
         var updatedFlags = if (targetNode.setFlagOnEnter != null) {
             _state.value.narrativeFlags + (targetNode.setFlagOnEnter to true)
         } else {

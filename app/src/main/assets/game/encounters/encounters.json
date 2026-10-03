@@ -146,6 +146,31 @@
           "narrationText": "Clint slides a typed confession statement and pen across the metal desk, threatening police arrest unless you sign!"
         }
       ]
+    },
+    {
+      "id": "encounter_henderson_showdown",
+      "name": "The Executive Lockdown Showdown",
+      "description": "Store Manager Henderson locks the executive office doors, wielding unhinged threats of career destruction, police intervention, and fabricated charges. Break his desperate reign of retail terror!",
+      "environment": "CASTLE",
+      "party": ["hero"],
+      "enemies": [
+        {
+          "templateId": "manager_henderson",
+          "id": "henderson_boss",
+          "name": "Store Manager Henderson",
+          "subtitle": "The Desperate Executive",
+          "isTargeted": true,
+          "atbGauge": 0.50
+        }
+      ],
+      "bossPhases": [
+        {
+          "enemyId": "henderson_boss",
+          "hpBelow": 0.5,
+          "bannerText": "EMERGENCY EXECUTIVE DESPERATION",
+          "narrationText": "Henderson slams his mahogany desk, waving termination notices and shouting that no associate leaves Store #1042 without signing an NDA!"
+        }
+      ]
     }
   ]
 }

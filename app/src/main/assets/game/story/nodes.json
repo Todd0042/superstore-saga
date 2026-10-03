@@ -3653,6 +3653,342 @@
       "nextNodeId": "node_incident_return"
     },
     {
+      "id": "node_incident_padlocked_fire_exit_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Mack gestures toward the heavy steel fire exit behind Bay 3. A hardened yellow U-lock has been clamped around the push bar: 'Henderson padlocked the emergency fire exits so nobody can slip out before morning inventory reconciliation. That is a federal life-safety violation.'",
+      "choices": [
+        {
+          "id": "choice_padlock_unloader_photo",
+          "text": "Take a timestamped photo of the padlocked fire door and send it to the state fire marshal portal.",
+          "voiceKeywords": [
+            "photo",
+            "fire marshal",
+            "padlock",
+            "evidence",
+            "safety"
+          ],
+          "nextNodeId": "node_incident_padlock_resolve",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 10.0
+          }
+        },
+        {
+          "id": "choice_padlock_unloader_cut",
+          "text": "Grab Mack's heavy bolt cutters and snap the illegal padlock open immediately.",
+          "voiceKeywords": [
+            "bolt cutters",
+            "cut",
+            "snap",
+            "open",
+            "free"
+          ],
+          "nextNodeId": "node_incident_padlock_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "labor_squeeze": -10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_padlocked_fire_exit_stocker",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Donna shines her flashlight on the seasonal garden gate: 'Look at the chain wrapped around the emergency egress bar. Henderson ordered Todd to chain it so associates can't walk off during mandatory overtime.'",
+      "choices": [
+        {
+          "id": "choice_padlock_stocker_document",
+          "text": "Document the chained crash bar with Donna as a certified witness.",
+          "voiceKeywords": [
+            "document",
+            "witness",
+            "donna",
+            "chain",
+            "crash bar"
+          ],
+          "nextNodeId": "node_incident_padlock_resolve",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 5.0
+          }
+        },
+        {
+          "id": "choice_padlock_stocker_confront",
+          "text": "Demand that Todd remove the chain immediately under threat of emergency OSHA escalation.",
+          "voiceKeywords": [
+            "todd",
+            "osha",
+            "chain",
+            "remove",
+            "demand"
+          ],
+          "nextNodeId": "node_incident_padlock_resolve",
+          "metricDeltas": {
+            "labor_squeeze": -10.0,
+            "store_morale": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_padlock_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "The criminal lockdown tactic is logged and neutralized. Fire safety violations are strict liability felonies that strip executives of corporate immunity.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_shredder_overheat_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "changeSceneId": "scene_manager_office",
+      "text": "Acrid grey smoke drifts from beneath the manager's office door. Julian peeks through the blinds: 'Henderson's heavy-duty crosscut shredder jammed on a 50-page stack of high-ticket serial manifests. Half the pages are sticking out of the teeth!'",
+      "choices": [
+        {
+          "id": "choice_shredder_snatch",
+          "text": "Discreetly slide the unjammed half of the serial manifests into your clipboard before Henderson returns.",
+          "voiceKeywords": [
+            "slide",
+            "snatch",
+            "manifests",
+            "serial",
+            "evidence",
+            "clipboard"
+          ],
+          "nextNodeId": "node_incident_shredder_resolve",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "labor_squeeze": 5.0
+          }
+        },
+        {
+          "id": "choice_shredder_photo",
+          "text": "Photograph the jammed shredder and charred documents through the glass partition.",
+          "voiceKeywords": [
+            "photo",
+            "shredder",
+            "glass",
+            "charred",
+            "proof"
+          ],
+          "nextNodeId": "node_incident_shredder_resolve",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_shredder_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Evidence of deliberate record destruction is secured. Spoliation of documents during an active audit turns civil infractions into criminal obstruction.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_altered_payroll_cashier",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "changeSceneId": "scene_breakroom",
+      "text": "Brenda slaps her smartphone onto the breakroom table: 'Look at my electronic paystub. 18 hours of emergency overtime from last week were converted to \"Unpaid Administrative Break\"! Marsha and Henderson are shaving our pay to offset their shrink numbers!'",
+      "choices": [
+        {
+          "id": "choice_payroll_export",
+          "text": "Help Brenda export the raw timestamp audit log from the corporate payroll server before it's overwritten.",
+          "voiceKeywords": [
+            "export",
+            "raw",
+            "audit",
+            "payroll",
+            "timestamps",
+            "server"
+          ],
+          "nextNodeId": "node_incident_payroll_resolve",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 10.0
+          }
+        },
+        {
+          "id": "choice_payroll_post",
+          "text": "Print the wage theft comparison and post it openly on the breakroom bulletin board.",
+          "voiceKeywords": [
+            "print",
+            "bulletin",
+            "wage theft",
+            "post",
+            "expose"
+          ],
+          "nextNodeId": "node_incident_payroll_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "labor_squeeze": -10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_payroll_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Systematic wage theft documented. Shaving overtime hours to balance corporate shrink is the fatal mistake that brings federal regulators down with maximum penalties.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_department_of_labor_scout",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Through the locked front glass entrance, a woman in a dark trench coat taps on the glass. She holds up a gold-embossed federal badge: 'U.S. Department of Labor, Wage and Hour Division. We have received multiple reports of unlawful off-the-clock detention.'",
+      "choices": [
+        {
+          "id": "choice_dol_slip",
+          "text": "Slip a folded note under the door sweep detailing the locked exits and manager names.",
+          "voiceKeywords": [
+            "slip",
+            "note",
+            "federal",
+            "door",
+            "labor",
+            "investigator"
+          ],
+          "nextNodeId": "node_incident_dol_resolve",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "store_morale": 15.0
+          }
+        },
+        {
+          "id": "choice_dol_gesture",
+          "text": "Gesture toward the rear dock gates where Mack and the delivery trucks are stationed.",
+          "voiceKeywords": [
+            "gesture",
+            "dock",
+            "rear",
+            "mack",
+            "trucks",
+            "gate"
+          ],
+          "nextNodeId": "node_incident_dol_resolve",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_dol_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "The federal agent nods solemnly, takes notes on a digital tablet, and radios her team. Help from outside the retail panopticon has arrived.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_intercom_retaliation_threat",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Henderson's voice crackles over the store PA system, distorted by trembling rage: 'ATTENTION ALL STORE 1042 ASSOCIATES. ANY WORKER WHO ATTEMPTS TO EXIT THE BUILDING BEFORE FULL RECONCILIATION WILL BE TREATED AS AN ADMITTED ACCOMPLICE TO INVENTORY FELONY THEFT. RETURN TO YOUR STATIONS.'",
+      "choices": [
+        {
+          "id": "choice_intercom_record",
+          "text": "Hold your smartphone up to the nearest ceiling speaker and record Henderson's threatening audio broadcast.",
+          "voiceKeywords": [
+            "record",
+            "audio",
+            "smartphone",
+            "speaker",
+            "threat",
+            "intercom"
+          ],
+          "nextNodeId": "node_incident_intercom_resolve",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "store_morale": 10.0
+          }
+        },
+        {
+          "id": "choice_intercom_reassure",
+          "text": "Walk down Action Alley calmly reassuring trembling younger associates that Henderson has no legal power to detain them.",
+          "voiceKeywords": [
+            "reassure",
+            "calm",
+            "associates",
+            "action alley",
+            "solidarity"
+          ],
+          "nextNodeId": "node_incident_intercom_resolve",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "labor_squeeze": -10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_intercom_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Henderson's desperate threats are captured on tape. The fear tactics are no longer working\u2014solidarity is hardening into resolve.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_solidarity_huddle_breakroom",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_breakroom",
+      "text": "In the dimmed breakroom, Donna, Brenda, Mack, and Julian gather around the coffee machine. Donna looks around the circle: 'We just compared notes. Todd targeted stockers, Marsha targeted cashiers, Clint targeted unloaders, and Chad targeted specialists. Henderson planned to scapegoat all of us to save his executive bonus.'",
+      "choices": [
+        {
+          "id": "choice_solidarity_combine",
+          "text": "Place your career evidence alongside theirs into a single unified binder.",
+          "voiceKeywords": [
+            "combine",
+            "binder",
+            "unify",
+            "evidence",
+            "solidarity",
+            "together"
+          ],
+          "nextNodeId": "node_incident_solidarity_resolve",
+          "metricDeltas": {
+            "store_morale": 25.0,
+            "associate_engagement": 20.0
+          }
+        },
+        {
+          "id": "choice_solidarity_vow",
+          "text": "Raise a coffee mug with the four veterans in a quiet vow: 'Nobody takes the fall alone.'",
+          "voiceKeywords": [
+            "vow",
+            "coffee",
+            "veterans",
+            "nobody",
+            "fall",
+            "together"
+          ],
+          "nextNodeId": "node_incident_solidarity_resolve",
+          "metricDeltas": {
+            "store_morale": 30.0,
+            "labor_squeeze": -15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_solidarity_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "The four career tracks are unified. When retail workers stop competing for survival and stand together, the entire coercive apparatus crumbles.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
       "id": "node_incident_return",
       "speakerId": "narrator",
       "side": "CENTER_NARRATOR",
@@ -9384,7 +9720,1211 @@
       "speakerId": "narrator",
       "side": "CENTER_NARRATOR",
       "text": "ACT FOUR: THE FRAME JOB & INTERNAL ESPIONAGE COMPLETED! You dismantled Clint's coercive Reid-technique interrogation and exposed the manufactured paper trail. But Store Manager Henderson is now backed into a corner. Desperate, paranoid, and facing total corporate disgrace, Henderson orders a complete emergency store lockdown for inventory retribution. Welcome to Act V: The Crucible & Endgame!",
-      "setFlagOnEnter": "game_completed"
+      "choices": [
+        {
+          "id": "choice_begin_act5",
+          "text": "Embark on Act V: The Crucible & Final Reckoning (Shift 47).",
+          "voiceKeywords": [
+            "begin",
+            "act five",
+            "act 5",
+            "embark",
+            "shift 47",
+            "continue",
+            "forward",
+            "ready"
+          ],
+          "nextNodeId": "node_shift47_start"
+        }
+      ]
+    },
+    {
+      "id": "node_shift47_start",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "setFlagOnEnter": "flag_act5_started",
+      "changeSceneId": "scene_manager_office",
+      "text": "SHIFT FORTY-SEVEN: THE EMERGENCY STORE LOCKDOWN. At 11:30 PM, the sound of heavy metal drop-bars echoing against the glass entryways jolts the store. Store Manager Henderson paces behind his locked office door, having learned that Clint's interrogation failed to produce a signed confession. Henderson declares an 'Emergency Inventory Quarantine': exterior sliding doors are powered down, exit crash bars are chained, and all associates are mandated to remain on the premises under threat of immediate termination and criminal referral.",
+      "choices": [
+        {
+          "id": "choice_shift47_clockin",
+          "text": "Brace yourself inside the locked retail fortress for the final trial of Shift 47.",
+          "voiceKeywords": [
+            "brace",
+            "shift 47",
+            "lockdown",
+            "begin",
+            "start",
+            "enter",
+            "crucible"
+          ],
+          "nextNodeId": "node_shift47_branch"
+        }
+      ]
+    },
+    {
+      "id": "node_shift47_branch",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Fluorescent lights hum under emergency generator backup. Floor supervisors clutch two-way radios with white knuckles. Report to your department for the lockdown shifts.",
+      "nextNodeId": "node_shift47_stocker"
+    },
+    {
+      "id": "node_hub_stocker_act5",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "allowIncidents": true,
+      "text": "Donna stands guard by the central aisle endcap, holding a heavy flashlight: 'Henderson has chained the garden roll-up gates. He's trying to manufacture a coverup before morning district auditors arrive. Keep your cool, rookie, and watch the aisles.'",
+      "choices": [
+        {
+          "id": "choice_stocker_act5_donna",
+          "text": "Ask Donna how to document the physical store lockdown.",
+          "voiceKeywords": [
+            "donna",
+            "lockdown",
+            "document",
+            "safety",
+            "advice"
+          ],
+          "nextNodeId": "node_stocker_act5_donna_advice",
+          "completionFlag": "flag_hub_stocker_act5_donna",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 10.0
+          }
+        },
+        {
+          "id": "choice_stocker_act5_continue",
+          "text": "Step into the darkened aisles to maintain shelf vigilance.",
+          "voiceKeywords": [
+            "aisles",
+            "vigilance",
+            "shelf",
+            "stocker",
+            "continue"
+          ],
+          "nextNodeId": "node_shift48_stocker"
+        }
+      ]
+    },
+    {
+      "id": "node_stocker_act5_donna_advice",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "text": "'Don't let them intimidate you with termination threats,' Donna says quietly. 'Locking workers inside a commercial building is false imprisonment. Keep your personal phone recording in your apron pocket. Every minute Henderson keeps those chains on is another zero on his settlement check.'",
+      "nextNodeId": "node_hub_stocker_act5"
+    },
+    {
+      "id": "node_hub_cashier_act5",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "changeSceneId": "scene_checkout_concourse",
+      "allowIncidents": true,
+      "text": "The front-end concourse is deathly silent under lowered security grilles. Brenda stands near Lane 1: 'All register drawer pickups are frozen. Marsha locked the cash office and Henderson is demanding we audit four weeks of receipts before 6:00 AM. How are your nerves, {hero}?'",
+      "choices": [
+        {
+          "id": "choice_cashier_act5_brenda",
+          "text": "Ask Brenda how to protect the cashier team from coercive audit demands.",
+          "voiceKeywords": [
+            "brenda",
+            "audit",
+            "protect",
+            "cashier",
+            "advice"
+          ],
+          "nextNodeId": "node_cashier_act5_brenda_advice",
+          "completionFlag": "flag_hub_cashier_act5_brenda",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "store_morale": 10.0
+          }
+        },
+        {
+          "id": "choice_cashier_act5_continue",
+          "text": "Inspect the front concourse register banks.",
+          "voiceKeywords": [
+            "concourse",
+            "register",
+            "inspect",
+            "continue",
+            "cashier"
+          ],
+          "nextNodeId": "node_shift48_cashier"
+        }
+      ]
+    },
+    {
+      "id": "node_cashier_act5_brenda_advice",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "text": "'Refuse to audit alone,' Brenda whispers. 'Whatever Marsha tells you to reconcile, do it in pairs. If Henderson tries to claim another till discrepancy, two sets of eyes and two signatures neutralize their lies instantly.'",
+      "nextNodeId": "node_hub_cashier_act5"
+    },
+    {
+      "id": "node_hub_unloader_act5",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "allowIncidents": true,
+      "text": "Mack holds a 36-inch crowbar by Dock Bay 2. 'Henderson padlocked all bay doors from the outside. If an electrical fire kicks off in the compressor room, we're boxed in. I'm keeping this crowbar within arm's reach. What's your play, rookie?'",
+      "choices": [
+        {
+          "id": "choice_unloader_act5_mack",
+          "text": "Ask Mack how to secure the backroom perimeter.",
+          "voiceKeywords": [
+            "mack",
+            "perimeter",
+            "backroom",
+            "dock",
+            "crowbar",
+            "advice"
+          ],
+          "nextNodeId": "node_unloader_act5_mack_advice",
+          "completionFlag": "flag_hub_unloader_act5_mack",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
+          }
+        },
+        {
+          "id": "choice_unloader_act5_continue",
+          "text": "Patrol the loading dock staging perimeter.",
+          "voiceKeywords": [
+            "patrol",
+            "dock",
+            "staging",
+            "unloader",
+            "continue"
+          ],
+          "nextNodeId": "node_shift48_unloader"
+        }
+      ]
+    },
+    {
+      "id": "node_unloader_act5_mack_advice",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "'We keep the trailer roll-ups on emergency pin release,' Mack rumbles. 'Henderson thinks his executive title gives him ownership of human beings. He's about to learn that warehouse concrete belongs to the workers who pour their sweat on it.'",
+      "nextNodeId": "node_hub_unloader_act5"
+    },
+    {
+      "id": "node_hub_specialist_act5",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "allowIncidents": true,
+      "text": "Julian monitors the specialty display area with quiet intensity: 'Henderson and Chad are purging digital logbooks from the internal server. They know the paper trail leads straight up to the executive suite. What's our next move, {hero}?'",
+      "choices": [
+        {
+          "id": "choice_spec_act5_julian",
+          "text": "Ask Julian how to preserve the cloud asset registry.",
+          "voiceKeywords": [
+            "julian",
+            "cloud",
+            "asset",
+            "registry",
+            "preserve",
+            "advice"
+          ],
+          "nextNodeId": "node_spec_act5_julian_advice",
+          "completionFlag": "flag_hub_spec_act5_julian",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "store_morale": 10.0
+          }
+        },
+        {
+          "id": "choice_spec_act5_continue",
+          "text": "Guard the high-value showcase terminals.",
+          "voiceKeywords": [
+            "guard",
+            "showcase",
+            "terminals",
+            "specialist",
+            "continue"
+          ],
+          "nextNodeId": "node_shift48_specialist"
+        }
+      ]
+    },
+    {
+      "id": "node_spec_act5_julian_advice",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "'I have the cloud audit portal mirrored onto an external drive,' Julian smiles thinly. 'Every time Chad tries to delete a serial record, the server logs his employee IP address and creates a permanent deletion tombstone. They are digging their own legal graves.'",
+      "nextNodeId": "node_hub_specialist_act5"
+    },
+    {
+      "id": "node_shift47_stocker",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 47: THE FORCED OVERTIME MANDATE. Todd blocks the breakroom entrance: 'No clock-outs. Henderson ordered all night stockers to stay until every inch of grocery and hardware is counted item by item.'",
+      "choices": [
+        {
+          "id": "choice_s47_stocker_stand",
+          "text": "Stand shoulder-to-shoulder with Donna and demand written verification of emergency overtime pay.",
+          "voiceKeywords": [
+            "stand",
+            "donna",
+            "overtime",
+            "verification",
+            "pay",
+            "stocker"
+          ],
+          "nextNodeId": "node_hub_stocker_act5",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift48_stocker",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 48: THE SHREDDED CLAIMS SLIPS. In Aisle 4, you find the claims disposal bin overturned. Todd has torn up the inventory slips, attempting to hide evidence that he authorized the missing tool write-offs.",
+      "choices": [
+        {
+          "id": "choice_s48_stocker_puzzle",
+          "text": "Piece together the torn claims slips and photograph the matching serial numbers.",
+          "voiceKeywords": [
+            "puzzle",
+            "slips",
+            "photo",
+            "serial",
+            "claims",
+            "todd"
+          ],
+          "nextNodeId": "node_shift49_stocker",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift49_stocker",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 49: THE DESPERATE BRIBE. Todd pulls you into an empty aisle: 'Look, {hero}. Sign a statement saying you mislaid the DeWalt box. Henderson will approve an instant $1,000 cash bonus and promote you to Support Lead next week.'",
+      "choices": [
+        {
+          "id": "choice_s49_stocker_reject",
+          "text": "Flatly reject Todd's crooked bribe and warn him that witness tampering carries federal prison time.",
+          "voiceKeywords": [
+            "reject",
+            "bribe",
+            "tampering",
+            "federal",
+            "prison",
+            "refuse"
+          ],
+          "nextNodeId": "node_shift50_stocker",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift50_stocker",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 50: THE GARDEN GATE ESCALATION. Through the locked garden center glass, you spot a state fire marshal vehicle idling by the curb. Donna signals with her flashlight toward the chained crash bar.",
+      "choices": [
+        {
+          "id": "choice_s50_stocker_signal",
+          "text": "Hold up a cardboard sign to the glass reading 'DOORS CHAINED FROM INSIDE'.",
+          "voiceKeywords": [
+            "sign",
+            "cardboard",
+            "chained",
+            "fire marshal",
+            "signal",
+            "help"
+          ],
+          "nextNodeId": "node_shift51_stocker",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "labor_squeeze": -10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift51_stocker",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 51: THE SOLIDARITY ROSTER. Donna gathers the stockers: 'Every single associate on nights is refusing to sign Henderson's falsified reconciliation sheets. We stand as one wall.'",
+      "choices": [
+        {
+          "id": "choice_s51_stocker_unite",
+          "text": "Add your signature to Donna's collective associate declaration of labor rights.",
+          "voiceKeywords": [
+            "sign",
+            "declaration",
+            "solidarity",
+            "unite",
+            "rights"
+          ],
+          "nextNodeId": "node_shift52_stocker",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift52_stocker",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_breakroom",
+      "text": "Shift 52: THE ALL-DEPARTMENT ACCORD. Brenda, Mack, and Julian join Donna in the breakroom. All four career departments stack their physical evidence into a massive black legal folder.",
+      "choices": [
+        {
+          "id": "choice_s52_stocker_dossier",
+          "text": "Bind the stocking department's reconstructed claims sheets into the master dossier.",
+          "voiceKeywords": [
+            "dossier",
+            "claims",
+            "master",
+            "evidence",
+            "bind"
+          ],
+          "nextNodeId": "node_shift53_stocker",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "store_morale": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift53_stocker",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 53: THE SIRENS IN THE PARKING LOT. Distant sirens begin echoing through the structural steel beams. The fire marshal and federal agents have established a perimeter outside.",
+      "choices": [
+        {
+          "id": "choice_s53_stocker_march",
+          "text": "Lead the stocking team down Action Alley toward Henderson's executive office.",
+          "voiceKeywords": [
+            "march",
+            "lead",
+            "action alley",
+            "henderson",
+            "executive",
+            "office"
+          ],
+          "nextNodeId": "node_shift54_stocker",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift54_stocker",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_manager_office",
+      "text": "Shift 54: THE THRESHOLD OF ACCOUNTABILITY. Associates from all four departments surround the manager's suite. The door is locked, but Henderson's frantic voice can be heard shouting into his phone. The moment of truth has arrived.",
+      "choices": [
+        {
+          "id": "choice_s54_stocker_confront",
+          "text": "Step forward and knock firmly on the mahogany door: 'Open up, Henderson. Your audit is over.'",
+          "voiceKeywords": [
+            "knock",
+            "open",
+            "henderson",
+            "audit",
+            "over",
+            "confront"
+          ],
+          "nextNodeId": "node_shift55_start",
+          "metricDeltas": {
+            "store_morale": 25.0,
+            "labor_squeeze": -15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift47_cashier",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift 47: CONCOURSE LOCKDOWN. Marsha stands before the metal gate: 'Henderson ordered all front-end registers locked. No cashier clocks out until every receipt roll from the past month is audited.'",
+      "choices": [
+        {
+          "id": "choice_s47_cashier_refuse",
+          "text": "Refuse to perform unlawful off-the-clock reconciliation and rally the front-end team.",
+          "voiceKeywords": [
+            "refuse",
+            "front end",
+            "reconciliation",
+            "cashier",
+            "rally"
+          ],
+          "nextNodeId": "node_hub_cashier_act5",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift48_cashier",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 48: THE CASH OFFICE LOGBOOKS. While checking the safe drops, you discover Marsha has been altering till drop slips by handwriting false shortages to balance the register books.",
+      "choices": [
+        {
+          "id": "choice_s48_cashier_copy",
+          "text": "Photograph the altered drop slips showing Marsha's distinctive purple supervisor pen.",
+          "voiceKeywords": [
+            "slips",
+            "photo",
+            "marsha",
+            "purple pen",
+            "cash office",
+            "proof"
+          ],
+          "nextNodeId": "node_shift49_cashier",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift49_cashier",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift 49: MARSHA'S PROMOTION PLEDGE. Marsha pulls you aside: 'If you help me sign off on these register adjustments, I'll name you Front-End Supervisor with a $3.00 raise on Monday. Think about your future, {hero}.'",
+      "choices": [
+        {
+          "id": "choice_s49_cashier_reject",
+          "text": "Reject the promotion and state that complicity in wage theft is a felony.",
+          "voiceKeywords": [
+            "reject",
+            "promotion",
+            "wage theft",
+            "felony",
+            "refuse"
+          ],
+          "nextNodeId": "node_shift50_cashier",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift50_cashier",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift 50: FLASHES AT THE ENTRANCE. Through the locked glass doors, flashlight beams sweep across the concourse floor. A Department of Labor field agent is photographing the locked chains.",
+      "choices": [
+        {
+          "id": "choice_s50_cashier_pass",
+          "text": "Slide the register journal spool showing Marsha's keycard overrides through the door seam.",
+          "voiceKeywords": [
+            "slide",
+            "spool",
+            "journal",
+            "labor",
+            "door",
+            "pass"
+          ],
+          "nextNodeId": "node_shift51_cashier",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "store_morale": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift51_cashier",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift 51: THE CASHIER UNION PLEDGE. Brenda lines up all 12 cashiers: 'Not a single finger touches a register till until Henderson unlocks those sliding doors.'",
+      "choices": [
+        {
+          "id": "choice_s51_cashier_solidarity",
+          "text": "Lock your register drawer and stand with Brenda at the center of Concourse.",
+          "voiceKeywords": [
+            "lock",
+            "drawer",
+            "brenda",
+            "solidarity",
+            "concourse"
+          ],
+          "nextNodeId": "node_shift52_cashier",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift52_cashier",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_breakroom",
+      "text": "Shift 52: MASTER FRONT-END EVIDENCE. In the breakroom, you lay down the register journal spools alongside Donna's claims slips and Mack's dock logs.",
+      "choices": [
+        {
+          "id": "choice_s52_cashier_unite",
+          "text": "Stitch the cashier records into the master legal dossier.",
+          "voiceKeywords": [
+            "stitch",
+            "records",
+            "dossier",
+            "cashier",
+            "master"
+          ],
+          "nextNodeId": "node_shift53_cashier",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "store_morale": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift53_cashier",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 53: BLUE LIGHTS REFLECTED. Outside, police cruisers and emergency task force vehicles illuminate the plate glass in revolving red and blue.",
+      "choices": [
+        {
+          "id": "choice_s53_cashier_march",
+          "text": "March alongside Brenda and the cashiers toward the management suite.",
+          "voiceKeywords": [
+            "march",
+            "brenda",
+            "cashiers",
+            "suite",
+            "management"
+          ],
+          "nextNodeId": "node_shift54_cashier",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift54_cashier",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_manager_office",
+      "text": "Shift 54: THE FRONT-END VERDICT. Associates gather at Henderson's threshold. The executive lock cannot hold back the truth of a thousand receipts.",
+      "choices": [
+        {
+          "id": "choice_s54_cashier_confront",
+          "text": "Tap the metal frame of the door: 'Henderson, your register books are balanced. Open the door.'",
+          "voiceKeywords": [
+            "balanced",
+            "open",
+            "henderson",
+            "door",
+            "confront"
+          ],
+          "nextNodeId": "node_shift55_start",
+          "metricDeltas": {
+            "store_morale": 25.0,
+            "labor_squeeze": -15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift47_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Shift 47: BACKROOM UNDER SIEGE. Mack gestures to the chained roll-up doors: 'Henderson padlocked every bay. He wants us trapped back here while he cooks the shipping logs.'",
+      "choices": [
+        {
+          "id": "choice_s47_unloader_refuse",
+          "text": "Refuse to touch freight until emergency egress doors are unchained.",
+          "voiceKeywords": [
+            "refuse",
+            "freight",
+            "unchained",
+            "egress",
+            "mack",
+            "unloader"
+          ],
+          "nextNodeId": "node_hub_unloader_act5",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift48_unloader",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 48: THE PHANTOM BILL OF LADING FILE. Inside the dock supervisor office, you find a hidden drawer containing the authentic bills of lading for the 12 stolen OLED TVs, bearing Henderson's personal signature.",
+      "choices": [
+        {
+          "id": "choice_s48_unloader_snag",
+          "text": "Bag the authentic signed bills of lading into your waterproof tool pouch.",
+          "voiceKeywords": [
+            "snag",
+            "bills of lading",
+            "henderson",
+            "signature",
+            "proof"
+          ],
+          "nextNodeId": "node_shift49_unloader",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift49_unloader",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Shift 49: CLINT'S LAST STAND. Clint approaches with a pale face: 'Give me that file, kid. Henderson promised to clear both our records if that paperwork disappears. Don't be a hero.'",
+      "choices": [
+        {
+          "id": "choice_s49_unloader_refuse",
+          "text": "Back Clint down with cold authority: 'That file belongs to the United States Attorney, Clint.'",
+          "voiceKeywords": [
+            "back down",
+            "clint",
+            "file",
+            "attorney",
+            "refuse",
+            "authority"
+          ],
+          "nextNodeId": "node_shift50_unloader",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift50_unloader",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Shift 50: EXTERIOR SIRENS AT THE DOCK. A state police cruiser pulls up to the rear security gate. Mack signals through the fence mesh with his yellow traffic wand.",
+      "choices": [
+        {
+          "id": "choice_s50_unloader_signal",
+          "text": "Shine your dock worklight onto the chained bay door padlocks so officers can photograph the violation.",
+          "voiceKeywords": [
+            "worklight",
+            "padlocks",
+            "police",
+            "signal",
+            "dock",
+            "photo"
+          ],
+          "nextNodeId": "node_shift51_unloader",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "store_morale": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift51_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Shift 51: THE DOCK SOLIDARITY COALITION. Mack unrolls the unloader team banner: 'Every freight handler is downing tools. Not another carton moves until Henderson answers for this.'",
+      "choices": [
+        {
+          "id": "choice_s51_unloader_banner",
+          "text": "Plant the unloader team banner firmly in the center of Receiving Bay 2.",
+          "voiceKeywords": [
+            "banner",
+            "plant",
+            "unloader",
+            "receiving",
+            "tools"
+          ],
+          "nextNodeId": "node_shift52_unloader",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift52_unloader",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_breakroom",
+      "text": "Shift 52: DOCK EVIDENCE UNIFIED. In the breakroom, Mack places his dashcam video drive and the stolen television invoices into the master dossier.",
+      "choices": [
+        {
+          "id": "choice_s52_unloader_dossier",
+          "text": "Lock the warehouse freight receipts into the master evidence binder.",
+          "voiceKeywords": [
+            "lock",
+            "freight",
+            "dossier",
+            "binder",
+            "master"
+          ],
+          "nextNodeId": "node_shift53_unloader",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "store_morale": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift53_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 53: THE BACKROOM MARCH. Mack leads the unloaders onto the sales floor, boots thudding against the polished concrete in perfect synchrony.",
+      "choices": [
+        {
+          "id": "choice_s53_unloader_march",
+          "text": "March shoulder-to-shoulder with Mack toward the executive office.",
+          "voiceKeywords": [
+            "march",
+            "mack",
+            "boots",
+            "concrete",
+            "executive"
+          ],
+          "nextNodeId": "node_shift54_unloader",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift54_unloader",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_manager_office",
+      "text": "Shift 54: THE LOADING DOCK DELIVERS. Outside Henderson's door, the combined workforce of Store #1042 stands ready. The time for corporate gaslighting is finished.",
+      "choices": [
+        {
+          "id": "choice_s54_unloader_confront",
+          "text": "Slam Mack's crowbar head lightly on the doorframe: 'End of the line, Henderson. Step out.'",
+          "voiceKeywords": [
+            "crowbar",
+            "end of the line",
+            "henderson",
+            "step out",
+            "confront"
+          ],
+          "nextNodeId": "node_shift55_start",
+          "metricDeltas": {
+            "store_morale": 25.0,
+            "labor_squeeze": -15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift47_specialist",
+      "speakerId": "chad",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 47: SPECIALTY INVENTORY PURGE. Chad hovers around the electronics server terminal: 'All cloud inventory databases are being reformatted under Henderson's emergency authority. Hand over your backup drive.'",
+      "choices": [
+        {
+          "id": "choice_s47_spec_protect",
+          "text": "Shield your backup drive and lock the specialty terminals with your physical master key.",
+          "voiceKeywords": [
+            "shield",
+            "drive",
+            "master key",
+            "specialist",
+            "protect",
+            "terminals"
+          ],
+          "nextNodeId": "node_hub_specialist_act5",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift48_specialist",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 48: THE SHREDDER CLOUD MIRROR. While the shredder smokes in the back office, you remotely mirror the audit trail from the corporate cloud server, capturing every deletion command Chad executed.",
+      "choices": [
+        {
+          "id": "choice_s48_spec_mirror",
+          "text": "Download the encrypted forensic server snapshot to your external flash drive.",
+          "voiceKeywords": [
+            "download",
+            "forensic",
+            "snapshot",
+            "server",
+            "flash drive",
+            "proof"
+          ],
+          "nextNodeId": "node_shift49_specialist",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift49_specialist",
+      "speakerId": "chad",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 49: CHAD'S CRUMBLING NERVES. Chad corners you by the camera displays, sweating heavily: 'Look, {hero}, Henderson promised me an Assistant Manager spot if I wiped the serial logs. If you delete that snapshot, I'll split my bonus with you!'",
+      "choices": [
+        {
+          "id": "choice_s49_spec_refuse",
+          "text": "Look Chad in the eye: 'You chose your side, Chad. Now you get to live with it.'",
+          "voiceKeywords": [
+            "side",
+            "chad",
+            "eye",
+            "refuse",
+            "consequences"
+          ],
+          "nextNodeId": "node_shift50_specialist",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift50_specialist",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 50: FEDERAL WI-FI CONNECTION. The federal labor and ethics investigators outside connect to the store's public Wi-Fi mesh. Julian establishes an encrypted peer-to-peer file transfer.",
+      "choices": [
+        {
+          "id": "choice_s50_spec_upload",
+          "text": "Transmit the complete serial fraud snapshot directly to the federal investigator's terminal.",
+          "voiceKeywords": [
+            "transmit",
+            "upload",
+            "federal",
+            "investigator",
+            "serial",
+            "proof"
+          ],
+          "nextNodeId": "node_shift51_specialist",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "store_morale": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift51_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 51: THE SPECIALTY VOW. Julian shuts the display cases and pockets the brass keys: 'All high-ticket inventory is secured and accounted for under associate custody. Henderson is powerless.'",
+      "choices": [
+        {
+          "id": "choice_s51_spec_solidarity",
+          "text": "Stand shoulder-to-shoulder with Julian in front of the locked electronics showcase.",
+          "voiceKeywords": [
+            "stand",
+            "julian",
+            "showcase",
+            "solidarity",
+            "specialist"
+          ],
+          "nextNodeId": "node_shift52_specialist",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift52_specialist",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_breakroom",
+      "text": "Shift 52: SPECIALIST EVIDENCE INTEGRATION. In the breakroom, Julian connects his laptop to the master printer, printing out certified copies of the cloud deletion audit.",
+      "choices": [
+        {
+          "id": "choice_s52_spec_binder",
+          "text": "Collate the forensic digital certificates into the master evidence dossier.",
+          "voiceKeywords": [
+            "collate",
+            "digital",
+            "certificates",
+            "dossier",
+            "master"
+          ],
+          "nextNodeId": "node_shift53_specialist",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "store_morale": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift53_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 53: THE ADVANCE ON THE SUITE. The hum of store generators falters as authorities outside prepare to breach the locked entrance. Julian leads the specialty associates forward.",
+      "choices": [
+        {
+          "id": "choice_s53_spec_march",
+          "text": "March alongside Julian through Center Action Alley to Henderson's office.",
+          "voiceKeywords": [
+            "march",
+            "julian",
+            "action alley",
+            "office",
+            "executive"
+          ],
+          "nextNodeId": "node_shift54_specialist",
+          "metricDeltas": {
+            "store_morale": 20.0,
+            "associate_engagement": 20.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift54_specialist",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_manager_office",
+      "text": "Shift 54: DIGITAL CERTAINTY. You stand outside the executive door with the complete immutable digital audit trail. There are no blindspots left in Store #1042.",
+      "choices": [
+        {
+          "id": "choice_s54_spec_confront",
+          "text": "Announce through the office door: 'Henderson, your cloud deletions failed. Open up.'",
+          "voiceKeywords": [
+            "cloud",
+            "open",
+            "henderson",
+            "failed",
+            "confront"
+          ],
+          "nextNodeId": "node_shift55_start",
+          "metricDeltas": {
+            "store_morale": 25.0,
+            "labor_squeeze": -15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift55_start",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_manager_office",
+      "text": "SHIFT 55 THE EXECUTIVE LOCKDOWN SHOWDOWN! Store Manager Henderson throws open his office door, eyes wild and sweat drenching his corporate collar. Behind him, shredded papers cover the carpet and a red duffel bag sits half-packed. 'You ungrateful grunts think you can ruin my twenty-year retail career?! You don't leave this store alive without signing my non-disclosure agreements!' Defeat Store Manager Henderson!",
+      "triggerBattleEncounterId": "encounter_henderson_showdown",
+      "nextNodeId": "node_shift55_victory"
+    },
+    {
+      "id": "node_shift55_victory",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_manager_office",
+      "text": "HENDERSON BROKEN! Store Manager Henderson drops into his leather executive swivel chair, panting in utter exhaustion. Outside, the screech of bolt cutters echoes through the front vestibule as federal agents and the state fire marshal snap the illegal padlocks off the doors. Flashbulbs illuminate the hallway. Store #1042 is liberated, and the final reckoning has arrived.",
+      "nextNodeId": "node_shift56_reckoning"
+    },
+    {
+      "id": "node_shift56_reckoning",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_breakroom",
+      "text": "SHIFT FIFTY-SIX: THE DAWN AFTER. Morning sunlight pours through the unchained sliding glass doors of Store #1042. Outside in the parking lot, federal task force cruisers and local news broadcast vans stand in silent formation. Donna, Brenda, Mack, and Julian stand beside you in the breakroom. Every metric of your career\u2014morale, engagement, solidarity, and defiance\u2014has brought you to this moment. Choose your path or let your cumulative career record dictate your ultimate fate.",
+      "choices": [
+        {
+          "id": "choice_ending_eval",
+          "text": "Step forward and let your cumulative career metrics determine your fate.",
+          "voiceKeywords": [
+            "evaluate",
+            "metrics",
+            "stats",
+            "score",
+            "fate",
+            "system",
+            "record",
+            "career"
+          ],
+          "nextNodeId": "node_shift56_eval"
+        },
+        {
+          "id": "choice_ending_whistleblower",
+          "text": "Hand the complete unified dossier to the Federal Department of Labor task force.",
+          "voiceKeywords": [
+            "whistleblower",
+            "labor",
+            "ethics",
+            "dossier",
+            "federal",
+            "expose",
+            "justice"
+          ],
+          "nextNodeId": "node_ending_whistleblower"
+        },
+        {
+          "id": "choice_ending_corporate",
+          "text": "Accept Corporate's offer to take over Henderson's vacated Store Manager throne.",
+          "voiceKeywords": [
+            "corporate",
+            "ascent",
+            "manager",
+            "promote",
+            "promotion",
+            "takeover",
+            "executive",
+            "power"
+          ],
+          "nextNodeId": "node_ending_corporate"
+        },
+        {
+          "id": "choice_ending_quiet_quitter",
+          "text": "Clock out at 5:00:00 PM on the dot, drop your vest in the bin, and walk away free.",
+          "voiceKeywords": [
+            "quiet quitter",
+            "clock out",
+            "escape",
+            "walk out",
+            "free",
+            "leave",
+            "quit",
+            "freedom"
+          ],
+          "nextNodeId": "node_ending_quiet_quitter"
+        },
+        {
+          "id": "choice_ending_wildcat",
+          "text": "Lead the entire associate body in a historic wildcat walkout under the cameras.",
+          "voiceKeywords": [
+            "wildcat",
+            "walkout",
+            "strike",
+            "solidarity",
+            "union",
+            "march",
+            "cameras",
+            "together"
+          ],
+          "nextNodeId": "node_ending_wildcat"
+        },
+        {
+          "id": "choice_ending_defiant",
+          "text": "Serve management your attorney's preservation subpoena and walk out with dignity.",
+          "voiceKeywords": [
+            "defiant",
+            "scapegoat",
+            "attorney",
+            "subpoena",
+            "lawsuit",
+            "lawyer",
+            "retaliation"
+          ],
+          "nextNodeId": "node_ending_defiant"
+        }
+      ]
+    },
+    {
+      "id": "node_shift56_eval",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Evaluating cumulative retail career metrics... Assessment Score: {score}. Store Morale: {morale}. Associate Engagement: {engagement}.",
+      "nextNodeId": "node_ending_whistleblower"
+    },
+    {
+      "id": "node_ending_whistleblower",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_action_alley",
+      "setFlagOnEnter": "game_completed",
+      "text": "ENDING 1: THE WHISTLEBLOWER. You hand the 400-page unified evidence dossier directly to the Federal Department of Labor and Corporate Ethics Board. Over the following months, Store Manager Henderson and Clint are barred for life from commercial management and face federal indictments for false imprisonment and wire fraud. Donna is named Interim Operations Director, and every associate receives a four-figure backpay check for shaved overtime. You stand in Center Action Alley, knowing that when ordinary workers stand together with undeniable truth, even corporate titans must yield. Final Assessment: {score} ({rating})."
+    },
+    {
+      "id": "node_ending_corporate",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_manager_office",
+      "setFlagOnEnter": "game_completed",
+      "text": "ENDING 2: THE CORPORATE ASCENT. Corporate Vice President Vance visits your store in person. Impressed by your cold efficiency and ability to navigate high-pressure crises, he offers you Henderson's executive chair. You accept the gold nametag and sit behind the polished mahogany desk. You swear to yourself that you'll protect the workers\u2014yet within your first month, corporate emails demand another 4% labor cut, and you catch yourself staring at the 45-second scanner tachometer. The cycle continues, and you are its new architect. Final Assessment: {score} ({rating})."
+    },
+    {
+      "id": "node_ending_quiet_quitter",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_online_app",
+      "setFlagOnEnter": "game_completed",
+      "text": "ENDING 3: THE QUIET QUITTER'S ESCAPE. At exactly 5:00:00 PM, you swipe your employee badge for the very last time. You don't fill out the exit survey. You toss your blue polyester vest into the laundry cart, step through the unlocked sliding glass doors, and walk out into the crisp evening breeze. You delete the scheduling app from your phone and turn off notifications. The madness of Store #1042 fades in your rearview mirror. You survived the inferno, intact, peaceful, and entirely free. Final Assessment: {score} ({rating})."
+    },
+    {
+      "id": "node_ending_wildcat",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_checkout_concourse",
+      "setFlagOnEnter": "game_completed",
+      "text": "ENDING 4: THE WILDCAT WALKOUT. When corporate envoys arrive to take emergency command, all 42 associates drop their barcode scanners and boxcutters onto the customer service counter in unison. Led by Donna, Brenda, Mack, Julian, and you, the workforce marches out the front doors into the blinding daylight. Broadcast news vans capture the historic strike live on national television, sparking wildcat walkouts across twenty regional superstores. Store #1042 becomes the birth of a nationwide retail labor movement. Final Assessment: {score} ({rating})."
+    },
+    {
+      "id": "node_ending_defiant",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_security_office",
+      "setFlagOnEnter": "game_completed",
+      "text": "ENDING 5: THE DEFIANT SCAPEGOAT. When corporate attempts to issue a retaliatory termination letter, you don't flinch. You place a formal preservation-of-evidence subpoena drafted by an employment civil rights attorney directly on the desk, looking management dead in the eye. You clock out, take a copy of every timestamp, and walk out into the parking lot with your dignity uncompromised. Three months later, federal labor courts accept your retaliation lawsuit with triple punitive damages. You stood tall, and justice followed. Final Assessment: {score} ({rating})."
     }
   ]
 }

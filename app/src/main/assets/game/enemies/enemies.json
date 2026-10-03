@@ -196,6 +196,21 @@
       "movesetId": "construct_bruiser",
       "spriteId": "template_brute",
       "spriteTint": "#1E293B"
+    },
+    {
+      "id": "manager_henderson",
+      "name": "Store Manager Henderson",
+      "subtitle": "The Desperate Executive",
+      "family": "CONSTRUCT",
+      "selfElement": "FIRE",
+      "hp": 750,
+      "attack": 42,
+      "defense": 15,
+      "speed": 52,
+      "xpReward": 250,
+      "movesetId": "construct_bruiser",
+      "spriteId": "template_boss",
+      "spriteTint": "#991B1B"
     }
   ]
 }

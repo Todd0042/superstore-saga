@@ -872,7 +872,9 @@
         }
       ],
       "triggerNodeId": "node_incident_tilted_camera_stocker",
-      "applicableTracks": ["stocker"],
+      "applicableTracks": [
+        "stocker"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -895,7 +897,9 @@
         }
       ],
       "triggerNodeId": "node_incident_tilted_camera_specialist",
-      "applicableTracks": ["specialist"],
+      "applicableTracks": [
+        "specialist"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -918,7 +922,9 @@
         }
       ],
       "triggerNodeId": "node_incident_planted_receipt_void_cashier",
-      "applicableTracks": ["cashier"],
+      "applicableTracks": [
+        "cashier"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -941,7 +947,9 @@
         }
       ],
       "triggerNodeId": "node_incident_forged_manifest_unloader",
-      "applicableTracks": ["unloader"],
+      "applicableTracks": [
+        "unloader"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -964,7 +972,12 @@
         }
       ],
       "triggerNodeId": "node_incident_whispering_breakroom_circle",
-      "applicableTracks": ["stocker", "cashier", "unloader", "specialist"],
+      "applicableTracks": [
+        "stocker",
+        "cashier",
+        "unloader",
+        "specialist"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -987,7 +1000,11 @@
         }
       ],
       "triggerNodeId": "node_incident_anonymous_ethics_interview",
-      "applicableTracks": ["stocker", "cashier", "specialist"],
+      "applicableTracks": [
+        "stocker",
+        "cashier",
+        "specialist"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     },
@@ -1010,7 +1027,196 @@
         }
       ],
       "triggerNodeId": "node_incident_security_bag_search_exit",
-      "applicableTracks": ["cashier", "stocker", "unloader", "specialist"],
+      "applicableTracks": [
+        "cashier",
+        "stocker",
+        "unloader",
+        "specialist"
+      ],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_padlocked_fire_exit_unloader",
+      "title": "Padlocked Emergency Roll-Up Door",
+      "baseWeight": 45.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_padlocked_fire_exit_unloader_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act5_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "game_completed"
+        }
+      ],
+      "triggerNodeId": "node_incident_padlocked_fire_exit_unloader",
+      "applicableTracks": [
+        "unloader"
+      ],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_padlocked_fire_exit_stocker",
+      "title": "Chained Garden Center Exit Gate",
+      "baseWeight": 45.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_padlocked_fire_exit_stocker_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act5_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "game_completed"
+        }
+      ],
+      "triggerNodeId": "node_incident_padlocked_fire_exit_stocker",
+      "applicableTracks": [
+        "stocker"
+      ],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_shredder_overheat_specialist",
+      "title": "Smoking Executive Paper Shredder",
+      "baseWeight": 45.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_shredder_overheat_specialist_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act5_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "game_completed"
+        }
+      ],
+      "triggerNodeId": "node_incident_shredder_overheat_specialist",
+      "applicableTracks": [
+        "specialist"
+      ],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_altered_payroll_cashier",
+      "title": "Erased Overtime Paystub Anomaly",
+      "baseWeight": 45.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_altered_payroll_cashier_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act5_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "game_completed"
+        }
+      ],
+      "triggerNodeId": "node_incident_altered_payroll_cashier",
+      "applicableTracks": [
+        "cashier"
+      ],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_department_of_labor_scout",
+      "title": "Perimeter Labor Rights Investigator",
+      "baseWeight": 45.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_department_of_labor_scout_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act5_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "game_completed"
+        }
+      ],
+      "triggerNodeId": "node_incident_department_of_labor_scout",
+      "applicableTracks": [
+        "stocker",
+        "cashier",
+        "unloader",
+        "specialist"
+      ],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_intercom_retaliation_threat",
+      "title": "Overhead PA Mandatory Lockdown Threat",
+      "baseWeight": 45.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_intercom_retaliation_threat_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act5_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "game_completed"
+        }
+      ],
+      "triggerNodeId": "node_incident_intercom_retaliation_threat",
+      "applicableTracks": [
+        "stocker",
+        "cashier",
+        "unloader",
+        "specialist"
+      ],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_solidarity_huddle_breakroom",
+      "title": "The Four-Department Emergency Council",
+      "baseWeight": 45.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_solidarity_huddle_breakroom_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act5_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "game_completed"
+        }
+      ],
+      "triggerNodeId": "node_incident_solidarity_huddle_breakroom",
+      "applicableTracks": [
+        "stocker",
+        "cashier",
+        "unloader",
+        "specialist"
+      ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
     }
