@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.voicerpg.engine.audio.CombatNarrator
 import com.voicerpg.engine.audio.SpeechManager
 import com.voicerpg.engine.content.GameContent
+import com.voicerpg.engine.engine.IncidentManager
 import com.voicerpg.engine.engine.IntentParser
 import com.voicerpg.engine.engine.SaveManager
 import com.voicerpg.engine.engine.QuestRecap
@@ -972,15 +973,19 @@ class StoryViewModel(
         var targetNode = newNode
         val playerTrack = _state.value.player.heroClassId.lowercase()
         val incidentJustResolved = (newNode.id == "node_incident_return")
+        val isAct2 = _state.value.narrativeFlags["flag_act2_started"] == true || newNode.setFlagOnEnter == "flag_act2_started"
         if (incidentJustResolved) {
-            val trackHubCandidate = "node_hub_$playerTrack"
-            val fallbackHub = StoryScript.ALL_NODES[trackHubCandidate]?.id ?: "node_shift1_start"
+            val trackHubCandidate = if (isAct2) "node_hub_${playerTrack}_act2" else "node_hub_$playerTrack"
+            val fallbackHub = StoryScript.ALL_NODES[trackHubCandidate]?.id ?: StoryScript.ALL_NODES["node_hub_$playerTrack"]?.id ?: "node_shift1_start"
             val returnTargetId = _state.value.activeHubNodeId ?: fallbackHub
             targetNode = StoryScript.ALL_NODES[returnTargetId] ?: StoryScript.ALL_NODES[fallbackHub] ?: newNode
         } else if (playerTrack.isNotBlank()) {
+            val variantAct2 = if (isAct2 && targetNode.id == "node_hub") "node_hub_${playerTrack}_act2" else null
             val variant1 = "${targetNode.id}_$playerTrack"
             val variant2 = targetNode.id.replace("_start", "") + "_$playerTrack"
-            val trackSpecificNode = StoryScript.ALL_NODES[variant1] ?: StoryScript.ALL_NODES[variant2]
+            val trackSpecificNode = (if (variantAct2 != null) StoryScript.ALL_NODES[variantAct2] else null)
+                ?: StoryScript.ALL_NODES[variant1]
+                ?: StoryScript.ALL_NODES[variant2]
             if (trackSpecificNode != null) {
                 targetNode = trackSpecificNode
             }
@@ -1017,11 +1022,13 @@ class StoryViewModel(
                 // Procedural retail incident check (45% chance every time returning to an incident-eligible hub)
                 if (kotlin.random.Random.nextFloat() < 0.45f) {
                     val activeTrack = _state.value.player.heroClassId.lowercase()
+                    val candidateState = _state.value.copy(narrativeFlags = updatedFlags)
                     val availableIncidents = GameContent.incidents.values.filter { inc ->
                         inc.triggerNodeId != null &&
                         (inc.applicableTracks.isEmpty() || inc.applicableTracks.any { it.equals(activeTrack, ignoreCase = true) }) &&
                         updatedFlags["flag_incident_${inc.id}_done"] != true &&
-                        inc.triggerNodeId !in _state.value.visitedNodeIds
+                        inc.triggerNodeId !in _state.value.visitedNodeIds &&
+                        (inc.conditions.isEmpty() || inc.conditions.all { IncidentManager.evaluateCondition(it, candidateState) })
                     }
                     if (availableIncidents.isNotEmpty()) {
                         val chosen = availableIncidents.random()

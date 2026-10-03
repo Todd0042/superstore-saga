@@ -225,6 +225,215 @@
       "applicableTracks": ["unloader"],
       "oneTimeOnly": true,
       "cooldownTurns": 2
+    },
+    {
+      "id": "incident_pickle_spill_blame_stocker",
+      "title": "Aisle 6 Pickle Spill Jurisdiction Standoff",
+      "baseWeight": 35.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_pickle_spill_blame_stocker_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act2_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_pickle_spill_stocker",
+      "applicableTracks": ["stocker"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_pickle_spill_blame_cashier",
+      "title": "Concourse Pickle Fume Complaints",
+      "baseWeight": 35.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_pickle_spill_blame_cashier_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act2_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_pickle_spill_cashier",
+      "applicableTracks": ["cashier"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_pickle_spill_blame_unloader",
+      "title": "Dock Bay Spill Page Radio Dodge",
+      "baseWeight": 35.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_pickle_spill_blame_unloader_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act2_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_pickle_spill_unloader",
+      "applicableTracks": ["unloader"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_pickle_spill_blame_specialist",
+      "title": "Action Alley Radio Argument Distraction",
+      "baseWeight": 35.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_pickle_spill_blame_specialist_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act2_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_pickle_spill_specialist",
+      "applicableTracks": ["specialist"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_phantom_bathroom_cashier",
+      "title": "The 45-Minute Front-End Vanishing Act",
+      "baseWeight": 35.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_phantom_bathroom_cashier_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act2_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_phantom_bathroom_cashier",
+      "applicableTracks": ["cashier"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_phantom_bathroom_unloader",
+      "title": "Conveyor Line Solo Squeeze",
+      "baseWeight": 35.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_phantom_bathroom_unloader_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act2_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_phantom_bathroom_unloader",
+      "applicableTracks": ["unloader"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_phantom_bathroom_stocker",
+      "title": "Heavy Bulk Freight Solo Squeeze",
+      "baseWeight": 35.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_phantom_bathroom_stocker_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act2_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_phantom_bathroom_stocker",
+      "applicableTracks": ["stocker"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_phantom_bathroom_specialist",
+      "title": "Showcase Customer Escalation Stash",
+      "baseWeight": 35.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_phantom_bathroom_specialist_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act2_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_phantom_bathroom_specialist",
+      "applicableTracks": ["specialist"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_squealing_jack_hoard",
+      "title": "The Chained Pallet Jack Cold War",
+      "baseWeight": 35.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_squealing_jack_hoard_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act2_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_squealing_jack",
+      "applicableTracks": ["unloader", "stocker"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_go_back_dump_clopening",
+      "title": "The 10:50 PM Return Cart Ambush",
+      "baseWeight": 35.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_go_back_dump_clopening_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act2_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_go_back_dump",
+      "applicableTracks": ["cashier", "stocker"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_plugged_cereal_aisle",
+      "title": "The Cat Food Cereal Shelf Plugging",
+      "baseWeight": 35.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_plugged_cereal_aisle_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act2_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_plugged_cereal",
+      "applicableTracks": ["stocker", "specialist"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
     }
   ]
 }

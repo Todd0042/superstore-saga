@@ -11,7 +11,14 @@
         {
           "id": "choice_app_start",
           "text": "Begin the online pre-employment assessment.",
-          "voiceKeywords": ["begin", "start", "assessment", "apply", "ready", "online"],
+          "voiceKeywords": [
+            "begin",
+            "start",
+            "assessment",
+            "apply",
+            "ready",
+            "online"
+          ],
           "nextNodeId": "node_app_q1"
         }
       ]
@@ -25,7 +32,13 @@
         {
           "id": "choice_q1_sycophant",
           "text": "Report their badge number immediately to Asset Protection. Time theft is real theft.",
-          "voiceKeywords": ["report", "security", "theft", "protection", "time"],
+          "voiceKeywords": [
+            "report",
+            "security",
+            "theft",
+            "protection",
+            "time"
+          ],
           "nextNodeId": "node_app_q2",
           "metricDeltas": {
             "store_morale": -5.0,
@@ -35,8 +48,14 @@
         },
         {
           "id": "choice_q1_slacker",
-          "text": "Quietly check in on them to see if they're okay—everyone needs a breather.",
-          "voiceKeywords": ["quietly", "breather", "check in", "okay", "care"],
+          "text": "Quietly check in on them to see if they're okay\u2014everyone needs a breather.",
+          "voiceKeywords": [
+            "quietly",
+            "breather",
+            "check in",
+            "okay",
+            "care"
+          ],
           "nextNodeId": "node_app_q2",
           "metricDeltas": {
             "store_morale": 10.0,
@@ -47,7 +66,13 @@
         {
           "id": "choice_q1_honest",
           "text": "Stay focused on my own station. If leadership isn't worried, neither am I.",
-          "voiceKeywords": ["station", "focus", "work", "ignore", "mind"],
+          "voiceKeywords": [
+            "station",
+            "focus",
+            "work",
+            "ignore",
+            "mind"
+          ],
           "nextNodeId": "node_app_q2",
           "metricDeltas": {
             "store_morale": 5.0,
@@ -57,7 +82,13 @@
         {
           "id": "choice_q1_rebel",
           "text": "Take an extra 6 minutes on my own break to maintain store equilibrium.",
-          "voiceKeywords": ["extra", "break", "equilibrium", "balance", "minutes"],
+          "voiceKeywords": [
+            "extra",
+            "break",
+            "equilibrium",
+            "balance",
+            "minutes"
+          ],
           "nextNodeId": "node_app_q2",
           "metricDeltas": {
             "store_morale": 10.0,
@@ -76,7 +107,13 @@
         {
           "id": "choice_q2_sycophant",
           "text": "Inspect the chicken, log it in the inventory shrink app, sanitize the shelf, and smile!",
-          "voiceKeywords": ["inspect", "log", "shrink", "sanitize", "smile"],
+          "voiceKeywords": [
+            "inspect",
+            "log",
+            "shrink",
+            "sanitize",
+            "smile"
+          ],
           "nextNodeId": "node_app_q3",
           "metricDeltas": {
             "store_morale": 5.0,
@@ -87,7 +124,13 @@
         {
           "id": "choice_q2_slacker",
           "text": "Page the maintenance associate over the intercom and keep customer traffic moving.",
-          "voiceKeywords": ["page", "maintenance", "intercom", "traffic", "clean"],
+          "voiceKeywords": [
+            "page",
+            "maintenance",
+            "intercom",
+            "traffic",
+            "clean"
+          ],
           "nextNodeId": "node_app_q3",
           "metricDeltas": {
             "store_morale": 5.0,
@@ -97,7 +140,13 @@
         {
           "id": "choice_q2_honest",
           "text": "Politely notify the nearest department associate so they can claim it.",
-          "voiceKeywords": ["notify", "department", "associate", "claim", "tell"],
+          "voiceKeywords": [
+            "notify",
+            "department",
+            "associate",
+            "claim",
+            "tell"
+          ],
           "nextNodeId": "node_app_q3",
           "metricDeltas": {
             "store_morale": 5.0,
@@ -108,7 +157,13 @@
         {
           "id": "choice_q2_rebel",
           "text": "Check if it's still warm, then swiftly whisk it into an empty shopping cart.",
-          "voiceKeywords": ["cart", "warm", "whisk", "empty", "shopping"],
+          "voiceKeywords": [
+            "cart",
+            "warm",
+            "whisk",
+            "empty",
+            "shopping"
+          ],
           "nextNodeId": "node_app_q3",
           "metricDeltas": {
             "store_morale": 5.0,
@@ -127,7 +182,13 @@
         {
           "id": "choice_q3_sycophant",
           "text": "I practice the synchronized clapping and spelling in front of my mirror at home!",
-          "voiceKeywords": ["practice", "mirror", "cheer", "clapping", "home"],
+          "voiceKeywords": [
+            "practice",
+            "mirror",
+            "cheer",
+            "clapping",
+            "home"
+          ],
           "nextNodeId": "node_app_q4",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -138,7 +199,13 @@
         {
           "id": "choice_q3_enthusiast",
           "text": "I join in enthusiastically with the team to start the day on a positive note!",
-          "voiceKeywords": ["join", "positive", "start", "enthusiastic", "team"],
+          "voiceKeywords": [
+            "join",
+            "positive",
+            "start",
+            "enthusiastic",
+            "team"
+          ],
           "nextNodeId": "node_app_q4",
           "metricDeltas": {
             "store_morale": 10.0,
@@ -148,7 +215,13 @@
         {
           "id": "choice_q3_pragmatist",
           "text": "I clap along respectfully while focusing on getting my morning freight cleared.",
-          "voiceKeywords": ["clap", "respectful", "focus", "freight", "morning"],
+          "voiceKeywords": [
+            "clap",
+            "respectful",
+            "focus",
+            "freight",
+            "morning"
+          ],
           "nextNodeId": "node_app_q4",
           "metricDeltas": {
             "store_morale": 5.0,
@@ -159,7 +232,13 @@
         {
           "id": "choice_q3_slacker",
           "text": "I strategically plan my morning supply restock so I can listen from the next aisle over.",
-          "voiceKeywords": ["supply", "restock", "listen", "plan", "aisle"],
+          "voiceKeywords": [
+            "supply",
+            "restock",
+            "listen",
+            "plan",
+            "aisle"
+          ],
           "nextNodeId": "node_app_q4",
           "metricDeltas": {
             "store_morale": 5.0,
@@ -177,7 +256,13 @@
         {
           "id": "choice_q4_sycophant",
           "text": "Apologize profusely, verify the shelf tag, and offer a friendly corporate price-match resolution!",
-          "voiceKeywords": ["apologize", "verify", "price", "tag", "friendly"],
+          "voiceKeywords": [
+            "apologize",
+            "verify",
+            "price",
+            "tag",
+            "friendly"
+          ],
           "nextNodeId": "node_app_q5",
           "metricDeltas": {
             "karen_index": -10.0,
@@ -188,7 +273,13 @@
         {
           "id": "choice_q4_polite",
           "text": "Politely explain the misplaced tag policy with a warm, empathetic customer-first smile.",
-          "voiceKeywords": ["explain", "policy", "smile", "warm", "empathetic"],
+          "voiceKeywords": [
+            "explain",
+            "policy",
+            "smile",
+            "warm",
+            "empathetic"
+          ],
           "nextNodeId": "node_app_q5",
           "metricDeltas": {
             "karen_index": -5.0,
@@ -199,7 +290,13 @@
         {
           "id": "choice_q4_manager",
           "text": "Radiophone an Assistant Manager immediately so leadership can deliver the final ruling.",
-          "voiceKeywords": ["radiophone", "manager", "leadership", "call", "assistant"],
+          "voiceKeywords": [
+            "radiophone",
+            "manager",
+            "leadership",
+            "call",
+            "assistant"
+          ],
           "nextNodeId": "node_app_q5",
           "metricDeltas": {
             "associate_engagement": 5.0,
@@ -209,7 +306,13 @@
         {
           "id": "choice_q4_patient",
           "text": "Listen patiently in courteous silence until the shopper finishes explaining their discovery.",
-          "voiceKeywords": ["listen", "patient", "courteous", "silence", "shopper"],
+          "voiceKeywords": [
+            "listen",
+            "patient",
+            "courteous",
+            "silence",
+            "shopper"
+          ],
           "nextNodeId": "node_app_q5",
           "metricDeltas": {
             "karen_index": 5.0,
@@ -228,7 +331,13 @@
         {
           "id": "choice_q5_sycophant",
           "text": "Cancel personal evening plans immediately! Teamwork and MegaMart come first!",
-          "voiceKeywords": ["cancel", "teamwork", "volunteer", "stay", "first"],
+          "voiceKeywords": [
+            "cancel",
+            "teamwork",
+            "volunteer",
+            "stay",
+            "first"
+          ],
           "nextNodeId": "node_app_q6",
           "metricDeltas": {
             "store_morale": 10.0,
@@ -239,7 +348,13 @@
         {
           "id": "choice_q5_team",
           "text": "Offer to help clear the initial unloading line before handing off to the night crew.",
-          "voiceKeywords": ["clear", "line", "night crew", "unloading", "help"],
+          "voiceKeywords": [
+            "clear",
+            "line",
+            "night crew",
+            "unloading",
+            "help"
+          ],
           "nextNodeId": "node_app_q6",
           "metricDeltas": {
             "store_morale": 5.0,
@@ -250,7 +365,13 @@
         {
           "id": "choice_q5_boundary",
           "text": "Politely decline citing prior family commitments and offer to come in early tomorrow.",
-          "voiceKeywords": ["decline", "family", "commitments", "early", "tomorrow"],
+          "voiceKeywords": [
+            "decline",
+            "family",
+            "commitments",
+            "early",
+            "tomorrow"
+          ],
           "nextNodeId": "node_app_q6",
           "metricDeltas": {
             "store_morale": 5.0,
@@ -260,7 +381,13 @@
         {
           "id": "choice_q5_slacker",
           "text": "Clock out promptly at scheduled time so I am fully recharged for tomorrow's shift.",
-          "voiceKeywords": ["clock out", "scheduled", "recharged", "shift", "promptly"],
+          "voiceKeywords": [
+            "clock out",
+            "scheduled",
+            "recharged",
+            "shift",
+            "promptly"
+          ],
           "nextNodeId": "node_app_q6",
           "metricDeltas": {
             "store_morale": 10.0,
@@ -279,7 +406,13 @@
         {
           "id": "choice_q6_sycophant",
           "text": "Safety policies were written by corporate angels and must never be questioned!",
-          "voiceKeywords": ["safety", "policies", "angels", "follow", "protect"],
+          "voiceKeywords": [
+            "safety",
+            "policies",
+            "angels",
+            "follow",
+            "protect"
+          ],
           "nextNodeId": "node_app_q7",
           "metricDeltas": {
             "store_morale": 10.0,
@@ -290,7 +423,13 @@
         {
           "id": "choice_q6_practical",
           "text": "Follow the guidelines that protect the team, and keep our aisles accident-free and efficient.",
-          "voiceKeywords": ["guidelines", "accident", "efficient", "team", "safe"],
+          "voiceKeywords": [
+            "guidelines",
+            "accident",
+            "efficient",
+            "team",
+            "safe"
+          ],
           "nextNodeId": "node_app_q7",
           "metricDeltas": {
             "store_morale": 10.0,
@@ -300,8 +439,14 @@
         },
         {
           "id": "choice_q6_style",
-          "text": "Wear all required PPE with pride—ergonomic back braces and high-vis vests look great!",
-          "voiceKeywords": ["ppe", "brace", "vest", "pride", "wear"],
+          "text": "Wear all required PPE with pride\u2014ergonomic back braces and high-vis vests look great!",
+          "voiceKeywords": [
+            "ppe",
+            "brace",
+            "vest",
+            "pride",
+            "wear"
+          ],
           "nextNodeId": "node_app_q7",
           "metricDeltas": {
             "store_morale": 5.0,
@@ -311,7 +456,13 @@
         {
           "id": "choice_q6_social",
           "text": "Safety briefings are a wonderful opportunity to sit on folding chairs and connect with peers.",
-          "voiceKeywords": ["meetings", "chairs", "connect", "peers", "listen"],
+          "voiceKeywords": [
+            "meetings",
+            "chairs",
+            "connect",
+            "peers",
+            "listen"
+          ],
           "nextNodeId": "node_app_q7",
           "metricDeltas": {
             "store_morale": 5.0,
@@ -329,7 +480,13 @@
         {
           "id": "choice_q7_sycophant",
           "text": "Turn it into the Asset Protection office with an official incident report!",
-          "voiceKeywords": ["turn in", "asset protection", "incident", "report", "official"],
+          "voiceKeywords": [
+            "turn in",
+            "asset protection",
+            "incident",
+            "report",
+            "official"
+          ],
           "nextNodeId": "node_app_q8",
           "metricDeltas": {
             "store_morale": 5.0,
@@ -340,7 +497,13 @@
         {
           "id": "choice_q7_team",
           "text": "Stash it in my department work cart so our team always has equipment ready.",
-          "voiceKeywords": ["stash", "cart", "equipment", "ready", "keep"],
+          "voiceKeywords": [
+            "stash",
+            "cart",
+            "equipment",
+            "ready",
+            "keep"
+          ],
           "nextNodeId": "node_app_q8",
           "metricDeltas": {
             "store_morale": 5.0,
@@ -350,8 +513,14 @@
         },
         {
           "id": "choice_q7_respect",
-          "text": "Leave it where it is—someone's daily inventory quota probably depends on that hidden scanner.",
-          "voiceKeywords": ["leave", "quota", "hidden", "scanner", "someone"],
+          "text": "Leave it where it is\u2014someone's daily inventory quota probably depends on that hidden scanner.",
+          "voiceKeywords": [
+            "leave",
+            "quota",
+            "hidden",
+            "scanner",
+            "someone"
+          ],
           "nextNodeId": "node_app_q8",
           "metricDeltas": {
             "store_morale": 5.0,
@@ -361,7 +530,13 @@
         {
           "id": "choice_q7_barter",
           "text": "Trade its location to a fellow associate in exchange for a cold energy drink.",
-          "voiceKeywords": ["trade", "associate", "energy drink", "location", "share"],
+          "voiceKeywords": [
+            "trade",
+            "associate",
+            "energy drink",
+            "location",
+            "share"
+          ],
           "nextNodeId": "node_app_q8",
           "metricDeltas": {
             "store_morale": 10.0,
@@ -379,7 +554,13 @@
         {
           "id": "choice_q8_sycophant",
           "text": "Manually key in all 10 coupons with a smile to ensure the customer feels valued and loved!",
-          "voiceKeywords": ["manually", "key in", "smile", "valued", "coupons"],
+          "voiceKeywords": [
+            "manually",
+            "key in",
+            "smile",
+            "valued",
+            "coupons"
+          ],
           "nextNodeId": "node_app_q9",
           "metricDeltas": {
             "karen_index": -10.0,
@@ -390,7 +571,13 @@
         {
           "id": "choice_q8_sales",
           "text": "Examine each expiration date closely and offer our current in-store weekly flyer deals.",
-          "voiceKeywords": ["examine", "expiration", "flyer", "deals", "weekly"],
+          "voiceKeywords": [
+            "examine",
+            "expiration",
+            "flyer",
+            "deals",
+            "weekly"
+          ],
           "nextNodeId": "node_app_q9",
           "metricDeltas": {
             "karen_index": -5.0,
@@ -401,7 +588,13 @@
         {
           "id": "choice_q8_override",
           "text": "Call for a Supervisor Override and let the front end manager make the final courtesy call.",
-          "voiceKeywords": ["override", "supervisor", "courtesy", "manager", "call"],
+          "voiceKeywords": [
+            "override",
+            "supervisor",
+            "courtesy",
+            "manager",
+            "call"
+          ],
           "nextNodeId": "node_app_q9",
           "metricDeltas": {
             "associate_engagement": 5.0,
@@ -412,7 +605,13 @@
         {
           "id": "choice_q8_reboot",
           "text": "Suddenly develop technical difficulties with the scanner and restart the register terminal.",
-          "voiceKeywords": ["restart", "technical", "difficulties", "terminal", "register"],
+          "voiceKeywords": [
+            "restart",
+            "technical",
+            "difficulties",
+            "terminal",
+            "register"
+          ],
           "nextNodeId": "node_app_q9",
           "metricDeltas": {
             "karen_index": 5.0,
@@ -431,7 +630,13 @@
         {
           "id": "choice_q9_sycophant",
           "text": "To build a lifelong retail career and one day manage my very own store complex!",
-          "voiceKeywords": ["career", "manage", "complex", "lifelong", "grow"],
+          "voiceKeywords": [
+            "career",
+            "manage",
+            "complex",
+            "lifelong",
+            "grow"
+          ],
           "nextNodeId": "node_app_q10",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -442,7 +647,13 @@
         {
           "id": "choice_q9_realist",
           "text": "Because human survival requires currency for rent, groceries, and instant noodles.",
-          "voiceKeywords": ["currency", "rent", "survival", "paycheck", "honest"],
+          "voiceKeywords": [
+            "currency",
+            "rent",
+            "survival",
+            "paycheck",
+            "honest"
+          ],
           "nextNodeId": "node_app_q10",
           "metricDeltas": {
             "store_morale": 10.0,
@@ -452,7 +663,13 @@
         {
           "id": "choice_q9_pizza",
           "text": "I heard rumors of free pizza in the breakroom during peak inventory weekends!",
-          "voiceKeywords": ["pizza", "breakroom", "rumors", "food", "weekend"],
+          "voiceKeywords": [
+            "pizza",
+            "breakroom",
+            "rumors",
+            "food",
+            "weekend"
+          ],
           "nextNodeId": "node_app_q10",
           "metricDeltas": {
             "store_morale": 10.0,
@@ -462,7 +679,13 @@
         {
           "id": "choice_q9_chaos",
           "text": "I love fast-paced chaos, moving heavy boxes, and making chaotic environments orderly!",
-          "voiceKeywords": ["chaos", "fast", "orderly", "boxes", "energy"],
+          "voiceKeywords": [
+            "chaos",
+            "fast",
+            "orderly",
+            "boxes",
+            "energy"
+          ],
           "nextNodeId": "node_app_q10",
           "metricDeltas": {
             "store_morale": 10.0,
@@ -481,7 +704,13 @@
         {
           "id": "choice_q10_sycophant",
           "text": "Everything is flawless, sir! MegaMart Store #1042 is the greatest workplace on earth!",
-          "voiceKeywords": ["flawless", "greatest", "workplace", "proud", "shining"],
+          "voiceKeywords": [
+            "flawless",
+            "greatest",
+            "workplace",
+            "proud",
+            "shining"
+          ],
           "nextNodeId": "node_app_eval",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -492,7 +721,13 @@
         {
           "id": "choice_q10_honest",
           "text": "Things are going great, sir, but our team could really use two more working pallet jacks!",
-          "voiceKeywords": ["pallet jack", "great", "working", "honest", "tools"],
+          "voiceKeywords": [
+            "pallet jack",
+            "great",
+            "working",
+            "honest",
+            "tools"
+          ],
           "nextNodeId": "node_app_eval",
           "metricDeltas": {
             "store_morale": 10.0,
@@ -503,7 +738,13 @@
         {
           "id": "choice_q10_pragmatist",
           "text": "Smile, nod warmly, say 'Never better!', and discreetly retreat to straighten the next aisle.",
-          "voiceKeywords": ["smile", "nod", "straighten", "aisle", "warmly"],
+          "voiceKeywords": [
+            "smile",
+            "nod",
+            "straighten",
+            "aisle",
+            "warmly"
+          ],
           "nextNodeId": "node_app_eval",
           "metricDeltas": {
             "store_morale": 5.0,
@@ -514,7 +755,13 @@
         {
           "id": "choice_q10_praise",
           "text": "Tell them enthusiastically how hard our floor crew works and praise our teammates by name!",
-          "voiceKeywords": ["praise", "crew", "teammates", "enthusiastic", "hard"],
+          "voiceKeywords": [
+            "praise",
+            "crew",
+            "teammates",
+            "enthusiastic",
+            "hard"
+          ],
           "nextNodeId": "node_app_eval",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -533,7 +780,14 @@
         {
           "id": "choice_app_goto_interview",
           "text": "Report to the Store #1042 Personnel Office for your interview with Cheryl.",
-          "voiceKeywords": ["interview", "cheryl", "report", "personnel", "office", "go"],
+          "voiceKeywords": [
+            "interview",
+            "cheryl",
+            "report",
+            "personnel",
+            "office",
+            "go"
+          ],
           "nextNodeId": "node_interview_001"
         }
       ]
@@ -543,12 +797,19 @@
       "speakerId": "cheryl",
       "side": "RIGHT",
       "changeSceneId": "scene_personnel_office",
-      "text": "Hello and welcome! Come on in, please have a seat! I'm Cheryl, HR Manager here at Store #1042. I was just reviewing your online application and your assessment results—a {score} situational score! Honestly, whether someone scores 60% or 99%, the corporate portal flags anyone with a pulse as meeting the criteria for every open position. Retail has no real standards, and we need bodies on the floor! Where do you see yourself making the biggest impact?",
+      "text": "Hello and welcome! Come on in, please have a seat! I'm Cheryl, HR Manager here at Store #1042. I was just reviewing your online application and your assessment results\u2014a {score} situational score! Honestly, whether someone scores 60% or 99%, the corporate portal flags anyone with a pulse as meeting the criteria for every open position. Retail has no real standards, and we need bodies on the floor! Where do you see yourself making the biggest impact?",
       "choices": [
         {
           "id": "choice_interview_pleased",
           "text": "Thank you, Cheryl! I'm thrilled to be here and ready to get to work.",
-          "voiceKeywords": ["thank you", "ready", "work", "thrilled", "cheryl", "great"],
+          "voiceKeywords": [
+            "thank you",
+            "ready",
+            "work",
+            "thrilled",
+            "cheryl",
+            "great"
+          ],
           "nextNodeId": "node_interview_positions"
         }
       ]
@@ -562,28 +823,50 @@
         {
           "id": "choice_track_cashier",
           "text": "Front End Cashier: Fast hands, warm smiles, and front-line energy!",
-          "voiceKeywords": ["cashier", "front end", "register", "bananas"],
+          "voiceKeywords": [
+            "cashier",
+            "front end",
+            "register",
+            "bananas"
+          ],
           "assignHeroClassId": "cashier",
           "nextNodeId": "node_interview_offer_cashier"
         },
         {
           "id": "choice_track_stocker",
           "text": "Sales Floor Stocker: Dynamic action, building impressive displays, and keeping aisles pristine!",
-          "voiceKeywords": ["stocker", "sales floor", "floor", "aisles"],
+          "voiceKeywords": [
+            "stocker",
+            "sales floor",
+            "floor",
+            "aisles"
+          ],
           "assignHeroClassId": "stocker",
           "nextNodeId": "node_interview_offer_stocker"
         },
         {
           "id": "choice_track_unloader",
           "text": "Backroom Receiving: High energy, heavy freight, and powering the store's heartbeat!",
-          "voiceKeywords": ["unloader", "backroom", "freight", "dock", "baler"],
+          "voiceKeywords": [
+            "unloader",
+            "backroom",
+            "freight",
+            "dock",
+            "baler"
+          ],
           "assignHeroClassId": "unloader",
           "nextNodeId": "node_interview_offer_unloader"
         },
         {
           "id": "choice_track_specialist",
           "text": "Specialty Counter: Expert advice, cutting-edge tech, and high-value customer service!",
-          "voiceKeywords": ["specialist", "specialty", "tech", "electronics", "warranty"],
+          "voiceKeywords": [
+            "specialist",
+            "specialty",
+            "tech",
+            "electronics",
+            "warranty"
+          ],
           "assignHeroClassId": "specialist",
           "nextNodeId": "node_interview_offer_specialist"
         }
@@ -593,28 +876,28 @@
       "id": "node_interview_offer_cashier",
       "speakerId": "cheryl",
       "side": "RIGHT",
-      "text": "Sensational choice! Front End is the smiling face of the entire store! You are officially hired. Here is your company badge: {hero}. Head down the hall to the Associate Locker Room—Donna is back there and she'll get you fitted with your blue vest before Store Manager Henderson kicks off the morning huddle!",
+      "text": "Sensational choice! Front End is the smiling face of the entire store! You are officially hired. Here is your company badge: {hero}. Head down the hall to the Associate Locker Room\u2014Donna is back there and she'll get you fitted with your blue vest before Store Manager Henderson kicks off the morning huddle!",
       "nextNodeId": "node_locker_cashier_enter"
     },
     {
       "id": "node_interview_offer_stocker",
       "speakerId": "cheryl",
       "side": "RIGHT",
-      "text": "Sensational choice! Our sales floor grocery displays are the showpiece of the store! You are officially hired. Here is your company badge: {hero}. Head down the hall to the Associate Locker Room—Donna is back there and she'll get you fitted with your blue vest before Store Manager Henderson kicks off the morning huddle!",
+      "text": "Sensational choice! Our sales floor grocery displays are the showpiece of the store! You are officially hired. Here is your company badge: {hero}. Head down the hall to the Associate Locker Room\u2014Donna is back there and she'll get you fitted with your blue vest before Store Manager Henderson kicks off the morning huddle!",
       "nextNodeId": "node_locker_stocker_enter"
     },
     {
       "id": "node_interview_offer_unloader",
       "speakerId": "cheryl",
       "side": "RIGHT",
-      "text": "Sensational choice! The backroom dock is the powerhouse of MegaMart! You are officially hired. Here is your company badge: {hero}. Head down the hall to the Associate Locker Room—Donna is back there and she'll get you fitted with your blue vest before Store Manager Henderson kicks off the morning huddle!",
+      "text": "Sensational choice! The backroom dock is the powerhouse of MegaMart! You are officially hired. Here is your company badge: {hero}. Head down the hall to the Associate Locker Room\u2014Donna is back there and she'll get you fitted with your blue vest before Store Manager Henderson kicks off the morning huddle!",
       "nextNodeId": "node_locker_unloader_enter"
     },
     {
       "id": "node_interview_offer_specialist",
       "speakerId": "cheryl",
       "side": "RIGHT",
-      "text": "Sensational choice! Our specialty counter customers love expert recommendations! You are officially hired. Here is your company badge: {hero}. Head down the hall to the Associate Locker Room—Donna is back there and she'll get you fitted with your blue vest before Store Manager Henderson kicks off the morning huddle!",
+      "text": "Sensational choice! Our specialty counter customers love expert recommendations! You are officially hired. Here is your company badge: {hero}. Head down the hall to the Associate Locker Room\u2014Donna is back there and she'll get you fitted with your blue vest before Store Manager Henderson kicks off the morning huddle!",
       "nextNodeId": "node_locker_specialist_enter"
     },
     {
@@ -622,7 +905,7 @@
       "speakerId": "donna",
       "side": "LEFT",
       "changeSceneId": "scene_locker_room",
-      "text": "Welcome aboard, rookie! Locker 42 is all yours—freshly polished and ready. Your navy vest is hanging inside. That new-badge shine looks good on you!",
+      "text": "Welcome aboard, rookie! Locker 42 is all yours\u2014freshly polished and ready. Your navy vest is hanging inside. That new-badge shine looks good on you!",
       "nextNodeId": "node_locker_cashier_brenda"
     },
     {
@@ -644,7 +927,7 @@
       "speakerId": "donna",
       "side": "LEFT",
       "changeSceneId": "scene_locker_room",
-      "text": "Welcome to the sales floor, recruit! Locker 42 is yours. You're going to love this crew—everyone looks out for each other out there in the aisles.",
+      "text": "Welcome to the sales floor, recruit! Locker 42 is yours. You're going to love this crew\u2014everyone looks out for each other out there in the aisles.",
       "nextNodeId": "node_locker_stocker_todd"
     },
     {
@@ -666,7 +949,7 @@
       "speakerId": "donna",
       "side": "LEFT",
       "changeSceneId": "scene_locker_room",
-      "text": "Backroom freight crew! That's the engine room of the whole store. Locker 42 is yours—steel-toes ready, vest zipped, let's make it happen!",
+      "text": "Backroom freight crew! That's the engine room of the whole store. Locker 42 is yours\u2014steel-toes ready, vest zipped, let's make it happen!",
       "nextNodeId": "node_locker_unloader_mack"
     },
     {
@@ -688,7 +971,7 @@
       "speakerId": "donna",
       "side": "LEFT",
       "changeSceneId": "scene_locker_room",
-      "text": "Specialty desk! That's where all the exciting gadgets live. Locker 42 is yours, and here's the shiny department key ring—handle with pride!",
+      "text": "Specialty desk! That's where all the exciting gadgets live. Locker 42 is yours, and here's the shiny department key ring\u2014handle with pride!",
       "nextNodeId": "node_locker_specialist_julian"
     },
     {
@@ -716,7 +999,14 @@
         {
           "id": "choice_locker_advice",
           "text": "Donna, what's your best advice for making Day One a huge success?",
-          "voiceKeywords": ["tips", "advice", "success", "rules", "best", "day one"],
+          "voiceKeywords": [
+            "tips",
+            "advice",
+            "success",
+            "rules",
+            "best",
+            "day one"
+          ],
           "nextNodeId": "node_locker_donna_advice",
           "completionFlag": "flag_donna_advice_heard",
           "metricDeltas": {
@@ -726,7 +1016,14 @@
         {
           "id": "choice_locker_lore",
           "text": "How long have you been at Store #1042? Those 30+ service pins look legendary.",
-          "voiceKeywords": ["pins", "stories", "veteran", "lore", "years", "legendary"],
+          "voiceKeywords": [
+            "pins",
+            "stories",
+            "veteran",
+            "lore",
+            "years",
+            "legendary"
+          ],
           "nextNodeId": "node_locker_donna_lore",
           "completionFlag": "flag_donna_lore_heard",
           "metricDeltas": {
@@ -736,7 +1033,14 @@
         {
           "id": "choice_locker_huddle",
           "text": "Time to head to Action Alley for the morning huddle!",
-          "voiceKeywords": ["huddle", "action alley", "meeting", "morning cheer", "ready", "go"],
+          "voiceKeywords": [
+            "huddle",
+            "action alley",
+            "meeting",
+            "morning cheer",
+            "ready",
+            "go"
+          ],
           "nextNodeId": "node_huddle_001"
         }
       ]
@@ -745,7 +1049,7 @@
       "id": "node_locker_donna_advice",
       "speakerId": "donna",
       "side": "LEFT",
-      "text": "Three golden rules from fifteen years at #1042: First, wear comfortable shoes—you'll get a great workout before lunch! Second, keep a warm smile—a positive attitude is contagious on the sales floor. And third, Store Manager Henderson has huge passion for our team—he gets really hyped up during the store cheer, so bring that enthusiasm and you'll shine!",
+      "text": "Three golden rules from fifteen years at #1042: First, wear comfortable shoes\u2014you'll get a great workout before lunch! Second, keep a warm smile\u2014a positive attitude is contagious on the sales floor. And third, Store Manager Henderson has huge passion for our team\u2014he gets really hyped up during the store cheer, so bring that enthusiasm and you'll shine!",
       "nextNodeId": "node_locker_hub"
     },
     {
@@ -765,7 +1069,14 @@
         {
           "id": "choice_huddle_loud",
           "text": "Yell with 100% team pride: 'E! WOOOO! LET'S GO #1042!'",
-          "voiceKeywords": ["cheer", "scream", "loud", "enthusiastic", "woo", "m"],
+          "voiceKeywords": [
+            "cheer",
+            "scream",
+            "loud",
+            "enthusiastic",
+            "woo",
+            "m"
+          ],
           "nextNodeId": "node_huddle_cheer_loud",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -776,7 +1087,13 @@
         {
           "id": "choice_huddle_neutral",
           "text": "Cheer with a bright, confident smile: 'E! Let's do this!'",
-          "voiceKeywords": ["smile", "confident", "cheer", "let's do this", "e"],
+          "voiceKeywords": [
+            "smile",
+            "confident",
+            "cheer",
+            "let's do this",
+            "e"
+          ],
           "nextNodeId": "node_huddle_cheer_neutral",
           "metricDeltas": {
             "store_morale": 10.0,
@@ -786,7 +1103,14 @@
         {
           "id": "choice_huddle_rebel",
           "text": "Raise your coffee mug with a warm grin: 'Here's to an awesome shift and a record-breaking day!'",
-          "voiceKeywords": ["coffee", "travel mug", "toast", "record", "awesome", "shift"],
+          "voiceKeywords": [
+            "coffee",
+            "travel mug",
+            "toast",
+            "record",
+            "awesome",
+            "shift"
+          ],
           "nextNodeId": "node_huddle_cheer_rebel",
           "metricDeltas": {
             "store_morale": 10.0
@@ -824,25 +1148,46 @@
         {
           "id": "choice_post_cashier",
           "text": "Report to Front End Register Lane 4 with Brenda.",
-          "voiceKeywords": ["cashier", "lane four", "front end", "register"],
+          "voiceKeywords": [
+            "cashier",
+            "lane four",
+            "front end",
+            "register"
+          ],
           "nextNodeId": "node_station_cashier"
         },
         {
           "id": "choice_post_stocker",
           "text": "Report to Center Grocery Aisles with Todd.",
-          "voiceKeywords": ["stocker", "grocery", "sales floor", "aisle"],
+          "voiceKeywords": [
+            "stocker",
+            "grocery",
+            "sales floor",
+            "aisle"
+          ],
           "nextNodeId": "node_station_stocker"
         },
         {
           "id": "choice_post_unloader",
           "text": "Report to Backroom Receiving Bay 2 with Mack.",
-          "voiceKeywords": ["unloader", "receiving", "backroom", "bay two", "dock"],
+          "voiceKeywords": [
+            "unloader",
+            "receiving",
+            "backroom",
+            "bay two",
+            "dock"
+          ],
           "nextNodeId": "node_station_unloader"
         },
         {
           "id": "choice_post_specialist",
           "text": "Report to the Specialty Tech Counter with Julian.",
-          "voiceKeywords": ["specialist", "tech", "specialty", "electronics"],
+          "voiceKeywords": [
+            "specialist",
+            "tech",
+            "specialty",
+            "electronics"
+          ],
           "nextNodeId": "node_station_specialist"
         }
       ]
@@ -857,7 +1202,14 @@
         {
           "id": "choice_cashier_piano",
           "text": "Punch in 4-0-1-1 with the rhythmic speed of a concert pianist!",
-          "voiceKeywords": ["bananas", "piano", "fast", "rhythm", "four zero one one", "4011"],
+          "voiceKeywords": [
+            "bananas",
+            "piano",
+            "fast",
+            "rhythm",
+            "four zero one one",
+            "4011"
+          ],
           "nextNodeId": "node_station_cashier_groove",
           "metricDeltas": {
             "store_morale": 10.0
@@ -866,7 +1218,13 @@
         {
           "id": "choice_cashier_scale",
           "text": "Carefully place the bunch on the digital scale and verify the tare weight.",
-          "voiceKeywords": ["scale", "weight", "careful", "tare", "verify"],
+          "voiceKeywords": [
+            "scale",
+            "weight",
+            "careful",
+            "tare",
+            "verify"
+          ],
           "nextNodeId": "node_station_cashier_groove",
           "metricDeltas": {
             "store_morale": 5.0,
@@ -879,7 +1237,7 @@
       "id": "node_station_cashier_groove",
       "speakerId": "brenda",
       "side": "RIGHT",
-      "text": "BEEP! Flawless scan! You've got fast hands and natural rhythm, kid. Now heads up—the automatic front sliding doors just opened, and here comes our morning crowd!",
+      "text": "BEEP! Flawless scan! You've got fast hands and natural rhythm, kid. Now heads up\u2014the automatic front sliding doors just opened, and here comes our morning crowd!",
       "nextNodeId": "node_hub_cashier"
     },
     {
@@ -893,7 +1251,13 @@
         {
           "id": "choice_cashier_hub_brenda",
           "text": "Ask Brenda about high-speed barcode alignment and produce shortcuts.",
-          "voiceKeywords": ["brenda", "barcode", "shortcuts", "tips", "speed"],
+          "voiceKeywords": [
+            "brenda",
+            "barcode",
+            "shortcuts",
+            "tips",
+            "speed"
+          ],
           "nextNodeId": "node_cashier_hub_brenda_tips",
           "completionFlag": "flag_cashier_brenda_tips",
           "metricDeltas": {
@@ -903,7 +1267,13 @@
         {
           "id": "choice_cashier_hub_marsha",
           "text": "Check in with Front-End Lead Marsha on queue pacing and till drawer balance.",
-          "voiceKeywords": ["marsha", "queue", "balance", "till", "drawer"],
+          "voiceKeywords": [
+            "marsha",
+            "queue",
+            "balance",
+            "till",
+            "drawer"
+          ],
           "nextNodeId": "node_cashier_hub_marsha_tips",
           "completionFlag": "flag_cashier_marsha_tips",
           "metricDeltas": {
@@ -913,7 +1283,14 @@
         {
           "id": "choice_cashier_hub_rush",
           "text": "Engage the morning checkout rush wave on Lane 4!",
-          "voiceKeywords": ["rush", "checkout", "rally", "morning", "engage", "start"],
+          "voiceKeywords": [
+            "rush",
+            "checkout",
+            "rally",
+            "morning",
+            "engage",
+            "start"
+          ],
           "nextNodeId": "node_shift1_start"
         }
       ]
@@ -922,14 +1299,14 @@
       "id": "node_cashier_hub_brenda_tips",
       "speakerId": "brenda",
       "side": "RIGHT",
-      "text": "Keep the barcode facing your left hand as you pull items across the glass scanner, rookie! One smooth arc—never stop moving. And if a barcode won't read on the first pass, don't fiddle with it—flip to the 6-digit UPC quick-key. You'll be scanning thirty items a minute before you know it!",
+      "text": "Keep the barcode facing your left hand as you pull items across the glass scanner, rookie! One smooth arc\u2014never stop moving. And if a barcode won't read on the first pass, don't fiddle with it\u2014flip to the 6-digit UPC quick-key. You'll be scanning thirty items a minute before you know it!",
       "nextNodeId": "node_hub_cashier"
     },
     {
       "id": "node_cashier_hub_marsha_tips",
       "speakerId": "marsha",
       "side": "LEFT",
-      "text": "Always keep your till neat—bills face-up, organized by denomination. When a line builds up, look up and make eye contact with the next customer in line. A warm smile cuts perceived wait time in half!",
+      "text": "Always keep your till neat\u2014bills face-up, organized by denomination. When a line builds up, look up and make eye contact with the next customer in line. A warm smile cuts perceived wait time in half!",
       "nextNodeId": "node_hub_cashier"
     },
     {
@@ -942,7 +1319,13 @@
         {
           "id": "choice_stocker_push",
           "text": "Face every cereal box with pinpoint precision for a showroom finish!",
-          "voiceKeywords": ["precision", "finish", "showroom", "cereal", "perfect"],
+          "voiceKeywords": [
+            "precision",
+            "finish",
+            "showroom",
+            "cereal",
+            "perfect"
+          ],
           "nextNodeId": "node_station_stocker_groove",
           "metricDeltas": {
             "store_morale": 10.0,
@@ -952,7 +1335,13 @@
         {
           "id": "choice_stocker_steady",
           "text": "Work side-by-side with Kyle, learning his favorite stacking shortcuts.",
-          "voiceKeywords": ["kyle", "shortcuts", "side by side", "teamwork", "steady"],
+          "voiceKeywords": [
+            "kyle",
+            "shortcuts",
+            "side by side",
+            "teamwork",
+            "steady"
+          ],
           "nextNodeId": "node_station_stocker_groove",
           "metricDeltas": {
             "store_morale": 10.0
@@ -964,7 +1353,7 @@
       "id": "node_station_stocker_groove",
       "speakerId": "kyle",
       "side": "LEFT",
-      "text": "Look at that, man. The Captain Crunch boxes are lined up like soldiers—they're practically glowing under these fluorescents. That is pure art. You're a natural at this!",
+      "text": "Look at that, man. The Captain Crunch boxes are lined up like soldiers\u2014they're practically glowing under these fluorescents. That is pure art. You're a natural at this!",
       "nextNodeId": "node_hub_stocker"
     },
     {
@@ -978,7 +1367,13 @@
         {
           "id": "choice_stocker_hub_todd",
           "text": "Ask Todd how to build seasonal feature endcaps that stay rock-solid all day.",
-          "voiceKeywords": ["todd", "endcaps", "build", "seasonal", "tips"],
+          "voiceKeywords": [
+            "todd",
+            "endcaps",
+            "build",
+            "seasonal",
+            "tips"
+          ],
           "nextNodeId": "node_stocker_hub_todd_tips",
           "completionFlag": "flag_stocker_todd_tips",
           "metricDeltas": {
@@ -988,7 +1383,13 @@
         {
           "id": "choice_stocker_hub_kyle",
           "text": "Team up with Kyle to inspect top-stock risers and scan shelf tag barcodes.",
-          "voiceKeywords": ["kyle", "risers", "topstock", "scan", "barcodes"],
+          "voiceKeywords": [
+            "kyle",
+            "risers",
+            "topstock",
+            "scan",
+            "barcodes"
+          ],
           "nextNodeId": "node_stocker_hub_kyle_tips",
           "completionFlag": "flag_stocker_kyle_tips",
           "metricDeltas": {
@@ -998,7 +1399,14 @@
         {
           "id": "choice_stocker_hub_rush",
           "text": "Head to the front concourse to support the morning floor rally!",
-          "voiceKeywords": ["rally", "concourse", "support", "morning", "engage", "start"],
+          "voiceKeywords": [
+            "rally",
+            "concourse",
+            "support",
+            "morning",
+            "engage",
+            "start"
+          ],
           "nextNodeId": "node_shift1_start"
         }
       ]
@@ -1007,7 +1415,7 @@
       "id": "node_stocker_hub_todd_tips",
       "speakerId": "todd",
       "side": "RIGHT",
-      "text": "Interlocking corners, rookie! That's the secret to building high-volume display endcaps. Never stack single cartons straight up—weave them like brickwork. When thousands of shoppers pass by with bulky carts, your display won't budge an inch!",
+      "text": "Interlocking corners, rookie! That's the secret to building high-volume display endcaps. Never stack single cartons straight up\u2014weave them like brickwork. When thousands of shoppers pass by with bulky carts, your display won't budge an inch!",
       "nextNodeId": "node_hub_stocker"
     },
     {
@@ -1027,7 +1435,13 @@
         {
           "id": "choice_unloader_fast",
           "text": "Catch your stride on the conveyor line, sorting cartons with effortless flow.",
-          "voiceKeywords": ["stride", "flow", "cartons", "sort", "smooth"],
+          "voiceKeywords": [
+            "stride",
+            "flow",
+            "cartons",
+            "sort",
+            "smooth"
+          ],
           "nextNodeId": "node_station_unloader_groove",
           "metricDeltas": {
             "store_morale": 10.0,
@@ -1037,7 +1451,13 @@
         {
           "id": "choice_unloader_careful",
           "text": "Team up with Derrick to maneuver the heavy pallet stacks with safety and precision.",
-          "voiceKeywords": ["derrick", "pallet", "safety", "precision", "heavy"],
+          "voiceKeywords": [
+            "derrick",
+            "pallet",
+            "safety",
+            "precision",
+            "heavy"
+          ],
           "nextNodeId": "node_station_unloader_groove",
           "metricDeltas": {
             "store_morale": 10.0
@@ -1049,7 +1469,7 @@
       "id": "node_station_unloader_groove",
       "speakerId": "mack",
       "side": "RIGHT",
-      "text": "Ten pallets sorted and stacked in under thirty minutes! Derrick gave a double honk on Crown Three—that means you set a new onboarding speed record, kid!",
+      "text": "Ten pallets sorted and stacked in under thirty minutes! Derrick gave a double honk on Crown Three\u2014that means you set a new onboarding speed record, kid!",
       "nextNodeId": "node_hub_unloader"
     },
     {
@@ -1063,7 +1483,13 @@
         {
           "id": "choice_unloader_hub_mack",
           "text": "Learn Mack's strategy for clearing a 53-foot trailer in record time.",
-          "voiceKeywords": ["mack", "trailer", "freight", "strategy", "truck"],
+          "voiceKeywords": [
+            "mack",
+            "trailer",
+            "freight",
+            "strategy",
+            "truck"
+          ],
           "nextNodeId": "node_unloader_hub_mack_tips",
           "completionFlag": "flag_unloader_mack_tips",
           "metricDeltas": {
@@ -1073,7 +1499,13 @@
         {
           "id": "choice_unloader_hub_derrick",
           "text": "Do a safety walk with Derrick around the Crown Three electric pallet jack.",
-          "voiceKeywords": ["derrick", "crown", "pallet jack", "safety", "walk"],
+          "voiceKeywords": [
+            "derrick",
+            "crown",
+            "pallet jack",
+            "safety",
+            "walk"
+          ],
           "nextNodeId": "node_unloader_hub_derrick_tips",
           "completionFlag": "flag_unloader_derrick_tips",
           "metricDeltas": {
@@ -1083,7 +1515,14 @@
         {
           "id": "choice_unloader_hub_rush",
           "text": "Wheel fresh freight carts out to the floor to support the morning rally!",
-          "voiceKeywords": ["freight", "carts", "rally", "morning", "engage", "start"],
+          "voiceKeywords": [
+            "freight",
+            "carts",
+            "rally",
+            "morning",
+            "engage",
+            "start"
+          ],
           "nextNodeId": "node_shift1_start"
         }
       ]
@@ -1112,7 +1551,13 @@
         {
           "id": "choice_specialist_warranty",
           "text": "Share expert insights on the latest gear and outline the peace-of-mind protection plan.",
-          "voiceKeywords": ["expert", "insights", "protection", "plan", "gear"],
+          "voiceKeywords": [
+            "expert",
+            "insights",
+            "protection",
+            "plan",
+            "gear"
+          ],
           "nextNodeId": "node_station_specialist_groove",
           "metricDeltas": {
             "store_morale": 10.0
@@ -1121,7 +1566,14 @@
         {
           "id": "choice_specialist_sympathy",
           "text": "Help an excited kid and their parent pick out their very first video game console bundle.",
-          "voiceKeywords": ["console", "bundle", "game", "kid", "family", "help"],
+          "voiceKeywords": [
+            "console",
+            "bundle",
+            "game",
+            "kid",
+            "family",
+            "help"
+          ],
           "nextNodeId": "node_station_specialist_groove",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1148,7 +1600,13 @@
         {
           "id": "choice_specialist_hub_julian",
           "text": "Consult with Julian on matching customers with the right protection warranty.",
-          "voiceKeywords": ["julian", "warranty", "protection", "advice", "consult"],
+          "voiceKeywords": [
+            "julian",
+            "warranty",
+            "protection",
+            "advice",
+            "consult"
+          ],
           "nextNodeId": "node_specialist_hub_julian_tips",
           "completionFlag": "flag_specialist_julian_tips",
           "metricDeltas": {
@@ -1158,7 +1616,13 @@
         {
           "id": "choice_specialist_hub_chad",
           "text": "Test out the interactive soundbar and smart TV displays with Chad.",
-          "voiceKeywords": ["chad", "soundbar", "tv", "displays", "test"],
+          "voiceKeywords": [
+            "chad",
+            "soundbar",
+            "tv",
+            "displays",
+            "test"
+          ],
           "nextNodeId": "node_specialist_hub_chad_tips",
           "completionFlag": "flag_specialist_chad_tips",
           "metricDeltas": {
@@ -1168,7 +1632,14 @@
         {
           "id": "choice_specialist_hub_rush",
           "text": "Assist the front end with electronic payment overrides during the morning rush!",
-          "voiceKeywords": ["payment", "electronic", "rally", "morning", "engage", "start"],
+          "voiceKeywords": [
+            "payment",
+            "electronic",
+            "rally",
+            "morning",
+            "engage",
+            "start"
+          ],
           "nextNodeId": "node_shift1_start"
         }
       ]
@@ -1196,19 +1667,40 @@
         {
           "id": "choice_assist_carts",
           "text": "Sprint to Action Alley where Mack and Kyle are corralling a runaway line of carts!",
-          "voiceKeywords": ["carts", "action alley", "runaway", "mack", "kyle", "corral"],
+          "voiceKeywords": [
+            "carts",
+            "action alley",
+            "runaway",
+            "mack",
+            "kyle",
+            "corral"
+          ],
           "nextNodeId": "node_incident_cart_train"
         },
         {
           "id": "choice_assist_spill",
           "text": "Grab yellow safety cones with Derrick and Todd to safely clear a spill in Aisle 4!",
-          "voiceKeywords": ["spill", "aisle four", "cones", "derrick", "todd", "safety"],
+          "voiceKeywords": [
+            "spill",
+            "aisle four",
+            "cones",
+            "derrick",
+            "todd",
+            "safety"
+          ],
           "nextNodeId": "node_incident_honey_spill"
         },
         {
           "id": "choice_assist_tag",
           "text": "Join Brenda and Donna at the front registers to verify a customer's shelf tag question!",
-          "voiceKeywords": ["register", "tag", "brenda", "donna", "customer", "price check"],
+          "voiceKeywords": [
+            "register",
+            "tag",
+            "brenda",
+            "donna",
+            "customer",
+            "price check"
+          ],
           "nextNodeId": "node_incident_price_check"
         }
       ]
@@ -1218,12 +1710,18 @@
       "speakerId": "mack",
       "side": "RIGHT",
       "changeSceneId": "scene_action_alley",
-      "text": "Whoa, steady there! A train of twenty chrome shopping carts caught the gentle ramp incline and is rolling toward the paper towel display! Kyle's on the lead handle and I'm bracing the tail—rookie, we need you on the flank to guide it into the corral!",
+      "text": "Whoa, steady there! A train of twenty chrome shopping carts caught the gentle ramp incline and is rolling toward the paper towel display! Kyle's on the lead handle and I'm bracing the tail\u2014rookie, we need you on the flank to guide it into the corral!",
       "choices": [
         {
           "id": "choice_cart_flank_steer",
           "text": "Grip the flank rail and pivot with Kyle to steer the line smoothly into the turn!",
-          "voiceKeywords": ["steer", "flank", "pivot", "turn", "smooth"],
+          "voiceKeywords": [
+            "steer",
+            "flank",
+            "pivot",
+            "turn",
+            "smooth"
+          ],
           "nextNodeId": "node_incident_cart_train_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1233,7 +1731,13 @@
         {
           "id": "choice_cart_callout",
           "text": "Call out 'Clear on the left!' and brace the middle carts together in lockstep!",
-          "voiceKeywords": ["call out", "clear", "brace", "lockstep", "team"],
+          "voiceKeywords": [
+            "call out",
+            "clear",
+            "brace",
+            "lockstep",
+            "team"
+          ],
           "nextNodeId": "node_incident_cart_train_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1247,7 +1751,7 @@
       "id": "node_incident_cart_train_resolve",
       "speakerId": "kyle",
       "side": "LEFT",
-      "text": "CLACK! The carts nest flawlessly into the holding corral with inches to spare! Kyle wipes his brow and beams: 'That was like synchronized bobsledding! You moved like you've worked this floor for years!' Mack slaps your shoulder with a booming laugh: 'Pure teamwork, rookie! That's why nobody works alone at Store #1042!' An electric wave of excitement hits you—this team truly watches each other's backs!",
+      "text": "CLACK! The carts nest flawlessly into the holding corral with inches to spare! Kyle wipes his brow and beams: 'That was like synchronized bobsledding! You moved like you've worked this floor for years!' Mack slaps your shoulder with a booming laugh: 'Pure teamwork, rookie! That's why nobody works alone at Store #1042!' An electric wave of excitement hits you\u2014this team truly watches each other's backs!",
       "nextNodeId": "node_incident_return"
     },
     {
@@ -1260,7 +1764,13 @@
         {
           "id": "choice_spill_perimeter",
           "text": "Set the yellow cones with Derrick to guide shoppers safely around the wet zone.",
-          "voiceKeywords": ["cones", "derrick", "perimeter", "safety", "wet floor"],
+          "voiceKeywords": [
+            "cones",
+            "derrick",
+            "perimeter",
+            "safety",
+            "wet floor"
+          ],
           "nextNodeId": "node_incident_honey_spill_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1270,7 +1780,13 @@
         {
           "id": "choice_spill_sweep",
           "text": "Sprinkle the compound with Todd and sweep the tile to a spotless showroom shine.",
-          "voiceKeywords": ["sweep", "compound", "todd", "spotless", "clean"],
+          "voiceKeywords": [
+            "sweep",
+            "compound",
+            "todd",
+            "spotless",
+            "clean"
+          ],
           "nextNodeId": "node_incident_honey_spill_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1284,7 +1800,7 @@
       "id": "node_incident_honey_spill_resolve",
       "speakerId": "derrick",
       "side": "RIGHT",
-      "text": "SWEEP! In under forty-five seconds, the compound absorbs every drop and the aisle is gleaming! Store Manager Henderson strolls by, inspects the spotless floor, and flashes a proud double thumbs-up: 'Outstanding response time, crew!' Derrick chuckles warmly: 'Smooth as silk, kid. When this team syncs up, there isn't a mess in retail we can't conquer!' You feel a rush of pride—everyone here genuinely cares.",
+      "text": "SWEEP! In under forty-five seconds, the compound absorbs every drop and the aisle is gleaming! Store Manager Henderson strolls by, inspects the spotless floor, and flashes a proud double thumbs-up: 'Outstanding response time, crew!' Derrick chuckles warmly: 'Smooth as silk, kid. When this team syncs up, there isn't a mess in retail we can't conquer!' You feel a rush of pride\u2014everyone here genuinely cares.",
       "nextNodeId": "node_incident_return"
     },
     {
@@ -1292,12 +1808,18 @@
       "speakerId": "brenda",
       "side": "RIGHT",
       "changeSceneId": "scene_checkout_concourse",
-      "text": "Hey there, partner! A friendly customer at Register Four found a deluxe coffee maker on an endcap marked nineteen dollars, but the register system scanned it at fifty-nine. Brenda is keeping the customer engaged with warm banter—rookie, can you team up with Donna to verify the shelf tag?",
+      "text": "Hey there, partner! A friendly customer at Register Four found a deluxe coffee maker on an endcap marked nineteen dollars, but the register system scanned it at fifty-nine. Brenda is keeping the customer engaged with warm banter\u2014rookie, can you team up with Donna to verify the shelf tag?",
       "choices": [
         {
           "id": "choice_tag_verify",
           "text": "Hurry over with Donna to check the endcap tag and confirm the customer-first price match.",
-          "voiceKeywords": ["donna", "endcap", "confirm", "price match", "customer first"],
+          "voiceKeywords": [
+            "donna",
+            "endcap",
+            "confirm",
+            "price match",
+            "customer first"
+          ],
           "nextNodeId": "node_incident_price_check_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1307,7 +1829,13 @@
         {
           "id": "choice_tag_banter",
           "text": "Offer the customer a warm smile and complimentary tote bag while Donna gets the override key.",
-          "voiceKeywords": ["smile", "tote", "complimentary", "override", "kindness"],
+          "voiceKeywords": [
+            "smile",
+            "tote",
+            "complimentary",
+            "override",
+            "kindness"
+          ],
           "nextNodeId": "node_incident_price_check_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1321,7 +1849,7 @@
       "id": "node_incident_price_check_resolve",
       "speakerId": "donna",
       "side": "LEFT",
-      "text": "KEY CLICK! Donna turns the supervisor override key with a warm smile: 'Endcap had yesterday's promo sticker, but at MegaMart, customer goodwill always comes first! You get it for nineteen dollars!' The shopper beams with delight: 'You all are the absolute sweetest! Best customer service in town!' Brenda winks at you: 'Boom! Another customer for life. You stayed calm and kept the energy bright!' You feel an exhilarating buzz—this job really does make people happy when a team works in harmony.",
+      "text": "KEY CLICK! Donna turns the supervisor override key with a warm smile: 'Endcap had yesterday's promo sticker, but at MegaMart, customer goodwill always comes first! You get it for nineteen dollars!' The shopper beams with delight: 'You all are the absolute sweetest! Best customer service in town!' Brenda winks at you: 'Boom! Another customer for life. You stayed calm and kept the energy bright!' You feel an exhilarating buzz\u2014this job really does make people happy when a team works in harmony.",
       "nextNodeId": "node_incident_return"
     },
     {
@@ -1329,12 +1857,19 @@
       "speakerId": "derrick",
       "side": "RIGHT",
       "changeSceneId": "scene_action_alley",
-      "text": "Heads up on the backroom threshold! Derrick and Mack are pulling a fresh pallet of ultra-soft paper towels, but one steering wheel snagged on a stray metal banding clip right over the doorplate. Mack's got his shoulder behind the pallet, and Derrick's calling out the angles: 'Rookie! Grab that hardwood pry wedge—let's lift and roll in unison on three!'",
+      "text": "Heads up on the backroom threshold! Derrick and Mack are pulling a fresh pallet of ultra-soft paper towels, but one steering wheel snagged on a stray metal banding clip right over the doorplate. Mack's got his shoulder behind the pallet, and Derrick's calling out the angles: 'Rookie! Grab that hardwood pry wedge\u2014let's lift and roll in unison on three!'",
       "choices": [
         {
           "id": "choice_pallet_wedge",
           "text": "Slide the wooden wedge under the chassis while Mack braces to pop the wheel free!",
-          "voiceKeywords": ["wedge", "lift", "brace", "pop", "wheel", "three"],
+          "voiceKeywords": [
+            "wedge",
+            "lift",
+            "brace",
+            "pop",
+            "wheel",
+            "three"
+          ],
           "nextNodeId": "node_incident_pallet_jack_assist_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1344,7 +1879,14 @@
         {
           "id": "choice_pallet_guide",
           "text": "Clear the stray clip from the floor track and give the signal for the synchronized pull!",
-          "voiceKeywords": ["clear", "track", "pull", "signal", "derrick", "guide"],
+          "voiceKeywords": [
+            "clear",
+            "track",
+            "pull",
+            "signal",
+            "derrick",
+            "guide"
+          ],
           "nextNodeId": "node_incident_pallet_jack_assist_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1357,7 +1899,7 @@
       "id": "node_incident_pallet_jack_assist_resolve",
       "speakerId": "mack",
       "side": "RIGHT",
-      "text": "HEAVE-HO! The pallet jack glides effortlessly over the threshold plate with a satisfying CLUNK! Mack lets out a boisterous laugh and offers a thunderous high-five: 'Boom! Now that is pure dock synergy! You read my mind before I even called it out!' Derrick nods with genuine respect: 'Sharp eyes, {hero}. When a team moves together like that, four hundred pounds feels light as a feather!' A thrill of camaraderie courses through you—working with folks who have your back makes even heavy work feel exciting!",
+      "text": "HEAVE-HO! The pallet jack glides effortlessly over the threshold plate with a satisfying CLUNK! Mack lets out a boisterous laugh and offers a thunderous high-five: 'Boom! Now that is pure dock synergy! You read my mind before I even called it out!' Derrick nods with genuine respect: 'Sharp eyes, {hero}. When a team moves together like that, four hundred pounds feels light as a feather!' A thrill of camaraderie courses through you\u2014working with folks who have your back makes even heavy work feel exciting!",
       "nextNodeId": "node_incident_return"
     },
     {
@@ -1370,7 +1912,14 @@
         {
           "id": "choice_toddler_hero",
           "text": "Kneel down at eye level, compliment the red superhero cape, and offer a shiny MegaMart star sticker.",
-          "voiceKeywords": ["cape", "superhero", "sticker", "kneel", "star", "gentle"],
+          "voiceKeywords": [
+            "cape",
+            "superhero",
+            "sticker",
+            "kneel",
+            "star",
+            "gentle"
+          ],
           "nextNodeId": "node_incident_lost_toddler_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1381,7 +1930,14 @@
         {
           "id": "choice_toddler_walk",
           "text": "Take Donna's hand and offer your other hand to walk the young superhero to Brenda.",
-          "voiceKeywords": ["hand", "walk", "mom", "brenda", "safe", "reunite"],
+          "voiceKeywords": [
+            "hand",
+            "walk",
+            "mom",
+            "brenda",
+            "safe",
+            "reunite"
+          ],
           "nextNodeId": "node_incident_lost_toddler_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1394,7 +1950,7 @@
       "id": "node_incident_lost_toddler_resolve",
       "speakerId": "brenda",
       "side": "RIGHT",
-      "text": "'LEO!' A mother rounds the corner with tears of pure relief in her eyes, sweeping the toddler up in a tight, joyful hug! Brenda hands the mom a bottle of cold spring water with a warm pat on the back: 'Donna and our fantastic new associate {hero} kept your little hero smiling the whole time!' The mom wipes a tear and beams at you: 'Thank you all so much... You are real-life angels here!' Donna gives you a gentle, proud wink: 'That right there? That's the heart of #1042.' Your heart swells with warmth—you're doing something that truly matters.",
+      "text": "'LEO!' A mother rounds the corner with tears of pure relief in her eyes, sweeping the toddler up in a tight, joyful hug! Brenda hands the mom a bottle of cold spring water with a warm pat on the back: 'Donna and our fantastic new associate {hero} kept your little hero smiling the whole time!' The mom wipes a tear and beams at you: 'Thank you all so much... You are real-life angels here!' Donna gives you a gentle, proud wink: 'That right there? That's the heart of #1042.' Your heart swells with warmth\u2014you're doing something that truly matters.",
       "nextNodeId": "node_incident_return"
     },
     {
@@ -1407,7 +1963,14 @@
         {
           "id": "choice_tape_latch",
           "text": "Slide Kyle's release key into the emergency notch to spring the printer housing open!",
-          "voiceKeywords": ["key", "latch", "spring", "housing", "open", "release"],
+          "voiceKeywords": [
+            "key",
+            "latch",
+            "spring",
+            "housing",
+            "open",
+            "release"
+          ],
           "nextNodeId": "node_incident_register_tape_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1417,7 +1980,14 @@
         {
           "id": "choice_tape_cheer",
           "text": "Entertain the customer's children with funny receipt origami while Kyle and Marsha swap the roll!",
-          "voiceKeywords": ["origami", "entertain", "family", "customer", "laugh", "fun"],
+          "voiceKeywords": [
+            "origami",
+            "entertain",
+            "family",
+            "customer",
+            "laugh",
+            "fun"
+          ],
           "nextNodeId": "node_incident_register_tape_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1430,7 +2000,7 @@
       "id": "node_incident_register_tape_resolve",
       "speakerId": "marsha",
       "side": "LEFT",
-      "text": "CLICK-WHIRRRR! The new thermal roll spins, and a crisp, three-foot receipt feeds out like a satin ribbon! The customers burst into cheerful applause: 'Fastest pit stop in retail history!' Marsha winks at you and Kyle with theatrical flair: 'Precision teamwork, darlings! Store #1042 doesn't skip a single beat!' Kyle gives you a fist-bump: 'You were lightning fast with that latch, rookie!' You catch yourself grinning ear-to-ear—retail rhythm is addictive when the vibe is this good!",
+      "text": "CLICK-WHIRRRR! The new thermal roll spins, and a crisp, three-foot receipt feeds out like a satin ribbon! The customers burst into cheerful applause: 'Fastest pit stop in retail history!' Marsha winks at you and Kyle with theatrical flair: 'Precision teamwork, darlings! Store #1042 doesn't skip a single beat!' Kyle gives you a fist-bump: 'You were lightning fast with that latch, rookie!' You catch yourself grinning ear-to-ear\u2014retail rhythm is addictive when the vibe is this good!",
       "nextNodeId": "node_incident_return"
     },
     {
@@ -1443,7 +2013,14 @@
         {
           "id": "choice_balloon_spot",
           "text": "Grip the telescoping pole base firmly and guide Todd's aim straight toward the dangling ribbon!",
-          "voiceKeywords": ["aim", "guide", "spot", "pole", "steady", "ribbon"],
+          "voiceKeywords": [
+            "aim",
+            "guide",
+            "spot",
+            "pole",
+            "steady",
+            "ribbon"
+          ],
           "nextNodeId": "node_incident_balloon_ceiling_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1453,7 +2030,14 @@
         {
           "id": "choice_balloon_cheer",
           "text": "Coordinate with Julian to direct aisle traffic so customers can enjoy the acrobatic spectacle!",
-          "voiceKeywords": ["traffic", "watch", "spectacle", "julian", "cheer", "crowd"],
+          "voiceKeywords": [
+            "traffic",
+            "watch",
+            "spectacle",
+            "julian",
+            "cheer",
+            "crowd"
+          ],
           "nextNodeId": "node_incident_balloon_ceiling_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1466,7 +2050,7 @@
       "id": "node_incident_balloon_ceiling_resolve",
       "speakerId": "julian",
       "side": "RIGHT",
-      "text": "SNAG! On the very first sweep, the silicone gripper coils cleanly around the metallic ribbon! Todd reels the pole down with the dexterity of an Olympic fly-fisherman! A small child in a shopping cart claps with wonder as Todd hands the floating star to them: 'Compliments of the Store #1042 Astro-Retrieval Squad!' Julian chuckles warmly: 'Spotting work was perfection, {hero}! You turned an oops into store-wide joy!' You feel an exhilarating bounce in your step—working here is actually a total blast!",
+      "text": "SNAG! On the very first sweep, the silicone gripper coils cleanly around the metallic ribbon! Todd reels the pole down with the dexterity of an Olympic fly-fisherman! A small child in a shopping cart claps with wonder as Todd hands the floating star to them: 'Compliments of the Store #1042 Astro-Retrieval Squad!' Julian chuckles warmly: 'Spotting work was perfection, {hero}! You turned an oops into store-wide joy!' You feel an exhilarating bounce in your step\u2014working here is actually a total blast!",
       "nextNodeId": "node_incident_return"
     },
     {
@@ -1474,12 +2058,19 @@
       "speakerId": "chad",
       "side": "RIGHT",
       "changeSceneId": "scene_action_alley",
-      "text": "Chad signals with both hands from the holiday seasonal endcap: a customer enthusiastically pulled two 12-packs from the lower tier of an eight-foot sparkling soda pyramid, causing the top cartons to lean at a stylish but dangerous ten-degree angle! Chad braces the left corner with a grin: 'Code Fizzy Tower! Julian's got the interlocking cardboard slipsheets—rookie, help me brace the right tier before gravity tests our reflexes!'",
+      "text": "Chad signals with both hands from the holiday seasonal endcap: a customer enthusiastically pulled two 12-packs from the lower tier of an eight-foot sparkling soda pyramid, causing the top cartons to lean at a stylish but dangerous ten-degree angle! Chad braces the left corner with a grin: 'Code Fizzy Tower! Julian's got the interlocking cardboard slipsheets\u2014rookie, help me brace the right tier before gravity tests our reflexes!'",
       "choices": [
         {
           "id": "choice_pyramid_brace",
           "text": "Brace the leaning carton corner with Chad while Julian slides the reinforcing sheet into place!",
-          "voiceKeywords": ["brace", "corner", "tier", "pyramid", "chad", "reinforce"],
+          "voiceKeywords": [
+            "brace",
+            "corner",
+            "tier",
+            "pyramid",
+            "chad",
+            "reinforce"
+          ],
           "nextNodeId": "node_incident_display_pyramid_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1489,7 +2080,14 @@
         {
           "id": "choice_pyramid_rebuild",
           "text": "Quickly transfer the top four cartons down to the staging flatbed to relieve the upper load!",
-          "voiceKeywords": ["transfer", "unload", "relieve", "weight", "safety", "flatbed"],
+          "voiceKeywords": [
+            "transfer",
+            "unload",
+            "relieve",
+            "weight",
+            "safety",
+            "flatbed"
+          ],
           "nextNodeId": "node_incident_display_pyramid_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1502,7 +2100,7 @@
       "id": "node_incident_display_pyramid_resolve",
       "speakerId": "chad",
       "side": "RIGHT",
-      "text": "LOCK AND LOAD! Julian slots the interlocking slipsheet, and the pyramid settles back into flawless, laser-straight alignment, more solid than the day it was built! Chad brushes his hands together with a satisfied nod: 'Architectural masterpiece secured! Nobody drops a single can on our watch!' Julian laughs: 'That was some serious quick-thinking reaction time, {hero}!' You look back at the gleaming display with a deep sense of accomplishment—solving emergencies together is not just productive, it's genuinely fun!",
+      "text": "LOCK AND LOAD! Julian slots the interlocking slipsheet, and the pyramid settles back into flawless, laser-straight alignment, more solid than the day it was built! Chad brushes his hands together with a satisfied nod: 'Architectural masterpiece secured! Nobody drops a single can on our watch!' Julian laughs: 'That was some serious quick-thinking reaction time, {hero}!' You look back at the gleaming display with a deep sense of accomplishment\u2014solving emergencies together is not just productive, it's genuinely fun!",
       "nextNodeId": "node_incident_return"
     },
     {
@@ -1515,7 +2113,13 @@
         {
           "id": "choice_spill_cashier_pacing",
           "text": "Call out a warm greeting to direct approaching shoppers smoothly into Lane 4.",
-          "voiceKeywords": ["greeting", "direct", "lane four", "guide", "traffic"],
+          "voiceKeywords": [
+            "greeting",
+            "direct",
+            "lane four",
+            "guide",
+            "traffic"
+          ],
           "nextNodeId": "node_incident_honey_spill_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1525,7 +2129,13 @@
         {
           "id": "choice_spill_cashier_towel",
           "text": "Hand a stack of sanitized paper towels to Kyle as he jogs toward Aisle 4.",
-          "voiceKeywords": ["towels", "kyle", "assist", "supplies", "help"],
+          "voiceKeywords": [
+            "towels",
+            "kyle",
+            "assist",
+            "supplies",
+            "help"
+          ],
           "nextNodeId": "node_incident_honey_spill_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1539,12 +2149,18 @@
       "speakerId": "mack",
       "side": "RIGHT",
       "changeSceneId": "scene_loading_dock",
-      "text": "Derrick just crackled over the Receiving radio: 'Spill alert on Aisle Four—need the fast-acting sweep compound from Bay 2 chemical locker on the double!' Teamwork time, unloader! Grab the yellow bucket and let's sprint it out to Todd!",
+      "text": "Derrick just crackled over the Receiving radio: 'Spill alert on Aisle Four\u2014need the fast-acting sweep compound from Bay 2 chemical locker on the double!' Teamwork time, unloader! Grab the yellow bucket and let's sprint it out to Todd!",
       "choices": [
         {
           "id": "choice_spill_unloader_rush",
           "text": "Sprint the sweep compound bucket to Todd on Aisle 4 like an Olympic baton pass!",
-          "voiceKeywords": ["sprint", "compound", "todd", "bucket", "rush"],
+          "voiceKeywords": [
+            "sprint",
+            "compound",
+            "todd",
+            "bucket",
+            "rush"
+          ],
           "nextNodeId": "node_incident_honey_spill_resolve",
           "metricDeltas": {
             "store_morale": 20.0,
@@ -1554,7 +2170,13 @@
         {
           "id": "choice_spill_unloader_barrier",
           "text": "Wheel out the rolling caution barrier from the dock to seal the aisle perimeter.",
-          "voiceKeywords": ["barrier", "caution", "safety", "perimeter", "roll"],
+          "voiceKeywords": [
+            "barrier",
+            "caution",
+            "safety",
+            "perimeter",
+            "roll"
+          ],
           "nextNodeId": "node_incident_honey_spill_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1568,12 +2190,18 @@
       "speakerId": "julian",
       "side": "RIGHT",
       "changeSceneId": "scene_action_alley",
-      "text": "Attention at the Specialty Counter! Todd just paged a clean-up assist on Aisle Four. We're right at the entrance to the electronics concourse—let's make a courteous PA announcement and guide shoppers along the clean carpet path!",
+      "text": "Attention at the Specialty Counter! Todd just paged a clean-up assist on Aisle Four. We're right at the entrance to the electronics concourse\u2014let's make a courteous PA announcement and guide shoppers along the clean carpet path!",
       "choices": [
         {
           "id": "choice_spill_specialist_pa",
           "text": "Broadcast a polite, professional PA advisory to guide shoppers along the clean concourse.",
-          "voiceKeywords": ["broadcast", "pa", "announcement", "courteous", "path"],
+          "voiceKeywords": [
+            "broadcast",
+            "pa",
+            "announcement",
+            "courteous",
+            "path"
+          ],
           "nextNodeId": "node_incident_honey_spill_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1583,7 +2211,13 @@
         {
           "id": "choice_spill_specialist_escort",
           "text": "Personally escort a couple with a stroller around Aisle 4 toward the tech desk.",
-          "voiceKeywords": ["escort", "stroller", "family", "guide", "help"],
+          "voiceKeywords": [
+            "escort",
+            "stroller",
+            "family",
+            "guide",
+            "help"
+          ],
           "nextNodeId": "node_incident_honey_spill_resolve",
           "metricDeltas": {
             "store_morale": 20.0,
@@ -1597,12 +2231,18 @@
       "speakerId": "derrick",
       "side": "LEFT",
       "changeSceneId": "scene_loading_dock",
-      "text": "Look alive at Receiving Ramp One! A train of fifteen returned shopping carts is rolling down the gentle receiving slope! Mack's on the brake rail—jump in with the rubber wheel chock!",
+      "text": "Look alive at Receiving Ramp One! A train of fifteen returned shopping carts is rolling down the gentle receiving slope! Mack's on the brake rail\u2014jump in with the rubber wheel chock!",
       "choices": [
         {
           "id": "choice_cart_unloader_chock",
           "text": "Slide the heavy rubber chock directly under the lead wheel to halt the momentum!",
-          "voiceKeywords": ["chock", "rubber", "halt", "wheel", "stop"],
+          "voiceKeywords": [
+            "chock",
+            "rubber",
+            "halt",
+            "wheel",
+            "stop"
+          ],
           "nextNodeId": "node_incident_cart_train_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1612,7 +2252,13 @@
         {
           "id": "choice_cart_unloader_steer",
           "text": "Grip the front guide handle with Derrick and steer the train straight into Bay 1!",
-          "voiceKeywords": ["steer", "derrick", "handle", "bay one", "guide"],
+          "voiceKeywords": [
+            "steer",
+            "derrick",
+            "handle",
+            "bay one",
+            "guide"
+          ],
           "nextNodeId": "node_incident_cart_train_resolve",
           "metricDeltas": {
             "store_morale": 20.0,
@@ -1626,12 +2272,18 @@
       "speakerId": "marsha",
       "side": "LEFT",
       "changeSceneId": "scene_checkout_concourse",
-      "text": "Heads up at the front vestibule! A long string of nested carts is rolling past the sliding doors toward the exit! Brenda has the front brake—rookie, grab the rear stabilizing bar!",
+      "text": "Heads up at the front vestibule! A long string of nested carts is rolling past the sliding doors toward the exit! Brenda has the front brake\u2014rookie, grab the rear stabilizing bar!",
       "choices": [
         {
           "id": "choice_cart_cashier_stabilize",
           "text": "Grip the rear stabilizing bar to brake the train smoothly before the entrance mats!",
-          "voiceKeywords": ["stabilize", "brake", "rear", "smooth", "bar"],
+          "voiceKeywords": [
+            "stabilize",
+            "brake",
+            "rear",
+            "smooth",
+            "bar"
+          ],
           "nextNodeId": "node_incident_cart_train_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1641,7 +2293,13 @@
         {
           "id": "choice_cart_cashier_cheer",
           "text": "Coordinate with Brenda to dock the train into the vestibule return bay with a cheer!",
-          "voiceKeywords": ["brenda", "dock", "vestibule", "cheer", "team"],
+          "voiceKeywords": [
+            "brenda",
+            "dock",
+            "vestibule",
+            "cheer",
+            "team"
+          ],
           "nextNodeId": "node_incident_cart_train_resolve",
           "metricDeltas": {
             "store_morale": 20.0,
@@ -1660,7 +2318,13 @@
         {
           "id": "choice_key_precision",
           "text": "Apply the lubricant pen and gently turn the master key for a silky-smooth click!",
-          "voiceKeywords": ["key", "lubricant", "master", "turn", "precision"],
+          "voiceKeywords": [
+            "key",
+            "lubricant",
+            "master",
+            "turn",
+            "precision"
+          ],
           "nextNodeId": "node_incident_showcase_key_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1670,7 +2334,13 @@
         {
           "id": "choice_key_consult",
           "text": "Engage the customer with enthusiastic photography tips while Chad unlocks the case!",
-          "voiceKeywords": ["photography", "tips", "consult", "customer", "enthusiastic"],
+          "voiceKeywords": [
+            "photography",
+            "tips",
+            "consult",
+            "customer",
+            "enthusiastic"
+          ],
           "nextNodeId": "node_incident_showcase_key_resolve",
           "metricDeltas": {
             "store_morale": 20.0,
@@ -1691,12 +2361,18 @@
       "speakerId": "mack",
       "side": "RIGHT",
       "changeSceneId": "scene_loading_dock",
-      "text": "Inbound delivery truck just docked at Bay 3! The heavy hydraulic dock plate leveler safety latch is resting an inch high on the trailer bed. Derrick is ready with the pull chain—let's set the plate flush!",
+      "text": "Inbound delivery truck just docked at Bay 3! The heavy hydraulic dock plate leveler safety latch is resting an inch high on the trailer bed. Derrick is ready with the pull chain\u2014let's set the plate flush!",
       "choices": [
         {
           "id": "choice_dock_pull",
           "text": "Pull the spring-assist chain in rhythm with Mack for a solid, flush lock!",
-          "voiceKeywords": ["chain", "pull", "rhythm", "mack", "flush"],
+          "voiceKeywords": [
+            "chain",
+            "pull",
+            "rhythm",
+            "mack",
+            "flush"
+          ],
           "nextNodeId": "node_incident_dock_plate_latch_resolve",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1706,7 +2382,13 @@
         {
           "id": "choice_dock_inspect",
           "text": "Verify the trailer wheel chocks and rubber bumpers are 100% secure before loading!",
-          "voiceKeywords": ["inspect", "chocks", "bumpers", "safety", "verify"],
+          "voiceKeywords": [
+            "inspect",
+            "chocks",
+            "bumpers",
+            "safety",
+            "verify"
+          ],
           "nextNodeId": "node_incident_dock_plate_latch_resolve",
           "metricDeltas": {
             "store_morale": 20.0,
@@ -1720,6 +2402,493 @@
       "speakerId": "derrick",
       "side": "LEFT",
       "text": "CLACK-THUD! The steel dock plate settles rock-solid and flush with the trailer floor! Derrick drives Crown Three straight in with a joyful horn beep: 'Textbook dock setup! Bay 3 is officially open for business!'",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_pickle_spill_stocker",
+      "speakerId": "kyle",
+      "side": "LEFT",
+      "text": "A giant two-gallon catering jar of dill pickles has shattered in Aisle 6. Over the walkie, Derrick snaps: 'Receiving is throwing freight, not our problem.' Brenda fires back: 'Front end has zero cashiers to spare.' Kyle sighs: 'Bro, I'm off the clock in six minutes.' You're standing over broken glass, vinegar brine, and floating pickles while shoppers groan.",
+      "choices": [
+        {
+          "id": "choice_pickle_stocker_sweep",
+          "text": "Grab the sawdust compound and sweep up the stinking mess solo to protect shoppers.",
+          "voiceKeywords": [
+            "sweep",
+            "sawdust",
+            "mess",
+            "compound",
+            "clean",
+            "solo"
+          ],
+          "nextNodeId": "node_incident_pickle_spill_resolve",
+          "metricDeltas": {
+            "store_morale": -5.0,
+            "associate_engagement": 10.0
+          }
+        },
+        {
+          "id": "choice_pickle_stocker_radio",
+          "text": "Key the walkie and loudly demand an Area Manager settle the aisle dispute.",
+          "voiceKeywords": [
+            "manager",
+            "radio",
+            "walkie",
+            "dispute",
+            "todd",
+            "page"
+          ],
+          "nextNodeId": "node_incident_pickle_spill_resolve",
+          "metricDeltas": {
+            "labor_squeeze": 10.0,
+            "store_morale": -10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_pickle_spill_cashier",
+      "speakerId": "brenda",
+      "side": "LEFT",
+      "text": "Brenda mutters under her breath as customers in Lane 4 pinch their noses: 'Floor associates arguing over the radio about a five-minute pickle spill while the vinegar stink reaches checkout. If another shopper asks for a manager, I'm locking my register till.'",
+      "choices": [
+        {
+          "id": "choice_pickle_cashier_smile",
+          "text": "Apologize smoothly to shoppers and offer paper towels while maintaining line velocity.",
+          "voiceKeywords": [
+            "apologize",
+            "smile",
+            "towels",
+            "velocity",
+            "shoppers"
+          ],
+          "nextNodeId": "node_incident_pickle_spill_resolve",
+          "metricDeltas": {
+            "karen_index": -10.0,
+            "store_morale": -5.0
+          }
+        },
+        {
+          "id": "choice_pickle_cashier_chide",
+          "text": "Key the headset and tell the sales floor crew to stop bickering over the airwaves.",
+          "voiceKeywords": [
+            "headset",
+            "chide",
+            "quiet",
+            "radio",
+            "bickering"
+          ],
+          "nextNodeId": "node_incident_pickle_spill_resolve",
+          "metricDeltas": {
+            "store_morale": -5.0,
+            "associate_engagement": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_pickle_spill_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "Over the dock speaker, the sales floor and front end are arguing over who has to mop shattered pickle jars. Mack shuts off the receiver with a tired smirk: 'Dock rule number one, rookie: never answer a radio page with the word \"spill\" in it. We have thirty pallets to unload before the yard truck pulls away.'",
+      "choices": [
+        {
+          "id": "choice_pickle_unloader_ignore",
+          "text": "Ignore the radio bickering and throw freight on the roller conveyor with Mack.",
+          "voiceKeywords": [
+            "ignore",
+            "freight",
+            "rollers",
+            "mack",
+            "unload",
+            "dock"
+          ],
+          "nextNodeId": "node_incident_pickle_spill_resolve",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "labor_squeeze": 5.0
+          }
+        },
+        {
+          "id": "choice_pickle_unloader_supplies",
+          "text": "Slide an extra box of spill absorbent compound out the hallway doors for them.",
+          "voiceKeywords": [
+            "slide",
+            "absorbent",
+            "compound",
+            "hallway",
+            "supplies"
+          ],
+          "nextNodeId": "node_incident_pickle_spill_resolve",
+          "metricDeltas": {
+            "store_morale": 5.0,
+            "associate_engagement": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_pickle_spill_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "Julian rubs his temples behind the glass counter as the walkie bickering squawks loudly over Action Alley: 'Two grown adults having a public screaming match over dill pickles while customers looking at $1,200 OLED screens listen in disgust. Keep your eye on the showcase lock, {hero}.'",
+      "choices": [
+        {
+          "id": "choice_pickle_spec_soundbar",
+          "text": "Fire up the 4K soundbar demo loop to drown out the department argument.",
+          "voiceKeywords": [
+            "soundbar",
+            "demo",
+            "drown",
+            "music",
+            "audio"
+          ],
+          "nextNodeId": "node_incident_pickle_spill_resolve",
+          "metricDeltas": {
+            "store_morale": 5.0,
+            "associate_engagement": 10.0
+          }
+        },
+        {
+          "id": "choice_pickle_spec_reroute",
+          "text": "Direct shoppers around the Aisle 6 hazard toward the clean specialty showroom.",
+          "voiceKeywords": [
+            "direct",
+            "reroute",
+            "clean",
+            "showroom",
+            "shoppers"
+          ],
+          "nextNodeId": "node_incident_pickle_spill_resolve",
+          "metricDeltas": {
+            "karen_index": -5.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_pickle_spill_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "The sour pickle brine is finally absorbed and scooped away, but the radio silence that follows is thick with irritation. Nobody thanked anyone, and both departments retreated behind their counters with arms crossed. Welcome to the grunt reality.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_phantom_bathroom_cashier",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Peak rush hits the front end. Your tandem cashier takes one look at the line stretching sixteen carts deep, grabs their stomach, and mutters: 'Emergency bathroom break, back in three minutes!' Forty-five minutes pass. You're scanning solo with sweat on your forehead, while a blue phone screen glow is clearly visible beneath the family restroom door.",
+      "choices": [
+        {
+          "id": "choice_phantom_cashier_solo",
+          "text": "Keep your head down and power-scan the double line alone.",
+          "voiceKeywords": [
+            "scan",
+            "solo",
+            "power",
+            "double",
+            "line",
+            "alone"
+          ],
+          "nextNodeId": "node_incident_phantom_bathroom_resolve",
+          "metricDeltas": {
+            "store_morale": -15.0,
+            "labor_squeeze": 10.0
+          }
+        },
+        {
+          "id": "choice_phantom_cashier_page",
+          "text": "Page them over the storewide intercom: 'Associate needed on Register 4 immediately!'",
+          "voiceKeywords": [
+            "page",
+            "intercom",
+            "call",
+            "register",
+            "immediate"
+          ],
+          "nextNodeId": "node_incident_phantom_bathroom_resolve",
+          "metricDeltas": {
+            "store_morale": -10.0,
+            "associate_engagement": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_phantom_bathroom_unloader",
+      "speakerId": "derrick",
+      "side": "LEFT",
+      "text": "A 53-foot trailer full of heavy furniture and canned goods backs in. Derrick checks his watch: 'Gotta hit the head, rookie. Keep the conveyor moving.' He vanishes behind the pallet stacks. Five minutes turn into forty. Heavy boxes tumble off the rollers and crash onto the dock floor while you struggle solo.",
+      "choices": [
+        {
+          "id": "choice_phantom_unloader_hustle",
+          "text": "Sprint along the roller line, stacking heavy cartons alone to prevent a dock collapse.",
+          "voiceKeywords": [
+            "sprint",
+            "stack",
+            "conveyor",
+            "heavy",
+            "alone",
+            "cartons"
+          ],
+          "nextNodeId": "node_incident_phantom_bathroom_resolve",
+          "metricDeltas": {
+            "store_morale": -15.0,
+            "labor_squeeze": 15.0
+          }
+        },
+        {
+          "id": "choice_phantom_unloader_stop",
+          "text": "Hit the emergency stop switch on the belt and wait for Derrick to return.",
+          "voiceKeywords": [
+            "stop",
+            "switch",
+            "wait",
+            "belt",
+            "halt"
+          ],
+          "nextNodeId": "node_incident_phantom_bathroom_resolve",
+          "metricDeltas": {
+            "labor_squeeze": 5.0,
+            "store_morale": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_phantom_bathroom_stocker",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "text": "You and Kyle are assigned to break down a 7-foot pallet of bulk paper towels. The moment Manager Todd heads toward his office, Kyle whispers: 'Gotta wash my hands, hold the fort.' Thirty-five minutes later, you're wrestling wrapped bundles alone while Todd reappears scowling at your pace.",
+      "choices": [
+        {
+          "id": "choice_phantom_stocker_shoulder",
+          "text": "Shoulder the workload and cut the pallet plastic alone without ratting out Kyle.",
+          "voiceKeywords": [
+            "shoulder",
+            "workload",
+            "cut",
+            "pallet",
+            "alone"
+          ],
+          "nextNodeId": "node_incident_phantom_bathroom_resolve",
+          "metricDeltas": {
+            "store_morale": -10.0,
+            "associate_engagement": 5.0
+          }
+        },
+        {
+          "id": "choice_phantom_stocker_truth",
+          "text": "Tell Todd bluntly that Kyle went to the restroom over half an hour ago.",
+          "voiceKeywords": [
+            "tell",
+            "todd",
+            "blunt",
+            "truth",
+            "restroom",
+            "kyle"
+          ],
+          "nextNodeId": "node_incident_phantom_bathroom_resolve",
+          "metricDeltas": {
+            "labor_squeeze": 10.0,
+            "store_morale": -15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_phantom_bathroom_specialist",
+      "speakerId": "chad",
+      "side": "RIGHT",
+      "text": "An angry customer stomps toward the specialty counter waving a broken drone and shouting for a supervisor. Chad spots them, dives into the display alcove, and texts you: 'You got this rookie, checking backroom inventory!' leaving you to face the fury solo.",
+      "choices": [
+        {
+          "id": "choice_phantom_spec_diffuse",
+          "text": "Stand your ground and calmly quote the 30-day electronics warranty policy.",
+          "voiceKeywords": [
+            "calm",
+            "warranty",
+            "policy",
+            "diffuse",
+            "stand"
+          ],
+          "nextNodeId": "node_incident_phantom_bathroom_resolve",
+          "metricDeltas": {
+            "karen_index": -10.0,
+            "store_morale": -10.0
+          }
+        },
+        {
+          "id": "choice_phantom_spec_point",
+          "text": "Point directly toward the backroom door where Chad just slipped through.",
+          "voiceKeywords": [
+            "point",
+            "backroom",
+            "chad",
+            "door",
+            "follow"
+          ],
+          "nextNodeId": "node_incident_phantom_bathroom_resolve",
+          "metricDeltas": {
+            "store_morale": 5.0,
+            "associate_engagement": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_phantom_bathroom_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Nearly an hour later, your partner strolls back with freshly washed hands, earbuds tucked away, and a breezy 'Oof, that was rough, thanks for holding it down!' You wiped the sweat off your forehead, realizing that conscientiousness often just gets you double the work.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_squealing_jack",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "You have a 2,200-pound pallet of bottled spring water to stage in Center Action Alley. The only two smooth hydraulic jacks in the building have vanished\u2014one locked to a backroom pipe, the other stashed in seasonal steel. The only jack available is 'The Screamer': its hydraulic seal leaks fluid and its bent steel wheel shrieks at 110 decibels while pulling hard to the left.",
+      "choices": [
+        {
+          "id": "choice_squeal_jack_fight",
+          "text": "Wrestle the screeching, drifting jack across the concrete sales floor through sheer muscle.",
+          "voiceKeywords": [
+            "wrestle",
+            "fight",
+            "screamer",
+            "muscle",
+            "pull",
+            "drift"
+          ],
+          "nextNodeId": "node_incident_squealing_jack_resolve",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "store_morale": -10.0
+          }
+        },
+        {
+          "id": "choice_squeal_jack_hunt",
+          "text": "Spend fifteen minutes searching behind cardboard bales to find the hidden good jack.",
+          "voiceKeywords": [
+            "hunt",
+            "search",
+            "bales",
+            "hidden",
+            "jack",
+            "find"
+          ],
+          "nextNodeId": "node_incident_squealing_jack_resolve",
+          "metricDeltas": {
+            "associate_engagement": 5.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_squealing_jack_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "The water pallet is finally in place, though your forearms throb and your ears are ringing from the metal-on-concrete screech. In retail, tools are currency, and everyone is hoarding their own.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_go_back_dump",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "It's 10:52 PM. You've cleaned your work area, logged your equipment, and are ready to clock out. Suddenly, an associate from another department rolls two towering carts overflowing with melted ice pops, mismatched shoes, and opened electronics right into your zone: 'Hey! Front end said this belongs back here! Have a great night!' and runs for the time clock.",
+      "choices": [
+        {
+          "id": "choice_go_back_sort",
+          "text": "Stay late and sort the cart mess, risking an unapproved overtime lecture from Cheryl.",
+          "voiceKeywords": [
+            "stay",
+            "sort",
+            "overtime",
+            "cheryl",
+            "late",
+            "responsible"
+          ],
+          "nextNodeId": "node_incident_go_back_dump_resolve",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": -15.0
+          }
+        },
+        {
+          "id": "choice_go_back_hide",
+          "text": "Wheel the overflowing carts into the dark corner of the seasonal furniture patio.",
+          "voiceKeywords": [
+            "hide",
+            "wheel",
+            "seasonal",
+            "corner",
+            "shove",
+            "patio"
+          ],
+          "nextNodeId": "node_incident_go_back_dump_resolve",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_go_back_dump_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "The clock digits tick past eleven. Passing the buck is the store's unofficial national pastime, and nobody wants to be the one holding the cart when the music stops.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_plugged_cereal",
+      "speakerId": "kyle",
+      "side": "LEFT",
+      "text": "While zoning breakfast cereals, you discover twelve cases of canned wet dog food crammed behind the jumbo oat boxes. Kyle shoved them there at 10:58 PM yesterday so he wouldn't have to walk sixty paces to Pet Supplies. Todd is walking the aisle in ten minutes with his audit clipboard.",
+      "choices": [
+        {
+          "id": "choice_plugged_pull",
+          "text": "Pull all twelve cans out and hustle them to Aisle 14 before Todd rounds the corner.",
+          "voiceKeywords": [
+            "pull",
+            "pet",
+            "hustle",
+            "aisle 14",
+            "fix",
+            "proper"
+          ],
+          "nextNodeId": "node_incident_plugged_cereal_resolve",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "store_morale": -10.0
+          }
+        },
+        {
+          "id": "choice_plugged_cover",
+          "text": "Slide the jumbo cereal boxes forward to conceal the dog food and walk away.",
+          "voiceKeywords": [
+            "cover",
+            "slide",
+            "cereal",
+            "conceal",
+            "hide",
+            "walk"
+          ],
+          "nextNodeId": "node_incident_plugged_cereal_resolve",
+          "metricDeltas": {
+            "store_morale": 5.0,
+            "associate_engagement": -10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_plugged_cereal_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "The shelf looks pristine on the surface, but underneath, retail is held together by hidden shortcuts and collective denial. The illusion holds\u2014for now.",
       "nextNodeId": "node_incident_return"
     },
     {
@@ -1742,7 +2911,7 @@
       "id": "node_shift1_victory",
       "speakerId": "marsha",
       "side": "LEFT",
-      "text": "LOOK AT THAT CONCOURSE! Seven buggies cleared in record time, not a single line backup, and every customer walked away smiling! You all were absolute rockstars out there! Everyone who's due, take your thirty-minute lunch in the breakroom—you've earned it!",
+      "text": "LOOK AT THAT CONCOURSE! Seven buggies cleared in record time, not a single line backup, and every customer walked away smiling! You all were absolute rockstars out there! Everyone who's due, take your thirty-minute lunch in the breakroom\u2014you've earned it!",
       "metricDeltas": {
         "karen_index": -15.0,
         "store_morale": 20.0,
@@ -1762,12 +2931,19 @@
       "id": "node_breakroom_hub",
       "speakerId": "donna",
       "side": "LEFT",
-      "text": "Look around this table—Receiving, Sales Floor, Front End, and Specialty all sitting together. What's your lunch move, rookie?",
+      "text": "Look around this table\u2014Receiving, Sales Floor, Front End, and Specialty all sitting together. What's your lunch move, rookie?",
       "choices": [
         {
           "id": "choice_breakroom_toast",
           "text": "Raise your coffee mug in a victory toast with Mack and Brenda.",
-          "voiceKeywords": ["toast", "coffee", "cheers", "victory", "mack", "brenda"],
+          "voiceKeywords": [
+            "toast",
+            "coffee",
+            "cheers",
+            "victory",
+            "mack",
+            "brenda"
+          ],
           "nextNodeId": "node_breakroom_mack_banter",
           "completionFlag": "flag_breakroom_toast_done",
           "metricDeltas": {
@@ -1777,7 +2953,14 @@
         {
           "id": "choice_breakroom_snack",
           "text": "Split a glazed donut with Kyle and Chad while recounting the rush.",
-          "voiceKeywords": ["donut", "snack", "kyle", "chad", "glazed", "share"],
+          "voiceKeywords": [
+            "donut",
+            "snack",
+            "kyle",
+            "chad",
+            "glazed",
+            "share"
+          ],
           "nextNodeId": "node_breakroom_kyle_banter",
           "completionFlag": "flag_breakroom_snack_done",
           "metricDeltas": {
@@ -1787,7 +2970,14 @@
         {
           "id": "choice_breakroom_clockout",
           "text": "Finish up lunch and report to Henderson for the end-of-shift review.",
-          "voiceKeywords": ["finish", "lunch", "henderson", "review", "clock out", "ready"],
+          "voiceKeywords": [
+            "finish",
+            "lunch",
+            "henderson",
+            "review",
+            "clock out",
+            "ready"
+          ],
           "nextNodeId": "node_clockout_review"
         }
       ]
@@ -1818,7 +3008,7 @@
       "id": "node_clockout_fingerprint",
       "speakerId": "henderson",
       "side": "RIGHT",
-      "text": "Place your thumb on the digital timeclock scanner, associate. You didn't just pass your first day—you showed us what true MegaMart pride looks like. Clock out, get some great rest, and let's conquer Shift Two together tomorrow!",
+      "text": "Place your thumb on the digital timeclock scanner, associate. You didn't just pass your first day\u2014you showed us what true MegaMart pride looks like. Clock out, get some great rest, and let's conquer Shift Two together tomorrow!",
       "nextNodeId": "node_shift2_start"
     },
     {
@@ -1831,7 +3021,13 @@
         {
           "id": "choice_shift2_sync",
           "text": "Master the double-trigger barcode quick-sync with Donna.",
-          "voiceKeywords": ["trigger", "sync", "master", "laser", "shortcut"],
+          "voiceKeywords": [
+            "trigger",
+            "sync",
+            "master",
+            "laser",
+            "shortcut"
+          ],
           "nextNodeId": "node_shift2_sync",
           "metricDeltas": {
             "store_morale": 10.0,
@@ -1841,7 +3037,13 @@
         {
           "id": "choice_shift2_kyle",
           "text": "Team up with Kyle to audit the seasonal candy endcaps.",
-          "voiceKeywords": ["kyle", "audit", "candy", "endcap", "team"],
+          "voiceKeywords": [
+            "kyle",
+            "audit",
+            "candy",
+            "endcap",
+            "team"
+          ],
           "nextNodeId": "node_shift2_kyle",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1854,7 +3056,7 @@
       "id": "node_shift2_sync",
       "speakerId": "donna",
       "side": "LEFT",
-      "text": "BEEP-BEEP! Perfect double-tap! Look at that scan velocity—forty items logged in thirty seconds flat! You handle that scanner like an orchestra conductor. Todd is going to be ecstatic with these morning inventory counts.",
+      "text": "BEEP-BEEP! Perfect double-tap! Look at that scan velocity\u2014forty items logged in thirty seconds flat! You handle that scanner like an orchestra conductor. Todd is going to be ecstatic with these morning inventory counts.",
       "nextNodeId": "node_shift2_end"
     },
     {
@@ -1882,7 +3084,13 @@
         {
           "id": "choice_shift3_chant",
           "text": "Lead the cheer with rhythmic clapping and storewide spirit!",
-          "voiceKeywords": ["cheer", "clapping", "spirit", "lead", "chant"],
+          "voiceKeywords": [
+            "cheer",
+            "clapping",
+            "spirit",
+            "lead",
+            "chant"
+          ],
           "nextNodeId": "node_shift3_cheer_lead",
           "metricDeltas": {
             "store_morale": 20.0,
@@ -1892,7 +3100,13 @@
         {
           "id": "choice_shift3_echo",
           "text": "Coordinate a synchronized front-to-back echo cheer with the loading dock!",
-          "voiceKeywords": ["echo", "dock", "synchronize", "team", "shout"],
+          "voiceKeywords": [
+            "echo",
+            "dock",
+            "synchronize",
+            "team",
+            "shout"
+          ],
           "nextNodeId": "node_shift3_cheer_echo",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1919,7 +3133,7 @@
       "id": "node_shift3_reward",
       "speakerId": "cheryl",
       "side": "LEFT",
-      "text": "Fresh cinnamon rolls and glazed donuts from the MegaMart Bakery for everyone in the breakroom! Henderson just put in the order on the house! Great energy, everyone—let's make today unforgettable!",
+      "text": "Fresh cinnamon rolls and glazed donuts from the MegaMart Bakery for everyone in the breakroom! Henderson just put in the order on the house! Great energy, everyone\u2014let's make today unforgettable!",
       "nextNodeId": "node_shift4_start"
     },
     {
@@ -1932,7 +3146,13 @@
         {
           "id": "choice_shift4_speed",
           "text": "Enter the codes from muscle memory with blazing speed!",
-          "voiceKeywords": ["bananas", "speed", "memory", "codes", "fast"],
+          "voiceKeywords": [
+            "bananas",
+            "speed",
+            "memory",
+            "codes",
+            "fast"
+          ],
           "nextNodeId": "node_shift4_speed",
           "metricDeltas": {
             "associate_engagement": 15.0,
@@ -1942,7 +3162,13 @@
         {
           "id": "choice_shift4_relay",
           "text": "Coordinate a seamless scanning and bagging rhythm with Brenda!",
-          "voiceKeywords": ["brenda", "rhythm", "bagging", "relay", "harmony"],
+          "voiceKeywords": [
+            "brenda",
+            "rhythm",
+            "bagging",
+            "relay",
+            "harmony"
+          ],
           "nextNodeId": "node_shift4_relay",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -1962,7 +3188,7 @@
       "id": "node_shift4_relay",
       "speakerId": "brenda",
       "side": "RIGHT",
-      "text": "Look at us go! You scan, I bag—we're like an Olympic relay team! The customer is smiling ear-to-ear, saying she's never seen checkout lines move this smoothly. That's pure retail harmony!",
+      "text": "Look at us go! You scan, I bag\u2014we're like an Olympic relay team! The customer is smiling ear-to-ear, saying she's never seen checkout lines move this smoothly. That's pure retail harmony!",
       "nextNodeId": "node_shift4_delight"
     },
     {
@@ -1982,7 +3208,13 @@
         {
           "id": "choice_shift5_route",
           "text": "Map out the optimal high-speed navigation route with Julian!",
-          "voiceKeywords": ["route", "map", "speed", "julian", "navigate"],
+          "voiceKeywords": [
+            "route",
+            "map",
+            "speed",
+            "julian",
+            "navigate"
+          ],
           "nextNodeId": "node_shift5_route",
           "metricDeltas": {
             "associate_engagement": 15.0,
@@ -1992,7 +3224,13 @@
         {
           "id": "choice_shift5_shopper",
           "text": "Help a lost customer find the exact item you have in your cart!",
-          "voiceKeywords": ["customer", "help", "tea", "cart", "friendly"],
+          "voiceKeywords": [
+            "customer",
+            "help",
+            "tea",
+            "cart",
+            "friendly"
+          ],
           "nextNodeId": "node_shift5_shopper",
           "metricDeltas": {
             "store_morale": 20.0,
@@ -2032,7 +3270,13 @@
         {
           "id": "choice_shift6_radio",
           "text": "Broadcast a polite priority APB across the store walkie-talkies!",
-          "voiceKeywords": ["walkie", "radio", "broadcast", "priority", "dinosaur"],
+          "voiceKeywords": [
+            "walkie",
+            "radio",
+            "broadcast",
+            "priority",
+            "dinosaur"
+          ],
           "nextNodeId": "node_shift6_radio",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -2042,7 +3286,13 @@
         {
           "id": "choice_shift6_ladder",
           "text": "Climb the safety ladder with Chad to inspect the top-stock risers!",
-          "voiceKeywords": ["ladder", "climb", "inspect", "chad", "topstock"],
+          "voiceKeywords": [
+            "ladder",
+            "climb",
+            "inspect",
+            "chad",
+            "topstock"
+          ],
           "nextNodeId": "node_shift6_ladder",
           "metricDeltas": {
             "associate_engagement": 20.0,
@@ -2062,7 +3312,7 @@
       "id": "node_shift6_ladder",
       "speakerId": "chad",
       "side": "LEFT",
-      "text": "BINGO! Right behind the plush dragons—a factory-fresh Turbo-Rex in pristine packaging! Chad hands it down with a victorious grin: 'Grandson's birthday is saved!'",
+      "text": "BINGO! Right behind the plush dragons\u2014a factory-fresh Turbo-Rex in pristine packaging! Chad hands it down with a victorious grin: 'Grandson's birthday is saved!'",
       "nextNodeId": "node_shift6_wrap"
     },
     {
@@ -2078,7 +3328,7 @@
       "speakerId": "todd",
       "side": "LEFT",
       "changeSceneId": "scene_action_alley",
-      "text": "SHIFT SEVEN: THE SATURDAY SUMMER FESTIVAL RUSH! Look outside—the sun is blazing, parking lot is packed, and half the county is walking through our sliding doors for barbecue supplies! All hands on deck, team!",
+      "text": "SHIFT SEVEN: THE SATURDAY SUMMER FESTIVAL RUSH! Look outside\u2014the sun is blazing, parking lot is packed, and half the county is walking through our sliding doors for barbecue supplies! All hands on deck, team!",
       "triggerBattleEncounterId": "encounter_saturday_rush_wave",
       "nextNodeId": "node_shift7_victory"
     },
@@ -2092,7 +3342,13 @@
         {
           "id": "choice_shift7_celebrate",
           "text": "Celebrate with the team and enjoy a hot slice of pepperoni in the breakroom!",
-          "voiceKeywords": ["celebrate", "pizza", "breakroom", "slice", "team"],
+          "voiceKeywords": [
+            "celebrate",
+            "pizza",
+            "breakroom",
+            "slice",
+            "team"
+          ],
           "nextNodeId": "node_shift7_breakroom",
           "metricDeltas": {
             "store_morale": 20.0,
@@ -2119,7 +3375,13 @@
         {
           "id": "choice_shift8_tie",
           "text": "Learn the pro wire-threading and knot-tying technique with Mack!",
-          "voiceKeywords": ["wire", "thread", "knot", "technique", "mack"],
+          "voiceKeywords": [
+            "wire",
+            "thread",
+            "knot",
+            "technique",
+            "mack"
+          ],
           "nextNodeId": "node_shift8_tie",
           "metricDeltas": {
             "associate_engagement": 15.0,
@@ -2129,7 +3391,13 @@
         {
           "id": "choice_shift8_press",
           "text": "Engage the hydraulic compression lever and watch the magic happen!",
-          "voiceKeywords": ["hydraulic", "lever", "compress", "crush", "power"],
+          "voiceKeywords": [
+            "hydraulic",
+            "lever",
+            "compress",
+            "crush",
+            "power"
+          ],
           "nextNodeId": "node_shift8_press",
           "metricDeltas": {
             "store_morale": 20.0,
@@ -2164,12 +3432,18 @@
       "speakerId": "donna",
       "side": "LEFT",
       "changeSceneId": "scene_action_alley",
-      "text": "Shift Nine: The Evening Twilight Shift. The doors close in one hour, and the overhead lighting shifts to warm gold. It's time for the Grand Zone—aligning every cereal box, soup can, and towel until the aisles look like art gallery exhibits.",
+      "text": "Shift Nine: The Evening Twilight Shift. The doors close in one hour, and the overhead lighting shifts to warm gold. It's time for the Grand Zone\u2014aligning every cereal box, soup can, and towel until the aisles look like art gallery exhibits.",
       "choices": [
         {
           "id": "choice_shift9_cereal",
           "text": "Make Aisle 6 (Cereal & Breakfast) completely mirror-perfect!",
-          "voiceKeywords": ["cereal", "aisle", "mirror", "perfect", "zone"],
+          "voiceKeywords": [
+            "cereal",
+            "aisle",
+            "mirror",
+            "perfect",
+            "zone"
+          ],
           "nextNodeId": "node_shift9_perfection",
           "metricDeltas": {
             "associate_engagement": 20.0,
@@ -2179,7 +3453,13 @@
         {
           "id": "choice_shift9_wisdom",
           "text": "Share stories and trade retail wisdom with Donna as you face the shelves!",
-          "voiceKeywords": ["wisdom", "donna", "stories", "share", "talk"],
+          "voiceKeywords": [
+            "wisdom",
+            "donna",
+            "stories",
+            "share",
+            "talk"
+          ],
           "nextNodeId": "node_shift9_wisdom",
           "metricDeltas": {
             "store_morale": 25.0,
@@ -2229,7 +3509,13 @@
         {
           "id": "choice_shift10_rally",
           "text": "Join the entire store assembled in Center Action Alley for the ceremony!",
-          "voiceKeywords": ["ceremony", "award", "action alley", "join", "rally"],
+          "voiceKeywords": [
+            "ceremony",
+            "award",
+            "action alley",
+            "join",
+            "rally"
+          ],
           "nextNodeId": "node_shift10_award",
           "metricDeltas": {
             "store_morale": 30.0,
@@ -2248,7 +3534,13 @@
         {
           "id": "choice_shift10_speech",
           "text": "Raise your glass of punch with Donna, Mack, Brenda, Todd, Kyle, and Derrick!",
-          "voiceKeywords": ["toast", "punch", "speech", "glass", "celebrate"],
+          "voiceKeywords": [
+            "toast",
+            "punch",
+            "speech",
+            "glass",
+            "celebrate"
+          ],
           "nextNodeId": "node_shift10_toast"
         }
       ]
@@ -2270,7 +3562,13 @@
         {
           "id": "choice_shift2_stocker_sync",
           "text": "Master the double-trigger barcode quick-sync with Donna.",
-          "voiceKeywords": ["trigger", "sync", "master", "laser", "shortcut"],
+          "voiceKeywords": [
+            "trigger",
+            "sync",
+            "master",
+            "laser",
+            "shortcut"
+          ],
           "nextNodeId": "node_shift2_sync",
           "metricDeltas": {
             "store_morale": 10.0,
@@ -2280,7 +3578,13 @@
         {
           "id": "choice_shift2_stocker_kyle",
           "text": "Team up with Kyle to audit the seasonal candy endcaps.",
-          "voiceKeywords": ["kyle", "audit", "candy", "endcap", "team"],
+          "voiceKeywords": [
+            "kyle",
+            "audit",
+            "candy",
+            "endcap",
+            "team"
+          ],
           "nextNodeId": "node_shift2_kyle",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -2299,7 +3603,13 @@
         {
           "id": "choice_shift2_cashier_plu",
           "text": "Drill rapid produce PLU lookups with Brenda.",
-          "voiceKeywords": ["brenda", "plu", "produce", "lookups", "speed"],
+          "voiceKeywords": [
+            "brenda",
+            "plu",
+            "produce",
+            "lookups",
+            "speed"
+          ],
           "nextNodeId": "node_shift2_cashier_plu",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -2309,7 +3619,13 @@
         {
           "id": "choice_shift2_cashier_drawer",
           "text": "Practice Marsha's lightning-fast cash count and till organization.",
-          "voiceKeywords": ["marsha", "till", "drawer", "cash", "count"],
+          "voiceKeywords": [
+            "marsha",
+            "till",
+            "drawer",
+            "cash",
+            "count"
+          ],
           "nextNodeId": "node_shift2_cashier_drawer",
           "metricDeltas": {
             "store_morale": 10.0,
@@ -2350,7 +3666,13 @@
         {
           "id": "choice_shift3_cashier_cheer",
           "text": "Lead the cheer from Register Row with a rhythmic barcode scanner chime!",
-          "voiceKeywords": ["cheer", "scanner", "chime", "lead", "chant"],
+          "voiceKeywords": [
+            "cheer",
+            "scanner",
+            "chime",
+            "lead",
+            "chant"
+          ],
           "nextNodeId": "node_shift3_cashier_cheer",
           "metricDeltas": {
             "store_morale": 20.0,
@@ -2376,7 +3698,13 @@
         {
           "id": "choice_shift4_cashier_relay",
           "text": "Sync your scanning arc with Brenda's bagging cadence!",
-          "voiceKeywords": ["cadence", "relay", "brenda", "sync", "bagging"],
+          "voiceKeywords": [
+            "cadence",
+            "relay",
+            "brenda",
+            "sync",
+            "bagging"
+          ],
           "nextNodeId": "node_shift4_cashier_relay",
           "metricDeltas": {
             "store_morale": 20.0,
@@ -2402,7 +3730,13 @@
         {
           "id": "choice_shift5_cashier_speed",
           "text": "Sort and dispatch the return basket items by department aisle with surgical speed!",
-          "voiceKeywords": ["dispatch", "sort", "return", "speed", "aisle"],
+          "voiceKeywords": [
+            "dispatch",
+            "sort",
+            "return",
+            "speed",
+            "aisle"
+          ],
           "nextNodeId": "node_shift5_cashier_speed",
           "metricDeltas": {
             "associate_engagement": 15.0,
@@ -2423,12 +3757,18 @@
       "speakerId": "brenda",
       "side": "RIGHT",
       "changeSceneId": "scene_checkout_concourse",
-      "text": "Shift Six: Mrs. Higgins walks up to Lane 4 in tears—she can't find her grandson's Turbo-Rex toy anywhere! You grab the register phone: 'Don't worry, Mrs. Higgins, Store #1042 is on the case!'",
+      "text": "Shift Six: Mrs. Higgins walks up to Lane 4 in tears\u2014she can't find her grandson's Turbo-Rex toy anywhere! You grab the register phone: 'Don't worry, Mrs. Higgins, Store #1042 is on the case!'",
       "choices": [
         {
           "id": "choice_shift6_cashier_dispatch",
           "text": "Radio Receiving and Sales Floor with priority product lookup!",
-          "voiceKeywords": ["radio", "receiving", "lookup", "priority", "dispatch"],
+          "voiceKeywords": [
+            "radio",
+            "receiving",
+            "lookup",
+            "priority",
+            "dispatch"
+          ],
           "nextNodeId": "node_shift6_cashier_dispatch",
           "metricDeltas": {
             "store_morale": 20.0,
@@ -2471,7 +3811,13 @@
         {
           "id": "choice_shift8_cashier_breakdown",
           "text": "Slice and nest the receipt cardboard into neat flat bundles with Mack!",
-          "voiceKeywords": ["cardboard", "bundles", "mack", "breakdown", "flatten"],
+          "voiceKeywords": [
+            "cardboard",
+            "bundles",
+            "mack",
+            "breakdown",
+            "flatten"
+          ],
           "nextNodeId": "node_shift8_cashier_breakdown",
           "metricDeltas": {
             "associate_engagement": 15.0,
@@ -2497,7 +3843,13 @@
         {
           "id": "choice_shift9_cashier_reconcile",
           "text": "Reconcile the till drawer down to the penny with Donna and Brenda.",
-          "voiceKeywords": ["reconcile", "till", "drawer", "donna", "balance"],
+          "voiceKeywords": [
+            "reconcile",
+            "till",
+            "drawer",
+            "donna",
+            "balance"
+          ],
           "nextNodeId": "node_shift9_cashier_reconcile",
           "metricDeltas": {
             "store_morale": 25.0,
@@ -2540,7 +3892,13 @@
         {
           "id": "choice_shift2_unloader_spin",
           "text": "Master the two-handed conveyor carton spin with Mack.",
-          "voiceKeywords": ["spin", "carton", "mack", "conveyor", "technique"],
+          "voiceKeywords": [
+            "spin",
+            "carton",
+            "mack",
+            "conveyor",
+            "technique"
+          ],
           "nextNodeId": "node_shift2_unloader_spin",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -2566,7 +3924,13 @@
         {
           "id": "choice_shift3_unloader_horn",
           "text": "Coordinate a synchronized forklift horn echo salute from Bay 2!",
-          "voiceKeywords": ["horn", "salute", "echo", "dock", "cheer"],
+          "voiceKeywords": [
+            "horn",
+            "salute",
+            "echo",
+            "dock",
+            "cheer"
+          ],
           "nextNodeId": "node_shift3_unloader_horn",
           "metricDeltas": {
             "store_morale": 20.0,
@@ -2592,7 +3956,13 @@
         {
           "id": "choice_shift4_unloader_chock",
           "text": "Set safety chocks and guide the pallet transition in rhythm with Derrick!",
-          "voiceKeywords": ["chocks", "transition", "pallet", "safety", "derrick"],
+          "voiceKeywords": [
+            "chocks",
+            "transition",
+            "pallet",
+            "safety",
+            "derrick"
+          ],
           "nextNodeId": "node_shift4_unloader_chock",
           "metricDeltas": {
             "associate_engagement": 15.0,
@@ -2618,7 +3988,13 @@
         {
           "id": "choice_shift5_unloader_sort",
           "text": "Sort cartons by department aisle tags for lightning-fast floor stocking!",
-          "voiceKeywords": ["sort", "aisle", "tags", "cartons", "logistics"],
+          "voiceKeywords": [
+            "sort",
+            "aisle",
+            "tags",
+            "cartons",
+            "logistics"
+          ],
           "nextNodeId": "node_shift5_unloader_sort",
           "metricDeltas": {
             "associate_engagement": 15.0,
@@ -2644,7 +4020,13 @@
         {
           "id": "choice_shift6_unloader_find",
           "text": "Scan pallet manifest barcodes with Derrick to isolate the toy carton!",
-          "voiceKeywords": ["scan", "manifest", "derrick", "pallet", "find"],
+          "voiceKeywords": [
+            "scan",
+            "manifest",
+            "derrick",
+            "pallet",
+            "find"
+          ],
           "nextNodeId": "node_shift6_unloader_find",
           "metricDeltas": {
             "store_morale": 20.0,
@@ -2665,7 +4047,7 @@
       "speakerId": "mack",
       "side": "RIGHT",
       "changeSceneId": "scene_loading_dock",
-      "text": "SHIFT SEVEN: SATURDAY FESTIVAL RUSH! The floor is screaming for bulk charcoal, ice pallets, and propane tanks! The dock is our forward operating base—let's keep the supply line rolling!",
+      "text": "SHIFT SEVEN: SATURDAY FESTIVAL RUSH! The floor is screaming for bulk charcoal, ice pallets, and propane tanks! The dock is our forward operating base\u2014let's keep the supply line rolling!",
       "triggerBattleEncounterId": "encounter_saturday_rush_wave",
       "nextNodeId": "node_shift7_unloader_victory"
     },
@@ -2687,7 +4069,13 @@
         {
           "id": "choice_shift8_unloader_bale",
           "text": "Thread the high-tensile wire and pull the hydraulic compression lever with Mack!",
-          "voiceKeywords": ["wire", "tensile", "lever", "bale", "compress"],
+          "voiceKeywords": [
+            "wire",
+            "tensile",
+            "lever",
+            "bale",
+            "compress"
+          ],
           "nextNodeId": "node_shift8_unloader_bale",
           "metricDeltas": {
             "store_morale": 20.0,
@@ -2713,7 +4101,13 @@
         {
           "id": "choice_shift9_unloader_reflect",
           "text": "Share stories of the week's dock triumphs with Mack and Donna over hot cocoa.",
-          "voiceKeywords": ["cocoa", "stories", "reflect", "mack", "donna"],
+          "voiceKeywords": [
+            "cocoa",
+            "stories",
+            "reflect",
+            "mack",
+            "donna"
+          ],
           "nextNodeId": "node_shift9_unloader_reflect",
           "metricDeltas": {
             "store_morale": 25.0,
@@ -2726,7 +4120,7 @@
       "id": "node_shift9_unloader_reflect",
       "speakerId": "mack",
       "side": "RIGHT",
-      "text": "Mack clinks his mug against yours: 'Best new hire on this dock in ten years, rookie. Tomorrow is Shift Ten—rest up, because you've earned every bit of respect in this building.'",
+      "text": "Mack clinks his mug against yours: 'Best new hire on this dock in ten years, rookie. Tomorrow is Shift Ten\u2014rest up, because you've earned every bit of respect in this building.'",
       "nextNodeId": "node_shift10_unloader"
     },
     {
@@ -2756,7 +4150,13 @@
         {
           "id": "choice_shift2_specialist_audio",
           "text": "Queue up the high-frequency bass demo on the showroom soundbar.",
-          "voiceKeywords": ["bass", "demo", "soundbar", "audio", "showroom"],
+          "voiceKeywords": [
+            "bass",
+            "demo",
+            "soundbar",
+            "audio",
+            "showroom"
+          ],
           "nextNodeId": "node_shift2_specialist_audio",
           "metricDeltas": {
             "store_morale": 15.0,
@@ -2782,7 +4182,13 @@
         {
           "id": "choice_shift3_specialist_mic",
           "text": "Lead the cheer through the studio-quality showroom microphone!",
-          "voiceKeywords": ["microphone", "lead", "pa", "anthem", "cheer"],
+          "voiceKeywords": [
+            "microphone",
+            "lead",
+            "pa",
+            "anthem",
+            "cheer"
+          ],
           "nextNodeId": "node_shift3_specialist_mic",
           "metricDeltas": {
             "store_morale": 20.0,
@@ -2808,7 +4214,13 @@
         {
           "id": "choice_shift4_specialist_consult",
           "text": "Walk through the best family game bundles and explain the warranty with warmth.",
-          "voiceKeywords": ["bundles", "console", "family", "consult", "warranty"],
+          "voiceKeywords": [
+            "bundles",
+            "console",
+            "family",
+            "consult",
+            "warranty"
+          ],
           "nextNodeId": "node_shift4_specialist_consult",
           "metricDeltas": {
             "store_morale": 20.0,
@@ -2834,7 +4246,13 @@
         {
           "id": "choice_shift5_specialist_lookup",
           "text": "Use the tablet inventory map to locate the exact accessory peg hook in sixty seconds!",
-          "voiceKeywords": ["tablet", "map", "accessory", "lookup", "cable"],
+          "voiceKeywords": [
+            "tablet",
+            "map",
+            "accessory",
+            "lookup",
+            "cable"
+          ],
           "nextNodeId": "node_shift5_specialist_lookup",
           "metricDeltas": {
             "associate_engagement": 15.0,
@@ -2855,12 +4273,18 @@
       "speakerId": "chad",
       "side": "LEFT",
       "changeSceneId": "scene_action_alley",
-      "text": "Shift Six: Mrs. Higgins arrives at the specialty desk breathless—her grandson's birthday dinosaur toy is missing from the shelves! Chad and you coordinate the walkie dispatch to Receiving.",
+      "text": "Shift Six: Mrs. Higgins arrives at the specialty desk breathless\u2014her grandson's birthday dinosaur toy is missing from the shelves! Chad and you coordinate the walkie dispatch to Receiving.",
       "choices": [
         {
           "id": "choice_shift6_specialist_wrap",
           "text": "Coordinate the handoff from Derrick and gift-wrap the Turbo-Rex with a MegaMart bow!",
-          "voiceKeywords": ["bow", "ribbon", "giftwrap", "derrick", "dinosaur"],
+          "voiceKeywords": [
+            "bow",
+            "ribbon",
+            "giftwrap",
+            "derrick",
+            "dinosaur"
+          ],
           "nextNodeId": "node_shift6_specialist_wrap",
           "metricDeltas": {
             "store_morale": 20.0,
@@ -2903,7 +4327,13 @@
         {
           "id": "choice_shift8_specialist_prep",
           "text": "Break down the high-grade packaging flats with Mack and Chad for the baler.",
-          "voiceKeywords": ["packaging", "baler", "flats", "mack", "chad"],
+          "voiceKeywords": [
+            "packaging",
+            "baler",
+            "flats",
+            "mack",
+            "chad"
+          ],
           "nextNodeId": "node_shift8_specialist_prep",
           "metricDeltas": {
             "associate_engagement": 15.0,
@@ -2929,7 +4359,13 @@
         {
           "id": "choice_shift9_specialist_polish",
           "text": "Complete the display showcase polish and share aspirations with Donna.",
-          "voiceKeywords": ["polish", "aspirations", "donna", "showcase", "pride"],
+          "voiceKeywords": [
+            "polish",
+            "aspirations",
+            "donna",
+            "showcase",
+            "pride"
+          ],
           "nextNodeId": "node_shift9_specialist_polish",
           "metricDeltas": {
             "store_morale": 25.0,
@@ -2966,7 +4402,1406 @@
       "id": "node_retail_act1_complete",
       "speakerId": "narrator",
       "side": "CENTER_NARRATOR",
-      "text": "ACT ONE: FRESH BLOOD COMPLETED! With 10 flawless shifts, the admiration of your coworkers, and the coveted Rookie of the Month award on the Wall of Fame, your journey has only just begun! Act II awaits!",
+      "text": "ACT ONE: FRESH BLOOD COMPLETED! With 10 flawless shifts, the admiration of your coworkers, and the coveted Rookie of the Month award on the Wall of Fame, you feel on top of the retail world. But honeymoon phases never last. Ready for Act II: Breakroom Politics & Slacker Shenanigans?",
+      "choices": [
+        {
+          "id": "choice_begin_act2",
+          "text": "Embark on Act II: The Grunt Reality of Shift 11.",
+          "voiceKeywords": [
+            "begin",
+            "act two",
+            "act 2",
+            "embark",
+            "shift 11",
+            "continue",
+            "forward",
+            "ready"
+          ],
+          "nextNodeId": "node_shift11_start"
+        }
+      ]
+    },
+    {
+      "id": "node_shift11_start",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "setFlagOnEnter": "flag_act2_started",
+      "changeSceneId": "scene_breakroom",
+      "text": "SHIFT ELEVEN: 5:58 AM CLOPENING HANGOVER. You closed the store last night at 11:15 PM and had to report back to open at 5:45 AM. You have four hours of broken sleep rattling in your skull, your polyester vest feels like sandpaper, and your eyelids weigh ten pounds each.",
+      "choices": [
+        {
+          "id": "choice_shift11_clockin",
+          "text": "Swipe your badge at the time clock and face the opening shift reality.",
+          "voiceKeywords": [
+            "swipe",
+            "badge",
+            "clock in",
+            "face",
+            "reality",
+            "open"
+          ],
+          "nextNodeId": "node_shift11_fridge"
+        }
+      ]
+    },
+    {
+      "id": "node_shift11_fridge",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "text": "You walk into the breakroom looking for the labeled lunch you left in the communal fridge last night. The shelves are wiped clean. Donna looks up from her thermos with a tired sigh: 'Daytime management did an unannounced fridge purge at 11:30 PM. Tossed everything\u2014even unopened containers. If you want breakfast, you've got the vending machine's stale cheddar crackers.'",
+      "choices": [
+        {
+          "id": "choice_shift11_vending",
+          "text": "Drop a dollar into the vending machine and report to your department.",
+          "voiceKeywords": [
+            "vending",
+            "crackers",
+            "report",
+            "department",
+            "dollar"
+          ],
+          "nextNodeId": "node_shift11_branch"
+        }
+      ]
+    },
+    {
+      "id": "node_shift11_branch",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "The store lights flicker on at full fluorescent blast. Morning intercom announcements begin. Time to report to your station for Shift Eleven.",
+      "nextNodeId": "node_shift11_stocker"
+    },
+    {
+      "id": "node_hub_stocker_act2",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "allowIncidents": true,
+      "text": "Center Action Alley is cluttered with return buggies and leaning top-stock. Donna sips black coffee: 'Store morale is dipping, rookie. Kyle is dodging aisle walks and Todd is hiding in the office. What's your move on the floor today?'",
+      "choices": [
+        {
+          "id": "choice_stocker_act2_donna",
+          "text": "Ask Donna for advice on dealing with disappearing teammates.",
+          "voiceKeywords": [
+            "advice",
+            "donna",
+            "teammates",
+            "disappearing",
+            "tips"
+          ],
+          "nextNodeId": "node_stocker_act2_donna_advice",
+          "completionFlag": "flag_hub_stocker_act2_donna",
+          "metricDeltas": {
+            "store_morale": 5.0,
+            "associate_engagement": 5.0
+          }
+        },
+        {
+          "id": "choice_stocker_act2_continue",
+          "text": "Head back out into the aisles to tackle the shift freight.",
+          "voiceKeywords": [
+            "head",
+            "aisles",
+            "freight",
+            "tackle",
+            "work"
+          ],
+          "nextNodeId": "node_shift12_stocker"
+        }
+      ]
+    },
+    {
+      "id": "node_stocker_act2_donna_advice",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "text": "'Don't ever clean up after grown adults, kid,' Donna says quietly. 'In this building, if you let someone dump their freight or hide in the bathroom on your watch, they will do it every single day. Do your assigned zone, log your cases, and let management see the gaps.'",
+      "nextNodeId": "node_hub_stocker_act2"
+    },
+    {
+      "id": "node_hub_cashier_act2",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "changeSceneId": "scene_checkout_concourse",
+      "allowIncidents": true,
+      "text": "Register Concourse Lane 4 is humming under amber queue warning lights. Brenda rubs her neck: 'Another two cashiers called out sick. It's just you and me facing forty carts, {hero}. What's the battle plan?'",
+      "choices": [
+        {
+          "id": "choice_cashier_act2_brenda",
+          "text": "Ask Brenda about navigating register line fatigue and call-out waves.",
+          "voiceKeywords": [
+            "brenda",
+            "fatigue",
+            "callouts",
+            "advice",
+            "lines"
+          ],
+          "nextNodeId": "node_cashier_act2_brenda_advice",
+          "completionFlag": "flag_hub_cashier_act2_brenda",
+          "metricDeltas": {
+            "associate_engagement": 5.0,
+            "store_morale": 5.0
+          }
+        },
+        {
+          "id": "choice_cashier_act2_continue",
+          "text": "Log back into Register 4 to process the next customer in line.",
+          "voiceKeywords": [
+            "register",
+            "process",
+            "customer",
+            "scan",
+            "log in"
+          ],
+          "nextNodeId": "node_shift12_cashier"
+        }
+      ]
+    },
+    {
+      "id": "node_cashier_act2_brenda_advice",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "text": "'Pace your breathing and don't look at the end of the line,' Brenda advises, snapping a receipt. 'If you stare at the thirty people waiting, you'll burn out by noon. Focus on one barcode, one customer smile at a time, and let the intercom pages sort themselves out.'",
+      "nextNodeId": "node_hub_cashier_act2"
+    },
+    {
+      "id": "node_hub_unloader_act2",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "allowIncidents": true,
+      "text": "Receiving Bay 2 smells of exhaust and hot hydraulic fluid. Mack leans on the dock rail: 'Another double-truck day with half a crew. Derrick locked up the good pallet jack again. What's your freight strategy, rookie?'",
+      "choices": [
+        {
+          "id": "choice_unloader_act2_mack",
+          "text": "Ask Mack how to deal with backroom equipment hoarding.",
+          "voiceKeywords": [
+            "mack",
+            "equipment",
+            "hoarding",
+            "pallet jack",
+            "advice"
+          ],
+          "nextNodeId": "node_unloader_act2_mack_advice",
+          "completionFlag": "flag_hub_unloader_act2_mack",
+          "metricDeltas": {
+            "labor_squeeze": 5.0,
+            "associate_engagement": 5.0
+          }
+        },
+        {
+          "id": "choice_unloader_act2_continue",
+          "text": "Grab your safety gloves and report to the unloading roller line.",
+          "voiceKeywords": [
+            "gloves",
+            "rollers",
+            "line",
+            "report",
+            "unload"
+          ],
+          "nextNodeId": "node_shift12_unloader"
+        }
+      ]
+    },
+    {
+      "id": "node_unloader_act2_mack_advice",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "'Never leave your tools unlocked in the receiving bay,' Mack rumbles with a grin. 'A working pallet jack or boxcutter blade is worth more than gold back here. Guard your gear, keep your boots clear of the dock plates, and never trust a forklift driver with headphones on.'",
+      "nextNodeId": "node_hub_unloader_act2"
+    },
+    {
+      "id": "node_hub_specialist_act2",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "allowIncidents": true,
+      "text": "The electronics counter showcases are gleaming, but customer return lines are growing. Julian keeps his key ring clipped to his belt: 'Chad is trying to poach television sales again, and returns are dumping open-box junk at our counter. What's the play, {hero}?'",
+      "choices": [
+        {
+          "id": "choice_spec_act2_julian",
+          "text": "Ask Julian how to protect your sales metrics from aggressive credit poachers.",
+          "voiceKeywords": [
+            "julian",
+            "protect",
+            "metrics",
+            "poachers",
+            "credit",
+            "sales"
+          ],
+          "nextNodeId": "node_spec_act2_julian_advice",
+          "completionFlag": "flag_hub_spec_act2_julian",
+          "metricDeltas": {
+            "store_morale": 5.0,
+            "associate_engagement": 5.0
+          }
+        },
+        {
+          "id": "choice_spec_act2_continue",
+          "text": "Step up to the counter and assist the waiting high-ticket shopper.",
+          "voiceKeywords": [
+            "counter",
+            "shopper",
+            "assist",
+            "high ticket",
+            "electronics"
+          ],
+          "nextNodeId": "node_shift12_specialist"
+        }
+      ]
+    },
+    {
+      "id": "node_spec_act2_julian_advice",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "'When you spend forty minutes explaining soundbars and smart TVs to a couple, you type your own login into that register,' Julian says firmly. 'Chad will try to charm his way into taking the transaction at the end. Look him dead in the eye and say: \"I've got this customer covered, Chad.\" Boundaries are survival in specialty.'",
+      "nextNodeId": "node_hub_specialist_act2"
+    },
+    {
+      "id": "node_shift11_stocker",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 11: Todd walks Aisle 4 with a furrowed brow. 'Night crew left half-empty energy drink cans and unworked cardboard everywhere. You've got 90 minutes to face the aisle before the store opens.'",
+      "choices": [
+        {
+          "id": "choice_s11_stocker_face",
+          "text": "Power-face the grocery aisle while downing a gas station coffee.",
+          "voiceKeywords": [
+            "power",
+            "face",
+            "grocery",
+            "coffee",
+            "aisle"
+          ],
+          "nextNodeId": "node_shift12_stocker",
+          "metricDeltas": {
+            "store_morale": -5.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift12_stocker",
+      "speakerId": "kyle",
+      "side": "LEFT",
+      "text": "Shift 12: You search for a working TC-70 handheld barcode scanner. All charging docks in the locker room are empty\u2014associates have hoarded them in their private lockers. Kyle shrugs: 'Gotta memorize UPCs or find whoever has locker 19.'",
+      "choices": [
+        {
+          "id": "choice_s12_stocker_hunt",
+          "text": "Hunt down a shared scanner and complete your assigned top-stock audit.",
+          "voiceKeywords": [
+            "hunt",
+            "shared",
+            "scanner",
+            "audit",
+            "topstock"
+          ],
+          "nextNodeId": "node_shift13_stocker",
+          "metricDeltas": {
+            "labor_squeeze": 10.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift13_stocker",
+      "speakerId": "kyle",
+      "side": "LEFT",
+      "text": "Shift 13: You and Kyle are assigned heavy bulk top-stock lifting. Kyle clutches his stomach: 'Bro, sudden stomach bug, back in five.' He vanishes for 48 minutes, leaving you to hoist 40-pound boxes solo onto the 12-foot riser.",
+      "choices": [
+        {
+          "id": "choice_s13_stocker_solo",
+          "text": "Stack the top-stock solo, aching with fatigue while Todd audits from afar.",
+          "voiceKeywords": [
+            "stack",
+            "solo",
+            "fatigue",
+            "hoist",
+            "riser"
+          ],
+          "nextNodeId": "node_shift14_stocker",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "store_morale": -10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift14_stocker",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_breakroom",
+      "text": "Shift 14: Toxic mackerel smoke billows from the breakroom microwave. Kyle and Derrick are snickering. Donna pulls you out to the fresh-air bench: 'Don't let them make you their maid, rookie. Eat half my egg salad.'",
+      "choices": [
+        {
+          "id": "choice_s14_stocker_lunch",
+          "text": "Share lunch outside with Donna, absorbing her hard-earned retail wisdom.",
+          "voiceKeywords": [
+            "share",
+            "lunch",
+            "donna",
+            "wisdom",
+            "egg salad"
+          ],
+          "nextNodeId": "node_shift15_stocker",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift15_stocker",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 15: It is 10:48 PM. You've swept your zone. Suddenly, front-end cashiers wheel two towering carts of melting ice cream and return junk into your aisle: 'Front end thanks you!' and punch out.",
+      "choices": [
+        {
+          "id": "choice_s15_stocker_goback",
+          "text": "Sort the cold goods into dairy coolers to avoid inventory shrinkage.",
+          "voiceKeywords": [
+            "sort",
+            "dairy",
+            "shrinkage",
+            "coolers",
+            "salvage"
+          ],
+          "nextNodeId": "node_shift16_stocker",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "store_morale": -10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift16_stocker",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "text": "Shift 16: THE SHELF-PLUGGING SCANDAL. While zoning cereal, you find eighteen cans of cat food crammed behind bran boxes. Kyle shoved them there yesterday to clock out early. Todd arrives with his clipboard.",
+      "choices": [
+        {
+          "id": "choice_s16_stocker_fix",
+          "text": "Unload the pet food and properly restock it in Aisle 14 before Todd flags it.",
+          "voiceKeywords": [
+            "unload",
+            "restock",
+            "aisle 14",
+            "fix",
+            "cereal"
+          ],
+          "nextNodeId": "node_shift17_stocker",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift17_stocker",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_breakroom",
+      "text": "Shift 17: 'Appreciation Pizza in the breakroom!' chimes the loudspeaker. You arrive eight minutes late from customer service to find greasy, crushed boxes and rock-hard crusts. Day shift took whole boxes to their cars.",
+      "choices": [
+        {
+          "id": "choice_s17_stocker_crust",
+          "text": "Eat a cold crust with Donna, chuckling wryly at corporate appreciation.",
+          "voiceKeywords": [
+            "cold",
+            "crust",
+            "donna",
+            "pizza",
+            "appreciation"
+          ],
+          "nextNodeId": "node_shift18_stocker",
+          "metricDeltas": {
+            "store_morale": -10.0,
+            "labor_squeeze": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift18_stocker",
+      "speakerId": "derrick",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 18: At 10:52 PM, Derrick drops a leaning 7-foot pallet of bulk charcoal in the center of your aisle, honks the forklift horn, and shouts: 'Night crew assignment!' as he heads for the exit.",
+      "choices": [
+        {
+          "id": "choice_s18_stocker_secure",
+          "text": "Band and brace the leaning pallet so it doesn't topple overnight.",
+          "voiceKeywords": [
+            "band",
+            "brace",
+            "pallet",
+            "charcoal",
+            "secure"
+          ],
+          "nextNodeId": "node_shift19_stocker",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift19_stocker",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 19: While climbing the safety ladder in paper towels, you discover a hollowed-out cave inside a pallet of toilet paper. Inside is a camping mat, a phone charger, and Kyle's stash of energy drinks.",
+      "choices": [
+        {
+          "id": "choice_s19_stocker_secret",
+          "text": "Take a quiet ten-minute rest in the secret nap hole on your break.",
+          "voiceKeywords": [
+            "rest",
+            "nap",
+            "quiet",
+            "secret",
+            "hole"
+          ],
+          "nextNodeId": "node_shift20_stocker",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift20_stocker",
+      "speakerId": "derrick",
+      "side": "LEFT",
+      "text": "Shift 20: Derrick zooms around the corner on the high-reach forklift without an operator license badge, nearly obliterating a soda endcap. Metal squeals as he swerves: 'Don't say a word to Todd, rookie!'",
+      "choices": [
+        {
+          "id": "choice_s20_stocker_safety",
+          "text": "Firmly warn Derrick that speeding in pedestrian aisles will get someone hurt.",
+          "voiceKeywords": [
+            "warn",
+            "speeding",
+            "derrick",
+            "forklift",
+            "safety"
+          ],
+          "nextNodeId": "node_shift21_stocker",
+          "metricDeltas": {
+            "store_morale": 5.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift21_stocker",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 21: The smoking patio whisper-network is on fire: someone caught an Area Manager and an associate in the garden peat moss trailer. Kyle is laughing, Brenda is gossiping, and work has completely halted.",
+      "choices": [
+        {
+          "id": "choice_s21_stocker_steer",
+          "text": "Keep your head down and stay out of the corporate rumor crossfire.",
+          "voiceKeywords": [
+            "steer",
+            "rumor",
+            "clear",
+            "focus",
+            "work"
+          ],
+          "nextNodeId": "node_shift22_stocker",
+          "metricDeltas": {
+            "store_morale": 5.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift22_stocker",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "SHIFT 22 HUDDLE CONFRONTATION! Todd demands to know why top-stock is backed up and pet food was plugged. Kyle points right at you: 'Rookie was supposed to zone that aisle!' Time to shut down the blame-shifting!",
+      "triggerBattleEncounterId": "encounter_slacker_showdown",
+      "nextNodeId": "node_shift22_stocker_victory"
+    },
+    {
+      "id": "node_shift22_stocker_victory",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "text": "EVIDENCE EXPOSED! You pull up the TC-70 scan history and time stamps proving Kyle's 48-minute disappearances. Todd turns bright red and writes Kyle up on the spot. You held the line, but the sales floor has grown icy and quiet.",
+      "nextNodeId": "node_retail_act2_complete"
+    },
+    {
+      "id": "node_shift11_cashier",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift 11: Register 4 till count. Brenda grumbles over a burnt coffee pot: 'Closed at eleven, opened at six. Half the cashiers called out. Get your scanner ready, because the coupon crowd is already at the glass doors.'",
+      "choices": [
+        {
+          "id": "choice_s11_cashier_count",
+          "text": "Balance the till rapidly and open Lane 4 for the early morning shoppers.",
+          "voiceKeywords": [
+            "balance",
+            "till",
+            "open",
+            "lane 4",
+            "cashier"
+          ],
+          "nextNodeId": "node_shift12_cashier",
+          "metricDeltas": {
+            "store_morale": -5.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift12_cashier",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "text": "Shift 12: Your register handheld laser scanner lens is scratched to hell and won't read barcodes. Brenda has the only three working laser scanners locked in her locker. 'Seniority privilege, honey. Type the UPCs.'",
+      "choices": [
+        {
+          "id": "choice_s12_cashier_key",
+          "text": "Rapid-key the UPC codes from memory, matching the line speed on sheer grit.",
+          "voiceKeywords": [
+            "upc",
+            "key",
+            "memory",
+            "speed",
+            "numbers"
+          ],
+          "nextNodeId": "node_shift13_cashier",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift13_cashier",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 13: Tandem express lanes are slammed. Your partner cashier winces: 'Gotta take an emergency five, bro.' Forty-five minutes pass. Customers sigh loudly, tapping cards on the belt while you scan non-stop.",
+      "choices": [
+        {
+          "id": "choice_s13_cashier_solo",
+          "text": "Keep your smile fixed and power through thirty shopping carts alone.",
+          "voiceKeywords": [
+            "smile",
+            "power",
+            "carts",
+            "solo",
+            "rush"
+          ],
+          "nextNodeId": "node_shift14_cashier",
+          "metricDeltas": {
+            "store_morale": -15.0,
+            "labor_squeeze": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift14_cashier",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_breakroom",
+      "text": "Shift 14: Burnt microwave fish fumes reach all the way to Checkout Lane 1. Donna hands you a bottled green tea: 'Take your full fifteen minutes, kid. Don't let Front End guilt you into skipping your break.'",
+      "choices": [
+        {
+          "id": "choice_s14_cashier_break",
+          "text": "Sit with Donna and rest your feet away from the register alarms.",
+          "voiceKeywords": [
+            "rest",
+            "feet",
+            "donna",
+            "tea",
+            "break"
+          ],
+          "nextNodeId": "node_shift15_cashier",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift15_cashier",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift 15: At 10:48 PM, sales floor associates push three overflowing carts of return junk right into your checkout lane: 'Front end sorts reshop, right? Have a good night!' and sprint out.",
+      "choices": [
+        {
+          "id": "choice_s15_cashier_sort",
+          "text": "Stage the reshop into department bins before counting down your drawer.",
+          "voiceKeywords": [
+            "stage",
+            "reshop",
+            "bins",
+            "drawer",
+            "sort"
+          ],
+          "nextNodeId": "node_shift16_cashier",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "store_morale": -10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift16_cashier",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "text": "Shift 16: You find twelve half-eaten candy bars and opened soda cans stuffed into the receipt tape storage cubby under Register 3. Associates have been snacking on unpaid inventory during night shifts.",
+      "choices": [
+        {
+          "id": "choice_s16_cashier_clean",
+          "text": "Bag the trash and clean the cubby to prevent a pest inspection write-up.",
+          "voiceKeywords": [
+            "clean",
+            "cubby",
+            "trash",
+            "bag",
+            "sanitary"
+          ],
+          "nextNodeId": "node_shift17_cashier",
+          "metricDeltas": {
+            "store_morale": -5.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift17_cashier",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_breakroom",
+      "text": "Shift 17: Intercom calls for Associate Appreciation Pizza! By the time Brenda covers your register so you can walk to the breakroom, the boxes are stripped to dried grease paper and crusts.",
+      "choices": [
+        {
+          "id": "choice_s17_cashier_shrug",
+          "text": "Laugh it off and grab a cold soda from the vending machine.",
+          "voiceKeywords": [
+            "laugh",
+            "soda",
+            "vending",
+            "pizza",
+            "shrug"
+          ],
+          "nextNodeId": "node_shift18_cashier",
+          "metricDeltas": {
+            "store_morale": -10.0,
+            "associate_engagement": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift18_cashier",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift 18: Night closing. An unworked 6-foot pallet of bulk potato chips is dropped right in front of Register 4, blocking the queue exit. Marsha sighs: 'Receiving said they don't have space.'",
+      "choices": [
+        {
+          "id": "choice_s18_cashier_realign",
+          "text": "Realign the queue stanchions to create a safe customer exit pathway.",
+          "voiceKeywords": [
+            "stanchions",
+            "realign",
+            "pathway",
+            "queue",
+            "safety"
+          ],
+          "nextNodeId": "node_shift19_cashier",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "labor_squeeze": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift19_cashier",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 19: During a closing floor sweep near Apparel, you find an associate nest in Fitting Room 3 complete with a stolen beanbag, phone chargers, and empty soda cans.",
+      "choices": [
+        {
+          "id": "choice_s19_cashier_quiet",
+          "text": "Close the door quietly and leave it be\u2014solidarity among the tired.",
+          "voiceKeywords": [
+            "quiet",
+            "solidarity",
+            "door",
+            "leave",
+            "tired"
+          ],
+          "nextNodeId": "node_shift20_cashier",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift20_cashier",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "text": "Shift 20: The cart pusher driver zooms the motorized machine through the automatic sliding doors at full throttle, nearly clipping a mother with a stroller. Brenda gasps: 'Someone's gonna lose a job!'",
+      "choices": [
+        {
+          "id": "choice_s20_cashier_flag",
+          "text": "Guide the stroller safely aside and tell the driver to slow down.",
+          "voiceKeywords": [
+            "guide",
+            "slow",
+            "stroller",
+            "driver",
+            "safety"
+          ],
+          "nextNodeId": "node_shift21_cashier",
+          "metricDeltas": {
+            "karen_index": -10.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift21_cashier",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "text": "Shift 21: Brenda is on Register 3 whispering into her headset all morning about the garden Connex container scandal. Line speeds drop to a crawl while shoppers listen to her gossip broadcast.",
+      "choices": [
+        {
+          "id": "choice_s21_cashier_focus",
+          "text": "Gently tap Brenda's shoulder and get both registers focused on the queue.",
+          "voiceKeywords": [
+            "tap",
+            "focus",
+            "queue",
+            "registers",
+            "speed"
+          ],
+          "nextNodeId": "node_shift22_cashier",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift22_cashier",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "SHIFT 22 FRONT-END CONFRONTATION! Front-End Lead Marsha calls a huddle over tanking scan velocities and massive reshop dump carts. Brenda points right at you: 'The rookie has been holding up lines!' Time to shut down the blame game!",
+      "triggerBattleEncounterId": "encounter_slacker_showdown",
+      "nextNodeId": "node_shift22_cashier_victory"
+    },
+    {
+      "id": "node_shift22_cashier_victory",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "text": "VELOCITY LOGS REVEALED! You print the cashier IPM report showing your steady 24 items per minute compared to Brenda's 11 IPM during her gossip sessions. Marsha reassigns Brenda to cart retrieval. The concourse is yours, but the front end has turned frosty.",
+      "nextNodeId": "node_retail_act2_complete"
+    },
+    {
+      "id": "node_shift11_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Shift 11: 6:00 AM freight dock truck backing in. Stiff muscles from last night's close. Mack hands you a shop towel: 'Coffee machine burnt the brew to charcoal. We've got 2,000 cases to unload before sunrise.'",
+      "choices": [
+        {
+          "id": "choice_s11_unloader_throw",
+          "text": "Climb inside the trailer and start throwing freight onto the rollers.",
+          "voiceKeywords": [
+            "throw",
+            "freight",
+            "trailer",
+            "rollers",
+            "unload"
+          ],
+          "nextNodeId": "node_shift12_unloader",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift12_unloader",
+      "speakerId": "derrick",
+      "side": "LEFT",
+      "text": "Shift 12: Derrick has padlocked 'Old Reliable'\u2014the dock's only smooth hydraulic jack\u2014to the water pipe with a combo lock. You're stuck moving a 2,400-lb water pallet with 'The Screamer'.",
+      "choices": [
+        {
+          "id": "choice_s12_unloader_muscle",
+          "text": "Wrestle the screeching, drifting jack across the floor through brute strength.",
+          "voiceKeywords": [
+            "wrestle",
+            "screamer",
+            "strength",
+            "brute",
+            "muscle"
+          ],
+          "nextNodeId": "node_shift13_unloader",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "store_morale": -10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift13_unloader",
+      "speakerId": "derrick",
+      "side": "LEFT",
+      "text": "Shift 13: Mid-truck unload. Derrick announces a 'quick smoke break' and vanishes behind the outdoor pallets for 45 minutes. Heavy canned goods jam the roller conveyor and crash to the floor.",
+      "choices": [
+        {
+          "id": "choice_s13_unloader_catch",
+          "text": "Sprint along the roller line, stacking heavy cartons alone to clear the jam.",
+          "voiceKeywords": [
+            "sprint",
+            "stack",
+            "conveyor",
+            "alone",
+            "cartons"
+          ],
+          "nextNodeId": "node_shift14_unloader",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "store_morale": -15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift14_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_breakroom",
+      "text": "Shift 14: Burnt microwave fish smoke chokes the breakroom. Mack eats a cold sandwich on the dock bumper: 'Sit out here with me, rookie. Fresh exhaust fumes are better than breakroom drama.'",
+      "choices": [
+        {
+          "id": "choice_s14_unloader_bumper",
+          "text": "Eat on the dock bumper with Mack, taking in his veteran dock survival lore.",
+          "voiceKeywords": [
+            "dock",
+            "bumper",
+            "mack",
+            "sandwich",
+            "lore"
+          ],
+          "nextNodeId": "node_shift15_unloader",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift15_unloader",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Shift 15: It is 10:50 PM. You've swept the bay. Suddenly, floor associates push four broken wooden pallets and piles of ripped cardboard into Bay 2: 'Dock takes trash, thanks!' and clock out.",
+      "choices": [
+        {
+          "id": "choice_s15_unloader_bale",
+          "text": "Crush the cardboard into the baler and stack the broken pallets safely.",
+          "voiceKeywords": [
+            "baler",
+            "cardboard",
+            "crush",
+            "pallets",
+            "stack"
+          ],
+          "nextNodeId": "node_shift16_unloader",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "store_morale": -10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift16_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "Shift 16: You find three boxes of expensive shattered wine bottles kicked under the hydraulic dock leveler plate. Someone broke them last night and hid the evidence to avoid a write-up.",
+      "choices": [
+        {
+          "id": "choice_s16_unloader_claims",
+          "text": "Pull the broken freight and log it properly into the Claims damage bin.",
+          "voiceKeywords": [
+            "claims",
+            "damage",
+            "wine",
+            "log",
+            "proper"
+          ],
+          "nextNodeId": "node_shift17_unloader",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift17_unloader",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_breakroom",
+      "text": "Shift 17: Appreciation Pizza announced over intercom! By the time receiving dock associates finish locking the trailer doors and walk inside, all six pizza boxes are empty with torn napkins.",
+      "choices": [
+        {
+          "id": "choice_s17_unloader_laugh",
+          "text": "Split Mack's bag of beef jerky on the dock with a cynical laugh.",
+          "voiceKeywords": [
+            "jerky",
+            "mack",
+            "dock",
+            "laugh",
+            "cynical"
+          ],
+          "nextNodeId": "node_shift18_unloader",
+          "metricDeltas": {
+            "store_morale": -10.0,
+            "associate_engagement": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift18_unloader",
+      "speakerId": "derrick",
+      "side": "LEFT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Shift 18: Derrick drops a leaning pallet of concrete mix right across Bay 2's doorway at 10:55 PM: 'Trailer driver wouldn't wait, all yours!' and sprints for the parking lot.",
+      "choices": [
+        {
+          "id": "choice_s18_unloader_reband",
+          "text": "Wrap plastic stretch-film around the concrete pallet to prevent a collapse.",
+          "voiceKeywords": [
+            "wrap",
+            "stretch",
+            "film",
+            "concrete",
+            "secure"
+          ],
+          "nextNodeId": "node_shift19_unloader",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift19_unloader",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 19: While checking the compressor room for a grease gun, you find a hidden associate sanctuary complete with an old recliner, a heater, and Derrick's phone chargers.",
+      "choices": [
+        {
+          "id": "choice_s19_unloader_rest",
+          "text": "Take a quiet ten-minute rest away from the screaming baler on your break.",
+          "voiceKeywords": [
+            "rest",
+            "compressor",
+            "quiet",
+            "break",
+            "recliner"
+          ],
+          "nextNodeId": "node_shift20_unloader",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift20_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "Shift 20: Derrick drives the Crown Reach truck with no spotter and no certification badge, nearly puncturing a water pipe overhead. Mack yells: 'That's it, someone's gonna get killed!'",
+      "choices": [
+        {
+          "id": "choice_s20_unloader_stand",
+          "text": "Back Mack up and insist that all power equipment rules be respected.",
+          "voiceKeywords": [
+            "back",
+            "mack",
+            "power",
+            "equipment",
+            "safety"
+          ],
+          "nextNodeId": "node_shift21_unloader",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift21_unloader",
+      "speakerId": "derrick",
+      "side": "LEFT",
+      "text": "Shift 21: The Connex container gossip has reached the docks. Derrick is spending his whole shift chatting with truck drivers about the scandal instead of throwing cartons.",
+      "choices": [
+        {
+          "id": "choice_s21_unloader_throw",
+          "text": "Stay focused on the freight line and let Derrick dig his own grave.",
+          "voiceKeywords": [
+            "stay",
+            "freight",
+            "line",
+            "focused",
+            "cartons"
+          ],
+          "nextNodeId": "node_shift22_unloader",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift22_unloader",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "SHIFT 22 DOCK CONFRONTATION! Todd arrives to inspect unfinished freight and broken pallets. Derrick points right at you: 'Rookie refused to run the jack!' Time to stand up to the dock bully!",
+      "triggerBattleEncounterId": "encounter_slacker_showdown",
+      "nextNodeId": "node_shift22_unloader_victory"
+    },
+    {
+      "id": "node_shift22_unloader_victory",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "TRUTH REVEALED! Mack shows Todd the bike lock on Old Reliable and security camera footage of Derrick's 45-minute disappearances. Todd revokes Derrick's forklift keys on the spot. The dock is safe, but tension hangs heavy in the air.",
+      "nextNodeId": "node_retail_act2_complete"
+    },
+    {
+      "id": "node_shift11_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 11: Opening specialty counter on 4 hours of sleep. The showcase siren is wailing because closing crew forgot to disarm the display delay. Julian covers his ears: 'Happy Shift Eleven, {hero}.'",
+      "choices": [
+        {
+          "id": "choice_s11_spec_alarm",
+          "text": "Key in the security override code and silence the screaming display alarm.",
+          "voiceKeywords": [
+            "override",
+            "security",
+            "code",
+            "silence",
+            "alarm"
+          ],
+          "nextNodeId": "node_shift12_specialist",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift12_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "Shift 12: The master showcase key ring is missing. Chad took it home in his jacket pocket last night and won't answer his phone. Customers are banging on glass cases wanting locked iPads.",
+      "choices": [
+        {
+          "id": "choice_s12_spec_explain",
+          "text": "Calmly assist customers with display models while Julian calls management for the backup key.",
+          "voiceKeywords": [
+            "calm",
+            "assist",
+            "display",
+            "backup",
+            "customers"
+          ],
+          "nextNodeId": "node_shift13_specialist",
+          "metricDeltas": {
+            "karen_index": -10.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift13_specialist",
+      "speakerId": "chad",
+      "side": "RIGHT",
+      "text": "Shift 13: An irate shopper demands a full cash refund on a dropped, cracked drone. Chad spots them, slips behind the TV wall, and whispers: 'All yours rookie, checking backroom stock!'",
+      "choices": [
+        {
+          "id": "choice_s13_spec_policy",
+          "text": "Quote corporate warranty policy with poise and defuse the irate customer.",
+          "voiceKeywords": [
+            "quote",
+            "policy",
+            "poise",
+            "defuse",
+            "customer"
+          ],
+          "nextNodeId": "node_shift14_specialist",
+          "metricDeltas": {
+            "karen_index": -15.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift14_specialist",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_breakroom",
+      "text": "Shift 14: Burnt mackerel smoke fills the breakroom. Donna spots you rubbing your temples: 'Chad ducking out on tough customers again? He's done that for two years. Stand your ground, kid.'",
+      "choices": [
+        {
+          "id": "choice_s14_spec_listen",
+          "text": "Listen to Donna's tactical advice on dealing with charming slackers.",
+          "voiceKeywords": [
+            "listen",
+            "donna",
+            "tactical",
+            "advice",
+            "charming"
+          ],
+          "nextNodeId": "node_shift15_specialist",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift15_specialist",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 15: At 10:48 PM, front end dumps two carts of opened video games, tangled cables, and return junk behind your specialty counter: 'Electronics handles electronics! Night!'",
+      "choices": [
+        {
+          "id": "choice_s15_spec_sort",
+          "text": "Inspect serial numbers and secure the games into the lockup cage.",
+          "voiceKeywords": [
+            "inspect",
+            "serial",
+            "cage",
+            "secure",
+            "lockup"
+          ],
+          "nextNodeId": "node_shift16_specialist",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "store_morale": -10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift16_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "Shift 16: You find four expensive return laptops hidden under the demo cabinet without defect tags. Someone was hiding shrinkage numbers to keep their department bonus clean.",
+      "choices": [
+        {
+          "id": "choice_s16_spec_tag",
+          "text": "Properly tag the defect laptops and send them to Claims.",
+          "voiceKeywords": [
+            "tag",
+            "defect",
+            "laptops",
+            "claims",
+            "proper"
+          ],
+          "nextNodeId": "node_shift17_specialist",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift17_specialist",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_breakroom",
+      "text": "Shift 17: Intercom announcement for Appreciation Pizza! You arrive to find empty boxes with dried sauce and shredded napkins. Daytime staff took whole pies home.",
+      "choices": [
+        {
+          "id": "choice_s17_spec_snack",
+          "text": "Grab a cold iced tea from the vending machine with a wry smirk.",
+          "voiceKeywords": [
+            "iced tea",
+            "vending",
+            "smirk",
+            "pizza",
+            "snack"
+          ],
+          "nextNodeId": "node_shift18_specialist",
+          "metricDeltas": {
+            "store_morale": -10.0,
+            "associate_engagement": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift18_specialist",
+      "speakerId": "chad",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 18: Closing time. Chad drops a leaning pallet of 75-inch smart TVs blocking the showcase aisle: 'Gotta run rookie, date tonight, finish wrapping this!' and clocks out.",
+      "choices": [
+        {
+          "id": "choice_s18_spec_band",
+          "text": "Secure the TV boxes with safety strapping so they don't tip onto customers.",
+          "voiceKeywords": [
+            "secure",
+            "strapping",
+            "smart tvs",
+            "safety",
+            "boxes"
+          ],
+          "nextNodeId": "node_shift19_specialist",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift19_specialist",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 19: While dusting the dark home theater demo alcove, you find an associate snoring soundly in the luxury display recliner with noise-canceling headphones on.",
+      "choices": [
+        {
+          "id": "choice_s19_spec_recliner",
+          "text": "Take a quiet ten-minute sit on the other display recliner on your break.",
+          "voiceKeywords": [
+            "sit",
+            "recliner",
+            "theater",
+            "alcove",
+            "quiet"
+          ],
+          "nextNodeId": "node_shift20_specialist",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift20_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "Shift 20: Chad operates the electric drivable ladder in high electronics racking without a harness, nearly dropping a $2,000 amplifier on Action Alley shoppers. Julian looks furious.",
+      "choices": [
+        {
+          "id": "choice_s20_spec_harness",
+          "text": "Insist that Chad put on the safety harness before lifting heavy electronics.",
+          "voiceKeywords": [
+            "harness",
+            "safety",
+            "chad",
+            "insist",
+            "electronics"
+          ],
+          "nextNodeId": "node_shift21_specialist",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift21_specialist",
+      "speakerId": "chad",
+      "side": "RIGHT",
+      "text": "Shift 21: Chad is spreading rumors about the Connex trailer scandal all shift, trying to poach your OLED sale while you're fetching HDMI cables from the back.",
+      "choices": [
+        {
+          "id": "choice_s21_spec_bodyblock",
+          "text": "Body-block the register keypad and finalize your customer's sale under your ID.",
+          "voiceKeywords": [
+            "bodyblock",
+            "keypad",
+            "finalize",
+            "sale",
+            "id"
+          ],
+          "nextNodeId": "node_shift22_specialist",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift22_specialist",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "SHIFT 22 SPECIALTY SHOWDOWN! Todd audits missing inventory and untagged returns. Chad points at you: 'Rookie has been mishandling returns and missing sales!' Time to expose the poacher!",
+      "triggerBattleEncounterId": "encounter_slacker_showdown",
+      "nextNodeId": "node_shift22_specialist_victory"
+    },
+    {
+      "id": "node_shift22_specialist_victory",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "SALES AUDIT REVEALED! Julian steps up with register camera logs and transaction records, proving Chad's commission poaching and safety shortcuts. Todd disciplines Chad on the spot. You won the battle, but the showroom feels colder.",
+      "nextNodeId": "node_retail_act2_complete"
+    },
+    {
+      "id": "node_retail_act2_complete",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "ACT TWO: BREAKROOM POLITICS & SLACKER SHENANIGANS COMPLETED! You stood up to toxic excuses, held your ground through 12 brutal shifts, and survived the daily grind of Shifts 11 through 22. But your department has grown quiet and watchful. Upstairs, Corporate has noticed the friction\u2014and their algorithmic cameras are turning toward Store #1042. Act III awaits!",
       "setFlagOnEnter": "game_completed"
     }
   ]

@@ -166,6 +166,21 @@
       "movesetId": "flesh_bruiser",
       "spriteId": "template_brute",
       "spriteTint": "#F59E0B"
+    },
+    {
+      "id": "slacker_veteran",
+      "name": "Slacker Veteran",
+      "subtitle": "Excuse Specialist",
+      "family": "FLESH",
+      "selfElement": "SHADOW",
+      "hp": 450,
+      "attack": 30,
+      "defense": 10,
+      "speed": 50,
+      "xpReward": 120,
+      "movesetId": "flesh_bruiser",
+      "spriteId": "template_brute",
+      "spriteTint": "#9CA3AF"
     }
   ]
 }

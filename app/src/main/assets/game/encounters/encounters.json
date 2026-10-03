@@ -110,6 +110,24 @@
           "narrationText": "VP Vance flips open his leather portfolio to take note of your immaculate customer service!"
         }
       ]
+    },
+    {
+      "id": "encounter_slacker_showdown",
+      "name": "Department Huddle Confrontation",
+      "description": "The toxic slacker veteran deploys weaponized excuses, blame-shifting, and stall tactics! Stand your ground and expose the truth.",
+      "environment": "DUNGEON",
+      "party": ["hero"],
+      "enemies": [
+        { "templateId": "slacker_veteran", "id": "slacker_boss", "name": "Slacker Veteran", "subtitle": "Excuse Specialist", "isTargeted": true, "atbGauge": 0.4 }
+      ],
+      "bossPhases": [
+        {
+          "enemyId": "slacker_boss",
+          "hpBelow": 0.5,
+          "bannerText": "WEAPONIZED RESTROOM STALL",
+          "narrationText": "The slacker attempts to stall the confrontation by claiming an emergency restroom break!"
+        }
+      ]
     }
   ]
 }
