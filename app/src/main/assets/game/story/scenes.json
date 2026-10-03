@@ -119,6 +119,40 @@
       "milestoneSummary": "The delivery trucks unloaded and the freight line began moving at maximum speed.",
       "milestoneIcon": "📦",
       "defaultObjective": "Clear the receiving line before the shift supervisor checks velocity."
+    },
+    {
+      "id": "scene_security_office",
+      "name": "Loss Prevention Interrogation Room",
+      "chapterTitle": "Internal Affairs & Security",
+      "backgroundAsset": "story/bg_hiring_kiosk.jpg",
+      "initialNodeId": "node_shift1_start",
+      "ambientDescription": "A windowless security room lined with surveillance monitor banks, video recorders, and interrogation chairs.",
+      "musicAsset": "audio/music/bgm_combat.ogg",
+      "chapterIndex": 6,
+      "actNumber": 4,
+      "actTitle": "Act IV: The Frame Job",
+      "milestoneTitle": "Loss Prevention Interrogation",
+      "milestoneLocation": "Store Security Suite",
+      "milestoneSummary": "You faced closed-door interrogation under the cold stare of security monitors.",
+      "milestoneIcon": "📹",
+      "defaultObjective": "Break through the manufactured timeline of Loss Prevention."
+    },
+    {
+      "id": "scene_manager_office",
+      "name": "Store Manager Executive Suite",
+      "chapterTitle": "The Inner Sanctum",
+      "backgroundAsset": "story/bg_hiring_kiosk.jpg",
+      "initialNodeId": "node_shift1_start",
+      "ambientDescription": "Henderson's executive office overlooking the sales floor, adorned with framed corporate awards and closed blinds.",
+      "musicAsset": "audio/music/bgm_combat.ogg",
+      "chapterIndex": 7,
+      "actNumber": 5,
+      "actTitle": "Act V: The Crucible",
+      "milestoneTitle": "Executive Showdown",
+      "milestoneLocation": "Store Manager's Mezzanine Suite",
+      "milestoneSummary": "You confronted Henderson in his private office to decide the fate of Store #1042.",
+      "milestoneIcon": "🏢",
+      "defaultObjective": "Confront Store Manager Henderson and force the final resolution."
     }
   ]
 }

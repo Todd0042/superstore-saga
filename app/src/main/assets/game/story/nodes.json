@@ -2892,6 +2892,442 @@
       "nextNodeId": "node_incident_return"
     },
     {
+      "id": "node_incident_tachometer_idle_stocker",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "You pause for 40 seconds to read a small shelf label for an elderly customer. Suddenly, your TC-70 scanner emits an ear-splitting two-tone chime and flashes crimson: 'WARNING: IDLE VELOCITY DETECTED. 45 SECONDS WITHOUT SCAN EVENT. PACE: 42 CASES/HR (TARGET: 65).' Todd glances up from the end of the aisle, tapping his stopwatch.",
+      "choices": [
+        {
+          "id": "choice_tacho_stocker_rush",
+          "text": "Reroute the customer quickly and scan three consecutive cases to reset the timer.",
+          "voiceKeywords": [
+            "reset",
+            "scan",
+            "rush",
+            "cases",
+            "timer",
+            "speed"
+          ],
+          "nextNodeId": "node_incident_tachometer_idle_resolve",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "store_morale": -10.0
+          }
+        },
+        {
+          "id": "choice_tacho_stocker_help",
+          "text": "Take your time to walk the customer to the item, ignoring the shrill chime.",
+          "voiceKeywords": [
+            "walk",
+            "help",
+            "customer",
+            "ignore",
+            "chime"
+          ],
+          "nextNodeId": "node_incident_tachometer_idle_resolve",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_tachometer_idle_cashier",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "An elderly shopper fumbles in their coin purse for exact change. The digital display on Register 4 drops below 22 IPM and starts flashing amber: 'SCANNING DELAY DETECTED. LANE VELOCITY DEFICIT.' Marsha's paging beacon at the podium begins blinking rapidly.",
+      "choices": [
+        {
+          "id": "choice_tacho_cashier_freeze",
+          "text": "Politely press the 'Total' key to freeze the scan timer while the shopper counts pennies.",
+          "voiceKeywords": [
+            "freeze",
+            "total",
+            "timer",
+            "pennies",
+            "pause"
+          ],
+          "nextNodeId": "node_incident_tachometer_idle_resolve",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "karen_index": -10.0
+          }
+        },
+        {
+          "id": "choice_tacho_cashier_patience",
+          "text": "Wait patiently with a warm smile, refusing to rush a customer over a computer metric.",
+          "voiceKeywords": [
+            "wait",
+            "patience",
+            "smile",
+            "warm",
+            "customer"
+          ],
+          "nextNodeId": "node_incident_tachometer_idle_resolve",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_tachometer_idle_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "The automated optical sensor over the dock conveyor belt begins strobing yellow: 'BELT PACING: 850 CARTONS/HR. DEFICIT: -150 CARTONS.' Mack curses under his breath: 'Corporate recalibrated the electric belt speed last night. They expect four people to throw the volume of eight!'",
+      "choices": [
+        {
+          "id": "choice_tacho_unloader_double",
+          "text": "Double-throw heavy cartons onto the rollers to silence the strobing alarm.",
+          "voiceKeywords": [
+            "double",
+            "throw",
+            "cartons",
+            "rollers",
+            "silence"
+          ],
+          "nextNodeId": "node_incident_tachometer_idle_resolve",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "associate_engagement": 10.0
+          }
+        },
+        {
+          "id": "choice_tacho_unloader_safe",
+          "text": "Refuse to destroy your back, pacing the line at safe OSHA ergonomics limits.",
+          "voiceKeywords": [
+            "safe",
+            "pace",
+            "osha",
+            "ergonomics",
+            "limits"
+          ],
+          "nextNodeId": "node_incident_tachometer_idle_resolve",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_tachometer_idle_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "You've been explaining soundbar optical connections to a customer for twelve minutes. The overhead surveillance camera dome over the counter clicks, and your handheld beeps: 'CONSULTATION DWELL TIME EXCEEDED: 12.4 MIN. RECOMMENDED CLOSE: 5.0 MIN.' Julian whispers: 'They want you pitching warranties, not teaching audio theory.'",
+      "choices": [
+        {
+          "id": "choice_tacho_spec_close",
+          "text": "Pivot smoothly into the warranty close to satisfy the camera algorithm.",
+          "voiceKeywords": [
+            "pivot",
+            "warranty",
+            "close",
+            "algorithm",
+            "pitch"
+          ],
+          "nextNodeId": "node_incident_tachometer_idle_resolve",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "store_morale": -5.0
+          }
+        },
+        {
+          "id": "choice_tacho_spec_advice",
+          "text": "Ignore the device and finish giving the customer genuine, honest advice.",
+          "voiceKeywords": [
+            "ignore",
+            "honest",
+            "advice",
+            "genuine",
+            "finish"
+          ],
+          "nextNodeId": "node_incident_tachometer_idle_resolve",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_tachometer_idle_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "The digital tachometer resets its countdown. In Act III, every single second of your shift is quantified, recorded, and scrutinized by unseen corporate algorithms.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_restroom_stopwatch_stocker",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "text": "You step into the associate restroom for a quick bio-break. Exactly three minutes and forty-five seconds later, a sharp RAP-RAP-RAP hits the door. Todd's voice echoes through the vents: 'Movement check, associate! Four minutes is the departmental guideline!' He is literally standing outside with a stopwatch.",
+      "choices": [
+        {
+          "id": "choice_restroom_stocker_rush",
+          "text": "Wash hands rapidly, exit immediately, and suppress your frustration.",
+          "voiceKeywords": [
+            "wash",
+            "exit",
+            "rush",
+            "suppress",
+            "guideline"
+          ],
+          "nextNodeId": "node_incident_restroom_stopwatch_resolve",
+          "metricDeltas": {
+            "store_morale": -15.0,
+            "labor_squeeze": 10.0
+          }
+        },
+        {
+          "id": "choice_restroom_stocker_defy",
+          "text": "Call out through the door: 'I have the legal right to use the restroom, Todd!'",
+          "voiceKeywords": [
+            "legal",
+            "right",
+            "restroom",
+            "todd",
+            "defy"
+          ],
+          "nextNodeId": "node_incident_restroom_stopwatch_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "labor_squeeze": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_restroom_stopwatch_cashier",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "text": "You flip your register sign to 'Lane Closed' for an urgent restroom break. Before you reach the hallway, Marsha's clipboard blocks your path: 'Did you get prior biometric clearance on the attendance portal? Unscheduled light shut-offs penalize our store queue score by 4.2%.'",
+      "choices": [
+        {
+          "id": "choice_restroom_cashier_wait",
+          "text": "Apologize and wait until another cashier covers before stepping away.",
+          "voiceKeywords": [
+            "apologize",
+            "wait",
+            "cover",
+            "cashier",
+            "portal"
+          ],
+          "nextNodeId": "node_incident_restroom_stopwatch_resolve",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "store_morale": -10.0
+          }
+        },
+        {
+          "id": "choice_restroom_cashier_insist",
+          "text": "Insist firmly that natural bodily functions cannot be scheduled via portal.",
+          "voiceKeywords": [
+            "insist",
+            "bodily",
+            "functions",
+            "natural",
+            "firm"
+          ],
+          "nextNodeId": "node_incident_restroom_stopwatch_resolve",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_restroom_stopwatch_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "The audit is logged. Under the algorithmic system, personal biological dignity is treated as an unauthorized efficiency loss.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_credit_card_squeeze_cashier",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "text": "Cheryl places a plastic clipboard on Register 4: 'Mandatory quota: three MegaMart Platinum MasterCards per cashier today, or a mandatory coaching session.' An elderly pensioner on a fixed income approaches with milk and bread. The screen prompts you to pitch the 29.99% APR card.",
+      "choices": [
+        {
+          "id": "choice_cc_cashier_pitch",
+          "text": "Recite the predatory card script with a forced smile to hit your corporate quota.",
+          "voiceKeywords": [
+            "recite",
+            "script",
+            "pitch",
+            "card",
+            "quota"
+          ],
+          "nextNodeId": "node_incident_credit_card_squeeze_resolve",
+          "metricDeltas": {
+            "labor_squeeze": -10.0,
+            "store_morale": -20.0
+          }
+        },
+        {
+          "id": "choice_cc_cashier_skip",
+          "text": "Skip the prompt and let the customer pay in peace, defying the quota.",
+          "voiceKeywords": [
+            "skip",
+            "peace",
+            "defy",
+            "protect",
+            "pay"
+          ],
+          "nextNodeId": "node_incident_credit_card_squeeze_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "labor_squeeze": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_credit_card_squeeze_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "Henderson appears at the electronics desk: 'Specialty must average 1.5 store financing cards per shift. If you don't hit the target by 5:00 PM, I'm cutting your department hours next week.' A college student is buying a budget laptop for classes.",
+      "choices": [
+        {
+          "id": "choice_cc_spec_push",
+          "text": "Push the 29.99% high-interest financing plan aggressively on the student.",
+          "voiceKeywords": [
+            "push",
+            "financing",
+            "interest",
+            "plan",
+            "aggressive"
+          ],
+          "nextNodeId": "node_incident_credit_card_squeeze_resolve",
+          "metricDeltas": {
+            "labor_squeeze": -10.0,
+            "store_morale": -20.0
+          }
+        },
+        {
+          "id": "choice_cc_spec_rebate",
+          "text": "Recommend the interest-free student rebate instead, risking Henderson's wrath.",
+          "voiceKeywords": [
+            "rebate",
+            "student",
+            "interest free",
+            "protect",
+            "recommend"
+          ],
+          "nextNodeId": "node_incident_credit_card_squeeze_resolve",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "labor_squeeze": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_credit_card_squeeze_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "The transaction completes. Balancing your personal conscience against managerial retaliation is the daily tightrope of retail survival.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_speed_clock_crushed_eggs",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "The IPM speed quota demands 25 items per minute. To hit the number, you have to whip items across the glass scanner without pausing. A carton of organic farm eggs and a loaf of brioche bread are next in line behind four heavy 12-packs of soda cans.",
+      "choices": [
+        {
+          "id": "choice_eggs_slow",
+          "text": "Slow down to carefully bag the bread and eggs on top, taking a hit to your scan metric.",
+          "voiceKeywords": [
+            "slow",
+            "careful",
+            "eggs",
+            "bread",
+            "protect"
+          ],
+          "nextNodeId": "node_incident_speed_clock_crushed_eggs_resolve",
+          "metricDeltas": {
+            "karen_index": -15.0,
+            "labor_squeeze": 10.0
+          }
+        },
+        {
+          "id": "choice_eggs_speed",
+          "text": "Keep the speed-clocking rhythm going at maximum velocity, letting the bread crush.",
+          "voiceKeywords": [
+            "speed",
+            "velocity",
+            "crush",
+            "rhythm",
+            "fast"
+          ],
+          "nextNodeId": "node_incident_speed_clock_crushed_eggs_resolve",
+          "metricDeltas": {
+            "labor_squeeze": -10.0,
+            "store_morale": -15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_speed_clock_crushed_eggs_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "The receipt prints. The paradox of corporate metrics is that caring about the customer and hitting the computer's numbers are often diametrically opposed.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_mystery_shopper_audit",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "A customer in casual clothes approaches asking you to open a locked display case and leave it unlocked while they 'browse,' or offers cash for an off-the-books discount. Something about their posture and forced phrasing screams: Corporate Mystery Shopper.",
+      "choices": [
+        {
+          "id": "choice_mystery_protocol",
+          "text": "Quote store security protocols verbatim and refuse to leave the case unattended.",
+          "voiceKeywords": [
+            "protocol",
+            "security",
+            "quote",
+            "verbatim",
+            "refuse"
+          ],
+          "nextNodeId": "node_incident_mystery_shopper_audit_resolve",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": -10.0
+          }
+        },
+        {
+          "id": "choice_mystery_hold",
+          "text": "Smile and offer to personally hold the item at the counter for them.",
+          "voiceKeywords": [
+            "hold",
+            "counter",
+            "smile",
+            "offer",
+            "assist"
+          ],
+          "nextNodeId": "node_incident_mystery_shopper_audit_resolve",
+          "metricDeltas": {
+            "karen_index": -10.0,
+            "store_morale": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_mystery_shopper_audit_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "The customer nods subtly, jots a note on a hidden palm-sized pad, and walks away. You just dodged a corporate compliance trap.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
       "id": "node_incident_return",
       "speakerId": "narrator",
       "side": "CENTER_NARRATOR",
@@ -5801,7 +6237,1387 @@
       "id": "node_retail_act2_complete",
       "speakerId": "narrator",
       "side": "CENTER_NARRATOR",
-      "text": "ACT TWO: BREAKROOM POLITICS & SLACKER SHENANIGANS COMPLETED! You stood up to toxic excuses, held your ground through 12 brutal shifts, and survived the daily grind of Shifts 11 through 22. But your department has grown quiet and watchful. Upstairs, Corporate has noticed the friction\u2014and their algorithmic cameras are turning toward Store #1042. Act III awaits!",
+      "text": "ACT TWO: BREAKROOM POLITICS & SLACKER SHENANIGANS COMPLETED! You stood up to toxic excuses, held your ground through 12 brutal shifts, and survived the daily grind of Shifts 11 through 22. But your department has grown quiet and watchful. Upstairs, Corporate has noticed the friction\u2014and their algorithmic surveillance cameras are turning toward Store #1042. Ready for Act III: The Corporate Gaze & Algorithmic Quotas?",
+      "choices": [
+        {
+          "id": "choice_begin_act3",
+          "text": "Embark on Act III: The Algorithmic Squeeze of Shift 23.",
+          "voiceKeywords": [
+            "begin",
+            "act three",
+            "act 3",
+            "embark",
+            "shift 23",
+            "continue",
+            "forward",
+            "ready"
+          ],
+          "nextNodeId": "node_shift23_start"
+        }
+      ]
+    },
+    {
+      "id": "node_shift23_start",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "setFlagOnEnter": "flag_act3_started",
+      "changeSceneId": "scene_action_alley",
+      "text": "SHIFT TWENTY-THREE: THE ALGORITHMIC FIRMWARE UPGRADE. Over the weekend, corporate technicians installed high-resolution AI surveillance domes in the ceiling trusses and pushed a mandatory firmware update to all handheld scanners and registers. A digital tachometer now glows on your screen: 'EFFICIENCY GOAL: 100%. CURRENT: 0.0%.' Every second is now tracked.",
+      "choices": [
+        {
+          "id": "choice_shift23_sync",
+          "text": "Sync your employee credentials with the new biometric algorithmic scanner.",
+          "voiceKeywords": [
+            "sync",
+            "biometric",
+            "credentials",
+            "algorithm",
+            "scanner",
+            "begin"
+          ],
+          "nextNodeId": "node_shift23_branch"
+        }
+      ]
+    },
+    {
+      "id": "node_shift23_branch",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "The overhead speakers chime with a cold digital tone: 'ATTENTION ASSOCIATES: ACTIVE TIME-TRACKING INITIALIZED.' Time to report to your department for Shift 23.",
+      "nextNodeId": "node_shift23_stocker"
+    },
+    {
+      "id": "node_hub_stocker_act3",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "allowIncidents": true,
+      "text": "Overhead ceiling domes click softly as they track movement along Action Alley. Donna checks her TC-70: 'Corporate cranked up the stocking quota to 65 cases an hour. Todd is reviewing surveillance footage with a digital timer. What's your strategy today, rookie?'",
+      "choices": [
+        {
+          "id": "choice_stocker_act3_donna",
+          "text": "Ask Donna how to survive the algorithmic speed quotas without burnout.",
+          "voiceKeywords": [
+            "donna",
+            "quotas",
+            "speed",
+            "burnout",
+            "advice"
+          ],
+          "nextNodeId": "node_stocker_act3_donna_advice",
+          "completionFlag": "flag_hub_stocker_act3_donna",
+          "metricDeltas": {
+            "store_morale": 5.0,
+            "associate_engagement": 5.0
+          }
+        },
+        {
+          "id": "choice_stocker_act3_continue",
+          "text": "Grab a fresh U-boat cart and tackle the high-priority stocking freight.",
+          "voiceKeywords": [
+            "cart",
+            "freight",
+            "tackle",
+            "stock",
+            "aisle"
+          ],
+          "nextNodeId": "node_shift24_stocker"
+        }
+      ]
+    },
+    {
+      "id": "node_stocker_act3_donna_advice",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "text": "'Don't chase the machine's top speed,' Donna warns in a hushed voice. 'If you hit 75 cases an hour today, corporate makes 75 the new baseline tomorrow. Work at a steady, rhythmic 62. Don't run, don't panic, and always keep your scanner moving so the 45-second idle alarm doesn't fire.'",
+      "nextNodeId": "node_hub_stocker_act3"
+    },
+    {
+      "id": "node_hub_cashier_act3",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "changeSceneId": "scene_checkout_concourse",
+      "allowIncidents": true,
+      "text": "Register Concourse Lane 4 is glowing under digital IPM speedometers. Brenda types with sharp clicks: 'If your scan speed drops below 22 IPM, Marsha's tablet dings with a performance flag. We're human barcode readers now, {hero}. What's your plan?'",
+      "choices": [
+        {
+          "id": "choice_cashier_act3_brenda",
+          "text": "Ask Brenda how to balance scan velocity with fragile customer goods.",
+          "voiceKeywords": [
+            "brenda",
+            "velocity",
+            "fragile",
+            "balance",
+            "speed"
+          ],
+          "nextNodeId": "node_cashier_act3_brenda_advice",
+          "completionFlag": "flag_hub_cashier_act3_brenda",
+          "metricDeltas": {
+            "associate_engagement": 5.0,
+            "store_morale": 5.0
+          }
+        },
+        {
+          "id": "choice_cashier_act3_continue",
+          "text": "Scan the next customer's basket under the overhead camera gaze.",
+          "voiceKeywords": [
+            "scan",
+            "basket",
+            "customer",
+            "register",
+            "continue"
+          ],
+          "nextNodeId": "node_shift24_cashier"
+        }
+      ]
+    },
+    {
+      "id": "node_cashier_act3_brenda_advice",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "text": "'Use the tender key trick,' Brenda whispers, leaning over the belt. 'Hit \"Item Inquiry\" or \"Subtotal\" while you bag bread and eggs. It pauses the algorithmic timer without closing the order. Protect the eggs, protect your scan score, and beat them at their own digital game.'",
+      "nextNodeId": "node_hub_cashier_act3"
+    },
+    {
+      "id": "node_hub_unloader_act3",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "allowIncidents": true,
+      "text": "Receiving Bay 2 is outfitted with an automated infrared optical gate over the roller line. Mack rubs his shoulder: 'Corporate expects two trucks cleared in three hours flat. The electric belt sensor flashes yellow whenever cartons space out. How are you holding up, rookie?'",
+      "choices": [
+        {
+          "id": "choice_unloader_act3_mack",
+          "text": "Ask Mack how to handle impossible corporate unloading targets.",
+          "voiceKeywords": [
+            "mack",
+            "unloading",
+            "targets",
+            "impossible",
+            "advice"
+          ],
+          "nextNodeId": "node_unloader_act3_mack_advice",
+          "completionFlag": "flag_hub_unloader_act3_mack",
+          "metricDeltas": {
+            "labor_squeeze": 5.0,
+            "associate_engagement": 5.0
+          }
+        },
+        {
+          "id": "choice_unloader_act3_continue",
+          "text": "Step up to the roller line and throw the next pallet wave.",
+          "voiceKeywords": [
+            "rollers",
+            "line",
+            "pallet",
+            "wave",
+            "throw"
+          ],
+          "nextNodeId": "node_shift24_unloader"
+        }
+      ]
+    },
+    {
+      "id": "node_unloader_act3_mack_advice",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "'Lift with your legs, breathe on every box, and never let Henderson rush your safety,' Mack says firmly. 'Corporate sits in air-conditioned suites looking at spreadsheet numbers. Down here, 50-pound cartons will blow out your spinal disc in a second. You set the pace, not their infrared beam.'",
+      "nextNodeId": "node_hub_unloader_act3"
+    },
+    {
+      "id": "node_hub_specialist_act3",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "allowIncidents": true,
+      "text": "Electronics counter showcases hum under digital security sensors. Julian checks the corporate portal: 'They've instituted mandatory credit card quotas\u2014three 29.99% APR applications per shift. Henderson is tracking refusal rates. What's your move, {hero}?'",
+      "choices": [
+        {
+          "id": "choice_spec_act3_julian",
+          "text": "Ask Julian how to navigate predatory credit quotas without betraying customers.",
+          "voiceKeywords": [
+            "julian",
+            "credit",
+            "quotas",
+            "predatory",
+            "advice"
+          ],
+          "nextNodeId": "node_spec_act3_julian_advice",
+          "completionFlag": "flag_hub_spec_act3_julian",
+          "metricDeltas": {
+            "store_morale": 5.0,
+            "associate_engagement": 5.0
+          }
+        },
+        {
+          "id": "choice_spec_act3_continue",
+          "text": "Step up to the electronics showcase to assist the next shopper.",
+          "voiceKeywords": [
+            "showcase",
+            "shopper",
+            "assist",
+            "electronics",
+            "counter"
+          ],
+          "nextNodeId": "node_shift24_specialist"
+        }
+      ]
+    },
+    {
+      "id": "node_spec_act3_julian_advice",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "'Never trick a pensioner or student into high-interest debt,' Julian says sternly. 'Pitch the card transparently: \"Company policy asks me to mention our store credit card; you probably don't want it, but here is the pamphlet.\" You checked the compliance box, and the customer stays protected.'",
+      "nextNodeId": "node_hub_specialist_act3"
+    },
+    {
+      "id": "node_shift23_stocker",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 23: Todd taps the screen of your updated TC-70. 'New software is live. 65 cases an hour baseline. If you stop moving for 45 seconds, the scanner beeps and notes an idle infraction. Let's see your velocity.'",
+      "choices": [
+        {
+          "id": "choice_s23_stocker_pace",
+          "text": "Maintain a steady 62 cases an hour pace without burning out your muscles.",
+          "voiceKeywords": [
+            "pace",
+            "steady",
+            "cases",
+            "velocity",
+            "stocker"
+          ],
+          "nextNodeId": "node_shift24_stocker",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift24_stocker",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "text": "Shift 24: THE 10-FOOT RULE AUDIT. Corporate directive mandates greeting every customer within 10 feet within 4 seconds. Todd watches from the pharmacy aisle holding a digital stopwatch.",
+      "choices": [
+        {
+          "id": "choice_s24_stocker_greet",
+          "text": "Deliver crisp, robotic corporate greetings to every passing shopper.",
+          "voiceKeywords": [
+            "greet",
+            "robotic",
+            "corporate",
+            "shopper",
+            "rule"
+          ],
+          "nextNodeId": "node_shift25_stocker",
+          "metricDeltas": {
+            "store_morale": -5.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift25_stocker",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "text": "Shift 25: THE 4-MINUTE RESTROOM AUDIT. You step into the restroom for a quick break. At 3 minutes and 45 seconds, Todd knocks hard on the door: 'Movement check! Four minutes is department policy!'",
+      "choices": [
+        {
+          "id": "choice_s25_stocker_firm",
+          "text": "Exit calmly and firmly state that employee biology cannot be scheduled by stopwatch.",
+          "voiceKeywords": [
+            "exit",
+            "calm",
+            "biology",
+            "firm",
+            "policy"
+          ],
+          "nextNodeId": "node_shift26_stocker",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift26_stocker",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift 26: CODE SPARK DRAG. Front end is swamped. Marsha screams over the PA: 'ALL CERTIFIED ASSOCIATES TO REGISTERS NOW!' Your cereal pallets sit abandoned while you run groceries for two hours.",
+      "choices": [
+        {
+          "id": "choice_s26_stocker_spark",
+          "text": "Run checkout Lane 6, clearing 40 shopping carts before returning to your freight.",
+          "voiceKeywords": [
+            "lane 6",
+            "spark",
+            "checkout",
+            "carts",
+            "groceries"
+          ],
+          "nextNodeId": "node_shift27_stocker",
+          "metricDeltas": {
+            "labor_squeeze": 15.0,
+            "store_morale": -10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift27_stocker",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 27: Store Manager Henderson holds a mid-day floor huddle: 'Store card applications are at 40% of target. Floor associates must pitch the 29.99% card whenever asked for item directions!'",
+      "choices": [
+        {
+          "id": "choice_s27_stocker_resist",
+          "text": "Hand customers official flyers without aggressively pushing predatory interest rates.",
+          "voiceKeywords": [
+            "flyers",
+            "transparent",
+            "resist",
+            "protect",
+            "hand"
+          ],
+          "nextNodeId": "node_shift28_stocker",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift28_stocker",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "text": "Shift 28: SPEED-CLOCKING PARADOX. To hit the cases-per-hour target, night crew jammed heavy soup cans on top of fragile lightbulb boxes, crushing six displays. Todd demands you audit the carnage.",
+      "choices": [
+        {
+          "id": "choice_s28_stocker_reclaim",
+          "text": "Carefully salvage unbroken merchandise and document the speed-quota damage.",
+          "voiceKeywords": [
+            "salvage",
+            "document",
+            "damage",
+            "quota",
+            "audit"
+          ],
+          "nextNodeId": "node_shift29_stocker",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift29_stocker",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 29: SMART-SHELF SENSOR MAYHEM. Corporate installed weight-sensing brackets in baby formula and cosmetics. Shoppers displacing cans triggers shrieking alarm strobes across three aisles.",
+      "choices": [
+        {
+          "id": "choice_s29_stocker_silence",
+          "text": "Sprint down the aisle with your master barcode to silence the sensor false alarms.",
+          "voiceKeywords": [
+            "sprint",
+            "silence",
+            "barcode",
+            "sensors",
+            "alarms"
+          ],
+          "nextNodeId": "node_shift30_stocker",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift30_stocker",
+      "speakerId": "cheryl",
+      "side": "LEFT",
+      "changeSceneId": "scene_personnel_office",
+      "text": "Shift 30: THE TIMECARD 'ADJUSTMENT'. You check your electronic paystub and discover 20 minutes of approved overtime from Shift 28 was shaved back to 8.00 flat. Cheryl smiles: 'System auto-correction, sweetie.'",
+      "choices": [
+        {
+          "id": "choice_s30_stocker_record",
+          "text": "Demand a printed punch audit log and save a photo on your phone as evidence.",
+          "voiceKeywords": [
+            "audit",
+            "evidence",
+            "photo",
+            "log",
+            "record",
+            "overtime"
+          ],
+          "nextNodeId": "node_shift31_stocker",
+          "metricDeltas": {
+            "store_morale": -5.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift31_stocker",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 31: 1-STAR SURVEY AMBUSH. A receipt survey gave Store #1042 one star: 'Associate was too focused on shelf scanner and didn't beam with enthusiasm.' Todd assigns mandatory coaching.",
+      "choices": [
+        {
+          "id": "choice_s31_stocker_endure",
+          "text": "Endure the 30-minute 'Radiating Warmth' module while taking mental notes on management hypocrisy.",
+          "voiceKeywords": [
+            "endure",
+            "module",
+            "coaching",
+            "warmth",
+            "notes"
+          ],
+          "nextNodeId": "node_shift32_stocker",
+          "metricDeltas": {
+            "store_morale": -10.0,
+            "associate_engagement": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift32_stocker",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 32: MYSTERY SHOPPER INFILTRATION. An undercover corporate auditor dressed in plain clothes tries to bait you into cutting safety strapping on a 10-foot ladder without a spotter.",
+      "choices": [
+        {
+          "id": "choice_s32_stocker_spotter",
+          "text": "Politely refuse until Donna arrives as a spotter, citing safety regulation 4.12.",
+          "voiceKeywords": [
+            "spotter",
+            "refuse",
+            "safety",
+            "donna",
+            "regulation"
+          ],
+          "nextNodeId": "node_shift33_stocker",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift33_stocker",
+      "speakerId": "cheryl",
+      "side": "LEFT",
+      "changeSceneId": "scene_personnel_office",
+      "text": "Shift 33: THE 4.5 OCCURRENCE SQUEEZE. Cheryl calls you into HR holding a thick yellow folder. 'You sit at 4.5 attendance points due to clopening flu days. One more minute late, and system terminates you. Unless... you cover weekend overnights.'",
+      "choices": [
+        {
+          "id": "choice_s33_stocker_stand",
+          "text": "Review the attendance log line-by-line, proving one tardy was due to a faulty timeclock.",
+          "voiceKeywords": [
+            "review",
+            "log",
+            "prove",
+            "faulty",
+            "stand"
+          ],
+          "nextNodeId": "node_shift34_stocker",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift34_stocker",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "SHIFT 34 REGIONAL AUDITOR STANDOFF! District Metric Auditor Vance conducts a surprise operational audit. Henderson and Todd try to blame floor associates for lagging scan scores. Stand your ground against the corporate clipboard!",
+      "triggerBattleEncounterId": "encounter_auditor_standoff",
+      "nextNodeId": "node_shift34_stocker_victory"
+    },
+    {
+      "id": "node_shift34_stocker_victory",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "text": "AUDIT CONFRONTATION SURVIVED! You produce verified TC-70 logs proving that floor stocking velocity matched targets despite faulty software chimes. Auditor Vance reluctantly signs off on store compliance. You survived Act III, but corporate surveillance has shifted to active sabotage!",
+      "nextNodeId": "node_retail_act3_complete"
+    },
+    {
+      "id": "node_shift23_cashier",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift 23: Marsha taps the newly installed POS monitor on Register 4. 'Tachometer is live. 22 IPM baseline. If a line exceeds four carts and your scan speed is low, an amber alarm flashes on my tablet.'",
+      "choices": [
+        {
+          "id": "choice_s23_cashier_rhythm",
+          "text": "Dial into a smooth, rapid barcode scanning rhythm on Register 4.",
+          "voiceKeywords": [
+            "rhythm",
+            "smooth",
+            "rapid",
+            "scan",
+            "cashier"
+          ],
+          "nextNodeId": "node_shift24_cashier",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift24_cashier",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "text": "Shift 24: THE 10-FOOT EYE-CONTACT MANDATE. Management reviews register lane camera footage to verify you greeted approaching shoppers before their cart wheels crossed the yellow line.",
+      "choices": [
+        {
+          "id": "choice_s24_cashier_greet",
+          "text": "Deliver energetic greetings to arriving customers while sliding groceries.",
+          "voiceKeywords": [
+            "greet",
+            "energetic",
+            "eye contact",
+            "customer",
+            "smile"
+          ],
+          "nextNodeId": "node_shift25_cashier",
+          "metricDeltas": {
+            "karen_index": -10.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift25_cashier",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "text": "Shift 25: RESTROOM BIOMETRIC CLEARANCE. You turn off your register light for a bathroom break. Marsha arrives: 'Unscheduled light-off logged. Your lane queue efficiency dropped 6% this hour.'",
+      "choices": [
+        {
+          "id": "choice_s25_cashier_calm",
+          "text": "Remind Marsha calmly that scheduled biological pauses are legally protected.",
+          "voiceKeywords": [
+            "calm",
+            "protected",
+            "legal",
+            "marsha",
+            "break"
+          ],
+          "nextNodeId": "node_shift26_cashier",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift26_cashier",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "text": "Shift 26: CODE SPARK CHAOS. Front end is swamped with 100 holiday shoppers. Brenda's register jams, alarms screech, and customers groan. The algorithmic pressure is at boiling point.",
+      "choices": [
+        {
+          "id": "choice_s26_cashier_lead",
+          "text": "Coordinate the front-end queue with clear voice calls and rapid scans.",
+          "voiceKeywords": [
+            "coordinate",
+            "calls",
+            "lead",
+            "scans",
+            "queue"
+          ],
+          "nextNodeId": "node_shift27_cashier",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "karen_index": -15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift27_cashier",
+      "speakerId": "cheryl",
+      "side": "LEFT",
+      "text": "Shift 27: STORE CARD SQUEEZE. Cheryl tapes a flyer on your register: 'Target: 3 MasterCards today. Cashiers under quota get assigned closing cart duty.' An elderly shopper is paying with cash.",
+      "choices": [
+        {
+          "id": "choice_s27_cashier_skip",
+          "text": "Skip the predatory 29.99% card pitch and protect the pensioner's peace.",
+          "voiceKeywords": [
+            "skip",
+            "protect",
+            "pensioner",
+            "card",
+            "peace"
+          ],
+          "nextNodeId": "node_shift28_cashier",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift28_cashier",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 28: SPEED-CLOCKING PARADOX. The system demands 25 IPM. Four heavy soda cases are on the belt, followed by organic eggs and fresh croissants. Do you whip them or protect the food?",
+      "choices": [
+        {
+          "id": "choice_s28_cashier_eggs",
+          "text": "Freeze the timer using Subtotal and carefully pack the eggs safely on top.",
+          "voiceKeywords": [
+            "subtotal",
+            "freeze",
+            "pack",
+            "eggs",
+            "careful"
+          ],
+          "nextNodeId": "node_shift29_cashier",
+          "metricDeltas": {
+            "karen_index": -15.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift29_cashier",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "text": "Shift 29: SMART-SHELF INTERCOM BLINDING. Front-end concourse speakers blare false weight sensor alerts from grocery aisles every 90 seconds, drowning out register conversations.",
+      "choices": [
+        {
+          "id": "choice_s29_cashier_clear",
+          "text": "Key the intercom to request supervisor manual overrides on the noisy sensors.",
+          "voiceKeywords": [
+            "intercom",
+            "override",
+            "request",
+            "sensors",
+            "clear"
+          ],
+          "nextNodeId": "node_shift30_cashier",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "store_morale": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift30_cashier",
+      "speakerId": "cheryl",
+      "side": "LEFT",
+      "changeSceneId": "scene_personnel_office",
+      "text": "Shift 30: TIMECARD SHAVING. You notice 25 minutes of overtime from Saturday's Code Spark was silently trimmed from your digital timecard to prevent company overtime payouts.",
+      "choices": [
+        {
+          "id": "choice_s30_cashier_print",
+          "text": "Print register transaction timestamps showing you were actively scanning at 11:25 PM.",
+          "voiceKeywords": [
+            "print",
+            "timestamps",
+            "register",
+            "overtime",
+            "proof"
+          ],
+          "nextNodeId": "node_shift31_cashier",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift31_cashier",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift 31: 1-STAR SURVEY AMBUSH. A receipt survey complains: 'Cashier scanned my yogurt too mechanically.' Marsha schedules a 45-minute re-training on 'Projecting Sincere Customer Joy.'",
+      "choices": [
+        {
+          "id": "choice_s31_cashier_zen",
+          "text": "Complete the training calmly while recognizing it as corporate liability deflection.",
+          "voiceKeywords": [
+            "complete",
+            "calm",
+            "zen",
+            "training",
+            "joy"
+          ],
+          "nextNodeId": "node_shift32_cashier",
+          "metricDeltas": {
+            "store_morale": -5.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift32_cashier",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 32: MYSTERY SHOPPER TRAP. A corporate auditor attempts to bait you into accepting an expired $\\$50$ manufacturer coupon without scanning the barcode on the back.",
+      "choices": [
+        {
+          "id": "choice_s32_cashier_inspect",
+          "text": "Inspect the coupon terms, spot the expired date, and politely decline the override.",
+          "voiceKeywords": [
+            "inspect",
+            "terms",
+            "expired",
+            "decline",
+            "coupon"
+          ],
+          "nextNodeId": "node_shift33_cashier",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift33_cashier",
+      "speakerId": "cheryl",
+      "side": "LEFT",
+      "changeSceneId": "scene_personnel_office",
+      "text": "Shift 33: THE 4.5 OCCURRENCE SQUEEZE. Cheryl slides the disciplinary file across her desk: 'One more absence point and you're terminated, associate. Unless you work double-shift Friday.'",
+      "choices": [
+        {
+          "id": "choice_s33_cashier_challenge",
+          "text": "Challenge the attendance point accrued when the timeclock server was down.",
+          "voiceKeywords": [
+            "challenge",
+            "server",
+            "attendance",
+            "point",
+            "error"
+          ],
+          "nextNodeId": "node_shift34_cashier",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift34_cashier",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "SHIFT 34 REGIONAL AUDITOR STANDOFF! District Auditor Vance inspects Register Lane 4 with a compliance checklist. Henderson attempts to blame cashiers for queue bottlenecks. Defend your front end!",
+      "triggerBattleEncounterId": "encounter_auditor_standoff",
+      "nextNodeId": "node_shift34_cashier_victory"
+    },
+    {
+      "id": "node_shift34_cashier_victory",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "text": "AUDIT PASSED WITH FLYING COLORS! You present unedited lane throughput logs showing 24 IPM and zero register shortages. Auditor Vance signs the certification report. Act III is conquered, but the corporate frame-job looms ahead!",
+      "nextNodeId": "node_retail_act3_complete"
+    },
+    {
+      "id": "node_shift23_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Shift 23: Mack points to the digital infrared sensor over the conveyor line: 'Pushes 900 cartons an hour or the strobe flashes yellow. Corporate thinks unloading freight is playing a video game.'",
+      "choices": [
+        {
+          "id": "choice_s23_unloader_steady",
+          "text": "Establish a safe, rhythmic unloading pace with Mack, ignoring the machine strobe.",
+          "voiceKeywords": [
+            "steady",
+            "rhythm",
+            "safe",
+            "pace",
+            "unloader"
+          ],
+          "nextNodeId": "node_shift24_unloader",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift24_unloader",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "text": "Shift 24: THE 10-FOOT SAFETY AUDIT. Todd conducts an unannounced dock audit, timing associates on how fast they engage trailer wheel chocks and dock plate locks with a stopwatch.",
+      "choices": [
+        {
+          "id": "choice_s24_unloader_chock",
+          "text": "Engage the trailer wheel chocks and safety lock bar with textbook precision.",
+          "voiceKeywords": [
+            "chock",
+            "safety",
+            "lock",
+            "textbook",
+            "precision"
+          ],
+          "nextNodeId": "node_shift25_unloader",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift25_unloader",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "text": "Shift 25: DOCK BIO-BREAK AUDIT. Todd knocks on the backroom restroom door at 3 minutes 50 seconds: 'Cartons are backing up in Bay 2, associate! Efficiency target is under threat!'",
+      "choices": [
+        {
+          "id": "choice_s25_unloader_shout",
+          "text": "Tell Todd to check the OSHA regulations on basic human hygiene before knocking again.",
+          "voiceKeywords": [
+            "osha",
+            "hygiene",
+            "regulations",
+            "todd",
+            "rights"
+          ],
+          "nextNodeId": "node_shift26_unloader",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift26_unloader",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift 26: CODE SPARK DOCK DRAG. The front end calls an all-store emergency. Dock workers are pulled to bag groceries while freight sits baking in 90-degree trailers.",
+      "choices": [
+        {
+          "id": "choice_s26_unloader_bag",
+          "text": "Help clear front-end lines rapidly so the dock crew can return to the freight.",
+          "voiceKeywords": [
+            "help",
+            "bag",
+            "groceries",
+            "spark",
+            "front end"
+          ],
+          "nextNodeId": "node_shift27_unloader",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift27_unloader",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Shift 27: STORE CARD QUOTA ON DOCK TRUCK DRIVERS. Henderson insists dock associates hand credit card applications to regional freight delivery truck drivers. Mack laughs in disbelief.",
+      "choices": [
+        {
+          "id": "choice_s27_unloader_joke",
+          "text": "Share a laugh with the truck driver while handing over the receiving bill of lading.",
+          "voiceKeywords": [
+            "laugh",
+            "driver",
+            "lading",
+            "bill",
+            "delivery"
+          ],
+          "nextNodeId": "node_shift28_unloader",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift28_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "Shift 28: SPEED-CLOCKING FREIGHT CARNAGE. To meet the trailer unload deadline, night crew threw heavy patio pavers onto fragile glassware cartons, shattering three cases.",
+      "choices": [
+        {
+          "id": "choice_s28_unloader_log",
+          "text": "Document the improper pallet stacking and log the damaged freight in Claims.",
+          "voiceKeywords": [
+            "document",
+            "claims",
+            "damage",
+            "freight",
+            "log"
+          ],
+          "nextNodeId": "node_shift29_unloader",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift29_unloader",
+      "speakerId": "derrick",
+      "side": "LEFT",
+      "text": "Shift 29: OPTICAL SENSOR OVERRIDE. The conveyor sensor won't stop beeping because a bent roller is vibrating. Derrick kicks the sensor box with his steel-toe boot.",
+      "choices": [
+        {
+          "id": "choice_s29_unloader_align",
+          "text": "Properly align the roller bracket with a wrench to silence the false alert.",
+          "voiceKeywords": [
+            "align",
+            "roller",
+            "wrench",
+            "sensor",
+            "fix"
+          ],
+          "nextNodeId": "node_shift30_unloader",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift30_unloader",
+      "speakerId": "cheryl",
+      "side": "LEFT",
+      "changeSceneId": "scene_personnel_office",
+      "text": "Shift 30: TIMECARD SHAVING. You discover your 30 minutes of heavy equipment overtime from the weekend was rounded down on the portal. Cheryl claims: 'Unauthorized overtime is erased.'",
+      "choices": [
+        {
+          "id": "choice_s30_unloader_proof",
+          "text": "Present the receiving trailer gate log showing the final truck departed at 11:30 PM.",
+          "voiceKeywords": [
+            "gate",
+            "log",
+            "trailer",
+            "proof",
+            "overtime"
+          ],
+          "nextNodeId": "node_shift31_unloader",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift31_unloader",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Shift 31: 1-STAR SURVEY AMBUSH. A customer complained that 'backroom pallet jacks were making squeaking noises audible in the home goods aisle.' Todd demands an equipment noise audit.",
+      "choices": [
+        {
+          "id": "choice_s31_unloader_grease",
+          "text": "Grease the pallet jack wheel bearings with Mack while shaking your head at the absurdity.",
+          "voiceKeywords": [
+            "grease",
+            "bearings",
+            "jack",
+            "mack",
+            "noise"
+          ],
+          "nextNodeId": "node_shift32_unloader",
+          "metricDeltas": {
+            "store_morale": 5.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift32_unloader",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 32: MYSTERY SHOPPER ON THE DOCKS. A visitor claiming to be a customer wanders into the freight bay asking to buy merchandise directly off an unworked pallet for cash.",
+      "choices": [
+        {
+          "id": "choice_s32_unloader_escort",
+          "text": "Stop them immediately, cite backroom safety regulations, and escort them to the sales floor.",
+          "voiceKeywords": [
+            "escort",
+            "regulations",
+            "stop",
+            "safety",
+            "sales floor"
+          ],
+          "nextNodeId": "node_shift33_unloader",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift33_unloader",
+      "speakerId": "cheryl",
+      "side": "LEFT",
+      "changeSceneId": "scene_personnel_office",
+      "text": "Shift 33: THE 4.5 OCCURRENCE SQUEEZE. Cheryl pulls up your attendance file: 'You are at 4.5 occurrences, associate. One tardy and you are out. Agree to cover weekend night freight to stay.'",
+      "choices": [
+        {
+          "id": "choice_s33_unloader_defend",
+          "text": "Show that Mack approved your emergency doctor appointment in writing.",
+          "voiceKeywords": [
+            "mack",
+            "approved",
+            "doctor",
+            "writing",
+            "defend"
+          ],
+          "nextNodeId": "node_shift34_unloader",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift34_unloader",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "SHIFT 34 REGIONAL AUDITOR STANDOFF! District Auditor Vance inspects Receiving Bay 2 with a clipboard. Henderson tries to blame dock associates for trailer demurrage fees. Stand your ground!",
+      "triggerBattleEncounterId": "encounter_auditor_standoff",
+      "nextNodeId": "node_shift34_unloader_victory"
+    },
+    {
+      "id": "node_shift34_unloader_victory",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "DOCK COMPLIANCE CERTIFIED! You produce flawless bill-of-lading records and trailer turn times, forcing Auditor Vance to approve Bay 2 operations. Henderson slinks away. Act III is cleared, but the frame job is brewing!",
+      "nextNodeId": "node_retail_act3_complete"
+    },
+    {
+      "id": "node_shift23_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 23: Julian points to the new counter sensor: 'Algorithmic dwell-time monitor. If you consult with a customer for over seven minutes without ringing a sale, the screen flashes yellow.'",
+      "choices": [
+        {
+          "id": "choice_s23_spec_tempo",
+          "text": "Master the consultation pacing to deliver great advice within corporate time windows.",
+          "voiceKeywords": [
+            "tempo",
+            "consultation",
+            "pacing",
+            "advice",
+            "specialist"
+          ],
+          "nextNodeId": "node_shift24_specialist",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift24_specialist",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "text": "Shift 24: 10-FOOT RULE IN SPECIALTY. Todd audits customer greeting times in the TV showroom, checking if associates pitch soundbar bundles within five seconds of arrival.",
+      "choices": [
+        {
+          "id": "choice_s24_spec_bundle",
+          "text": "Greet shoppers warmly with home entertainment solutions before Todd's timer dings.",
+          "voiceKeywords": [
+            "greet",
+            "solutions",
+            "timer",
+            "entertainment",
+            "warm"
+          ],
+          "nextNodeId": "node_shift25_specialist",
+          "metricDeltas": {
+            "karen_index": -10.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift25_specialist",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "text": "Shift 25: SPECIALTY BIO-BREAK STOPWATCH. Todd knocks on the restroom door at 3:55: 'Showcase cases are unattended, associate! Dwell metric is slipping!'",
+      "choices": [
+        {
+          "id": "choice_s25_spec_calm",
+          "text": "Remind Todd that Julian was covering the showcase counter during your 4-minute pause.",
+          "voiceKeywords": [
+            "julian",
+            "covering",
+            "counter",
+            "showcase",
+            "calm"
+          ],
+          "nextNodeId": "node_shift26_specialist",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift26_specialist",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift 26: CODE SPARK SPECIALTY DRAG. Marsha pages all certified staff to front registers. High-end electronics shoppers are left waiting while you ring up frozen pizzas.",
+      "choices": [
+        {
+          "id": "choice_s26_spec_rapid",
+          "text": "Rapid-scan the grocery line so you can return to the specialty counter before customers leave.",
+          "voiceKeywords": [
+            "rapid",
+            "scan",
+            "groceries",
+            "return",
+            "specialty"
+          ],
+          "nextNodeId": "node_shift27_specialist",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift27_specialist",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 27: FINANCING CARD MANDATE. Henderson demands 2.0 store cards per specialty shift: 'Tell them it's 0% for six months! Don't mention the 29.99% retroactive interest!'",
+      "choices": [
+        {
+          "id": "choice_s27_spec_transparent",
+          "text": "Explain financing terms honestly to customers, refusing to deceive shoppers.",
+          "voiceKeywords": [
+            "honest",
+            "transparent",
+            "terms",
+            "shopper",
+            "protect"
+          ],
+          "nextNodeId": "node_shift28_specialist",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift28_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "Shift 28: SPEED-CLOCKING RETURNS PARADOX. To hit customer turnover quotas, Chad rushed open-box returns without testing, leaving three broken iPads on display shelves.",
+      "choices": [
+        {
+          "id": "choice_s28_spec_inspect",
+          "text": "Inspect and serial-tag every open-box return properly before putting it on display.",
+          "voiceKeywords": [
+            "inspect",
+            "serial",
+            "tag",
+            "returns",
+            "display"
+          ],
+          "nextNodeId": "node_shift29_specialist",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift29_specialist",
+      "speakerId": "chad",
+      "side": "RIGHT",
+      "text": "Shift 29: SMART-SHELF SENSOR FALSE ALARMS. The security peg-hooks on high-end wireless headphones keep sounding false alarm sirens every time a shopper touches a box.",
+      "choices": [
+        {
+          "id": "choice_s29_spec_recalibrate",
+          "text": "Recalibrate the magnetic peg-hook sensor keys with Julian to stop the piercing noise.",
+          "voiceKeywords": [
+            "recalibrate",
+            "peghook",
+            "sensor",
+            "keys",
+            "noise"
+          ],
+          "nextNodeId": "node_shift30_specialist",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "store_morale": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift30_specialist",
+      "speakerId": "cheryl",
+      "side": "LEFT",
+      "changeSceneId": "scene_personnel_office",
+      "text": "Shift 30: TIMECARD SHAVING. You discover your 25 minutes of closing lock-up overtime was deleted from the electronic timecard system. Cheryl claims: 'The system auto-clears extra minutes.'",
+      "choices": [
+        {
+          "id": "choice_s30_spec_log",
+          "text": "Produce the digital safe lock log showing you set the security vault at 11:25 PM.",
+          "voiceKeywords": [
+            "vault",
+            "safe",
+            "log",
+            "overtime",
+            "proof"
+          ],
+          "nextNodeId": "node_shift31_specialist",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift31_specialist",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 31: 1-STAR SURVEY AMBUSH. A shopper left a 1-star survey: 'Associate wouldn't negotiate on the price of an Apple iPad.' Todd assigns a mandatory lecture on customer rapport.",
+      "choices": [
+        {
+          "id": "choice_s31_spec_lecture",
+          "text": "Politely remind Todd that corporate strictly prohibits store-level Apple price bargaining.",
+          "voiceKeywords": [
+            "apple",
+            "prohibits",
+            "policy",
+            "remind",
+            "todd"
+          ],
+          "nextNodeId": "node_shift32_specialist",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift32_specialist",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 32: MYSTERY SHOPPER STING. An undercover corporate shopper tries to persuade you to sell an open-box 4K drone for cash under the table without ringing it up.",
+      "choices": [
+        {
+          "id": "choice_s32_spec_protocol",
+          "text": "Direct them immediately to the register and process the transaction with official receipt.",
+          "voiceKeywords": [
+            "receipt",
+            "register",
+            "official",
+            "protocol",
+            "refuse"
+          ],
+          "nextNodeId": "node_shift33_specialist",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift33_specialist",
+      "speakerId": "cheryl",
+      "side": "LEFT",
+      "changeSceneId": "scene_personnel_office",
+      "text": "Shift 33: THE 4.5 OCCURRENCE SQUEEZE. Cheryl waves your attendance sheet: 'Sitting at 4.5 points. One more minute late and you're gone. Agree to cover weekend electronics closes.'",
+      "choices": [
+        {
+          "id": "choice_s33_spec_records",
+          "text": "Prove that the automated door reader misread your badge swipe on Shift 21.",
+          "voiceKeywords": [
+            "door",
+            "badge",
+            "swipe",
+            "reader",
+            "proof"
+          ],
+          "nextNodeId": "node_shift34_specialist",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift34_specialist",
+      "speakerId": "henderson",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "SHIFT 34 REGIONAL AUDITOR STANDOFF! District Auditor Vance audits the Specialty Showcase. Henderson attempts to blame associates for inventory cycle count delays. Overcome the audit!",
+      "triggerBattleEncounterId": "encounter_auditor_standoff",
+      "nextNodeId": "node_shift34_specialist_victory"
+    },
+    {
+      "id": "node_shift34_specialist_victory",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "SHOWCASE AUDIT PERFECT! Julian presents spotless high-ticket inventory serial logs, proving zero shrinkage in specialty. Auditor Vance signs the passing grade. Act III is won, but the shadow of Act IV's frame-job draws near!",
+      "nextNodeId": "node_retail_act3_complete"
+    },
+    {
+      "id": "node_retail_act3_complete",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "ACT THREE: THE CORPORATE GAZE COMPLETED! You conquered impossible algorithmic speed quotas, resisted predatory credit mandates, and outmaneuvered the Regional Metric Auditor. But Henderson and Clint are growing desperate. High-ticket shrinkage is climbing\u2014and they need a scapegoat. Welcome to Act IV: The Frame Job & Internal Espionage!",
       "setFlagOnEnter": "game_completed"
     }
   ]

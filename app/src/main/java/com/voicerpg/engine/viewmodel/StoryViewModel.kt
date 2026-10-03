@@ -973,17 +973,28 @@ class StoryViewModel(
         var targetNode = newNode
         val playerTrack = _state.value.player.heroClassId.lowercase()
         val incidentJustResolved = (newNode.id == "node_incident_return")
+        val isAct3 = _state.value.narrativeFlags["flag_act3_started"] == true || newNode.setFlagOnEnter == "flag_act3_started"
         val isAct2 = _state.value.narrativeFlags["flag_act2_started"] == true || newNode.setFlagOnEnter == "flag_act2_started"
         if (incidentJustResolved) {
-            val trackHubCandidate = if (isAct2) "node_hub_${playerTrack}_act2" else "node_hub_$playerTrack"
+            val trackHubCandidate = when {
+                isAct3 -> "node_hub_${playerTrack}_act3"
+                isAct2 -> "node_hub_${playerTrack}_act2"
+                else -> "node_hub_$playerTrack"
+            }
             val fallbackHub = StoryScript.ALL_NODES[trackHubCandidate]?.id ?: StoryScript.ALL_NODES["node_hub_$playerTrack"]?.id ?: "node_shift1_start"
             val returnTargetId = _state.value.activeHubNodeId ?: fallbackHub
             targetNode = StoryScript.ALL_NODES[returnTargetId] ?: StoryScript.ALL_NODES[fallbackHub] ?: newNode
         } else if (playerTrack.isNotBlank()) {
-            val variantAct2 = if (isAct2 && targetNode.id == "node_hub") "node_hub_${playerTrack}_act2" else null
+            val variantActHub = if (targetNode.id == "node_hub") {
+                when {
+                    isAct3 -> "node_hub_${playerTrack}_act3"
+                    isAct2 -> "node_hub_${playerTrack}_act2"
+                    else -> "node_hub_$playerTrack"
+                }
+            } else null
             val variant1 = "${targetNode.id}_$playerTrack"
             val variant2 = targetNode.id.replace("_start", "") + "_$playerTrack"
-            val trackSpecificNode = (if (variantAct2 != null) StoryScript.ALL_NODES[variantAct2] else null)
+            val trackSpecificNode = (if (variantActHub != null) StoryScript.ALL_NODES[variantActHub] else null)
                 ?: StoryScript.ALL_NODES[variant1]
                 ?: StoryScript.ALL_NODES[variant2]
             if (trackSpecificNode != null) {

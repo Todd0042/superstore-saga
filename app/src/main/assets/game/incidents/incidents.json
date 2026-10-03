@@ -434,6 +434,196 @@
       "applicableTracks": ["stocker", "specialist"],
       "oneTimeOnly": true,
       "cooldownTurns": 2
+    },
+    {
+      "id": "incident_tachometer_idle_stocker",
+      "title": "Aisle 4 Tachometer 45-Second Idle Warning",
+      "baseWeight": 40.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_tachometer_idle_stocker_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act3_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_tachometer_idle_stocker",
+      "applicableTracks": ["stocker"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_tachometer_idle_cashier",
+      "title": "Register 4 Scanning Velocity Alarm",
+      "baseWeight": 40.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_tachometer_idle_cashier_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act3_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_tachometer_idle_cashier",
+      "applicableTracks": ["cashier"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_tachometer_idle_unloader",
+      "title": "Conveyor Belt Cases-Per-Hour Strobe",
+      "baseWeight": 40.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_tachometer_idle_unloader_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act3_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_tachometer_idle_unloader",
+      "applicableTracks": ["unloader"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_tachometer_idle_specialist",
+      "title": "Counter Consultation Dwell Penalty",
+      "baseWeight": 40.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_tachometer_idle_specialist_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act3_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_tachometer_idle_specialist",
+      "applicableTracks": ["specialist"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_restroom_stopwatch_stocker",
+      "title": "Aisle 9 Bio-Break Stopwatch Check",
+      "baseWeight": 40.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_restroom_stopwatch_stocker_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act3_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_restroom_stopwatch_stocker",
+      "applicableTracks": ["stocker"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_restroom_stopwatch_cashier",
+      "title": "Front-End Light Off Bio-Break Audit",
+      "baseWeight": 40.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_restroom_stopwatch_cashier_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act3_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_restroom_stopwatch_cashier",
+      "applicableTracks": ["cashier"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_credit_card_squeeze_cashier",
+      "title": "The 29.99% APR Store Card Quota Pressure",
+      "baseWeight": 40.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_credit_card_squeeze_cashier_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act3_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_credit_card_squeeze_cashier",
+      "applicableTracks": ["cashier"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_credit_card_squeeze_specialist",
+      "title": "Financing Plan Hard-Sell Mandate",
+      "baseWeight": 40.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_credit_card_squeeze_specialist_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act3_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_credit_card_squeeze_specialist",
+      "applicableTracks": ["specialist"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_speed_clock_crushed_eggs",
+      "title": "Velocity vs. Broken Merchandise Paradox",
+      "baseWeight": 40.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_speed_clock_crushed_eggs_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act3_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_speed_clock_crushed_eggs",
+      "applicableTracks": ["cashier", "stocker"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_mystery_shopper_audit",
+      "title": "Undercover Corporate Mystery Shopper Trap",
+      "baseWeight": 40.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_mystery_shopper_audit_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act3_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_mystery_shopper_audit",
+      "applicableTracks": ["stocker", "specialist", "cashier"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
     }
   ]
 }
