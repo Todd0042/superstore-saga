@@ -261,6 +261,10 @@ class MainActivity : ComponentActivity() {
                                     tutorialBattleViewModel.resetTutorial()
                                     storyViewModel.openTutorial()
                                 },
+                                isMiniGameTestMenuOpen = storyState.isMiniGameTestMenuOpen,
+                                onOpenMiniGameTestMenu = { storyViewModel.openMiniGameTestMenu() },
+                                onCloseMiniGameTestMenu = { storyViewModel.closeMiniGameTestMenu() },
+                                onLaunchMiniGame = { gameId -> storyViewModel.triggerMiniGame(gameId) },
                                 onStartListening = {
                                     speechManager.startListening(
                                         onResult = { storyViewModel.handleStoryVoiceInput(it) }

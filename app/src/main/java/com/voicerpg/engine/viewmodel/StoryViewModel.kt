@@ -67,7 +67,8 @@ data class StoryState(
     val isPureStoryMode: Boolean = false,
     val isStoryAutoPlayPaused: Boolean = false,
     val dynamicMetrics: Map<String, Float> = emptyMap(),
-    val activeHubNodeId: String? = null
+    val activeHubNodeId: String? = null,
+    val isMiniGameTestMenuOpen: Boolean = false
 )
 
 class StoryViewModel(
@@ -1285,6 +1286,14 @@ class StoryViewModel(
         applyNodeTransition(targetNode)
     }
 
+    fun openMiniGameTestMenu() {
+        _state.value = _state.value.copy(isMiniGameTestMenuOpen = true)
+    }
+
+    fun closeMiniGameTestMenu() {
+        _state.value = _state.value.copy(isMiniGameTestMenuOpen = false)
+    }
+
     fun triggerMiniGame(miniGameId: String) {
         cancelPendingAutoAdvance()
         cancelPendingStoryMode()
@@ -1302,9 +1311,12 @@ class StoryViewModel(
         } else {
             speechManager.cancel()
             combatNarrator.stop()
+            val prev = _state.value.gameScreen
             _state.value = _state.value.copy(
                 gameScreen = GameScreen.MINI_GAME,
-                activeMiniGameConfig = config
+                previousScreen = prev,
+                activeMiniGameConfig = config,
+                isMiniGameTestMenuOpen = false
             )
         }
     }
@@ -1322,6 +1334,17 @@ class StoryViewModel(
     fun onMiniGameFinished(outcome: MiniGameOutcome) {
         cancelPendingAutoAdvance()
         cancelPendingStoryMode()
+
+        if (_state.value.previousScreen == GameScreen.TITLE) {
+            _state.value = _state.value.copy(
+                gameScreen = GameScreen.TITLE,
+                previousScreen = null,
+                activeMiniGameConfig = null,
+                isMiniGameTestMenuOpen = false
+            )
+            return
+        }
+
         val lastNode = _state.value.currentNode
 
         val updatedMetrics = _state.value.dynamicMetrics.toMutableMap()
@@ -1652,6 +1675,34 @@ class StoryViewModel(
                 }
                 lower.contains("options") || lower.contains("settings") -> {
                     onOpenOptions?.invoke()
+                    return
+                }
+                lower.contains("test minigame") || lower.contains("test minigames") || lower.contains("arcade") || lower.contains("minigames") || lower.contains("mini game") -> {
+                    openMiniGameTestMenu()
+                    return
+                }
+                _state.value.isMiniGameTestMenuOpen && (lower.contains("close") || lower.contains("cancel") || lower.contains("back")) -> {
+                    closeMiniGameTestMenu()
+                    return
+                }
+                lower.contains("barcode blaster") -> {
+                    triggerMiniGame("barcode_blaster")
+                    return
+                }
+                lower.contains("pallet haul") || lower.contains("aisle dodger") -> {
+                    triggerMiniGame("pallet_haul")
+                    return
+                }
+                lower.contains("baler") -> {
+                    triggerMiniGame("baler_compactor")
+                    return
+                }
+                lower.contains("counter commotion") -> {
+                    triggerMiniGame("counter_commotion")
+                    return
+                }
+                lower.contains("cart corral") -> {
+                    triggerMiniGame("cart_corral")
                     return
                 }
             }

@@ -165,4 +165,75 @@ class MiniGameIntegrationTest {
             assertNotNull("Node '${node.id}' triggers unknown mini-game '$gameId'", config)
         }
     }
+
+    @Test
+    fun testTitleScreenMiniGameTestingFlow() {
+        val viewModel = createViewModel()
+        assertEquals(GameScreen.TITLE, viewModel.state.value.gameScreen)
+        assertFalse(viewModel.state.value.isMiniGameTestMenuOpen)
+
+        // Open QA test menu
+        viewModel.openMiniGameTestMenu()
+        assertTrue(viewModel.state.value.isMiniGameTestMenuOpen)
+
+        // Close QA test menu
+        viewModel.closeMiniGameTestMenu()
+        assertFalse(viewModel.state.value.isMiniGameTestMenuOpen)
+
+        // Launch mini-game from title test menu
+        viewModel.triggerMiniGame("baler_compactor")
+        assertEquals(GameScreen.MINI_GAME, viewModel.state.value.gameScreen)
+        assertEquals(GameScreen.TITLE, viewModel.state.value.previousScreen)
+        assertEquals("baler_compactor", viewModel.state.value.activeMiniGameConfig?.id)
+        assertFalse(viewModel.state.value.isMiniGameTestMenuOpen)
+
+        // Skip / finish mini-game
+        viewModel.onSkipMiniGame()
+
+        // Clean return to TITLE screen without corrupting story state
+        assertEquals(GameScreen.TITLE, viewModel.state.value.gameScreen)
+        assertNull(viewModel.state.value.previousScreen)
+        assertNull(viewModel.state.value.activeMiniGameConfig)
+        assertFalse(viewModel.state.value.isMiniGameTestMenuOpen)
+    }
+
+    @Test
+    fun testTitleScreenVoiceMiniGameTriggers() {
+        val viewModel = createViewModel()
+        assertEquals(GameScreen.TITLE, viewModel.state.value.gameScreen)
+
+        // Voice "test minigames" opens dialog
+        viewModel.handleStoryVoiceInput("test minigames")
+        assertTrue(viewModel.state.value.isMiniGameTestMenuOpen)
+
+        // Voice "close" closes dialog
+        viewModel.handleStoryVoiceInput("close")
+        assertFalse(viewModel.state.value.isMiniGameTestMenuOpen)
+
+        // Voice "arcade" opens dialog
+        viewModel.handleStoryVoiceInput("arcade")
+        assertTrue(viewModel.state.value.isMiniGameTestMenuOpen)
+
+        // Voice direct triggers launch games
+        val gameVoiceMap = mapOf(
+            "barcode blaster" to "barcode_blaster",
+            "pallet haul" to "pallet_haul",
+            "baler" to "baler_compactor",
+            "counter commotion" to "counter_commotion",
+            "cart corral" to "cart_corral"
+        )
+
+        for ((voiceCmd, expectedId) in gameVoiceMap) {
+            viewModel.handleStoryVoiceInput(voiceCmd)
+            assertEquals(GameScreen.MINI_GAME, viewModel.state.value.gameScreen)
+            assertEquals(expectedId, viewModel.state.value.activeMiniGameConfig?.id)
+            assertEquals(GameScreen.TITLE, viewModel.state.value.previousScreen)
+            assertFalse(viewModel.state.value.isMiniGameTestMenuOpen)
+
+            // Return to title
+            viewModel.onSkipMiniGame()
+            assertEquals(GameScreen.TITLE, viewModel.state.value.gameScreen)
+            assertNull(viewModel.state.value.activeMiniGameConfig)
+        }
+    }
 }
