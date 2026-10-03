@@ -852,6 +852,167 @@
       ],
       "oneTimeOnly": true,
       "cooldownTurns": 2
+    },
+    {
+      "id": "incident_tilted_camera_stocker",
+      "title": "Aisle 4 Tilted Dome Camera Setup",
+      "baseWeight": 45.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_tilted_camera_stocker_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act4_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act5_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_tilted_camera_stocker",
+      "applicableTracks": ["stocker"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_tilted_camera_specialist",
+      "title": "Showcase Blindspot Angle Discovery",
+      "baseWeight": 45.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_tilted_camera_specialist_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act4_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act5_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_tilted_camera_specialist",
+      "applicableTracks": ["specialist"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_planted_receipt_void_cashier",
+      "title": "The Forged Clearance Void Slip",
+      "baseWeight": 45.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_planted_receipt_void_cashier_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act4_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act5_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_planted_receipt_void_cashier",
+      "applicableTracks": ["cashier"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_forged_manifest_unloader",
+      "title": "The Forged Receiving Initial Slip",
+      "baseWeight": 45.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_forged_manifest_unloader_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act4_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act5_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_forged_manifest_unloader",
+      "applicableTracks": ["unloader"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_whispering_breakroom_circle",
+      "title": "The Sudden Breakroom Silence",
+      "baseWeight": 45.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_whispering_breakroom_circle_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act4_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act5_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_whispering_breakroom_circle",
+      "applicableTracks": ["stocker", "cashier", "unloader", "specialist"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_anonymous_ethics_interview",
+      "title": "Anonymous Ethics Hotline Summons",
+      "baseWeight": 45.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_anonymous_ethics_interview_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act4_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act5_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_anonymous_ethics_interview",
+      "applicableTracks": ["stocker", "cashier", "specialist"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
+    },
+    {
+      "id": "incident_security_bag_search_exit",
+      "title": "Closing Door Personal Bag Search",
+      "baseWeight": 45.0,
+      "conditions": [
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_incident_incident_security_bag_search_exit_done"
+        },
+        {
+          "type": "HAS_FLAG",
+          "flag": "flag_act4_started"
+        },
+        {
+          "type": "NOT_FLAG",
+          "flag": "flag_act5_started"
+        }
+      ],
+      "triggerNodeId": "node_incident_security_bag_search_exit",
+      "applicableTracks": ["cashier", "stocker", "unloader", "specialist"],
+      "oneTimeOnly": true,
+      "cooldownTurns": 2
     }
   ]
 }

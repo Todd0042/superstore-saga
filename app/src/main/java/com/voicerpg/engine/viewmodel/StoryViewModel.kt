@@ -973,10 +973,14 @@ class StoryViewModel(
         var targetNode = newNode
         val playerTrack = _state.value.player.heroClassId.lowercase()
         val incidentJustResolved = (newNode.id == "node_incident_return")
+        val isAct5 = _state.value.narrativeFlags["flag_act5_started"] == true || newNode.setFlagOnEnter == "flag_act5_started"
+        val isAct4 = _state.value.narrativeFlags["flag_act4_started"] == true || newNode.setFlagOnEnter == "flag_act4_started"
         val isAct3 = _state.value.narrativeFlags["flag_act3_started"] == true || newNode.setFlagOnEnter == "flag_act3_started"
         val isAct2 = _state.value.narrativeFlags["flag_act2_started"] == true || newNode.setFlagOnEnter == "flag_act2_started"
         if (incidentJustResolved) {
             val trackHubCandidate = when {
+                isAct5 -> "node_hub_${playerTrack}_act5"
+                isAct4 -> "node_hub_${playerTrack}_act4"
                 isAct3 -> "node_hub_${playerTrack}_act3"
                 isAct2 -> "node_hub_${playerTrack}_act2"
                 else -> "node_hub_$playerTrack"
@@ -987,6 +991,8 @@ class StoryViewModel(
         } else if (playerTrack.isNotBlank()) {
             val variantActHub = if (targetNode.id == "node_hub") {
                 when {
+                    isAct5 -> "node_hub_${playerTrack}_act5"
+                    isAct4 -> "node_hub_${playerTrack}_act4"
                     isAct3 -> "node_hub_${playerTrack}_act3"
                     isAct2 -> "node_hub_${playerTrack}_act2"
                     else -> "node_hub_$playerTrack"

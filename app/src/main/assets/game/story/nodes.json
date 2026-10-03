@@ -3328,6 +3328,331 @@
       "nextNodeId": "node_incident_return"
     },
     {
+      "id": "node_incident_tilted_camera_stocker",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "While zoning Aisle 4, you notice the smoked acrylic surveillance dome directly overhead has been physically tilted 45 degrees downward, pointing at blank concrete. A stack of expensive power tool combo kits sits in the newly created blindspot.",
+      "choices": [
+        {
+          "id": "choice_camera_stocker_photo",
+          "text": "Take a timestamped photo of the altered camera dome and move the tools into plain sight.",
+          "voiceKeywords": [
+            "photo",
+            "blindspot",
+            "evidence",
+            "camera",
+            "move",
+            "tools"
+          ],
+          "nextNodeId": "node_incident_tilted_camera_resolve",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": -5.0
+          }
+        },
+        {
+          "id": "choice_camera_stocker_report",
+          "text": "Report the suspicious camera angle directly to Todd on the sales floor radio.",
+          "voiceKeywords": [
+            "report",
+            "todd",
+            "radio",
+            "angle",
+            "camera"
+          ],
+          "nextNodeId": "node_incident_tilted_camera_resolve",
+          "metricDeltas": {
+            "labor_squeeze": 10.0,
+            "store_morale": -10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_tilted_camera_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "Julian gestures subtly toward the ceiling above the high-ticket camera case: 'Look at dome camera 14. Clint adjusted the bracket this morning. It's aiming at the floor tiles instead of the DSLR display. Someone's setting up an unmonitored extraction zone.'",
+      "choices": [
+        {
+          "id": "choice_camera_spec_keys",
+          "text": "Double-lock the display cabinet and keep the master key pinned to your belt.",
+          "voiceKeywords": [
+            "lock",
+            "cabinet",
+            "keys",
+            "belt",
+            "secure"
+          ],
+          "nextNodeId": "node_incident_tilted_camera_resolve",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": -5.0
+          }
+        },
+        {
+          "id": "choice_camera_spec_log",
+          "text": "Log the camera misalignment in the electronics daily asset register.",
+          "voiceKeywords": [
+            "log",
+            "register",
+            "misalignment",
+            "asset",
+            "record"
+          ],
+          "nextNodeId": "node_incident_tilted_camera_resolve",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "labor_squeeze": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_tilted_camera_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "You documented the blindspot. In Act IV, every altered fixture and blind angle is a potential setup.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_planted_receipt_void_cashier",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "While auditing your till drawer on Register 4, you find a folded supervisor void slip for a $600 robotic vacuum that you never processed. Your operator ID number is stamped across the bottom in purple ink.",
+      "choices": [
+        {
+          "id": "choice_void_cashier_stash",
+          "text": "Keep the slip in your vest pocket and check the transaction time against your actual break log.",
+          "voiceKeywords": [
+            "keep",
+            "slip",
+            "pocket",
+            "check",
+            "log",
+            "proof"
+          ],
+          "nextNodeId": "node_incident_planted_receipt_void_resolve",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": -10.0
+          }
+        },
+        {
+          "id": "choice_void_cashier_confront",
+          "text": "Bring the void slip immediately to Marsha and demand to know who ran transactions on your till.",
+          "voiceKeywords": [
+            "marsha",
+            "confront",
+            "till",
+            "demand",
+            "void"
+          ],
+          "nextNodeId": "node_incident_planted_receipt_void_resolve",
+          "metricDeltas": {
+            "labor_squeeze": 10.0,
+            "store_morale": -15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_planted_receipt_void_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "The fabricated receipt paper is preserved. The paper trail is being weaponized, and proving your timeline is a matter of survival.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_forged_manifest_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "Mack pulls you behind a pallet stack holding a carbon-copy bill of lading: 'Look at the signature line on trailer 4402. That's your handwriting style, but with a shaky \"T\" initial. It says you received twelve smart OLED televisions that never touched the warehouse floor.'",
+      "choices": [
+        {
+          "id": "choice_forged_unloader_compare",
+          "text": "Compare the forgery with your real driver sign-off sheets to prove the discrepancy.",
+          "voiceKeywords": [
+            "compare",
+            "forgery",
+            "proof",
+            "signature",
+            "sheets"
+          ],
+          "nextNodeId": "node_incident_forged_manifest_resolve",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": -10.0
+          }
+        },
+        {
+          "id": "choice_forged_unloader_security",
+          "text": "Check the security gate camera timestamp to see who actually signed the clipboard.",
+          "voiceKeywords": [
+            "camera",
+            "gate",
+            "timestamp",
+            "clipboard",
+            "driver"
+          ],
+          "nextNodeId": "node_incident_forged_manifest_resolve",
+          "metricDeltas": {
+            "labor_squeeze": 10.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_forged_manifest_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Mack locks the forged manifest in his personal tool chest. The internal frame-job is real, and the net is closing.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_whispering_breakroom_circle",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "You push open the breakroom door. Four coworkers are huddled over a tablet in intense conversation. The instant the door clicks, the conversation cuts to dead silence. Kyle quickly slips his phone into his apron, and Brenda looks down at her coffee mug, avoiding eye contact.",
+      "choices": [
+        {
+          "id": "choice_whisper_ignore",
+          "text": "Walk calmly to the vending machine, maintaining an unbothered, observant posture.",
+          "voiceKeywords": [
+            "calm",
+            "vending",
+            "unbothered",
+            "observant",
+            "posture"
+          ],
+          "nextNodeId": "node_incident_whispering_breakroom_resolve",
+          "metricDeltas": {
+            "store_morale": -10.0,
+            "associate_engagement": 5.0
+          }
+        },
+        {
+          "id": "choice_whisper_confront",
+          "text": "Ask Brenda with a calm smile: 'Everything alright with the shift schedule?'",
+          "voiceKeywords": [
+            "ask",
+            "brenda",
+            "schedule",
+            "smile",
+            "calm"
+          ],
+          "nextNodeId": "node_incident_whispering_breakroom_resolve",
+          "metricDeltas": {
+            "labor_squeeze": 5.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_whispering_breakroom_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "The quiet tension is palpable. When corporate management starts hunting for scapegoats, peer solidarity fractures into whispered self-preservation.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_anonymous_ethics_interview",
+      "speakerId": "cheryl",
+      "side": "LEFT",
+      "changeSceneId": "scene_personnel_office",
+      "text": "Cheryl motions you into the HR office and closes the door: 'We received an anonymous 1-800 ethics hotline complaint alleging you were seen taking unauthorized merchandise near the rear fire exits. We are required to conduct an investigative review.'",
+      "choices": [
+        {
+          "id": "choice_ethics_timestamps",
+          "text": "Present your automated register/scanner timestamps proving you were nowhere near the exits.",
+          "voiceKeywords": [
+            "timestamps",
+            "scanner",
+            "prove",
+            "exits",
+            "defense"
+          ],
+          "nextNodeId": "node_incident_anonymous_ethics_resolve",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": -5.0
+          }
+        },
+        {
+          "id": "choice_ethics_inquire",
+          "text": "Calmly ask Cheryl whether the caller's wording matches Brenda or Chad's handwriting style.",
+          "voiceKeywords": [
+            "wording",
+            "brenda",
+            "chad",
+            "caller",
+            "handwriting"
+          ],
+          "nextNodeId": "node_incident_anonymous_ethics_resolve",
+          "metricDeltas": {
+            "store_morale": 5.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_anonymous_ethics_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Cheryl takes notes with a slight frown. Weaponized anonymous reports are the oldest corporate railroading tactic in the book.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
+      "id": "node_incident_security_bag_search_exit",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "It is 11:10 PM. As you approach the sliding glass exit doors to leave, Loss Prevention Manager Clint steps into your path with crossed arms: 'Random bag and coat inspection, associate. Unzip your backpack and empty your pockets on the table.'",
+      "choices": [
+        {
+          "id": "choice_bag_search_comply",
+          "text": "Calmly open your bag and empty your pockets in plain view of the exit surveillance camera.",
+          "voiceKeywords": [
+            "open",
+            "empty",
+            "camera",
+            "plain view",
+            "pockets"
+          ],
+          "nextNodeId": "node_incident_security_bag_search_resolve",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "store_morale": -10.0
+          }
+        },
+        {
+          "id": "choice_bag_search_witness",
+          "text": "Request that Donna or Mack witness the search to prevent evidence tampering.",
+          "voiceKeywords": [
+            "witness",
+            "donna",
+            "mack",
+            "tampering",
+            "search"
+          ],
+          "nextNodeId": "node_incident_security_bag_search_resolve",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_incident_security_bag_search_resolve",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Clint sifts through your personal effects with gloved fingers. Finding nothing, he grunts and steps aside. The psychological pressure of being treated like a criminal on your own way home settles in.",
+      "nextNodeId": "node_incident_return"
+    },
+    {
       "id": "node_incident_return",
       "speakerId": "narrator",
       "side": "CENTER_NARRATOR",
@@ -7618,6 +7943,1447 @@
       "speakerId": "narrator",
       "side": "CENTER_NARRATOR",
       "text": "ACT THREE: THE CORPORATE GAZE COMPLETED! You conquered impossible algorithmic speed quotas, resisted predatory credit mandates, and outmaneuvered the Regional Metric Auditor. But Henderson and Clint are growing desperate. High-ticket shrinkage is climbing\u2014and they need a scapegoat. Welcome to Act IV: The Frame Job & Internal Espionage!",
+      "choices": [
+        {
+          "id": "choice_begin_act4",
+          "text": "Embark on Act IV: The Frame Job of Shift 35.",
+          "voiceKeywords": [
+            "begin",
+            "act four",
+            "act 4",
+            "embark",
+            "shift 35",
+            "continue",
+            "forward",
+            "ready"
+          ],
+          "nextNodeId": "node_shift35_start"
+        }
+      ]
+    },
+    {
+      "id": "node_shift35_start",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "setFlagOnEnter": "flag_act4_started",
+      "changeSceneId": "scene_manager_office",
+      "text": "SHIFT THIRTY-FIVE: THE EXECUTIVE CRISIS. Store Manager Henderson paces behind his mahogany desk with the blinds drawn tight. The quarterly shrink audit is 4.2% over regional tolerance\u2014a catastrophic $140,000 inventory shortfall. Henderson slams a red folder down: 'District wants a name on corporate's desk by Friday, Clint. Either we pinpoint the internal ringleader, or my career is over. Find me a culprit.' Clint's eyes narrow as he scans the associate roster.",
+      "choices": [
+        {
+          "id": "choice_shift35_clockin",
+          "text": "Clock in for your shift, unaware that management is hunting for a scapegoat.",
+          "voiceKeywords": [
+            "clock in",
+            "shift",
+            "begin",
+            "start",
+            "work",
+            "unaware",
+            "enter"
+          ],
+          "nextNodeId": "node_shift35_branch"
+        }
+      ]
+    },
+    {
+      "id": "node_shift35_branch",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "A cold tension hangs over Store #1042. Floor managers are huddled by the security monitors, and clipboards are being clutched like shields. Report to your department for Shift 35.",
+      "nextNodeId": "node_shift35_stocker"
+    },
+    {
+      "id": "node_hub_stocker_act4",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "allowIncidents": true,
+      "text": "Donna is inspecting endcaps with intense caution: 'Watch your back, rookie. Todd and Clint are doing unannounced audits in Aisle 4. They're looking for damaged claims freight that hasn't been keyed in. If you touch a box, verify the barcode twice.'",
+      "choices": [
+        {
+          "id": "choice_stocker_act4_donna",
+          "text": "Ask Donna how to protect yourself against staged inventory discrepancies.",
+          "voiceKeywords": [
+            "donna",
+            "staged",
+            "inventory",
+            "discrepancies",
+            "protect",
+            "advice"
+          ],
+          "nextNodeId": "node_stocker_act4_donna_advice",
+          "completionFlag": "flag_hub_stocker_act4_donna",
+          "metricDeltas": {
+            "store_morale": 5.0,
+            "associate_engagement": 5.0
+          }
+        },
+        {
+          "id": "choice_stocker_act4_continue",
+          "text": "Continue your stocking assignment under the vigilant ceiling domes.",
+          "voiceKeywords": [
+            "continue",
+            "stocking",
+            "assignment",
+            "stock",
+            "aisle"
+          ],
+          "nextNodeId": "node_shift36_stocker"
+        }
+      ]
+    },
+    {
+      "id": "node_stocker_act4_donna_advice",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "text": "'Never leave your U-boat unattended in high-shrink aisles,' Donna whispers. 'And if you find damaged freight with torn packaging, immediately take a photo and log it into the claims portal before Todd can claim you hid it. The camera above Aisle 4 is tilted, but our personal logs don't lie.'",
+      "nextNodeId": "node_hub_stocker_act4"
+    },
+    {
+      "id": "node_hub_cashier_act4",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "changeSceneId": "scene_checkout_concourse",
+      "allowIncidents": true,
+      "text": "Register Concourse Lane 4 is unnervingly quiet. Brenda counts till slips with steady hands: 'Clint has been reviewing front-end camera tapes until 3:00 AM. Every register void slip over $20 is being audited for sweethearting. Keep your till drawer locked, {hero}, and never step away without logging off.'",
+      "choices": [
+        {
+          "id": "choice_cashier_act4_brenda",
+          "text": "Ask Brenda how to audit your till against unauthorized supervisor overrides.",
+          "voiceKeywords": [
+            "brenda",
+            "till",
+            "audit",
+            "overrides",
+            "register",
+            "advice"
+          ],
+          "nextNodeId": "node_cashier_act4_brenda_advice",
+          "completionFlag": "flag_hub_cashier_act4_brenda",
+          "metricDeltas": {
+            "associate_engagement": 5.0,
+            "store_morale": 5.0
+          }
+        },
+        {
+          "id": "choice_cashier_act4_continue",
+          "text": "Log into Register 4 and brace for the next customer line.",
+          "voiceKeywords": [
+            "log in",
+            "register",
+            "customer",
+            "line",
+            "cashier",
+            "continue"
+          ],
+          "nextNodeId": "node_shift36_cashier"
+        }
+      ]
+    },
+    {
+      "id": "node_cashier_act4_brenda_advice",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "text": "'Always print your subtotal tape before taking lunch,' Brenda instructs quietly. 'And if a manager swipes an override while you're standing there, watch the screen to ensure they aren't ringing void slips under your cashier number. In Act IV, paper receipts are your body armor.'",
+      "nextNodeId": "node_hub_cashier_act4"
+    },
+    {
+      "id": "node_hub_unloader_act4",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "allowIncidents": true,
+      "text": "Mack inspects the heavy bolt on Dock Bay 3. 'Someone is manipulating bills of lading on high-value electronics shipments. Freight goes missing between trailer doors and the staging cage, and Clint is asking who held the clipboard. Don't sign a single invoice without double-counting every carton.'",
+      "choices": [
+        {
+          "id": "choice_unloader_act4_mack",
+          "text": "Ask Mack how to document freight discrepancies off the corporate record.",
+          "voiceKeywords": [
+            "mack",
+            "freight",
+            "discrepancies",
+            "document",
+            "dock",
+            "advice"
+          ],
+          "nextNodeId": "node_unloader_act4_mack_advice",
+          "completionFlag": "flag_hub_unloader_act4_mack",
+          "metricDeltas": {
+            "labor_squeeze": 5.0,
+            "associate_engagement": 5.0
+          }
+        },
+        {
+          "id": "choice_unloader_act4_continue",
+          "text": "Grab the electric pallet jack and begin staging the evening freight.",
+          "voiceKeywords": [
+            "pallet jack",
+            "freight",
+            "staging",
+            "unload",
+            "dock",
+            "continue"
+          ],
+          "nextNodeId": "node_shift36_unloader"
+        }
+      ]
+    },
+    {
+      "id": "node_unloader_act4_mack_advice",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "'Keep a duplicate pocket notebook,' Mack says gruffly. 'Write down the trailer seal number, the driver's name, and the exact count of cartons before you let anyone roll a pallet onto the floor. If Clint comes asking about a missing skid, you hand him carbon-copy facts.'",
+      "nextNodeId": "node_hub_unloader_act4"
+    },
+    {
+      "id": "node_hub_specialist_act4",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "allowIncidents": true,
+      "text": "Julian polishes the glass display case with a microfiber cloth: 'Chad tried to borrow my master display key ring for five minutes yesterday. I refused. Clint has been hovering around our locker bay with an asset log. They want to pin the missing drone inventory on whoever holds the showcase key.'",
+      "choices": [
+        {
+          "id": "choice_spec_act4_julian",
+          "text": "Ask Julian how to secure your display key custody logs.",
+          "voiceKeywords": [
+            "julian",
+            "keys",
+            "custody",
+            "display",
+            "lock",
+            "advice"
+          ],
+          "nextNodeId": "node_spec_act4_julian_advice",
+          "completionFlag": "flag_hub_spec_act4_julian",
+          "metricDeltas": {
+            "store_morale": 5.0,
+            "associate_engagement": 5.0
+          }
+        },
+        {
+          "id": "choice_spec_act4_continue",
+          "text": "Open the high-ticket display counter and prepare for the shift.",
+          "voiceKeywords": [
+            "counter",
+            "display",
+            "electronics",
+            "specialist",
+            "continue"
+          ],
+          "nextNodeId": "node_shift36_specialist"
+        }
+      ]
+    },
+    {
+      "id": "node_spec_act4_julian_advice",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "'Never lay your brass keys on the counter, not even for two seconds,' Julian cautions. 'Chad is looking for a patsy to explain the shrinkage in high-end audio. Every time you open that cabinet, check that the lock clicks into full deadbolt position.'",
+      "nextNodeId": "node_hub_specialist_act4"
+    },
+    {
+      "id": "node_shift35_stocker",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 35: THE TARGETED AISLE REASSIGNMENT. Todd hands you a clipboard with a forced smirk: 'Due to shrink irregularities, you are exclusively assigned to Power Tools and Hardware in Aisle 4. You are personally accountable for everything on these shelves.'",
+      "choices": [
+        {
+          "id": "choice_s35_stocker_accept",
+          "text": "Accept the assignment and inspect every tool box on Aisle 4 for pre-existing damage.",
+          "voiceKeywords": [
+            "accept",
+            "inspect",
+            "tools",
+            "aisle 4",
+            "stocker",
+            "hardware"
+          ],
+          "nextNodeId": "node_hub_stocker_act4",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "labor_squeeze": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift36_stocker",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "changeSceneId": "scene_locker_room",
+      "text": "Shift 36: THE LOCKER ROOM RAID. You walk into the locker room to find Clint and Todd searching associates' lockers with bolt cutters in hand. Clint pats down your winter jacket: 'Routine facility audit. Empty your pockets.'",
+      "choices": [
+        {
+          "id": "choice_s36_stocker_calm",
+          "text": "Comply with cold, professional composure and note down Clint's badge number.",
+          "voiceKeywords": [
+            "comply",
+            "calm",
+            "badge",
+            "pockets",
+            "composure"
+          ],
+          "nextNodeId": "node_shift37_stocker",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift37_stocker",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 37: THE SHAVED TIMECARD. Your portal punch log shows an unapproved manual edit: 15 minutes shaved off your lunch break, triggering an automatic 'Tardy Exception' and pushing your attendance points to 4.5.",
+      "choices": [
+        {
+          "id": "choice_s37_stocker_dispute",
+          "text": "Submit a formal electronic punch dispute with cafeteria register receipt timestamps.",
+          "voiceKeywords": [
+            "dispute",
+            "punch",
+            "receipt",
+            "timestamps",
+            "timecard"
+          ],
+          "nextNodeId": "node_shift38_stocker",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift38_stocker",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 38: THE PLANTED TOOL COMBO. While zoning behind heavy 50-pound bags of lawn fertilizer on bottom shelf 4, you discover a slit-open $800 DeWalt brushless tool combo kit with the security spider-wrap neatly snipped.",
+      "choices": [
+        {
+          "id": "choice_s38_stocker_photo",
+          "text": "Photograph the hidden box, notify Donna, and walk it directly to the claims desk.",
+          "voiceKeywords": [
+            "photo",
+            "claims",
+            "dewalt",
+            "donna",
+            "planted",
+            "evidence"
+          ],
+          "nextNodeId": "node_shift39_stocker",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift39_stocker",
+      "speakerId": "kyle",
+      "side": "LEFT",
+      "changeSceneId": "scene_breakroom",
+      "text": "Shift 39: THE WHISPER NETWORK. In the breakroom, Kyle speaks loudly enough for everyone to hear: 'Word is someone on night stock has been stashing expensive power tools to sneak out the garden gate.' Several peers glance at you and turn away.",
+      "choices": [
+        {
+          "id": "choice_s39_stocker_stare",
+          "text": "Maintain unflinching eye contact and take a calm sip of coffee without flinching.",
+          "voiceKeywords": [
+            "eye contact",
+            "calm",
+            "coffee",
+            "unflinching",
+            "silence"
+          ],
+          "nextNodeId": "node_shift40_stocker",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift40_stocker",
+      "speakerId": "cheryl",
+      "side": "LEFT",
+      "changeSceneId": "scene_personnel_office",
+      "text": "Shift 40: THE HR INFORMAL AMBUSH. Cheryl gestures to the metal chair in HR: 'Just an informal chat. Clint noted high shrinkage on Aisle 4 since your assignment. We just want to give you a chance to be transparent before corporate steps in.'",
+      "choices": [
+        {
+          "id": "choice_s40_stocker_receipts",
+          "text": "Present your dated photos of pre-existing shelf shortages taken on Shift 35.",
+          "voiceKeywords": [
+            "photos",
+            "shortages",
+            "proof",
+            "transparent",
+            "records"
+          ],
+          "nextNodeId": "node_shift41_stocker",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift41_stocker",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 41: THE BAILER COMPROMISE. Todd corners you near the cardboard bailer: 'Look, kid. Sign this written coaching form admitting failure to report claims freight. It keeps police and Clint out of your life. Just sign.'",
+      "choices": [
+        {
+          "id": "choice_s41_stocker_refuse",
+          "text": "Flatly refuse to sign any falsified admission of negligence.",
+          "voiceKeywords": [
+            "refuse",
+            "sign",
+            "coaching",
+            "admission",
+            "never",
+            "stand"
+          ],
+          "nextNodeId": "node_shift42_stocker",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift42_stocker",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "changeSceneId": "scene_security_office",
+      "text": "Shift 42: THE GRAINY STILL-FRAME. Clint swivels his monitor: 'Surveillance Dome 4. 11:42 PM last Thursday. That's a blue vest standing right next to the fertilizer pallet where the DeWalt box was found. Explain that.'",
+      "choices": [
+        {
+          "id": "choice_s42_stocker_vest",
+          "text": "Point out the figure in the still-frame is wearing yellow safety gloves\u2014equipment only supervisors wear.",
+          "voiceKeywords": [
+            "gloves",
+            "yellow",
+            "supervisor",
+            "todd",
+            "still frame",
+            "proof"
+          ],
+          "nextNodeId": "node_shift43_stocker",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift43_stocker",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 43: COLD SHOULDER ISOLATION. Todd orders you to hand-sweep the dark, unheated seasonal garden center alone in the freezing rain. Coworkers have been ordered not to enter the department or speak to you.",
+      "choices": [
+        {
+          "id": "choice_s43_stocker_endure",
+          "text": "Sweep the garden patio with methodical, unhurried precision, refusing to break.",
+          "voiceKeywords": [
+            "sweep",
+            "endure",
+            "garden",
+            "cold",
+            "precision",
+            "calm"
+          ],
+          "nextNodeId": "node_shift44_stocker",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift44_stocker",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 44: THE SECRET PAPER TRAIL. While retrieving a mop behind the claims cage, you spot Todd's discarded clipboard. Taped beneath the daily log is an unapproved handwritten packing slip for power tools marked 'Manager Disposal.' Todd is stealing the inventory himself.",
+      "choices": [
+        {
+          "id": "choice_s44_stocker_pocket",
+          "text": "Slip Todd's handwritten packing slip into your pocket as undeniable forensic proof.",
+          "voiceKeywords": [
+            "pocket",
+            "packing slip",
+            "todd",
+            "proof",
+            "evidence",
+            "steal"
+          ],
+          "nextNodeId": "node_shift45_stocker",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift45_stocker",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 45: DONNA'S SURVEILLANCE BACKUP. Donna slips a black USB drive into your palm: 'I pulled the pharmacy camera feed from last Thursday. It clearly shows Todd carrying that DeWalt kit into Aisle 4. You aren't going down for this, rookie.'",
+      "choices": [
+        {
+          "id": "choice_s45_stocker_ready",
+          "text": "Grip the USB drive tightly and prepare for Clint's final interrogation ambush.",
+          "voiceKeywords": [
+            "usb",
+            "donna",
+            "interrogation",
+            "clint",
+            "standoff",
+            "ready"
+          ],
+          "nextNodeId": "node_shift46_stocker",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift46_stocker",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "changeSceneId": "scene_security_office",
+      "text": "SHIFT 46 LOSS PREVENTION INTERROGATION STANDOFF! Clint locks the heavy metal door behind you in the windowless security office. A typed confession sheet and a felony theft waiver sit under the harsh fluorescent lamp. Break Clint's interrogation!",
+      "triggerBattleEncounterId": "encounter_loss_prevention_standoff",
+      "nextNodeId": "node_shift46_stocker_victory"
+    },
+    {
+      "id": "node_shift46_stocker_victory",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "changeSceneId": "scene_security_office",
+      "text": "INTERROGATION BROKEN! You slam Todd's handwritten disposal slip and Donna's pharmacy video timestamp on the metal desk. Clint's face freezes in stunned silence as his coercive Reid-technique trap completely implodes. Act IV is won!",
+      "nextNodeId": "node_retail_act4_complete"
+    },
+    {
+      "id": "node_shift35_cashier",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift 35: THE BLIND SPOT LANE. Marsha assigns you exclusively to Register Lane 4. Looking up, you notice seasonal promotional banners have been hung directly in front of the overhead dome camera, blocking the register till from view.",
+      "choices": [
+        {
+          "id": "choice_s35_cashier_accept",
+          "text": "Accept the register lane and count your starting cash drawer to the exact penny.",
+          "voiceKeywords": [
+            "accept",
+            "register 4",
+            "count",
+            "cash",
+            "penny",
+            "till"
+          ],
+          "nextNodeId": "node_hub_cashier_act4",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "labor_squeeze": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift36_cashier",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift 36: THE SURPRISE TILL AUDIT. Mid-shift, Clint appears behind your register with a locking metal audit box. He counts your drawer in silence, then glares: 'You're short $120. Explain where the money went.'",
+      "choices": [
+        {
+          "id": "choice_s36_cashier_recount",
+          "text": "Demand an immediate physical recount in presence of Brenda and check the cash pickup receipts.",
+          "voiceKeywords": [
+            "recount",
+            "brenda",
+            "receipts",
+            "cash",
+            "pickup",
+            "proof"
+          ],
+          "nextNodeId": "node_shift37_cashier",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift37_cashier",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "text": "Shift 37: THE GHOST OVERRIDE. When you review your terminal transaction log, you discover three $100 post-void transactions run under your cashier ID while you were clocked out on lunch.",
+      "choices": [
+        {
+          "id": "choice_s37_cashier_compare",
+          "text": "Print the register journal tape and cross-reference the transaction timestamps with your lunch punch.",
+          "voiceKeywords": [
+            "journal",
+            "tape",
+            "timestamps",
+            "punch",
+            "lunch",
+            "compare"
+          ],
+          "nextNodeId": "node_shift38_cashier",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift38_cashier",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 38: THE PLANTED HUNDRED. While verifying your till at the start of your shift, you lift the plastic coin tray and find a crisp, folded $100 bill tucked into the hollow base of the drawer.",
+      "choices": [
+        {
+          "id": "choice_s38_cashier_witness",
+          "text": "Leave the bill untouched, immediately call Brenda as a witness, and log the anomaly.",
+          "voiceKeywords": [
+            "witness",
+            "brenda",
+            "anomaly",
+            "log",
+            "hundred",
+            "drawer"
+          ],
+          "nextNodeId": "node_shift39_cashier",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift39_cashier",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift 39: THE FRONT-END RUMORS. Customer service desk associates are whispering behind the lottery counter. When you approach to request a roll of quarters, the conversation abruptly cuts off and they refuse eye contact.",
+      "choices": [
+        {
+          "id": "choice_s39_cashier_professional",
+          "text": "State your coin request with crisp, unflappable professional courtesy.",
+          "voiceKeywords": [
+            "quarters",
+            "professional",
+            "courtesy",
+            "calm",
+            "crisp"
+          ],
+          "nextNodeId": "node_shift40_cashier",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift40_cashier",
+      "speakerId": "cheryl",
+      "side": "LEFT",
+      "changeSceneId": "scene_personnel_office",
+      "text": "Shift 40: CHERYL'S TILL INTERVIEW. Cheryl closes the personnel office door: 'There are discrepancies on Lane 4, {hero}. Sometimes associates face financial stress and make poor decisions. We have employee assistance programs if you just cooperate.'",
+      "choices": [
+        {
+          "id": "choice_s40_cashier_firm",
+          "text": "Firmly reject the premise and present the stamped lunch punch log disproving the void times.",
+          "voiceKeywords": [
+            "reject",
+            "punch log",
+            "voids",
+            "lunch",
+            "facts",
+            "firm"
+          ],
+          "nextNodeId": "node_shift41_cashier",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift41_cashier",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift 41: MARSHA'S REPAYMENT DEAL. Marsha whispers behind the customer service counter: 'Just sign this till variance deduction form agreeing to pay back the $120 shortage from your paycheck. It closes the file and keeps Clint away.'",
+      "choices": [
+        {
+          "id": "choice_s41_cashier_refuse",
+          "text": "Refuse to sign away your wages for cash shortages you never committed.",
+          "voiceKeywords": [
+            "refuse",
+            "wages",
+            "shortage",
+            "variance",
+            "never",
+            "deal"
+          ],
+          "nextNodeId": "node_shift42_cashier",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift42_cashier",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "changeSceneId": "scene_security_office",
+      "text": "Shift 42: THE SWEETHEARTING TAPE. Clint plays a security video loop showing you ringing a customer cart: 'You passed a $350 Dyson vacuum across the scanner without hearing a beep. That is classic sweethearting.'",
+      "choices": [
+        {
+          "id": "choice_s42_cashier_receipt",
+          "text": "Pull up the exact transaction receipt showing the customer paid for the Dyson with a store gift card.",
+          "voiceKeywords": [
+            "receipt",
+            "dyson",
+            "gift card",
+            "transaction",
+            "proof",
+            "paid"
+          ],
+          "nextNodeId": "node_shift43_cashier",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift43_cashier",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift 43: BANISHED FROM THE REGISTER. Stripped of your operator login, Marsha reassigns you to stand at the exit vestibule folding returned shopping bags under the suspicious glare of passing supervisors.",
+      "choices": [
+        {
+          "id": "choice_s43_cashier_stand",
+          "text": "Fold bags with immaculate posture, greeting every shopper with radiant cheerfulness.",
+          "voiceKeywords": [
+            "fold",
+            "posture",
+            "greet",
+            "cheerfulness",
+            "stand",
+            "calm"
+          ],
+          "nextNodeId": "node_shift44_cashier",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift44_cashier",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 44: THE JOURNAL PRINTER AUDIT. While picking up receipt rolls in the cash office, you discover a discarded journal spool. The manager override keycard used during your lunch break was Marsha's personal supervisor card.",
+      "choices": [
+        {
+          "id": "choice_s44_cashier_preserve",
+          "text": "Secure the printed journal spool with Marsha's manager keycard audit trail.",
+          "voiceKeywords": [
+            "journal",
+            "spool",
+            "marsha",
+            "keycard",
+            "proof",
+            "override"
+          ],
+          "nextNodeId": "node_shift45_cashier",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift45_cashier",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "changeSceneId": "scene_checkout_concourse",
+      "text": "Shift 45: BRENDA'S WITNESS AFFIDAVIT. Brenda hands you a handwritten, signed statement: 'I witnessed Marsha operate Register 4 while you were on break. I wrote down the exact minutes. Clint won't pin this on you.'",
+      "choices": [
+        {
+          "id": "choice_s45_cashier_ready",
+          "text": "Fold Brenda's affidavit next to the journal spool and march into the security office.",
+          "voiceKeywords": [
+            "affidavit",
+            "brenda",
+            "journal",
+            "security",
+            "interrogation",
+            "ready"
+          ],
+          "nextNodeId": "node_shift46_cashier",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift46_cashier",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "changeSceneId": "scene_security_office",
+      "text": "SHIFT 46 LOSS PREVENTION INTERROGATION STANDOFF! Clint bolts the security door. 'We have you for sweethearting and till tampering. Sign this admission of restitution or I call the police.' Overcome Clint's psychological traps!",
+      "triggerBattleEncounterId": "encounter_loss_prevention_standoff",
+      "nextNodeId": "node_shift46_cashier_victory"
+    },
+    {
+      "id": "node_shift46_cashier_victory",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "changeSceneId": "scene_security_office",
+      "text": "INTERROGATION BROKEN! You spread Brenda's witness statement and the register journal showing Marsha's override keycard across Clint's desk. Clint rubs his temples as his case collapses into ash. Act IV is won!",
+      "nextNodeId": "node_retail_act4_complete"
+    },
+    {
+      "id": "node_shift35_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Shift 35: PADLOCKED RECEIVING BAYS. You arrive at the dock to find Bay 3 padlocked with bright orange corporate security seals. Clint is personally checking the driver manifests while Henderson watches from the catwalk.",
+      "choices": [
+        {
+          "id": "choice_s35_unloader_accept",
+          "text": "Check in with Mack and inspect the trailer bill of lading for discrepancies.",
+          "voiceKeywords": [
+            "check in",
+            "mack",
+            "manifest",
+            "bill of lading",
+            "unloader",
+            "dock"
+          ],
+          "nextNodeId": "node_hub_unloader_act4",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "labor_squeeze": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift36_unloader",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Shift 36: THE EXIT BAG SHAKEDOWN. At 11:00 PM, Clint blocks the dock personnel exit with two security guards, demanding to inspect unloader toolbags and jackets for stolen electronics.",
+      "choices": [
+        {
+          "id": "choice_s36_unloader_comply",
+          "text": "Unzip your bag calmly in front of the bay surveillance camera, proving zero contraband.",
+          "voiceKeywords": [
+            "unzip",
+            "bag",
+            "camera",
+            "comply",
+            "clean",
+            "calm"
+          ],
+          "nextNodeId": "node_shift37_unloader",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift37_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "Shift 37: THE FORGED BILL OF LADING. Mack shows you an invoice for 12 missing smart OLED TVs: 'Someone scribbled your initials on the delivery signature line. But the ink is blue gel pen\u2014we only use black ballpoint on this dock.'",
+      "choices": [
+        {
+          "id": "choice_s37_unloader_compare",
+          "text": "Compare the forgery against your genuine receiving paperwork and log the discrepancy.",
+          "voiceKeywords": [
+            "compare",
+            "forgery",
+            "ink",
+            "paperwork",
+            "mack",
+            "proof"
+          ],
+          "nextNodeId": "node_shift38_unloader",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift38_unloader",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 38: THE UNSEALED BAY 4 TRAILER. A midnight trailer backs in with broken bolt seals. The delivery manifest names you as the designated receiver, but the high-ticket electronics pallets are already missing from the truck bed.",
+      "choices": [
+        {
+          "id": "choice_s38_unloader_refuse",
+          "text": "Refuse to sign acceptance, photograph the broken seals, and notify Mack immediately.",
+          "voiceKeywords": [
+            "refuse",
+            "seals",
+            "photo",
+            "mack",
+            "broken",
+            "trailer"
+          ],
+          "nextNodeId": "node_shift39_unloader",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift39_unloader",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Shift 39: FREIGHT DRIVER WARNINGS. An independent truck driver leans down from his cab: 'Watch yourself, kid. The night managers are moving skids out the side roll-up doors before the morning audit team arrives.'",
+      "choices": [
+        {
+          "id": "choice_s39_unloader_note",
+          "text": "Thank the driver and note the truck carrier company and trailer license plate.",
+          "voiceKeywords": [
+            "driver",
+            "plate",
+            "carrier",
+            "license",
+            "note",
+            "dock"
+          ],
+          "nextNodeId": "node_shift40_unloader",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift40_unloader",
+      "speakerId": "cheryl",
+      "side": "LEFT",
+      "changeSceneId": "scene_personnel_office",
+      "text": "Shift 40: THE FORKLIFT INQUIRY. Cheryl reviews dock logs: 'Clint reports you operated the electric walkie-stacker near the high-value cage past 10:00 PM without supervisor authorization. Explain what you were moving.'",
+      "choices": [
+        {
+          "id": "choice_s40_unloader_log",
+          "text": "Show Mack's signed work order confirming you were moving wooden pallet scrap to the compactor.",
+          "voiceKeywords": [
+            "mack",
+            "work order",
+            "scrap",
+            "compactor",
+            "stacker",
+            "log"
+          ],
+          "nextNodeId": "node_shift41_unloader",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift41_unloader",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Shift 41: CLINT'S COERCIVE PROPOSAL. Clint catches you behind the cardboard baler: 'Just say you miscounted the television skid when unloading. A paperwork error only carries a written warning. Otherwise, this is grand larceny.'",
+      "choices": [
+        {
+          "id": "choice_s41_unloader_refuse",
+          "text": "Refuse to take the fall for stolen freight you never saw or received.",
+          "voiceKeywords": [
+            "refuse",
+            "fall",
+            "larceny",
+            "freight",
+            "never",
+            "truth"
+          ],
+          "nextNodeId": "node_shift42_unloader",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift42_unloader",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "changeSceneId": "scene_security_office",
+      "text": "Shift 42: THE COMPACTOR CAMERA ANGLE. Clint displays a black-and-white camera loop: 'Someone matching your height wheeled a shrink-wrapped skid toward the side exit at 1:12 AM. The evidence is mounting.'",
+      "choices": [
+        {
+          "id": "choice_s42_unloader_badge",
+          "text": "Demonstrate that the figure has an executive electronic key fob on their belt\u2014which unloaders do not carry.",
+          "voiceKeywords": [
+            "key fob",
+            "executive",
+            "belt",
+            "proof",
+            "still",
+            "clint"
+          ],
+          "nextNodeId": "node_shift43_unloader",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift43_unloader",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Shift 43: RELEGATED TO PALLET SCRAP. Your power equipment badge is temporarily revoked by management. You are ordered to manually sweep wood chips and stack broken wooden pallets by hand.",
+      "choices": [
+        {
+          "id": "choice_s43_unloader_stack",
+          "text": "Stack the pallets with iron discipline, keeping your eyes on the dock perimeter.",
+          "voiceKeywords": [
+            "stack",
+            "pallets",
+            "discipline",
+            "iron",
+            "calm",
+            "dock"
+          ],
+          "nextNodeId": "node_shift44_unloader",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift44_unloader",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 44: THE GATEHOUSE LOGBOOK. Inside the exterior guard shack, you find the visitor log. Store Manager Henderson's personal pickup truck was logged entering the rear dock gate at 1:15 AM on the night the OLED TVs vanished.",
+      "choices": [
+        {
+          "id": "choice_s44_unloader_copy",
+          "text": "Take a high-resolution photo of the security gate log showing Henderson's midnight entry.",
+          "voiceKeywords": [
+            "gate log",
+            "photo",
+            "henderson",
+            "pickup",
+            "midnight",
+            "proof"
+          ],
+          "nextNodeId": "node_shift45_unloader",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift45_unloader",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "changeSceneId": "scene_loading_dock",
+      "text": "Shift 45: MACK'S DASHCAM BOMBSHELL. Mack calls you into his truck cab: 'My 24-hour dashcam caught the whole thing. Henderson and Clint loading the missing television boxes into Henderson's truck bed under the security floodlight.'",
+      "choices": [
+        {
+          "id": "choice_s45_unloader_ready",
+          "text": "Back up Mack's dashcam video to your phone and march into the security office.",
+          "voiceKeywords": [
+            "dashcam",
+            "mack",
+            "video",
+            "clint",
+            "interrogation",
+            "ready"
+          ],
+          "nextNodeId": "node_shift46_unloader",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift46_unloader",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "changeSceneId": "scene_security_office",
+      "text": "SHIFT 46 LOSS PREVENTION INTERROGATION STANDOFF! Clint slams the interrogation door shut: 'You signed the bill of lading and you moved the skid. Confess to grand theft right now or leave here in handcuffs.' Overcome Clint!",
+      "triggerBattleEncounterId": "encounter_loss_prevention_standoff",
+      "nextNodeId": "node_shift46_unloader_victory"
+    },
+    {
+      "id": "node_shift46_unloader_victory",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "changeSceneId": "scene_security_office",
+      "text": "INTERROGATION BROKEN! You play Mack's dashcam footage showing Clint and Henderson loading the OLED TVs into Henderson's truck. Clint drops his pen, breathing hard in terror. Act IV is won!",
+      "nextNodeId": "node_retail_act4_complete"
+    },
+    {
+      "id": "node_shift35_specialist",
+      "speakerId": "chad",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 35: THE ELECTRONICS SHADOW. Chad leans over the display counter with a patronizing smirk: 'Management assigned me to monitor your department. High-value shrinkage is up, and Henderson wants eyes on every lock.'",
+      "choices": [
+        {
+          "id": "choice_s35_spec_accept",
+          "text": "Perform a complete serial number audit of every locked showcase before touching a key.",
+          "voiceKeywords": [
+            "audit",
+            "serial",
+            "showcase",
+            "specialist",
+            "chad",
+            "counter"
+          ],
+          "nextNodeId": "node_hub_specialist_act4",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "labor_squeeze": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift36_specialist",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 36: THE EMERGENCY KEY COUNT. Clint marches to the electronics counter with a key log: 'Show me your brass master key ring. One of the camera case keys was reported missing from the lockbox.'",
+      "choices": [
+        {
+          "id": "choice_s36_spec_keys",
+          "text": "Display your complete, intact key ring pinned securely to your belt loop.",
+          "voiceKeywords": [
+            "keys",
+            "belt",
+            "intact",
+            "ring",
+            "show",
+            "clint"
+          ],
+          "nextNodeId": "node_shift37_specialist",
+          "metricDeltas": {
+            "associate_engagement": 10.0,
+            "store_morale": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift37_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "Shift 37: THE TORN ASSET LEDGER. Julian discovers the electronics high-ticket serial ledger has been tampered with: three pages listing high-end DSLR cameras have been sliced out with a razor blade.",
+      "choices": [
+        {
+          "id": "choice_s37_spec_backup",
+          "text": "Access the encrypted digital cloud asset inventory to print the unedited serial backup.",
+          "voiceKeywords": [
+            "cloud",
+            "serial",
+            "backup",
+            "ledger",
+            "print",
+            "julian"
+          ],
+          "nextNodeId": "node_shift38_specialist",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift38_specialist",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_locker_room",
+      "text": "Shift 38: THE PLANTED MIRRORLESS CAMERA. During an unannounced locker odor check, Clint claims to find an unboxed $1,200 mirrorless camera body stuffed deep into your winter coat sleeve in your unlocked locker.",
+      "choices": [
+        {
+          "id": "choice_s38_spec_fingerprints",
+          "text": "Immediately demand that the camera body be preserved for fingerprint testing without touching it.",
+          "voiceKeywords": [
+            "fingerprint",
+            "testing",
+            "camera",
+            "planted",
+            "locker",
+            "demand"
+          ],
+          "nextNodeId": "node_shift39_specialist",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift39_specialist",
+      "speakerId": "chad",
+      "side": "LEFT",
+      "changeSceneId": "scene_breakroom",
+      "text": "Shift 39: CHAD'S BREAKROOM TAUNTS. Chad smirks across the lunch table: 'They're searching online resale accounts within five miles of the store. Stolen specialty tech always shows up on Craigslist, doesn't it?'",
+      "choices": [
+        {
+          "id": "choice_s39_spec_calm",
+          "text": "Ask Chad calmly why his phone browser was opened to an online electronics pawn marketplace.",
+          "voiceKeywords": [
+            "pawn",
+            "chad",
+            "marketplace",
+            "phone",
+            "browser",
+            "calm"
+          ],
+          "nextNodeId": "node_shift40_specialist",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift40_specialist",
+      "speakerId": "cheryl",
+      "side": "LEFT",
+      "changeSceneId": "scene_personnel_office",
+      "text": "Shift 40: CHERYL'S FORMAL ESCALATION. Cheryl holds a manila folder: 'Having high-value electronics found in your personal effects is an immediate gross misconduct offense. You are one step away from corporate referral.'",
+      "choices": [
+        {
+          "id": "choice_s40_spec_rebuttal",
+          "text": "Point out that your locker lock was cut by management on Shift 36, leaving it accessible to anyone.",
+          "voiceKeywords": [
+            "lock",
+            "cut",
+            "accessible",
+            "rebuttal",
+            "locker",
+            "facts"
+          ],
+          "nextNodeId": "node_shift41_specialist",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift41_specialist",
+      "speakerId": "chad",
+      "side": "LEFT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 41: CHAD'S SURRENDER PROPOSAL. Chad intercepts you by the display cases: 'Surrender your key authorization and sign a coaching form. If you step down to general merchandise, Henderson will drop the theft probe.'",
+      "choices": [
+        {
+          "id": "choice_s41_spec_refuse",
+          "text": "Refuse to surrender your specialist title or accept blame for fabricated theft.",
+          "voiceKeywords": [
+            "refuse",
+            "specialist",
+            "coaching",
+            "surrender",
+            "never",
+            "stand"
+          ],
+          "nextNodeId": "node_shift42_specialist",
+          "metricDeltas": {
+            "associate_engagement": 15.0,
+            "store_morale": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift42_specialist",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "changeSceneId": "scene_security_office",
+      "text": "Shift 42: CLINT'S EDITED CCTV LOOP. Clint plays a camera clip: 'You unlocked the camera case at 7:45 PM. You reach inside. Your hands go into your jacket. The camera is gone.'",
+      "choices": [
+        {
+          "id": "choice_s42_spec_fullvideo",
+          "text": "Demand to see the unedited next 30 seconds showing you placing the camera directly into a paying customer's cart.",
+          "voiceKeywords": [
+            "unedited",
+            "30 seconds",
+            "customer",
+            "paying",
+            "cart",
+            "full video"
+          ],
+          "nextNodeId": "node_shift43_specialist",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "labor_squeeze": -5.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift43_specialist",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 43: RELEGATED TO PHONE ACCESSORIES. Management locks you out of the specialty showcase. You are assigned to hang 99-cent plastic phone cases on clearance pegs under Chad's mocking surveillance.",
+      "choices": [
+        {
+          "id": "choice_s43_spec_precision",
+          "text": "Organize the clearance wall with immaculate geometric precision, utterly unbothered.",
+          "voiceKeywords": [
+            "clearance",
+            "precision",
+            "organize",
+            "unbothered",
+            "calm",
+            "pegs"
+          ],
+          "nextNodeId": "node_shift44_specialist",
+          "metricDeltas": {
+            "store_morale": 10.0,
+            "associate_engagement": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift44_specialist",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Shift 44: THE DUPLICATE KEY MOLD. While searching the technician drawer for a peg hook tool, you discover a silicone impression kit and a brass key blank matching the showcase master cylinder.",
+      "choices": [
+        {
+          "id": "choice_s44_spec_secure",
+          "text": "Bag the silicone impression mold as forensic proof of internal key duplication.",
+          "voiceKeywords": [
+            "silicone",
+            "mold",
+            "key",
+            "forensic",
+            "proof",
+            "bag"
+          ],
+          "nextNodeId": "node_shift45_specialist",
+          "metricDeltas": {
+            "associate_engagement": 20.0,
+            "labor_squeeze": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift45_specialist",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "changeSceneId": "scene_action_alley",
+      "text": "Shift 45: JULIAN'S AUDIT LOGBOOK. Julian brings you the certified physical lockbox sign-out sheet: 'Chad checked out the spare master key during your lunch hour on every day merchandise went missing. The chain of custody is broken\u2014on his signature.'",
+      "choices": [
+        {
+          "id": "choice_s45_spec_ready",
+          "text": "Take Julian's logbook and the silicone mold into Clint's interrogation office.",
+          "voiceKeywords": [
+            "logbook",
+            "julian",
+            "mold",
+            "chad",
+            "interrogation",
+            "ready"
+          ],
+          "nextNodeId": "node_shift46_specialist",
+          "metricDeltas": {
+            "store_morale": 15.0,
+            "associate_engagement": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "node_shift46_specialist",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "changeSceneId": "scene_security_office",
+      "text": "SHIFT 46 LOSS PREVENTION INTERROGATION STANDOFF! Clint slams the metal door shut: 'Camera in your coat, missing merchandise on your shift. Sign this confession of grand larceny or leave in squad car backseats.' Overcome Clint!",
+      "triggerBattleEncounterId": "encounter_loss_prevention_standoff",
+      "nextNodeId": "node_shift46_specialist_victory"
+    },
+    {
+      "id": "node_shift46_specialist_victory",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "changeSceneId": "scene_security_office",
+      "text": "INTERROGATION BROKEN! You lay down Julian's custody logbook, the cloud serial ledger, and Chad's silicone key mold. Clint stares at Chad's signature as his interrogation collapses. Act IV is won!",
+      "nextNodeId": "node_retail_act4_complete"
+    },
+    {
+      "id": "node_retail_act4_complete",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "ACT FOUR: THE FRAME JOB & INTERNAL ESPIONAGE COMPLETED! You dismantled Clint's coercive Reid-technique interrogation and exposed the manufactured paper trail. But Store Manager Henderson is now backed into a corner. Desperate, paranoid, and facing total corporate disgrace, Henderson orders a complete emergency store lockdown for inventory retribution. Welcome to Act V: The Crucible & Endgame!",
       "setFlagOnEnter": "game_completed"
     }
   ]

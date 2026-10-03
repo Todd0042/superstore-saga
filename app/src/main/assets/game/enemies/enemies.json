@@ -181,6 +181,21 @@
       "movesetId": "flesh_bruiser",
       "spriteId": "template_brute",
       "spriteTint": "#9CA3AF"
+    },
+    {
+      "id": "security_clint",
+      "name": "Loss Prevention Clint",
+      "subtitle": "Reid Technique Interrogator",
+      "family": "CONSTRUCT",
+      "selfElement": "SHADOW",
+      "hp": 550,
+      "attack": 35,
+      "defense": 12,
+      "speed": 48,
+      "xpReward": 160,
+      "movesetId": "construct_bruiser",
+      "spriteId": "template_brute",
+      "spriteTint": "#1E293B"
     }
   ]
 }

@@ -128,6 +128,24 @@
           "narrationText": "The slacker attempts to stall the confrontation by claiming an emergency restroom break!"
         }
       ]
+    },
+    {
+      "id": "encounter_loss_prevention_standoff",
+      "name": "Loss Prevention Interrogation Standoff",
+      "description": "Security Manager Clint deploys the Reid interrogation technique, falsified timeline logs, and felony termination threats! Break his manufactured narrative.",
+      "environment": "CASTLE",
+      "party": ["hero"],
+      "enemies": [
+        { "templateId": "security_clint", "id": "clint_boss", "name": "Loss Prevention Clint", "subtitle": "Reid Technique Interrogator", "isTargeted": true, "atbGauge": 0.45 }
+      ],
+      "bossPhases": [
+        {
+          "enemyId": "clint_boss",
+          "hpBelow": 0.5,
+          "bannerText": "FORCED CONFESSION ULTIMATUM",
+          "narrationText": "Clint slides a typed confession statement and pen across the metal desk, threatening police arrest unless you sign!"
+        }
+      ]
     }
   ]
 }
