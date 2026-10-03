@@ -1003,8 +1003,8 @@ class StoryViewModel(
             if (incidentJustResolved || updatedFlags["incident_just_happened"] == true) {
                 // Clear the transient guard so future returns can trigger, preventing back-to-back chaining
                 updatedFlags = updatedFlags + ("incident_just_happened" to false)
-            } else {
-                // Procedural retail incident check (45% chance every time returning to current hub)
+            } else if (effectiveNode.allowIncidents) {
+                // Procedural retail incident check (45% chance every time returning to an incident-eligible hub)
                 if (kotlin.random.Random.nextFloat() < 0.45f) {
                     val availableIncidents = GameContent.incidents.values.filter { inc ->
                         inc.triggerNodeId != null &&

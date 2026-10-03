@@ -709,6 +709,8 @@
       "id": "node_locker_hub",
       "speakerId": "donna",
       "side": "LEFT",
+      "allowIncidents": false,
+      "blacklistIncidents": true,
       "text": "You've got three minutes before Henderson climbs his milk crate in Action Alley. What's on your mind before we head out to the huddle?",
       "choices": [
         {

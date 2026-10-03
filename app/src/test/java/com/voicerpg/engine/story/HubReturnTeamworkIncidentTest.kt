@@ -81,9 +81,8 @@ class HubReturnTeamworkIncidentTest {
     }
 
     @Test
-    fun testReturningToHubFlagsIncidentAndAvoidsChaining() {
-        var incidentObserved = false
-        // Across multiple independent hub returns with unplayed incidents, at least one incident should trigger
+    fun testBlacklistedHubNeverTriggersIncidents() {
+        // node_locker_hub is blacklisted (before morning cheer); incidents must NEVER trigger
         for (trial in 1..25) {
             val vm = createViewModel()
             // Setup a state where player already visited node_locker_hub and is returning to it
@@ -96,6 +95,7 @@ class HubReturnTeamworkIncidentTest {
                 )
             )
             assertEquals("node_locker_hub", vm.state.value.currentNode.id)
+            assertFalse("node_locker_hub must have allowIncidents == false", vm.state.value.currentNode.allowIncidents)
 
             // Make a choice from the hub that returns to the hub
             vm.selectChoice(
@@ -112,6 +112,47 @@ class HubReturnTeamworkIncidentTest {
             vm.advanceDialogue()
 
             val currentNode = vm.state.value.currentNode
+            assertEquals(
+                "Blacklisted hub must NEVER trigger an incident on return",
+                "node_locker_hub",
+                currentNode.id
+            )
+        }
+    }
+
+    @Test
+    fun testAllowedHubTriggersIncidentsAndAvoidsChaining() {
+        var incidentObserved = false
+        // Across multiple independent returns to an incident-eligible hub (node_breakroom_hub), incidents should trigger
+        for (trial in 1..25) {
+            val vm = createViewModel()
+            // Setup a state where player already visited node_breakroom_hub and is returning to it
+            vm.selectChoice(
+                DialogueChoice(
+                    id = "test_setup_breakroom",
+                    text = "Breakroom",
+                    voiceKeywords = listOf("breakroom"),
+                    nextNodeId = "node_breakroom_hub"
+                )
+            )
+            assertEquals("node_breakroom_hub", vm.state.value.currentNode.id)
+            assertTrue("node_breakroom_hub must have allowIncidents == true", vm.state.value.currentNode.allowIncidents)
+
+            // Make a choice from the hub that returns to the hub
+            vm.selectChoice(
+                DialogueChoice(
+                    id = "choice_breakroom_toast",
+                    text = "Toast",
+                    voiceKeywords = listOf("toast"),
+                    nextNodeId = "node_breakroom_mack_banter"
+                )
+            )
+            assertEquals("node_breakroom_mack_banter", vm.state.value.currentNode.id)
+
+            // Returning to breakroom hub from banter
+            vm.advanceDialogue()
+
+            val currentNode = vm.state.value.currentNode
             if (currentNode.id.startsWith("node_incident_")) {
                 incidentObserved = true
                 // Verify incident is flagged
@@ -121,7 +162,7 @@ class HubReturnTeamworkIncidentTest {
                 break
             }
         }
-        assertTrue("Expected at least one procedural incident trigger across 25 hub returns", incidentObserved)
+        assertTrue("Expected at least one procedural incident trigger across 25 breakroom hub returns", incidentObserved)
     }
 
     @Test

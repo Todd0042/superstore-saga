@@ -391,7 +391,9 @@ data class NodeDto(
     val healPartyOnEnter: String? = null,
     val metricDeltas: Map<String, Float>? = null,
     val metricOverrides: Map<String, Float>? = null,
-    val assignHeroClassId: String? = null
+    val assignHeroClassId: String? = null,
+    val allowIncidents: Boolean? = null,
+    val blacklistIncidents: Boolean? = null
 )
 
 data class NodeFileDto(val nodes: List<NodeDto>? = null)
@@ -1353,7 +1355,8 @@ class GameContentLoader(private val source: ContentSource) {
         healPartyOnEnter = healPartyOnEnter,
         metricDeltas = metricDeltas ?: emptyMap(),
         metricOverrides = metricOverrides ?: emptyMap(),
-        assignHeroClassId = assignHeroClassId
+        assignHeroClassId = assignHeroClassId,
+        allowIncidents = if (blacklistIncidents == true) false else (allowIncidents ?: true)
     )
 
     private fun EnvironmentDefinitionDto.toDefinition(): EnvironmentDefinition = EnvironmentDefinition(

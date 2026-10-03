@@ -84,7 +84,8 @@ data class DialogueNode(
     val healPartyOnEnter: String? = null,
     val metricDeltas: Map<String, Float> = emptyMap(),
     val metricOverrides: Map<String, Float> = emptyMap(),
-    val assignHeroClassId: String? = null
+    val assignHeroClassId: String? = null,
+    val allowIncidents: Boolean = true
 )
 
 data class StoryScene(
