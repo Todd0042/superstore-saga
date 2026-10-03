@@ -1012,12 +1012,14 @@ class StoryViewModel(
             val morale = _state.value.dynamicMetrics["store_morale"] ?: 65f
             val engagement = _state.value.dynamicMetrics["associate_engagement"] ?: 70f
             val squeeze = _state.value.dynamicMetrics["labor_squeeze"] ?: 40f
+            val karen = _state.value.dynamicMetrics["karen_index"] ?: 15f
             val destinationId = when {
                 morale < 40f && squeeze >= 50f -> "node_ending_wildcat"
-                squeeze >= 55f && engagement < 55f -> "node_ending_corporate"
-                engagement >= 80f && morale >= 50f -> "node_ending_whistleblower"
-                engagement < 60f && morale >= 55f -> "node_ending_quiet_quitter"
-                else -> "node_ending_defiant"
+                squeeze >= 60f && engagement < 50f -> "node_ending_corporate"
+                engagement >= 75f && morale >= 50f -> "node_ending_whistleblower"
+                engagement < 50f && morale >= 60f -> "node_ending_quiet_quitter"
+                morale < 45f && (squeeze >= 55f || karen >= 40f) -> "node_ending_defiant"
+                else -> "node_ending_survivor"
             }
             val destinationNode = StoryScript.ALL_NODES[destinationId]
             if (destinationNode != null) {

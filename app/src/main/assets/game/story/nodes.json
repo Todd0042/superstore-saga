@@ -10876,6 +10876,21 @@
             "retaliation"
           ],
           "nextNodeId": "node_ending_defiant"
+        },
+        {
+          "id": "choice_ending_survivor",
+          "text": "Adjust your vest, grab a fresh boxcutter, and clock in for tomorrow's shift as an unbreakable retail survivor.",
+          "voiceKeywords": [
+            "survivor",
+            "clock in",
+            "tomorrow",
+            "boxcutter",
+            "vest",
+            "endure",
+            "unbreakable",
+            "retail"
+          ],
+          "nextNodeId": "node_ending_survivor"
         }
       ]
     },
@@ -10884,7 +10899,7 @@
       "speakerId": "narrator",
       "side": "CENTER_NARRATOR",
       "text": "Evaluating cumulative retail career metrics... Assessment Score: {score}. Store Morale: {morale}. Associate Engagement: {engagement}.",
-      "nextNodeId": "node_ending_whistleblower"
+      "nextNodeId": "node_ending_survivor"
     },
     {
       "id": "node_ending_whistleblower",
@@ -10900,7 +10915,7 @@
       "side": "CENTER_NARRATOR",
       "changeSceneId": "scene_manager_office",
       "setFlagOnEnter": "game_completed",
-      "text": "ENDING 2: THE CORPORATE ASCENT. Corporate Vice President Vance visits your store in person. Impressed by your cold efficiency and ability to navigate high-pressure crises, he offers you Henderson's executive chair. You accept the gold nametag and sit behind the polished mahogany desk. You swear to yourself that you'll protect the workers\u2014yet within your first month, corporate emails demand another 4% labor cut, and you catch yourself staring at the 45-second scanner tachometer. The cycle continues, and you are its new architect. Final Assessment: {score} ({rating})."
+      "text": "ENDING 2: THE CORPORATE ASCENT. Corporate Vice President Vance visits your store in person. Impressed by your cold efficiency and ability to navigate high-pressure crises, he offers you Henderson's executive chair. You accept the gold nametag and sit behind the polished mahogany desk. You swear to yourself that you'll protect the workers—yet within your first month, corporate emails demand another 4% labor cut, and you catch yourself staring at the 45-second scanner tachometer. The cycle continues, and you are its new architect. Final Assessment: {score} ({rating})."
     },
     {
       "id": "node_ending_quiet_quitter",
@@ -10925,6 +10940,14 @@
       "changeSceneId": "scene_security_office",
       "setFlagOnEnter": "game_completed",
       "text": "ENDING 5: THE DEFIANT SCAPEGOAT. When corporate attempts to issue a retaliatory termination letter, you don't flinch. You place a formal preservation-of-evidence subpoena drafted by an employment civil rights attorney directly on the desk, looking management dead in the eye. You clock out, take a copy of every timestamp, and walk out into the parking lot with your dignity uncompromised. Three months later, federal labor courts accept your retaliation lawsuit with triple punitive damages. You stood tall, and justice followed. Final Assessment: {score} ({rating})."
+    },
+    {
+      "id": "node_ending_survivor",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "changeSceneId": "scene_action_alley",
+      "setFlagOnEnter": "game_completed",
+      "text": "ENDING 6: THE RETAIL SURVIVOR. The sirens fade, the yellow police tape is removed from the automatic sliding doors, and District Management sends in an interim store manager with a fresh clipboard and rehearsed corporate smiles. You didn't ascend to the executive suite, you didn't become a national whistleblower, and you didn't walk out. At 6:58 AM on Wednesday, you swipe your employee badge at the timeclock. You adjust your blue polyester vest, pull a fresh boxcutter from your pocket, and step out onto Center Action Alley to help an elderly shopper find canned peaches. Store managers come and go, corporate decrees burn themselves out, but the store endures—carried on the shoulders of survivors like you who cannot be broken. Final Assessment: {score} ({rating})."
     }
   ]
 }
