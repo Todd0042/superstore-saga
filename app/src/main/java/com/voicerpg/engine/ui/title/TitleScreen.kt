@@ -104,6 +104,7 @@ fun TitleScreen(
     onAudioSetup: () -> Unit,
     onOptions: () -> Unit,
     onTutorial: () -> Unit,
+    onAssetViewer: () -> Unit = {},
     isMiniGameTestMenuOpen: Boolean = false,
     onOpenMiniGameTestMenu: () -> Unit = {},
     onCloseMiniGameTestMenu: () -> Unit = {},
@@ -542,7 +543,39 @@ fun TitleScreen(
                     }
                 }
 
-                // 6. Mini-Game Testing / Arcade Mode (Temporary / QA)
+                // 6. Asset Viewer & Jukebox Button
+                Button(
+                    onClick = onAssetViewer,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .border(1.dp, RetroBorder, RoundedCornerShape(8.dp)),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = RetroDeepSlate.copy(alpha = 0.85f)
+                    ),
+                    shape = RoundedCornerShape(8.dp)
+                ) {
+                    Row(
+                        modifier = Modifier.padding(vertical = 4.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.GraphicEq,
+                            contentDescription = null,
+                            tint = HolyYellow,
+                            modifier = Modifier.size(18.dp)
+                        )
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text(
+                            text = "ASSET VIEWER & JUKEBOX",
+                            color = Color.White,
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.Bold,
+                            fontFamily = FontFamily.Monospace
+                        )
+                    }
+                }
+
+                // 7. Mini-Game Testing / Arcade Mode (Temporary / QA)
                 Button(
                     onClick = onOpenMiniGameTestMenu,
                     modifier = Modifier

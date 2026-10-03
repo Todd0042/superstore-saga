@@ -1498,6 +1498,35 @@ class StoryViewModel(
         }
     }
 
+    fun openAssetViewer() {
+        cancelPendingAutoAdvance()
+        cancelPendingStoryMode()
+        combatNarrator.stop()
+        speechManager.cancel()
+        _state.value = _state.value.copy(
+            previousScreen = _state.value.gameScreen,
+            gameScreen = GameScreen.ASSET_VIEWER
+        )
+    }
+
+    fun returnFromAssetViewer() {
+        val rawTarget = _state.value.previousScreen
+        val returnTarget = if (rawTarget == null || rawTarget == GameScreen.ASSET_VIEWER) {
+            GameScreen.TITLE
+        } else {
+            rawTarget
+        }
+        _state.value = _state.value.copy(
+            previousScreen = null,
+            gameScreen = returnTarget
+        )
+        if (returnTarget == GameScreen.TITLE) {
+            musicManager?.playTrack(com.voicerpg.engine.audio.MusicManager.TRACK_TITLE)
+        } else if (returnTarget == GameScreen.STORY_EXPLORATION) {
+            musicManager?.playTrack(_state.value.currentScene.musicAsset)
+        }
+    }
+
     private var fastForwardJob: Job? = null
 
     fun startFastForward() {
@@ -1675,6 +1704,10 @@ class StoryViewModel(
                 }
                 lower.contains("options") || lower.contains("settings") -> {
                     onOpenOptions?.invoke()
+                    return
+                }
+                lower.contains("asset viewer") || lower.contains("gallery") || lower.contains("jukebox") || lower.contains("music player") || lower.contains("view assets") || lower.contains("soundtrack") -> {
+                    openAssetViewer()
                     return
                 }
                 lower.contains("test minigame") || lower.contains("test minigames") || lower.contains("arcade") || lower.contains("minigames") || lower.contains("mini game") -> {

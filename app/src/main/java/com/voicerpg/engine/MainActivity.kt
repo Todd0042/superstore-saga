@@ -261,6 +261,7 @@ class MainActivity : ComponentActivity() {
                                     tutorialBattleViewModel.resetTutorial()
                                     storyViewModel.openTutorial()
                                 },
+                                onAssetViewer = { storyViewModel.openAssetViewer() },
                                 isMiniGameTestMenuOpen = storyState.isMiniGameTestMenuOpen,
                                 onOpenMiniGameTestMenu = { storyViewModel.openMiniGameTestMenu() },
                                 onCloseMiniGameTestMenu = { storyViewModel.closeMiniGameTestMenu() },
@@ -345,6 +346,15 @@ class MainActivity : ComponentActivity() {
                                 },
                                 onSkip = {
                                     storyViewModel.onSkipMiniGame()
+                                }
+                            )
+                        }
+                        GameScreen.ASSET_VIEWER -> {
+                            com.voicerpg.engine.ui.gallery.AssetViewerScreen(
+                                musicManager = musicManager,
+                                speechManager = speechManager,
+                                onBack = {
+                                    storyViewModel.returnFromAssetViewer()
                                 }
                             )
                         }

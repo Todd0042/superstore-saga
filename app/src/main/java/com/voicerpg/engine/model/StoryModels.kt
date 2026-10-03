@@ -116,7 +116,8 @@ enum class GameScreen {
     CHARACTER_CREATION,
     STORY_EXPLORATION,
     COMBAT_ARENA,
-    MINI_GAME
+    MINI_GAME,
+    ASSET_VIEWER
 }
 
 data class SaveSummary(
