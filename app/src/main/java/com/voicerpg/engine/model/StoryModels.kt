@@ -56,8 +56,7 @@ data class DialogueChoice(
     val completionFlag: String? = null,
     val requiredFlags: List<String> = emptyList(),
     val metricDeltas: Map<String, Float> = emptyMap(),
-    val assignHeroClassId: String? = null,
-    val triggerMiniGameId: String? = null
+    val assignHeroClassId: String? = null
 )
 
 /**
@@ -78,7 +77,6 @@ data class DialogueNode(
     val choices: List<DialogueChoice> = emptyList(),
     val nextNodeId: String? = null,
     val triggerBattleEncounterId: String? = null,
-    val triggerMiniGameId: String? = null,
     val changeSceneId: String? = null,
     val setFlagOnEnter: String? = null,
     val hubCompletion: HubCompletion? = null,
@@ -116,7 +114,6 @@ enum class GameScreen {
     CHARACTER_CREATION,
     STORY_EXPLORATION,
     COMBAT_ARENA,
-    MINI_GAME,
     ASSET_VIEWER
 }
 

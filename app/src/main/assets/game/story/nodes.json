@@ -1281,20 +1281,6 @@
           }
         },
         {
-          "id": "choice_cashier_hub_minigame",
-          "text": "Jump on Register 4 for the Twin-Stick Barcode Blaster challenge!",
-          "voiceKeywords": [
-            "blaster",
-            "barcode",
-            "scanner",
-            "laser",
-            "register",
-            "minigame"
-          ],
-          "nextNodeId": "node_minigame_cashier_intro",
-          "completionFlag": "flag_minigame_cashier_done"
-        },
-        {
           "id": "choice_cashier_hub_rush",
           "text": "Engage the morning checkout rush wave on Lane 4!",
           "voiceKeywords": [
@@ -1411,20 +1397,6 @@
           }
         },
         {
-          "id": "choice_stocker_hub_minigame",
-          "text": "Haul a 2,000-lb pallet through Action Alley in the Aisle Dodger challenge!",
-          "voiceKeywords": [
-            "pallet",
-            "haul",
-            "dodger",
-            "aisle",
-            "freight",
-            "minigame"
-          ],
-          "nextNodeId": "node_minigame_stocker_intro",
-          "completionFlag": "flag_minigame_stocker_done"
-        },
-        {
           "id": "choice_stocker_hub_rush",
           "text": "Head to the front concourse to support the morning floor rally!",
           "voiceKeywords": [
@@ -1539,20 +1511,6 @@
           "metricDeltas": {
             "store_morale": 10.0
           }
-        },
-        {
-          "id": "choice_unloader_hub_minigame",
-          "text": "Feed cardboard and tie off wires in the Baler Compactor challenge!",
-          "voiceKeywords": [
-            "baler",
-            "compactor",
-            "hydraulic",
-            "crush",
-            "cardboard",
-            "minigame"
-          ],
-          "nextNodeId": "node_minigame_unloader_intro",
-          "completionFlag": "flag_minigame_unloader_done"
         },
         {
           "id": "choice_unloader_hub_rush",
@@ -1672,20 +1630,6 @@
           }
         },
         {
-          "id": "choice_specialist_hub_minigame",
-          "text": "Work the counter in the Counter Commotion multi-tasking challenge!",
-          "voiceKeywords": [
-            "counter",
-            "commotion",
-            "slicer",
-            "showcase",
-            "warranty",
-            "minigame"
-          ],
-          "nextNodeId": "node_minigame_specialist_intro",
-          "completionFlag": "flag_minigame_specialist_done"
-        },
-        {
           "id": "choice_specialist_hub_rush",
           "text": "Assist the front end with electronic payment overrides during the morning rush!",
           "voiceKeywords": [
@@ -1712,42 +1656,6 @@
       "speakerId": "chad",
       "side": "LEFT",
       "text": "Keep the high-bass demo track queued up on the showroom soundbar! When shoppers hear that clean, punchy frequency rolling through the aisle, their eyes light up every single time. It's the best feeling on the sales floor!",
-      "nextNodeId": "node_hub_specialist"
-    },
-    {
-      "id": "node_minigame_cashier_intro",
-      "speakerId": "brenda",
-      "side": "RIGHT",
-      "changeSceneId": "scene_checkout_concourse",
-      "text": "Concourse rush incoming! Keep that high-frequency barcode laser charged. Aim true, tag every shopper's cart items, and use your Price Check EMP if the queue crowds the register barricade!",
-      "triggerMiniGameId": "barcode_blaster",
-      "nextNodeId": "node_hub_cashier"
-    },
-    {
-      "id": "node_minigame_stocker_intro",
-      "speakerId": "todd",
-      "side": "RIGHT",
-      "changeSceneId": "scene_action_alley",
-      "text": "Two thousand pounds of fragile freight on the forks! Watch your inertia on the turns, keep the stability needle in the green, and honk your horn at wandering shoppers!",
-      "triggerMiniGameId": "pallet_haul",
-      "nextNodeId": "node_hub_stocker"
-    },
-    {
-      "id": "node_minigame_unloader_intro",
-      "speakerId": "mack",
-      "side": "RIGHT",
-      "changeSceneId": "scene_receiving_dock",
-      "text": "Industrial baler is running hot! Feed clean cardboard, reject illegal plastics and wood chunks before they jam the ram, and loop those four steel wires tight!",
-      "triggerMiniGameId": "baler_compactor",
-      "nextNodeId": "node_hub_unloader"
-    },
-    {
-      "id": "node_minigame_specialist_intro",
-      "speakerId": "julian",
-      "side": "RIGHT",
-      "changeSceneId": "scene_electronics_department",
-      "text": "Demanding customers at the specialty desk! Shave cold cuts to the exact ounce target, find the matching brass case keys, and pitch that 29% APR warranty for maximum commission!",
-      "triggerMiniGameId": "counter_commotion",
       "nextNodeId": "node_hub_specialist"
     },
     {

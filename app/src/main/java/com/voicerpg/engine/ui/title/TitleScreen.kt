@@ -105,10 +105,6 @@ fun TitleScreen(
     onOptions: () -> Unit,
     onTutorial: () -> Unit,
     onAssetViewer: () -> Unit = {},
-    isMiniGameTestMenuOpen: Boolean = false,
-    onOpenMiniGameTestMenu: () -> Unit = {},
-    onCloseMiniGameTestMenu: () -> Unit = {},
-    onLaunchMiniGame: (String) -> Unit = {},
     storyModeSummary: SaveSummary? = null,
     onPureStoryMode: (fresh: Boolean) -> Unit = {},
     onStartListening: () -> Unit,
@@ -574,38 +570,6 @@ fun TitleScreen(
                         )
                     }
                 }
-
-                // 7. Mini-Game Testing / Arcade Mode (Temporary / QA)
-                Button(
-                    onClick = onOpenMiniGameTestMenu,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .border(1.dp, Color(0xFFFFA726), RoundedCornerShape(8.dp)),
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = RetroDeepSlate.copy(alpha = 0.85f)
-                    ),
-                    shape = RoundedCornerShape(8.dp)
-                ) {
-                    Row(
-                        modifier = Modifier.padding(vertical = 4.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.PlayArrow,
-                            contentDescription = null,
-                            tint = Color(0xFFFFA726),
-                            modifier = Modifier.size(18.dp)
-                        )
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Text(
-                            text = "TEST MINI-GAMES (ARCADE)",
-                            color = Color(0xFFFFA726),
-                            fontSize = 12.sp,
-                            fontWeight = FontWeight.Bold,
-                            fontFamily = FontFamily.Monospace
-                        )
-                    }
-                }
             }
 
             Spacer(modifier = Modifier.height(24.dp))
@@ -639,9 +603,9 @@ fun TitleScreen(
                     Spacer(modifier = Modifier.width(8.dp))
                     Text(
                         text = if (isListening) {
-                            "🎤 Listening... Speak 'Continue', 'New Game', 'Test Minigames', or 'Options'"
+                            "🎤 Listening... Speak 'Continue', 'New Game', or 'Options'"
                         } else {
-                            "🎤 Speak 'Continue', 'New Game', 'Test Minigames', or Tap to Talk"
+                            "🎤 Speak 'Continue', 'New Game', or Tap to Talk"
                         },
                         color = if (isListening) Color.White else Color.LightGray,
                         fontSize = 11.sp,
@@ -848,18 +812,6 @@ fun TitleScreen(
                 },
                 onDismiss = {
                     showSlotArchivesDialog = false
-                }
-            )
-        }
-
-        // Mini-Game QA Testing Dialog
-        if (isMiniGameTestMenuOpen) {
-            MiniGameTestMenuDialog(
-                isOpen = true,
-                onDismiss = onCloseMiniGameTestMenu,
-                onSelectGame = { gameId ->
-                    onCloseMiniGameTestMenu()
-                    onLaunchMiniGame(gameId)
                 }
             )
         }
@@ -1334,231 +1286,3 @@ fun SaveSlotDialog(
     }
 }
 
-/**
- * Metadata descriptor for the Mini-Game Testing Arcade.
- */
-data class MiniGameTestItem(
-    val id: String,
-    val title: String,
-    val department: String,
-    val desc: String,
-    val voiceCommand: String,
-    val accentColor: Color
-)
-
-/**
- * QA / Arcade Mini-Game Selection Dialog.
- * Allows independent, direct testing of all department mini-games from the Title Screen
- * without progressing shifts or modifying campaign save data.
- */
-@Composable
-fun MiniGameTestMenuDialog(
-    isOpen: Boolean,
-    onDismiss: () -> Unit,
-    onSelectGame: (String) -> Unit
-) {
-    if (!isOpen) return
-
-    val games = listOf(
-        MiniGameTestItem(
-            id = "barcode_blaster",
-            title = "Twin-Stick Barcode Blaster",
-            department = "FRONT END • CASHIER",
-            desc = "Tag fast-moving customer items with your barcode scanner before items breach the register counter.",
-            voiceCommand = "barcode blaster",
-            accentColor = Color(0xFF42A5F5)
-        ),
-        MiniGameTestItem(
-            id = "pallet_haul",
-            title = "The Pallet Haul / Aisle Dodger",
-            department = "SALES FLOOR • STOCKER",
-            desc = "Haul heavy hydraulic pallet freight down narrow aisles. Swerve past spilled marinara, wet floor cones, and roaming shoppers.",
-            voiceCommand = "pallet haul",
-            accentColor = Color(0xFF66BB6A)
-        ),
-        MiniGameTestItem(
-            id = "baler_compactor",
-            title = "The Baler Compactor",
-            department = "BACKROOM • UNLOADER",
-            desc = "Feed corrugated boxes into the hydraulic baler. Eject illegal plastics and tie off four steel wires before safety cutoff trips.",
-            voiceCommand = "baler",
-            accentColor = Color(0xFFFFB74D)
-        ),
-        MiniGameTestItem(
-            id = "counter_commotion",
-            title = "Counter Commotion",
-            department = "SPECIALTY • SPECIALIST",
-            desc = "Precision customer counter service. Shave deli cold cuts to exact ounce targets, find glass keys, and pitch warranty plans.",
-            voiceCommand = "counter commotion",
-            accentColor = Color(0xFFAB47BC)
-        ),
-        MiniGameTestItem(
-            id = "cart_corral",
-            title = "Cart Corral Rush",
-            department = "STOREWIDE SUPPORT • ALL TRACKS",
-            desc = "Wrangle a serpentine train of runaway shopping carts through bad weather and erratic parking lot SUVs into the entrance bay.",
-            voiceCommand = "cart corral",
-            accentColor = Color(0xFFFF7043)
-        )
-    )
-
-    Dialog(onDismissRequest = onDismiss) {
-        Surface(
-            modifier = Modifier
-                .fillMaxWidth()
-                .clip(RoundedCornerShape(16.dp))
-                .border(2.dp, Color(0xFFFFA726), RoundedCornerShape(16.dp)),
-            color = RetroBlack.copy(alpha = 0.98f)
-        ) {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(18.dp)
-                    .verticalScroll(rememberScrollState()),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                // Header
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Column(modifier = Modifier.weight(1f)) {
-                        Text(
-                            text = "🕹️ MINI-GAME TESTING ARCADE",
-                            color = Color(0xFFFFA726),
-                            fontSize = 14.sp,
-                            fontWeight = FontWeight.Black,
-                            fontFamily = FontFamily.Monospace,
-                            letterSpacing = 1.sp
-                        )
-                        Text(
-                            text = "Test interactive department mini-games directly (QA Mode)",
-                            color = Color.LightGray.copy(alpha = 0.8f),
-                            fontSize = 10.sp,
-                            fontFamily = FontFamily.Monospace
-                        )
-                    }
-                    Button(
-                        onClick = onDismiss,
-                        modifier = Modifier.size(32.dp),
-                        colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
-                        contentPadding = androidx.compose.foundation.layout.PaddingValues(0.dp)
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Close,
-                            contentDescription = "Close",
-                            tint = Color.LightGray,
-                            modifier = Modifier.size(18.dp)
-                        )
-                    }
-                }
-
-                Spacer(modifier = Modifier.height(14.dp))
-
-                games.forEach { item ->
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(vertical = 5.dp)
-                            .clip(RoundedCornerShape(10.dp))
-                            .background(RetroDeepSlate.copy(alpha = 0.9f))
-                            .border(1.dp, item.accentColor.copy(alpha = 0.6f), RoundedCornerShape(10.dp))
-                            .padding(12.dp)
-                    ) {
-                        Column(modifier = Modifier.fillMaxWidth()) {
-                            Row(
-                                modifier = Modifier.fillMaxWidth(),
-                                horizontalArrangement = Arrangement.SpaceBetween,
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                Text(
-                                    text = item.department,
-                                    color = item.accentColor,
-                                    fontSize = 9.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    fontFamily = FontFamily.Monospace
-                                )
-                                Text(
-                                    text = "🎤 \"${item.voiceCommand}\"",
-                                    color = Color.Gray,
-                                    fontSize = 9.sp,
-                                    fontFamily = FontFamily.Monospace
-                                )
-                            }
-                            Spacer(modifier = Modifier.height(4.dp))
-                            Text(
-                                text = item.title,
-                                color = Color.White,
-                                fontSize = 13.sp,
-                                fontWeight = FontWeight.Bold,
-                                fontFamily = FontFamily.Monospace
-                            )
-                            Spacer(modifier = Modifier.height(4.dp))
-                            Text(
-                                text = item.desc,
-                                color = Color.LightGray.copy(alpha = 0.85f),
-                                fontSize = 10.sp,
-                                lineHeight = 14.sp,
-                                fontFamily = FontFamily.Monospace
-                            )
-                            Spacer(modifier = Modifier.height(10.dp))
-                            Button(
-                                onClick = {
-                                    onDismiss()
-                                    onSelectGame(item.id)
-                                },
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .height(34.dp)
-                                    .border(1.dp, item.accentColor, RoundedCornerShape(6.dp)),
-                                colors = ButtonDefaults.buttonColors(
-                                    containerColor = item.accentColor.copy(alpha = 0.25f)
-                                ),
-                                shape = RoundedCornerShape(6.dp)
-                            ) {
-                                Row(
-                                    verticalAlignment = Alignment.CenterVertically,
-                                    horizontalArrangement = Arrangement.Center
-                                ) {
-                                    Icon(
-                                        imageVector = Icons.Default.PlayArrow,
-                                        contentDescription = null,
-                                        tint = item.accentColor,
-                                        modifier = Modifier.size(16.dp)
-                                    )
-                                    Spacer(modifier = Modifier.width(6.dp))
-                                    Text(
-                                        text = "PLAY ${item.title.uppercase()} ➔",
-                                        color = Color.White,
-                                        fontSize = 10.sp,
-                                        fontWeight = FontWeight.Bold,
-                                        fontFamily = FontFamily.Monospace
-                                    )
-                                }
-                            }
-                        }
-                    }
-                }
-
-                Spacer(modifier = Modifier.height(10.dp))
-
-                Button(
-                    onClick = onDismiss,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .border(1.dp, RetroBorder, RoundedCornerShape(8.dp)),
-                    colors = ButtonDefaults.buttonColors(containerColor = RetroDeepSlate),
-                    shape = RoundedCornerShape(8.dp)
-                ) {
-                    Text(
-                        text = "BACK TO TITLE",
-                        color = Color.White,
-                        fontSize = 11.sp,
-                        fontFamily = FontFamily.Monospace
-                    )
-                }
-            }
-        }
-    }
-}

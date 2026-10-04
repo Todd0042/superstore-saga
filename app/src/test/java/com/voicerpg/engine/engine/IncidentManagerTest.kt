@@ -5,8 +5,6 @@ import com.voicerpg.engine.model.IncidentCondition
 import com.voicerpg.engine.model.IncidentConditionType
 import com.voicerpg.engine.model.IncidentDefinition
 import com.voicerpg.engine.model.IncidentWeightMultiplier
-import com.voicerpg.engine.model.MiniGameConfig
-import com.voicerpg.engine.model.MiniGameOutcomeTier
 import com.voicerpg.engine.viewmodel.StoryState
 import kotlin.random.Random
 import org.junit.Assert.assertEquals
@@ -79,29 +77,5 @@ class IncidentManagerTest {
 
         val selected = IncidentManager.selectRandomIncident(state, Random(42))
         assertNotNull("Eligible incident should be chosen when conditions match", selected)
-    }
-
-    @Test
-    fun testMiniGameSimulationOutcomes() {
-        val config = MiniGameConfig(
-            id = "barcode_rush",
-            title = "Barcode Rush",
-            metricDeltasOnTier = mapOf(
-                MiniGameOutcomeTier.FLAWLESS to mapOf("morale" to 5f),
-                MiniGameOutcomeTier.DISASTER to mapOf("morale" to -15f)
-            ),
-            blurbOnTier = mapOf(
-                MiniGameOutcomeTier.FLAWLESS to "Laser-guided perfection!",
-                MiniGameOutcomeTier.DISASTER to "Scanner jam disaster!"
-            )
-        )
-
-        val flawless = MiniGameSimulator.simulate(config, skillModifier = 1.5f, fatigueModifier = 1.0f, random = Random(1))
-        assertEquals(MiniGameOutcomeTier.FLAWLESS, flawless.tier)
-        assertEquals(5f, flawless.metricDeltas["morale"] ?: 0f, 0.01f)
-
-        val disaster = MiniGameSimulator.simulate(config, skillModifier = 0.4f, fatigueModifier = 2.0f, random = Random(2))
-        assertEquals(MiniGameOutcomeTier.DISASTER, disaster.tier)
-        assertEquals(-15f, disaster.metricDeltas["morale"] ?: 0f, 0.01f)
     }
 }

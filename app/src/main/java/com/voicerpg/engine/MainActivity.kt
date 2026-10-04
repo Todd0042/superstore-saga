@@ -40,8 +40,6 @@ import com.voicerpg.engine.ui.pocket.PocketModeTouchGuard
 import com.voicerpg.engine.ui.pocket.PocketModeUnlockedBanner
 import com.voicerpg.engine.ui.setup.AudioSetupScreen
 import com.voicerpg.engine.ui.setup.MicPermissionRationaleDialog
-import com.voicerpg.engine.model.MiniGameConfig
-import com.voicerpg.engine.ui.minigame.MiniGameContainerScreen
 import com.voicerpg.engine.ui.story.StoryScreen
 import com.voicerpg.engine.ui.theme.VoiceRPGTheme
 import com.voicerpg.engine.ui.title.TitleScreen
@@ -262,10 +260,6 @@ class MainActivity : ComponentActivity() {
                                     storyViewModel.openTutorial()
                                 },
                                 onAssetViewer = { storyViewModel.openAssetViewer() },
-                                isMiniGameTestMenuOpen = storyState.isMiniGameTestMenuOpen,
-                                onOpenMiniGameTestMenu = { storyViewModel.openMiniGameTestMenu() },
-                                onCloseMiniGameTestMenu = { storyViewModel.closeMiniGameTestMenu() },
-                                onLaunchMiniGame = { gameId -> storyViewModel.triggerMiniGame(gameId) },
                                 onStartListening = {
                                     speechManager.startListening(
                                         onResult = { storyViewModel.handleStoryVoiceInput(it) }
@@ -331,21 +325,6 @@ class MainActivity : ComponentActivity() {
                                 onContinueStory = {
                                     combatNarrator.stop()
                                     combatViewModel.onContinueStory?.invoke()
-                                }
-                            )
-                        }
-                        GameScreen.MINI_GAME -> {
-                            val activeConfig = storyState.activeMiniGameConfig ?: MiniGameConfig(
-                                id = "barcode_blaster",
-                                title = "Mini-Game"
-                            )
-                            MiniGameContainerScreen(
-                                config = activeConfig,
-                                onFinish = { outcome ->
-                                    storyViewModel.onMiniGameFinished(outcome)
-                                },
-                                onSkip = {
-                                    storyViewModel.onSkipMiniGame()
                                 }
                             )
                         }
