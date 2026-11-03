@@ -1,3 +1,11 @@
+<p align="center">
+  <a href="https://ko-fi.com/todd0042">
+    <img src="https://raw.githubusercontent.com/Todd0042/creator-assets/main/banners/todd_creator_banner_v1.0.png" alt="Support Todd on Ko-fi" width="100%" />
+  </a>
+</p>
+
+---
+
 # Retail Inferno (Working Title) — Project Plan & Design Notes
 
 > **Repository:** `retail-inferno`  
@@ -55,3 +63,12 @@ The standalone engine copy has been established with separate identifiers:
 1. **Manifest & Story Setup:** Customize `manifest.json`, define initial opening scene (The Morning Huddle).
 2. **Enemy & Class Design:** Design corporate/retail themed archetypes, chants, and voice keywords.
 3. **Audio & TTS Voice Tuning:** Configure narrator and NPC voices for customer/manager dialogue.
+
+---
+
+<p align="center">
+  <a href="https://ko-fi.com/todd0042">
+    <img src="https://raw.githubusercontent.com/Todd0042/creator-assets/main/banners/todd_creator_banner_v2.0.png" alt="Support Todd on Ko-fi" width="100%" />
+  </a>
+</p>
+
