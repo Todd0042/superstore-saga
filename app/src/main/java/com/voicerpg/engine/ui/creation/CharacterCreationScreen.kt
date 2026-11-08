@@ -48,6 +48,7 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asImageBitmap
+import com.voicerpg.engine.content.GameManifest
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontFamily
@@ -61,7 +62,6 @@ import com.voicerpg.engine.audio.SpeechState
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import com.voicerpg.engine.content.GameContent
-import com.voicerpg.engine.content.GameManifest
 import com.voicerpg.engine.content.HeroClassDef
 import com.voicerpg.engine.model.AuraColor
 import com.voicerpg.engine.model.PlayerCustomization
@@ -85,21 +85,9 @@ fun CharacterCreationScreen(
     onConfirmCharacter: (PlayerCustomization) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val manifest = GameContent.manifest
-    val heroSpeaker = GameContent.heroCharacter?.speaker
-    val defaultHeroName = remember {
-        manifest.resolveDefaultHeroName().ifBlank { heroSpeaker?.name ?: "Hero" }
-    }
-    var name by remember(slot, initialCustomization.name) {
-        val initial = initialCustomization.name.trim()
-        val resolved = if (initial.isBlank() || initial == "Hero" || initial.contains("{random")) {
-            defaultHeroName
-        } else {
-            initial
-        }
-        mutableStateOf(resolved)
-    }
+    var name by remember(slot, initialCustomization.name) { mutableStateOf(initialCustomization.name) }
     var selectedClass by remember(slot, initialCustomization.heroClassId) { mutableStateOf(initialCustomization.heroClass) }
+    var selectedTitle by remember(slot, initialCustomization.title) { mutableStateOf(initialCustomization.title) }
     var selectedAura by remember(slot, initialCustomization.auraColor) { mutableStateOf(initialCustomization.auraColor) }
     var selectedAffinity by remember(slot, initialCustomization.voiceAffinityBonusSchool) { mutableStateOf(initialCustomization.voiceAffinityBonusSchool) }
 
@@ -108,7 +96,10 @@ fun CharacterCreationScreen(
     val coroutineScope = rememberCoroutineScope()
 
     val context = LocalContext.current
+    val manifest = GameContent.manifest
     val selfieConfig = manifest.selfieConfig
+    val heroSpeaker = GameContent.heroCharacter?.speaker
+    val defaultHeroName = manifest.defaultHeroName.ifBlank { heroSpeaker?.name ?: "Hero" }
     val defaultHeroTitle = manifest.defaultHeroTitle.ifBlank { heroSpeaker?.title ?: "Adventurer" }
     val defaultHeroPortrait = manifest.defaultHeroPortrait ?: heroSpeaker?.portraitAsset ?: "portraits/template_hero.jpg"
 
@@ -154,20 +145,26 @@ fun CharacterCreationScreen(
         }
     }
 
-    var quickNames by remember {
-        val baseList = manifest.quickNames.ifEmpty {
-            listOf(manifest.defaultHeroName)
+    val titles = remember {
+        manifest.characterTitles.ifEmpty {
+            listOf(defaultHeroTitle)
         }
-        mutableStateOf<List<String>>(baseList.map { GameManifest.resolveTemplateTokens(it) })
+    }
+
+    var quickNames by remember {
+        mutableStateOf(
+            manifest.quickNames.ifEmpty {
+                listOf(defaultHeroName)
+            }
+        )
     }
 
     fun confirmAndAwaken() {
         speechManager?.cancel()
-        val heroTitle = manifest.defaultHeroTitle.ifBlank { initialCustomization.title.ifBlank { "Probationary Hire" } }
         val finalCustomization = PlayerCustomization(
             name = if (name.isBlank()) defaultHeroName else name.trim(),
-            heroClassId = if (manifest.allowClassSelectionInCreation) selectedClass.id else "",
-            title = heroTitle,
+            heroClassId = selectedClass.id,
+            title = selectedTitle,
             auraColor = selectedAura,
             voiceAffinityBonusSchool = selectedClass.preferredSchool,
             customPortraitAsset = if (hasCustomPortrait) {
@@ -232,30 +229,24 @@ fun CharacterCreationScreen(
         }
 
         // 2. Class selection commands - data-driven via the loaded content classes
-        if (manifest.allowClassSelectionInCreation) {
-            GameContent.classes.firstOrNull { hc ->
-                lower.contains(hc.title.lowercase()) ||
-                    lower.contains(hc.id) ||
-                    hc.voiceKeywords.any { kw -> kw.isNotBlank() && lower.contains(kw) }
-            }?.let { matched ->
-                selectedClass = matched
-                selectedAffinity = matched.preferredSchool
-                combatNarrator?.speak("${matched.title} selected. ${matched.subtitle}.", force = true)
-            }
+        GameContent.classes.firstOrNull { hc ->
+            lower.contains(hc.title.lowercase()) ||
+                lower.contains(hc.id) ||
+                hc.voiceKeywords.any { kw -> kw.isNotBlank() && lower.contains(kw) }
+        }?.let { matched ->
+            selectedClass = matched
+            selectedAffinity = matched.preferredSchool
+            combatNarrator?.speak("${matched.title} selected. ${matched.subtitle}.", force = true)
         }
 
+        // 3. Title selection
+        titles.firstOrNull { lower.contains(it.lowercase()) }?.let {
+            selectedTitle = it
+        }
 
         // 4. Quick name selection
         quickNames.firstOrNull { lower.contains(it.lowercase()) }?.let {
             name = it
-        }
-
-        // 5. Dynamic ID reroll
-        if (lower.contains("reroll") || lower.contains("randomize") || lower.contains("new id") || lower.contains("new badge")) {
-            val baseList = manifest.quickNames.ifEmpty { listOf(manifest.defaultHeroName) }
-            quickNames = baseList.map { GameManifest.resolveTemplateTokens(it) }
-            name = manifest.resolveDefaultHeroName()
-            combatNarrator?.speak("New associate ID assigned.", force = true)
         }
 
         // Re-listen if auto-listen is enabled
@@ -629,19 +620,29 @@ fun CharacterCreationScreen(
                         )
                         if (manifest.allowClassSelectionInCreation) {
                             Text(
+                                text = selectedTitle,
+                                color = auraColorVal,
+                                fontSize = 11.sp,
+                                fontFamily = FontFamily.Monospace,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                            Text(
                                 text = "Class: ${selectedClass.title} • Affinity: ${selectedAffinity.name}",
                                 color = Color.LightGray,
                                 fontSize = 10.sp,
                                 fontFamily = FontFamily.Monospace
                             )
                         } else {
-                            Text(
-                                text = "Status: Registered Applicant",
-                                color = auraColorVal,
-                                fontSize = 11.sp,
-                                fontFamily = FontFamily.Monospace,
-                                fontWeight = FontWeight.SemiBold
-                            )
+                            val subtitleText = manifest.creationStatusSubtitle ?: selectedTitle
+                            if (subtitleText.isNotBlank()) {
+                                Text(
+                                    text = subtitleText,
+                                    color = auraColorVal,
+                                    fontSize = 11.sp,
+                                    fontFamily = FontFamily.Monospace,
+                                    fontWeight = FontWeight.SemiBold
+                                )
+                            }
                         }
                         if (hasCustomPortrait) {
                             Spacer(modifier = Modifier.height(2.dp))
@@ -726,8 +727,9 @@ fun CharacterCreationScreen(
             Spacer(modifier = Modifier.height(16.dp))
 
             // Section 1: Name Input
+            val nameSectionLabel = manifest.creationNameLabel ?: if (manifest.allowClassSelectionInCreation) "1. INVOCATOR'S TRUE NAME" else "1. CHARACTER NAME"
             Text(
-                text = if (manifest.allowClassSelectionInCreation) "1. INVOCATOR'S TRUE NAME" else "1. EMPLOYEE BADGE IDENTIFICATION (NAME)",
+                text = nameSectionLabel,
                 color = LogosGold,
                 fontSize = 12.sp,
                 fontWeight = FontWeight.Bold,
@@ -756,7 +758,7 @@ fun CharacterCreationScreen(
 
             Spacer(modifier = Modifier.height(6.dp))
 
-            // Quick Name Suggestions
+            // Quick Name Suggestions & Reroll Button
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -832,11 +834,11 @@ fun CharacterCreationScreen(
                 Spacer(modifier = Modifier.height(16.dp))
             }
 
-            // Section: Aesthetics (Aura Color & Title)
+            // Section: Aesthetics (Aura Color)
             val aestheticSectionNum = if (manifest.allowClassSelectionInCreation) "3" else "2"
-            val aestheticSectionTitle = if (manifest.allowClassSelectionInCreation) "AURA LUMINESCENCE (AESTHETICS)" else "BADGE ACCENT COLOR (LANYARD)"
+            val aestheticSectionTitle = manifest.creationAestheticsLabel ?: "$aestheticSectionNum. AURA LUMINESCENCE (AESTHETICS)"
             Text(
-                text = "$aestheticSectionNum. $aestheticSectionTitle",
+                text = aestheticSectionTitle,
                 color = LogosGold,
                 fontSize = 12.sp,
                 fontWeight = FontWeight.Bold,
@@ -861,7 +863,7 @@ fun CharacterCreationScreen(
                             modifier = Modifier
                                 .size(36.dp)
                                 .shadow(if (isSelected) 10.dp else 2.dp, CircleShape, spotColor = col)
-                                .clip(CircleShape)
+                            .clip(CircleShape)
                                 .background(col)
                                 .border(if (isSelected) 3.dp else 1.dp, if (isSelected) Color.White else RetroBorder, CircleShape)
                         )
@@ -875,6 +877,50 @@ fun CharacterCreationScreen(
                         )
                     }
                 }
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            // Epithet Title Selector (only if manifest has characterTitles configured)
+            if (titles.isNotEmpty()) {
+                val titleSectionNum = if (manifest.allowClassSelectionInCreation) "4" else "3"
+                Text(
+                    text = "$titleSectionNum. HONORIFIC TITLE",
+                    color = LogosGold,
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Bold,
+                    fontFamily = FontFamily.Monospace,
+                    modifier = Modifier.align(Alignment.Start)
+                )
+
+                Spacer(modifier = Modifier.height(8.dp))
+
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .horizontalScroll(rememberScrollState()),
+                    horizontalArrangement = Arrangement.spacedBy(6.dp)
+                ) {
+                    titles.forEach { t ->
+                        val isSelected = t == selectedTitle
+                        Box(
+                            modifier = Modifier
+                                .clip(RoundedCornerShape(6.dp))
+                                .background(if (isSelected) LogosGold.copy(alpha = 0.2f) else RetroPanel)
+                                .border(1.dp, if (isSelected) LogosGold else RetroBorder, RoundedCornerShape(6.dp))
+                                .clickable { selectedTitle = t }
+                                .padding(horizontal = 10.dp, vertical = 6.dp)
+                        ) {
+                            Text(
+                                text = t,
+                                color = if (isSelected) LogosGold else Color.LightGray,
+                                fontSize = 10.sp,
+                                fontFamily = FontFamily.Monospace
+                            )
+                        }
+                    }
+                }
+                Spacer(modifier = Modifier.height(16.dp))
             }
 
             Spacer(modifier = Modifier.height(24.dp))

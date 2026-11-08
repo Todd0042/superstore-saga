@@ -27,6 +27,9 @@ import com.voicerpg.engine.model.SaveSlotInfo
 import com.voicerpg.engine.model.SaveSummary
 import com.voicerpg.engine.model.SavedCharacterStats
 import com.voicerpg.engine.model.StoryScene
+import com.voicerpg.engine.model.MiniGameConfig
+import com.voicerpg.engine.model.MiniGameOutcome
+import com.voicerpg.engine.engine.MiniGameSimulator
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -62,7 +65,15 @@ data class StoryState(
     val isPureStoryMode: Boolean = false,
     val isStoryAutoPlayPaused: Boolean = false,
     val dynamicMetrics: Map<String, Float> = emptyMap(),
-    val activeHubNodeId: String? = null
+    val activeHubNodeId: String? = null,
+    val activeMiniGameConfig: MiniGameConfig? = null,
+    val isMiniGameTestMenuOpen: Boolean = false,
+    val returnToOptionsOnConfirm: Boolean = false,
+    val pendingSelectedLanguage: String = "en",
+    val pendingSelectedRegion: String = "",
+    val selectedLanguage: String = "en",
+    val selectedRegion: String = "",
+    val showFirstLaunchLanguagePrompt: Boolean = false
 )
 
 class StoryViewModel(
@@ -156,15 +167,6 @@ class StoryViewModel(
         return false
     }
 
-    fun computeAssessmentScore(metrics: Map<String, Float>): Float {
-        val morale = metrics["store_morale"] ?: 65f
-        val engagement = metrics["associate_engagement"] ?: 70f
-        val karen = metrics["karen_index"] ?: 15f
-        val squeeze = metrics["labor_squeeze"] ?: 40f
-        val raw = 45f + (morale * 0.30f) + (engagement * 0.30f) - (karen * 0.15f) - (squeeze * 0.10f)
-        return raw.coerceIn(52.1f, 99.4f)
-    }
-
     fun formatStoryText(
         rawText: String,
         playerName: String,
@@ -190,31 +192,19 @@ class StoryViewModel(
             .replace("{heroName}'s", "$effectiveName's")
             .replace("{player}'s", "$effectiveName's")
 
-        // Dynamic assessment & metric tokens
-        if (result.contains("{score}") || result.contains("{assessmentScore}")) {
-            val scoreVal = computeAssessmentScore(metrics)
-            val scoreStr = String.format(java.util.Locale.US, "%.1f%%", scoreVal)
-            result = result
-                .replace("{score}", scoreStr)
-                .replace("{assessmentScore}", scoreStr)
-        }
-        if (result.contains("{rating}")) {
-            val scoreVal = computeAssessmentScore(metrics)
-            val ratingStr = when {
-                scoreVal >= 92f -> "TIER 1 EXCEPTIONAL MATCH"
-                scoreVal >= 82f -> "TIER 2 OPTIMAL FIT"
-                scoreVal >= 72f -> "TIER 3 CONDITIONAL COMPLIANCE"
-                else -> "TIER 4 MARGINALLY VIABLE"
+        // Dynamic metric token replacement if metrics are present
+        if (metrics.isNotEmpty() || GameContent.metrics.isNotEmpty()) {
+            for ((metricId, metricVal) in metrics) {
+                if (result.contains("{$metricId}")) {
+                    result = result.replace("{$metricId}", "${metricVal.toInt()}%")
+                }
             }
-            result = result.replace("{rating}", ratingStr)
-        }
-        if (result.contains("{morale}")) {
-            val moraleVal = (metrics["store_morale"] ?: 65f).toInt()
-            result = result.replace("{morale}", "$moraleVal%")
-        }
-        if (result.contains("{engagement}")) {
-            val engVal = (metrics["associate_engagement"] ?: 70f).toInt()
-            result = result.replace("{engagement}", "$engVal%")
+            for (metric in GameContent.metrics.values) {
+                if (result.contains("{${metric.id}}")) {
+                    val valNum = metrics[metric.id] ?: metric.initialValue
+                    result = result.replace("{${metric.id}}", "${valNum.toInt()}%")
+                }
+            }
         }
 
         // If player has a custom name different from defaultName, replace any leftover defaultName references
@@ -282,6 +272,7 @@ class StoryViewModel(
         val node = _state.value.currentNode
         if (effectiveDialogueChoices(node).isNotEmpty()) return false
         if (node.triggerBattleEncounterId != null) return false
+        if (node.triggerMiniGameId != null) return true
         if (node.choices.isNotEmpty()) return true
         if (node.nextNodeId != null) return StoryScript.ALL_NODES.containsKey(node.nextNodeId)
         // Terminal node (no choices, no next): the playthrough is complete or a dead end.
@@ -374,7 +365,7 @@ class StoryViewModel(
         return newPaused
     }
 
-    fun startPureStoryMode(fresh: Boolean = false) {
+    fun startPureStoryMode(fresh: Boolean = false, campaignTrackId: String? = null) {
         cancelPendingAutoAdvance()
         cancelPendingStoryMode()
         speechManager.cancel()
@@ -402,9 +393,14 @@ class StoryViewModel(
         } else {
             saveManager.deleteSave(storySlot)
             val manifest = GameContent.manifest
-            val defaultName = manifest.resolveDefaultHeroName().ifBlank { "Hero" }
+            val defaultName = manifest.defaultHeroName.ifBlank { "Hero" }
             val defaultTitle = manifest.defaultHeroTitle.ifBlank { "The Awakened Hero" }
-            val defaultPlayer = PlayerCustomization(name = defaultName, title = defaultTitle)
+            val resolvedTrackId = campaignTrackId ?: manifest.campaignTracks.firstOrNull()?.id ?: "track_a"
+            val defaultPlayer = PlayerCustomization(
+                name = defaultName,
+                title = defaultTitle,
+                campaignTrackId = resolvedTrackId
+            )
             saveManager.createInitialSave(defaultPlayer, storySlot)
             saveManager.currentSlot = storySlot
             StoryAssetLoader.activeSlot = storySlot
@@ -468,6 +464,29 @@ class StoryViewModel(
             ?.slotIndex ?: SaveManager.DEFAULT_SLOT
         saveManager.currentSlot = initialSlot
         val existingSave = saveManager.load(initialSlot)
+        val globalSettings = saveManager.loadGlobalSettings()
+        val lang = if (globalSettings.isLanguageSetupCompleted) {
+            globalSettings.selectedLanguage.ifBlank { "en" }
+        } else {
+            existingSave?.selectedLanguage?.ifBlank { "en" } ?: "en"
+        }
+        val reg = if (globalSettings.isLanguageSetupCompleted) {
+            globalSettings.selectedRegion
+        } else {
+            existingSave?.selectedRegion ?: ""
+        }
+        com.voicerpg.engine.localization.TranslationManager.setLanguageAndRegion(lang, reg)
+        speechManager.setSelectedLocale(lang)
+        speechManager.setSelectedRegion(reg)
+        combatNarrator.setSelectedLanguageAndRegion(lang, reg)
+        com.voicerpg.engine.engine.IntentParser.currentLocale = lang
+
+        val initialGameScreen = if (!globalSettings.isLanguageSetupCompleted) {
+            GameScreen.LANGUAGE_SELECTION
+        } else {
+            GameScreen.TITLE
+        }
+
         if (existingSave != null) {
             val restoredScene = StoryScript.ALL_SCENES[existingSave.currentSceneId] ?: StoryScript.INITIAL_SCENE
             val rawRestoredNode = StoryScript.ALL_NODES[existingSave.currentNodeId] ?: StoryScript.INITIAL_NODE
@@ -493,7 +512,7 @@ class StoryViewModel(
             _state.value = StoryState(
                 currentScene = restoredScene,
                 currentNode = formatNodeForPlayer(restoredNode, existingSave.player),
-                gameScreen = GameScreen.TITLE,
+                gameScreen = initialGameScreen,
                 player = existingSave.player,
                 decisionsMade = existingSave.decisionsMade,
                 narrativeFlags = existingSave.narrativeFlags,
@@ -505,7 +524,9 @@ class StoryViewModel(
                 currentSlot = initialSlot,
                 saveSlots = allSlots,
                 dialogueHistory = restoredHistory,
-                dynamicMetrics = existingSave.dynamicMetrics
+                selectedLanguage = lang,
+                selectedRegion = reg,
+                showFirstLaunchLanguagePrompt = !globalSettings.isLanguageSetupCompleted
             )
             combatNarrator.setEyesFreeMode(existingSave.isEyesFreeMode, lockGuard = false)
             combatNarrator.setPocketGuardEnabled(existingSave.isPocketGuardEnabled)
@@ -523,14 +544,17 @@ class StoryViewModel(
             musicManager?.setVolume(existingSave.musicVolume)
             musicManager?.playTrack(com.voicerpg.engine.audio.MusicManager.TRACK_EXPLORATION)
         } else {
-            // First time player: start at Title Screen
+            // First time player: start at Language Selection or Title Screen
             musicManager?.playTrack(com.voicerpg.engine.audio.MusicManager.TRACK_EXPLORATION)
             _state.value = StoryState(
-                gameScreen = GameScreen.TITLE,
+                gameScreen = initialGameScreen,
                 hasExistingSave = false,
                 saveSummary = null,
                 currentSlot = initialSlot,
-                saveSlots = allSlots
+                saveSlots = allSlots,
+                selectedLanguage = lang,
+                selectedRegion = reg,
+                showFirstLaunchLanguagePrompt = !globalSettings.isLanguageSetupCompleted
             )
         }
     }
@@ -581,10 +605,9 @@ class StoryViewModel(
         }
 
         val isStoryMode = startInAutoPlay || existingSave.isAutoPlayEnabled || (targetSlot == SaveManager.STORY_MODE_SLOT)
-        val initialHubId = if (baseRestoredNode.id.endsWith("_hub") || baseRestoredNode.hubCompletion != null || baseRestoredNode.id in setOf("node_locker_hub", "node_breakroom_hub")) baseRestoredNode.id else null
         _state.value = _state.value.copy(
             currentScene = restoredScene,
-            currentNode = formatNodeForPlayer(restoredNode, existingSave.player),
+            currentNode = formatNodeForPlayer(restoredNode, existingSave.player, existingSave.dynamicMetrics),
             gameScreen = GameScreen.STORY_EXPLORATION,
             previousScreen = null,
             player = existingSave.player,
@@ -601,8 +624,7 @@ class StoryViewModel(
             dialogueHistory = restoredHistory,
             isPureStoryMode = isStoryMode,
             isStoryAutoPlayPaused = false,
-            dynamicMetrics = existingSave.dynamicMetrics,
-            activeHubNodeId = initialHubId
+            dynamicMetrics = existingSave.dynamicMetrics
         )
         combatNarrator.setEyesFreeMode(existingSave.isEyesFreeMode, lockGuard = false)
         combatNarrator.setPocketGuardEnabled(existingSave.isPocketGuardEnabled)
@@ -682,16 +704,101 @@ class StoryViewModel(
         combatNarrator.stop()
         speechManager.cancel()
         val manifest = GameContent.manifest
-        val defaultName = manifest.resolveDefaultHeroName().ifBlank { "Hero" }
+        val defaultName = manifest.defaultHeroName.ifBlank { "Hero" }
         val defaultTitle = manifest.defaultHeroTitle.ifBlank { "The Awakened Hero" }
         StoryAssetLoader.activeSlot = targetSlot
         _state.value = _state.value.copy(
-            gameScreen = GameScreen.CHARACTER_CREATION,
+            gameScreen = GameScreen.AUDIO_SETUP,
             previousScreen = GameScreen.TITLE,
             isNewGameFlow = true,
             currentSlot = targetSlot,
             isPureStoryMode = (targetSlot == SaveManager.STORY_MODE_SLOT),
             player = PlayerCustomization(name = defaultName, title = defaultTitle)
+        )
+    }
+
+    /**
+     * Opens Screen 1: Language Selection (e.g. from Options, Audio Setup, or first boot).
+     */
+    fun openLanguageSelection(fromOptions: Boolean = false) {
+        val prev = _state.value.gameScreen
+        _state.value = _state.value.copy(
+            gameScreen = GameScreen.LANGUAGE_SELECTION,
+            previousScreen = prev,
+            returnToOptionsOnConfirm = fromOptions,
+            pendingSelectedLanguage = com.voicerpg.engine.localization.TranslationManager.currentLanguage.value,
+            pendingSelectedRegion = com.voicerpg.engine.localization.TranslationManager.currentRegion.value
+        )
+    }
+
+    /**
+     * Advances from Screen 1 (Language selected) to Screen 2 (Dialect / Accent selection).
+     */
+    fun onLanguageChosen(languageCode: String) {
+        val clean = languageCode.lowercase().trim().take(2)
+        _state.value = _state.value.copy(
+            gameScreen = GameScreen.DIALECT_SELECTION,
+            pendingSelectedLanguage = clean,
+            pendingSelectedRegion = ""
+        )
+    }
+
+    /**
+     * Returns from Screen 2 (Dialect) back to Screen 1 (Language).
+     */
+    fun returnToLanguageSelection() {
+        _state.value = _state.value.copy(
+            gameScreen = GameScreen.LANGUAGE_SELECTION
+        )
+    }
+
+    /**
+     * Cancels language selection and returns to previous screen without applying changes.
+     */
+    fun cancelLanguageSelection() {
+        val dest = _state.value.previousScreen ?: GameScreen.TITLE
+        _state.value = _state.value.copy(
+            gameScreen = dest,
+            previousScreen = null,
+            returnToOptionsOnConfirm = false
+        )
+    }
+
+    /**
+     * Called when user confirms dialect on Screen 2. Checks if model is downloaded;
+     * if not, routes to LANGUAGE_DOWNLOAD_STANDBY gatekeeper screen.
+     */
+    fun onDialectConfirmed(languageCode: String, regionCode: String) {
+        val cleanLang = languageCode.lowercase().trim().take(2)
+        val cleanReg = regionCode.uppercase().trim()
+        _state.value = _state.value.copy(
+            pendingSelectedLanguage = cleanLang,
+            pendingSelectedRegion = cleanReg
+        )
+
+        viewModelScope.launch {
+            val isInstalled = com.voicerpg.engine.localization.TranslationManager.isModelInstalled(cleanLang)
+            if (isInstalled) {
+                applyLanguageAndFinish(cleanLang, cleanReg)
+            } else {
+                _state.value = _state.value.copy(
+                    gameScreen = GameScreen.LANGUAGE_DOWNLOAD_STANDBY
+                )
+                com.voicerpg.engine.localization.TranslationManager.setLanguageAndRegion(cleanLang, cleanReg)
+            }
+        }
+    }
+
+    fun applyLanguageAndFinish(languageCode: String, regionCode: String) {
+        com.voicerpg.engine.localization.TranslationManager.setLanguageAndRegion(languageCode, regionCode)
+        combatNarrator.setSelectedLanguageAndRegion(languageCode, regionCode)
+        speechManager.setSelectedLocale(languageCode)
+        speechManager.setSelectedRegion(regionCode)
+
+        val dest = _state.value.previousScreen ?: GameScreen.TITLE
+        _state.value = _state.value.copy(
+            gameScreen = dest,
+            previousScreen = null
         )
     }
 
@@ -866,6 +973,11 @@ class StoryViewModel(
             return
         }
 
+        if (node.triggerMiniGameId != null) {
+            triggerMiniGame(node.triggerMiniGameId)
+            return
+        }
+
         val nextId = node.nextNodeId
         if (nextId != null) {
             val nextNode = StoryScript.ALL_NODES[nextId]
@@ -902,7 +1014,7 @@ class StoryViewModel(
         if (nextNode != null) {
             val updatedDecisions = _state.value.decisionsMade + choice.id
             var currentMetrics = _state.value.dynamicMetrics
-            if (choice.metricDeltas.isNotEmpty()) {
+            if (choice.metricDeltas.isNotEmpty() && GameContent.metrics.isNotEmpty()) {
                 val updated = currentMetrics.toMutableMap()
                 for ((metricId, delta) in choice.metricDeltas) {
                     val def = GameContent.metrics[metricId]
@@ -929,15 +1041,8 @@ class StoryViewModel(
     }
 
     fun assignHeroClass(classId: String) {
-        val heroClass = GameContent.classById(classId)
+        val heroClass = GameContent.classes.firstOrNull { it.id.equals(classId, ignoreCase = true) } ?: return
         val starterSpells = GameContent.spellsForClass(heroClass.id)
-        val currentMetrics = _state.value.dynamicMetrics
-        val moraleRatio = ((currentMetrics["store_morale"] ?: 65f) / 100f).coerceIn(0.5f, 1.5f)
-        val engagementRatio = ((currentMetrics["associate_engagement"] ?: 70f) / 100f).coerceIn(0.5f, 1.5f)
-
-        // Starting stats scale dynamically with applicant assessment performance:
-        val tunedHp = (heroClass.startingHp * (0.85f + 0.15f * moraleRatio)).toInt()
-        val tunedMp = (heroClass.startingMp * (0.85f + 0.15f * engagementRatio)).toInt()
 
         val updatedPlayer = _state.value.player.copy(
             heroClassId = classId,
@@ -953,10 +1058,10 @@ class StoryViewModel(
             if (stat.id == "hero") {
                 stat.copy(
                     loreClass = heroClass.title,
-                    currentHp = tunedHp,
-                    maxHp = tunedHp,
-                    currentMp = tunedMp,
-                    maxMp = tunedMp,
+                    currentHp = heroClass.startingHp,
+                    maxHp = heroClass.startingHp,
+                    currentMp = heroClass.startingMp,
+                    maxMp = heroClass.startingMp,
                     speed = heroClass.startingSpeed,
                     spellIds = starterSpells.map { it.id }
                 )
@@ -970,109 +1075,38 @@ class StoryViewModel(
     }
 
     private fun applyNodeTransition(newNode: DialogueNode, suppressNarration: Boolean = false) {
-        var targetNode = newNode
-        val playerTrack = _state.value.player.heroClassId.lowercase()
-        val incidentJustResolved = (newNode.id == "node_incident_return")
-        val isAct5 = _state.value.narrativeFlags["flag_act5_started"] == true || newNode.setFlagOnEnter == "flag_act5_started"
-        val isAct4 = _state.value.narrativeFlags["flag_act4_started"] == true || newNode.setFlagOnEnter == "flag_act4_started"
-        val isAct3 = _state.value.narrativeFlags["flag_act3_started"] == true || newNode.setFlagOnEnter == "flag_act3_started"
-        val isAct2 = _state.value.narrativeFlags["flag_act2_started"] == true || newNode.setFlagOnEnter == "flag_act2_started"
-        if (incidentJustResolved) {
-            val trackHubCandidate = when {
-                isAct5 -> "node_hub_${playerTrack}_act5"
-                isAct4 -> "node_hub_${playerTrack}_act4"
-                isAct3 -> "node_hub_${playerTrack}_act3"
-                isAct2 -> "node_hub_${playerTrack}_act2"
-                else -> "node_hub_$playerTrack"
-            }
-            val fallbackHub = StoryScript.ALL_NODES[trackHubCandidate]?.id ?: StoryScript.ALL_NODES["node_hub_$playerTrack"]?.id ?: "node_shift1_start"
-            val returnTargetId = _state.value.activeHubNodeId ?: fallbackHub
-            targetNode = StoryScript.ALL_NODES[returnTargetId] ?: StoryScript.ALL_NODES[fallbackHub] ?: newNode
-        } else if (playerTrack.isNotBlank()) {
-            val variantActHub = if (targetNode.id == "node_hub") {
-                when {
-                    isAct5 -> "node_hub_${playerTrack}_act5"
-                    isAct4 -> "node_hub_${playerTrack}_act4"
-                    isAct3 -> "node_hub_${playerTrack}_act3"
-                    isAct2 -> "node_hub_${playerTrack}_act2"
-                    else -> "node_hub_$playerTrack"
-                }
-            } else null
-            val variant1 = "${targetNode.id}_$playerTrack"
-            val variant2 = targetNode.id.replace("_start", "") + "_$playerTrack"
-            val trackSpecificNode = (if (variantActHub != null) StoryScript.ALL_NODES[variantActHub] else null)
-                ?: StoryScript.ALL_NODES[variant1]
-                ?: StoryScript.ALL_NODES[variant2]
-            if (trackSpecificNode != null) {
-                targetNode = trackSpecificNode
-            }
-        }
-
-        if (targetNode.id == "node_shift56_eval") {
-            val morale = _state.value.dynamicMetrics["store_morale"] ?: 65f
-            val engagement = _state.value.dynamicMetrics["associate_engagement"] ?: 70f
-            val squeeze = _state.value.dynamicMetrics["labor_squeeze"] ?: 40f
-            val karen = _state.value.dynamicMetrics["karen_index"] ?: 15f
-            val destinationId = when {
-                squeeze >= 70f && engagement <= 40f -> "node_ending_corporate"
-                (karen >= 30f) || (morale < 48f && squeeze >= 65f && engagement >= 60f) -> "node_ending_defiant"
-                morale < 40f && squeeze >= 50f -> "node_ending_wildcat"
-                engagement >= 80f && morale >= 50f -> "node_ending_whistleblower"
-                engagement < 65f && morale >= 55f -> "node_ending_quiet_quitter"
-                else -> "node_ending_survivor"
-            }
-            val destinationNode = StoryScript.ALL_NODES[destinationId]
-            if (destinationNode != null) {
-                targetNode = destinationNode
-            }
-        }
-
-        var updatedFlags = if (targetNode.setFlagOnEnter != null) {
-            _state.value.narrativeFlags + (targetNode.setFlagOnEnter to true)
+        var updatedFlags = if (newNode.setFlagOnEnter != null) {
+            _state.value.narrativeFlags + (newNode.setFlagOnEnter to true)
         } else {
             _state.value.narrativeFlags
         }
-        if (incidentJustResolved) {
-            updatedFlags = updatedFlags + ("incident_just_happened" to false)
-        }
 
-        var effectiveNode = resolveEffectiveHubNode(targetNode, updatedFlags)
+        var effectiveNode = resolveEffectiveHubNode(newNode, updatedFlags)
         if (effectiveNode.setFlagOnEnter != null && updatedFlags[effectiveNode.setFlagOnEnter] != true) {
             updatedFlags = updatedFlags + (effectiveNode.setFlagOnEnter to true)
         }
 
-        // Procedural retail teamwork incident interception on hub return
-        val isHubNode = effectiveNode.id.endsWith("_hub") || effectiveNode.id.startsWith("node_hub_") || effectiveNode.hubCompletion != null || effectiveNode.id in setOf("node_locker_hub", "node_breakroom_hub")
-        val isReturningToHub = isHubNode && (effectiveNode.id in _state.value.visitedNodeIds)
+        // Procedural incident check on hub return
+        if (GameContent.incidents.isNotEmpty()) {
+            val isHubNode = effectiveNode.id.endsWith("_hub") || effectiveNode.hubCompletion != null
+            val isReturningToHub = isHubNode && (effectiveNode.id in _state.value.visitedNodeIds)
 
-        var currentActiveHub = _state.value.activeHubNodeId
-        if (isHubNode) {
-            currentActiveHub = effectiveNode.id
-        }
-
-        if (isReturningToHub) {
-            if (incidentJustResolved || updatedFlags["incident_just_happened"] == true) {
-                // Clear the transient guard so future returns can trigger, preventing back-to-back chaining
-                updatedFlags = updatedFlags + ("incident_just_happened" to false)
-            } else if (effectiveNode.allowIncidents) {
-                // Procedural retail incident check (45% chance every time returning to an incident-eligible hub)
-                if (kotlin.random.Random.nextFloat() < 0.45f) {
-                    val activeTrack = _state.value.player.heroClassId.lowercase()
-                    val candidateState = _state.value.copy(narrativeFlags = updatedFlags)
-                    val availableIncidents = GameContent.incidents.values.filter { inc ->
-                        inc.triggerNodeId != null &&
-                        (inc.applicableTracks.isEmpty() || inc.applicableTracks.any { it.equals(activeTrack, ignoreCase = true) }) &&
-                        updatedFlags["flag_incident_${inc.id}_done"] != true &&
-                        inc.triggerNodeId !in _state.value.visitedNodeIds &&
-                        (inc.conditions.isEmpty() || inc.conditions.all { IncidentManager.evaluateCondition(it, candidateState) })
-                    }
-                    if (availableIncidents.isNotEmpty()) {
-                        val chosen = availableIncidents.random()
-                        val trigger = StoryScript.ALL_NODES[chosen.triggerNodeId]
-                        if (trigger != null) {
-                            updatedFlags = updatedFlags + ("flag_incident_${chosen.id}_done" to true) + ("incident_just_happened" to true)
-                            effectiveNode = trigger
-                            currentActiveHub = targetNode.id
+            if (isReturningToHub) {
+                if (updatedFlags["incident_just_happened"] == true) {
+                    updatedFlags = updatedFlags + ("incident_just_happened" to false)
+                } else if (effectiveNode.allowIncidents) {
+                    if (kotlin.random.Random.nextFloat() < 0.45f) {
+                        val candidateState = _state.value.copy(narrativeFlags = updatedFlags)
+                        val chosen = IncidentManager.selectRandomIncident(
+                            state = candidateState,
+                            availableIncidents = GameContent.incidents.values
+                        )
+                        if (chosen?.triggerNodeId != null) {
+                            val triggerNode = StoryScript.ALL_NODES[chosen.triggerNodeId]
+                            if (triggerNode != null && triggerNode.id !in _state.value.visitedNodeIds) {
+                                updatedFlags = updatedFlags + ("flag_incident_${chosen.id}_done" to true) + ("incident_just_happened" to true)
+                                effectiveNode = triggerNode
+                            }
                         }
                     }
                 }
@@ -1145,25 +1179,28 @@ class StoryViewModel(
         } else {
             effectiveNode.text
         }
-        var updatedMetrics = _state.value.dynamicMetrics.toMutableMap()
-        for ((metricId, overrideVal) in effectiveNode.metricOverrides) {
-            val def = GameContent.metrics[metricId]
-            val clamped = if (def != null) overrideVal.coerceIn(def.minValue, def.maxValue) else overrideVal
-            updatedMetrics[metricId] = clamped
+        var currentMetrics = _state.value.dynamicMetrics
+        if (GameContent.metrics.isNotEmpty()) {
+            val updated = currentMetrics.toMutableMap()
+            for ((metricId, overrideVal) in effectiveNode.metricOverrides) {
+                val def = GameContent.metrics[metricId]
+                val clamped = if (def != null) overrideVal.coerceIn(def.minValue, def.maxValue) else overrideVal
+                updated[metricId] = clamped
+            }
+            for ((metricId, delta) in effectiveNode.metricDeltas) {
+                val def = GameContent.metrics[metricId]
+                val currVal = updated[metricId] ?: def?.initialValue ?: 0f
+                val clamped = if (def != null) (currVal + delta).coerceIn(def.minValue, def.maxValue) else currVal + delta
+                updated[metricId] = clamped
+            }
+            currentMetrics = updated
         }
-        for ((metricId, delta) in effectiveNode.metricDeltas) {
-            val def = GameContent.metrics[metricId]
-            val current = updatedMetrics[metricId] ?: def?.initialValue ?: 0f
-            val clamped = if (def != null) (current + delta).coerceIn(def.minValue, def.maxValue) else current + delta
-            updatedMetrics[metricId] = clamped
-        }
-
         val baseNode = if (activeText != effectiveNode.text) {
             effectiveNode.copy(text = activeText)
         } else {
             effectiveNode
         }
-        val displayNode = formatNodeForPlayer(baseNode, _state.value.player, updatedMetrics)
+        val displayNode = formatNodeForPlayer(baseNode, _state.value.player, currentMetrics)
 
         val updatedVisited = _state.value.visitedNodeIds + newNode.id + effectiveNode.id
 
@@ -1184,8 +1221,7 @@ class StoryViewModel(
             partyStats = updatedPartyStats,
             dialogueHistory = updatedHistory,
             visitedNodeIds = updatedVisited,
-            dynamicMetrics = updatedMetrics,
-            activeHubNodeId = currentActiveHub
+            dynamicMetrics = currentMetrics
         )
 
         musicManager?.playTrack(targetScene.musicAsset)
@@ -1308,10 +1344,10 @@ class StoryViewModel(
             achievements = s.achievements,
             recentDialogueLog = s.dialogueHistory.takeLast(60),
             isEyesFreeMode = combatNarrator.isEyesFreeMode.value,
-            isAutoPlayEnabled = s.isPureStoryMode,
             isPocketGuardEnabled = combatNarrator.isPocketGuardEnabled.value,
             isCombatNarrationEnabled = combatNarrator.isCombatNarrationEnabled.value,
             isAutoListen = speechManager.isAutoListen.value,
+            isAutoPlayEnabled = s.isPureStoryMode,
             isChimeMuted = speechManager.isChimeMuted.value,
             isNarrationEnabled = combatNarrator.isNarrationEnabled.value,
             isReadChoicesEnabled = combatNarrator.isReadChoicesEnabled.value,
@@ -1418,6 +1454,88 @@ class StoryViewModel(
             musicManager?.playTrack(com.voicerpg.engine.audio.MusicManager.TRACK_TITLE)
         } else if (returnTarget == GameScreen.STORY_EXPLORATION) {
             musicManager?.playTrack(_state.value.currentScene.musicAsset)
+        }
+    }
+
+    fun openMiniGameTestMenu() {
+        _state.value = _state.value.copy(isMiniGameTestMenuOpen = true)
+    }
+
+    fun closeMiniGameTestMenu() {
+        _state.value = _state.value.copy(isMiniGameTestMenuOpen = false)
+    }
+
+    fun triggerMiniGame(miniGameId: String) {
+        cancelPendingAutoAdvance()
+        cancelPendingStoryMode()
+        val config = GameContent.minigameById(miniGameId) ?: MiniGameConfig(
+            id = miniGameId,
+            title = miniGameId.replace('_', ' ').replaceFirstChar { it.uppercase() }
+        )
+        if (_state.value.isPureStoryMode) {
+            val outcome = MiniGameSimulator.simulate(
+                config = config,
+                skillModifier = 1.0f,
+                fatigueModifier = 1.0f
+            )
+            onMiniGameFinished(outcome)
+        } else {
+            speechManager.cancel()
+            combatNarrator.stop()
+            val prev = _state.value.gameScreen
+            _state.value = _state.value.copy(
+                gameScreen = GameScreen.MINI_GAME,
+                previousScreen = prev,
+                activeMiniGameConfig = config,
+                isMiniGameTestMenuOpen = false
+            )
+        }
+    }
+
+    fun onSkipMiniGame() {
+        val config = _state.value.activeMiniGameConfig ?: MiniGameConfig(id = "minigame", title = "Mini-Game")
+        val outcome = MiniGameSimulator.simulate(
+            config = config,
+            skillModifier = 1.0f,
+            fatigueModifier = 1.0f
+        )
+        onMiniGameFinished(outcome)
+    }
+
+    fun onMiniGameFinished(outcome: MiniGameOutcome) {
+        cancelPendingAutoAdvance()
+        cancelPendingStoryMode()
+
+        if (_state.value.previousScreen == GameScreen.TITLE) {
+            _state.value = _state.value.copy(
+                gameScreen = GameScreen.TITLE,
+                previousScreen = null,
+                activeMiniGameConfig = null,
+                isMiniGameTestMenuOpen = false
+            )
+            return
+        }
+
+        val lastNode = _state.value.currentNode
+        val updatedMetrics = _state.value.dynamicMetrics.toMutableMap()
+        outcome.metricDeltas.forEach { (k, v) ->
+            val cur = updatedMetrics[k] ?: 50f
+            updatedMetrics[k] = (cur + v).coerceIn(0f, 100f)
+        }
+
+        _state.value = _state.value.copy(
+            gameScreen = GameScreen.STORY_EXPLORATION,
+            previousScreen = null,
+            activeMiniGameConfig = null,
+            dynamicMetrics = updatedMetrics
+        )
+
+        val nextNodeId = lastNode.nextNodeId
+        if (!nextNodeId.isNullOrBlank()) {
+            val nextNode = GameContent.nodes[nextNodeId]
+            if (nextNode != null) {
+                applyNodeTransition(nextNode)
+            }
         }
     }
 
@@ -1603,6 +1721,26 @@ class StoryViewModel(
                 lower.contains("asset viewer") || lower.contains("gallery") || lower.contains("jukebox") || lower.contains("music player") || lower.contains("view assets") || lower.contains("soundtrack") -> {
                     openAssetViewer()
                     return
+                }
+                lower.contains("test minigame") || lower.contains("test minigames") || lower.contains("arcade") || lower.contains("minigames") || lower.contains("mini game") -> {
+                    if (GameContent.minigames.isNotEmpty()) {
+                        openMiniGameTestMenu()
+                    }
+                    return
+                }
+                _state.value.isMiniGameTestMenuOpen && (lower.contains("close") || lower.contains("cancel") || lower.contains("back")) -> {
+                    closeMiniGameTestMenu()
+                    return
+                }
+                else -> {
+                    if (_state.value.isMiniGameTestMenuOpen && GameContent.minigames.isNotEmpty()) {
+                        for (mg in GameContent.minigames.values) {
+                            if (lower.contains(mg.id.lowercase()) || lower.contains(mg.title.lowercase())) {
+                                triggerMiniGame(mg.id)
+                                return
+                            }
+                        }
+                    }
                 }
             }
             return
@@ -1800,6 +1938,15 @@ class StoryViewModel(
             }
         }
 
+        // 2b. Mini-game trigger command
+        if (node.triggerMiniGameId != null) {
+            val miniGameKeywords = listOf("play", "start", "begin", "ready", "mini game", "game", "go", "action")
+            if (miniGameKeywords.any { lower.contains(it) }) {
+                advanceDialogue()
+                return
+            }
+        }
+
         // 3. Flexible choice selection with loud & nerdy roleplay matching
         val effective = effectiveDialogueChoices(node)
         if (effective.isNotEmpty()) {
@@ -1940,6 +2087,73 @@ class StoryViewModel(
                 }
             }
         }
+    }
+
+    fun completeLanguageSetup(lang: String, region: String) {
+        val cleanLang = lang.lowercase().trim()
+        val cleanRegion = region.uppercase().trim()
+        saveManager.saveGlobalSettings(
+            SaveManager.GlobalGameSettings(
+                isLanguageSetupCompleted = true,
+                selectedLanguage = cleanLang,
+                selectedRegion = cleanRegion
+            )
+        )
+        com.voicerpg.engine.localization.TranslationManager.setLanguageAndRegion(cleanLang, cleanRegion)
+        speechManager.setSelectedLocale(cleanLang)
+        speechManager.setSelectedRegion(cleanRegion)
+        combatNarrator.setSelectedLanguageAndRegion(cleanLang, cleanRegion)
+        com.voicerpg.engine.engine.IntentParser.currentLocale = cleanLang
+        _state.value = _state.value.copy(
+            selectedLanguage = cleanLang,
+            selectedRegion = cleanRegion,
+            gameScreen = GameScreen.TITLE,
+            showFirstLaunchLanguagePrompt = false
+        )
+        persistCurrentState()
+    }
+
+    fun setSelectedLanguage(lang: String) {
+        val clean = lang.lowercase().trim()
+        val currentReg = _state.value.selectedRegion
+        saveManager.saveGlobalSettings(
+            SaveManager.GlobalGameSettings(
+                isLanguageSetupCompleted = true,
+                selectedLanguage = clean,
+                selectedRegion = currentReg
+            )
+        )
+        com.voicerpg.engine.localization.TranslationManager.setLanguageAndRegion(clean, currentReg)
+        _state.value = _state.value.copy(selectedLanguage = clean)
+        speechManager.setSelectedLocale(clean)
+        combatNarrator.setSelectedLanguage(clean)
+        com.voicerpg.engine.engine.IntentParser.currentLocale = clean
+        persistCurrentState()
+    }
+
+    fun setSelectedRegion(region: String) {
+        val clean = region.uppercase().trim()
+        val currentLang = _state.value.selectedLanguage
+        saveManager.saveGlobalSettings(
+            SaveManager.GlobalGameSettings(
+                isLanguageSetupCompleted = true,
+                selectedLanguage = currentLang,
+                selectedRegion = clean
+            )
+        )
+        com.voicerpg.engine.localization.TranslationManager.setLanguageAndRegion(currentLang, clean)
+        _state.value = _state.value.copy(selectedRegion = clean)
+        speechManager.setSelectedRegion(clean)
+        combatNarrator.setSelectedRegion(clean)
+        persistCurrentState()
+    }
+
+    fun setLanguageAndRegion(lang: String, region: String) {
+        completeLanguageSetup(lang, region)
+    }
+
+    fun dismissFirstLaunchLanguagePrompt() {
+        _state.value = _state.value.copy(showFirstLaunchLanguagePrompt = false)
     }
 
     override fun onCleared() {

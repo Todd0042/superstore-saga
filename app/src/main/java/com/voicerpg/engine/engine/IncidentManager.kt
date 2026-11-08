@@ -68,6 +68,6 @@ object IncidentManager {
             accum += w
             if (roll <= accum) return inc
         }
-        return weighted.last().first
+        return weighted.firstOrNull()?.first
     }
 }

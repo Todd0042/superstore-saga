@@ -19,10 +19,21 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.lifecycle.lifecycleScope
 import com.voicerpg.engine.audio.CombatNarrator
 import com.voicerpg.engine.audio.MusicManager
@@ -232,8 +243,26 @@ class MainActivity : ComponentActivity() {
             }
 
             VoiceRPGTheme {
-                Box(modifier = Modifier.fillMaxSize()) {
-                    when (storyState.gameScreen) {
+                val downloadStatus by com.voicerpg.engine.localization.TranslationManager.downloadStatus.collectAsState()
+                val downloadProgress by com.voicerpg.engine.localization.TranslationManager.downloadProgress.collectAsState()
+                val downloadTargetName by com.voicerpg.engine.localization.TranslationManager.downloadTargetName.collectAsState()
+
+                Column(modifier = Modifier.fillMaxSize()) {
+                    androidx.compose.animation.AnimatedVisibility(
+                        visible = downloadStatus != com.voicerpg.engine.localization.ModelDownloadStatus.IDLE,
+                        enter = androidx.compose.animation.expandVertically() + androidx.compose.animation.fadeIn(),
+                        exit = androidx.compose.animation.shrinkVertically() + androidx.compose.animation.fadeOut()
+                    ) {
+                        com.voicerpg.engine.ui.setup.LanguageModelDownloadBanner(
+                            status = downloadStatus,
+                            progress = downloadProgress,
+                            languageName = downloadTargetName,
+                            onDismiss = { com.voicerpg.engine.localization.TranslationManager.dismissDownloadBanner() }
+                        )
+                    }
+
+                    Box(modifier = Modifier.weight(1f).fillMaxWidth()) {
+                        when (storyState.gameScreen) {
                         GameScreen.TITLE -> {
                             val speechState by speechManager.speechState.collectAsState()
                             TitleScreen(
@@ -251,10 +280,14 @@ class MainActivity : ComponentActivity() {
                                 onContinueSlot = { slot -> storyViewModel.continueGame(slot) },
                                 onContinueSlotAuto = { slot -> storyViewModel.continueGame(slot, startInAutoPlay = true) },
                                 onNewGameInSlot = { slot -> storyViewModel.startNewGameFlow(slot) },
+                                isMiniGameTestMenuOpen = storyState.isMiniGameTestMenuOpen,
+                                onOpenMiniGameTestMenu = { storyViewModel.openMiniGameTestMenu() },
+                                onCloseMiniGameTestMenu = { storyViewModel.closeMiniGameTestMenu() },
+                                onLaunchMiniGame = { id -> storyViewModel.triggerMiniGame(id) },
                                 onAudioSetup = { storyViewModel.openAudioSetup() },
                                 onOptions = { combatViewModel.openOptions() },
                                 storyModeSummary = storyViewModel.getStoryModeSaveSummary(),
-                                onPureStoryMode = { fresh -> storyViewModel.startPureStoryMode(fresh) },
+                                onPureStoryMode = { fresh, trackId -> storyViewModel.startPureStoryMode(fresh, trackId) },
                                 onTutorial = {
                                     tutorialBattleViewModel.resetTutorial()
                                     storyViewModel.openTutorial()
@@ -293,6 +326,46 @@ class MainActivity : ComponentActivity() {
                                     } else {
                                         storyViewModel.returnFromAudioSetup()
                                     }
+                                },
+                                onOpenLanguageSelection = {
+                                    storyViewModel.openLanguageSelection(fromOptions = false)
+                                }
+                            )
+                        }
+                        GameScreen.LANGUAGE_SELECTION -> {
+                            com.voicerpg.engine.ui.setup.LanguageSelectionScreen(
+                                currentLanguageCode = storyState.pendingSelectedLanguage,
+                                canCancel = storyState.previousScreen != null,
+                                onLanguageSelected = { langCode ->
+                                    storyViewModel.onLanguageChosen(langCode)
+                                },
+                                onCancel = {
+                                    storyViewModel.cancelLanguageSelection()
+                                }
+                            )
+                        }
+                        GameScreen.DIALECT_SELECTION -> {
+                            com.voicerpg.engine.ui.setup.DialectSelectionScreen(
+                                languageCode = storyState.pendingSelectedLanguage,
+                                initialRegionCode = storyState.pendingSelectedRegion,
+                                combatNarrator = combatNarrator,
+                                onBack = {
+                                    storyViewModel.returnToLanguageSelection()
+                                },
+                                onConfirm = { langCode, regionCode ->
+                                    storyViewModel.onDialectConfirmed(langCode, regionCode)
+                                }
+                            )
+                        }
+                        GameScreen.LANGUAGE_DOWNLOAD_STANDBY -> {
+                            com.voicerpg.engine.ui.setup.LanguageDownloadStandbyScreen(
+                                languageCode = storyState.pendingSelectedLanguage,
+                                regionCode = storyState.pendingSelectedRegion,
+                                onDownloadComplete = { langCode, regionCode ->
+                                    storyViewModel.applyLanguageAndFinish(langCode, regionCode)
+                                },
+                                onChangeLanguage = {
+                                    storyViewModel.returnToLanguageSelection()
                                 }
                             )
                         }
@@ -303,7 +376,11 @@ class MainActivity : ComponentActivity() {
                                 speechManager = speechManager,
                                 combatNarrator = combatNarrator,
                                 onBack = {
-                                    storyViewModel.returnToTitle()
+                                    if (storyState.isNewGameFlow) {
+                                        storyViewModel.startNewGameFlow(storyState.currentSlot)
+                                    } else {
+                                        storyViewModel.returnToTitle()
+                                    }
                                 },
                                 onConfirmCharacter = { customization ->
                                     storyViewModel.startNewGame(customization, storyState.currentSlot)
@@ -328,6 +405,17 @@ class MainActivity : ComponentActivity() {
                                 }
                             )
                         }
+                        GameScreen.MINI_GAME -> {
+                            val activeConfig = storyState.activeMiniGameConfig ?: com.voicerpg.engine.model.MiniGameConfig(
+                                id = "minigame",
+                                title = "Mini-Game"
+                            )
+                            com.voicerpg.engine.ui.minigame.MiniGameContainerScreen(
+                                config = activeConfig,
+                                onFinish = { outcome -> storyViewModel.onMiniGameFinished(outcome) },
+                                onSkip = { storyViewModel.onSkipMiniGame() }
+                            )
+                        }
                         GameScreen.ASSET_VIEWER -> {
                             com.voicerpg.engine.ui.gallery.AssetViewerScreen(
                                 musicManager = musicManager,
@@ -344,8 +432,8 @@ class MainActivity : ComponentActivity() {
                         isOpen = combatState.isOptionsOpen,
                         isEyesFreeMode = isEyesFreeMode,
                         isNarrationEnabled = isNarrationEnabled,
-                        isCombatNarrationEnabled = isCombatNarrationEnabled,
                         isAutoPlayEnabled = storyState.isPureStoryMode,
+                        isCombatNarrationEnabled = isCombatNarrationEnabled,
                         isPocketGuardEnabled = isPocketGuardEnabled,
                         isReadChoicesEnabled = isReadChoicesEnabled,
                         isAutoReadHubChoices = isAutoReadHubChoices,
@@ -396,7 +484,6 @@ class MainActivity : ComponentActivity() {
                                     combatNarrator.setEyesFreeMode(true, lockGuard = false)
                                     speechManager.setAutoListen(true)
                                     speechManager.setChimeMuted(false)
-                                    storyViewModel.setPureStoryMode(true)
                                 }
                                 PlaystylePreset.CLASSIC_TACTICAL -> {
                                     combatNarrator.setPocketGuardEnabled(false)
@@ -455,6 +542,10 @@ class MainActivity : ComponentActivity() {
                         onOpenVoiceAssignment = {
                             combatViewModel.closeOptions()
                             storyViewModel.openAudioSetup()
+                        },
+                        onOpenLanguageSelection = {
+                            combatViewModel.closeOptions()
+                            storyViewModel.openLanguageSelection(fromOptions = true)
                         },
                         onTriggerCheaterDialogue = {
                             combatNarrator.speak(
@@ -611,6 +702,7 @@ class MainActivity : ComponentActivity() {
                     }
                 }
             }
+        }
         }
     }
 

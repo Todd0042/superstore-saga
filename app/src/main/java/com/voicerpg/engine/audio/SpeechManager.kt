@@ -47,6 +47,20 @@ class SpeechManager(private val context: Context? = null) {
     private val _rmsLevel = MutableStateFlow(0f)
     val rmsLevel: StateFlow<Float> = _rmsLevel.asStateFlow()
 
+    private val _selectedLocale = MutableStateFlow("en")
+    val selectedLocale: StateFlow<String> = _selectedLocale.asStateFlow()
+
+    private val _selectedRegion = MutableStateFlow("")
+    val selectedRegion: StateFlow<String> = _selectedRegion.asStateFlow()
+
+    fun setSelectedLocale(locale: String) {
+        _selectedLocale.value = locale.lowercase().take(2)
+    }
+
+    fun setSelectedRegion(region: String) {
+        _selectedRegion.value = region.uppercase().trim()
+    }
+
     private val pitchDetector = PitchDetector()
     private val rmsSamples = mutableListOf<Float>()
     private var speechStartTimeMs = 0L
@@ -133,8 +147,16 @@ class SpeechManager(private val context: Context? = null) {
         if (context == null) return null
         if (speechRecognizer == null) {
             try {
-                speechRecognizer = SpeechRecognizer.createSpeechRecognizer(context).apply {
-                    setRecognitionListener(createListener())
+                speechRecognizer = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S &&
+                    SpeechRecognizer.isOnDeviceRecognitionAvailable(context)
+                ) {
+                    SpeechRecognizer.createOnDeviceSpeechRecognizer(context).apply {
+                        setRecognitionListener(createListener())
+                    }
+                } else {
+                    SpeechRecognizer.createSpeechRecognizer(context).apply {
+                        setRecognitionListener(createListener())
+                    }
                 }
             } catch (_: Exception) {
                 speechRecognizer = null
@@ -192,7 +214,17 @@ class SpeechManager(private val context: Context? = null) {
             val recognizer = getOrCreateRecognizer() ?: return
 
             val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+                val locale = _selectedLocale.value.lowercase()
+                val region = _selectedRegion.value.uppercase()
+                val langTag = if (region.isNotBlank()) {
+                    "$locale-$region"
+                } else {
+                    locale
+                }
+                putExtra(RecognizerIntent.EXTRA_LANGUAGE, langTag)
+                putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, langTag)
                 putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+                putExtra(RecognizerIntent.EXTRA_PREFER_OFFLINE, true)
                 putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true)
                 putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 1)
                 // Generous pause windows so chanting and multi-word incantations are not cut off

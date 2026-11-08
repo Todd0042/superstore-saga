@@ -32,6 +32,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -112,26 +113,16 @@ fun StoryScreen(
     val defaultHeroTitle = manifest.defaultHeroTitle.ifBlank { "Adventurer" }
     val effectiveHeroName = storyState.player.name.ifBlank { defaultHeroName }
     val effectiveHeroTitle = storyState.player.title.ifBlank { defaultHeroTitle }
-    val effectiveHeroClassId = storyState.player.heroClassId
-    val heroClassDef = if (!effectiveHeroClassId.isNullOrBlank()) GameContent.classes.firstOrNull { it.id == effectiveHeroClassId } else null
-    val effectiveHeroPortrait = if (storyState.player.customPortraitAsset?.contains("custom") == true) {
-        storyState.player.customPortraitAsset
-    } else {
-        heroClassDef?.portraitAsset
-            ?: storyState.player.customPortraitAsset
-            ?: manifest.defaultHeroPortrait
-            ?: "portraits/player_applicant.jpg"
-    }
 
-    val heroSpeaker = remember(effectiveHeroName, effectiveHeroTitle, effectiveHeroPortrait) {
+    val heroSpeaker = remember(effectiveHeroName, effectiveHeroTitle) {
         val base = GameContent.heroCharacter?.speaker ?: DialogueSpeaker(
             id = "hero",
             name = defaultHeroName,
             title = defaultHeroTitle,
-            portraitAsset = effectiveHeroPortrait,
+            portraitAsset = manifest.defaultHeroPortrait ?: "portraits/template_hero.jpg",
             themeColor = Color(0xFF64B5F6)
         )
-        base.copy(name = effectiveHeroName, title = effectiveHeroTitle, portraitAsset = effectiveHeroPortrait)
+        base.copy(name = effectiveHeroName, title = effectiveHeroTitle)
     }
     val heroBitmap = remember(heroSpeaker.portraitAsset, storyState.currentSlot) {
         heroSpeaker.portraitAsset?.let { StoryAssetLoader.loadBitmap(context, it, storyState.currentSlot) }
@@ -160,7 +151,7 @@ fun StoryScreen(
     )
 
     val leftSpeaker = when {
-        isHeroSpeaking -> heroSpeaker.copy(name = currentNode.speaker.name.ifBlank { effectiveHeroName })
+        isHeroSpeaking -> currentNode.speaker
         currentNode.side == SpeakerSide.LEFT -> currentNode.speaker
         else -> heroSpeaker
     }
@@ -232,18 +223,19 @@ fun StoryScreen(
             //    • Portrait  + 16:9 fallback → ContentScale.FillWidth  (pins width, avoids
             //      severe horizontal crop; lower gradient vignette masks the letterbox naturally)
             if (backgroundBitmap != null) {
-                val isSquare = kotlin.math.abs(backgroundBitmap.width - backgroundBitmap.height) < 10
                 val bgScale = when {
                     isLandscape -> ContentScale.Crop
-                    isSquare -> ContentScale.Crop
+                    // If the bitmap is wider than tall it came from the landscape fallback;
+                    // pin width so the full horizontal composition stays visible.
                     backgroundBitmap.width > backgroundBitmap.height -> ContentScale.FillWidth
-                    else -> ContentScale.Crop
+                    // Native portrait asset: fill the frame perfectly.
+                    else -> ContentScale.FillBounds
                 }
                 Image(
                     bitmap = backgroundBitmap,
                     contentDescription = storyState.currentScene.name,
                     contentScale = bgScale,
-                    alignment = if (!isLandscape && backgroundBitmap.width > backgroundBitmap.height && !isSquare) {
+                    alignment = if (!isLandscape && backgroundBitmap.width > backgroundBitmap.height) {
                         // Align landscape-fallback image to the top so the most meaningful
                         // part of the scene (storefront, faces) stays in the upper 2/3.
                         Alignment.TopCenter
@@ -299,7 +291,7 @@ fun StoryScreen(
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             Text(
-                                text = if (storyState.isStoryAutoPlayPaused) "⏸ PAUSED" else "▶ AUTO-PLAY",
+                                text = if (storyState.isStoryAutoPlayPaused) "⏸ PAUSED" else "▶ STORY MODE",
                                 color = Color(0xFFF3E5F5),
                                 fontSize = 11.sp,
                                 fontWeight = FontWeight.Black,
@@ -376,7 +368,7 @@ fun StoryScreen(
                     horizontalArrangement = Arrangement.spacedBy(8.dp),
                     verticalAlignment = Alignment.Top
                 ) {
-                // Title Banner Card (compact height aligned with 2x2 action buttons)
+                // Title Banner Card (with set flex width and clean multi-line wrapping)
                 Box(
                     modifier = Modifier
                         .weight(1f)
@@ -384,7 +376,7 @@ fun StoryScreen(
                         .clip(RoundedCornerShape(8.dp))
                         .background(RetroPanel.copy(alpha = 0.92f))
                         .border(1.dp, RetroBorder, RoundedCornerShape(8.dp))
-                        .padding(horizontal = 10.dp, vertical = if (isLandscape) 4.dp else 6.dp),
+                        .padding(horizontal = 12.dp, vertical = if (isLandscape) 4.dp else 8.dp),
                     contentAlignment = Alignment.CenterStart
                 ) {
                     Column(
@@ -397,20 +389,20 @@ fun StoryScreen(
                             fontSize = if (isLandscape) 10.sp else 11.sp,
                             fontWeight = FontWeight.Black,
                             fontFamily = FontFamily.Monospace,
-                            softWrap = false,
-                            maxLines = 1,
-                            overflow = TextOverflow.Ellipsis
+                            softWrap = true,
+                            maxLines = if (isLandscape) 1 else 2,
+                            overflow = TextOverflow.Ellipsis,
+                            lineHeight = 14.sp
                         )
                         Text(
                             text = "📍 ${storyState.currentScene.name}",
                             color = Color.LightGray,
                             fontSize = 9.sp,
                             fontFamily = FontFamily.Monospace,
-                            softWrap = false,
                             maxLines = 1,
                             overflow = TextOverflow.Ellipsis
                         )
-                        if (storyState.dynamicMetrics.isNotEmpty()) {
+                        if (GameContent.metrics.isNotEmpty() && storyState.dynamicMetrics.isNotEmpty()) {
                             @OptIn(ExperimentalLayoutApi::class)
                             FlowRow(
                                 horizontalArrangement = Arrangement.spacedBy(6.dp),
@@ -439,7 +431,7 @@ fun StoryScreen(
                     }
                 }
 
-                // Stacked Action Buttons: Row 1 (Log, Opt, Btl) + Row 2 (Auto, Skip)
+                // Stacked Action Buttons (Outside the banner: 2x2 grid for Log, Options, Skip, Battle)
                 Column(
                     modifier = Modifier.width(if (isLandscape) 144.dp else 134.dp),
                     verticalArrangement = Arrangement.spacedBy(4.dp),
@@ -447,10 +439,10 @@ fun StoryScreen(
                 ) {
                     val btnHeight = if (isLandscape) 24.dp else 28.dp
 
-                    // Row 1: Backlog + Options + Battle Sandbox
+                    // Row 1: Backlog + Options
                     Row(
                         modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(3.dp)
+                        horizontalArrangement = Arrangement.spacedBy(4.dp)
                     ) {
                         // Log / History Button
                         Box(
@@ -464,9 +456,9 @@ fun StoryScreen(
                             contentAlignment = Alignment.Center
                         ) {
                             Text(
-                                text = "📜LOG",
+                                text = "📜 LOG",
                                 color = LogosGold,
-                                fontSize = 8.sp,
+                                fontSize = 9.sp,
                                 fontWeight = FontWeight.Bold,
                                 fontFamily = FontFamily.Monospace,
                                 maxLines = 1
@@ -485,30 +477,9 @@ fun StoryScreen(
                             contentAlignment = Alignment.Center
                         ) {
                             Text(
-                                text = if (isEyesFreeMode) "🎧PKT" else "⚙️OPT",
+                                text = if (isEyesFreeMode) "🎧 POCKET" else "⚙️ OPT",
                                 color = if (isEyesFreeMode) Color(0xFFE3F2FD) else LogosGold,
-                                fontSize = 8.sp,
-                                fontWeight = FontWeight.Bold,
-                                fontFamily = FontFamily.Monospace,
-                                maxLines = 1
-                            )
-                        }
-
-                        // Switch to Combat Sandbox Button
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(btnHeight)
-                                .clip(RoundedCornerShape(6.dp))
-                                .background(Color(0xFF37474F).copy(alpha = 0.92f))
-                                .border(1.dp, Color(0xFF78909C), RoundedCornerShape(6.dp))
-                                .clickable { storyViewModel.switchToCombat() },
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(
-                                text = "⚔️BTL",
-                                color = Color.White,
-                                fontSize = 8.sp,
+                                fontSize = 9.sp,
                                 fontWeight = FontWeight.Bold,
                                 fontFamily = FontFamily.Monospace,
                                 maxLines = 1
@@ -703,6 +674,27 @@ fun StoryScreen(
                         }
                     }
 
+                    // Mini-Game Trigger Prompt if node triggers a mini-game
+                    if (currentNode.triggerMiniGameId != null) {
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Button(
+                            onClick = { storyViewModel.advanceDialogue() },
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = Color(0xFF00897B),
+                                contentColor = Color.White
+                            ),
+                            shape = RoundedCornerShape(8.dp),
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text(
+                                text = "🎮 START MINI-GAME (TAP OR SAY 'START')",
+                                fontFamily = FontFamily.Monospace,
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 12.sp
+                            )
+                        }
+                    }
+
                     // Ambient Audio & Voice Mic Prompt Indicator Bar
                     Spacer(modifier = Modifier.height(4.dp))
                     VoiceInputPromptBar(
@@ -856,6 +848,27 @@ fun StoryScreen(
                         ) {
                             Text(
                                 text = "⚔️ COMMENCE BATTLE (TAP OR SAY 'FIREBALL')",
+                                fontFamily = FontFamily.Monospace,
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 11.sp
+                            )
+                        }
+                    }
+
+                    // Mini-Game Trigger Prompt if node triggers a mini-game
+                    if (currentNode.triggerMiniGameId != null) {
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Button(
+                            onClick = { storyViewModel.advanceDialogue() },
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = Color(0xFF00897B),
+                                contentColor = Color.White
+                            ),
+                            shape = RoundedCornerShape(8.dp),
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text(
+                                text = "🎮 START MINI-GAME (TAP OR SAY 'START')",
                                 fontFamily = FontFamily.Monospace,
                                 fontWeight = FontWeight.Bold,
                                 fontSize = 11.sp
@@ -1057,6 +1070,7 @@ private fun RetroSpeechBubble(
                     val promptText = when {
                         node.id == "epilogue_credits" -> "👑 PLAY AGAIN"
                         node.triggerBattleEncounterId != null -> "⚔️ TO BATTLE"
+                        node.triggerMiniGameId != null -> "🎮 TO MINI-GAME"
                         isEyesFreeMode && node.nextNodeId != null -> "⏩ AUTO NEXT (1.5s)"
                         node.nextNodeId != null -> "▼ NEXT"
                         isEyesFreeMode -> "⏩ AUTO CAMP (1.5s)"
@@ -1126,15 +1140,21 @@ private fun VoiceInputPromptBar(
                 !hasChoices -> "Tap or say 'Next' to continue"
                 else -> "Tap choice or speak your decision"
             },
+            modifier = Modifier
+                .weight(1f)
+                .padding(end = 8.dp),
             color = if (isStandby) Color(0xFFFFD54F) else Color.Gray,
             fontSize = 9.sp,
-            fontFamily = FontFamily.Monospace
+            fontFamily = FontFamily.Monospace,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis
         )
 
         // Hands-free Mic Quick Tap
         Box(
             modifier = Modifier
-                .clip(CircleShape)
+                .wrapContentWidth()
+                .clip(RoundedCornerShape(16.dp))
                 .background(
                     when {
                         isListening -> Color(0xFFEF5350)
@@ -1142,9 +1162,9 @@ private fun VoiceInputPromptBar(
                         else -> RetroPanel
                     }
                 )
-                .border(1.dp, if (isStandby) Color(0xFFFFD54F) else LogosGold, CircleShape)
+                .border(1.dp, if (isStandby) Color(0xFFFFD54F) else LogosGold, RoundedCornerShape(16.dp))
                 .clickable { onStartListening() }
-                .padding(horizontal = 8.dp, vertical = 4.dp)
+                .padding(horizontal = 10.dp, vertical = 6.dp)
         ) {
             Text(
                 text = when {
@@ -1153,9 +1173,11 @@ private fun VoiceInputPromptBar(
                     else -> "🎤 SPEAK"
                 },
                 color = if (isStandby) Color(0xFFFFD54F) else LogosGold,
-                fontSize = 9.sp,
+                fontSize = 9.5.sp,
                 fontWeight = FontWeight.Bold,
-                fontFamily = FontFamily.Monospace
+                fontFamily = FontFamily.Monospace,
+                maxLines = 1,
+                softWrap = false
             )
         }
     }
@@ -1208,7 +1230,9 @@ private fun DialogueChoiceItem(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Row(
-                modifier = Modifier.weight(1f),
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(end = 8.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
@@ -1230,49 +1254,60 @@ private fun DialogueChoiceItem(
                 )
             }
 
-            if (isCompleted) {
-                Box(
-                    modifier = Modifier
-                        .clip(RoundedCornerShape(4.dp))
-                        .background(Color(0x334CAF50))
-                        .border(1.dp, Color(0xFF4CAF50), RoundedCornerShape(4.dp))
-                        .padding(horizontal = 5.dp, vertical = 2.dp)
-                ) {
-                    Text(
-                        text = "✓ DONE",
-                        color = Color(0xFF81C784),
-                        fontSize = 8.sp,
-                        fontFamily = FontFamily.Monospace,
-                        fontWeight = FontWeight.Bold
-                    )
-                }
-            } else if (isLocked) {
-                Box(
-                    modifier = Modifier
-                        .clip(RoundedCornerShape(4.dp))
-                        .background(Color(0x33B0BEC5))
-                        .border(1.dp, Color(0xFF546E7A), RoundedCornerShape(4.dp))
-                        .padding(horizontal = 5.dp, vertical = 2.dp)
-                ) {
-                    Text(
-                        text = "🔒 LOCKED",
-                        color = Color(0xFF90A4AE),
-                        fontSize = 8.sp,
-                        fontFamily = FontFamily.Monospace,
-                        fontWeight = FontWeight.Bold
-                    )
-                }
-            } else {
-                // Spoken keyword cue
-                val keywordHint = choice.voiceKeywords.firstOrNull() ?: ""
-                if (keywordHint.isNotBlank()) {
-                    Text(
-                        text = "Say \"$keywordHint\"",
-                        color = Color(0xFF80D8FF),
-                        fontSize = 8.sp,
-                        fontFamily = FontFamily.Monospace,
-                        fontWeight = FontWeight.Bold
-                    )
+            Box(
+                modifier = Modifier.wrapContentWidth(),
+                contentAlignment = Alignment.CenterEnd
+            ) {
+                if (isCompleted) {
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(4.dp))
+                            .background(Color(0x334CAF50))
+                            .border(1.dp, Color(0xFF4CAF50), RoundedCornerShape(4.dp))
+                            .padding(horizontal = 5.dp, vertical = 2.dp)
+                    ) {
+                        Text(
+                            text = "✓ DONE",
+                            color = Color(0xFF81C784),
+                            fontSize = 8.sp,
+                            fontFamily = FontFamily.Monospace,
+                            fontWeight = FontWeight.Bold,
+                            maxLines = 1,
+                            softWrap = false
+                        )
+                    }
+                } else if (isLocked) {
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(4.dp))
+                            .background(Color(0x33B0BEC5))
+                            .border(1.dp, Color(0xFF546E7A), RoundedCornerShape(4.dp))
+                            .padding(horizontal = 5.dp, vertical = 2.dp)
+                    ) {
+                        Text(
+                            text = "🔒 LOCKED",
+                            color = Color(0xFF90A4AE),
+                            fontSize = 8.sp,
+                            fontFamily = FontFamily.Monospace,
+                            fontWeight = FontWeight.Bold,
+                            maxLines = 1,
+                            softWrap = false
+                        )
+                    }
+                } else {
+                    // Spoken keyword cue
+                    val keywordHint = choice.voiceKeywords.firstOrNull() ?: ""
+                    if (keywordHint.isNotBlank()) {
+                        Text(
+                            text = "Say \"$keywordHint\"",
+                            color = Color(0xFF80D8FF),
+                            fontSize = 8.sp,
+                            fontFamily = FontFamily.Monospace,
+                            fontWeight = FontWeight.Bold,
+                            maxLines = 1,
+                            softWrap = false
+                        )
+                    }
                 }
             }
         }
