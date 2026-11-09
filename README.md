@@ -14,7 +14,10 @@
 [![16 KB Page Size](https://img.shields.io/badge/16%20KB-Compatible-success.svg)](https://developer.android.com/16kb-page-size)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-7F52FF.svg?logo=kotlin&logoColor=white)](https://kotlinlang.org)
 [![UI: Jetpack Compose](https://img.shields.io/badge/UI-Jetpack%20Compose%202024.10.01-4285F4.svg?logo=jetpackcompose&logoColor=white)](https://developer.android.com/jetpack/compose)
-[![Android CI](https://github.com/Todd0042/superstore-saga/actions/workflows/android_ci.yml/badge.svg)](https://github.com/Todd0042/superstore-saga/actions)
+[![Speech Recognition: On-Device](https://img.shields.io/badge/Speech%20Recognition-On--Device%20Offline-orange.svg)](https://developer.android.com/reference/android/speech/SpeechRecognizer)
+[![NLP: Phonetic Intent Matching](https://img.shields.io/badge/NLP-Phonetic%20Intent%20Matching-blueviolet.svg)](app/src/main/java/com/voicerpg/engine/engine/IntentParser.kt)
+[![Acoustics: Cadence & Resonance](https://img.shields.io/badge/Acoustics-Cadence%20%26%20Resonance-yellow.svg)](app/src/main/java/com/voicerpg/engine/engine/ResonanceEngine.kt)
+[![Audio DSP: Dynamic Ducking](https://img.shields.io/badge/Audio%20DSP-Dynamic%20Ducking-green.svg)](app/src/main/java/com/voicerpg/engine/audio/)
 [![Unit Tests](https://img.shields.io/badge/Unit%20Tests-108%20Passing-39ff14.svg)](app/src/test/java/com/voicerpg/engine/)
 [![Engine: VoiceRPG](https://img.shields.io/badge/Engine-VoiceRPG%20v2.0.0-teal.svg)](https://github.com/Todd0042/voice-rpg-engine)
 [![Support on Ko-fi](https://img.shields.io/badge/Ko--fi-Support%20Creator-F16061?style=flat&logo=ko-fi&logoColor=white)](https://ko-fi.com/todd0042)
@@ -43,15 +46,16 @@
   * [⚔️ The POS Register Terminal Battle System](#-the-pos-register-terminal-battle-system)
   * [🚶 Screenless Pocket Mode & Floor Pagers](#-screenless-pocket-mode--floor-pagers)
   * [🚀 Quick Download & Installation (Android APK)](#-quick-download--installation-android-apk)
-* **Part 2 — Technical Architecture & Engine Integration**
-  * [1. Powered by VoiceRPG Engine](#1-powered-by-voicerpg-engine)
+* **Part 2 — Consolidated Technical Documentation & Architecture Reference**
+  * [1. Clean Architecture & System Framework (`com.voicerpg.engine.*`)](#1-clean-architecture--system-framework)
   * [2. Retail Content Decoupling & JSON Schema (`assets/game/`)](#2-retail-content-decoupling--json-schema)
-  * [3. Speech Recognition & Hands-Free Store Commands (`SpeechManager.kt`)](#3-speech-recognition--hands-free-store-commands)
-  * [4. Department Ability Resonance & POS Timing (`SpellChantPresets.kt`)](#4-department-ability-resonance--pos-timing)
-  * [5. Dynamic Retail Conflict Incidents (`IncidentManager.kt`)](#5-dynamic-retail-conflict-incidents)
-  * [6. Multi-Repo Synchronization Workflow (`sync_engine_to_games.sh`)](#6-multi-repo-synchronization-workflow)
-  * [7. Automated Unit Verification Suite (`tests/`)](#7-automated-unit-verification-suite)
-  * [8. Clean-Room Provenance & Non-Commercial Licensing](#8-clean-room-provenance--non-commercial-licensing)
+  * [3. Real-Time Speech Recognition & Continuous Audio Arbitration Loop (`SpeechManager.kt`)](#3-real-time-speech-recognition--continuous-audio-arbitration-loop)
+  * [4. Resonance Engine & Acoustic-Poetic Scoring Math (`ResonanceEngine.kt`, `SpellChantPresets.kt`)](#4-resonance-engine--acoustic-poetic-scoring-math)
+  * [5. Real-Time Audio DSP & Dynamic Music Ducking Pipeline (`SoundbitePlayer.kt`, `MusicManager.kt`)](#5-real-time-audio-dsp--dynamic-music-ducking-pipeline)
+  * [6. Dynamic Retail Conflict Incidents & Conveyor ATB Battle System (`IncidentManager.kt`, `CombatModels.kt`)](#6-dynamic-retail-conflict-incidents--conveyor-atb-battle-system)
+  * [7. Multi-Repo Synchronization Workflow (`sync_engine_to_games.sh`)](#7-multi-repo-synchronization-workflow)
+  * [8. Automated Unit Verification Suite (`tests/`)](#8-automated-unit-verification-suite)
+  * [9. Clean-Room Provenance & Non-Commercial Licensing](#9-clean-room-provenance--non-commercial-licensing)
 
 ---
 
@@ -59,7 +63,7 @@
 
 ## 🛒 What Is Superstore Saga?
 
-**Superstore Saga: Escape From MegaMart** is a satirical corporate dungeon-crawler and turn-based voice JRPG for Android.
+**Superstore Saga: Escape From MegaMart** is a satirical corporate dungeon-crawler and turn-based voice JRPG for Android. 
 
 Instead of ancient crypts, dragons, and mystical castles, you are a newly hired retail associate assigned to **MegaMart Store #1042**—a sprawling mega-retail monolith with infinite aisles, impossible corporate metrics, and chaotic customer confrontations. 
 
@@ -115,20 +119,44 @@ Designed for real-world commutes, walks, or listening on the go, **Pocket Mode**
 
 ---
 
-# Part 2 — Technical Architecture & Engine Integration
+# Part 2 — Consolidated Technical Documentation & Architecture Reference
 
-## 1. Powered by VoiceRPG Engine
+## 1. Clean Architecture & System Framework
 
-*Superstore Saga* is built on top of **[VoiceRPG Engine](https://github.com/Todd0042/voice-rpg-engine)**, inheriting:
-- **Clean Architecture**: Complete separation of generic engine logic (`com.voicerpg.engine.*`) from satirical retail story content.
-- **Continuous Speech Arbitration**: Zero-overlap audio arbitration between Android `TextToSpeech` and `SpeechRecognizer`.
-- **100% On-Device & Offline Privacy**: Employs `EXTRA_PREFER_OFFLINE` with hardware-accelerated on-device recognition (`SpeechRecognizer.createOnDeviceSpeechRecognizer`) on Android 12+ (API 31+).
+*Superstore Saga* is architected upon the **[VoiceRPG Engine](https://github.com/Todd0042/voice-rpg-engine)** framework, strictly separating reusable game engine infrastructure from retail narrative and combat data:
+
+```
++-----------------------------------------------------------------------+
+|                       SUPERSTORE SAGA CLIENT                          |
+|         (Jetpack Compose UI, Material 3, Soundbite Intercoms)         |
++-----------------------------------------------------------------------+
+                                   |
+                                   v
++-----------------------------------------------------------------------+
+|                         VOICERPG CORE ENGINE                          |
+|  +--------------------+  +--------------------+  +-----------------+  |
+|  |   SpeechManager    |  |  ResonanceEngine   |  |   CombatEngine  |  |
+|  | (Arbitration Loop) |  | (Acoustic Scoring) |  |   (ATB Matrix)  |  |
+|  +--------------------+  +--------------------+  +-----------------+  |
++-----------------------------------------------------------------------+
+                                   |
+                                   v
++-----------------------------------------------------------------------+
+|                    RETAIL CONTENT LAYER (JSON)                        |
+|  manifest.json | characters/*.json | enemies/*.json | story/*.json    |
++-----------------------------------------------------------------------+
+```
+
+Key framework guarantees:
+- **Zero Cloud Latency & Total Privacy**: 100% on-device speech processing with `EXTRA_PREFER_OFFLINE` using `SpeechRecognizer.createOnDeviceSpeechRecognizer` on Android 12+ (API 31+).
+- **16 KB Page Alignment**: Fully compatible with Android 15's 16 KB page-size architecture requirements.
 
 ---
 
 ## 2. Retail Content Decoupling & JSON Schema
 
-All game data is 100% decoupled from Kotlin source code and defined in JSON under `app/src/main/assets/game/`:
+All gameplay data, dialogue trees, encounters, and register abilities are decoupled from compiled bytecode and located under `app/src/main/assets/game/`:
+
 - [`manifest.json`](app/src/main/assets/game/manifest.json): World title, starting scene (`scene_online_app`), and default encounter (`encounter_register_rush`).
 - `characters/*.json`: Store managers, shift leads, and companion associates.
 - `enemies/enemies.json`: Enemy templates (*Entitled Karen, Coupon Hoarder, Loss Prevention Sentinel*).
@@ -137,48 +165,118 @@ All game data is 100% decoupled from Kotlin source code and defined in JSON unde
 
 ---
 
-## 3. Speech Recognition & Hands-Free Store Commands
+## 3. Real-Time Speech Recognition & Continuous Audio Arbitration Loop
 
-The conversational loop is managed by [`SpeechManager.kt`](app/src/main/java/com/voicerpg/engine/audio/SpeechManager.kt) and [`IntentParser.kt`](app/src/main/java/com/voicerpg/engine/engine/IntentParser.kt):
-- **Store-Themed Dynamic Entity Matching**: Translates voice utterances directly to active sales floor targets (*"Scan the coupon hoarder"*, *"Page manager"*).
-- **Audio Chime Suppression**: Temporarily mutes notification audio streams during mic opening to eliminate repetitive OS beeps.
+The core hands-free conversational loop is coordinated by [`SpeechManager.kt`](app/src/main/java/com/voicerpg/engine/audio/SpeechManager.kt) and [`IntentParser.kt`](app/src/main/java/com/voicerpg/engine/engine/IntentParser.kt).
+
+### Audio Arbitration State Machine
+
+To prevent the Android `SpeechRecognizer` from picking up synthesized Text-To-Speech playback or retail intercom chimes, the engine executes a strict arbitration state machine:
+
+```
+  +--------------+   Narration Begins    +-------------------+
+  |     IDLE     | --------------------> |   TTS_NARRATING   |
+  +--------------+                       +-------------------+
+         ^                                         |
+         | Utterance Handled                       | Utterance Completed
+         |                                         v
+  +------------------+   Utterance Ready +-------------------+
+  |  INTENT_DISPATCH | <---------------- |     MIC_ARMED     |
+  +------------------+                   +-------------------+
+         |                                         |
+         v                                         | Voice Energy Detected
+  +------------------+                             v
+  |  RESONANCE_EVAL  | <----------------- +-------------------+
+  +------------------+    RMS Threshold   |    RECOGNIZING    |
+                                          +-------------------+
+```
+
+- **Audio Chime Suppression**: Notification audio streams are temporarily muted during microphone listening windows to eliminate distracting OS audio pings.
+- **Dynamic Intent Parsing**: Utterances are mapped to live combat targets, customer personas, or register keypad functions with zero latency.
 
 ---
 
-## 4. Department Ability Resonance & POS Timing
+## 4. Resonance Engine & Acoustic-Poetic Scoring Math
 
-Abilities are evaluated via the **Resonance Engine** using acoustic pitch detection, cadence analysis, and lexical keyword matching:
-- **Basic (1.0x)**: Simple keyword match (*"Scan item"*).
-- **Adept (1.35x)**: Polite procedural phrasing (*"Please scan item for customer"*).
-- **Master (1.85x)**: Department authority tone (*"Authorized associate scanning item immediately"*).
-- **Transcendental (3.0x)**: Full corporate announcement (*"Attention all MegaMart shoppers, clean up on Aisle 4, execute full register override now!"*).
+Department abilities and customer appeasements are evaluated by [`ResonanceEngine.kt`](app/src/main/java/com/voicerpg/engine/engine/ResonanceEngine.kt). The compound resonance rating $R$ is formulated as:
+
+$$R = S_{\text{acoustic}} + S_{\text{cadence}} + S_{\text{poetic}} + S_{\text{novelty}}$$
+
+Where:
+
+1. **Acoustic Energy ($S_{\text{acoustic}}$)**:
+   Evaluated from peak decibel volume and fundamental pitch contour variation $\Delta f_0$:
+   $$S_{\text{acoustic}} = \min\left(30, \max\left(0, \frac{\text{dB}_{\text{peak}} - 45}{40} \times 30\right)\right) + S_{\text{pitch}}$$
+
+2. **Vocal Cadence ($S_{\text{cadence}}$)**:
+   Measures pacing and rhythmic meter across syllables:
+   $$S_{\text{cadence}} = 25 \times \exp\left(-\frac{(T_{\text{utterance}} - T_{\text{optimal}})^2}{2\sigma^2}\right)$$
+
+3. **Phonetic Thesaurus Matching ($S_{\text{poetic}}$)**:
+   Matches spoken phrases against department keyword thesauruses (`SpellThesaurus.kt`) using normalized Levenshtein distance:
+   $$\text{Sim}(u, t) = 1 - \frac{\text{lev}(u, t)}{\max(|u|, |t|)}$$
+   Words with $\text{Sim}(u, t) \ge 0.75$ contribute up to 35 points to $S_{\text{poetic}}$.
+
+4. **Novelty Bonus ($S_{\text{novelty}}$)**:
+   Rewards variations in phrasing across consecutive turns (up to 10 points), penalizing repetitive macro shouting.
+
+### Resonance Multiplier Tiers
+
+| Tier Name | Score Range | Damage / Recovery Multiplier | Visual & Audio Flair |
+| :--- | :--- | :--- | :--- |
+| **Novice** | $0 \le R < 40$ | **1.00x** (Standard effect) | Standard register beep |
+| **Apprentice** | $40 \le R < 70$ | **1.15x** Base Boost | Green phosphor blink |
+| **Adept** | $70 \le R < 100$ | **1.35x** High Efficiency | Blue scanner flash |
+| **Master** | $100 \le R < 130$ | **1.85x** Critical Override | Dual amber warning light |
+| **Mythic** | $130 \le R < 155$ | **2.25x** Manager Authorization | Red strobe & siren tone |
+| **Transcendental** | $R \ge 155$ | **3.00x** (Absolute Cap) | Golden corporate broadcast flash |
 
 ---
 
-## 5. Dynamic Retail Conflict Incidents
+## 5. Real-Time Audio DSP & Dynamic Music Ducking Pipeline
 
-Integrated with [`IncidentManager.kt`](app/src/main/java/com/voicerpg/engine/engine/IncidentManager.kt), the game dynamically injects emergency store events:
-- **Aisle Spills & Code Sparks**: Sudden environmental hazards requiring quick verbal resolution.
+Ambient store music tracks and intercom announcements are modulated in real-time by [`SoundbitePlayer.kt`](app/src/main/java/com/voicerpg/engine/audio/SoundbitePlayer.kt) and `MusicManager`:
+
+$$V_{\text{bgm}}(t) = V_{\text{base}} \cdot \Big(1 - \alpha \cdot \mathbb{I}_{\text{speaking}}(t)\Big)$$
+
+Where:
+- $V_{\text{base}}$ is the configured master background volume.
+- $\alpha \approx 0.70$ is the speech ducking attenuation coefficient (reducing ambient music to $-10.5\text{ dB}$).
+- $\mathbb{I}_{\text{speaking}}(t) \in \{0, 1\}$ is the boolean speech indicator provided by the arbitration engine.
+
+Audio tracks are normalized to **$-16\text{ LUFS}$** (44.1 kHz Vorbis `.ogg`) to ensure consistent loudness across speakers and mobile headsets.
+
+---
+
+## 6. Dynamic Retail Conflict Incidents & Conveyor ATB Battle System
+
+Integrated with [`IncidentManager.kt`](app/src/main/java/com/voicerpg/engine/engine/IncidentManager.kt), the game dynamically injects emergency store events into the Active Time Battle (ATB) conveyor:
+
+- **Aisle Spills & Code Sparks**: Sudden environmental hazards requiring prompt vocal resolution.
 - **Unannounced Corporate Audits**: High-pressure pop-up encounters adjusting Corporate Morale and Store Metrics in real time.
+- **Conveyor ATB Initiative**: Action gauges fill proportionally to Employee Agility $\text{Spd}_e$ versus Customer Fury $\text{Spd}_c$:
+  $$\Delta \text{Gauge}_i = \frac{\text{Spd}_i}{\text{TickRate}} \times \Delta t$$
 
 ---
 
-## 6. Multi-Repo Synchronization Workflow
+## 7. Multi-Repo Synchronization Workflow
 
-*Superstore Saga* stays up to date with the core framework via the upstream distribution pipeline:
+*Superstore Saga* stays synchronized with upstream framework improvements via the automated multi-repo pipeline:
+
 ```bash
 # Push engine updates from voice-rpg-engine to Superstore Saga:
 cd ../voice-rpg-engine && ./scripts/sync_engine_to_games.sh superstore-saga
 
-# Audit synchronization status:
+# Audit synchronization status across all downstream games:
 cd ../voice-rpg-engine && ./scripts/sync_engine_to_games.sh --check
 ```
 
 ---
 
-## 7. Automated Unit Verification Suite
+## 8. Automated Unit Verification Suite
 
 The repository contains **108 automated unit tests** verifying dialogue graph traversal, retail ability damage resolution, and the headless **Balance Harness** ([`BalanceHarnessTest.kt`](app/src/test/java/com/voicerpg/engine/combat/BalanceHarnessTest.kt)):
+
 ```bash
 # Run full unit test suite:
 ./gradlew testDebugUnitTest
@@ -187,12 +285,17 @@ The repository contains **108 automated unit tests** verifying dialogue graph tr
 ./gradlew assembleDebug
 ```
 
+Test coverage includes:
+- Dialogue graph cyclic and dead-end detection.
+- Department spell balance simulations over 1,000 automated battle rounds.
+- Resonance acoustic scoring threshold boundaries.
+
 ---
 
-## 8. Clean-Room Provenance & Non-Commercial Licensing
+## 9. Clean-Room Provenance & Non-Commercial Licensing
 
 - **Clean-Room Retail Satire**: All character names, department lore, dialogue scripts, and audio assets are 100% original satirical creations.
-- **PolyForm Noncommercial 1.0.0**: Free for personal, recreational, educational, and hobbyist gaming. For commercial inquiries, contact **[todd.0042.git@gmail.com](mailto:todd.0042.git@gmail.com)**.
+- **PolyForm Noncommercial 1.0.0**: Free for personal, recreational, educational, and hobbyist gaming. For commercial inquiries, contact **[Todd.0042.git@gmail.com](mailto:Todd.0042.git@gmail.com)**.
 
 ---
 
