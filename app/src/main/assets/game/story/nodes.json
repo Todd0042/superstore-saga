@@ -902,6 +902,7 @@
     },
     {
       "id": "node_locker_cashier_enter",
+      "setFlagOnEnter": "role_cashier",
       "speakerId": "donna",
       "side": "LEFT",
       "changeSceneId": "scene_locker_room",
@@ -924,6 +925,7 @@
     },
     {
       "id": "node_locker_stocker_enter",
+      "setFlagOnEnter": "role_stocker",
       "speakerId": "donna",
       "side": "LEFT",
       "changeSceneId": "scene_locker_room",
@@ -946,6 +948,7 @@
     },
     {
       "id": "node_locker_unloader_enter",
+      "setFlagOnEnter": "role_unloader",
       "speakerId": "donna",
       "side": "LEFT",
       "changeSceneId": "scene_locker_room",
@@ -968,6 +971,7 @@
     },
     {
       "id": "node_locker_specialist_enter",
+      "setFlagOnEnter": "role_specialist",
       "speakerId": "donna",
       "side": "LEFT",
       "changeSceneId": "scene_locker_room",
@@ -1657,53 +1661,6 @@
       "side": "LEFT",
       "text": "Keep the high-bass demo track queued up on the showroom soundbar! When shoppers hear that clean, punchy frequency rolling through the aisle, their eyes light up every single time. It's the best feeling on the sales floor!",
       "nextNodeId": "node_hub_specialist"
-    },
-    {
-      "id": "node_act1_teamwork_entry",
-      "speakerId": "narrator",
-      "side": "CENTER_NARRATOR",
-      "text": "BING-BONG! The store public address chime rings out softly. Before the main morning rush hits, an unexpected retail situation needs attention on the sales floor. Across the aisles, your fellow associates are already moving in unison like a well-oiled machine! Where do you jump in to back up the team?",
-      "choices": [
-        {
-          "id": "choice_assist_carts",
-          "text": "Sprint to Action Alley where Mack and Kyle are corralling a runaway line of carts!",
-          "voiceKeywords": [
-            "carts",
-            "action alley",
-            "runaway",
-            "mack",
-            "kyle",
-            "corral"
-          ],
-          "nextNodeId": "node_incident_cart_train"
-        },
-        {
-          "id": "choice_assist_spill",
-          "text": "Grab yellow safety cones with Derrick and Todd to safely clear a spill in Aisle 4!",
-          "voiceKeywords": [
-            "spill",
-            "aisle four",
-            "cones",
-            "derrick",
-            "todd",
-            "safety"
-          ],
-          "nextNodeId": "node_incident_honey_spill"
-        },
-        {
-          "id": "choice_assist_tag",
-          "text": "Join Brenda and Donna at the front registers to verify a customer's shelf tag question!",
-          "voiceKeywords": [
-            "register",
-            "tag",
-            "brenda",
-            "donna",
-            "customer",
-            "price check"
-          ],
-          "nextNodeId": "node_incident_price_check"
-        }
-      ]
     },
     {
       "id": "node_incident_cart_train",
@@ -4103,6 +4060,12 @@
     },
     {
       "id": "node_clockout_fingerprint",
+      "flagRoutes": [
+        { "requiredFlags": ["role_cashier"], "nextNodeId": "node_shift2_cashier" },
+        { "requiredFlags": ["role_stocker"], "nextNodeId": "node_shift2_stocker" },
+        { "requiredFlags": ["role_unloader"], "nextNodeId": "node_shift2_unloader" },
+        { "requiredFlags": ["role_specialist"], "nextNodeId": "node_shift2_specialist" }
+      ],
       "speakerId": "henderson",
       "side": "RIGHT",
       "text": "Place your thumb on the digital timeclock scanner, associate. You didn't just pass your first day\u2014you showed us what true MegaMart pride looks like. Clock out, get some great rest, and let's conquer Shift Two together tomorrow!",
@@ -5568,6 +5531,11 @@
     },
     {
       "id": "node_shift11_branch",
+      "flagRoutes": [
+        { "requiredFlags": ["role_cashier"], "nextNodeId": "node_shift11_cashier" },
+        { "requiredFlags": ["role_unloader"], "nextNodeId": "node_shift11_unloader" },
+        { "requiredFlags": ["role_specialist"], "nextNodeId": "node_shift11_specialist" }
+      ],
       "speakerId": "narrator",
       "side": "CENTER_NARRATOR",
       "text": "The store lights flicker on at full fluorescent blast. Morning intercom announcements begin. Time to report to your station for Shift Eleven.",
@@ -5775,7 +5743,7 @@
             "coffee",
             "aisle"
           ],
-          "nextNodeId": "node_shift12_stocker",
+          "nextNodeId": "node_hub_stocker_act2",
           "metricDeltas": {
             "store_morale": -5.0,
             "associate_engagement": 10.0
@@ -6098,7 +6066,7 @@
             "lane 4",
             "cashier"
           ],
-          "nextNodeId": "node_shift12_cashier",
+          "nextNodeId": "node_hub_cashier_act2",
           "metricDeltas": {
             "store_morale": -5.0,
             "associate_engagement": 10.0
@@ -6417,7 +6385,7 @@
             "rollers",
             "unload"
           ],
-          "nextNodeId": "node_shift12_unloader",
+          "nextNodeId": "node_hub_unloader_act2",
           "metricDeltas": {
             "associate_engagement": 10.0,
             "store_morale": -5.0
@@ -6737,7 +6705,7 @@
             "silence",
             "alarm"
           ],
-          "nextNodeId": "node_shift12_specialist",
+          "nextNodeId": "node_hub_specialist_act2",
           "metricDeltas": {
             "associate_engagement": 10.0,
             "store_morale": -5.0
@@ -7092,6 +7060,11 @@
     },
     {
       "id": "node_shift23_branch",
+      "flagRoutes": [
+        { "requiredFlags": ["role_cashier"], "nextNodeId": "node_shift23_cashier" },
+        { "requiredFlags": ["role_unloader"], "nextNodeId": "node_shift23_unloader" },
+        { "requiredFlags": ["role_specialist"], "nextNodeId": "node_shift23_specialist" }
+      ],
       "speakerId": "narrator",
       "side": "CENTER_NARRATOR",
       "text": "The overhead speakers chime with a cold digital tone: 'ATTENTION ASSOCIATES: ACTIVE TIME-TRACKING INITIALIZED.' Time to report to your department for Shift 23.",
@@ -7298,7 +7271,7 @@
             "velocity",
             "stocker"
           ],
-          "nextNodeId": "node_shift24_stocker",
+          "nextNodeId": "node_hub_stocker_act3",
           "metricDeltas": {
             "associate_engagement": 10.0,
             "labor_squeeze": 10.0
@@ -7621,7 +7594,7 @@
             "scan",
             "cashier"
           ],
-          "nextNodeId": "node_shift24_cashier",
+          "nextNodeId": "node_hub_cashier_act3",
           "metricDeltas": {
             "associate_engagement": 10.0,
             "labor_squeeze": 10.0
@@ -7977,7 +7950,7 @@
             "pace",
             "unloader"
           ],
-          "nextNodeId": "node_shift24_unloader",
+          "nextNodeId": "node_hub_unloader_act3",
           "metricDeltas": {
             "associate_engagement": 10.0,
             "labor_squeeze": 10.0
@@ -8263,7 +8236,7 @@
             "advice",
             "specialist"
           ],
-          "nextNodeId": "node_shift24_specialist",
+          "nextNodeId": "node_hub_specialist_act3",
           "metricDeltas": {
             "associate_engagement": 10.0,
             "labor_squeeze": 10.0
@@ -8586,6 +8559,11 @@
     },
     {
       "id": "node_shift35_branch",
+      "flagRoutes": [
+        { "requiredFlags": ["role_cashier"], "nextNodeId": "node_shift35_cashier" },
+        { "requiredFlags": ["role_unloader"], "nextNodeId": "node_shift35_unloader" },
+        { "requiredFlags": ["role_specialist"], "nextNodeId": "node_shift35_specialist" }
+      ],
       "speakerId": "narrator",
       "side": "CENTER_NARRATOR",
       "text": "A cold tension hangs over Store #1042. Floor managers are huddled by the security monitors, and clipboards are being clutched like shields. Report to your department for Shift 35.",
@@ -10172,6 +10150,11 @@
     },
     {
       "id": "node_shift47_branch",
+      "flagRoutes": [
+        { "requiredFlags": ["role_cashier"], "nextNodeId": "node_shift47_cashier" },
+        { "requiredFlags": ["role_unloader"], "nextNodeId": "node_shift47_unloader" },
+        { "requiredFlags": ["role_specialist"], "nextNodeId": "node_shift47_specialist" }
+      ],
       "speakerId": "narrator",
       "side": "CENTER_NARRATOR",
       "text": "Fluorescent lights hum under emergency generator backup. Floor supervisors clutch two-way radios with white knuckles. Report to your department for the lockdown shifts.",
