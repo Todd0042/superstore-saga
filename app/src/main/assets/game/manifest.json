@@ -9,6 +9,8 @@
   "startingAchievementId": "BADGE_ISSUED",
   "victoryLine": "Shift survived! Your voice echoes through the sales floor.",
   "defeatLine": "Clocked out. Your shift ends in disciplinary review.",
+  "defeatTitle": "💀 CLOCKED OUT (DEFEAT) 💀",
+  "defeatContinueLabel": "PRESS ON (STILL ON THE CLOCK) ➔",
   "titleBackgroundAsset": "story/bg_title_storefront.jpg",
   "defaultHeroName": "Associate #{random9}",
   "defaultHeroTitle": "Probationary Hire",

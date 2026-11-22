@@ -1,4 +1,6 @@
-package com.voicerpg.engine.story
+package com.voicerpg.game.story
+
+import com.voicerpg.engine.story.*
 
 import com.voicerpg.engine.audio.CombatNarrator
 import com.voicerpg.engine.audio.SpeechManager
