@@ -53,7 +53,7 @@ class ProgressionTest {
             assertEquals(heroCharGrowth, Progression.growthFor("hero"))
         }
         // Unknown members still resolve to the engine default growth, never a crash.
-        assertTrue("unknown members resolve to the engine default growth", Progression.growthFor("lyra") == Progression.DEFAULT_GROWTH)
+        assertTrue("unknown members resolve to the engine default growth", Progression.growthFor("__no_such_party_member__") == Progression.DEFAULT_GROWTH)
     }
 }
 

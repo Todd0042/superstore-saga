@@ -1,5 +1,7 @@
 package com.voicerpg.engine.story
 
+import org.junit.Rule
+import com.voicerpg.engine.testing.TemplateFixture
 import androidx.compose.ui.graphics.Color
 import com.voicerpg.engine.audio.CombatNarrator
 import com.voicerpg.engine.audio.SpeechManager
@@ -16,6 +18,9 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class CharacterNameInterpolationTest {
+
+    /** Mechanics test: runs on the engine's frozen template content, whatever game it's in. */
+    @get:Rule val templateFixture = TemplateFixture()
 
     private fun createViewModel(): StoryViewModel {
         val speechManager = SpeechManager()
@@ -45,7 +50,7 @@ class CharacterNameInterpolationTest {
     @Test
     fun testLegacyNameReplacementWhenCustomized() {
         val vm = createViewModel()
-        val formatted = vm.formatStoryText("{hero}, stand firm. {hero}'s courage guides us.", "Rowan", "Flame-Woven")
+        val formatted = vm.formatStoryText("Hero, stand firm. Hero's courage guides us.", "Rowan", "Flame-Woven")
         assertEquals("Rowan, stand firm. Rowan's courage guides us.", formatted)
     }
 

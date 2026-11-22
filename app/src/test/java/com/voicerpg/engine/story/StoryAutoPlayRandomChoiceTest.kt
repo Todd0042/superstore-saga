@@ -61,11 +61,11 @@ class StoryAutoPlayRandomChoiceTest {
             id = "test_hub_node",
             speaker = DialogueSpeaker.NARRATOR,
             side = SpeakerSide.LEFT,
-            text = "Select a station to inspect:",
+            text = "Select a branch to explore:",
             choices = listOf(
-                DialogueChoice(id = "hub_1", text = "Register 1", voiceKeywords = listOf("one"), nextNodeId = "node_1", completionFlag = "flag_1"),
-                DialogueChoice(id = "hub_2", text = "Register 2", voiceKeywords = listOf("two"), nextNodeId = "node_2", completionFlag = "flag_2"),
-                DialogueChoice(id = "hub_3", text = "Register 3", voiceKeywords = listOf("three"), nextNodeId = "node_3", completionFlag = "flag_3")
+                DialogueChoice(id = "hub_1", text = "Branch 1", voiceKeywords = listOf("one"), nextNodeId = "node_1", completionFlag = "flag_1"),
+                DialogueChoice(id = "hub_2", text = "Branch 2", voiceKeywords = listOf("two"), nextNodeId = "node_2", completionFlag = "flag_2"),
+                DialogueChoice(id = "hub_3", text = "Branch 3", voiceKeywords = listOf("three"), nextNodeId = "node_3", completionFlag = "flag_3")
             )
         )
 
