@@ -296,6 +296,7 @@ Test coverage includes:
 
 - **Clean-Room Retail Satire**: All character names, department lore, dialogue scripts, and audio assets are 100% original satirical creations.
 - **PolyForm Noncommercial 1.0.0**: Free for personal, recreational, educational, and hobbyist gaming. For commercial inquiries, contact **[Todd.0042.git@gmail.com](mailto:Todd.0042.git@gmail.com)**.
+- **Media License**: the images, artwork and audio made for this project (paths listed in [LICENSE-MEDIA](LICENSE-MEDIA)) are © Todd0042 under **[CC BY-NC 4.0](LICENSE-MEDIA)**: free to share and adapt with credit for non-commercial purposes; commercial use requires permission.
 
 ---
 
