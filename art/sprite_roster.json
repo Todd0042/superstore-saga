@@ -17,8 +17,7 @@
     {
       "key": "practice_dummy",
       "name": "Shift Trainer Mannequin",
-      "placeholder": "practice_dummy",
-      "look": "A store display mannequin on a wheeled base used for training: blank face, a blue MegaMart vest pinned on crooked, a 'TRAINEE' sticker on the chest (no readable text needed). Used by the voice tutorial.",
+      "look": "The voice tutorial's practice dummy wears the training-drone sheet generated for the starter kit (delivered).",
       "moves": "attack: wobbles forward on its base; hurt: spins half around; death: topples over and the head pops off.",
       "members": [
         {
@@ -85,16 +84,6 @@
         }
       ],
       "moves": "attack: flicks the energy can; cast: exhales a vape cloud of excuses (shadow); idle: checks a phone, yawns."
-    },
-    {
-      "key": "training_drone",
-      "name": "Training Drone",
-      "look": "Starter-kit training drone (delivered); used only by the template encounters the story never starts.",
-      "members": [
-        {
-          "id": "training_drone"
-        }
-      ]
     }
   ],
   "bosses": [
@@ -115,32 +104,9 @@
       "moves": "attack: Iron Slam (clipboard smash); cast: Steam Vent (coffee boils over into a scalding geyser, fire); charge_ultimate: locks the office door, phone to ear, red alarm light flashing; ultimate: an avalanche of write-up forms and 'TERMINATED' stamps raining down (no readable text needed). p2_ (optional): tie loosened, sleeves rolled, the smile gone."
     }
   ],
-  "remove": [
-    {
-      "id": "template_brute",
-      "why": "starter-kit enemy, unused"
-    },
-    {
-      "id": "template_sniper",
-      "why": "starter-kit enemy; only in a template encounter"
-    },
-    {
-      "id": "template_caster",
-      "why": "starter-kit enemy, unused"
-    },
-    {
-      "id": "template_boss",
-      "why": "starter-kit boss; only in a template encounter"
-    },
-    {
-      "id": "template_minion",
-      "why": "starter-kit enemy; only in a template encounter"
-    }
-  ],
+  "remove": [],
   "notes": [
-    "Remove the three template encounters (template_solo_battle, template_trio_battle, template_boss_battle) with the starter-kit enemies.",
     "Job sprites: the hero's portrait changes with the chosen job (cashier, stocker, unloader, specialist). One Associate sheet covers them all today; per-job sheets (hero_cashier...) would need a small engine feature (a sprite per class) later.",
-    "The hero character file is still named \"Template Hero\"; rename it when the sprites land.",
-    "training_drone has a delivered sheet; it stays with the other starter-kit enemies until Todd decides whether to remove them."
+    "The hero character file is still named \"Template Hero\"; rename it when the sprites land."
   ]
 }

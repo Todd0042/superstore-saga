@@ -2,66 +2,27 @@
   "_doc": "TEMPLATE ENCOUNTERS. 'party' lists character ids from characters/ (empty = use the active campaign party). 'enemies' instantiate templates from enemies/enemies.json with per-instance overrides. bossPhases fire once when the referenced enemy drops below hpBelow: they can announce (bannerText/narrationText), crush the party toward reducePartyToHpPct (executing anyone under executeBelowHpPct), and/or summon reinforcements. midBattleJoin adds a character to the party after N enemy actions.",
   "encounters": [
     {
-      "id": "template_solo_battle",
-      "name": "Initiate Proving Trial",
-      "description": "A single combat drone awakens to test vocal incantations and basic resonance.",
-      "environment": "CAVE",
-      "party": ["hero"],
-      "enemies": [
-        { "templateId": "training_drone", "id": "drone_solo", "name": "Training Drone Alpha", "isTargeted": true, "atbGauge": 0.35 }
-      ]
-    },
-    {
-      "id": "template_trio_battle",
-      "name": "Squad Defense Exercise",
-      "description": "Three combat automatons deploy in staggered formation to test crowd control and targeting.",
-      "environment": "DUNGEON",
-      "party": ["hero"],
-      "enemies": [
-        { "templateId": "training_drone", "id": "drone_vanguard", "name": "Drone Vanguard", "subtitle": "Frontline Brawler", "hp": 110, "attack": 18, "speed": 42, "isTargeted": true, "atbGauge": 0.3 },
-        { "templateId": "template_sniper", "id": "drone_artillery", "name": "Drone Artillery", "subtitle": "Heavy Blaster", "hp": 70, "attack": 24, "speed": 36, "atbGauge": 0.2 },
-        { "templateId": "training_drone", "id": "drone_scout", "name": "Drone Scout", "subtitle": "Swift Harasser", "hp": 65, "attack": 12, "speed": 62, "atbGauge": 0.15 }
-      ]
-    },
-    {
-      "id": "template_boss_battle",
-      "name": "The Guardian Trial",
-      "description": "A heavyweight template guardian demonstrates boss phases, enrage announcements, party-wide pressure, and summons.",
-      "environment": "CASTLE",
-      "party": ["hero"],
-      "enemies": [
-        { "templateId": "template_boss", "id": "boss_core", "name": "Proving Guardian", "isTargeted": true, "atbGauge": 0.4 },
-        { "templateId": "template_minion", "id": "boss_warden_a", "name": "Guardian Warden A", "atbGauge": 0.25 },
-        { "templateId": "template_minion", "id": "boss_warden_b", "name": "Guardian Warden B", "atbGauge": 0.2 }
-      ],
-      "bossPhases": [
-        {
-          "enemyId": "boss_core",
-          "hpBelow": 0.66,
-          "bannerText": "GUARDIAN SUMMONS REINFORCEMENTS",
-          "narrationText": "The Proving Guardian calls a fresh warden into the arena!",
-          "summonEnemyId": "template_minion",
-          "summonCount": 1
-        },
-        {
-          "enemyId": "boss_core",
-          "hpBelow": 0.33,
-          "bannerText": "GUARDIAN OVERLOAD — CATACLYSM",
-          "narrationText": "The Proving Guardian unleashes a devastating overload, tearing through the party!",
-          "reducePartyToHpPct": 0.1,
-          "executeBelowHpPct": 0.3
-        }
-      ]
-    },
-    {
       "id": "encounter_register_rush",
       "name": "Morning Concourse Rush Rally",
       "description": "A lively morning crowd and enthusiastic coupon collectors test your fast checkout rhythm!",
       "environment": "DUNGEON",
-      "party": ["hero"],
+      "party": [
+        "hero"
+      ],
       "enemies": [
-        { "templateId": "karen_customer", "id": "karen_01", "name": "Bargain Shopper", "isTargeted": true, "atbGauge": 0.4 },
-        { "templateId": "extreme_couponer", "id": "couponer_01", "name": "Coupon Collector", "atbGauge": 0.25 }
+        {
+          "templateId": "karen_customer",
+          "id": "karen_01",
+          "name": "Bargain Shopper",
+          "isTargeted": true,
+          "atbGauge": 0.4
+        },
+        {
+          "templateId": "extreme_couponer",
+          "id": "couponer_01",
+          "name": "Coupon Collector",
+          "atbGauge": 0.25
+        }
       ]
     },
     {
@@ -69,9 +30,17 @@
       "name": "Regional Audit Standoff",
       "description": "District Auditor Vance conducts an aggressive compliance inspection.",
       "environment": "CASTLE",
-      "party": ["hero"],
+      "party": [
+        "hero"
+      ],
       "enemies": [
-        { "templateId": "regional_auditor", "id": "auditor_boss", "name": "District Auditor Vance", "isTargeted": true, "atbGauge": 0.5 }
+        {
+          "templateId": "regional_auditor",
+          "id": "auditor_boss",
+          "name": "District Auditor Vance",
+          "isTargeted": true,
+          "atbGauge": 0.5
+        }
       ],
       "bossPhases": [
         {
@@ -87,10 +56,23 @@
       "name": "Saturday Community Festival Rush",
       "description": "A bustling weekend crowd floods Action Alley for barbecue supplies and summer sales!",
       "environment": "DUNGEON",
-      "party": ["hero"],
+      "party": [
+        "hero"
+      ],
       "enemies": [
-        { "templateId": "overtime_screamer", "id": "rush_crowd_01", "name": "Weekend Rush Shoppers", "isTargeted": true, "atbGauge": 0.4 },
-        { "templateId": "karen_customer", "id": "rush_shopper_02", "name": "Bargain Hunter", "atbGauge": 0.25 }
+        {
+          "templateId": "overtime_screamer",
+          "id": "rush_crowd_01",
+          "name": "Weekend Rush Shoppers",
+          "isTargeted": true,
+          "atbGauge": 0.4
+        },
+        {
+          "templateId": "karen_customer",
+          "id": "rush_shopper_02",
+          "name": "Bargain Hunter",
+          "atbGauge": 0.25
+        }
       ]
     },
     {
@@ -98,9 +80,18 @@
       "name": "District VP Grand Inspection Showcase",
       "description": "District VP Vance inspects Store #1042 during peak velocity! Demonstrate supreme customer care and retail mastery.",
       "environment": "CASTLE",
-      "party": ["hero"],
+      "party": [
+        "hero"
+      ],
       "enemies": [
-        { "templateId": "regional_auditor", "id": "auditor_vance", "name": "District VP Vance", "subtitle": "Eagle-Eyed Executive", "isTargeted": true, "atbGauge": 0.45 }
+        {
+          "templateId": "regional_auditor",
+          "id": "auditor_vance",
+          "name": "District VP Vance",
+          "subtitle": "Eagle-Eyed Executive",
+          "isTargeted": true,
+          "atbGauge": 0.45
+        }
       ],
       "bossPhases": [
         {
@@ -116,9 +107,18 @@
       "name": "Department Huddle Confrontation",
       "description": "The toxic slacker veteran deploys weaponized excuses, blame-shifting, and stall tactics! Stand your ground and expose the truth.",
       "environment": "DUNGEON",
-      "party": ["hero"],
+      "party": [
+        "hero"
+      ],
       "enemies": [
-        { "templateId": "slacker_veteran", "id": "slacker_boss", "name": "Slacker Veteran", "subtitle": "Excuse Specialist", "isTargeted": true, "atbGauge": 0.4 }
+        {
+          "templateId": "slacker_veteran",
+          "id": "slacker_boss",
+          "name": "Slacker Veteran",
+          "subtitle": "Excuse Specialist",
+          "isTargeted": true,
+          "atbGauge": 0.4
+        }
       ],
       "bossPhases": [
         {
@@ -134,9 +134,18 @@
       "name": "Loss Prevention Interrogation Standoff",
       "description": "Security Manager Clint deploys the Reid interrogation technique, falsified timeline logs, and felony termination threats! Break his manufactured narrative.",
       "environment": "CASTLE",
-      "party": ["hero"],
+      "party": [
+        "hero"
+      ],
       "enemies": [
-        { "templateId": "security_clint", "id": "clint_boss", "name": "Loss Prevention Clint", "subtitle": "Reid Technique Interrogator", "isTargeted": true, "atbGauge": 0.45 }
+        {
+          "templateId": "security_clint",
+          "id": "clint_boss",
+          "name": "Loss Prevention Clint",
+          "subtitle": "Reid Technique Interrogator",
+          "isTargeted": true,
+          "atbGauge": 0.45
+        }
       ],
       "bossPhases": [
         {
@@ -152,7 +161,9 @@
       "name": "The Executive Lockdown Showdown",
       "description": "Store Manager Henderson locks the executive office doors, wielding unhinged threats of career destruction, police intervention, and fabricated charges. Break his desperate reign of retail terror!",
       "environment": "CASTLE",
-      "party": ["hero"],
+      "party": [
+        "hero"
+      ],
       "enemies": [
         {
           "templateId": "manager_henderson",
@@ -160,7 +171,7 @@
           "name": "Store Manager Henderson",
           "subtitle": "The Desperate Executive",
           "isTargeted": true,
-          "atbGauge": 0.50
+          "atbGauge": 0.5
         }
       ],
       "bossPhases": [

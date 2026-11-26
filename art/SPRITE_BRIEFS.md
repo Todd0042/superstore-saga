@@ -6,7 +6,7 @@ Every fighter, enemy and boss is mapped to a sprite key below. A sheet named aft
 
 A retail workplace comedy set in MegaMart Store #1042. The look is 16-bit JRPG with a wink: ordinary store staff and customers drawn as if they were knights, mages and monsters, their weapons the tools of the trade (price guns, box cutters, coupon binders, clipboards). Match the portraits in `app/src/main/assets/portraits/` for faces, hair and uniforms: MegaMart associates wear a royal-blue vest with a name badge; managers wear a royal-blue polo or business casual with a lanyard.
 
-**To draw: 1 sheet** (0 party fighters, 1 enemy family, 0 bosses). Everything else is a recolour of one of those.
+**To draw: 0 sheets** (0 party fighters, 0 enemy families, 0 bosses). Everything else is a recolour of one of those.
 
 ## Style (every sprite)
 
@@ -36,23 +36,29 @@ A retail workplace comedy set in MegaMart Store #1042. The look is 16-bit JRPG w
 
 ### `hero`: The Associate (player) ✅ delivered
 
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/hero.png` + `hero.json` · **party** · **64x64** cells · tags: idle, ready, charge, cast (release=4), attack (impact=4), hurt, ko, victory
+
 Portrait: `portraits/player_applicant.jpg`.
 
 The player's new-hire MegaMart associate: royal-blue vest over a grey shirt, name badge and lanyard, khakis, sturdy work shoes, short practical hair (keep the face simple and neutral: the player is anyone). Carries a price-scanner gun holstered at the hip and a box cutter. Stance of an eager rookie: shoulders square, ready.
 
 *Moves*: charge: holds the scanner up, its red laser flickering as the chant builds; cast: fires the scanner like a wand, a beam of barcode light (release on the beep); attack: a quick box-cutter slash or a shoulder-check with a clipboard; ko: slumps against an imaginary shelf and slides down; victory: thumbs-up and a pumped fist.
 
-## Enemy families (7, 64 px)
+## Enemy families (6, 64 px)
 
-### `practice_dummy`: Shift Trainer Mannequin
+### `practice_dummy`: Shift Trainer Mannequin ✅ delivered
 
-A store display mannequin on a wheeled base used for training: blank face, a blue MegaMart vest pinned on crooked, a 'TRAINEE' sticker on the chest (no readable text needed). Used by the voice tutorial.
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/practice_dummy.png` + `practice_dummy.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
+
+The voice tutorial's practice dummy wears the training-drone sheet generated for the starter kit (delivered).
 
 *Moves*: attack: wobbles forward on its base; hurt: spins half around; death: topples over and the head pops off.
 
 Draws: Practice Dummy (Training Target, construct/physical)
 
 ### `karen_customer`: Entitled Customer ✅ delivered
+
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/karen_customer.png` + `karen_customer.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
 
 A furious shopper: asymmetrical blonde bob, oversized sunglasses pushed up on the head, a puffer vest, a giant designer handbag swung like a flail, a receipt clutched in the other fist. Leans forward, finger pointing.
 
@@ -62,6 +68,8 @@ Draws: Entitled Customer (Escalation Vanguard, flesh/physical)
 
 ### `overtime_screamer`: The Floor Rush Crowd ✅ delivered
 
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/overtime_screamer.png` + `overtime_screamer.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
+
 The Floor Rush Crowd: a sale-day shopper in a red hoodie pushing a cart piled with discounted goods (recolour; a separate sheet would ideally show the cart).
 
 *Moves*: attack: swings the handbag overhead; windup: jabs a pointing finger ('Manager!'); cast: slaps the receipt down, a shockwave of outrage.
@@ -69,6 +77,8 @@ The Floor Rush Crowd: a sale-day shopper in a red hoodie pushing a cart piled wi
 Draws: Floor Rush Crowd (Bargain Swarm, flesh/physical)
 
 ### `extreme_couponer`: Extreme Couponer ✅ delivered
+
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/extreme_couponer.png` + `extreme_couponer.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
 
 A wiry coupon strategist in a fishing vest stuffed with clipped coupons, reading glasses on a beaded chain, a three-ring binder of coupons hugged like a spellbook, scissors in the other hand.
 
@@ -78,6 +88,8 @@ Draws: Extreme Couponer (Binder Tactician, flesh/shadow)
 
 ### `regional_auditor`: Regional Auditor ✅ delivered
 
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/regional_auditor.png` + `regional_auditor.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
+
 A cold corporate auditor: grey suit, rimless glasses, a slicked parting, a laptop open on one forearm like a shield and a clipboard in the other hand; an icy blue glow from the laptop screen (element: cryomancy).
 
 *Moves*: attack: slams the clipboard down; cast: the laptop screen flares and spreadsheets swirl out as frosty shards.
@@ -86,21 +98,19 @@ Draws: Regional Auditor (Spreadsheet Inquisitor, construct/cryomancy)
 
 ### `slacker_veteran`: Slacker Veteran ✅ delivered
 
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/slacker_veteran.png` + `slacker_veteran.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
+
 A long-tenured associate who perfected doing nothing: faded vest worn open, beanie, a vape pen, slouched posture with hands in pockets, an energy drink can (Kyle's type; see portraits/kyle.jpg for the vibe, but a generic face).
 
 *Moves*: attack: flicks the energy can; cast: exhales a vape cloud of excuses (shadow); idle: checks a phone, yawns.
 
 Draws: Slacker Veteran (Excuse Specialist, flesh/shadow)
 
-### `training_drone`: Training Drone ✅ delivered
-
-Starter-kit training drone (delivered); used only by the template encounters the story never starts.
-
-Draws: Training Drone (Automaton Target, construct/cryomancy)
-
 ## Bosses (2 to draw, each its own sprite)
 
 ### `security_clint`: Loss Prevention Clint (96 px) ✅ delivered
+
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/security_clint.png` + `security_clint.json` · **boss** · **96x96** cells · tags: idle, windup, attack (impact=4), cast (release=4), hurt, charge_ultimate, ultimate (release=5) (+ death)
 
 Clint from portraits/clint.jpg, drawn larger than life: stocky, grey security polo, cargo pants, aviator sunglasses, a heavy ring of keys and a radio on the belt, arms folded. The 'Invisible Eye' of loss prevention.
 
@@ -110,24 +120,15 @@ Element: construct/shadow.
 
 ### `manager_henderson`: Store Manager Henderson (96 px) ✅ delivered
 
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/manager_henderson.png` + `manager_henderson.json` · **boss** · **96x96** cells · tags: idle, windup, attack (impact=4), cast (release=4), hurt, charge_ultimate, ultimate (release=5) (+ death)
+
 Henderson from portraits/henderson.jpg, drawn larger than life: silver-haired, polished smile, royal-blue manager polo with the store logo, khakis, a clipboard and a coffee mug. Every move is corporate theatre: a politician's grin that cracks into rage.
 
 *Moves*: attack: Iron Slam (clipboard smash); cast: Steam Vent (coffee boils over into a scalding geyser, fire); charge_ultimate: locks the office door, phone to ear, red alarm light flashing; ultimate: an avalanche of write-up forms and 'TERMINATED' stamps raining down (no readable text needed). p2_ (optional): tie loosened, sleeves rolled, the smile gone.
 
 Element: construct/fire.
 
-## Not drawn: remove from the game
-
-These enemies aren't reached by the story; remove them (and their encounters) from `enemies.json` at the sprite rollout instead of drawing them, or the sprite contract will block the release:
-- `template_brute`: Template Brute (Vanguard, flesh/physical): starter-kit enemy, unused
-- `template_sniper`: Template Sniper (Sniper, flesh/physical): starter-kit enemy; only in a template encounter
-- `template_caster`: Template Caster (Occultist, void/shadow): starter-kit enemy, unused
-- `template_boss`: Template Boss (Boss Guardian, construct/physical): starter-kit boss; only in a template encounter
-- `template_minion`: Template Minion (Minion, construct/physical): starter-kit enemy; only in a template encounter
-
 ## Notes for the game
 
-- Remove the three template encounters (template_solo_battle, template_trio_battle, template_boss_battle) with the starter-kit enemies.
 - Job sprites: the hero's portrait changes with the chosen job (cashier, stocker, unloader, specialist). One Associate sheet covers them all today; per-job sheets (hero_cashier...) would need a small engine feature (a sprite per class) later.
 - The hero character file is still named "Template Hero"; rename it when the sprites land.
-- training_drone has a delivered sheet; it stays with the other starter-kit enemies until Todd decides whether to remove them.
