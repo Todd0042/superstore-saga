@@ -59,7 +59,8 @@
       "xpReward": 150,
       "movesetId": "construct_bruiser",
       "spriteId": "regional_auditor",
-      "spriteTint": "#3B82F6"
+      "spriteTint": "#3B82F6",
+      "isBoss": true
     },
     {
       "id": "overtime_screamer",
@@ -89,7 +90,8 @@
       "xpReward": 120,
       "movesetId": "flesh_bruiser",
       "spriteId": "slacker_veteran",
-      "spriteTint": "#9CA3AF"
+      "spriteTint": "#9CA3AF",
+      "isBoss": true
     },
     {
       "id": "security_clint",

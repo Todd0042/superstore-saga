@@ -44,7 +44,7 @@ The player's new-hire MegaMart associate: royal-blue vest over a grey shirt, nam
 
 *Moves*: charge: holds the scanner up, its red laser flickering as the chant builds; cast: fires the scanner like a wand, a beam of barcode light (release on the beep); attack: a quick box-cutter slash or a shoulder-check with a clipboard; ko: slumps against an imaginary shelf and slides down; victory: thumbs-up and a pumped fist.
 
-## Enemy families (6, 64 px)
+## Enemy families (4, 64 px)
 
 ### `practice_dummy`: Shift Trainer Mannequin ✅ delivered
 
@@ -86,27 +86,27 @@ A wiry coupon strategist in a fishing vest stuffed with clipped coupons, reading
 
 Draws: Extreme Couponer (Binder Tactician, flesh/shadow)
 
-### `regional_auditor`: Regional Auditor ✅ delivered
+## Bosses (4 to draw, each its own sprite)
 
-> **Deliver:** `app/src/main/assets/game/sprites/sheets/regional_auditor.png` + `regional_auditor.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
+### `slacker_veteran`: Slacker Veteran (96 px) ✅ delivered
 
-A cold corporate auditor: grey suit, rimless glasses, a slicked parting, a laptop open on one forearm like a shield and a clipboard in the other hand; an icy blue glow from the laptop screen (element: cryomancy).
-
-*Moves*: attack: slams the clipboard down; cast: the laptop screen flares and spreadsheets swirl out as frosty shards.
-
-Draws: Regional Auditor (Spreadsheet Inquisitor, construct/cryomancy)
-
-### `slacker_veteran`: Slacker Veteran ✅ delivered
-
-> **Deliver:** `app/src/main/assets/game/sprites/sheets/slacker_veteran.png` + `slacker_veteran.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/slacker_veteran.png` + `slacker_veteran.json` · **boss** · **96x96** cells · tags: idle, windup, attack (impact=4), cast (release=4), hurt, charge_ultimate, ultimate (release=5) (+ death)
 
 A long-tenured associate who perfected doing nothing: faded vest worn open, beanie, a vape pen, slouched posture with hands in pockets, an energy drink can (Kyle's type; see portraits/kyle.jpg for the vibe, but a generic face).
 
-*Moves*: attack: flicks the energy can; cast: exhales a vape cloud of excuses (shadow); idle: checks a phone, yawns.
+*Moves*: windup: stretches and yawns; attack: a lazy shove; cast: throws a flurry of excuses (speech-bubble scraps); charge_ultimate: checks his phone, 'just one sec'; ultimate: the weaponized restroom break, he vanishes and the work avalanches onto the party.
 
-Draws: Slacker Veteran (Excuse Specialist, flesh/shadow)
+Element: flesh/shadow.
 
-## Bosses (2 to draw, each its own sprite)
+### `regional_auditor`: Regional Auditor (128 px) ✅ delivered
+
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/regional_auditor.png` + `regional_auditor.json` · **boss** · **128x128** cells · tags: idle, windup, attack (impact=4), cast (release=4), hurt, charge_ultimate, ultimate (release=5) (+ death)
+
+A cold corporate auditor: grey suit, rimless glasses, a slicked parting, a laptop open on one forearm like a shield and a clipboard in the other hand; an icy blue glow from the laptop screen (element: cryomancy).
+
+*Moves*: windup: snaps the leather portfolio open; attack: slams the clipboard down; cast: fires a volley of citation slips; charge_ultimate: uncaps the red pen, the store goes quiet; ultimate: the Level 3 write-up, a storm of red ink.
+
+Element: construct/cryomancy.
 
 ### `security_clint`: Loss Prevention Clint (96 px) ✅ delivered
 

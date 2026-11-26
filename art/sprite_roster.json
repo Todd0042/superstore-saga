@@ -60,33 +60,23 @@
         }
       ],
       "moves": "cast: fans coupons from the binder and flicks them like throwing cards (release=4); attack: snips with the scissors."
-    },
-    {
-      "key": "regional_auditor",
-      "name": "Regional Auditor",
-      "placeholder": "template_brute",
-      "look": "A cold corporate auditor: grey suit, rimless glasses, a slicked parting, a laptop open on one forearm like a shield and a clipboard in the other hand; an icy blue glow from the laptop screen (element: cryomancy).",
-      "members": [
-        {
-          "id": "regional_auditor"
-        }
-      ],
-      "moves": "attack: slams the clipboard down; cast: the laptop screen flares and spreadsheets swirl out as frosty shards."
-    },
-    {
-      "key": "slacker_veteran",
-      "name": "Slacker Veteran",
-      "placeholder": "template_brute",
-      "look": "A long-tenured associate who perfected doing nothing: faded vest worn open, beanie, a vape pen, slouched posture with hands in pockets, an energy drink can (Kyle's type; see portraits/kyle.jpg for the vibe, but a generic face).",
-      "members": [
-        {
-          "id": "slacker_veteran"
-        }
-      ],
-      "moves": "attack: flicks the energy can; cast: exhales a vape cloud of excuses (shadow); idle: checks a phone, yawns."
     }
   ],
   "bosses": [
+    {
+      "id": "slacker_veteran",
+      "name": "Slacker Veteran",
+      "cell": 96,
+      "look": "A long-tenured associate who perfected doing nothing: faded vest worn open, beanie, a vape pen, slouched posture with hands in pockets, an energy drink can (Kyle's type; see portraits/kyle.jpg for the vibe, but a generic face).",
+      "moves": "windup: stretches and yawns; attack: a lazy shove; cast: throws a flurry of excuses (speech-bubble scraps); charge_ultimate: checks his phone, 'just one sec'; ultimate: the weaponized restroom break, he vanishes and the work avalanches onto the party."
+    },
+    {
+      "id": "regional_auditor",
+      "name": "Regional Auditor",
+      "cell": 128,
+      "look": "A cold corporate auditor: grey suit, rimless glasses, a slicked parting, a laptop open on one forearm like a shield and a clipboard in the other hand; an icy blue glow from the laptop screen (element: cryomancy).",
+      "moves": "windup: snaps the leather portfolio open; attack: slams the clipboard down; cast: fires a volley of citation slips; charge_ultimate: uncaps the red pen, the store goes quiet; ultimate: the Level 3 write-up, a storm of red ink."
+    },
     {
       "id": "security_clint",
       "name": "Loss Prevention Clint",
