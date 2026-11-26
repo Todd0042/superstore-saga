@@ -6,7 +6,7 @@ Every fighter, enemy and boss is mapped to a sprite key below. A sheet named aft
 
 A retail workplace comedy set in MegaMart Store #1042. The look is 16-bit JRPG with a wink: ordinary store staff and customers drawn as if they were knights, mages and monsters, their weapons the tools of the trade (price guns, box cutters, coupon binders, clipboards). Match the portraits in `app/src/main/assets/portraits/` for faces, hair and uniforms: MegaMart associates wear a royal-blue vest with a name badge; managers wear a royal-blue polo or business casual with a lanyard.
 
-**To draw: 8 sheets** (1 party fighter, 6 enemy families, 1 boss). Everything else is a recolour of one of those.
+**To draw: 8 sheets** (1 party fighter, 5 enemy families, 2 bosses). Everything else is a recolour of one of those.
 
 ## Style (every sprite)
 
@@ -42,7 +42,7 @@ The player's new-hire MegaMart associate: royal-blue vest over a grey shirt, nam
 
 *Moves*: charge: holds the scanner up, its red laser flickering as the chant builds; cast: fires the scanner like a wand, a beam of barcode light (release on the beep); attack: a quick box-cutter slash or a shoulder-check with a clipboard; ko: slumps against an imaginary shelf and slides down; victory: thumbs-up and a pumped fist.
 
-## Enemy families (6, 64 px)
+## Enemy families (5, 64 px)
 
 ### `practice_dummy`: Shift Trainer Mannequin
 
@@ -87,15 +87,15 @@ A long-tenured associate who perfected doing nothing: faded vest worn open, bean
 
 Draws: Slacker Veteran (Excuse Specialist, flesh/shadow)
 
-### `security_clint`: Loss Prevention Clint
+## Bosses (2 to draw, each its own sprite)
 
-Clint from portraits/clint.jpg: stocky, grey security polo, cargo pants, aviator sunglasses, a heavy ring of keys and a radio on the belt, arms folded. The 'Invisible Eye' of loss prevention.
+### `security_clint`: Loss Prevention Clint (96 px)
 
-*Moves*: windup: lowers the sunglasses and stares; attack: grabs and slams like an interrogation hold; cast: shines a flashlight that flashes like a camera (shadow).
+Clint from portraits/clint.jpg, drawn larger than life: stocky, grey security polo, cargo pants, aviator sunglasses, a heavy ring of keys and a radio on the belt, arms folded. The 'Invisible Eye' of loss prevention.
 
-Draws: Loss Prevention Clint (Reid Technique Interrogator, construct/shadow)
+*Moves*: windup: lowers the sunglasses and stares; attack: grabs and slams like an interrogation hold; cast: a flashlight that flashes like a camera (shadow); charge_ultimate: spreads falsified timeline logs on an invisible table, the radio crackling; ultimate: the Reid technique, a cage of spotlights and accusing camera flashes closing in.
 
-## Bosses (1 to draw, each its own sprite)
+Element: construct/shadow.
 
 ### `manager_henderson`: Store Manager Henderson (96 px)
 
@@ -103,7 +103,7 @@ Henderson from portraits/henderson.jpg, drawn larger than life: silver-haired, p
 
 *Moves*: attack: Iron Slam (clipboard smash); cast: Steam Vent (coffee boils over into a scalding geyser, fire); charge_ultimate: locks the office door, phone to ear, red alarm light flashing; ultimate: an avalanche of write-up forms and 'TERMINATED' stamps raining down (no readable text needed). p2_ (optional): tie loosened, sleeves rolled, the smile gone.
 
-Element: construct/fire. Henderson is the final showdown but enemies.json has "isBoss": false; set it to true at the sprite rollout so he gets a boss bar, ultimate charge and the boss contract.
+Element: construct/fire.
 
 ## Not drawn: remove from the game
 
@@ -118,6 +118,5 @@ These enemies aren't reached by the story; remove them (and their encounters) fr
 ## Notes for the game
 
 - Remove the three template encounters (template_solo_battle, template_trio_battle, template_boss_battle) with the starter-kit enemies.
-- Loss Prevention Clint is a regular enemy in the data but plays like a boss (a standoff encounter of his own); consider making him a boss too (then he needs a 96 px boss sheet).
 - Job sprites: the hero's portrait changes with the chosen job (cashier, stocker, unloader, specialist). One Associate sheet covers them all today; per-job sheets (hero_cashier...) would need a small engine feature (a sprite per class) later.
 - The hero character file is still named "Template Hero"; rename it when the sprites land.

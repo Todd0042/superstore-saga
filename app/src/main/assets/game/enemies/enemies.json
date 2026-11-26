@@ -195,7 +195,8 @@
       "xpReward": 160,
       "movesetId": "construct_bruiser",
       "spriteId": "template_brute",
-      "spriteTint": "#1E293B"
+      "spriteTint": "#1E293B",
+      "isBoss": true
     },
     {
       "id": "manager_henderson",
@@ -210,7 +211,8 @@
       "xpReward": 250,
       "movesetId": "construct_bruiser",
       "spriteId": "template_boss",
-      "spriteTint": "#991B1B"
+      "spriteTint": "#991B1B",
+      "isBoss": true
     }
   ]
 }
