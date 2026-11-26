@@ -88,7 +88,7 @@
     {
       "id": "manager_henderson",
       "name": "Store Manager Henderson",
-      "cell": 96,
+      "cell": 128,
       "placeholder": "template_boss",
       "look": "Henderson from portraits/henderson.jpg, drawn larger than life: silver-haired, polished smile, royal-blue manager polo with the store logo, khakis, a clipboard and a coffee mug. Every move is corporate theatre: a politician's grin that cracks into rage.",
       "moves": "attack: Iron Slam (clipboard smash); cast: Steam Vent (coffee boils over into a scalding geyser, fire); charge_ultimate: locks the office door, phone to ear, red alarm light flashing; ultimate: an avalanche of write-up forms and 'TERMINATED' stamps raining down (no readable text needed). p2_ (optional): tie loosened, sleeves rolled, the smile gone."

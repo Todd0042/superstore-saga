@@ -88,7 +88,7 @@ Draws: Extreme Couponer (Binder Tactician, flesh/shadow)
 
 ## Bosses (4 to draw, each its own sprite)
 
-### `slacker_veteran`: Slacker Veteran (96 px) ✅ delivered
+### `slacker_veteran`: Slacker Veteran (96 px) ⚠️ REDO: delivered at 64x64, must be 96x96; missing charge_ultimate, ultimate
 
 > **Deliver:** `app/src/main/assets/game/sprites/sheets/slacker_veteran.png` + `slacker_veteran.json` · **boss** · **96x96** cells · tags: idle, windup, attack (impact=4), cast (release=4), hurt, charge_ultimate, ultimate (release=5) (+ death)
 
@@ -108,7 +108,7 @@ A cold corporate auditor: grey suit, rimless glasses, a slicked parting, a lapto
 
 Element: construct/cryomancy.
 
-### `security_clint`: Loss Prevention Clint (96 px) ✅ delivered
+### `security_clint`: Loss Prevention Clint (96 px) ⚠️ REDO: delivered at 64x64, must be 96x96; missing charge_ultimate, ultimate
 
 > **Deliver:** `app/src/main/assets/game/sprites/sheets/security_clint.png` + `security_clint.json` · **boss** · **96x96** cells · tags: idle, windup, attack (impact=4), cast (release=4), hurt, charge_ultimate, ultimate (release=5) (+ death)
 
@@ -118,9 +118,9 @@ Clint from portraits/clint.jpg, drawn larger than life: stocky, grey security po
 
 Element: construct/shadow.
 
-### `manager_henderson`: Store Manager Henderson (96 px) ✅ delivered
+### `manager_henderson`: Store Manager Henderson (128 px) ✅ delivered
 
-> **Deliver:** `app/src/main/assets/game/sprites/sheets/manager_henderson.png` + `manager_henderson.json` · **boss** · **96x96** cells · tags: idle, windup, attack (impact=4), cast (release=4), hurt, charge_ultimate, ultimate (release=5) (+ death)
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/manager_henderson.png` + `manager_henderson.json` · **boss** · **128x128** cells · tags: idle, windup, attack (impact=4), cast (release=4), hurt, charge_ultimate, ultimate (release=5) (+ death)
 
 Henderson from portraits/henderson.jpg, drawn larger than life: silver-haired, polished smile, royal-blue manager polo with the store logo, khakis, a clipboard and a coffee mug. Every move is corporate theatre: a politician's grin that cracks into rage.
 
