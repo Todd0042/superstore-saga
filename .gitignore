@@ -11,3 +11,9 @@ local.properties
 .kotlin
 .agents/
 app/build/
+
+# Antigravity sprite pipeline working files (raw renders, key poses, its queue): they stay on the
+# machine that generates; the finished sheets go in app/src/main/assets/game/sprites/sheets/.
+art/battle_work/
+art/wave*/
+art/art_queue.json
