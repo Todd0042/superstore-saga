@@ -1,0 +1,78 @@
+{
+  "_doc": "Superstore Saga battle sprite roster: every fighter, enemy and boss mapped to a sprite, with briefs for the artist. Source of truth for enemies.json spriteId and sprites.json; brief and apply with ../voice-rpg-engine/scripts/sprite_roster.py superstore-saga [--apply]. Spec: ../voice-rpg-engine/docs/SPRITE_PLAN.md.",
+  "title": "Superstore Saga",
+  "summary": "A retail workplace comedy set in MegaMart Store #1042. The look is 16-bit JRPG with a wink: ordinary store staff and customers drawn as if they were knights, mages and monsters, their weapons the tools of the trade (price guns, box cutters, coupon binders, clipboards). Match the portraits in `app/src/main/assets/portraits/` for faces, hair and uniforms: MegaMart associates wear a royal-blue vest with a name badge; managers wear a royal-blue polo or business casual with a lanyard.",
+  "style_extra": [
+    "Store lighting: colours slightly warm and saturated, like the fluorescent sales floor; keep outfits readable at 64 px (vest colour, badge, one signature prop each)."
+  ],
+  "party": [
+    {
+      "id": "hero", "name": "The Associate (player)",
+      "look": "The player's new-hire MegaMart associate: royal-blue vest over a grey shirt, name badge and lanyard, khakis, sturdy work shoes, short practical hair (keep the face simple and neutral: the player is anyone). Carries a price-scanner gun holstered at the hip and a box cutter. Stance of an eager rookie: shoulders square, ready.",
+      "moves": "charge: holds the scanner up, its red laser flickering as the chant builds; cast: fires the scanner like a wand, a beam of barcode light (release on the beep); attack: a quick box-cutter slash or a shoulder-check with a clipboard; ko: slumps against an imaginary shelf and slides down; victory: thumbs-up and a pumped fist."
+    }
+  ],
+  "families": [
+    {
+      "key": "practice_dummy", "name": "Shift Trainer Mannequin", "placeholder": "practice_dummy",
+      "look": "A store display mannequin on a wheeled base used for training: blank face, a blue MegaMart vest pinned on crooked, a 'TRAINEE' sticker on the chest (no readable text needed). Used by the voice tutorial.",
+      "moves": "attack: wobbles forward on its base; hurt: spins half around; death: topples over and the head pops off.",
+      "members": [{"id": "practice_dummy"}]
+    },
+    {
+      "key": "entitled_customer", "name": "Entitled Customer", "placeholder": "template_brute",
+      "look": "A furious shopper: asymmetrical blonde bob, oversized sunglasses pushed up on the head, a puffer vest, a giant designer handbag swung like a flail, a receipt clutched in the other fist. Leans forward, finger pointing.",
+      "moves": "attack: swings the handbag overhead; windup: jabs a pointing finger ('Manager!'); cast: slaps the receipt down, a shockwave of outrage.",
+      "members": [
+        {"id": "karen_customer"},
+        {"id": "overtime_screamer", "variant": "the Floor Rush Crowd: a sale-day shopper in a red hoodie pushing a cart piled with discounted goods (recolour; a separate sheet would ideally show the cart)"}
+      ]
+    },
+    {
+      "key": "extreme_couponer", "name": "Extreme Couponer", "placeholder": "template_sniper",
+      "look": "A wiry coupon strategist in a fishing vest stuffed with clipped coupons, reading glasses on a beaded chain, a three-ring binder of coupons hugged like a spellbook, scissors in the other hand.",
+      "moves": "cast: fans coupons from the binder and flicks them like throwing cards (release=4); attack: snips with the scissors.",
+      "members": [{"id": "extreme_couponer"}]
+    },
+    {
+      "key": "regional_auditor", "name": "Regional Auditor", "placeholder": "template_brute",
+      "look": "A cold corporate auditor: grey suit, rimless glasses, a slicked parting, a laptop open on one forearm like a shield and a clipboard in the other hand; an icy blue glow from the laptop screen (element: cryomancy).",
+      "moves": "attack: slams the clipboard down; cast: the laptop screen flares and spreadsheets swirl out as frosty shards.",
+      "members": [{"id": "regional_auditor"}]
+    },
+    {
+      "key": "slacker_veteran", "name": "Slacker Veteran", "placeholder": "template_brute",
+      "look": "A long-tenured associate who perfected doing nothing: faded vest worn open, beanie, a vape pen, slouched posture with hands in pockets, an energy drink can (Kyle's type; see portraits/kyle.jpg for the vibe, but a generic face).",
+      "moves": "attack: flicks the energy can; cast: exhales a vape cloud of excuses (shadow); idle: checks a phone, yawns.",
+      "members": [{"id": "slacker_veteran"}]
+    },
+    {
+      "key": "security_clint", "name": "Loss Prevention Clint", "placeholder": "template_brute",
+      "look": "Clint from portraits/clint.jpg: stocky, grey security polo, cargo pants, aviator sunglasses, a heavy ring of keys and a radio on the belt, arms folded. The 'Invisible Eye' of loss prevention.",
+      "moves": "windup: lowers the sunglasses and stares; attack: grabs and slams like an interrogation hold; cast: shines a flashlight that flashes like a camera (shadow).",
+      "members": [{"id": "security_clint"}]
+    }
+  ],
+  "bosses": [
+    {
+      "id": "manager_henderson", "name": "Store Manager Henderson", "cell": 96, "placeholder": "template_boss",
+      "look": "Henderson from portraits/henderson.jpg, drawn larger than life: silver-haired, polished smile, royal-blue manager polo with the store logo, khakis, a clipboard and a coffee mug. Every move is corporate theatre: a politician's grin that cracks into rage.",
+      "moves": "attack: Iron Slam (clipboard smash); cast: Steam Vent (coffee boils over into a scalding geyser, fire); charge_ultimate: locks the office door, phone to ear, red alarm light flashing; ultimate: an avalanche of write-up forms and 'TERMINATED' stamps raining down (no readable text needed). p2_ (optional): tie loosened, sleeves rolled, the smile gone.",
+      "note": "Henderson is the final showdown but enemies.json has \"isBoss\": false; set it to true at the sprite rollout so he gets a boss bar, ultimate charge and the boss contract."
+    }
+  ],
+  "remove": [
+    {"id": "training_drone", "why": "starter-kit enemy; only in the template encounters, which the story never starts"},
+    {"id": "template_brute", "why": "starter-kit enemy, unused"},
+    {"id": "template_sniper", "why": "starter-kit enemy; only in a template encounter"},
+    {"id": "template_caster", "why": "starter-kit enemy, unused"},
+    {"id": "template_boss", "why": "starter-kit boss; only in a template encounter"},
+    {"id": "template_minion", "why": "starter-kit enemy; only in a template encounter"}
+  ],
+  "notes": [
+    "Remove the three template encounters (template_solo_battle, template_trio_battle, template_boss_battle) with the starter-kit enemies.",
+    "Loss Prevention Clint is a regular enemy in the data but plays like a boss (a standoff encounter of his own); consider making him a boss too (then he needs a 96 px boss sheet).",
+    "Job sprites: the hero's portrait changes with the chosen job (cashier, stocker, unloader, specialist). One Associate sheet covers them all today; per-job sheets (hero_cashier...) would need a small engine feature (a sprite per class) later.",
+    "The hero character file is still named \"Template Hero\"; rename it when the sprites land."
+  ]
+}
