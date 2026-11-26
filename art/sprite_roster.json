@@ -1,5 +1,5 @@
 {
-  "_doc": "Superstore Saga battle sprite roster: every fighter, enemy and boss mapped to a sprite, with briefs for the artist. Source of truth for enemies.json spriteId and sprites.json; brief and apply with ../voice-rpg-engine/scripts/sprite_roster.py superstore-saga [--apply]. Spec: ../voice-rpg-engine/docs/SPRITE_PLAN.md.",
+  "_doc": "Superstore Saga battle sprite roster: every fighter, enemy and boss mapped to a sprite, with briefs for the artist. Sprite keys follow the delivered sheets (one per enemy). Source of truth for enemies.json spriteId and sprites.json; brief and apply with ../voice-rpg-engine/scripts/sprite_roster.py superstore-saga [--apply]. Spec: ../voice-rpg-engine/docs/SPRITE_PLAN.md.",
   "title": "Superstore Saga",
   "summary": "A retail workplace comedy set in MegaMart Store #1042. The look is 16-bit JRPG with a wink: ordinary store staff and customers drawn as if they were knights, mages and monsters, their weapons the tools of the trade (price guns, box cutters, coupon binders, clipboards). Match the portraits in `app/src/main/assets/portraits/` for faces, hair and uniforms: MegaMart associates wear a royal-blue vest with a name badge; managers wear a royal-blue polo or business casual with a lanyard.",
   "style_extra": [
@@ -27,54 +27,72 @@
       ]
     },
     {
-      "key": "entitled_customer",
+      "key": "karen_customer",
       "name": "Entitled Customer",
       "placeholder": "template_brute",
       "look": "A furious shopper: asymmetrical blonde bob, oversized sunglasses pushed up on the head, a puffer vest, a giant designer handbag swung like a flail, a receipt clutched in the other fist. Leans forward, finger pointing.",
-      "moves": "attack: swings the handbag overhead; windup: jabs a pointing finger ('Manager!'); cast: slaps the receipt down, a shockwave of outrage.",
       "members": [
         {
           "id": "karen_customer"
-        },
-        {
-          "id": "overtime_screamer",
-          "variant": "the Floor Rush Crowd: a sale-day shopper in a red hoodie pushing a cart piled with discounted goods (recolour; a separate sheet would ideally show the cart)"
         }
-      ]
+      ],
+      "moves": "attack: swings the handbag overhead; windup: jabs a pointing finger ('Manager!'); cast: slaps the receipt down, a shockwave of outrage."
+    },
+    {
+      "key": "overtime_screamer",
+      "name": "The Floor Rush Crowd",
+      "placeholder": "template_brute",
+      "look": "The Floor Rush Crowd: a sale-day shopper in a red hoodie pushing a cart piled with discounted goods (recolour; a separate sheet would ideally show the cart).",
+      "members": [
+        {
+          "id": "overtime_screamer"
+        }
+      ],
+      "moves": "attack: swings the handbag overhead; windup: jabs a pointing finger ('Manager!'); cast: slaps the receipt down, a shockwave of outrage."
     },
     {
       "key": "extreme_couponer",
       "name": "Extreme Couponer",
       "placeholder": "template_sniper",
       "look": "A wiry coupon strategist in a fishing vest stuffed with clipped coupons, reading glasses on a beaded chain, a three-ring binder of coupons hugged like a spellbook, scissors in the other hand.",
-      "moves": "cast: fans coupons from the binder and flicks them like throwing cards (release=4); attack: snips with the scissors.",
       "members": [
         {
           "id": "extreme_couponer"
         }
-      ]
+      ],
+      "moves": "cast: fans coupons from the binder and flicks them like throwing cards (release=4); attack: snips with the scissors."
     },
     {
       "key": "regional_auditor",
       "name": "Regional Auditor",
       "placeholder": "template_brute",
       "look": "A cold corporate auditor: grey suit, rimless glasses, a slicked parting, a laptop open on one forearm like a shield and a clipboard in the other hand; an icy blue glow from the laptop screen (element: cryomancy).",
-      "moves": "attack: slams the clipboard down; cast: the laptop screen flares and spreadsheets swirl out as frosty shards.",
       "members": [
         {
           "id": "regional_auditor"
         }
-      ]
+      ],
+      "moves": "attack: slams the clipboard down; cast: the laptop screen flares and spreadsheets swirl out as frosty shards."
     },
     {
       "key": "slacker_veteran",
       "name": "Slacker Veteran",
       "placeholder": "template_brute",
       "look": "A long-tenured associate who perfected doing nothing: faded vest worn open, beanie, a vape pen, slouched posture with hands in pockets, an energy drink can (Kyle's type; see portraits/kyle.jpg for the vibe, but a generic face).",
-      "moves": "attack: flicks the energy can; cast: exhales a vape cloud of excuses (shadow); idle: checks a phone, yawns.",
       "members": [
         {
           "id": "slacker_veteran"
+        }
+      ],
+      "moves": "attack: flicks the energy can; cast: exhales a vape cloud of excuses (shadow); idle: checks a phone, yawns."
+    },
+    {
+      "key": "training_drone",
+      "name": "Training Drone",
+      "look": "Starter-kit training drone (delivered); used only by the template encounters the story never starts.",
+      "members": [
+        {
+          "id": "training_drone"
         }
       ]
     }
@@ -99,10 +117,6 @@
   ],
   "remove": [
     {
-      "id": "training_drone",
-      "why": "starter-kit enemy; only in the template encounters, which the story never starts"
-    },
-    {
       "id": "template_brute",
       "why": "starter-kit enemy, unused"
     },
@@ -126,6 +140,7 @@
   "notes": [
     "Remove the three template encounters (template_solo_battle, template_trio_battle, template_boss_battle) with the starter-kit enemies.",
     "Job sprites: the hero's portrait changes with the chosen job (cashier, stocker, unloader, specialist). One Associate sheet covers them all today; per-job sheets (hero_cashier...) would need a small engine feature (a sprite per class) later.",
-    "The hero character file is still named \"Template Hero\"; rename it when the sprites land."
+    "The hero character file is still named \"Template Hero\"; rename it when the sprites land.",
+    "training_drone has a delivered sheet; it stays with the other starter-kit enemies until Todd decides whether to remove them."
   ]
 }

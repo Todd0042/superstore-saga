@@ -6,7 +6,7 @@ Every fighter, enemy and boss is mapped to a sprite key below. A sheet named aft
 
 A retail workplace comedy set in MegaMart Store #1042. The look is 16-bit JRPG with a wink: ordinary store staff and customers drawn as if they were knights, mages and monsters, their weapons the tools of the trade (price guns, box cutters, coupon binders, clipboards). Match the portraits in `app/src/main/assets/portraits/` for faces, hair and uniforms: MegaMart associates wear a royal-blue vest with a name badge; managers wear a royal-blue polo or business casual with a lanyard.
 
-**To draw: 8 sheets** (1 party fighter, 5 enemy families, 2 bosses). Everything else is a recolour of one of those.
+**To draw: 1 sheet** (0 party fighters, 1 enemy family, 0 bosses). Everything else is a recolour of one of those.
 
 ## Style (every sprite)
 
@@ -34,7 +34,7 @@ A retail workplace comedy set in MegaMart Store #1042. The look is 16-bit JRPG w
 
 ## Party fighters (1, 64 px)
 
-### `hero`: The Associate (player)
+### `hero`: The Associate (player) ✅ delivered
 
 Portrait: `portraits/player_applicant.jpg`.
 
@@ -42,7 +42,7 @@ The player's new-hire MegaMart associate: royal-blue vest over a grey shirt, nam
 
 *Moves*: charge: holds the scanner up, its red laser flickering as the chant builds; cast: fires the scanner like a wand, a beam of barcode light (release on the beep); attack: a quick box-cutter slash or a shoulder-check with a clipboard; ko: slumps against an imaginary shelf and slides down; victory: thumbs-up and a pumped fist.
 
-## Enemy families (5, 64 px)
+## Enemy families (7, 64 px)
 
 ### `practice_dummy`: Shift Trainer Mannequin
 
@@ -52,7 +52,7 @@ A store display mannequin on a wheeled base used for training: blank face, a blu
 
 Draws: Practice Dummy (Training Target, construct/physical)
 
-### `entitled_customer`: Entitled Customer
+### `karen_customer`: Entitled Customer ✅ delivered
 
 A furious shopper: asymmetrical blonde bob, oversized sunglasses pushed up on the head, a puffer vest, a giant designer handbag swung like a flail, a receipt clutched in the other fist. Leans forward, finger pointing.
 
@@ -60,10 +60,15 @@ A furious shopper: asymmetrical blonde bob, oversized sunglasses pushed up on th
 
 Draws: Entitled Customer (Escalation Vanguard, flesh/physical)
 
-Recolours:
-- `overtime_screamer`: Floor Rush Crowd (Bargain Swarm, flesh/physical): the Floor Rush Crowd: a sale-day shopper in a red hoodie pushing a cart piled with discounted goods (recolour; a separate sheet would ideally show the cart)
+### `overtime_screamer`: The Floor Rush Crowd ✅ delivered
 
-### `extreme_couponer`: Extreme Couponer
+The Floor Rush Crowd: a sale-day shopper in a red hoodie pushing a cart piled with discounted goods (recolour; a separate sheet would ideally show the cart).
+
+*Moves*: attack: swings the handbag overhead; windup: jabs a pointing finger ('Manager!'); cast: slaps the receipt down, a shockwave of outrage.
+
+Draws: Floor Rush Crowd (Bargain Swarm, flesh/physical)
+
+### `extreme_couponer`: Extreme Couponer ✅ delivered
 
 A wiry coupon strategist in a fishing vest stuffed with clipped coupons, reading glasses on a beaded chain, a three-ring binder of coupons hugged like a spellbook, scissors in the other hand.
 
@@ -71,7 +76,7 @@ A wiry coupon strategist in a fishing vest stuffed with clipped coupons, reading
 
 Draws: Extreme Couponer (Binder Tactician, flesh/shadow)
 
-### `regional_auditor`: Regional Auditor
+### `regional_auditor`: Regional Auditor ✅ delivered
 
 A cold corporate auditor: grey suit, rimless glasses, a slicked parting, a laptop open on one forearm like a shield and a clipboard in the other hand; an icy blue glow from the laptop screen (element: cryomancy).
 
@@ -79,7 +84,7 @@ A cold corporate auditor: grey suit, rimless glasses, a slicked parting, a lapto
 
 Draws: Regional Auditor (Spreadsheet Inquisitor, construct/cryomancy)
 
-### `slacker_veteran`: Slacker Veteran
+### `slacker_veteran`: Slacker Veteran ✅ delivered
 
 A long-tenured associate who perfected doing nothing: faded vest worn open, beanie, a vape pen, slouched posture with hands in pockets, an energy drink can (Kyle's type; see portraits/kyle.jpg for the vibe, but a generic face).
 
@@ -87,9 +92,15 @@ A long-tenured associate who perfected doing nothing: faded vest worn open, bean
 
 Draws: Slacker Veteran (Excuse Specialist, flesh/shadow)
 
+### `training_drone`: Training Drone ✅ delivered
+
+Starter-kit training drone (delivered); used only by the template encounters the story never starts.
+
+Draws: Training Drone (Automaton Target, construct/cryomancy)
+
 ## Bosses (2 to draw, each its own sprite)
 
-### `security_clint`: Loss Prevention Clint (96 px)
+### `security_clint`: Loss Prevention Clint (96 px) ✅ delivered
 
 Clint from portraits/clint.jpg, drawn larger than life: stocky, grey security polo, cargo pants, aviator sunglasses, a heavy ring of keys and a radio on the belt, arms folded. The 'Invisible Eye' of loss prevention.
 
@@ -97,7 +108,7 @@ Clint from portraits/clint.jpg, drawn larger than life: stocky, grey security po
 
 Element: construct/shadow.
 
-### `manager_henderson`: Store Manager Henderson (96 px)
+### `manager_henderson`: Store Manager Henderson (96 px) ✅ delivered
 
 Henderson from portraits/henderson.jpg, drawn larger than life: silver-haired, polished smile, royal-blue manager polo with the store logo, khakis, a clipboard and a coffee mug. Every move is corporate theatre: a politician's grin that cracks into rage.
 
@@ -108,7 +119,6 @@ Element: construct/fire.
 ## Not drawn: remove from the game
 
 These enemies aren't reached by the story; remove them (and their encounters) from `enemies.json` at the sprite rollout instead of drawing them, or the sprite contract will block the release:
-- `training_drone`: Training Drone (Automaton Target, construct/cryomancy): starter-kit enemy; only in the template encounters, which the story never starts
 - `template_brute`: Template Brute (Vanguard, flesh/physical): starter-kit enemy, unused
 - `template_sniper`: Template Sniper (Sniper, flesh/physical): starter-kit enemy; only in a template encounter
 - `template_caster`: Template Caster (Occultist, void/shadow): starter-kit enemy, unused
@@ -120,3 +130,4 @@ These enemies aren't reached by the story; remove them (and their encounters) fr
 - Remove the three template encounters (template_solo_battle, template_trio_battle, template_boss_battle) with the starter-kit enemies.
 - Job sprites: the hero's portrait changes with the chosen job (cashier, stocker, unloader, specialist). One Associate sheet covers them all today; per-job sheets (hero_cashier...) would need a small engine feature (a sprite per class) later.
 - The hero character file is still named "Template Hero"; rename it when the sprites land.
+- training_drone has a delivered sheet; it stays with the other starter-kit enemies until Todd decides whether to remove them.

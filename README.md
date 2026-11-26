@@ -162,6 +162,8 @@ All gameplay data, dialogue trees, encounters, and register abilities are decoup
 - `enemies/enemies.json`: Enemy templates (*Entitled Karen, Coupon Hoarder, Loss Prevention Sentinel*).
 - `spells/spells.json`: Department abilities mapped to the 5 tactical categories (`[ATTACK]`, `[AOE]`, `[HEAL]`, `[DEFENSE]`, `[MANA]`).
 - `story/scenes.json` & `story/nodes.json`: Dialogue trees across MegaMart departments.
+- `sprites/sheets/`: 22 animated 64 px side-view battle sprite sheets (Aseprite PNG + JSON): the Associate, 7 enemies, Store Manager Henderson as a 128 px boss, and 13 store staff. The roster that maps every enemy to its sprite, with the artist's brief, is [`art/sprite_roster.json`](art/sprite_roster.json) / [`art/SPRITE_BRIEFS.md`](art/SPRITE_BRIEFS.md) (applied with the engine's `scripts/sprite_roster.py superstore-saga --apply`); `../voice-rpg-engine/scripts/sprite_coverage.sh superstore-saga` lists what the sprite contract still wants before a release build is allowed.
+- `environments/environments.json`: the five battle backdrops (`assets/environments/*.png`, MegaMart-themed, 1344x768), each with its painted floor line (`artHorizon`) so combatants stand on the floor.
 
 ---
 
@@ -295,6 +297,7 @@ Test coverage includes:
 ## 9. Clean-Room Provenance & Non-Commercial Licensing
 
 - **Clean-Room Retail Satire**: All character names, department lore, dialogue scripts, and audio assets are 100% original satirical creations.
+- **AI-Assisted Battle Art**: the battle sprite sheets and the battle backdrops are AI-assisted (made with Antigravity from the game's own portraits and briefs).
 - **PolyForm Noncommercial 1.0.0**: Free for personal, recreational, educational, and hobbyist gaming. For commercial inquiries, contact **[Todd.0042.git@gmail.com](mailto:Todd.0042.git@gmail.com)**.
 - **Media License**: the images, artwork and audio made for this project (paths listed in [LICENSE-MEDIA](LICENSE-MEDIA)) are © Todd0042 under **[CC BY-NC 4.0](LICENSE-MEDIA)**: free to share and adapt with credit for non-commercial purposes; commercial use requires permission.
 

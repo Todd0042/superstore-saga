@@ -13,11 +13,13 @@ Commercial use requires permission from Todd0042.
 Covered paths:
   - app/src/main/assets/audio/music/
   - app/src/main/assets/environments/
+  - app/src/main/assets/game/sprites/sheets/
   - app/src/main/assets/portraits/
   - app/src/main/assets/story/
   - app/src/main/res/
   - app/src/main/res/drawable-*/
   - app/src/main/res/mipmap-*/
+  - art/sprite-previews/
 
 The source code is licensed separately (see LICENSE). Third-party media that may be included
 keeps its own license.

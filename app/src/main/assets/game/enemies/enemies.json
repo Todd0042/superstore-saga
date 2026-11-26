@@ -13,7 +13,7 @@
       "speed": 45,
       "xpReward": 60,
       "movesetId": "construct_bruiser",
-      "spriteId": "template_brute",
+      "spriteId": "training_drone",
       "spriteTint": "#E57373"
     },
     {
@@ -119,7 +119,7 @@
       "speed": 52,
       "xpReward": 75,
       "movesetId": "flesh_bruiser",
-      "spriteId": "template_brute",
+      "spriteId": "karen_customer",
       "spriteTint": "#EF4444"
     },
     {
@@ -134,7 +134,7 @@
       "speed": 62,
       "xpReward": 80,
       "movesetId": "flesh_sniper",
-      "spriteId": "template_sniper",
+      "spriteId": "extreme_couponer",
       "spriteTint": "#8B5CF6"
     },
     {
@@ -149,7 +149,7 @@
       "speed": 45,
       "xpReward": 150,
       "movesetId": "construct_bruiser",
-      "spriteId": "template_brute",
+      "spriteId": "regional_auditor",
       "spriteTint": "#3B82F6"
     },
     {
@@ -164,7 +164,7 @@
       "speed": 70,
       "xpReward": 50,
       "movesetId": "flesh_bruiser",
-      "spriteId": "template_brute",
+      "spriteId": "overtime_screamer",
       "spriteTint": "#F59E0B"
     },
     {
@@ -179,7 +179,7 @@
       "speed": 50,
       "xpReward": 120,
       "movesetId": "flesh_bruiser",
-      "spriteId": "template_brute",
+      "spriteId": "slacker_veteran",
       "spriteTint": "#9CA3AF"
     },
     {
@@ -194,7 +194,7 @@
       "speed": 48,
       "xpReward": 160,
       "movesetId": "construct_bruiser",
-      "spriteId": "template_brute",
+      "spriteId": "security_clint",
       "spriteTint": "#1E293B",
       "isBoss": true
     },
@@ -210,7 +210,7 @@
       "speed": 52,
       "xpReward": 250,
       "movesetId": "construct_bruiser",
-      "spriteId": "template_boss",
+      "spriteId": "manager_henderson",
       "spriteTint": "#991B1B",
       "isBoss": true
     }

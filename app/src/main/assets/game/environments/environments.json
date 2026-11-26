@@ -8,7 +8,8 @@
       "loreLocation": "Grand Courtyard",
       "subtitle": "Stone battlements, banners in the wind, training targets & banneret shields",
       "ambientThemeColor": "#2196F3",
-      "backgroundAsset": "environments/castle.jpg",
+      "backgroundAsset": "environments/castle.png",
+      "artHorizon": 0.74,
       "aliases": ["courtyard", "CASTLE", "training_grounds"],
       "overlayType": "CASTLE"
     },
@@ -19,7 +20,8 @@
       "loreLocation": "Deep Chasm",
       "subtitle": "Bioluminescent crystal clusters, echoing stalactites & subterranean mist",
       "ambientThemeColor": "#78909C",
-      "backgroundAsset": "environments/cave.jpg",
+      "backgroundAsset": "environments/cave.png",
+      "artHorizon": 0.75,
       "aliases": ["cavern", "CAVE", "crystal_cavern"],
       "overlayType": "CAVE"
     },
@@ -30,7 +32,8 @@
       "loreLocation": "Subterranean Vaults",
       "subtitle": "Carved stone columns, iron braziers, runic inscriptions & ancient arches",
       "ambientThemeColor": "#FF9800",
-      "backgroundAsset": "environments/dungeon.jpg",
+      "backgroundAsset": "environments/dungeon.png",
+      "artHorizon": 0.62,
       "aliases": ["vaults", "DUNGEON", "echo_hall"],
       "overlayType": "DUNGEON"
     },
@@ -41,7 +44,8 @@
       "loreLocation": "Verdant Canopy",
       "subtitle": "Towering oaks, drifting spores, sunbeams through leaves & mossy roots",
       "ambientThemeColor": "#4CAF50",
-      "backgroundAsset": "environments/forest.jpg",
+      "backgroundAsset": "environments/forest.png",
+      "artHorizon": 0.7,
       "aliases": ["woods", "FOREST", "whispering_woods"],
       "overlayType": "FOREST"
     },
@@ -52,7 +56,8 @@
       "loreLocation": "Marshlands",
       "subtitle": "Murky waters, will-o'-the-wisps, weeping cypress & clinging fog",
       "ambientThemeColor": "#8D6E63",
-      "backgroundAsset": "environments/swamp.jpg",
+      "backgroundAsset": "environments/swamp.png",
+      "artHorizon": 0.7,
       "aliases": ["marsh", "SWAMP", "sunken_hollow"],
       "overlayType": "SWAMP"
     }
