@@ -18,12 +18,5 @@
   "voiceKeywords": [
     "specialist", "specialty", "tech", "electronics", "sales", "consultant"
   ],
-  "growth": {
-    "maxHp": 14,
-    "maxMp": 14,
-    "speed": 1,
-    "defense": 1,
-    "potencyPct": 0.035
-  },
   "portraitAsset": "portraits/player_specialist.jpg"
 }

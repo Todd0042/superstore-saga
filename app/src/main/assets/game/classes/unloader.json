@@ -18,12 +18,5 @@
   "voiceKeywords": [
     "unloader", "backroom", "freight", "dock", "receiving", "pallet"
   ],
-  "growth": {
-    "maxHp": 22,
-    "maxMp": 6,
-    "speed": 1,
-    "defense": 3,
-    "potencyPct": 0.035
-  },
   "portraitAsset": "portraits/player_unloader.jpg"
 }
