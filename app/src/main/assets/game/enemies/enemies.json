@@ -6,49 +6,62 @@
       "name": "Practice Dummy",
       "subtitle": "Training Target",
       "family": "CONSTRUCT",
-      "selfElement": "PHYSICAL",
+      "selfElement": "",
       "hp": 2000,
       "attack": 0,
       "defense": 0,
       "speed": 30,
       "movesetId": "",
       "spriteId": "practice_dummy",
-      "spriteTint": "#D7CCC8"
+      "spriteTint": "#D7CCC8",
+      "weak": [],
+      "resist": [],
+      "armor": 0
     },
     {
       "id": "karen_customer",
       "name": "Entitled Customer",
       "subtitle": "Escalation Vanguard",
       "family": "FLESH",
-      "selfElement": "PHYSICAL",
+      "selfElement": "",
       "hp": 320,
       "attack": 24,
       "defense": 8,
       "speed": 52,
       "movesetId": "flesh_bruiser",
       "spriteId": "karen_customer",
-      "spriteTint": "#EF4444"
+      "spriteTint": "#EF4444",
+      "weak": [],
+      "resist": [],
+      "armor": 0
     },
     {
       "id": "extreme_couponer",
       "name": "Extreme Couponer",
       "subtitle": "Binder Tactician",
       "family": "FLESH",
-      "selfElement": "SHADOW",
+      "selfElement": "",
       "hp": 260,
       "attack": 28,
       "defense": 5,
       "speed": 62,
       "movesetId": "flesh_sniper",
       "spriteId": "extreme_couponer",
-      "spriteTint": "#8B5CF6"
+      "spriteTint": "#8B5CF6",
+      "weak": [
+        "CRYOMANCY"
+      ],
+      "resist": [
+        "SHADOW"
+      ],
+      "armor": 0
     },
     {
       "id": "regional_auditor",
       "name": "Regional Auditor",
       "subtitle": "Spreadsheet Inquisitor",
-      "family": "CONSTRUCT",
-      "selfElement": "CRYOMANCY",
+      "family": "SILENCE",
+      "selfElement": "",
       "hp": 500,
       "attack": 35,
       "defense": 14,
@@ -56,28 +69,39 @@
       "movesetId": "construct_bruiser",
       "spriteId": "regional_auditor",
       "spriteTint": "#3B82F6",
-      "isBoss": true
+      "isBoss": true,
+      "weak": [
+        "ELECTROMANCY",
+        "PHYSICAL"
+      ],
+      "resist": [
+        "SHADOW"
+      ],
+      "armor": 15
     },
     {
       "id": "overtime_screamer",
       "name": "Floor Rush Crowd",
       "subtitle": "Bargain Swarm",
-      "family": "FLESH",
-      "selfElement": "PHYSICAL",
+      "family": "VERDANT",
+      "selfElement": "",
       "hp": 200,
       "attack": 20,
       "defense": 4,
       "speed": 70,
       "movesetId": "flesh_bruiser",
       "spriteId": "overtime_screamer",
-      "spriteTint": "#F59E0B"
+      "spriteTint": "#F59E0B",
+      "weak": [],
+      "resist": [],
+      "armor": 0
     },
     {
       "id": "slacker_veteran",
       "name": "Slacker Veteran",
       "subtitle": "Excuse Specialist",
-      "family": "FLESH",
-      "selfElement": "SHADOW",
+      "family": "UNDEAD",
+      "selfElement": "",
       "hp": 450,
       "attack": 30,
       "defense": 10,
@@ -85,14 +109,22 @@
       "movesetId": "flesh_bruiser",
       "spriteId": "slacker_veteran",
       "spriteTint": "#9CA3AF",
-      "isBoss": true
+      "isBoss": true,
+      "weak": [
+        "PYROMANCY",
+        "ELECTROMANCY"
+      ],
+      "resist": [
+        "CRYOMANCY"
+      ],
+      "armor": 15
     },
     {
       "id": "security_clint",
       "name": "Loss Prevention Clint",
       "subtitle": "Reid Technique Interrogator",
-      "family": "CONSTRUCT",
-      "selfElement": "SHADOW",
+      "family": "VOID",
+      "selfElement": "",
       "hp": 550,
       "attack": 35,
       "defense": 12,
@@ -100,14 +132,22 @@
       "movesetId": "construct_bruiser",
       "spriteId": "security_clint",
       "spriteTint": "#1E293B",
-      "isBoss": true
+      "isBoss": true,
+      "weak": [
+        "ELECTROMANCY",
+        "CRYOMANCY"
+      ],
+      "resist": [
+        "SHADOW"
+      ],
+      "armor": 15
     },
     {
       "id": "manager_henderson",
       "name": "Store Manager Henderson",
       "subtitle": "The Desperate Executive",
-      "family": "CONSTRUCT",
-      "selfElement": "FIRE",
+      "family": "RADIANT",
+      "selfElement": "",
       "hp": 750,
       "attack": 42,
       "defense": 15,
@@ -115,7 +155,15 @@
       "movesetId": "construct_bruiser",
       "spriteId": "manager_henderson",
       "spriteTint": "#991B1B",
-      "isBoss": true
+      "isBoss": true,
+      "weak": [
+        "SHADOW",
+        "ELECTROMANCY"
+      ],
+      "resist": [
+        "CRYOMANCY"
+      ],
+      "armor": 35
     }
   ]
 }

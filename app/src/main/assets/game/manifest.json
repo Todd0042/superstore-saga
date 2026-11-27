@@ -10,12 +10,16 @@
   "startingAchievementId": "BADGE_ISSUED",
   "victoryLine": "Shift survived! Your voice echoes through the sales floor.",
   "defeatLine": "Clocked out. Your shift ends in disciplinary review.",
-  "defeatTitle": "💀 CLOCKED OUT (DEFEAT) 💀",
-  "defeatContinueLabel": "PRESS ON (STILL ON THE CLOCK) ➔",
+  "defeatTitle": "\ud83d\udc80 CLOCKED OUT (DEFEAT) \ud83d\udc80",
+  "defeatContinueLabel": "PRESS ON (STILL ON THE CLOCK) \u2794",
   "titleBackgroundAsset": "story/bg_title_storefront.jpg",
   "defaultHeroName": "Associate #{random9}",
   "defaultHeroTitle": "Probationary Hire",
-  "quickNames": ["Associate #{random9}", "Associate #{random9}", "Associate #{random9}"],
+  "quickNames": [
+    "Associate #{random9}",
+    "Associate #{random9}",
+    "Associate #{random9}"
+  ],
   "characterTitles": [
     "Front-End Cashier",
     "Sales Floor Stocker",
@@ -26,14 +30,30 @@
   "allowClassSelectionInCreation": false,
   "creationTitle": "MegaMart Associate Badge & Profile",
   "creationSubtitle": "Confirm your Associate ID and photo before submitting your employment application.",
-  "creationEmbarkPrompt": "SUBMIT APPLICATION ➔",
+  "creationEmbarkPrompt": "SUBMIT APPLICATION \u2794",
   "creationVoiceKeywords": [
-    "submit", "apply", "submit application", "clock in", "embark", "begin", "start", "enter", "ready", "punch in",
-    "let's go", "start game", "play", "confirm", "forward", "onward", "work"
+    "submit",
+    "apply",
+    "submit application",
+    "clock in",
+    "embark",
+    "begin",
+    "start",
+    "enter",
+    "ready",
+    "punch in",
+    "let's go",
+    "start game",
+    "play",
+    "confirm",
+    "forward",
+    "onward",
+    "work"
   ],
   "defaultHeroPortrait": "portraits/player_applicant.jpg",
   "tutorialCompletionText": "All departmental basics reviewed. Punch-in card active. Welcome to MegaMart Store #1042.",
   "voicePermissionTitle": "MEGAMART ANNOUNCEMENT SYSTEM",
   "voicePermissionSubtitle": "Hands-Free Retail Voice RPG",
-  "voicePermissionPrompt": "Hands-free register commands, inventory calls, and supervisor pagers."
+  "voicePermissionPrompt": "Hands-free register commands, inventory calls, and supervisor pagers.",
+  "routeFlagPrefix": "role_"
 }
