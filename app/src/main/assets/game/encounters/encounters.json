@@ -17,7 +17,7 @@
           "isTargeted": true,
           "atbGauge": 0.4,
           "hp": 106,
-          "attack": 34
+          "attack": 33
         },
         {
           "templateId": "extreme_couponer",
@@ -25,7 +25,7 @@
           "name": "Coupon Collector",
           "atbGauge": 0.25,
           "hp": 85,
-          "attack": 40
+          "attack": 39
         }
       ]
     },
@@ -44,7 +44,7 @@
           "name": "District Auditor Vance",
           "isTargeted": true,
           "atbGauge": 0.5,
-          "hp": 641,
+          "hp": 914,
           "attack": 33
         }
       ],
@@ -73,7 +73,7 @@
           "isTargeted": true,
           "atbGauge": 0.4,
           "hp": 106,
-          "attack": 16
+          "attack": 15
         },
         {
           "templateId": "karen_customer",
@@ -81,7 +81,7 @@
           "name": "Bargain Hunter",
           "atbGauge": 0.25,
           "hp": 169,
-          "attack": 19
+          "attack": 17
         }
       ]
     },
@@ -101,8 +101,8 @@
           "subtitle": "Eagle-Eyed Executive",
           "isTargeted": true,
           "atbGauge": 0.45,
-          "hp": 835,
-          "attack": 21
+          "hp": 905,
+          "attack": 24
         }
       ],
       "bossPhases": [
@@ -130,8 +130,8 @@
           "subtitle": "Excuse Specialist",
           "isTargeted": true,
           "atbGauge": 0.4,
-          "hp": 635,
-          "attack": 38
+          "hp": 741,
+          "attack": 31
         }
       ],
       "bossPhases": [
@@ -159,8 +159,8 @@
           "subtitle": "Reid Technique Interrogator",
           "isTargeted": true,
           "atbGauge": 0.45,
-          "hp": 626,
-          "attack": 53
+          "hp": 686,
+          "attack": 42
         }
       ],
       "bossPhases": [
@@ -188,8 +188,8 @@
           "subtitle": "The Desperate Executive",
           "isTargeted": true,
           "atbGauge": 0.5,
-          "hp": 1510,
-          "attack": 16
+          "hp": 1891,
+          "attack": 15
         }
       ],
       "bossPhases": [
@@ -216,7 +216,7 @@
           "name": "The Screamer",
           "isTargeted": true,
           "atbGauge": 0.45,
-          "hp": 1005,
+          "hp": 1386,
           "attack": 27
         }
       ]
@@ -237,7 +237,7 @@
           "isTargeted": true,
           "atbGauge": 0.4,
           "hp": 210,
-          "attack": 19
+          "attack": 18
         },
         {
           "templateId": "extreme_couponer",
@@ -245,7 +245,7 @@
           "name": "Coupon Stacker",
           "atbGauge": 0.3,
           "hp": 210,
-          "attack": 19
+          "attack": 18
         },
         {
           "templateId": "karen_customer",
@@ -253,7 +253,7 @@
           "name": "Early-Bird Complainer",
           "atbGauge": 0.2,
           "hp": 259,
-          "attack": 16
+          "attack": 15
         }
       ]
     },
@@ -273,7 +273,7 @@
           "isTargeted": true,
           "atbGauge": 0.4,
           "hp": 167,
-          "attack": 20
+          "attack": 16
         },
         {
           "templateId": "karen_customer",
@@ -281,7 +281,7 @@
           "name": "Demo Unit Demander",
           "atbGauge": 0.3,
           "hp": 167,
-          "attack": 20
+          "attack": 16
         },
         {
           "templateId": "overtime_screamer",
@@ -289,7 +289,7 @@
           "name": "Launch-Day Crowd",
           "atbGauge": 0.2,
           "hp": 103,
-          "attack": 17
+          "attack": 13
         }
       ]
     },
@@ -329,7 +329,7 @@
           "subtitle": "Forklift Cowboy",
           "isTargeted": true,
           "atbGauge": 0.45,
-          "hp": 812,
+          "hp": 942,
           "attack": 32
         }
       ]
@@ -385,16 +385,16 @@
           "name": "Shrink Sentinel",
           "isTargeted": true,
           "atbGauge": 0.4,
-          "hp": 135,
-          "attack": 20
+          "hp": 154,
+          "attack": 19
         },
         {
           "templateId": "shrink_sentinel",
           "id": "sentinel_02",
           "name": "Twin Sentinel",
           "atbGauge": 0.25,
-          "hp": 135,
-          "attack": 20
+          "hp": 154,
+          "attack": 19
         }
       ]
     },
@@ -440,7 +440,7 @@
           "id": "derrick_lockdown",
           "name": "Derrick",
           "subtitle": "Henderson's Errand Boy",
-          "hp": 630,
+          "hp": 823,
           "attack": 25,
           "isTargeted": true,
           "atbGauge": 0.45
@@ -450,7 +450,7 @@
           "id": "lockdown_guard",
           "name": "Lockdown Guard",
           "atbGauge": 0.3,
-          "hp": 362,
+          "hp": 473,
           "attack": 22
         }
       ]
@@ -498,16 +498,16 @@
           "name": "Marsha",
           "isTargeted": true,
           "atbGauge": 0.45,
-          "hp": 235,
-          "attack": 18
+          "hp": 269,
+          "attack": 16
         },
         {
           "templateId": "asset_protection_officer",
           "id": "lockdown_guard",
           "name": "Lockdown Guard",
           "atbGauge": 0.3,
-          "hp": 147,
-          "attack": 15
+          "hp": 168,
+          "attack": 14
         }
       ]
     },
@@ -526,7 +526,7 @@
           "name": "Chad",
           "isTargeted": true,
           "atbGauge": 0.45,
-          "hp": 328,
+          "hp": 375,
           "attack": 19
         },
         {
@@ -534,7 +534,7 @@
           "id": "lockdown_guard",
           "name": "Lockdown Guard",
           "atbGauge": 0.3,
-          "hp": 213,
+          "hp": 244,
           "attack": 17
         }
       ]
@@ -554,7 +554,7 @@
           "name": "Cheryl",
           "isTargeted": true,
           "atbGauge": 0.45,
-          "hp": 203,
+          "hp": 217,
           "attack": 21
         },
         {
@@ -562,7 +562,7 @@
           "id": "line_guard_01",
           "name": "Lockdown Guard",
           "atbGauge": 0.3,
-          "hp": 152,
+          "hp": 162,
           "attack": 20
         },
         {
@@ -570,7 +570,7 @@
           "id": "line_guard_02",
           "name": "Lockdown Guard",
           "atbGauge": 0.2,
-          "hp": 152,
+          "hp": 162,
           "attack": 20
         }
       ]
