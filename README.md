@@ -14,159 +14,213 @@
 [![16 KB Page Size](https://img.shields.io/badge/16%20KB-Compatible-success.svg)](https://developer.android.com/16kb-page-size)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-7F52FF.svg?logo=kotlin&logoColor=white)](https://kotlinlang.org)
 [![UI: Jetpack Compose](https://img.shields.io/badge/UI-Jetpack%20Compose%202024.10.01-4285F4.svg?logo=jetpackcompose&logoColor=white)](https://developer.android.com/jetpack/compose)
+[![Engine: VoiceRPG](https://img.shields.io/badge/Engine-VoiceRPG-teal.svg)](https://github.com/Todd0042/voice-rpg-engine)
 [![Voice Control: Hands-Free](https://img.shields.io/badge/Controls-Hands--Free%20Voice-orange.svg)](app/src/main/java/com/voicerpg/engine/audio/SpeechManager.kt)
-[![Speech: Android Offline STT](https://img.shields.io/badge/Speech-Android%20Offline%20STT-3DDC84.svg)](https://developer.android.com/reference/android/speech/SpeechRecognizer)
-[![Combat: Cadence & Timing](https://img.shields.io/badge/Combat-Cadence%20%26%20Timing-yellow.svg)](app/src/main/java/com/voicerpg/engine/engine/ResonanceEngine.kt)
-[![Audio: Dynamic Ducking](https://img.shields.io/badge/Audio-Dynamic%20Ducking-green.svg)](app/src/main/java/com/voicerpg/engine/audio/)
+[![Combat: Voice Resonance](https://img.shields.io/badge/Combat-Voice%20Resonance%20up%20to%203.0x-yellow.svg)](app/src/main/java/com/voicerpg/engine/engine/ResonanceEngine.kt)
 [![Unit Tests](https://img.shields.io/badge/Unit%20Tests-368%20Passing-39ff14.svg)](app/src/test/java/com/voicerpg/engine/)
-[![Engine: VoiceRPG](https://img.shields.io/badge/Engine-VoiceRPG%20v2.0.0-teal.svg)](https://github.com/Todd0042/voice-rpg-engine)
 [![Support on Ko-fi](https://img.shields.io/badge/Ko--fi-Support%20Creator-F16061?style=flat&logo=ko-fi&logoColor=white)](https://ko-fi.com/todd0042)
 
-> **A satirical, hands-free corporate survival voice JRPG for Android. Step onto the sales floor of MegaMart Store #1042, battle through entitled Karens, coupon hoarders, and rogue district managers, execute POS register combos with vocal cadence and barcode-whip timing, and survive the closing shift to clock out.**
-
-```
-       _________________________________________________________________________
-      |  ENTITLED KAREN (MANAGER DEMANDER)         PATIENCE [██████░░░░░░░░]  40%   |
-      |  "I want to speak to your corporate VP!"   STAMINA  [███████████████] 100%   |
-      |_________________________________________________________________________|
-      |  ASSOCIATE: "Clean up on Aisle 4! Price check on expired yogurt!"       |
-      |  RESONANCE: MYTHIC (142%) >>> OVERRIDE CODE 99 DEALS 2.25x FOCUS CRUSH!  |
-      |  POS KEYPAD: [ITEM SCAN] [SUBTOTAL] [VOID / PARRY] [MANAGER OVERRIDE]   |
-      |_________________________________________________________________________|
-```
+> **A satirical, hands-free retail-survival voice JRPG for Android: pick your department at the job interview, then fight your way through 56 shifts at MegaMart Store #1042 by speaking your moves aloud, with damage that grows with how well you say them.**
 
 ---
 
 ## 📖 Table of Contents
 
-* **Part 1 — Consumer Overview & Quick Start**
+* **Part 1 — Overview & Quick Start**
   * [🛒 What Is Superstore Saga?](#-what-is-superstore-saga)
   * [⚡ How a Shift Works in 3 Steps](#-how-a-shift-works-in-3-steps)
-  * [🏢 The 4 Department Career Tracks](#-the-4-department-career-tracks)
-  * [⚔️ The POS Register Terminal Battle System](#-the-pos-register-terminal-battle-system)
-  * [🚶 Screenless Pocket Mode & Floor Pagers](#-screenless-pocket-mode--floor-pagers)
-  * [🚀 Quick Download & Installation (Android APK)](#-quick-download--installation-android-apk)
-* **Part 2 — Consolidated Technical Documentation & Architecture Reference**
-  * [1. Clean Architecture & System Framework (`com.voicerpg.engine.*`)](#1-clean-architecture--system-framework)
-  * [2. Retail Content Decoupling & JSON Schema (`assets/game/`)](#2-retail-content-decoupling--json-schema)
-  * [3. Real-Time Speech Recognition & Continuous Audio Arbitration Loop (`SpeechManager.kt`)](#3-real-time-speech-recognition--continuous-audio-arbitration-loop)
-  * [4. Resonance Engine & Acoustic-Poetic Scoring Math (`ResonanceEngine.kt`, `SpellChantPresets.kt`)](#4-resonance-engine--acoustic-poetic-scoring-math)
-  * [5. Real-Time Audio DSP & Dynamic Music Ducking Pipeline (`SoundbitePlayer.kt`, `MusicManager.kt`)](#5-real-time-audio-dsp--dynamic-music-ducking-pipeline)
-  * [6. Dynamic Retail Conflict Incidents & Conveyor ATB Battle System (`IncidentManager.kt`, `CombatModels.kt`)](#6-dynamic-retail-conflict-incidents--conveyor-atb-battle-system)
-  * [7. Multi-Repo Synchronization Workflow (`sync_engine_to_games.sh`)](#7-multi-repo-synchronization-workflow)
-  * [8. Automated Unit Verification Suite (`tests/`)](#8-automated-unit-verification-suite)
-  * [9. Clean-Room Provenance & Non-Commercial Licensing](#9-clean-room-provenance--non-commercial-licensing)
+  * [🏢 The 4 Department Storylines](#-the-4-department-storylines)
+  * [⚔️ The POS Register Terminal Battle System](#️-the-pos-register-terminal-battle-system)
+  * [📸 Visual Tour](#-visual-tour)
+  * [✨ Highlights at a Glance](#-highlights-at-a-glance)
+  * [🚀 Quick Download & Installation](#-quick-download--installation)
+* **Part 2 — Technical Documentation & Architecture Reference**
+  * [1. Architecture: Engine and Game ([`.engine-sync/OWNED_PATHS`](.engine-sync/OWNED_PATHS))](#1-architecture-engine-and-game)
+  * [2. Game Content & Department Routes ([`manifest.json`](app/src/main/assets/game/manifest.json), [`nodes.json`](app/src/main/assets/game/story/nodes.json), [`encounters.json`](app/src/main/assets/game/encounters/encounters.json))](#2-game-content--department-routes)
+  * [3. Combat: Kits, Weaknesses, Armour & Stuns ([`classes/`](app/src/main/assets/game/classes), [`affinity_matrix.json`](app/src/main/assets/game/combat/affinity_matrix.json), [`DamageResolver.kt`](app/src/main/java/com/voicerpg/engine/combat/DamageResolver.kt))](#3-combat-kits-weaknesses-armour--stuns)
+  * [4. Speech Recognition & the Hands-Free Loop ([`SpeechManager.kt`](app/src/main/java/com/voicerpg/engine/audio/SpeechManager.kt), [`commands_en.json`](app/src/main/assets/game/commands/commands_en.json))](#4-speech-recognition--the-hands-free-loop)
+  * [5. Resonance Engine ([`ResonanceEngine.kt`](app/src/main/java/com/voicerpg/engine/engine/ResonanceEngine.kt))](#5-resonance-engine)
+  * [6. Music & Speech Ducking ([`MusicManager.kt`](app/src/main/java/com/voicerpg/engine/audio/MusicManager.kt))](#6-music--speech-ducking)
+  * [7. Store Incidents & Metrics ([`IncidentManager.kt`](app/src/main/java/com/voicerpg/engine/engine/IncidentManager.kt), [`incidents.json`](app/src/main/assets/game/incidents/incidents.json))](#7-store-incidents--metrics)
+  * [8. Battle Sprites & Backdrops ([`art/SPRITE_BRIEFS.md`](art/SPRITE_BRIEFS.md), [`art/sprite_roster.json`](art/sprite_roster.json))](#8-battle-sprites--backdrops)
+  * [9. Engine Sync Workflow](#9-engine-sync-workflow)
+  * [10. Tests & Combat Balance ([`BalanceHarnessTest.kt`](app/src/test/java/com/voicerpg/engine/combat/BalanceHarnessTest.kt), [`balance.json`](app/src/main/assets/game/combat/balance.json))](#10-tests--combat-balance)
+  * [11. Repository Structure](#11-repository-structure)
+  * [12. Ethics, Provenance & Licensing ([LICENSE](LICENSE), [LICENSE-MEDIA](LICENSE-MEDIA))](#12-ethics-provenance--licensing)
 
 ---
 
-# Part 1 — Consumer Overview & Quick Start
+# Part 1 — Overview & Quick Start
 
 ## 🛒 What Is Superstore Saga?
 
-**Superstore Saga: Escape From MegaMart** is a satirical corporate dungeon-crawler and turn-based voice JRPG for Android. 
+**Superstore Saga: Escape From MegaMart** is a satirical, turn-based voice JRPG for Android set in **MegaMart Store #1042**. Instead of crypts and dragons you get entitled customers, coupon hoarders, a regional auditor, a loss-prevention interrogator and a store manager with something to hide.
 
-Instead of ancient crypts, dragons, and mystical castles, you are a newly hired retail associate assigned to **MegaMart Store #1042**—a sprawling mega-retail monolith with infinite aisles, impossible corporate metrics, and chaotic customer confrontations. 
+You play it with your voice: speak a move's name (*"Barcode scan strike!"*, *"Escalate to my supervisor!"*, *"Union break, coffee with the crew!"*) and the **Resonance Engine** scores how you said it, multiplying its effect from **1.0x up to 3.0x**. Every line of dialogue can be read aloud, so the whole game can be played eyes-free with headphones.
 
-Navigate department politics, resolve emergency store incidents, and survive high-stress retail battles using your voice:
-- **🗣️ Speak Corporate Directives & Intercom Pages**: Trigger department abilities by speaking their keywords (*"Price check!"*, *"Clean up on Aisle 3!"*, *"Manager override!"*).
-- **⚡ Voice Resonance & Cadence Scoring**: Dramatic customer service inflection and assertive vocal cadence trigger the **Resonance Engine**, multiplying ability damage up to **3.0x (Transcendental)**.
-- **🎧 100% Screenless Pocket Mode**: Slip your phone into your pocket, plug in headphones, and navigate entire shifts eyes-free with full audio narration and hands-free register directives.
+The game has three main parts:
+
+1. **The hiring flow**: an online application, then an interview with HR Manager Cheryl where you choose your department.
+2. **The shift story**: a 56-shift storyline for your department, with dialogue hubs, random store incidents and store metrics.
+3. **Battles**: solo, real-time-gauge (ATB) fights against customers, store fixtures, loss prevention, management and corporate.
 
 ---
 
 ## ⚡ How a Shift Works in 3 Steps
 
-1. **Clock In & Select Your Department**: Begin your probationary shift as an applicant at Store #1042. Choose your role—Cashier, Stocker, Unloader, or Specialty Specialist. Each department plays its own **56-shift story with 14 fights**.
-2. **Handle Customer Confrontations**: When chaotic customers or corporate auditors attack, issue voice commands on your Point-of-Sale (POS) terminal to de-escalate, parry expired coupons, or summon managerial backup.
-3. **Survive the Closing Shift**: Manage your Stamina (HP) and Corporate Metrics (Patience, Morale) to make it to the time clock and punch out. Your department kit grows as the story goes on: each act's boss you beat teaches you a new move.
+1. **Apply and pick your department**: at the interview, Cheryl offers four openings: **Cashier**, **Stocker**, **Unloader** or **Specialist**. Your answer sets your route for the rest of the game; each department plays its own **56-shift story with 14 fights**.
+2. **Work the shift**: talk your way through the story's choices by voice or touch, handle incidents that pop up when you return to a hub, and keep an eye on the store metrics (**Store Morale**, **Karen Index**, **Labor Squeeze**, **Engagement**).
+3. **Win the fights**: speak your moves, learn each enemy's weaknesses, and beat each act's boss. Your department kit grows as the story goes on: each act's boss you beat teaches you a new move.
 
 ---
 
-## 🏢 The 4 Department Career Tracks
+## 🏢 The 4 Department Storylines
 
-You fight **alone**, with your department's kit. Every kit starts with one attack, **Union Break** (a coffee with the crew that heals you for a fifth of your max Stamina, scaled by how well you say it) and one more move, and learns four more as the story goes on (see [Part 2, section 2](#2-retail-content-decoupling--json-schema)).
+You fight **alone**, with your department's kit. Every kit starts with an attack, **Union Break** (a coffee with the crew: a heal you aim at an ally, which in a solo run is you, restoring a fifth of max Stamina, scaled by how well you say it) and one more move, and learns four more as the story goes on (see [Part 2, section 3](#3-combat-kits-weaknesses-armour--stuns)).
 
-| Department Track | Starting Kit | Learned Along the Story | Strong Against |
+| Department (class) | Stamina | Starting Kit | Learned Along the Story |
 | :--- | :--- | :--- | :--- |
-| **Front End (Cashier)** | *Barcode Scan* (Equipment), *Union Break*, *Coupon Shield* (guard) | *Drawer Smash*, *Express Lane* (hits everyone), *Escalate*, *Strength in Numbers* | Customers, Corporate, the Floor Rush Crowd |
-| **Sales Floor (Stocker)** | *Box Cutter Slash* (Elbow Grease), *Union Break*, *Cart Push* (Hustle) | *Flatbed Charge*, *Escalate*, *By the Book*, *Strength in Numbers* | Crowds, Lifers, Fixtures, then Customers and Loss Prevention |
-| **Backroom (Unloader)** | *Pallet Crush* (Elbow Grease), *Union Break*, *Shrink Wrap Hold* (guard) | *Baler Grind*, *Escalate*, *By the Book*, *Strength in Numbers* | Fixtures, Loss Prevention, then Customers |
-| **Specialty (Specialist)** | *Warranty Pitch* (Upsell), *Union Break*, *Price Check* (guard) | *Barcode Scan*, *Flash Sale* (hits everyone), *By the Book*, *Strength in Numbers* | Customers, Management, Fixtures |
+| **Front End (Cashier)** | 450 | *Barcode Scan* (Equipment), *Union Break*, *Coupon Shield* (guard) | *Drawer Smash* (Store Policy), *Express Lane* (Hustle, hits everyone), *Escalate* (Chain of Command), *Strength in Numbers* (Solidarity) |
+| **Sales Floor (Stocker)** | 580 | *Box Cutter Slash* (Elbow Grease), *Union Break*, *Cart Push* (Hustle) | *Flatbed Charge* (Hustle), *Escalate*, *By the Book* (Store Policy), *Strength in Numbers* |
+| **Backroom (Unloader)** | 700 | *Pallet Crush* (Elbow Grease), *Union Break*, *Shrink Wrap Hold* (guard) | *Baler Grind* (Equipment), *Escalate*, *By the Book*, *Strength in Numbers* |
+| **Specialty (Specialist)** | 420 | *Warranty Pitch* (Upsell), *Union Break*, *Price Check* (guard) | *Closing Pitch* (Upsell), *Flash Sale* (Hustle, hits everyone), *By the Book*, *Strength in Numbers* |
+
+The bosses every department meets: **District VP Vance** (shift 10) and **District Auditor Vance** (shift 34), both the **Regional Auditor**; the **Slacker Veteran** (shift 22); **Loss Prevention Clint** (shift 46); and **Store Manager Henderson** (the shift 55 finale).
 
 ---
 
 ## ⚔️ The POS Register Terminal Battle System
 
 Combat in *Superstore Saga* represents high-stakes retail showdowns. The combat interface is styled as a retro Point-of-Sale terminal:
-- **Stamina (HP)**: Your physical energy (0–1,000). Dropping to 0 triggers an unpaid disciplinary review in HR.
+- **Stamina (HP)**: Your physical energy: 420 (Specialist) to 700 (Unloader), by department. Dropping to 0 triggers an unpaid disciplinary review in HR.
 - **No mana, no cooldowns**: every move is always available; the right choice comes from what the enemy is weak to (Hustle, Store Policy, Equipment, Solidarity, Chain of Command, Upsell or Elbow Grease) and what it shrugs off. A hit reveals a weakness, and the game remembers it.
-- **Conveyor Belt Turn Meter (ATB)**: Determines who acts next based on Employee Agility and customer fury.
-- **Active Register Reactions**: Speak *"Void!"* or tap `[VOID / PARRY]` to parry expired coupon attacks with 100% damage deflection!
+- **Turn gauge (ATB)**: everyone's gauge fills at their own speed; whoever fills it first acts next.
+- **Guard moves**: Coupon Shield, Price Check and Shrink Wrap Hold put you on guard, halving the next hit. A stun (from an overloading sensor or a freeze) skips one turn, then you shrug off stuns for two turns, and the same rule protects your enemies.
+- **Armor**: fixtures and plated foes take less from Elbow Grease blows; Equipment (electrical) attacks conduct through armor and hit harder.
 
 ---
 
-## 🚶 Screenless Pocket Mode & Floor Pagers
+## 📸 Visual Tour
 
-Designed for real-world commutes, walks, or listening on the go, **Pocket Mode** turns the screen into an OLED touch-guarded black display while routing all customer dialogue, department pages, and combat audio through your earbuds:
-- Voice meta-commands (*"Status report"*, *"Check customers"*, *"Floor report"*, *"Options"*) allow you to play complete shifts hands-free.
-- Zero touch interaction required—the engine auto-arms the microphone the moment retail narration finishes.
+### Battle Sprites
+
+Every frame of a battle sheet, from idle through attack, hurt and knockout (previews from [`art/sprite-previews/`](art/sprite-previews)).
+
+| **The Associate (you)** |
+| :---: |
+| <img src="art/sprite-previews/hero_preview.png" width="100%"> |
+| *The player's new hire in the royal-blue MegaMart vest, 64 px side view.* |
+
+| **Store Manager Henderson** |
+| :---: |
+| <img src="art/sprite-previews/manager_henderson_preview.png" width="100%"> |
+| *The finale boss, drawn on a 128 px sheet.* |
+
+| **Regional Auditor** |
+| :---: |
+| <img src="art/sprite-previews/regional_auditor_preview.png" width="100%"> |
+| *Corporate's boss for the shift 10 inspection and the shift 34 audit.* |
 
 ---
 
-## 🚀 Quick Download & Installation (Android APK)
+## ✨ Highlights at a Glance
 
-1. Download **`superstore-saga-v0.1.0-alpha.apk`** from [Releases](https://github.com/Todd0042/superstore-saga/releases).
-2. Install the APK on any Android device running **Android 8.0 or higher (API 26+)**.
-3. Grant **Microphone Permission** on first boot to enable hands-free voice commands.
+* **🏢 Four Department Storylines**: the interview choice sets your route; each department plays its own 56 shifts with 14 fights.
+* **🗣️ Speak Your Moves**: every move has a spoken chant and aliases; the Resonance Engine turns delivery into a 1.0x to 3.0x multiplier.
+* **📈 A Kit That Grows**: three moves to start, four more learned from the story, one per act boss.
+* **🎯 Weaknesses You Learn**: 7 move types against 7 enemy families, plus per-enemy weaknesses and resistances; a weakness you find is remembered.
+* **🛡️ Armour and Stuns With Rules**: armour only stops physical blows (electrical ones conduct through it), and a stunned fighter shrugs off the next stun for a while.
+* **🧾 No Mana**: every move is always available, so choosing well is about the matchup, not the budget.
+* **🎧 Eyes-Free Play**: narration, read-aloud choices, auto-listen and voice meta-commands (*"Status"*, *"Enemies"*, *"Read choices"*, *"Pocket mode"*, *"Options"*), with a true-black Pocket Mode touch guard.
+* **🚨 Store Incidents**: 50 department-specific incidents can interrupt your return to a hub.
+* **🌍 Six Command Languages**: voice commands in English, German, Spanish, French, Italian and Portuguese.
 
 ---
 
-# Part 2 — Consolidated Technical Documentation & Architecture Reference
+## 🚀 Quick Download & Installation
 
-## 1. Clean Architecture & System Framework
+### Android (release APK)
 
-*Superstore Saga* is architected upon the **[VoiceRPG Engine](https://github.com/Todd0042/voice-rpg-engine)** framework, strictly separating reusable game engine infrastructure from retail narrative and combat data:
+1. Download **`app-debug.apk`** from the latest release on the [Releases page](https://github.com/Todd0042/superstore-saga/releases).
+2. Install it on a device running **Android 8.0 or higher (API 26+)** (allow installs from your browser or file manager).
+3. Grant **Microphone** permission on first launch to enable voice commands.
+
+### Run from source
+
+```bash
+# The engine repo is expected next to this one (../voice-rpg-engine) for its scripts
+git clone https://github.com/Todd0042/superstore-saga.git
+cd superstore-saga
+
+# Build the debug APK and install it on a connected phone
+./gradlew assembleDebug
+adb install -r app/build/outputs/apk/debug/app-debug.apk
+
+# Confirm 16 KB page-size compatibility
+bash ../voice-rpg-engine/scripts/check_16kb.sh app/build/outputs/apk/debug/app-debug.apk
+```
+
+---
+
+# Part 2 — Technical Documentation & Architecture Reference
+
+> *The sections below are a code-verified engineering reference for this repository: every number, file and rule is taken from the current content and engine code.*
+
+## 1. Architecture: Engine and Game
+
+*Superstore Saga* runs on the shared **[VoiceRPG Engine](https://github.com/Todd0042/voice-rpg-engine)**. The engine code is a read-only copy in this repo; everything retail-specific is JSON content and art.
 
 ```
 +-----------------------------------------------------------------------+
-|                       SUPERSTORE SAGA CLIENT                          |
-|         (Jetpack Compose UI, Material 3, Soundbite Intercoms)         |
+|                 ENGINE (read-only copy, com.voicerpg.engine.*)        |
+|  SpeechManager | ResonanceEngine | CombatViewModel | StoryViewModel   |
+|  DamageResolver | StatusSystem | IncidentManager | MusicManager       |
 +-----------------------------------------------------------------------+
                                    |
                                    v
 +-----------------------------------------------------------------------+
-|                         VOICERPG CORE ENGINE                          |
-|  +--------------------+  +--------------------+  +-----------------+  |
-|  |   SpeechManager    |  |  ResonanceEngine   |  |   CombatEngine  |  |
-|  | (Arbitration Loop) |  | (Acoustic Scoring) |  |   (ATB Matrix)  |  |
-|  +--------------------+  +--------------------+  +-----------------+  |
-+-----------------------------------------------------------------------+
-                                   |
-                                   v
-+-----------------------------------------------------------------------+
-|                    RETAIL CONTENT LAYER (JSON)                        |
-|  manifest.json | characters/*.json | enemies/*.json | story/*.json    |
+|                 GAME CONTENT (app/src/main/assets/game/)              |
+|  manifest | classes | spells | enemies | encounters | story | combat  |
 +-----------------------------------------------------------------------+
 ```
 
-Key framework guarantees:
-- **Zero Cloud Latency & Total Privacy**: 100% on-device speech processing with `EXTRA_PREFER_OFFLINE` using `SpeechRecognizer.createOnDeviceSpeechRecognizer` on Android 12+ (API 31+).
-- **16 KB Page Alignment**: Fully compatible with Android 15's 16 KB page-size architecture requirements.
+The engine-owned paths are listed in [`.engine-sync/OWNED_PATHS`](.engine-sync/OWNED_PATHS):
+
+| Path | Contents |
+| :--- | :--- |
+| `app/src/main/java/com/voicerpg/engine/` | All engine code, including `MainActivity.kt` |
+| `app/src/main/assets/game/commands/` | Voice meta-commands and actions in 6 languages |
+| `app/src/main/assets/game/localization/` | Engine UI phrases |
+| `app/src/test/java/com/voicerpg/engine/` | Engine tests, run against this game's content |
+| `app/src/test/fixtures/template-pack/` | The template content pack used by engine tests |
+
+A pre-commit hook and CI (`.engine-sync/guard.sh`, [`.github/workflows/engine_guard.yml`](.github/workflows/engine_guard.yml)) reject any change there that doesn't match the synced engine version. Game-specific tests live in `app/src/test/java/com/voicerpg/game/`.
+
+Speech recognition prefers the device: on Android 12+ (API 31+) it uses `SpeechRecognizer.createOnDeviceSpeechRecognizer` when on-device recognition is available, otherwise the system recognizer with `EXTRA_PREFER_OFFLINE`.
 
 ---
 
-## 2. Retail Content Decoupling & JSON Schema
+## 2. Game Content & Department Routes
 
-All gameplay data, dialogue trees, encounters, and register abilities are decoupled from compiled bytecode and located under `app/src/main/assets/game/`:
+All gameplay data lives under `app/src/main/assets/game/`:
 
-- [`manifest.json`](app/src/main/assets/game/manifest.json): World title, starting scene (`scene_online_app`), and default encounter (`encounter_register_rush`).
-- `characters/*.json`: Store managers, shift leads, and companion associates.
-- [`enemies/enemies.json`](app/src/main/assets/game/enemies/enemies.json): 17 enemy templates in 7 families (see *Enemies* below).
-- [`encounters/encounters.json`](app/src/main/assets/game/encounters/encounters.json): 20 encounters (7 shared by every department, 13 added by the fights pass in [`docs/FIGHTS_PROPOSAL.md`](docs/FIGHTS_PROPOSAL.md)).
-- [`spells/spells.json`](app/src/main/assets/game/spells/spells.json) and [`classes/*.json`](app/src/main/assets/game/classes): department moves, each class's starting kit and its `spellGrants` (moves learned at story flags).
-- `story/scenes.json` & `story/nodes.json`: Dialogue trees across MegaMart departments.
-- `sprites/sheets/`: 22 animated 64 px side-view battle sprite sheets (Aseprite PNG + JSON): the Associate, 7 enemies, Store Manager Henderson as a 128 px boss, and 13 store staff. The roster that maps every enemy to its sprite, with the artist's brief, is [`art/sprite_roster.json`](art/sprite_roster.json) / [`art/SPRITE_BRIEFS.md`](art/SPRITE_BRIEFS.md) (applied with the engine's `scripts/sprite_roster.py superstore-saga --apply`); `../voice-rpg-engine/scripts/sprite_coverage.sh superstore-saga` lists what the sprite contract still wants before a release build is allowed.
-- `environments/environments.json`: the five battle backdrops (`assets/environments/*.png`, MegaMart-themed, 1344x768), each with its painted floor line (`artHorizon`) so combatants stand on the floor.
+| File | What it holds |
+| :--- | :--- |
+| [`manifest.json`](app/src/main/assets/game/manifest.json) | Title, start scene (`scene_online_app`), default encounter (`encounter_register_rush`), `combatResource: "none"` (no mana), `routeFlagPrefix: "role_"` |
+| [`classes/*.json`](app/src/main/assets/game/classes) | The 4 classes: Stamina, speed, attack, `starterSpellIds` and `spellGrants` (moves learned at story flags) |
+| [`spells/spells.json`](app/src/main/assets/game/spells/spells.json) | Every move: school, base power, chant, aliases, guard/heal/hits-all flags |
+| [`enemies/enemies.json`](app/src/main/assets/game/enemies/enemies.json) | 17 enemy templates in 7 families, with `weak`, `resist` and `armor` |
+| [`encounters/encounters.json`](app/src/main/assets/game/encounters/encounters.json) | 20 encounters (7 original, 13 added by [`docs/FIGHTS_PROPOSAL.md`](docs/FIGHTS_PROPOSAL.md)) |
+| [`combat/affinity_matrix.json`](app/src/main/assets/game/combat/affinity_matrix.json) | School-vs-family multipliers and the retail names of schools and families |
+| [`combat/balance.json`](app/src/main/assets/game/combat/balance.json) | Balance point (x1.5 resonance) and difficulty |
+| `story/scenes.json`, `story/nodes.json` | 9 scenes and 512 dialogue nodes |
+| [`incidents/incidents.json`](app/src/main/assets/game/incidents/incidents.json), [`metrics/metrics.json`](app/src/main/assets/game/metrics/metrics.json) | 50 store incidents and 4 store metrics |
+| `characters/*.json` | The cast: narrator, the player, store staff and management (16 files) |
+| `translations/strings_<lang>.json` | Story and content translations (de, es, fr, it, pt) |
+
+### Department routes
+
+At `node_interview_positions`, Cheryl offers four choices (`choice_track_cashier`, ...). The locker-room node for each sets the route flag (`role_cashier`, `role_stocker`, `role_unloader`, `role_specialist`), and branch nodes (`flagRoutes`) send each route to its own shift nodes (`node_shiftN_<dept>`).
 
 ### Fights per department (14 each)
 
@@ -190,7 +244,25 @@ A new fight sits on its own lead-in node (`node_shiftN_<dept>_fight`) between a 
 | 53 | Henderson's Last Line (Cheryl) | same | same | same |
 | 55 | Henderson (finale) | Henderson (finale) | Henderson (finale) | Henderson (finale) |
 
-Each column has 14 fights: the stocker has no shift 11-12 fight (its Act II fights are 15 and 20), the other three have no shift 20 fight.
+Each column has 14 fights: the stocker has no shift 11-12 fight (its Act II fights are 15 and 20), the other three have no shift 20 fight. The five boss encounters (shifts 10, 22, 34, 46, 55) use `bossPhases`.
+
+---
+
+## 3. Combat: Kits, Weaknesses, Armour & Stuns
+
+### Move types (schools)
+
+The engine's seven schools carry retail names (`schoolNames` in [`affinity_matrix.json`](app/src/main/assets/game/combat/affinity_matrix.json)):
+
+| Engine school | In this game |
+| :--- | :--- |
+| `PHYSICAL` | Elbow Grease |
+| `ELECTROMANCY` | Equipment |
+| `CRYOMANCY` | Store Policy |
+| `PYROMANCY` | Hustle |
+| `HOLY` | Chain of Command |
+| `SHADOW` | Upsell |
+| `NATURE` | Solidarity |
 
 ### Enemies
 
@@ -204,161 +276,219 @@ Each column has 14 fights: the stocker has no shift 11-12 fight (its Act II figh
 | Management (`RADIANT`) | Upsell, Solidarity | Store Manager Henderson (boss), `rival_todd`, `rival_marsha` |
 | Corporate (`SILENCE`) | Store Policy | Regional Auditor (boss), `rival_cheryl` |
 
-Each enemy can add its own `weak` (x2.0) and `resist` (x0.8) on top of its family. The four **bold** enemies still need their own sprite sheets (briefed in [`art/SPRITE_BRIEFS.md`](art/SPRITE_BRIEFS.md); a placeholder sheet draws them until then); the five `rival_*` enemies use the store staff's delivered sheets.
+Each enemy can add its own `weak` (x2.0) and `resist` (x0.8) on top of its family; the matrix is floored at 0.8, so nothing is immune. The four **bold** enemies still need their own sprite sheets (see [section 8](#8-battle-sprites--backdrops)).
+
+### Learned weaknesses
+
+A hit at x1.5 or more reveals that weakness; it is saved in the bestiary (`bestiaryWeaknesses` in the save) and read out when you ask for the enemies, so it stays known in later fights.
 
 ### Kits learned from the story
 
-Every class learns at the same four milestones, set on its own department's act-boss victory nodes:
+Every class learns at the same four milestones, set on its own department's act-boss victory nodes (`spellGrants` in [`classes/*.json`](app/src/main/assets/game/classes)):
 
 | Flag (set on) | Cashier | Stocker | Unloader | Specialist |
 | :--- | :--- | :--- | :--- | :--- |
-| `flag_act1_showcase_won` (shift 10 victory) | Drawer Smash | Flatbed Charge | Baler Grind | Barcode Scan |
+| `flag_act1_showcase_won` (shift 10 victory) | Drawer Smash | Flatbed Charge | Baler Grind | Closing Pitch |
 | `flag_act2_slacker_beaten` (shift 22 victory) | Express Lane | Escalate | Escalate | Flash Sale |
 | `flag_act3_audit_survived` (shift 34 victory) | Escalate | By the Book | By the Book | By the Book |
 | `flag_act4_interrogation_broken` (shift 46 victory) | Strength in Numbers | Strength in Numbers | Strength in Numbers | Strength in Numbers |
 
----
+### Combat rules
 
-## 3. Real-Time Speech Recognition & Continuous Audio Arbitration Loop
-
-The core hands-free conversational loop is coordinated by [`SpeechManager.kt`](app/src/main/java/com/voicerpg/engine/audio/SpeechManager.kt) and [`IntentParser.kt`](app/src/main/java/com/voicerpg/engine/engine/IntentParser.kt).
-
-### Audio Arbitration State Machine
-
-To prevent the Android `SpeechRecognizer` from picking up synthesized Text-To-Speech playback or retail intercom chimes, the engine executes a strict arbitration state machine:
-
-```
-  +--------------+   Narration Begins    +-------------------+
-  |     IDLE     | --------------------> |   TTS_NARRATING   |
-  +--------------+                       +-------------------+
-         ^                                         |
-         | Utterance Handled                       | Utterance Completed
-         |                                         v
-  +------------------+   Utterance Ready +-------------------+
-  |  INTENT_DISPATCH | <---------------- |     MIC_ARMED     |
-  +------------------+                   +-------------------+
-         |                                         |
-         v                                         | Voice Energy Detected
-  +------------------+                             v
-  |  RESONANCE_EVAL  | <----------------- +-------------------+
-  +------------------+    RMS Threshold   |    RECOGNIZING    |
-                                          +-------------------+
-```
-
-- **Audio Chime Suppression**: Notification audio streams are temporarily muted during microphone listening windows to eliminate distracting OS audio pings.
-- **Dynamic Intent Parsing**: Utterances are mapped to live combat targets, customer personas, or register keypad functions with zero latency.
+| Rule | How it works (engine source) |
+| :--- | :--- |
+| **No mana** | `combatResource: "none"` in the manifest: no move costs anything. |
+| **Union Break** | `isHeal`, `target: "ally"`, `healPctOfMax: 0.2`: heals 20% of the target's max Stamina times the resonance multiplier. |
+| **Guard** | Coupon Shield, Price Check and Shrink Wrap Hold (`isGuard`) halve incoming damage while on guard (`GUARD_MULTIPLIER = 0.5`). |
+| **Armour** | Physical (Elbow Grease) hits lose the target's `armor` value; Equipment (electrical) hits on an armoured target do x1.25 (`LIGHTNING_VS_ARMOR`); other schools ignore armour ([`DamageResolver.kt`](app/src/main/java/com/voicerpg/engine/combat/DamageResolver.kt)). 11 enemies have armour: the 4 bosses (15-35), The Screamer, Shrink Sentinel and the 5 rivals. |
+| **Stun fatigue** | Overload and freeze are stuns. After one, the fighter shrugs off new stuns for 2 of its turns (bosses 3) ([`StatusSystem.kt`](app/src/main/java/com/voicerpg/engine/combat/StatusSystem.kt)). |
+| **Damage** | Base power x affinity x resonance (1.0-3.0) x variance (0.9-1.1), 8% crit chance at x1.5, minus defence. |
 
 ---
 
-## 4. Resonance Engine & Acoustic-Poetic Scoring Math
+## 4. Speech Recognition & the Hands-Free Loop
 
-Department abilities and customer appeasements are evaluated by [`ResonanceEngine.kt`](app/src/main/java/com/voicerpg/engine/engine/ResonanceEngine.kt). The compound resonance rating $R$ is formulated as:
+[`SpeechManager.kt`](app/src/main/java/com/voicerpg/engine/audio/SpeechManager.kt) runs Android's `SpeechRecognizer` (free-form model, partial results), measures RMS volume and pitch for the Resonance Engine, and briefly mutes system/notification streams so the OS listening chime stays silent (music and TTS are left alone). [`IntentParser.kt`](app/src/main/java/com/voicerpg/engine/engine/IntentParser.kt) maps what was heard to a move, a target or a meta-command. With auto-listen on, the microphone re-arms after narration finishes.
 
-$$R = S_{\text{acoustic}} + S_{\text{cadence}} + S_{\text{poetic}} + S_{\text{novelty}}$$
+Meta-commands come from [`commands_en.json`](app/src/main/assets/game/commands/commands_en.json) (and its de, es, fr, it, pt versions). A selection:
 
-Where:
+| Command | Example phrases |
+| :--- | :--- |
+| `STATUS_REPORT` | "status", "status report", "health" |
+| `CHECK_ENEMIES` | "enemies", "check enemies", "who is left" |
+| `TOGGLE_EYES_FREE` | "pocket mode", "eyes free", "screenless" |
+| `TOGGLE_AUTO_LISTEN` | "auto listen", "hands free" |
+| `TOGGLE_NARRATION` | "toggle narration", "narration on" |
+| `TOGGLE_READ_CHOICES` | "read choices", "read options" |
+| `OPEN_OPTIONS` | "options", "settings", "menu" |
+| `STORY_RECAP` | "recap", "story so far", "where was I" |
+| `HELP` | "help", "what can I say" |
 
-1. **Acoustic Energy ($S_{\text{acoustic}}$)**:
-   Evaluated from peak decibel volume and fundamental pitch contour variation $\Delta f_0$:
-   $$S_{\text{acoustic}} = \min\left(30, \max\left(0, \frac{\text{dB}_{\text{peak}} - 45}{40} \times 30\right)\right) + S_{\text{pitch}}$$
-
-2. **Vocal Cadence ($S_{\text{cadence}}$)**:
-   Measures pacing and rhythmic meter across syllables:
-   $$S_{\text{cadence}} = 25 \times \exp\left(-\frac{(T_{\text{utterance}} - T_{\text{optimal}})^2}{2\sigma^2}\right)$$
-
-3. **Phonetic Thesaurus Matching ($S_{\text{poetic}}$)**:
-   Matches spoken phrases against department keyword thesauruses (`SpellThesaurus.kt`) using normalized Levenshtein distance:
-   $$\text{Sim}(u, t) = 1 - \frac{\text{lev}(u, t)}{\max(|u|, |t|)}$$
-   Words with $\text{Sim}(u, t) \ge 0.75$ contribute up to 35 points to $S_{\text{poetic}}$.
-
-4. **Novelty Bonus ($S_{\text{novelty}}$)**:
-   Rewards variations in phrasing across consecutive turns (up to 10 points), penalizing repetitive macro shouting.
-
-### Resonance Multiplier Tiers
-
-| Tier Name | Score Range | Damage / Recovery Multiplier | Visual & Audio Flair |
-| :--- | :--- | :--- | :--- |
-| **Novice** | $0 \le R < 40$ | **1.00x** (Standard effect) | Standard register beep |
-| **Apprentice** | $40 \le R < 70$ | **1.15x** Base Boost | Green phosphor blink |
-| **Adept** | $70 \le R < 100$ | **1.35x** High Efficiency | Blue scanner flash |
-| **Master** | $100 \le R < 130$ | **1.85x** Critical Override | Dual amber warning light |
-| **Mythic** | $130 \le R < 155$ | **2.25x** Manager Authorization | Red strobe & siren tone |
-| **Transcendental** | $R \ge 155$ | **3.00x** (Absolute Cap) | Golden corporate broadcast flash |
+**Pocket Mode** draws a true-black full-screen touch guard ([`PocketModeTouchGuard.kt`](app/src/main/java/com/voicerpg/engine/ui/pocket/PocketModeTouchGuard.kt)) so the phone can sit in a pocket while the game is played by ear.
 
 ---
 
-## 5. Real-Time Audio DSP & Dynamic Music Ducking Pipeline
+## 5. Resonance Engine
 
-Ambient store music tracks and intercom announcements are modulated in real-time by [`SoundbitePlayer.kt`](app/src/main/java/com/voicerpg/engine/audio/SoundbitePlayer.kt) and `MusicManager`:
+[`ResonanceEngine.kt`](app/src/main/java/com/voicerpg/engine/engine/ResonanceEngine.kt) scores each spoken move in bonus points (0-200) and turns them into a multiplier: **multiplier = 1.0 + bonus / 100**, so 1.0x to 3.0x. This game uses the engine's default `CLASSIC` profile.
 
-$$V_{\text{bgm}}(t) = V_{\text{base}} \cdot \Big(1 - \alpha \cdot \mathbb{I}_{\text{speaking}}(t)\Big)$$
+| Dimension | Up to | Source |
+| :--- | :--- | :--- |
+| Lexical length (word count) | +45 | 3+ words start to score; 12+ words score the maximum |
+| Thematic roots matched for the move's school | +45 | [`SpellThesaurus.kt`](app/src/main/java/com/voicerpg/engine/engine/SpellThesaurus.kt) |
+| Poetic phrasing | +12 | Vocatives and invocation phrases |
+| Volume / projection | +40 | Microphone RMS |
+| Inflection / pitch movement | +40 | Pitch tracking |
+| Novelty | +30 | A fresh phrasing scores; a repeat scores x0.5, x0.25, then x0.1 ([`NoveltyCache.kt`](app/src/main/java/com/voicerpg/engine/engine/NoveltyCache.kt)) |
 
-Where:
-- $V_{\text{base}}$ is the configured master background volume.
-- $\alpha \approx 0.70$ is the speech ducking attenuation coefficient (reducing ambient music to $-10.5\text{ dB}$).
-- $\mathbb{I}_{\text{speaking}}(t) \in \{0, 1\}$ is the boolean speech indicator provided by the arbitration engine.
-
-Audio tracks are normalized to **$-16\text{ LUFS}$** (44.1 kHz Vorbis `.ogg`) to ensure consistent loudness across speakers and mobile headsets.
-
----
-
-## 6. Dynamic Retail Conflict Incidents & Conveyor ATB Battle System
-
-Integrated with [`IncidentManager.kt`](app/src/main/java/com/voicerpg/engine/engine/IncidentManager.kt), the game dynamically injects emergency store events into the Active Time Battle (ATB) conveyor:
-
-- **Aisle Spills & Code Sparks**: Sudden environmental hazards requiring prompt vocal resolution.
-- **Unannounced Corporate Audits**: High-pressure pop-up encounters adjusting Corporate Morale and Store Metrics in real time.
-- **Conveyor ATB Initiative**: Action gauges fill proportionally to Employee Agility $\text{Spd}_e$ versus Customer Fury $\text{Spd}_c$:
-  $$\Delta \text{Gauge}_i = \frac{\text{Spd}_i}{\text{TickRate}} \times \Delta t$$
+| Tier | Bonus points | Multiplier |
+| :--- | :--- | :--- |
+| **Basic Chant** | 0-19 | 1.00x-1.19x |
+| **Adept Resonance** | 20-54 | 1.20x-1.54x |
+| **Master Incantation** | 55-99 | 1.55x-1.99x |
+| **Mythic Logos** | 100-154 | 2.00x-2.54x |
+| **Transcendental Logos** | 155-200 | 2.55x-3.00x |
 
 ---
 
-## 7. Multi-Repo Synchronization Workflow
+## 6. Music & Speech Ducking
 
-*Superstore Saga* stays synchronized with upstream framework improvements via the automated multi-repo pipeline:
+[`MusicManager.kt`](app/src/main/java/com/voicerpg/engine/audio/MusicManager.kt) plays the three OGG tracks in `assets/audio/music/` (`bgm_title.ogg`, `bgm_exploration.ogg`, `bgm_combat.ogg`) on the media stream with persistent audio focus.
+
+| Setting | Value |
+| :--- | :--- |
+| Default music volume | 0.55 |
+| Ducked while narration speaks | x0.22 of the music volume (`DUCK_RATIO`), faded in and out |
+| System duck request (e.g. navigation prompt) | x0.3 |
+
+---
+
+## 7. Store Incidents & Metrics
+
+When you return to a story hub that allows incidents, there is a 45% chance that [`IncidentManager.kt`](app/src/main/java/com/voicerpg/engine/engine/IncidentManager.kt) picks one of the **50 incidents** in [`incidents.json`](app/src/main/assets/game/incidents/incidents.json) by weight (base weight, flag and metric conditions, metric-based multipliers). Incidents are one-time story scenes (a runaway cart train, a honey spill, a lost toddler, a mystery shopper, a padlocked fire exit...), most written per department.
+
+The four store metrics ([`metrics.json`](app/src/main/assets/game/metrics/metrics.json)):
+
+| Metric | Starts at | Danger when |
+| :--- | :--- | :--- |
+| Store Morale | 65 | low |
+| Karen Index | 15 | high |
+| Labor Squeeze | 40 | high |
+| Engagement | 70 | low |
+
+---
+
+## 8. Battle Sprites & Backdrops
+
+`app/src/main/assets/game/sprites/sheets/` holds **22 animated side-view battle sheets** (Aseprite PNG + JSON): the Associate, 7 enemies (Practice Dummy, Entitled Customer, Extreme Couponer, Floor Rush Crowd, Regional Auditor, Slacker Veteran, Loss Prevention Clint), Store Manager Henderson as a **128 px** boss, and 13 store staff, all others at 64 px.
+
+* The roster that maps every enemy to its sprite, with the artist's brief, is [`art/sprite_roster.json`](art/sprite_roster.json) / [`art/SPRITE_BRIEFS.md`](art/SPRITE_BRIEFS.md), applied with the engine's `scripts/sprite_roster.py superstore-saga --apply`.
+* The **4 new enemies** (The Screamer, Go-Back Golem, Shrink Sentinel, Asset Protection Officer) are briefed but their sheets are **not made yet**; until then the engine draws them with its built-in pixel-grid fallback.
+* The five `rival_*` enemies use the store staff's delivered sheets (`derrick`, `todd`, `marsha`, `chad`, `cheryl`).
+* `../voice-rpg-engine/scripts/sprite_coverage.sh superstore-saga` lists what the sprite contract still wants before a release build is allowed.
+
+`environments/environments.json` lists five 1344x768 pixel-art battle backdrops (`assets/environments/*.png`), each with its painted floor line (`artHorizon`) so combatants stand on the floor; the current fights use two of them (`DUNGEON` and `CASTLE`). Story scenes use the store backgrounds in `assets/story/`.
+
+---
+
+## 9. Engine Sync Workflow
+
+Engine changes are made in `../voice-rpg-engine` and pushed to every game:
 
 ```bash
-# Push engine updates from voice-rpg-engine to Superstore Saga:
-cd ../voice-rpg-engine && ./scripts/sync_engine_to_games.sh superstore-saga
+# In the engine: test against every game's content, then push the engine to the games
+cd ../voice-rpg-engine
+./scripts/test_content_packs.sh superstore-saga
+./scripts/sync_engine_to_games.sh --verify superstore-saga
 
-# Audit synchronization status across all downstream games:
-cd ../voice-rpg-engine && ./scripts/sync_engine_to_games.sh --check
+# Report sync status (in sync / modified / out of date) for each game
+./scripts/sync_engine_to_games.sh --check
 ```
+
+The synced engine commit is recorded in `.engine-sync/ENGINE_VERSION`, with checksums in `.engine-sync/MANIFEST.sha256`.
 
 ---
 
-## 8. Automated Unit Verification Suite
+## 10. Tests & Combat Balance
 
-The repository contains **368 automated unit tests** verifying dialogue graph traversal, retail ability damage resolution, and the headless **Balance Harness** ([`BalanceHarnessTest.kt`](app/src/test/java/com/voicerpg/engine/combat/BalanceHarnessTest.kt)):
+The repository has **368 automated unit tests** (JUnit, run on the JVM): the engine's suite run against this game's content, plus game tests in `app/src/test/java/com/voicerpg/game/`.
 
 ```bash
-# Run full unit test suite:
+# Run the unit tests
 ./gradlew testDebugUnitTest
 
-# Build debug APK:
+# Build the debug APK
 ./gradlew assembleDebug
 ```
 
-**Combat balance.** Every story fight is played by the engine's battle simulator (`BalanceContractTest`: the real combat on virtual time, with the party and spells the story has given them at that point): 56 fights (14 for each of the 4 departments). A sensible player at the balance point (**x1.5** resonance, [`combat/balance.json`](app/src/main/assets/game/combat/balance.json)) should win in a target number of rounds with a safety margin that narrows toward the finale, a lazy x1.1 player should be able to lose late bosses, healing should never take over a fight, and Pure Story Mode must win every fight. The enemy HP and attack in [`encounters.json`](app/src/main/assets/game/encounters/encounters.json) were tuned to those targets with the engine's `BalanceTunerTest`; the report of every fight is written to `app/build/reports/balance.txt` (it reports rather than fails the build: a handful of fights still sit just outside a target).
+Coverage includes:
+- Story graph: no dead ends ([`StoryNoDeadEndsTest.kt`](app/src/test/java/com/voicerpg/engine/story/StoryNoDeadEndsTest.kt)), flag routes, hub completion, and Pure Story Mode auto-playing the whole game to the end.
+- Combat: damage, armour and lightning, stun fatigue, statuses, enemies and bestiary, story-learned spells, no-mana play.
+- The **Balance Harness** ([`BalanceHarnessTest.kt`](app/src/test/java/com/voicerpg/engine/combat/BalanceHarnessTest.kt)): invariants such as "voice skill outweighs a matchup".
+- Resonance tiers, speech, narration, localization and saves.
 
-Test coverage includes:
-- Dialogue graph cyclic and dead-end detection.
-- Department spell balance simulations over 1,000 automated battle rounds.
-- Resonance acoustic scoring threshold boundaries.
+**Combat balance.** Every story fight is played by the engine's battle simulator (`BalanceContractTest`: the real combat on virtual time, with the hero and the moves the story has given them at that point): 56 fights (14 for each of the 4 departments). A sensible player at the balance point (**x1.5** resonance, [`combat/balance.json`](app/src/main/assets/game/combat/balance.json)) should win in a target number of rounds with a safety margin that narrows toward the finale, a lazy x1.1 player should be able to lose late bosses, healing should never take over a fight, and Pure Story Mode must win every fight. The enemy HP and attack in [`encounters.json`](app/src/main/assets/game/encounters/encounters.json) were tuned to those targets with the engine's `BalanceTunerTest`; the report of every fight is written to `app/build/reports/balance.txt` (it reports rather than fails the build: a handful of fights still sit just outside a target).
 
 ---
 
-## 9. Clean-Room Provenance & Non-Commercial Licensing
+## 11. Repository Structure
 
-- **Clean-Room Retail Satire**: All character names, department lore, dialogue scripts, and audio assets are 100% original satirical creations.
-- **AI-Assisted Battle Art**: the battle sprite sheets and the battle backdrops are AI-assisted (made with Antigravity from the game's own portraits and briefs).
-- **PolyForm Noncommercial 1.0.0**: Free for personal, recreational, educational, and hobbyist gaming. For commercial inquiries, contact **[Todd.0042.git@gmail.com](mailto:Todd.0042.git@gmail.com)**.
-- **Media License**: the images, artwork and audio made for this project (paths listed in [LICENSE-MEDIA](LICENSE-MEDIA)) are © Todd0042 under **[CC BY-NC 4.0](LICENSE-MEDIA)**: free to share and adapt with credit for non-commercial purposes; commercial use requires permission.
+```
+superstore-saga/
+├── app/
+│   ├── build.gradle.kts                  # App id, version (0.2.0-alpha), SDK 26-35, dependencies
+│   └── src/
+│       ├── main/
+│       │   ├── java/com/voicerpg/engine/ # VoiceRPG engine (read-only synced copy)
+│       │   ├── assets/
+│       │   │   ├── game/                 # Game content: manifest, classes, spells, enemies, encounters, story...
+│       │   │   ├── audio/music/          # Title, exploration and combat music (OGG)
+│       │   │   ├── environments/         # Battle backdrops
+│       │   │   ├── portraits/            # Character portraits
+│       │   │   └── story/                # Story scene backgrounds
+│       │   └── res/                      # App icon and Android resources
+│       └── test/
+│           ├── java/com/voicerpg/engine/ # Engine tests (synced, run on this game's content)
+│           └── java/com/voicerpg/game/   # Game-specific tests
+├── art/
+│   ├── SPRITE_BRIEFS.md                  # Artist briefs for every battle sprite
+│   ├── sprite_roster.json                # Enemy -> sprite roster
+│   └── sprite-previews/                  # Frame strips of the delivered sheets
+├── docs/
+│   ├── FIGHTS_PROPOSAL.md                # The 14-fights-per-department plan
+│   ├── ENEMY_TYPES_PROPOSAL.md           # Enemy families and weaknesses plan
+│   └── combat-design/                    # Combat spec and balance harness notes
+├── .engine-sync/                         # Engine version, checksums, guard and release gate
+├── .github/workflows/                    # Android CI and engine guard
+├── *.md                                  # Earlier design documents (narrative, combat, UI, schema)
+├── LICENSE                               # PolyForm Noncommercial 1.0.0 (code)
+└── LICENSE-MEDIA                         # CC BY-NC 4.0 (art, music, portraits)
+```
+
+---
+
+## 12. Ethics, Provenance & Licensing
+
+### 🧾 Provenance
+
+* **Original satire**: MegaMart, its staff, customers and story are original fiction.
+* **AI-assisted development**: the code, content and story were developed with AI coding assistants.
+* **AI-assisted battle art**: the battle sprite sheets and the battle backdrops are AI-assisted (made with Antigravity from the game's own portraits and briefs).
+
+### 🔒 Privacy
+
+* Speech is recognised by Android's recognizer, on the device whenever on-device recognition is available. The game has no telemetry; saves stay on the phone.
+
+### ⚖️ Software License & Commercial Inquiries
+
+* **Non-Commercial Use (Free, Source-Available)**: *Superstore Saga* is licensed for personal, hobbyist, educational, and non-commercial use under the **[PolyForm Noncommercial License 1.0.0](LICENSE)**.
+* **Commercial Licensing Inquiries**: commercial use (inside a company, in a paid product or service, or for profit) requires a separate license from [Todd0042](https://github.com/Todd0042).
+* **Media License**: the images, artwork and audio made for this project (paths listed in [LICENSE-MEDIA](LICENSE-MEDIA)) are © Todd0042 under **[CC BY-NC 4.0](LICENSE-MEDIA)**: free to share and adapt with credit for non-commercial purposes; commercial use requires permission.
 
 ---
 
 <p align="center">
-  If you enjoy surviving shifts at MegaMart, consider supporting its development:<br/><br/>
+  If you enjoy Superstore Saga, consider supporting its development:<br/><br/>
   <a href="https://ko-fi.com/todd0042" target="_blank">
     <img src="https://img.shields.io/badge/☕_Support_Superstore_Saga_on_Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Support on Ko-fi">
   </a>
