@@ -171,7 +171,7 @@
     {
       "id": "spell_barcode_scan",
       "name": "Barcode Scan",
-      "school": "PHYSICAL",
+      "school": "ELECTROMANCY",
       "basePower": 42,
       "description": "Rapid-fire optical scanner swipe across customer composure.",
       "exampleChant": "Barcode scan strike!",
@@ -180,7 +180,7 @@
     {
       "id": "spell_coupon_shield",
       "name": "Coupon Shield",
-      "school": "PHYSICAL",
+      "school": "CRYOMANCY",
       "basePower": 0,
       "isGuard": true,
       "description": "Cites expired date in fine print, parrying incoming aggression.",
@@ -190,7 +190,7 @@
     {
       "id": "spell_drawer_smash",
       "name": "Drawer Smash",
-      "school": "PHYSICAL",
+      "school": "CRYOMANCY",
       "basePower": 88,
       "description": "Violently shoves the steel cash drawer shut with a deafening clang.",
       "exampleChant": "Drawer smash the till!",
@@ -218,7 +218,7 @@
     {
       "id": "spell_cart_push",
       "name": "Cart Push",
-      "school": "PHYSICAL",
+      "school": "PYROMANCY",
       "basePower": 38,
       "description": "Drives a train of nested shopping carts through congested aisles.",
       "exampleChant": "Cart push the aisle!",
@@ -227,7 +227,7 @@
     {
       "id": "spell_flatbed_charge",
       "name": "Flatbed Charge",
-      "school": "PHYSICAL",
+      "school": "PYROMANCY",
       "basePower": 75,
       "description": "Barrels a loaded iron U-boat flatbed cart forward.",
       "exampleChant": "Flatbed charge ahead!",
@@ -255,7 +255,7 @@
     {
       "id": "spell_baler_grind",
       "name": "Baler Grind",
-      "school": "PHYSICAL",
+      "school": "ELECTROMANCY",
       "basePower": 95,
       "description": "Activates the 20-ton hydraulic baler ram with a groaning crunch.",
       "exampleChant": "Baler grind cardboard!",
@@ -269,6 +269,65 @@
       "description": "Traps customer in dense 3-year accidental protection clauses.",
       "exampleChant": "Warranty pitch terms!",
       "aliases": ["warranty", "pitch", "upsell", "protection", "terms"]
+    },
+    {
+      "id": "spell_union_break",
+      "name": "Union Break",
+      "school": "NATURE",
+      "basePower": 0,
+      "isHeal": true,
+      "healPctOfMax": 0.2,
+      "target": "ally",
+      "description": "Five minutes of breakroom coffee with the crew; you walk back out standing taller.",
+      "exampleChant": "Union break, coffee with the crew!",
+      "aliases": ["union break", "break", "coffee", "breather", "rest", "heal"]
+    },
+    {
+      "id": "spell_escalate",
+      "name": "Escalate",
+      "school": "HOLY",
+      "basePower": 62,
+      "description": "Goes over their head: 'Let me get my supervisor on the line.'",
+      "exampleChant": "Escalate to my supervisor!",
+      "aliases": ["escalate", "escalation", "supervisor", "get a manager", "chain of command"]
+    },
+    {
+      "id": "spell_by_the_book",
+      "name": "By the Book",
+      "school": "CRYOMANCY",
+      "basePower": 64,
+      "description": "Recites the handbook, section and subsection, in a voice like a closing freezer door.",
+      "exampleChant": "By the book, section four!",
+      "aliases": ["by the book", "handbook", "rulebook", "section", "regulation"]
+    },
+    {
+      "id": "spell_strength_in_numbers",
+      "name": "Strength in Numbers",
+      "school": "NATURE",
+      "basePower": 80,
+      "description": "The whole crew steps up behind you, and nobody in front of you can pretend you're alone.",
+      "exampleChant": "Strength in numbers, crew with me!",
+      "aliases": ["strength in numbers", "numbers", "together", "solidarity", "crew"]
+    },
+    {
+      "id": "spell_express_lane",
+      "name": "Express Lane",
+      "school": "PYROMANCY",
+      "basePower": 40,
+      "hitsAll": true,
+      "description": "Flips on the express light and waves the whole line through at double speed.",
+      "exampleChant": "Express lane, next in line!",
+      "aliases": ["express lane", "express", "fast lane", "next in line"]
+    },
+    {
+      "id": "spell_flash_sale",
+      "name": "Flash Sale",
+      "school": "PYROMANCY",
+      "basePower": 40,
+      "hitsAll": true,
+      "description": "Announces a ten-minute flash sale three aisles away; the crowd stampedes off after it.",
+      "exampleChant": "Flash sale, aisle nine!",
+      "aliases": ["flash sale", "flash", "doorbuster", "sale"]
     }
   ]
 }

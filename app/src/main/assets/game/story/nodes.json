@@ -822,6 +822,7 @@
       "choices": [
         {
           "id": "choice_track_cashier",
+          "completionFlag": "role_cashier",
           "text": "Front End Cashier: Fast hands, warm smiles, and front-line energy!",
           "voiceKeywords": [
             "cashier",
@@ -834,6 +835,7 @@
         },
         {
           "id": "choice_track_stocker",
+          "completionFlag": "role_stocker",
           "text": "Sales Floor Stocker: Dynamic action, building impressive displays, and keeping aisles pristine!",
           "voiceKeywords": [
             "stocker",
@@ -846,6 +848,7 @@
         },
         {
           "id": "choice_track_unloader",
+          "completionFlag": "role_unloader",
           "text": "Backroom Receiving: High energy, heavy freight, and powering the store's heartbeat!",
           "voiceKeywords": [
             "unloader",
@@ -859,6 +862,7 @@
         },
         {
           "id": "choice_track_specialist",
+          "completionFlag": "role_specialist",
           "text": "Specialty Counter: Expert advice, cutting-edge tech, and high-value customer service!",
           "voiceKeywords": [
             "specialist",
@@ -4561,6 +4565,7 @@
     },
     {
       "id": "node_shift10_victory",
+      "setFlagOnEnter": "flag_act1_showcase_won",
       "speakerId": "henderson",
       "side": "RIGHT",
       "changeSceneId": "scene_action_alley",
@@ -4936,6 +4941,7 @@
     },
     {
       "id": "node_shift10_cashier_victory",
+      "setFlagOnEnter": "flag_act1_showcase_won",
       "speakerId": "cheryl",
       "side": "LEFT",
       "changeSceneId": "scene_personnel_office",
@@ -5194,6 +5200,7 @@
     },
     {
       "id": "node_shift10_unloader_victory",
+      "setFlagOnEnter": "flag_act1_showcase_won",
       "speakerId": "cheryl",
       "side": "LEFT",
       "changeSceneId": "scene_personnel_office",
@@ -5452,6 +5459,7 @@
     },
     {
       "id": "node_shift10_specialist_victory",
+      "setFlagOnEnter": "flag_act1_showcase_won",
       "speakerId": "cheryl",
       "side": "LEFT",
       "changeSceneId": "scene_personnel_office",
@@ -5878,13 +5886,21 @@
             "coolers",
             "salvage"
           ],
-          "nextNodeId": "node_shift16_stocker",
+          "nextNodeId": "node_shift15_stocker_fight",
           "metricDeltas": {
             "associate_engagement": 10.0,
             "store_morale": -10.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift15_stocker_fight",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "10:50 PM. The return carts lurch. Melting ice cream, crushed cereal and a dozen go-backs slump together into one dripping heap, and it lurches toward your clean aisle!",
+      "triggerBattleEncounterId": "encounter_go_back_golem",
+      "nextNodeId": "node_shift16_stocker"
     },
     {
       "id": "node_shift16_stocker",
@@ -6000,13 +6016,21 @@
             "forklift",
             "safety"
           ],
-          "nextNodeId": "node_shift21_stocker",
+          "nextNodeId": "node_shift20_stocker_fight",
           "metricDeltas": {
             "store_morale": 5.0,
             "associate_engagement": 10.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift20_stocker_fight",
+      "speakerId": "derrick",
+      "side": "LEFT",
+      "text": "Derrick kills the forklift and hops down, jabbing a finger: 'Nobody rats on me, rookie. Not you, not Donna.' Make him hear it.",
+      "triggerBattleEncounterId": "encounter_forklift_cowboy",
+      "nextNodeId": "node_shift21_stocker"
     },
     {
       "id": "node_shift21_stocker",
@@ -6044,6 +6068,7 @@
     },
     {
       "id": "node_shift22_stocker_victory",
+      "setFlagOnEnter": "flag_act2_slacker_beaten",
       "speakerId": "todd",
       "side": "RIGHT",
       "text": "EVIDENCE EXPOSED! You pull up the TC-70 scan history and time stamps proving Kyle's 48-minute disappearances. Todd turns bright red and writes Kyle up on the spot. You held the line, but the sales floor has grown icy and quiet.",
@@ -6066,13 +6091,21 @@
             "lane 4",
             "cashier"
           ],
-          "nextNodeId": "node_hub_cashier_act2",
+          "nextNodeId": "node_shift11_cashier_fight",
           "metricDeltas": {
             "store_morale": -5.0,
             "associate_engagement": 10.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift11_cashier_fight",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "text": "6:00 AM. The doors slide open and the coupon crowd charges Lane 4, binders first. Four hours of sleep, honey. Scan fast.",
+      "triggerBattleEncounterId": "encounter_clopening_coupons",
+      "nextNodeId": "node_hub_cashier_act2"
     },
     {
       "id": "node_shift12_cashier",
@@ -6198,13 +6231,21 @@
             "drawer",
             "sort"
           ],
-          "nextNodeId": "node_shift16_cashier",
+          "nextNodeId": "node_shift15_cashier_fight",
           "metricDeltas": {
             "associate_engagement": 10.0,
             "store_morale": -10.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift15_cashier_fight",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "10:49 PM. The reshop carts tip, and the junk keeps coming: bags, boxes, a melting tub of rocky road, all rising into one shambling heap in your lane!",
+      "triggerBattleEncounterId": "encounter_go_back_golem",
+      "nextNodeId": "node_shift16_cashier"
     },
     {
       "id": "node_shift16_cashier",
@@ -6363,6 +6404,7 @@
     },
     {
       "id": "node_shift22_cashier_victory",
+      "setFlagOnEnter": "flag_act2_slacker_beaten",
       "speakerId": "marsha",
       "side": "LEFT",
       "text": "VELOCITY LOGS REVEALED! You print the cashier IPM report showing your steady 24 items per minute compared to Brenda's 11 IPM during her gossip sessions. Marsha reassigns Brenda to cart retrieval. The concourse is yours, but the front end has turned frosty.",
@@ -6409,13 +6451,21 @@
             "brute",
             "muscle"
           ],
-          "nextNodeId": "node_shift13_unloader",
+          "nextNodeId": "node_shift12_unloader_fight",
           "metricDeltas": {
             "labor_squeeze": 15.0,
             "store_morale": -10.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift12_unloader_fight",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "THE SCREAMER BUCKS! The jack shrieks like a banshee, slews under 2,400 pounds of water and swings its handle at your shins. Tame it before it takes out the dock plate!",
+      "triggerBattleEncounterId": "encounter_screamer_jack",
+      "nextNodeId": "node_shift13_unloader"
     },
     {
       "id": "node_shift13_unloader",
@@ -6518,13 +6568,21 @@
             "pallets",
             "stack"
           ],
-          "nextNodeId": "node_shift16_unloader",
+          "nextNodeId": "node_shift15_unloader_fight",
           "metricDeltas": {
             "associate_engagement": 10.0,
             "store_morale": -10.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift15_unloader_fight",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "10:51 PM. The pile of broken pallets and ripped cardboard groans, shifts... and stands up. Every go-back the floor dumped on the dock tonight has become one lumbering heap!",
+      "triggerBattleEncounterId": "encounter_go_back_golem",
+      "nextNodeId": "node_shift16_unloader"
     },
     {
       "id": "node_shift16_unloader",
@@ -6683,6 +6741,7 @@
     },
     {
       "id": "node_shift22_unloader_victory",
+      "setFlagOnEnter": "flag_act2_slacker_beaten",
       "speakerId": "mack",
       "side": "RIGHT",
       "text": "TRUTH REVEALED! Mack shows Todd the bike lock on Old Reliable and security camera footage of Derrick's 45-minute disappearances. Todd revokes Derrick's forklift keys on the spot. The dock is safe, but tension hangs heavy in the air.",
@@ -6729,13 +6788,21 @@
             "backup",
             "customers"
           ],
-          "nextNodeId": "node_shift13_specialist",
+          "nextNodeId": "node_shift12_specialist_fight",
           "metricDeltas": {
             "karen_index": -10.0,
             "associate_engagement": 10.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift12_specialist_fight",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "The glass rattles under a dozen fists. 'OPEN THE CASE!' Nobody wants to hear that Chad has the keys. Hold the counter, {hero}!",
+      "triggerBattleEncounterId": "encounter_showcase_bangers",
+      "nextNodeId": "node_shift13_specialist"
     },
     {
       "id": "node_shift13_specialist",
@@ -6837,13 +6904,21 @@
             "secure",
             "lockup"
           ],
-          "nextNodeId": "node_shift16_specialist",
+          "nextNodeId": "node_shift15_specialist_fight",
           "metricDeltas": {
             "associate_engagement": 10.0,
             "store_morale": -10.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift15_specialist_fight",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "10:49 PM. Behind the counter, the dumped heap of opened games and tangled cables twitches, knots itself together and rises, HDMI cords whipping like tentacles!",
+      "triggerBattleEncounterId": "encounter_go_back_golem",
+      "nextNodeId": "node_shift16_specialist"
     },
     {
       "id": "node_shift16_specialist",
@@ -7002,6 +7077,7 @@
     },
     {
       "id": "node_shift22_specialist_victory",
+      "setFlagOnEnter": "flag_act2_slacker_beaten",
       "speakerId": "julian",
       "side": "RIGHT",
       "text": "SALES AUDIT REVEALED! Julian steps up with register camera logs and transaction records, proving Chad's commission poaching and safety shortcuts. Todd disciplines Chad on the spot. You won the battle, but the showroom feels colder.",
@@ -7380,13 +7456,21 @@
             "carts",
             "groceries"
           ],
-          "nextNodeId": "node_shift27_stocker",
+          "nextNodeId": "node_shift26_stocker_fight",
           "metricDeltas": {
             "labor_squeeze": 15.0,
             "store_morale": -10.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift26_stocker_fight",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "text": "CODE SPARK! Lane 6 is yours, and the line is already past the gumball machines. Hold the line!",
+      "triggerBattleEncounterId": "encounter_code_spark",
+      "nextNodeId": "node_shift27_stocker"
     },
     {
       "id": "node_shift27_stocker",
@@ -7453,13 +7537,21 @@
             "sensors",
             "alarms"
           ],
-          "nextNodeId": "node_shift30_stocker",
+          "nextNodeId": "node_shift29_stocker_fight",
           "metricDeltas": {
             "associate_engagement": 10.0,
             "labor_squeeze": 10.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift29_stocker_fight",
+      "speakerId": "narrator",
+      "side": "CENTER_NARRATOR",
+      "text": "Every bracket in baby formula strobes at once. Two ceiling domes drop on their cables, lenses locked on you: 'SHRINK EVENT DETECTED.'",
+      "triggerBattleEncounterId": "encounter_sensor_meltdown",
+      "nextNodeId": "node_shift30_stocker"
     },
     {
       "id": "node_shift30_stocker",
@@ -7572,6 +7664,7 @@
     },
     {
       "id": "node_shift34_stocker_victory",
+      "setFlagOnEnter": "flag_act3_audit_survived",
       "speakerId": "henderson",
       "side": "RIGHT",
       "text": "AUDIT CONFRONTATION SURVIVED! You produce verified TC-70 logs proving that floor stocking velocity matched targets despite faulty software chimes. Auditor Vance reluctantly signs off on store compliance. You survived Act III, but corporate surveillance has shifted to active sabotage!",
@@ -7702,13 +7795,21 @@
             "scans",
             "queue"
           ],
-          "nextNodeId": "node_shift27_cashier",
+          "nextNodeId": "node_shift26_cashier_fight",
           "metricDeltas": {
             "associate_engagement": 15.0,
             "karen_index": -15.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift26_cashier_fight",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "text": "CODE SPARK! My register's jammed, the alarms are screaming and the line is to the doors. Rookie, take them!",
+      "triggerBattleEncounterId": "encounter_code_spark",
+      "nextNodeId": "node_shift27_cashier"
     },
     {
       "id": "node_shift27_cashier",
@@ -7810,13 +7911,21 @@
             "sensors",
             "clear"
           ],
-          "nextNodeId": "node_shift30_cashier",
+          "nextNodeId": "node_shift29_cashier_fight",
           "metricDeltas": {
             "associate_engagement": 10.0,
             "store_morale": 5.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift29_cashier_fight",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "text": "'SENSOR ALERT, AISLE 9.' Again. Then the dome over Lane 4 drops on its cable and starts flashing at YOU.",
+      "triggerBattleEncounterId": "encounter_sensor_meltdown",
+      "nextNodeId": "node_shift30_cashier"
     },
     {
       "id": "node_shift30_cashier",
@@ -7928,6 +8037,7 @@
     },
     {
       "id": "node_shift34_cashier_victory",
+      "setFlagOnEnter": "flag_act3_audit_survived",
       "speakerId": "henderson",
       "side": "RIGHT",
       "text": "AUDIT PASSED WITH FLYING COLORS! You present unedited lane throughput logs showing 24 IPM and zero register shortages. Auditor Vance signs the certification report. Act III is conquered, but the corporate frame-job looms ahead!",
@@ -8023,13 +8133,21 @@
             "spark",
             "front end"
           ],
-          "nextNodeId": "node_shift27_unloader",
+          "nextNodeId": "node_shift26_unloader_fight",
           "metricDeltas": {
             "associate_engagement": 10.0,
             "labor_squeeze": 10.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift26_unloader_fight",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "text": "CODE SPARK! Forty carts, four open lanes and a crowd that smells weakness. Dock crew, you're bagging. Hold the line!",
+      "triggerBattleEncounterId": "encounter_code_spark",
+      "nextNodeId": "node_shift27_unloader"
     },
     {
       "id": "node_shift27_unloader",
@@ -8096,13 +8214,21 @@
             "sensor",
             "fix"
           ],
-          "nextNodeId": "node_shift30_unloader",
+          "nextNodeId": "node_shift29_unloader_fight",
           "metricDeltas": {
             "associate_engagement": 15.0,
             "store_morale": 5.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift29_unloader_fight",
+      "speakerId": "derrick",
+      "side": "LEFT",
+      "text": "Derrick's boot sends the sensor box swinging. The dome above the conveyor drops on its cable, strobe screaming 'IDLE INFRACTION', and its twin wakes up beside it!",
+      "triggerBattleEncounterId": "encounter_sensor_meltdown",
+      "nextNodeId": "node_shift30_unloader"
     },
     {
       "id": "node_shift30_unloader",
@@ -8214,6 +8340,7 @@
     },
     {
       "id": "node_shift34_unloader_victory",
+      "setFlagOnEnter": "flag_act3_audit_survived",
       "speakerId": "mack",
       "side": "RIGHT",
       "text": "DOCK COMPLIANCE CERTIFIED! You produce flawless bill-of-lading records and trailer turn times, forcing Auditor Vance to approve Bay 2 operations. Henderson slinks away. Act III is cleared, but the frame job is brewing!",
@@ -8309,13 +8436,21 @@
             "return",
             "specialty"
           ],
-          "nextNodeId": "node_shift27_specialist",
+          "nextNodeId": "node_shift26_specialist_fight",
           "metricDeltas": {
             "associate_engagement": 10.0,
             "labor_squeeze": 10.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift26_specialist_fight",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "text": "CODE SPARK! All certified staff to the front! Your OLED shoppers can wait; these forty carts can't.",
+      "triggerBattleEncounterId": "encounter_code_spark",
+      "nextNodeId": "node_shift27_specialist"
     },
     {
       "id": "node_shift27_specialist",
@@ -8382,13 +8517,21 @@
             "keys",
             "noise"
           ],
-          "nextNodeId": "node_shift30_specialist",
+          "nextNodeId": "node_shift29_specialist_fight",
           "metricDeltas": {
             "associate_engagement": 10.0,
             "store_morale": 5.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift29_specialist_fight",
+      "speakerId": "chad",
+      "side": "LEFT",
+      "text": "'Not my fault!' Chad yelps as the peg hooks scream again. Two ceiling domes drop on their cables, strobes sweeping the headphone wall.",
+      "triggerBattleEncounterId": "encounter_sensor_meltdown",
+      "nextNodeId": "node_shift30_specialist"
     },
     {
       "id": "node_shift30_specialist",
@@ -8500,6 +8643,7 @@
     },
     {
       "id": "node_shift34_specialist_victory",
+      "setFlagOnEnter": "flag_act3_audit_survived",
       "speakerId": "julian",
       "side": "RIGHT",
       "text": "SHOWCASE AUDIT PERFECT! Julian presents spotless high-ticket inventory serial logs, proving zero shrinkage in specialty. Auditor Vance signs the passing grade. Act III is won, but the shadow of Act IV's frame-job draws near!",
@@ -8802,13 +8946,21 @@
             "pockets",
             "composure"
           ],
-          "nextNodeId": "node_shift37_stocker",
+          "nextNodeId": "node_shift36_stocker_fight",
           "metricDeltas": {
             "associate_engagement": 10.0,
             "store_morale": -5.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift36_stocker_fight",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "text": "Clint snaps his fingers. Two Asset Protection officers step between you and your locker, bolt cutters out. Hold your ground.",
+      "triggerBattleEncounterId": "encounter_ap_shakedown",
+      "nextNodeId": "node_shift37_stocker"
     },
     {
       "id": "node_shift37_stocker",
@@ -9121,6 +9273,7 @@
     },
     {
       "id": "node_shift46_stocker_victory",
+      "setFlagOnEnter": "flag_act4_interrogation_broken",
       "speakerId": "clint",
       "side": "LEFT",
       "changeSceneId": "scene_security_office",
@@ -9171,13 +9324,21 @@
             "pickup",
             "proof"
           ],
-          "nextNodeId": "node_shift37_cashier",
+          "nextNodeId": "node_shift36_cashier_fight",
           "metricDeltas": {
             "associate_engagement": 15.0,
             "store_morale": -5.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift36_cashier_fight",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "text": "Clint locks the audit box. Two Asset Protection officers close in on either side of Lane 4: 'Step away from the till.'",
+      "triggerBattleEncounterId": "encounter_ap_shakedown",
+      "nextNodeId": "node_shift37_cashier"
     },
     {
       "id": "node_shift37_cashier",
@@ -9489,6 +9650,7 @@
     },
     {
       "id": "node_shift46_cashier_victory",
+      "setFlagOnEnter": "flag_act4_interrogation_broken",
       "speakerId": "clint",
       "side": "LEFT",
       "changeSceneId": "scene_security_office",
@@ -9539,13 +9701,21 @@
             "clean",
             "calm"
           ],
-          "nextNodeId": "node_shift37_unloader",
+          "nextNodeId": "node_shift36_unloader_fight",
           "metricDeltas": {
             "associate_engagement": 10.0,
             "store_morale": -5.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift36_unloader_fight",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "text": "Clint nods once. The two guards reach for your toolbag before the bay camera can see what's in it. Don't let go.",
+      "triggerBattleEncounterId": "encounter_ap_shakedown",
+      "nextNodeId": "node_shift37_unloader"
     },
     {
       "id": "node_shift37_unloader",
@@ -9789,6 +9959,7 @@
     },
     {
       "id": "node_shift46_unloader_victory",
+      "setFlagOnEnter": "flag_act4_interrogation_broken",
       "speakerId": "clint",
       "side": "LEFT",
       "changeSceneId": "scene_security_office",
@@ -9839,13 +10010,21 @@
             "show",
             "clint"
           ],
-          "nextNodeId": "node_shift37_specialist",
+          "nextNodeId": "node_shift36_specialist_fight",
           "metricDeltas": {
             "associate_engagement": 10.0,
             "store_morale": -5.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift36_specialist_fight",
+      "speakerId": "clint",
+      "side": "LEFT",
+      "text": "Clint holds out his palm for your key ring. Two Asset Protection officers move to block the counter gate. Keep the keys.",
+      "triggerBattleEncounterId": "encounter_ap_shakedown",
+      "nextNodeId": "node_shift37_specialist"
     },
     {
       "id": "node_shift37_specialist",
@@ -10090,6 +10269,7 @@
     },
     {
       "id": "node_shift46_specialist_victory",
+      "setFlagOnEnter": "flag_act4_interrogation_broken",
       "speakerId": "clint",
       "side": "LEFT",
       "changeSceneId": "scene_security_office",
@@ -10426,13 +10606,21 @@
             "claims",
             "todd"
           ],
-          "nextNodeId": "node_shift49_stocker",
+          "nextNodeId": "node_shift48_stocker_fight",
           "metricDeltas": {
             "associate_engagement": 15.0,
             "labor_squeeze": 5.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift48_stocker_fight",
+      "speakerId": "todd",
+      "side": "RIGHT",
+      "text": "A flashlight beam hits the torn slips in your hands. Todd, with a lockdown guard at his shoulder: 'Those are corporate property, kid. Hand them over.'",
+      "triggerBattleEncounterId": "encounter_lockdown_aisle4",
+      "nextNodeId": "node_shift49_stocker"
     },
     {
       "id": "node_shift49_stocker",
@@ -10662,13 +10850,21 @@
             "executive",
             "office"
           ],
-          "nextNodeId": "node_shift54_stocker",
+          "nextNodeId": "node_shift53_stocker_fight",
           "metricDeltas": {
             "store_morale": 20.0,
             "associate_engagement": 20.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift53_stocker_fight",
+      "speakerId": "donna",
+      "side": "LEFT",
+      "text": "Between you and the manager's suite: Cheryl, two lockdown guards, and a clipboard of termination forms. Donna grips her flashlight: 'Together, rookie.'",
+      "triggerBattleEncounterId": "encounter_last_line",
+      "nextNodeId": "node_shift54_stocker"
     },
     {
       "id": "node_shift54_stocker",
@@ -10812,13 +11008,21 @@
             "cash office",
             "proof"
           ],
-          "nextNodeId": "node_shift49_cashier",
+          "nextNodeId": "node_shift48_cashier_fight",
           "metricDeltas": {
             "associate_engagement": 15.0,
             "labor_squeeze": 5.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift48_cashier_fight",
+      "speakerId": "marsha",
+      "side": "LEFT",
+      "text": "The cash office door clicks. Marsha, a lockdown guard behind her, sees the drop slips in your hand: 'Put those back, {hero}. Now.'",
+      "triggerBattleEncounterId": "encounter_lockdown_cash_office",
+      "nextNodeId": "node_shift49_cashier"
     },
     {
       "id": "node_shift49_cashier",
@@ -11043,13 +11247,21 @@
             "suite",
             "management"
           ],
-          "nextNodeId": "node_shift54_cashier",
+          "nextNodeId": "node_shift53_cashier_fight",
           "metricDeltas": {
             "store_morale": 20.0,
             "associate_engagement": 20.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift53_cashier_fight",
+      "speakerId": "brenda",
+      "side": "RIGHT",
+      "text": "Cheryl and two lockdown guards block the concourse with a cart of termination forms. Brenda cracks her knuckles: 'Twelve cashiers behind you, kid.'",
+      "triggerBattleEncounterId": "encounter_last_line",
+      "nextNodeId": "node_shift54_cashier"
     },
     {
       "id": "node_shift54_cashier",
@@ -11191,13 +11403,21 @@
             "signature",
             "proof"
           ],
-          "nextNodeId": "node_shift49_unloader",
+          "nextNodeId": "node_shift48_unloader_fight",
           "metricDeltas": {
             "associate_engagement": 15.0,
             "labor_squeeze": 5.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift48_unloader_fight",
+      "speakerId": "derrick",
+      "side": "LEFT",
+      "text": "A flashlight clicks on in the dark office. Derrick, keys revoked since Shift 22, steps out with a lockdown guard: 'Henderson says I get my forklift card back if that file walks out with me.'",
+      "triggerBattleEncounterId": "encounter_lockdown_dock",
+      "nextNodeId": "node_shift49_unloader"
     },
     {
       "id": "node_shift49_unloader",
@@ -11425,13 +11645,21 @@
             "concrete",
             "executive"
           ],
-          "nextNodeId": "node_shift54_unloader",
+          "nextNodeId": "node_shift53_unloader_fight",
           "metricDeltas": {
             "store_morale": 20.0,
             "associate_engagement": 20.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift53_unloader_fight",
+      "speakerId": "mack",
+      "side": "RIGHT",
+      "text": "At the end of Action Alley, Cheryl steps out with two lockdown guards and a stack of termination forms: 'Anyone past this line is resigning without notice.' Mack doesn't slow down.",
+      "triggerBattleEncounterId": "encounter_last_line",
+      "nextNodeId": "node_shift54_unloader"
     },
     {
       "id": "node_shift54_unloader",
@@ -11575,13 +11803,21 @@
             "flash drive",
             "proof"
           ],
-          "nextNodeId": "node_shift49_specialist",
+          "nextNodeId": "node_shift48_specialist_fight",
           "metricDeltas": {
             "associate_engagement": 15.0,
             "labor_squeeze": 5.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift48_specialist_fight",
+      "speakerId": "chad",
+      "side": "LEFT",
+      "text": "The server room door bangs open. Chad, a lockdown guard at his back, sees the progress bar on your screen: 'Pull the plug. NOW.'",
+      "triggerBattleEncounterId": "encounter_lockdown_server",
+      "nextNodeId": "node_shift49_specialist"
     },
     {
       "id": "node_shift49_specialist",
@@ -11809,13 +12045,21 @@
             "office",
             "executive"
           ],
-          "nextNodeId": "node_shift54_specialist",
+          "nextNodeId": "node_shift53_specialist_fight",
           "metricDeltas": {
             "store_morale": 20.0,
             "associate_engagement": 20.0
           }
         }
       ]
+    },
+    {
+      "id": "node_shift53_specialist_fight",
+      "speakerId": "julian",
+      "side": "RIGHT",
+      "text": "Cheryl and two lockdown guards stand between the specialty crew and the suite, termination forms fanned like a hand of cards. Julian pockets the brass keys: 'After you.'",
+      "triggerBattleEncounterId": "encounter_last_line",
+      "nextNodeId": "node_shift54_specialist"
     },
     {
       "id": "node_shift54_specialist",

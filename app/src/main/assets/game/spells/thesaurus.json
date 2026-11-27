@@ -6,19 +6,22 @@
       "incandescent", "solar", "phoenix", "wrath", "embers", "consume",
       "flame", "flames", "fire", "fireball", "burn", "combustion",
       "conflagration", "pyre", "hellfire", "searing", "flare", "magma",
-      "resonant", "heat"
+      "resonant", "heat",
+      "cart", "flatbed", "express"
     ],
     "CRYOMANCY": [
       "glacial", "glacier", "permafrost", "frostbite", "frost", "blizzard",
       "crystalline", "crystal", "absolute zero", "tundra", "shards", "bitter",
       "freeze", "frozen", "ice", "icicle", "hail", "sleet", "avalanche",
-      "rime", "chill", "chilling", "cold", "zero"
+      "rime", "chill", "chilling", "cold", "zero",
+      "coupon", "drawer", "book"
     ],
     "ELECTROMANCY": [
       "tempest", "thunderclap", "galvanic", "arc", "storm", "fulgur",
       "lightning", "volt", "voltage", "flash", "strike", "spark", "sparks",
       "thunder", "thunderbolt", "shock", "discharge", "surge", "electrify",
-      "static", "plasma", "stasis", "charge"
+      "static", "plasma", "stasis", "charge",
+      "baler"
     ],
     "HOLY": [
       "radiance", "radiant", "divine", "seraph", "celestial", "dawn",
@@ -27,14 +30,16 @@
       "restorative", "prayer", "cure", "sanctuary", "smite", "soothing",
       "steady", "calm", "soothe", "listen",
       "backrub", "inspiring", "lunch", "groceries", "breath", "remember",
-      "break", "check"
+      "break", "check",
+      "escalate"
     ],
     "NATURE": [
       "grove", "briar", "thorns", "thorn", "vines", "vine", "rain", "nature",
       "rejuvenate", "verdant", "root", "roots", "canopy", "bloom", "petal",
       "moss", "fern", "blossom", "undergrowth", "bark", "seed", "sprout",
       "wildwood", "pollen", "bramble", "nettle", "willow", "oaken", "earthen",
-      "grow"
+      "grow",
+      "union", "numbers"
     ],
     "SHADOW": [
       "umbra", "abyss", "abyssal", "venom", "venomous", "phantom", "whisper",

@@ -6,7 +6,7 @@ Every fighter, enemy and boss is mapped to a sprite key below. A sheet named aft
 
 A retail workplace comedy set in MegaMart Store #1042. The look is 16-bit JRPG with a wink: ordinary store staff and customers drawn as if they were knights, mages and monsters, their weapons the tools of the trade (price guns, box cutters, coupon binders, clipboards). Match the portraits in `app/src/main/assets/portraits/` for faces, hair and uniforms: MegaMart associates wear a royal-blue vest with a name badge; managers wear a royal-blue polo or business casual with a lanyard.
 
-**To draw: 0 sheets** (0 party fighters, 0 enemy families, 0 bosses). Everything else is a recolour of one of those.
+**To draw: 4 sheets** (0 party fighters, 4 enemy families, 0 bosses). Everything else is a recolour of one of those.
 
 ## Style (every sprite)
 
@@ -44,7 +44,7 @@ The player's new-hire MegaMart associate: royal-blue vest over a grey shirt, nam
 
 *Moves*: charge: holds the scanner up, its red laser flickering as the chant builds; cast: fires the scanner like a wand, a beam of barcode light (release on the beep); attack: a quick box-cutter slash or a shoulder-check with a clipboard; ko: slumps against an imaginary shelf and slides down; victory: thumbs-up and a pumped fist.
 
-## Enemy families (4, 64 px)
+## Enemy families (13, 64 px)
 
 ### `practice_dummy`: Shift Trainer Mannequin ✅ delivered
 
@@ -54,7 +54,7 @@ The voice tutorial's practice dummy wears the training-drone sheet generated for
 
 *Moves*: attack: wobbles forward on its base; hurt: spins half around; death: topples over and the head pops off.
 
-Draws: Practice Dummy (Training Target, construct/physical)
+Draws: Practice Dummy (Training Target, construct)
 
 ### `karen_customer`: Entitled Customer ✅ delivered
 
@@ -64,7 +64,7 @@ A furious shopper: asymmetrical blonde bob, oversized sunglasses pushed up on th
 
 *Moves*: attack: swings the handbag overhead; windup: jabs a pointing finger ('Manager!'); cast: slaps the receipt down, a shockwave of outrage.
 
-Draws: Entitled Customer (Escalation Vanguard, flesh/physical)
+Draws: Entitled Customer (Escalation Vanguard, flesh)
 
 ### `overtime_screamer`: The Floor Rush Crowd ✅ delivered
 
@@ -74,7 +74,7 @@ The Floor Rush Crowd: a sale-day shopper in a red hoodie pushing a cart piled wi
 
 *Moves*: attack: swings the handbag overhead; windup: jabs a pointing finger ('Manager!'); cast: slaps the receipt down, a shockwave of outrage.
 
-Draws: Floor Rush Crowd (Bargain Swarm, flesh/physical)
+Draws: Floor Rush Crowd (Bargain Swarm, verdant)
 
 ### `extreme_couponer`: Extreme Couponer ✅ delivered
 
@@ -84,7 +84,87 @@ A wiry coupon strategist in a fishing vest stuffed with clipped coupons, reading
 
 *Moves*: cast: fans coupons from the binder and flicks them like throwing cards (release=4); attack: snips with the scissors.
 
-Draws: Extreme Couponer (Binder Tactician, flesh/shadow)
+Draws: Extreme Couponer (Binder Tactician, flesh)
+
+### `runaway_pallet_jack`: The Screamer (runaway pallet jack)
+
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/runaway_pallet_jack.png` + `runaway_pallet_jack.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
+
+The dock's worst manual pallet jack, drawn as a beast: chipped yellow body, scraped silver forks for jaws, a cracked red handle reared up like a neck, one squealing wheel trailing a curl of smoke, a torn out-of-service tag fluttering (no readable text). Low and wide; the forks sit on the sole line. Unloader shift 12.
+
+*Moves*: idle: shudders and jitters on the bad wheel; windup: the handle pumps, hydraulics hiss; attack: lunges forks first; cast: throws back its handle and shrieks, a ring of squeal-waves (release on the peak); hurt: tips up on one wheel; death: the hydraulic seal bursts and it sags flat to the floor.
+
+Draws: The Screamer (Runaway Pallet Jack, construct)
+
+### `go_back_golem`: Go-Back Golem
+
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/go_back_golem.png` + `go_back_golem.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
+
+Every go-back dumped at closing, fused into a hulking heap: crushed cardboard torso, broken pallet slats for arms, a melting ice-cream tub for a head with two red scanner-laser eyes, shopping bags, a tangled HDMI cable and dangling price tags. Hunched, top-heavy, about 50 px tall, wider than the hero. Must read the same in every department (no department-specific item dominates). Every department, shift 15.
+
+*Moves*: idle: slow sway, a can rolls off and pops back; windup: raises both slat-arms; attack: a two-handed slab slam; cast: hurls a returned item (a can, a toy-dinosaur box) in an arc (release=4); hurt: boxes cave in and spring back; death: collapses into a neat flattened stack of cardboard.
+
+Draws: Go-Back Golem (Closing-Time Heap, construct)
+
+### `shrink_sentinel`: Shrink Sentinel
+
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/shrink_sentinel.png` + `shrink_sentinel.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
+
+One of Act III's AI ceiling domes, come down to hunt: a black-glass hemisphere with a red recording LED, an amber strobe ring and a tiny tachometer screen, hanging on a coiled cable from above the frame (or hovering; then its shadow sits on the sole line). Cold, corporate, faintly comic. Fought in pairs, every department, shift 29.
+
+*Moves*: idle: bobs on its cable and pans slowly; windup: the lens zooms and the LED blinks faster; attack: swoops and rams; cast: an amber strobe pulse and alarm shriek (release=4); hurt: the glass cracks, the screen glitches; death: the cable snaps, the dome drops and the LED fades out.
+
+Draws: Shrink Sentinel (AI Ceiling Dome, void)
+
+### `asset_protection_officer`: Asset Protection Officer
+
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/asset_protection_officer.png` + `asset_protection_officer.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
+
+Clint's floor guards: black security polo with a shoulder patch (no readable text), black cargo pants, a duty belt with a long flashlight, radio and key ring, an earpiece coil, buzz cut. Leaner and younger than Clint, no aviators, so the two never read as the same character; a clipboard of bag-check logs under one arm. Used in pairs, so the idle should look fine standing next to a copy of itself. Every department, shifts 36, 48 and 53.
+
+*Moves*: idle: thumbs in the duty belt, scanning; windup: keys the radio, mouth to the earpiece; attack: a flashlight jab or a grab for the bag; cast: clicks the flashlight on, a hard white glare beam (release=4); hurt: staggers, radio squawks; death: drops the clipboard, the logs scatter, slumps.
+
+Draws: Asset Protection Officer (Clint's Floor Guard, void)
+
+### `derrick`: Derrick (staff sheet as an enemy) ✅ delivered
+
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/derrick.png` + `derrick.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
+
+Derrick, the Phantom Unloader, fought as a regular (stocker shift 20) and an elite (unloader shift 48). Uses the delivered 64 px staff sheet `derrick` (portraits/derrick.jpg); no new art.
+
+Draws: Derrick (The Phantom Unloader, undead)
+
+### `todd`: Todd (staff sheet as an enemy) ✅ delivered
+
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/todd.png` + `todd.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
+
+Sales Floor Manager Todd, fought as the stocker's shift-48 elite. Uses the delivered 64 px staff sheet `todd` (portraits/todd.jpg); no new art.
+
+Draws: Todd (The Metric Drill Sergeant, radiant)
+
+### `marsha`: Marsha (staff sheet as an enemy) ✅ delivered
+
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/marsha.png` + `marsha.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
+
+Front End Manager Marsha, fought as the cashier's shift-48 elite. Uses the delivered 64 px staff sheet `marsha` (portraits/marsha.jpg); no new art.
+
+Draws: Marsha (The Panic-Button Queen, radiant)
+
+### `chad`: Chad (staff sheet as an enemy) ✅ delivered
+
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/chad.png` + `chad.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
+
+Chad, the Credit Poacher, fought as the specialist's shift-48 elite. Uses the delivered 64 px staff sheet `chad` (portraits/chad.jpg); no new art.
+
+Draws: Chad (The Credit Poacher, undead)
+
+### `cheryl`: Cheryl (staff sheet as an enemy) ✅ delivered
+
+> **Deliver:** `app/src/main/assets/game/sprites/sheets/cheryl.png` + `cheryl.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
+
+HR Manager Cheryl, Henderson's last line at shift 53 in every department. Uses the delivered 64 px staff sheet `cheryl` (portraits/cheryl.jpg); no new art.
+
+Draws: Cheryl (The Velvet Guillotine, silence)
 
 ## Bosses (4 to draw, each its own sprite)
 
@@ -96,7 +176,7 @@ A long-tenured associate who perfected doing nothing: faded vest worn open, bean
 
 *Moves*: windup: stretches and yawns; attack: a lazy shove; cast: throws a flurry of excuses (speech-bubble scraps); charge_ultimate: checks his phone, 'just one sec'; ultimate: the weaponized restroom break, he vanishes and the work avalanches onto the party.
 
-Element: flesh/shadow.
+Element: undead.
 
 ### `regional_auditor`: Regional Auditor (128 px) ✅ delivered
 
@@ -106,7 +186,7 @@ A cold corporate auditor: grey suit, rimless glasses, a slicked parting, a lapto
 
 *Moves*: windup: snaps the leather portfolio open; attack: slams the clipboard down; cast: fires a volley of citation slips; charge_ultimate: uncaps the red pen, the store goes quiet; ultimate: the Level 3 write-up, a storm of red ink.
 
-Element: construct/cryomancy.
+Element: silence.
 
 ### `security_clint`: Loss Prevention Clint (96 px) ✅ delivered
 
@@ -116,7 +196,7 @@ Clint from portraits/clint.jpg, drawn larger than life: stocky, grey security po
 
 *Moves*: windup: lowers the sunglasses and stares; attack: grabs and slams like an interrogation hold; cast: a flashlight that flashes like a camera (shadow); charge_ultimate: spreads falsified timeline logs on an invisible table, the radio crackling; ultimate: the Reid technique, a cage of spotlights and accusing camera flashes closing in.
 
-Element: construct/shadow.
+Element: void.
 
 ### `manager_henderson`: Store Manager Henderson (128 px) ✅ delivered
 
@@ -126,7 +206,7 @@ Henderson from portraits/henderson.jpg, drawn larger than life: silver-haired, p
 
 *Moves*: attack: Iron Slam (clipboard smash); cast: Steam Vent (coffee boils over into a scalding geyser, fire); charge_ultimate: locks the office door, phone to ear, red alarm light flashing; ultimate: an avalanche of write-up forms and 'TERMINATED' stamps raining down (no readable text needed). p2_ (optional): tie loosened, sleeves rolled, the smile gone.
 
-Element: construct/fire.
+Element: radiant.
 
 ## Notes for the game
 

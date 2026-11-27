@@ -182,6 +182,328 @@
           "narrationText": "Henderson slams his mahogany desk, waving termination notices and shouting that no associate leaves Store #1042 without signing an NDA!"
         }
       ]
+    },
+    {
+      "id": "encounter_screamer_jack",
+      "name": "The Screamer Breaks Loose",
+      "description": "The dock's worst pallet jack slews loose under a full water pallet, shrieking and swinging its handle. Tame it before it wrecks the bay!",
+      "environment": "DUNGEON",
+      "party": [
+        "hero"
+      ],
+      "enemies": [
+        {
+          "templateId": "runaway_pallet_jack",
+          "id": "screamer_jack",
+          "name": "The Screamer",
+          "isTargeted": true,
+          "atbGauge": 0.45
+        }
+      ]
+    },
+    {
+      "id": "encounter_clopening_coupons",
+      "name": "Clopening Coupon Charge",
+      "description": "Four hours after closing, the doors open on a binder-wielding coupon crowd and a customer who wants the manager. Scan fast.",
+      "environment": "DUNGEON",
+      "party": [
+        "hero"
+      ],
+      "enemies": [
+        {
+          "templateId": "extreme_couponer",
+          "id": "clopen_couponer_01",
+          "name": "Binder Vanguard",
+          "isTargeted": true,
+          "atbGauge": 0.4
+        },
+        {
+          "templateId": "extreme_couponer",
+          "id": "clopen_couponer_02",
+          "name": "Coupon Stacker",
+          "atbGauge": 0.3
+        },
+        {
+          "templateId": "karen_customer",
+          "id": "clopen_karen",
+          "name": "Early-Bird Complainer",
+          "atbGauge": 0.2
+        }
+      ]
+    },
+    {
+      "id": "encounter_showcase_bangers",
+      "name": "Locked Case Riot",
+      "description": "The display keys went home with someone else, and the customers banging on the glass don't care whose fault that is.",
+      "environment": "DUNGEON",
+      "party": [
+        "hero"
+      ],
+      "enemies": [
+        {
+          "templateId": "karen_customer",
+          "id": "case_banger_01",
+          "name": "Case Banger",
+          "isTargeted": true,
+          "atbGauge": 0.4
+        },
+        {
+          "templateId": "karen_customer",
+          "id": "case_banger_02",
+          "name": "Demo Unit Demander",
+          "atbGauge": 0.3
+        },
+        {
+          "templateId": "overtime_screamer",
+          "id": "case_crowd",
+          "name": "Launch-Day Crowd",
+          "atbGauge": 0.2
+        }
+      ]
+    },
+    {
+      "id": "encounter_go_back_golem",
+      "name": "The Go-Back Golem",
+      "description": "Every go-back dumped at closing has fused into one lumbering heap of cardboard, slats and melting returns. Put it back where it came from!",
+      "environment": "DUNGEON",
+      "party": [
+        "hero"
+      ],
+      "enemies": [
+        {
+          "templateId": "go_back_golem",
+          "id": "go_back_golem",
+          "name": "Go-Back Golem",
+          "isTargeted": true,
+          "atbGauge": 0.4
+        }
+      ]
+    },
+    {
+      "id": "encounter_forklift_cowboy",
+      "name": "Forklift Cowboy",
+      "description": "Derrick climbs down off the forklift he isn't licensed to drive, and he doesn't take safety warnings well.",
+      "environment": "DUNGEON",
+      "party": [
+        "hero"
+      ],
+      "enemies": [
+        {
+          "templateId": "rival_derrick",
+          "id": "derrick_cowboy",
+          "name": "Derrick",
+          "subtitle": "Forklift Cowboy",
+          "isTargeted": true,
+          "atbGauge": 0.45
+        }
+      ]
+    },
+    {
+      "id": "encounter_code_spark",
+      "name": "Code Spark",
+      "description": "CODE SPARK: every line backed up to the doors and every associate called to the front. Hold the line!",
+      "environment": "DUNGEON",
+      "party": [
+        "hero"
+      ],
+      "enemies": [
+        {
+          "templateId": "overtime_screamer",
+          "id": "spark_crowd_01",
+          "name": "Checkout Stampede",
+          "isTargeted": true,
+          "atbGauge": 0.4
+        },
+        {
+          "templateId": "overtime_screamer",
+          "id": "spark_crowd_02",
+          "name": "Cart Convoy",
+          "atbGauge": 0.3
+        },
+        {
+          "templateId": "karen_customer",
+          "id": "spark_karen",
+          "name": "Line-Cutter",
+          "atbGauge": 0.2
+        }
+      ]
+    },
+    {
+      "id": "encounter_sensor_meltdown",
+      "name": "Sensor Meltdown",
+      "description": "Two of corporate's AI ceiling domes drop on their cables, strobes flashing, convinced you are the shrink event.",
+      "environment": "DUNGEON",
+      "party": [
+        "hero"
+      ],
+      "enemies": [
+        {
+          "templateId": "shrink_sentinel",
+          "id": "sentinel_01",
+          "name": "Shrink Sentinel",
+          "isTargeted": true,
+          "atbGauge": 0.4
+        },
+        {
+          "templateId": "shrink_sentinel",
+          "id": "sentinel_02",
+          "name": "Twin Sentinel",
+          "atbGauge": 0.25
+        }
+      ]
+    },
+    {
+      "id": "encounter_ap_shakedown",
+      "name": "Asset Protection Shakedown",
+      "description": "Clint's floor guards close in for a search nobody signed off on. Don't hand over what's yours.",
+      "environment": "CASTLE",
+      "party": [
+        "hero"
+      ],
+      "enemies": [
+        {
+          "templateId": "asset_protection_officer",
+          "id": "ap_officer_01",
+          "name": "Asset Protection Officer",
+          "isTargeted": true,
+          "atbGauge": 0.4
+        },
+        {
+          "templateId": "asset_protection_officer",
+          "id": "ap_officer_02",
+          "name": "Asset Protection Partner",
+          "atbGauge": 0.3
+        }
+      ]
+    },
+    {
+      "id": "encounter_lockdown_dock",
+      "name": "Lockdown: The Dark Office",
+      "description": "Derrick, running errands for Henderson now, comes for the signed file with a lockdown guard at his back.",
+      "environment": "CASTLE",
+      "party": [
+        "hero"
+      ],
+      "enemies": [
+        {
+          "templateId": "rival_derrick",
+          "id": "derrick_lockdown",
+          "name": "Derrick",
+          "subtitle": "Henderson's Errand Boy",
+          "hp": 520,
+          "attack": 36,
+          "isTargeted": true,
+          "atbGauge": 0.45
+        },
+        {
+          "templateId": "asset_protection_officer",
+          "id": "lockdown_guard",
+          "name": "Lockdown Guard",
+          "atbGauge": 0.3
+        }
+      ]
+    },
+    {
+      "id": "encounter_lockdown_aisle4",
+      "name": "Lockdown: Aisle 4",
+      "description": "Todd catches you with his shredded claims slips, and he brought a lockdown guard.",
+      "environment": "CASTLE",
+      "party": [
+        "hero"
+      ],
+      "enemies": [
+        {
+          "templateId": "rival_todd",
+          "id": "todd_lockdown",
+          "name": "Todd",
+          "isTargeted": true,
+          "atbGauge": 0.45
+        },
+        {
+          "templateId": "asset_protection_officer",
+          "id": "lockdown_guard",
+          "name": "Lockdown Guard",
+          "atbGauge": 0.3
+        }
+      ]
+    },
+    {
+      "id": "encounter_lockdown_cash_office",
+      "name": "Lockdown: The Cash Office",
+      "description": "Marsha finds you holding her altered drop slips, a lockdown guard behind her.",
+      "environment": "CASTLE",
+      "party": [
+        "hero"
+      ],
+      "enemies": [
+        {
+          "templateId": "rival_marsha",
+          "id": "marsha_lockdown",
+          "name": "Marsha",
+          "isTargeted": true,
+          "atbGauge": 0.45
+        },
+        {
+          "templateId": "asset_protection_officer",
+          "id": "lockdown_guard",
+          "name": "Lockdown Guard",
+          "atbGauge": 0.3
+        }
+      ]
+    },
+    {
+      "id": "encounter_lockdown_server",
+      "name": "Lockdown: The Server Room",
+      "description": "Chad bursts in on the server snapshot with a lockdown guard and wants the plug pulled.",
+      "environment": "CASTLE",
+      "party": [
+        "hero"
+      ],
+      "enemies": [
+        {
+          "templateId": "rival_chad",
+          "id": "chad_lockdown",
+          "name": "Chad",
+          "isTargeted": true,
+          "atbGauge": 0.45
+        },
+        {
+          "templateId": "asset_protection_officer",
+          "id": "lockdown_guard",
+          "name": "Lockdown Guard",
+          "atbGauge": 0.3
+        }
+      ]
+    },
+    {
+      "id": "encounter_last_line",
+      "name": "Henderson's Last Line",
+      "description": "Cheryl and two lockdown guards hold the way to the manager's suite with a stack of termination forms. Walk through them.",
+      "environment": "CASTLE",
+      "party": [
+        "hero"
+      ],
+      "enemies": [
+        {
+          "templateId": "rival_cheryl",
+          "id": "cheryl_line",
+          "name": "Cheryl",
+          "isTargeted": true,
+          "atbGauge": 0.45
+        },
+        {
+          "templateId": "asset_protection_officer",
+          "id": "line_guard_01",
+          "name": "Lockdown Guard",
+          "atbGauge": 0.3
+        },
+        {
+          "templateId": "asset_protection_officer",
+          "id": "line_guard_02",
+          "name": "Lockdown Guard",
+          "atbGauge": 0.2
+        }
+      ]
     }
   ]
 }

@@ -164,6 +164,193 @@
         "CRYOMANCY"
       ],
       "armor": 35
+    },
+    {
+      "id": "runaway_pallet_jack",
+      "name": "The Screamer",
+      "subtitle": "Runaway Pallet Jack",
+      "family": "CONSTRUCT",
+      "selfElement": "",
+      "hp": 380,
+      "attack": 26,
+      "defense": 10,
+      "speed": 40,
+      "movesetId": "construct_bruiser",
+      "spriteId": "runaway_pallet_jack",
+      "spriteTint": "#FACC15",
+      "weak": [
+        "PHYSICAL"
+      ],
+      "resist": [],
+      "armor": 8
+    },
+    {
+      "id": "go_back_golem",
+      "name": "Go-Back Golem",
+      "subtitle": "Closing-Time Heap",
+      "family": "CONSTRUCT",
+      "selfElement": "",
+      "hp": 420,
+      "attack": 26,
+      "defense": 8,
+      "speed": 35,
+      "movesetId": "construct_bruiser",
+      "spriteId": "go_back_golem",
+      "spriteTint": "#A16207",
+      "weak": [
+        "PYROMANCY"
+      ],
+      "resist": [
+        "CRYOMANCY"
+      ],
+      "armor": 0
+    },
+    {
+      "id": "shrink_sentinel",
+      "name": "Shrink Sentinel",
+      "subtitle": "AI Ceiling Dome",
+      "family": "VOID",
+      "selfElement": "",
+      "hp": 260,
+      "attack": 28,
+      "defense": 8,
+      "speed": 58,
+      "movesetId": "void_caster",
+      "spriteId": "shrink_sentinel",
+      "spriteTint": "#111827",
+      "weak": [
+        "PHYSICAL"
+      ],
+      "resist": [],
+      "armor": 5
+    },
+    {
+      "id": "asset_protection_officer",
+      "name": "Asset Protection Officer",
+      "subtitle": "Clint's Floor Guard",
+      "family": "VOID",
+      "selfElement": "",
+      "hp": 300,
+      "attack": 32,
+      "defense": 10,
+      "speed": 55,
+      "movesetId": "flesh_bruiser",
+      "spriteId": "asset_protection_officer",
+      "spriteTint": "#1F2937",
+      "weak": [
+        "CRYOMANCY"
+      ],
+      "resist": [
+        "SHADOW"
+      ],
+      "armor": 0
+    },
+    {
+      "id": "rival_derrick",
+      "name": "Derrick",
+      "subtitle": "The Phantom Unloader",
+      "family": "UNDEAD",
+      "selfElement": "",
+      "hp": 380,
+      "attack": 28,
+      "defense": 10,
+      "speed": 50,
+      "movesetId": "flesh_bruiser",
+      "spriteId": "derrick",
+      "spriteTint": "#9CA3AF",
+      "weak": [
+        "PYROMANCY",
+        "ELECTROMANCY"
+      ],
+      "resist": [
+        "CRYOMANCY"
+      ],
+      "armor": 5
+    },
+    {
+      "id": "rival_todd",
+      "name": "Todd",
+      "subtitle": "The Metric Drill Sergeant",
+      "family": "RADIANT",
+      "selfElement": "",
+      "hp": 520,
+      "attack": 36,
+      "defense": 12,
+      "speed": 50,
+      "movesetId": "construct_bruiser",
+      "spriteId": "todd",
+      "spriteTint": "#1D4ED8",
+      "weak": [
+        "NATURE"
+      ],
+      "resist": [
+        "CRYOMANCY"
+      ],
+      "armor": 10
+    },
+    {
+      "id": "rival_marsha",
+      "name": "Marsha",
+      "subtitle": "The Panic-Button Queen",
+      "family": "RADIANT",
+      "selfElement": "",
+      "hp": 480,
+      "attack": 38,
+      "defense": 10,
+      "speed": 58,
+      "movesetId": "flesh_sniper",
+      "spriteId": "marsha",
+      "spriteTint": "#7C3AED",
+      "weak": [
+        "ELECTROMANCY"
+      ],
+      "resist": [
+        "CRYOMANCY"
+      ],
+      "armor": 10
+    },
+    {
+      "id": "rival_chad",
+      "name": "Chad",
+      "subtitle": "The Credit Poacher",
+      "family": "UNDEAD",
+      "selfElement": "",
+      "hp": 460,
+      "attack": 36,
+      "defense": 10,
+      "speed": 60,
+      "movesetId": "flesh_sniper",
+      "spriteId": "chad",
+      "spriteTint": "#0EA5E9",
+      "weak": [
+        "PYROMANCY",
+        "ELECTROMANCY"
+      ],
+      "resist": [
+        "CRYOMANCY"
+      ],
+      "armor": 5
+    },
+    {
+      "id": "rival_cheryl",
+      "name": "Cheryl",
+      "subtitle": "The Velvet Guillotine",
+      "family": "SILENCE",
+      "selfElement": "",
+      "hp": 400,
+      "attack": 34,
+      "defense": 12,
+      "speed": 52,
+      "movesetId": "void_caster",
+      "spriteId": "cheryl",
+      "spriteTint": "#BE185D",
+      "weak": [
+        "NATURE"
+      ],
+      "resist": [
+        "SHADOW"
+      ],
+      "armor": 5
     }
   ]
 }

@@ -10,11 +10,37 @@
   "preferredSchool": "PHYSICAL",
   "starterSpellIds": [
     "spell_pallet_crush",
-    "spell_shrink_wrap_hold",
-    "spell_baler_grind"
+    "spell_union_break",
+    "spell_shrink_wrap_hold"
   ],
   "voiceKeywords": [
     "unloader", "backroom", "freight", "dock", "receiving", "pallet"
   ],
-  "portraitAsset": "portraits/player_unloader.jpg"
+  "portraitAsset": "portraits/player_unloader.jpg",
+  "spellGrants": [
+    {
+      "flag": "flag_act1_showcase_won",
+      "spellIds": [
+        "spell_baler_grind"
+      ]
+    },
+    {
+      "flag": "flag_act2_slacker_beaten",
+      "spellIds": [
+        "spell_escalate"
+      ]
+    },
+    {
+      "flag": "flag_act3_audit_survived",
+      "spellIds": [
+        "spell_by_the_book"
+      ]
+    },
+    {
+      "flag": "flag_act4_interrogation_broken",
+      "spellIds": [
+        "spell_strength_in_numbers"
+      ]
+    }
+  ]
 }

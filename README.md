@@ -76,20 +76,22 @@ Navigate department politics, resolve emergency store incidents, and survive hig
 
 ## ⚡ How a Shift Works in 3 Steps
 
-1. **Clock In & Select Your Department**: Begin your probationary shift as an applicant at Store #1042. Choose your role—Cashier, Stocker, Customer Service, or Unloader.
+1. **Clock In & Select Your Department**: Begin your probationary shift as an applicant at Store #1042. Choose your role—Cashier, Stocker, Unloader, or Specialty Specialist. Each department plays its own **56-shift story with 14 fights**.
 2. **Handle Customer Confrontations**: When chaotic customers or corporate auditors attack, issue voice commands on your Point-of-Sale (POS) terminal to de-escalate, parry expired coupons, or summon managerial backup.
-3. **Survive the Closing Shift**: Manage your Stamina (HP), Focus (MP), and Corporate Metrics (Patience, Morale) to make it to the time clock and punch out.
+3. **Survive the Closing Shift**: Manage your Stamina (HP) and Corporate Metrics (Patience, Morale) to make it to the time clock and punch out. Your department kit grows as the story goes on: each act's boss you beat teaches you a new move.
 
 ---
 
 ## 🏢 The 4 Department Career Tracks
 
-| Department Track | Archetype & Combat Role | Signature Abilities | Corporate Weapon |
+You fight **alone**, with your department's kit. Every kit starts with one attack, **Union Break** (a coffee with the crew that heals you for a fifth of your max Stamina, scaled by how well you say it) and one more move, and learns four more as the story goes on (see [Part 2, section 2](#2-retail-content-decoupling--json-schema)).
+
+| Department Track | Starting Kit | Learned Along the Story | Strong Against |
 | :--- | :--- | :--- | :--- |
-| **Front End (Cashier)** | High-Velocity Striker & Crowd Control | *Barcode Whip, Price Check Page, Coupon Rejection, Drawer Slam* | Handheld Laser Scanner |
-| **Sales Floor (Stocker)** | Heavy Tank & Environmental Shaper | *Box Cutter Flurry, Pallet Jack Ram, Z-Zone Facing, Overstock Crush* | Steel Safety Box Cutter |
-| **Backroom (Unloader)** | Heavy Physical DPS & Impact Brute | *Bale Wire Snare, Dock Plate Slam, Hydraulic Lift Drop, Forklift Horn* | Hydraulic Pallet Jack |
-| **Customer Service (Tamer)** | Social Debuffer & Karen Neutralizer | *Kill With Kindness, Policy Recitation, Gift Card Pacify, Corporate Escalation* | Return Slip Clipboard |
+| **Front End (Cashier)** | *Barcode Scan* (Equipment), *Union Break*, *Coupon Shield* (guard) | *Drawer Smash*, *Express Lane* (hits everyone), *Escalate*, *Strength in Numbers* | Customers, Corporate, the Floor Rush Crowd |
+| **Sales Floor (Stocker)** | *Box Cutter Slash* (Elbow Grease), *Union Break*, *Cart Push* (Hustle) | *Flatbed Charge*, *Escalate*, *By the Book*, *Strength in Numbers* | Crowds, Lifers, Fixtures, then Customers and Loss Prevention |
+| **Backroom (Unloader)** | *Pallet Crush* (Elbow Grease), *Union Break*, *Shrink Wrap Hold* (guard) | *Baler Grind*, *Escalate*, *By the Book*, *Strength in Numbers* | Fixtures, Loss Prevention, then Customers |
+| **Specialty (Specialist)** | *Warranty Pitch* (Upsell), *Union Break*, *Price Check* (guard) | *Barcode Scan*, *Flash Sale* (hits everyone), *By the Book*, *Strength in Numbers* | Customers, Management, Fixtures |
 
 ---
 
@@ -97,7 +99,7 @@ Navigate department politics, resolve emergency store incidents, and survive hig
 
 Combat in *Superstore Saga* represents high-stakes retail showdowns. The combat interface is styled as a retro Point-of-Sale terminal:
 - **Stamina (HP)**: Your physical energy (0–1,000). Dropping to 0 triggers an unpaid disciplinary review in HR.
-- **Focus / Patience (MP)**: Your mental bandwidth (0–100) needed to perform complex procedural overrides and customer appeasements.
+- **No mana, no cooldowns**: every move is always available; the right choice comes from what the enemy is weak to (Hustle, Store Policy, Equipment, Solidarity, Chain of Command, Upsell or Elbow Grease) and what it shrugs off. A hit reveals a weakness, and the game remembers it.
 - **Conveyor Belt Turn Meter (ATB)**: Determines who acts next based on Employee Agility and customer fury.
 - **Active Register Reactions**: Speak *"Void!"* or tap `[VOID / PARRY]` to parry expired coupon attacks with 100% damage deflection!
 
@@ -159,11 +161,61 @@ All gameplay data, dialogue trees, encounters, and register abilities are decoup
 
 - [`manifest.json`](app/src/main/assets/game/manifest.json): World title, starting scene (`scene_online_app`), and default encounter (`encounter_register_rush`).
 - `characters/*.json`: Store managers, shift leads, and companion associates.
-- `enemies/enemies.json`: Enemy templates (*Entitled Karen, Coupon Hoarder, Loss Prevention Sentinel*).
-- `spells/spells.json`: Department abilities mapped to the 5 tactical categories (`[ATTACK]`, `[AOE]`, `[HEAL]`, `[DEFENSE]`, `[MANA]`).
+- [`enemies/enemies.json`](app/src/main/assets/game/enemies/enemies.json): 17 enemy templates in 7 families (see *Enemies* below).
+- [`encounters/encounters.json`](app/src/main/assets/game/encounters/encounters.json): 20 encounters (7 shared by every department, 13 added by the fights pass in [`docs/FIGHTS_PROPOSAL.md`](docs/FIGHTS_PROPOSAL.md)).
+- [`spells/spells.json`](app/src/main/assets/game/spells/spells.json) and [`classes/*.json`](app/src/main/assets/game/classes): department moves, each class's starting kit and its `spellGrants` (moves learned at story flags).
 - `story/scenes.json` & `story/nodes.json`: Dialogue trees across MegaMart departments.
 - `sprites/sheets/`: 22 animated 64 px side-view battle sprite sheets (Aseprite PNG + JSON): the Associate, 7 enemies, Store Manager Henderson as a 128 px boss, and 13 store staff. The roster that maps every enemy to its sprite, with the artist's brief, is [`art/sprite_roster.json`](art/sprite_roster.json) / [`art/SPRITE_BRIEFS.md`](art/SPRITE_BRIEFS.md) (applied with the engine's `scripts/sprite_roster.py superstore-saga --apply`); `../voice-rpg-engine/scripts/sprite_coverage.sh superstore-saga` lists what the sprite contract still wants before a release build is allowed.
 - `environments/environments.json`: the five battle backdrops (`assets/environments/*.png`, MegaMart-themed, 1344x768), each with its painted floor line (`artHorizon`) so combatants stand on the floor.
+
+### Fights per department (14 each)
+
+A new fight sits on its own lead-in node (`node_shiftN_<dept>_fight`) between a story beat's choice and the next shift, because a node with `triggerBattleEncounterId` goes straight to battle and skips its choices.
+
+| Shift | Unloader | Stocker | Cashier | Specialist |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Register Rush | Register Rush | Register Rush | Register Rush |
+| 7 | Saturday Rush | Saturday Rush | Saturday Rush | Saturday Rush |
+| 10 | VP Vance (boss) | VP Vance (boss) | VP Vance (boss) | VP Vance (boss) |
+| 11-12 | The Screamer (12) | | Clopening Coupons (11) | Locked Case Riot (12) |
+| 15 | Go-Back Golem | Go-Back Golem | Go-Back Golem | Go-Back Golem |
+| 20 | | Forklift Cowboy Derrick | | |
+| 22 | Slacker showdown (boss) | Slacker showdown (boss) | Slacker showdown (boss) | Slacker showdown (boss) |
+| 26 | Code Spark | Code Spark | Code Spark | Code Spark |
+| 29 | Sensor Meltdown | Sensor Meltdown | Sensor Meltdown | Sensor Meltdown |
+| 34 | Auditor standoff (boss) | Auditor standoff (boss) | Auditor standoff (boss) | Auditor standoff (boss) |
+| 36 | AP Shakedown | AP Shakedown | AP Shakedown | AP Shakedown |
+| 46 | Clint (boss) | Clint (boss) | Clint (boss) | Clint (boss) |
+| 48 | Lockdown: Derrick | Lockdown: Todd | Lockdown: Marsha | Lockdown: Chad |
+| 53 | Henderson's Last Line (Cheryl) | same | same | same |
+| 55 | Henderson (finale) | Henderson (finale) | Henderson (finale) | Henderson (finale) |
+
+Each column has 14 fights: the stocker has no shift 11-12 fight (its Act II fights are 15 and 20), the other three have no shift 20 fight.
+
+### Enemies
+
+| Family (display name) | Weak to (matrix 1.5+) | Enemies |
+| :--- | :--- | :--- |
+| Customers (`FLESH`) | Chain of Command, Store Policy, Upsell | Entitled Customer, Extreme Couponer |
+| Crowds (`VERDANT`) | Hustle | Floor Rush Crowd |
+| Lifers (`UNDEAD`) | Solidarity, Hustle, Chain of Command | Slacker Veteran (boss), `rival_derrick`, `rival_chad` |
+| Fixtures (`CONSTRUCT`) | Elbow Grease, Equipment | Practice Dummy, **The Screamer** (`runaway_pallet_jack`), **Go-Back Golem** |
+| Loss Prevention (`VOID`) | Equipment, Solidarity | Loss Prevention Clint (boss), **Shrink Sentinel**, **Asset Protection Officer** |
+| Management (`RADIANT`) | Upsell, Solidarity | Store Manager Henderson (boss), `rival_todd`, `rival_marsha` |
+| Corporate (`SILENCE`) | Store Policy | Regional Auditor (boss), `rival_cheryl` |
+
+Each enemy can add its own `weak` (x2.0) and `resist` (x0.8) on top of its family. The four **bold** enemies still need their own sprite sheets (briefed in [`art/SPRITE_BRIEFS.md`](art/SPRITE_BRIEFS.md); a placeholder sheet draws them until then); the five `rival_*` enemies use the store staff's delivered sheets.
+
+### Kits learned from the story
+
+Every class learns at the same four milestones, set on its own department's act-boss victory nodes:
+
+| Flag (set on) | Cashier | Stocker | Unloader | Specialist |
+| :--- | :--- | :--- | :--- | :--- |
+| `flag_act1_showcase_won` (shift 10 victory) | Drawer Smash | Flatbed Charge | Baler Grind | Barcode Scan |
+| `flag_act2_slacker_beaten` (shift 22 victory) | Express Lane | Escalate | Escalate | Flash Sale |
+| `flag_act3_audit_survived` (shift 34 victory) | Escalate | By the Book | By the Book | By the Book |
+| `flag_act4_interrogation_broken` (shift 46 victory) | Strength in Numbers | Strength in Numbers | Strength in Numbers | Strength in Numbers |
 
 ---
 

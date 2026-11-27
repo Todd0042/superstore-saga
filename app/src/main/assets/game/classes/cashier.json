@@ -7,14 +7,40 @@
   "startingHp": 450,
   "startingSpeed": 55,
   "startingBaseAttack": 22,
-  "preferredSchool": "PHYSICAL",
+  "preferredSchool": "ELECTROMANCY",
   "starterSpellIds": [
     "spell_barcode_scan",
-    "spell_coupon_shield",
-    "spell_drawer_smash"
+    "spell_union_break",
+    "spell_coupon_shield"
   ],
   "voiceKeywords": [
     "cashier", "front end", "register", "checker", "checkout", "frontline"
   ],
-  "portraitAsset": "portraits/player_cashier.jpg"
+  "portraitAsset": "portraits/player_cashier.jpg",
+  "spellGrants": [
+    {
+      "flag": "flag_act1_showcase_won",
+      "spellIds": [
+        "spell_drawer_smash"
+      ]
+    },
+    {
+      "flag": "flag_act2_slacker_beaten",
+      "spellIds": [
+        "spell_express_lane"
+      ]
+    },
+    {
+      "flag": "flag_act3_audit_survived",
+      "spellIds": [
+        "spell_escalate"
+      ]
+    },
+    {
+      "flag": "flag_act4_interrogation_broken",
+      "spellIds": [
+        "spell_strength_in_numbers"
+      ]
+    }
+  ]
 }

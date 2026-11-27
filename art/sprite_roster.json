@@ -60,6 +60,109 @@
         }
       ],
       "moves": "cast: fans coupons from the binder and flicks them like throwing cards (release=4); attack: snips with the scissors."
+    },
+    {
+      "key": "runaway_pallet_jack",
+      "name": "The Screamer (runaway pallet jack)",
+      "placeholder": "practice_dummy",
+      "look": "The dock's worst manual pallet jack, drawn as a beast: chipped yellow body, scraped silver forks for jaws, a cracked red handle reared up like a neck, one squealing wheel trailing a curl of smoke, a torn out-of-service tag fluttering (no readable text). Low and wide; the forks sit on the sole line. Unloader shift 12.",
+      "moves": "idle: shudders and jitters on the bad wheel; windup: the handle pumps, hydraulics hiss; attack: lunges forks first; cast: throws back its handle and shrieks, a ring of squeal-waves (release on the peak); hurt: tips up on one wheel; death: the hydraulic seal bursts and it sags flat to the floor.",
+      "members": [
+        {
+          "id": "runaway_pallet_jack"
+        }
+      ]
+    },
+    {
+      "key": "go_back_golem",
+      "name": "Go-Back Golem",
+      "placeholder": "overtime_screamer",
+      "look": "Every go-back dumped at closing, fused into a hulking heap: crushed cardboard torso, broken pallet slats for arms, a melting ice-cream tub for a head with two red scanner-laser eyes, shopping bags, a tangled HDMI cable and dangling price tags. Hunched, top-heavy, about 50 px tall, wider than the hero. Must read the same in every department (no department-specific item dominates). Every department, shift 15.",
+      "moves": "idle: slow sway, a can rolls off and pops back; windup: raises both slat-arms; attack: a two-handed slab slam; cast: hurls a returned item (a can, a toy-dinosaur box) in an arc (release=4); hurt: boxes cave in and spring back; death: collapses into a neat flattened stack of cardboard.",
+      "members": [
+        {
+          "id": "go_back_golem"
+        }
+      ]
+    },
+    {
+      "key": "shrink_sentinel",
+      "name": "Shrink Sentinel",
+      "placeholder": "practice_dummy",
+      "look": "One of Act III's AI ceiling domes, come down to hunt: a black-glass hemisphere with a red recording LED, an amber strobe ring and a tiny tachometer screen, hanging on a coiled cable from above the frame (or hovering; then its shadow sits on the sole line). Cold, corporate, faintly comic. Fought in pairs, every department, shift 29.",
+      "moves": "idle: bobs on its cable and pans slowly; windup: the lens zooms and the LED blinks faster; attack: swoops and rams; cast: an amber strobe pulse and alarm shriek (release=4); hurt: the glass cracks, the screen glitches; death: the cable snaps, the dome drops and the LED fades out.",
+      "members": [
+        {
+          "id": "shrink_sentinel"
+        }
+      ]
+    },
+    {
+      "key": "asset_protection_officer",
+      "name": "Asset Protection Officer",
+      "placeholder": "clint",
+      "look": "Clint's floor guards: black security polo with a shoulder patch (no readable text), black cargo pants, a duty belt with a long flashlight, radio and key ring, an earpiece coil, buzz cut. Leaner and younger than Clint, no aviators, so the two never read as the same character; a clipboard of bag-check logs under one arm. Used in pairs, so the idle should look fine standing next to a copy of itself. Every department, shifts 36, 48 and 53.",
+      "moves": "idle: thumbs in the duty belt, scanning; windup: keys the radio, mouth to the earpiece; attack: a flashlight jab or a grab for the bag; cast: clicks the flashlight on, a hard white glare beam (release=4); hurt: staggers, radio squawks; death: drops the clipboard, the logs scatter, slumps.",
+      "members": [
+        {
+          "id": "asset_protection_officer"
+        }
+      ]
+    },
+    {
+      "key": "derrick",
+      "name": "Derrick (staff sheet as an enemy)",
+      "delivered": true,
+      "look": "Derrick, the Phantom Unloader, fought as a regular (stocker shift 20) and an elite (unloader shift 48). Uses the delivered 64 px staff sheet `derrick` (portraits/derrick.jpg); no new art.",
+      "members": [
+        {
+          "id": "rival_derrick"
+        }
+      ]
+    },
+    {
+      "key": "todd",
+      "name": "Todd (staff sheet as an enemy)",
+      "delivered": true,
+      "look": "Sales Floor Manager Todd, fought as the stocker's shift-48 elite. Uses the delivered 64 px staff sheet `todd` (portraits/todd.jpg); no new art.",
+      "members": [
+        {
+          "id": "rival_todd"
+        }
+      ]
+    },
+    {
+      "key": "marsha",
+      "name": "Marsha (staff sheet as an enemy)",
+      "delivered": true,
+      "look": "Front End Manager Marsha, fought as the cashier's shift-48 elite. Uses the delivered 64 px staff sheet `marsha` (portraits/marsha.jpg); no new art.",
+      "members": [
+        {
+          "id": "rival_marsha"
+        }
+      ]
+    },
+    {
+      "key": "chad",
+      "name": "Chad (staff sheet as an enemy)",
+      "delivered": true,
+      "look": "Chad, the Credit Poacher, fought as the specialist's shift-48 elite. Uses the delivered 64 px staff sheet `chad` (portraits/chad.jpg); no new art.",
+      "members": [
+        {
+          "id": "rival_chad"
+        }
+      ]
+    },
+    {
+      "key": "cheryl",
+      "name": "Cheryl (staff sheet as an enemy)",
+      "delivered": true,
+      "look": "HR Manager Cheryl, Henderson's last line at shift 53 in every department. Uses the delivered 64 px staff sheet `cheryl` (portraits/cheryl.jpg); no new art.",
+      "members": [
+        {
+          "id": "rival_cheryl"
+        }
+      ]
     }
   ],
   "bosses": [
