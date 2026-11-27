@@ -5,15 +5,13 @@
   "subtitle": "Loading Dock Juggernaut",
   "description": "Heavy industrial receiving powerhouse. Masters pallet jacks, stretch wrap containment, and hydraulic baler compaction.",
   "startingHp": 700,
-  "startingMp": 75,
   "startingSpeed": 35,
   "startingBaseAttack": 30,
   "preferredSchool": "PHYSICAL",
   "starterSpellIds": [
     "spell_pallet_crush",
     "spell_shrink_wrap_hold",
-    "spell_baler_grind",
-    "spell_union_break"
+    "spell_baler_grind"
   ],
   "voiceKeywords": [
     "unloader", "backroom", "freight", "dock", "receiving", "pallet"

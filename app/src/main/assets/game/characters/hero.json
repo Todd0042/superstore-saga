@@ -27,7 +27,6 @@
   "loreClass": "Spellblade",
   "combat": {
     "maxHp": 240,
-    "maxMp": 140,
     "speed": 70,
     "defense": 6,
     "avatarTint": "#90CAF9",
@@ -36,8 +35,7 @@
       "power_strike",
       "flame_spark",
       "mending_touch",
-      "aegis_guard",
-      "attune"
+      "aegis_guard"
     ],
     "spells": [
       {
@@ -45,7 +43,6 @@
         "name": "Power Strike",
         "school": "PHYSICAL",
         "basePower": 40,
-        "mpCost": 0,
         "description": "A swift, heavy blade strike.",
         "exampleChant": "Power strike the foe!",
         "aliases": ["strike", "slash", "attack", "blade", "cleave"],
@@ -62,7 +59,6 @@
         "name": "Flame Spark",
         "school": "PYROMANCY",
         "basePower": 55,
-        "mpCost": 15,
         "description": "Hurls a searing burst of fire.",
         "exampleChant": "Flame spark the drone!",
         "aliases": ["spark", "flame", "burn", "fire", "ignite"],
@@ -79,7 +75,6 @@
         "name": "Mending Touch",
         "school": "HOLY",
         "basePower": 50,
-        "mpCost": 20,
         "isHeal": true,
         "description": "Restores hit points to an ally.",
         "exampleChant": "Mending touch!",
@@ -97,7 +92,6 @@
         "name": "Aegis Guard",
         "school": "PHYSICAL",
         "basePower": 0,
-        "mpCost": 10,
         "isGuard": true,
         "description": "Raises a defensive stance, reducing incoming damage.",
         "exampleChant": "Aegis guard!",
@@ -108,24 +102,6 @@
           "secondaryColor": "#0091EA",
           "particleCount": 16,
           "screenShake": 1.0
-        }
-      },
-      {
-        "id": "attune",
-        "name": "Attune",
-        "school": "PHYSICAL",
-        "basePower": 0,
-        "mpCost": 0,
-        "manaRestorePct": 0.35,
-        "description": "Steady the breath; a third of your mana returns.",
-        "exampleChant": "Attune",
-        "aliases": ["attune", "tune", "breathe", "breath", "concentrate", "center", "centre", "steady", "focus", "gather", "recover mana", "restore mana"],
-        "graphics": {
-          "effectType": "BURST",
-          "primaryColor": "#80DEEA",
-          "secondaryColor": "#00ACC1",
-          "particleCount": 18,
-          "screenShake": 0.0
         }
       }
     ]

@@ -1,5 +1,6 @@
 {
   "_doc": "Game manifest: top-level metadata the engine pulls at boot. Superstore Saga: Escape From MegaMart.",
+  "combatResource": "none",
   "gameTitle": "Superstore Saga",
   "gameSubtitle": "Escape From MegaMart",
   "worldName": "MegaMart Store #1042",
