@@ -13,11 +13,11 @@
   "backgroundToggleLabel": "🌲 Realm Environment",
   "backgroundToggleDescription": "AI person cutout over realm landscape",
   "availableBackgrounds": [
-    { "id": "forest", "label": "Ancient Forest", "assetPath": "environments/forest.jpg" },
-    { "id": "castle", "label": "High Keep", "assetPath": "environments/castle.jpg" },
-    { "id": "cave", "label": "Crystal Cavern", "assetPath": "environments/cave.jpg" },
-    { "id": "dungeon", "label": "Obsidian Vault", "assetPath": "environments/dungeon.jpg" },
-    { "id": "swamp", "label": "Rotting Fens", "assetPath": "environments/swamp.jpg" }
+    { "id": "forest", "label": "Ancient Forest", "assetPath": "environments/forest.png" },
+    { "id": "castle", "label": "High Keep", "assetPath": "environments/castle.png" },
+    { "id": "cave", "label": "Crystal Cavern", "assetPath": "environments/cave.png" },
+    { "id": "dungeon", "label": "Obsidian Vault", "assetPath": "environments/dungeon.png" },
+    { "id": "swamp", "label": "Rotting Fens", "assetPath": "environments/swamp.png" }
   ],
   "eyeEffect": {
     "enabledByDefault": true,
