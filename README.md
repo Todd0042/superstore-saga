@@ -8,7 +8,7 @@
 
 # 🛒 Superstore Saga: Escape From MegaMart
 
-[![Version](https://img.shields.io/badge/Version-0.2.0--alpha-ff2a85.svg)](https://github.com/Todd0042/superstore-saga/releases)
+[![Version](https://img.shields.io/badge/Version-0.2.1--alpha-ff2a85.svg)](https://github.com/Todd0042/superstore-saga/releases)
 [![License: PolyForm Noncommercial 1.0.0](https://img.shields.io/badge/License-PolyForm%20Noncommercial%201.0.0-00f0ff.svg)](LICENSE)
 [![Platform: Android 8.0+](https://img.shields.io/badge/Platform-Android%208.0%2B%20(API%2026%2B)-3DDC84.svg?logo=android&logoColor=white)](https://developer.android.com)
 [![16 KB Page Size](https://img.shields.io/badge/16%20KB-Compatible-success.svg)](https://developer.android.com/16kb-page-size)
@@ -17,7 +17,7 @@
 [![Engine: VoiceRPG](https://img.shields.io/badge/Engine-VoiceRPG-teal.svg)](https://github.com/Todd0042/voice-rpg-engine)
 [![Voice Control: Hands-Free](https://img.shields.io/badge/Controls-Hands--Free%20Voice-orange.svg)](app/src/main/java/com/voicerpg/engine/audio/SpeechManager.kt)
 [![Combat: Voice Resonance](https://img.shields.io/badge/Combat-Voice%20Resonance%20up%20to%203.0x-yellow.svg)](app/src/main/java/com/voicerpg/engine/engine/ResonanceEngine.kt)
-[![Unit Tests](https://img.shields.io/badge/Unit%20Tests-368%20Passing-39ff14.svg)](app/src/test/java/com/voicerpg/engine/)
+[![Unit Tests](https://img.shields.io/badge/Unit%20Tests-380%20Passing-39ff14.svg)](app/src/test/java/com/voicerpg/engine/)
 [![Support on Ko-fi](https://img.shields.io/badge/Ko--fi-Support%20Creator-F16061?style=flat&logo=ko-fi&logoColor=white)](https://ko-fi.com/todd0042)
 
 > **A satirical, hands-free retail-survival voice JRPG for Android: pick your department at the job interview, then fight your way through 56 shifts at MegaMart Store #1042 by speaking your moves aloud, with damage that grows with how well you say them.**
@@ -411,7 +411,7 @@ The synced engine commit is recorded in `.engine-sync/ENGINE_VERSION`, with chec
 
 ## 10. Tests & Combat Balance
 
-The repository has **368 automated unit tests** (JUnit, run on the JVM): the engine's suite run against this game's content, plus game tests in `app/src/test/java/com/voicerpg/game/`.
+The repository has **380 automated unit tests** (JUnit, run on the JVM): the engine's suite run against this game's content, plus game tests in `app/src/test/java/com/voicerpg/game/`.
 
 ```bash
 # Run the unit tests
