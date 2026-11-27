@@ -18,7 +18,7 @@
 [![Speech: Android Offline STT](https://img.shields.io/badge/Speech-Android%20Offline%20STT-3DDC84.svg)](https://developer.android.com/reference/android/speech/SpeechRecognizer)
 [![Combat: Cadence & Timing](https://img.shields.io/badge/Combat-Cadence%20%26%20Timing-yellow.svg)](app/src/main/java/com/voicerpg/engine/engine/ResonanceEngine.kt)
 [![Audio: Dynamic Ducking](https://img.shields.io/badge/Audio-Dynamic%20Ducking-green.svg)](app/src/main/java/com/voicerpg/engine/audio/)
-[![Unit Tests](https://img.shields.io/badge/Unit%20Tests-108%20Passing-39ff14.svg)](app/src/test/java/com/voicerpg/engine/)
+[![Unit Tests](https://img.shields.io/badge/Unit%20Tests-368%20Passing-39ff14.svg)](app/src/test/java/com/voicerpg/engine/)
 [![Engine: VoiceRPG](https://img.shields.io/badge/Engine-VoiceRPG%20v2.0.0-teal.svg)](https://github.com/Todd0042/voice-rpg-engine)
 [![Support on Ko-fi](https://img.shields.io/badge/Ko--fi-Support%20Creator-F16061?style=flat&logo=ko-fi&logoColor=white)](https://ko-fi.com/todd0042)
 
@@ -329,7 +329,7 @@ cd ../voice-rpg-engine && ./scripts/sync_engine_to_games.sh --check
 
 ## 8. Automated Unit Verification Suite
 
-The repository contains **108 automated unit tests** verifying dialogue graph traversal, retail ability damage resolution, and the headless **Balance Harness** ([`BalanceHarnessTest.kt`](app/src/test/java/com/voicerpg/engine/combat/BalanceHarnessTest.kt)):
+The repository contains **368 automated unit tests** verifying dialogue graph traversal, retail ability damage resolution, and the headless **Balance Harness** ([`BalanceHarnessTest.kt`](app/src/test/java/com/voicerpg/engine/combat/BalanceHarnessTest.kt)):
 
 ```bash
 # Run full unit test suite:
@@ -338,6 +338,8 @@ The repository contains **108 automated unit tests** verifying dialogue graph tr
 # Build debug APK:
 ./gradlew assembleDebug
 ```
+
+**Combat balance.** Every story fight is played by the engine's battle simulator (`BalanceContractTest`: the real combat on virtual time, with the party and spells the story has given them at that point): 56 fights (14 for each of the 4 departments). A sensible player at the balance point (**x1.5** resonance, [`combat/balance.json`](app/src/main/assets/game/combat/balance.json)) should win in a target number of rounds with a safety margin that narrows toward the finale, a lazy x1.1 player should be able to lose late bosses, healing should never take over a fight, and Pure Story Mode must win every fight. The enemy HP and attack in [`encounters.json`](app/src/main/assets/game/encounters/encounters.json) were tuned to those targets with the engine's `BalanceTunerTest`; the report of every fight is written to `app/build/reports/balance.txt` (it reports rather than fails the build: a handful of fights still sit just outside a target).
 
 Test coverage includes:
 - Dialogue graph cyclic and dead-end detection.

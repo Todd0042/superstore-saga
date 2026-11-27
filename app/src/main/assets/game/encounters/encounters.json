@@ -15,13 +15,17 @@
           "id": "karen_01",
           "name": "Bargain Shopper",
           "isTargeted": true,
-          "atbGauge": 0.4
+          "atbGauge": 0.4,
+          "hp": 106,
+          "attack": 34
         },
         {
           "templateId": "extreme_couponer",
           "id": "couponer_01",
           "name": "Coupon Collector",
-          "atbGauge": 0.25
+          "atbGauge": 0.25,
+          "hp": 85,
+          "attack": 40
         }
       ]
     },
@@ -39,7 +43,9 @@
           "id": "auditor_boss",
           "name": "District Auditor Vance",
           "isTargeted": true,
-          "atbGauge": 0.5
+          "atbGauge": 0.5,
+          "hp": 641,
+          "attack": 33
         }
       ],
       "bossPhases": [
@@ -65,13 +71,17 @@
           "id": "rush_crowd_01",
           "name": "Weekend Rush Shoppers",
           "isTargeted": true,
-          "atbGauge": 0.4
+          "atbGauge": 0.4,
+          "hp": 106,
+          "attack": 16
         },
         {
           "templateId": "karen_customer",
           "id": "rush_shopper_02",
           "name": "Bargain Hunter",
-          "atbGauge": 0.25
+          "atbGauge": 0.25,
+          "hp": 169,
+          "attack": 19
         }
       ]
     },
@@ -90,7 +100,9 @@
           "name": "District VP Vance",
           "subtitle": "Eagle-Eyed Executive",
           "isTargeted": true,
-          "atbGauge": 0.45
+          "atbGauge": 0.45,
+          "hp": 835,
+          "attack": 21
         }
       ],
       "bossPhases": [
@@ -117,7 +129,9 @@
           "name": "Slacker Veteran",
           "subtitle": "Excuse Specialist",
           "isTargeted": true,
-          "atbGauge": 0.4
+          "atbGauge": 0.4,
+          "hp": 635,
+          "attack": 38
         }
       ],
       "bossPhases": [
@@ -144,7 +158,9 @@
           "name": "Loss Prevention Clint",
           "subtitle": "Reid Technique Interrogator",
           "isTargeted": true,
-          "atbGauge": 0.45
+          "atbGauge": 0.45,
+          "hp": 626,
+          "attack": 53
         }
       ],
       "bossPhases": [
@@ -171,7 +187,9 @@
           "name": "Store Manager Henderson",
           "subtitle": "The Desperate Executive",
           "isTargeted": true,
-          "atbGauge": 0.5
+          "atbGauge": 0.5,
+          "hp": 1510,
+          "attack": 16
         }
       ],
       "bossPhases": [
@@ -197,7 +215,9 @@
           "id": "screamer_jack",
           "name": "The Screamer",
           "isTargeted": true,
-          "atbGauge": 0.45
+          "atbGauge": 0.45,
+          "hp": 1005,
+          "attack": 27
         }
       ]
     },
@@ -215,19 +235,25 @@
           "id": "clopen_couponer_01",
           "name": "Binder Vanguard",
           "isTargeted": true,
-          "atbGauge": 0.4
+          "atbGauge": 0.4,
+          "hp": 210,
+          "attack": 19
         },
         {
           "templateId": "extreme_couponer",
           "id": "clopen_couponer_02",
           "name": "Coupon Stacker",
-          "atbGauge": 0.3
+          "atbGauge": 0.3,
+          "hp": 210,
+          "attack": 19
         },
         {
           "templateId": "karen_customer",
           "id": "clopen_karen",
           "name": "Early-Bird Complainer",
-          "atbGauge": 0.2
+          "atbGauge": 0.2,
+          "hp": 259,
+          "attack": 16
         }
       ]
     },
@@ -245,19 +271,25 @@
           "id": "case_banger_01",
           "name": "Case Banger",
           "isTargeted": true,
-          "atbGauge": 0.4
+          "atbGauge": 0.4,
+          "hp": 167,
+          "attack": 20
         },
         {
           "templateId": "karen_customer",
           "id": "case_banger_02",
           "name": "Demo Unit Demander",
-          "atbGauge": 0.3
+          "atbGauge": 0.3,
+          "hp": 167,
+          "attack": 20
         },
         {
           "templateId": "overtime_screamer",
           "id": "case_crowd",
           "name": "Launch-Day Crowd",
-          "atbGauge": 0.2
+          "atbGauge": 0.2,
+          "hp": 103,
+          "attack": 17
         }
       ]
     },
@@ -275,7 +307,9 @@
           "id": "go_back_golem",
           "name": "Go-Back Golem",
           "isTargeted": true,
-          "atbGauge": 0.4
+          "atbGauge": 0.4,
+          "hp": 517,
+          "attack": 63
         }
       ]
     },
@@ -294,7 +328,9 @@
           "name": "Derrick",
           "subtitle": "Forklift Cowboy",
           "isTargeted": true,
-          "atbGauge": 0.45
+          "atbGauge": 0.45,
+          "hp": 812,
+          "attack": 32
         }
       ]
     },
@@ -312,19 +348,25 @@
           "id": "spark_crowd_01",
           "name": "Checkout Stampede",
           "isTargeted": true,
-          "atbGauge": 0.4
+          "atbGauge": 0.4,
+          "hp": 166,
+          "attack": 15
         },
         {
           "templateId": "overtime_screamer",
           "id": "spark_crowd_02",
           "name": "Cart Convoy",
-          "atbGauge": 0.3
+          "atbGauge": 0.3,
+          "hp": 166,
+          "attack": 15
         },
         {
           "templateId": "karen_customer",
           "id": "spark_karen",
           "name": "Line-Cutter",
-          "atbGauge": 0.2
+          "atbGauge": 0.2,
+          "hp": 264,
+          "attack": 18
         }
       ]
     },
@@ -342,13 +384,17 @@
           "id": "sentinel_01",
           "name": "Shrink Sentinel",
           "isTargeted": true,
-          "atbGauge": 0.4
+          "atbGauge": 0.4,
+          "hp": 135,
+          "attack": 20
         },
         {
           "templateId": "shrink_sentinel",
           "id": "sentinel_02",
           "name": "Twin Sentinel",
-          "atbGauge": 0.25
+          "atbGauge": 0.25,
+          "hp": 135,
+          "attack": 20
         }
       ]
     },
@@ -366,13 +412,17 @@
           "id": "ap_officer_01",
           "name": "Asset Protection Officer",
           "isTargeted": true,
-          "atbGauge": 0.4
+          "atbGauge": 0.4,
+          "hp": 166,
+          "attack": 18
         },
         {
           "templateId": "asset_protection_officer",
           "id": "ap_officer_02",
           "name": "Asset Protection Partner",
-          "atbGauge": 0.3
+          "atbGauge": 0.3,
+          "hp": 166,
+          "attack": 18
         }
       ]
     },
@@ -390,8 +440,8 @@
           "id": "derrick_lockdown",
           "name": "Derrick",
           "subtitle": "Henderson's Errand Boy",
-          "hp": 520,
-          "attack": 36,
+          "hp": 630,
+          "attack": 25,
           "isTargeted": true,
           "atbGauge": 0.45
         },
@@ -399,7 +449,9 @@
           "templateId": "asset_protection_officer",
           "id": "lockdown_guard",
           "name": "Lockdown Guard",
-          "atbGauge": 0.3
+          "atbGauge": 0.3,
+          "hp": 362,
+          "attack": 22
         }
       ]
     },
@@ -417,13 +469,17 @@
           "id": "todd_lockdown",
           "name": "Todd",
           "isTargeted": true,
-          "atbGauge": 0.45
+          "atbGauge": 0.45,
+          "hp": 504,
+          "attack": 24
         },
         {
           "templateId": "asset_protection_officer",
           "id": "lockdown_guard",
           "name": "Lockdown Guard",
-          "atbGauge": 0.3
+          "atbGauge": 0.3,
+          "hp": 289,
+          "attack": 21
         }
       ]
     },
@@ -441,13 +497,17 @@
           "id": "marsha_lockdown",
           "name": "Marsha",
           "isTargeted": true,
-          "atbGauge": 0.45
+          "atbGauge": 0.45,
+          "hp": 235,
+          "attack": 18
         },
         {
           "templateId": "asset_protection_officer",
           "id": "lockdown_guard",
           "name": "Lockdown Guard",
-          "atbGauge": 0.3
+          "atbGauge": 0.3,
+          "hp": 147,
+          "attack": 15
         }
       ]
     },
@@ -465,13 +525,17 @@
           "id": "chad_lockdown",
           "name": "Chad",
           "isTargeted": true,
-          "atbGauge": 0.45
+          "atbGauge": 0.45,
+          "hp": 328,
+          "attack": 19
         },
         {
           "templateId": "asset_protection_officer",
           "id": "lockdown_guard",
           "name": "Lockdown Guard",
-          "atbGauge": 0.3
+          "atbGauge": 0.3,
+          "hp": 213,
+          "attack": 17
         }
       ]
     },
@@ -489,19 +553,25 @@
           "id": "cheryl_line",
           "name": "Cheryl",
           "isTargeted": true,
-          "atbGauge": 0.45
+          "atbGauge": 0.45,
+          "hp": 203,
+          "attack": 21
         },
         {
           "templateId": "asset_protection_officer",
           "id": "line_guard_01",
           "name": "Lockdown Guard",
-          "atbGauge": 0.3
+          "atbGauge": 0.3,
+          "hp": 152,
+          "attack": 20
         },
         {
           "templateId": "asset_protection_officer",
           "id": "line_guard_02",
           "name": "Lockdown Guard",
-          "atbGauge": 0.2
+          "atbGauge": 0.2,
+          "hp": 152,
+          "attack": 20
         }
       ]
     }

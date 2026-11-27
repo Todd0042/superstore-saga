@@ -14,14 +14,19 @@
     "spell_price_check"
   ],
   "voiceKeywords": [
-    "specialist", "specialty", "tech", "electronics", "sales", "consultant"
+    "specialist",
+    "specialty",
+    "tech",
+    "electronics",
+    "sales",
+    "consultant"
   ],
   "portraitAsset": "portraits/player_specialist.jpg",
   "spellGrants": [
     {
       "flag": "flag_act1_showcase_won",
       "spellIds": [
-        "spell_barcode_scan"
+        "spell_closing_pitch"
       ]
     },
     {

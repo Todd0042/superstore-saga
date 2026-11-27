@@ -191,7 +191,7 @@
       "id": "spell_drawer_smash",
       "name": "Drawer Smash",
       "school": "CRYOMANCY",
-      "basePower": 88,
+      "basePower": 72,
       "description": "Violently shoves the steel cash drawer shut with a deafening clang.",
       "exampleChant": "Drawer smash the till!",
       "aliases": ["smash", "drawer", "cash", "clang", "drawer slam"]
@@ -265,7 +265,7 @@
       "id": "spell_warranty_pitch",
       "name": "Warranty Pitch",
       "school": "SHADOW",
-      "basePower": 35,
+      "basePower": 50,
       "description": "Traps customer in dense 3-year accidental protection clauses.",
       "exampleChant": "Warranty pitch terms!",
       "aliases": ["warranty", "pitch", "upsell", "protection", "terms"]
@@ -328,6 +328,7 @@
       "description": "Announces a ten-minute flash sale three aisles away; the crowd stampedes off after it.",
       "exampleChant": "Flash sale, aisle nine!",
       "aliases": ["flash sale", "flash", "doorbuster", "sale"]
-    }
+    },
+    { "id": "spell_closing_pitch", "name": "Closing Pitch", "school": "SHADOW", "basePower": 70, "description": "Corners the customer with the one closing line every specialist learns in their first week.", "exampleChant": "Closing pitch, sign today!", "aliases": ["closing", "close the deal", "pitch", "seal it"] }
   ]
 }
