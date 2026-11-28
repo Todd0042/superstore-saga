@@ -6,7 +6,7 @@ Every fighter, enemy and boss is mapped to a sprite key below. A sheet named aft
 
 A retail workplace comedy set in MegaMart Store #1042. The look is 16-bit JRPG with a wink: ordinary store staff and customers drawn as if they were knights, mages and monsters, their weapons the tools of the trade (price guns, box cutters, coupon binders, clipboards). Match the portraits in `app/src/main/assets/portraits/` for faces, hair and uniforms: MegaMart associates wear a royal-blue vest with a name badge; managers wear a royal-blue polo or business casual with a lanyard.
 
-**To draw: 4 sheets** (0 party fighters, 4 enemy families, 0 bosses). Everything else is a recolour of one of those.
+**To draw: 0 sheets** (0 party fighters, 0 enemy families, 0 bosses). Everything else is a recolour of one of those.
 
 ## Style (every sprite)
 
@@ -86,7 +86,7 @@ A wiry coupon strategist in a fishing vest stuffed with clipped coupons, reading
 
 Draws: Extreme Couponer (Binder Tactician, flesh)
 
-### `runaway_pallet_jack`: The Screamer (runaway pallet jack)
+### `runaway_pallet_jack`: The Screamer (runaway pallet jack) ✅ delivered
 
 > **Deliver:** `app/src/main/assets/game/sprites/sheets/runaway_pallet_jack.png` + `runaway_pallet_jack.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
 
@@ -96,7 +96,7 @@ The dock's worst manual pallet jack, drawn as a beast: chipped yellow body, scra
 
 Draws: The Screamer (Runaway Pallet Jack, construct)
 
-### `go_back_golem`: Go-Back Golem
+### `go_back_golem`: Go-Back Golem ✅ delivered
 
 > **Deliver:** `app/src/main/assets/game/sprites/sheets/go_back_golem.png` + `go_back_golem.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
 
@@ -106,7 +106,7 @@ Every go-back dumped at closing, fused into a hulking heap: crushed cardboard to
 
 Draws: Go-Back Golem (Closing-Time Heap, construct)
 
-### `shrink_sentinel`: Shrink Sentinel
+### `shrink_sentinel`: Shrink Sentinel ✅ delivered
 
 > **Deliver:** `app/src/main/assets/game/sprites/sheets/shrink_sentinel.png` + `shrink_sentinel.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
 
@@ -116,7 +116,7 @@ One of Act III's AI ceiling domes, come down to hunt: a black-glass hemisphere w
 
 Draws: Shrink Sentinel (AI Ceiling Dome, void)
 
-### `asset_protection_officer`: Asset Protection Officer
+### `asset_protection_officer`: Asset Protection Officer ✅ delivered
 
 > **Deliver:** `app/src/main/assets/game/sprites/sheets/asset_protection_officer.png` + `asset_protection_officer.json` · **enemy** · **64x64** cells · tags: idle, attack (impact=4), hurt (+ windup, cast (release=4), death)
 
